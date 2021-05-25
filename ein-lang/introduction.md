@@ -13,6 +13,8 @@
 
 # 好きな言語は何ですか？
 
+Rust, Go, TypeScript, Ruby, Python, Haskell, OCaml, C, ...
+
 ---
 
 # Go が好き
@@ -82,6 +84,6 @@ main os =
 
 # まとめ
 
-- Go はいい言語
-  - 簡潔
+- Go は簡潔でいい言語
 - Ein は関数型 Go
+  - 参照カウント実装中
