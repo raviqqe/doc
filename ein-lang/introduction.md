@@ -45,6 +45,7 @@ func main() {
 # Ein 言語
 
 - 関数型 Go
+- Haskell 風の構文
 
 ```haskell
 import "github.com/ein-lang/os/Os"
