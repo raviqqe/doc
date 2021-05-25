@@ -23,6 +23,8 @@
 
 - パフォーマンスと表現力のバランス
 - 簡潔さ
+  - ジェネリクスが無い
+  - マクロが無い
 
 ```go
 package main
@@ -43,10 +45,29 @@ func main() {
 # Ein 言語
 
 - 関数型 Go
-- 違い
-  - イミュータブルな値
-  - カリー化
-  - インターフェース -> ユニオン型
+
+```haskell
+import "github.com/ein-lang/os/Os"
+
+main : Os.Os -> Number
+main os =
+  let
+    result = Os.fdWrite os Os.stdout "Hello, world!\n"
+  in
+    case _ = result
+      Number => 0
+      Error => 1
+```
+
+---
+
+# Go との違い
+
+- 不変な値
+- カリー化
+- インターフェース -> ユニオン型
+
+---
 
 ---
 
