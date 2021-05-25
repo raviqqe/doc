@@ -24,6 +24,16 @@
 - パフォーマンスと表現力のバランス
 - 簡潔さ
 
+```go
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("Hello, world!")
+}
+```
+
 <!--
 - 引き算でできた言語
 -->
