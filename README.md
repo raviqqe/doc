@@ -1,1 +1,5 @@
 # slides
+
+## License
+
+[MIT](LICENSE)
