@@ -70,6 +70,37 @@
 
 ---
 
+# .ninja スクリプトの例
+
+```ninja
+ninja_required_version = 1.10
+builddir = .pen
+rule compile
+  command = pen compile $in $out
+  description = compiling module of $source_file
+rule llc
+  command = /home/raviqqe/.homebrew/bin/llc -O3 -tailcallopt -filetype obj -o $out $in
+  description = generating object file for $source_file
+rule resolve_dependency
+  command = pen resolve-dependency -p $package_directory $in $object_file $out
+  description = resolving dependency of $in
+build .pen/objects/df9ec.bc .pen/objects/df9ec.json: compile Bar.pen .pen/objects/df9ec.dep || .pen/objects/df9ec.dd
+  dyndep = .pen/objects/df9ec.dd
+  source_file = Bar.pen
+build .pen/objects/df9ec.o: llc .pen/objects/df9ec.bc
+  source_file = Bar.pen
+build .pen/objects/df9ec.dep .pen/objects/df9ec.dd.dummy: resolve_dependency Bar.pen
+  package_directory =
+  object_file = .pen/objects/df9ec.bc
+build .pen/objects/df9ec.dep.dummy .pen/objects/df9ec.dd: resolve_dependency Bar.pen
+  package_directory =
+  object_file = .pen/objects/df9ec.bc
+...
+default .pen/objects/df9ec.o .pen/objects/91229.o
+```
+
+---
+
 # 依存関係の解決
 
 - 生成されたスクリプトにはモジュール間の依存関係は書かれていない
