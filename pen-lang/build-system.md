@@ -78,6 +78,15 @@
 
 ---
 
+# .dd ファイルの例
+
+```ninja
+ninja_dyndep_version = 1
+build .pen/objects/df9ec1801702a48a.bc: dyndep | .pen/objects/9122981f18913b17.json
+```
+
+---
+
 # 実装
 
 - https://github.com/pen-lang/pen/blob/main/lib/infra/src/ninja_module_build_script_compiler.rs
