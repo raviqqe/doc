@@ -2,9 +2,9 @@
 
 ---
 
-# 目次
+## 目次
 
-- 目的
+- 並列計算の目的
 - 多言語での並列計算の仕組み
 - Pen 言語での設計（未実装）
 
@@ -12,8 +12,8 @@
 
 ## 世はマルチコア時代
 
-- マルチコア使って処理を速くしたい
-  - データ並列: 大量の（同種の）データを同時に処理したい <- 今日はこっち
+- マルチコア CPU を使って処理を速くしたい
+  - データ並列: 複数の（同種の）データを同時に処理したい <- 今日はこっち
   - タスク並列: 異なるコードを同時に実行したい
 
 ---
@@ -22,14 +22,14 @@
 
 - いわゆる concurrent queue
 - スレッドセーフ
-  - 複数の goroutines（グリーンスレッド）から同時にアクセスできる
-- 用途：並列な HTTP サーバ、並列バッチ処理
+- 用途：HTTP サーバ、バッチ処理
 
 ### 例
 
 - チャネル型: `chan int`
 - エンキュー: `c <- 42`
 - デキュー: `x := <- c`
+- チャネルの作成: `make(chan int, 64)`
 - チャネルのクローズ: `close(c)`
 
 ---
@@ -53,6 +53,8 @@
 
 - https://cloe-lang.org
 - インタプリタ型
+- 動的型付け
+- 遅延評価
 - Go 言語製
 - 今は、もう、メンテされていない
 - **遅延リストとプリミティブの関数で並列計算**を実装
@@ -60,7 +62,7 @@
 
 ---
 
-## 遅延リストのパフォーマンス
+## 遅延リストの性能
 
 - HTTP のサーバーを実装
   - HTTP リクエストをコンカレントに受け付ける
@@ -70,23 +72,25 @@
 
 - Go >>> Node.js > Cloe
 - Cloe が Node.js より 20 ~ 30%遅い
-- 実際の HTTP サーバーの実装では、各リクエストの処理でそれなりに時間がかかる。
-  - -> 実用に耐える？
-- データインテンシブな用途では確実に負けそう
+- 実際の HTTP サーバーの実装では、各リクエストの処理で時間がかかる
+  - 実用に耐える？
+- CPU 処理過多な用途では確実に負けそう
 
 ---
 
 ## 遅延リストによる並列計算の制限
 
 - サンクの実装にパフォーマンスが律速される
-  - https://github.com/composewell/streaming-benchmarks
+  - 並行キューに比べてヒープのアロケーションが多い
+  - [Haskell でのベンチマーク](https://github.com/composewell/streaming-benchmarks)
+  - I/O 過多なプログラムでは問題ない?
 - 全ての値が帰納的 -> 再帰ができない
-  - e.g. タスクがタスクを生む場合、バックプレッシャ
+  - Pen 言語特有の問題
   - 大体のコンカレンシーパターンは実装できる
     - 内部的には concurrent queue を使うので、それはそう
     - "Concurrency in Go" by Katherine Cox-Buday
-  - Pen 言語特有の問題
   - ある種のデッドロックを防げる
+  - e.g. タスクがタスクを生む場合、バックプレッシャ
 - [スペースリーク](https://wiki.haskell.org/Space_leak)
 
 ---
@@ -110,8 +114,16 @@ foo = \(ctx ConcurrencyContext, xs [number]) [number] {
 }
 ```
 
+---
+
+## 色々なコンカレンシーパターン
+
 ```pen
-Parallel'Split(foo)
+Parallel'Map(ctx, c) # [number] -> [number]
+Parallel'Race(ctx, c) # [number] -> [number]
+
+Parallel'Split(ctx, n) # [number] -> [[number]]
+Parallel'Join(ctx) # [[number]] -> [number]
 ```
 
 ---
