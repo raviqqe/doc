@@ -125,8 +125,6 @@ Parallel'Split(ctx, n) # [number] -> [[number]]
 Parallel'Join(ctx) # [[number]] -> [number]
 ```
 
-### 問題点
-
-- ***
+---
 
 ## ご意見・ご感想お待ちしております
