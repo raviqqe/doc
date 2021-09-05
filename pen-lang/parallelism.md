@@ -72,7 +72,7 @@
 
 - Go >>> Node.js > Cloe
 - Cloe が Node.js より 20 ~ 30%遅い
-- 実際の HTTP サーバーの実装では、各リクエストの処理でそれなりに時間がかかる
+- 実際の HTTP サーバーの実装では、各リクエストの処理で時間がかかる
   - 実用に耐える？
 - CPU 処理過多な用途では確実に負けそう
 
@@ -83,6 +83,7 @@
 - サンクの実装にパフォーマンスが律速される
   - 並行キューに比べてヒープのアロケーションが多い
   - [Haskell でのベンチマーク](https://github.com/composewell/streaming-benchmarks)
+  - I/O 過多なプログラムでは問題ない?
 - 全ての値が帰納的 -> 再帰ができない
   - Pen 言語特有の問題
   - 大体のコンカレンシーパターンは実装できる
@@ -113,10 +114,19 @@ foo = \(ctx ConcurrencyContext, xs [number]) [number] {
 }
 ```
 
+---
+
+## 色々なコンカレンシーパターン
+
 ```pen
-Parallel'Split(foo)
+Parallel'Map(ctx, c) # [number] -> [number]
+Parallel'Race(ctx, c) # [number] -> [number]
+Parallel'Split(ctx, n) # [number] -> [[number]]
+Parallel'Join(ctx) # [[number]] -> [number]
 ```
 
----
+### 問題点
+
+- ***
 
 ## ご意見・ご感想お待ちしております
