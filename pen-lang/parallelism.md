@@ -81,6 +81,7 @@
 - サンクの実装にパフォーマンスが律速される
   - https://github.com/composewell/streaming-benchmarks
 - 全ての値が帰納的 -> 再帰ができない
+  - e.g. タスクがタスクを生む場合、バックプレッシャ
   - 大体のコンカレンシーパターンは実装できる
     - 内部的には concurrent queue を使うので、それはそう
     - "Concurrency in Go" by Katherine Cox-Buday
