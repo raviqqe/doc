@@ -62,7 +62,7 @@
 
 ---
 
-## 遅延リストのパフォーマンス
+## 遅延リストの性能
 
 - HTTP のサーバーを実装
   - HTTP リクエストをコンカレントに受け付ける
@@ -72,8 +72,8 @@
 
 - Go >>> Node.js > Cloe
 - Cloe が Node.js より 20 ~ 30%遅い
-- 実際の HTTP サーバーの実装では、各リクエストの処理でそれなりに時間がかかる。
-  - -> 実用に耐える？
+- 実際の HTTP サーバーの実装では、各リクエストの処理でそれなりに時間がかかる
+  - 実用に耐える？
 - CPU 処理過多な用途では確実に負けそう
 
 ---
@@ -82,14 +82,14 @@
 
 - サンクの実装にパフォーマンスが律速される
   - 並行キューに比べてヒープのアロケーションが多い
-  - https://github.com/composewell/streaming-benchmarks
+  - [Haskell でのベンチマーク](https://github.com/composewell/streaming-benchmarks)
 - 全ての値が帰納的 -> 再帰ができない
-  - e.g. タスクがタスクを生む場合、バックプレッシャ
+  - Pen 言語特有の問題
   - 大体のコンカレンシーパターンは実装できる
     - 内部的には concurrent queue を使うので、それはそう
     - "Concurrency in Go" by Katherine Cox-Buday
-  - Pen 言語特有の問題
   - ある種のデッドロックを防げる
+  - e.g. タスクがタスクを生む場合、バックプレッシャ
 - [スペースリーク](https://wiki.haskell.org/Space_leak)
 
 ---
