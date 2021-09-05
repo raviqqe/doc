@@ -121,6 +121,7 @@ foo = \(ctx ConcurrencyContext, xs [number]) [number] {
 ```pen
 Parallel'Map(ctx, c) # [number] -> [number]
 Parallel'Race(ctx, c) # [number] -> [number]
+
 Parallel'Split(ctx, n) # [number] -> [[number]]
 Parallel'Join(ctx) # [[number]] -> [number]
 ```
