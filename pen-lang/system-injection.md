@@ -1,5 +1,7 @@
 # System Injection
 
+Side effect management in Pen
+
 [@raviqqe](https://github.com/raviqqe)
 
 ---
@@ -16,11 +18,14 @@
 
 ## Benefits of system injection
 
+It improves maintainability and portability of software.
+
 - Unit tests are deterministic.
   - No more slow or flaky tests!
 - Better software architecture
   - Application logic doesn't depend on implementation details directly.
   - They are decoupled and changeable independently.
+  - It's easier to port applications isolated from platform-dependent codes.
 
 ---
 
