@@ -49,7 +49,9 @@ print = \(ctx Context, s string) none | error {
 
 ---
 
-## How do we run nondeterministic tests?
+## Common questions
+
+### How do we run nondeterministic tests?
 
 1. Replace nondeterministic codes with deterministic codes.
 1. List up examples as separate tests.
@@ -57,7 +59,9 @@ print = \(ctx Context, s string) none | error {
 
 ---
 
-## Why not effect systems (or monads)?
+## Common questions
+
+### Why not effect systems (or monads)?
 
 - Modern researches propose "statically provable" effect systems.
   - As extensions of type systems
