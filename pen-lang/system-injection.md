@@ -39,11 +39,21 @@ It improves maintainability and portability of software.
   - The same as unit tests, or any other software engineering methodologies
   - Pen is not for scripting, or software with short expectancy in general.
 
+```pen
+print = \(ctx Context, s string) none | error {
+  File'Write(ctx, File'StdOut(), s)?
+
+  none
+}
+```
+
 ---
 
-### How do we run nondeterministic tests?
+## How do we run nondeterministic tests?
 
-- There are several options.
+1. Replace nondeterministic codes with deterministic codes.
+1. List up examples as separate tests.
+   - In other words, choose the _timelines_.
 
 ---
 
@@ -56,11 +66,6 @@ It improves maintainability and portability of software.
 - Also, they do not work well with programming languages without generics.
   - Like Go
   - High-order functions always need to have two versions for pure and impure implementations.
-
----
-
-## Or, why not any other methodologies?
-
 - [Functional programming | Clojure](https://clojure.org/about/functional_programming)
   - Clojure is impure, in that it doesn’t force your program to be referentially transparent, and doesn’t strive for 'provable' programs.
 
