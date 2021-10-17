@@ -11,8 +11,17 @@ Side effect management in Pen
 - Pen has a feature called System Injection.
 - It manages side effects of functions.
 - It inejcts system functions into whole applications.
-- System functions are passed as arguments of `main` functions to applications.
+  - System functions are passed as arguments of `main` functions to applications.
 - No other functions can have side effects by themeselves; side effects are always inejcted through function arguments.
+
+---
+
+## What is it based on?
+
+- Dependency injection
+- Monads
+- Effect systems
+- Clean architecture
 
 ---
 
