@@ -1,5 +1,7 @@
 # slides
 
+Presentation slides written in Markdown
+
 ## Usage
 
 ```sh
