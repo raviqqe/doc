@@ -1,0 +1,17 @@
+{
+  "words": [
+    "bazel",
+    "bindgen",
+    "cloe",
+    "dyndep",
+    "hamt",
+    "hhkb",
+    "malloc",
+    "mlir",
+    "quic",
+    "raviqqe",
+    "struct",
+    "tailcallopt",
+    "wasi"
+  ]
+}
