@@ -1,6 +1,7 @@
 {
   "words": [
     "bazel",
+    "bindgen",
     "cloe",
     "dyndep",
     "hamt",
