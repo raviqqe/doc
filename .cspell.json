@@ -1,3 +1,13 @@
 {
-  "words": ["cloe", "malloc", "mlir", "raviqqe", "wasi"]
+  "words": [
+    "bazel",
+    "cloe",
+    "dyndep",
+    "hhkb",
+    "malloc",
+    "mlir",
+    "raviqqe",
+    "tailcallopt",
+    "wasi"
+  ]
 }
