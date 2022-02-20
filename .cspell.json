@@ -3,6 +3,7 @@
     "bazel",
     "cloe",
     "dyndep",
+    "hamt",
     "hhkb",
     "malloc",
     "mlir",
