@@ -8,6 +8,7 @@
     "malloc",
     "mlir",
     "raviqqe",
+    "struct",
     "tailcallopt",
     "wasi"
   ]
