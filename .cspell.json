@@ -3,6 +3,7 @@
     "bazel",
     "bindgen",
     "cloe",
+    "deserialization",
     "dyndep",
     "hamt",
     "hhkb",
