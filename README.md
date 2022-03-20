@@ -5,7 +5,7 @@ Presentation slides written in Markdown
 ## Usage
 
 ```sh
-./serve.sh foo.md
+./serve.sh
 ```
 
 ## License
