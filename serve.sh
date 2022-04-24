@@ -2,4 +2,4 @@
 
 set -e
 
-npx marp -s -w .
+npx @marp-team/marp-cli -s .
