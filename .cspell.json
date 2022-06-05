@@ -1,5 +1,6 @@
 {
   "words": [
+    "allocs",
     "bazel",
     "bindgen",
     "cloe",
@@ -10,10 +11,13 @@
     "malloc",
     "marp",
     "mlir",
+    "nounwind",
+    "perceus",
     "quic",
     "raviqqe",
     "struct",
     "tailcallopt",
+    "valgrind",
     "wadler",
     "wasi"
   ]
