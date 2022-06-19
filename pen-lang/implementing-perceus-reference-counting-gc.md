@@ -42,7 +42,7 @@ Note that dropping fields of its own types is always possible in practice becaus
 
 ## Conclusion
 
-In my experience so far, implementing the Perceus algorithm appears to be quite straightforward compared with implementing the other GC algorithms while there are some points to be careful about especially if you are not faimiliar with low-level concurrency and atomic instructions.
+In my experience so far, implementing the Perceus algorithm appears to be quite straightforward compared with the other non-RC GC algorithms while there are some points to be careful about especially if you are not faimiliar with low-level concurrency and atomic instructions.
 
 The Perceus RC can be a game changer in functional programming and outperform traditional GC's in several programming patterns. I'm pretty happy having the algorithm implemented in my language and seeing it working well despite its simple implementation. But it's definitely not for everyone and most likely affect your language design.
 
