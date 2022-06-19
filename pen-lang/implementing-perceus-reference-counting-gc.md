@@ -33,7 +33,7 @@ The answer is yes.
 
 > WIP
 
-Note that clearing fields of its own types is always possible because otherwise such types' values do not exist at runtime.
+Note that dropping fields of its own types is always possible in practice because otherwise such types' values do not exist at runtime.
 
 [pen]: https://github.com/pen-lang/pen
 [ocaml]: https://ocaml.org/
