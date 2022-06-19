@@ -4,6 +4,10 @@ Reference counting (RC) has been less popular than the other garbage collection 
 
 In this post, I would like to describe some caveats about implementing and utilizing benefits of the Perceus RC. I've been developing a programming language called [Pen](https://github.com/pen-lang/pen) and implemented part of the Perceus RC there. I hope this post helps someone who is implementing the algorithm or even deciding if it's worth implementing it in their own languages.
 
+## Overview of Perceus
+
+> WIP
+
 ## Implementing the algorithm
 
 What I've implemented so far in [Pen][pen] are two core functionalities of the Perceus algorithm:
