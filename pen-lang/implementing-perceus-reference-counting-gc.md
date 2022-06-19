@@ -25,7 +25,7 @@ The answer is yes.
 
 > WIP
 
-## Utilizing benefits of the Perceus RC
+## Benefitting from the algorithm
 
 > WIP
 
