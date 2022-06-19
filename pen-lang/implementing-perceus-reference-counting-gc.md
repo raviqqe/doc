@@ -1,6 +1,6 @@
 # Implementing the Perceus reference counting GC
 
-Reference counting (RC) has been less popular than the other garbage collection (GC) algorithms in functional programming in the last decades as, for example, [OCaml][ocaml] and [Haskell][haskell] use non-RC ones. However, several recent papers, such as [Counting Immutable Beans: Reference Counting Optimized for Purely Functional Programming][immutable beans] and [Perceus: Garbage Free Reference Counting with Reuse][perceus], showed efficiency of RC GC in functional languages while sacrificing or limiting some features like circular references.
+Reference counting (RC) has been less popular than the other garbage collection (GC) algorithms in functional programming in the last decades as, for example, [OCaml][ocaml] and [Haskell][haskell] use non-RC ones. However, several recent papers, such as [Counting Immutable Beans: Reference Counting Optimized for Purely Functional Programming][immutable beans] and [Perceus: Garbage Free Reference Counting with Reuse][perceus], showed efficiency of RC GC in functional languages while sacrificing or limiting some features like circular references. The latter paper introduced an RC GC algorithm called Perceus that is basically an all-in-one RC GC.
 
 In this post, I would like to describe some caveats about implementing and utilizing benefits of the Perceus RC. I've been developing a programming language called [Pen](https://github.com/pen-lang/pen) and implemented part of the Perceus RC there. I hope this post helps someone who is implementing the algorithm or even deciding if it's worth implementing it in their own languages.
 
@@ -36,6 +36,24 @@ The answer is yes.
 
 ### Recursive data types
 
+When your language has record types and has syntax for record field access, things might be a little complex. Let's think about the following pseudo code:
+
+```
+type A = { x: A | none }
+
+f : A -> A
+
+let foo = { x: none }
+
+let bar = {
+  ...foo,
+  x: match x = foo.x {
+      none -> A,
+      A -> f x
+    }
+  }
+```
+
 > WIP
 
 Note that dropping fields of its own types is always possible for self-recursive types in practice because otherwise such types' values cannot exist at runtime.
@@ -44,7 +62,7 @@ Note that dropping fields of its own types is always possible for self-recursive
 
 In my experience so far, implementing the Perceus algorithm appears to be quite straightforward compared with the other non-RC GC algorithms while there are some points to be careful about especially if you are not faimiliar with low-level concurrency and atomic instructions.
 
-I'm pretty happy having the algorithm implemented in my language and seeing it working well despite its simple implementation. The Perceus RC can be a game changer in functional programming and outperform traditional GC's in several programming patterns. But it's definitely not for everyone and most likely affect your language design.
+I'm pretty happy having the algorithm implemented in my language and seeing it performing well despite its simple implementation. The Perceus RC can be a game changer in functional programming as it outperforms traditional GC's in several programming patterns. However, it's definitely not for everyone and most likely affects your language design.
 
 Finally, I would appreciate if you give feedback on this post and [the Pen programming language][pen]. Thanks for reading!
 
