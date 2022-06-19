@@ -56,7 +56,7 @@ let bar = {
 
 > WIP
 
-Note that dropping fields of its own types is always possible for self-recursive types in practice because otherwise such types' values cannot exist at runtime unless they are dynamically generated in functions or thunks in the fields.
+Note that dropping fields containing its own types is possible for self-recursive types in practice in most cases because otherwise such types' values cannot exist at runtime unless they are dynamically generated in functions or thunks in the fields.
 
 ## Conclusion
 
