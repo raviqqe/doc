@@ -31,6 +31,8 @@ The answer is yes.
 
 Note that clearing fields of its own types is always possible because otherwise such types' values do not exist at runtime.
 
-[pen]: https://arxiv.org/abs/1908.05647
+[pen]: https://github.com/pen-lang/pen
+[ocaml]: https://ocaml.org/
+[haskell]: https://www.haskell.org/
 [immutable beans]: https://arxiv.org/abs/1908.05647
 [perceus]: https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/
