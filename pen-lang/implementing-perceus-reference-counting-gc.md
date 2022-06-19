@@ -38,7 +38,7 @@ The answer is yes.
 
 > WIP
 
-Note that dropping fields of its own types is always possible in practice because otherwise such types' values do not exist at runtime.
+Note that dropping fields of its own types is always possible for self-recursive types in practice because otherwise such types' values cannot exist at runtime.
 
 ## Conclusion
 
