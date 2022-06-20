@@ -10,7 +10,7 @@ The Perceus reference counting algorithm is a thread-safe ownership-based refere
 
 ## Implementing the algorithm
 
-What I've implemented so far in [Pen][pen] are two core functionalities of the Perceus algorithm:
+What I've implemented so far in Pen are two core functionalities of the Perceus algorithm:
 
 - In-place updates of records on heap
 - Relaxed atomic operations on reference counts
