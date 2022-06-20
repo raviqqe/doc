@@ -67,19 +67,6 @@ let bar = {
 
 Note that dropping fields containing its own types is possible for self-recursive types in practice in most cases because otherwise such types' values cannot exist at runtime unless they are dynamically generated in functions or thunks in the fields.
 
-### Keeping reference counts in mind
-
-Related to the section above, you might need to change your codes written in your language with the Perceus RC so that it updates old data with new data effectively. For example, when you are updating a map type like the following code:
-
-```elm
-f : Number -> Map String Number
-f i =
-  if i == 0 then
-    Map.empty
-  else
-    Map.insert (f (i - 1)) (Number.toString i) i
-```
-
 ## Conclusion
 
 In my experience so far, implementing the Perceus algorithm appears to be fairly straightforward compared with the other non-RC GC algorithms while there are some points to be careful about especially if you are not familiar with low-level concurrency and atomic instructions.
