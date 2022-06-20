@@ -53,7 +53,7 @@ type A =
     A { x: A }
   | Nil
 
-f : A -> A
+f : { x: A } -> { x: A }
 
 foo : A
 foo = A { x: Nil }
