@@ -20,8 +20,10 @@ By implementing all of those optimizations in [the Koka programming language](ht
 What I've implemented so far in Pen are two core functionalities of the Perceus algorithm:
 
 - In-place updates of records on heap
-  - This corresponds to heap reuse specialization above.
+  - This corresponds to heap reuse specialization described above.
 - Relaxed atomic operations on reference counts
+
+Due to some language feature differences between Koka and Pen, I needed to make some modifications to the algorithm. First, Pen doesn't need any complex algorithm for in-place record updates with heap reuse specialization because it has syntax for record updates and its lowered to its mid-level intermediate representation (MIR) where the RC algorithm is applied directly.
 
 Although I've also implemented generic heap reuse for heap blocks initially, I've reverted it back for now because I realized that it won't improve performance much due to some language differences between Pen and the languages in the paper. In addition, the implementation doesn't implement borrow inference either.
 
