@@ -13,7 +13,7 @@ The Perceus reference counting algorithm is a thread-safe ownership-based refere
 - Non-atomic operations or atomic operations with relaxed memory ordering for heap blocks not shared by multiple threads
 - Borrow inference to reduce reference count operations
 
-By implementing all of those optimizations in [the Koka programming language](https://github.com/koka-lang/koka), they achieved GC overhead much less than the other languages including OCaml, Haskell, and even C++ in several common algorithms and data structures, such as red-black tree. For more information, see [the latest version of the paper][perceus].
+By implementing all of those optimizations in [the Koka programming language](https://github.com/koka-lang/koka), they achieved GC overhead much less than the other languages including OCaml, Haskell, and even C++ in several algorithms and data structures that keep common sub-structure of them often, such as red-black tree. For more information, see [the latest version of the paper][perceus].
 
 ## Implementing the algorithm
 
