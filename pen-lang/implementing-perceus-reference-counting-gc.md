@@ -47,10 +47,9 @@ let foo = { x: none }
 
 let bar = {
   ...foo,
-  x: match foo.x as x {
-    none -> none,
-    A -> f x
-  }
+  x: match foo.x as x
+    | none -> none
+    | A -> f x
 }
 ```
 
