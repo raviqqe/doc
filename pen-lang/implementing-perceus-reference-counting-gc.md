@@ -6,7 +6,7 @@ In this post, I describe my experience and some caveats about implementing and u
 
 ## Overview of Perceus
 
-> WIP
+The Perceus reference counting algorithm is a thread-safe ownership-based reference counting algorithm with several optimizations:
 
 ## Implementing the algorithm
 
@@ -38,7 +38,7 @@ In general, to get most out of heap reuse in the algorithm, you need to write yo
 
 When your language has record types and has syntax for record field access, things might be a little complex. Let's think about the following pseudo code:
 
-```
+```elm
 type A = { x: A | none }
 
 f : A -> A
@@ -61,7 +61,7 @@ Note that dropping fields containing its own types is possible for self-recursiv
 
 Related to the section above, you might need to change your codes written in your language with the Perceus RC so that it updates old data with new data effectively. For example, when you are updating a map type like the following code:
 
-```pen
+```elm
 f : Number -> Map String Number
 f i =
   if i == 0 then
