@@ -34,7 +34,7 @@ The main part of the algorithms are implemented in the files below for a compile
 
 ### Counting back synchronized references to 0
 
-In the Perceus reference counting GC, references are never reverted back to un-synchronized state once they get synchronized. But you may wonder if this is necessary or not.
+In the Perceus reference counting GC, heap blocks are never reverted back to un-synchronized state once they get synchronized. But you may wonder if this is necessary or not.
 
 The answer is yes.
 
