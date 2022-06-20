@@ -50,10 +50,10 @@ When your language has record types and has syntax for record field access, thin
 
 ```elm
 type A =
-    A { x: A }
+    A { x: A, y: Int }
   | Nil
 
-f : { x: A } -> { x: A }
+f : { x: A, y: Int } -> { x: A, y: Int }
 
 foo : A
 foo = A { x: Nil }
