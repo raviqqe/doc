@@ -57,9 +57,9 @@ foo : A
 foo = { x: Nothing, y: 42 }
 
 bar : A
-bar = A {
-    ...foo,
-    x: case foo.x of
+bar = {
+    foo |
+    x = case foo.x of
       Nil -> Nil
       A x -> f x
   }
