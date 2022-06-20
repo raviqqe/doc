@@ -49,22 +49,20 @@ In general, to get most out of heap reuse in the algorithm, you need to write yo
 When your language has record types and has syntax for record field access, things might be a little complex. Let's think about the following pseudo code:
 
 ```elm
-type A =
-    A { x: A, y: Int }
-  | Nil
+type alias A = { x: Maybe A, y: Int }
 
-f : { x: A, y: Int } -> { x: A, y: Int }
+f : A -> A
 
 foo : A
-foo = A { x: Nil }
+foo = { x: Nothing, y: 42 }
 
 bar : A
 bar = A {
-  ...foo,
-  x: case foo.x of
-    Nil -> Nil
-    A x -> f x
-}
+    ...foo,
+    x: case foo.x of
+      Nil -> Nil
+      A x -> f x
+  }
 ```
 
 > WIP
