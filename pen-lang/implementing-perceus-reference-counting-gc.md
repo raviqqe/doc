@@ -8,11 +8,17 @@ In this post, I describe my experience and some caveats about implementing and u
 
 The Perceus reference counting algorithm is a thread-safe ownership-based reference counting algorithm with several optimizations:
 
+- Heap reuse
+- Heap reuse specialization
+- Multi-thread flags
+- Borrow inference
+
 ## Implementing the algorithm
 
 What I've implemented so far in Pen are two core functionalities of the Perceus algorithm:
 
 - In-place updates of records on heap
+  - This corresponds to heap reuse specialization above.
 - Relaxed atomic operations on reference counts
 
 Although I've also implemented generic heap reuse for heap blocks initially, I've reverted it back for now because I realized that it won't improve performance much due to some language differences between Pen and the languages in the paper. In addition, the implementation doesn't implement borrow inference either.
