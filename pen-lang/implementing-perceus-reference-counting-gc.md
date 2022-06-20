@@ -32,7 +32,7 @@ The answer is yes.
 
 ## Benefitting from the algorithm
 
-> WIP
+In general, to get most out of heap reuse in the algrorithm, you need to write your code so that data structures filled with old data get updated with small updates of new data. Pen's compiler previously had a performance bug where a relatively old data structure was merged into a new one of the same type. As a result, the code to merge two pieces of data was taking almost double in time although semantically the logic was correct.
 
 ### Recursive data types
 
