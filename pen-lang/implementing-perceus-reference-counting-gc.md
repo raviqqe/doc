@@ -12,7 +12,7 @@ In this post, I describe my experience and some caveats about implementing and u
 
 What I've implemented so far in [Pen][pen] are two core functionalities of the Perceus algorithm:
 
-- In-place updates of record type values
+- In-place updates of records on heap
 - Heap reuse on updates
 
 Although I've also implemented generic heap reuse for heap blocks initially, I've reverted it back for now because I realized that it won't improve performance much due to some language differences between Pen and the languages in the paper. In addition, the implementation doesn't implement borrow inference either.
