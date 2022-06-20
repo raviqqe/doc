@@ -15,7 +15,7 @@ What I've implemented so far in [Pen][pen] are two core functionalities of the P
 - In-place updates of record type values
 - Heap reuse on updates
 
-Although I've also implemented generic heap reuse for heap blocks initially, I've reverted it back for now because I realized that it won't improve performance much due to some language differences between Pen and the languages in the paper. In addition, the implementation doesn't implment borrow inference either.
+Although I've also implemented generic heap reuse for heap blocks initially, I've reverted it back for now because I realized that it won't improve performance much due to some language differences between Pen and the languages in the paper. In addition, the implementation doesn't implement borrow inference either.
 
 The main part of the algorithms are implemented in the files below for a compiler itself and a FFI library:
 
