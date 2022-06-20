@@ -9,7 +9,7 @@ In this post, I describe my experience and some caveats about implementing and u
 The Perceus reference counting algorithm is a thread-safe ownership-based reference counting algorithm with several optimizations:
 
 - Heap reuse on data structure construction and deconstruction (pattern matching)
-- Heap reuse specialization (in-place updates)
+- Heap reuse specialization (in-place updates of data structures)
 - Relaxed atomic operations
 - Borrow inference
 
