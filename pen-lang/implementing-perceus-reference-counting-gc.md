@@ -25,7 +25,7 @@ What I've implemented so far in Pen are two core functionalities of the Perceus 
 
 Due to some language feature differences between Koka and Pen, I needed to make some modifications to the algorithm. First, Pen doesn't need any complex algorithm for in-place record updates with heap reuse specialization because it has syntax for record updates and its lowered to its mid-level intermediate representation (MIR) where the RC algorithm is applied directly.
 
-Although I've also implemented generic heap reuse for heap blocks initially, I've reverted it back for now because I realized that it won't improve performance much due to some language differences between Pen and the languages in the paper. In addition, the implementation doesn't implement borrow inference either.
+Secondly, although I've also implemented generic reuse of heap blocks that matches their frees and allocations in functions initially, I've reverted it back for now because I realized that it won't improve performance much in Pen because of lack of pattern matching syntax and unboxing of small record. In addition, the implementation doesn't include borrow inference yet as it had the least contribution to performance in a previous paper.
 
 The main part of the algorithms are implemented in the files below for a compiler itself and a FFI library:
 
