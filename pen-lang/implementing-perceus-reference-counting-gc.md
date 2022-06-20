@@ -60,8 +60,8 @@ bar : A
 bar = {
     foo |
     x = case foo.x of
-      Nil -> Nil
-      A x -> f x
+      Nothing -> Nothing
+      Some x -> f x
   }
 ```
 
