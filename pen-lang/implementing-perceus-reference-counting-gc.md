@@ -15,7 +15,7 @@ What I've implemented so far in [Pen][pen] are two core functionalities of the P
 - In-place updates of record type values
 - Heap reuse on updates
 
-Although I've also implemented generic heap reuse for heap blocks initially, I've reverted it back for now because I realized that it won't improve performance much due to some language differences between Pen and the languages in the paper.
+Although I've also implemented generic heap reuse for heap blocks initially, I've reverted it back for now because I realized that it won't improve performance much due to some language differences between Pen and the languages in the paper. In addition, the implementation doesn't implment borrow inference either.
 
 The main part of the algorithms are implemented in the files below for a compiler itself and a FFI library:
 
@@ -47,16 +47,29 @@ let foo = { x: none }
 
 let bar = {
   ...foo,
-  x: match x = foo.x {
-      none -> none,
-      A -> f x
-    }
+  x: match foo.x as x {
+    none -> none,
+    A -> f x
   }
+}
 ```
 
 > WIP
 
 Note that dropping fields containing its own types is possible for self-recursive types in practice in most cases because otherwise such types' values cannot exist at runtime unless they are dynamically generated in functions or thunks in the fields.
+
+### Keeping reference counts in mind
+
+Related to the section above, you might need to change your codes written in your language with the Perceus RC so that it updates old data with new data effectively. For example, when you are updating a map type like the following code:
+
+```pen
+f : Number -> Map String Number
+f i =
+  if i == 0 then
+    Map.empty
+  else
+    Map.insert (f (i - 1)) (Number.toString i) i
+```
 
 ## Conclusion
 
