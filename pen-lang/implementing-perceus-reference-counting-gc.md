@@ -44,7 +44,7 @@ The answer is no because in that case we need to synchronize those references _u
 1. Some computation goes on...
 1. Thread B drops the reference.
 1. Thread A drops the reference *and* frees its inner memory block.
-   - Or, thread A reuse the memory block for heap reuse optimization mentioned in the earlier section.
+   - Or, thread A reuses the memory block for heap reuse optimization mentioned in the earlier section.
 
 ## Benefitting from the algorithm
 
