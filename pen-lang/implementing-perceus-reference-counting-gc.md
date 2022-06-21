@@ -27,7 +27,7 @@ Due to some differences of language features between Koka and Pen, I needed to m
 
 Secondly, although I've also implemented generic reuse of heap blocks that matches their frees and allocations in functions initially, I've reverted it back for now since I realized that it won't improve performance much in Pen because of lack of pattern matching syntax with deconstruction and another optimization of small record unboxing planned to be implemented later. In addition, the implementation doesn't include borrow inference yet as it had the least contribution to performance reported in a previous paper.
 
-The main part of the algorithms is implemented in the source files below of a compiler itself and an FFI library in Rust:
+The main part of the algorithm is implemented in the source files of a compiler itself and an FFI library in Rust listed below:
 
 - https://github.com/pen-lang/pen/blob/d44df6d9cdcbe97fcdd5ac14c4de30f4897664ff/lib/mir-fmm/src/reference_count/pointer.rs
 - https://github.com/pen-lang/pen/blob/d44df6d9cdcbe97fcdd5ac14c4de30f4897664ff/lib/ffi/src/arc/arc_block.rs
