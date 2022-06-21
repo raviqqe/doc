@@ -36,7 +36,7 @@ The main part of the algorithms is implemented in the source files below of a co
 
 > In this section, I use the term "synchronized" to mean "marked as shared by multiple threads." In Koka and Lean 4, they use the term "shared" to mean the same thing but I rephrased it to reduce confusion.
 
-In the Perceus reference counting GC, memory blocks have mainly two _un-synchronized_ and _synchronized_ states represented by positive and negative counts respectively. heap blocks are _synchronized_ before they get shared with other threads and are never reverted back to _un-synchronized_ state once they get synchronized. But you may wonder if this is necessary or not. If you have a memory block with a reference count of 1, that also means it's not shared with any other threads anymore. So isn't it possible to use a common count value of 0 to represent unique references and reduce overhead of some atomic operations potentially?
+In the Perceus reference counting GC, memory blocks have mainly two _un-synchronized_ and _synchronized_ states represented by positive and negative counts respectively. heap blocks are _synchronized_ before they get shared with other threads and are never reverted back to _un-synchronized_ state once they get synchronized. But you may wonder if this is necessary or not. If we have a memory block with a reference count of 1, that also means it's not shared with any other threads anymore. So isn't it possible to use a common count value of 0 to represent unique references and reduce overhead of some atomic operations potentially?
 
 The answer is no because in that case we need to synchronize those references _un-synchronized_ back with drops of those references by the other threads with a release memory ordering. For example, let's consider a situation where a thread shares a reference with the other thread:
 
@@ -46,11 +46,13 @@ The answer is no because in that case we need to synchronize those references _u
 1. Thread A drops the reference *and* frees its inner memory block.
    - Or, thread A reuses the memory block for heap reuse optimization mentioned in the earlier section.
 
-So if references can be _un-synchronized_ back, we always need to use atomic operations with an acquire memory ordering at the point (4) above to make all side effects performed by thread B at the point (3) visible for thread A. Otherwise, thread A might free or rewrite memory locations thread B is trying to read.
+So if references can be _un-synchronized_ back, we always need to use atomic operations with an acquire memory ordering at the point (4) above to make all side effects performed by thread B at the point (3) visible for thread A. Otherwise, thread A might free or rewrite memory locations thread B is trying to read. So in the result, we rather increases the overhead of atomic operations for references never _synchronized_ before.
+
+Honestly speaking, I'm not really experienced with this low-level programming for concurrency and made some other mistakes in the first implementation in my language.
 
 ## Benefitting from the algorithm
 
-In general, to get most out of heap reuse in the algorithm, you need to write your code so that data structures filled with old data get updated with small updates of new data. Pen's compiler previously had a performance bug where a relatively old data structure was merged into a new one of the same type. As a result, the code to merge two pieces of data was taking almost double in time although semantically the logic was correct.
+In general, to get most out of heap reuse in the algorithm, we need to write codes so that data structures filled with old data get updated with small updates of new data. Pen's compiler previously had a performance bug where a relatively old data structure was merged into a new one of the same type. As a result, the code to merge two pieces of data was taking almost double in time although semantically the logic was correct.
 
 ### Recursive data types
 
