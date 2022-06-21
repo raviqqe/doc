@@ -46,15 +46,16 @@ In general, to get most out of heap reuse in the algorithm, you need to write yo
 
 ### Recursive data types
 
-When your language has record types and has syntax for record field access, things might be a little complex. Let's think about the following pseudo code:
+When your language has record types and has syntax for record field access, things might be a little complex. Let's think about the following pseudo code where we want to update recursive data structure of type `A` in place (The code is written in [Elm](https://elm-lang.org/) but assume that we implemented it with Perceus.):
 
 ```elm
 type alias A = { x: Maybe A, y: Int }
 
 f : A -> A
 
+-- From here, assume we are in a function rather than a module scope.
 foo : A
-foo = { x: Nothing, y: 42 }
+foo = { x = Nothing, y =  42 }
 
 bar : A
 bar = {
@@ -65,7 +66,20 @@ bar = {
   }
 ```
 
-> WIP
+At the line of `Some x -> f x`, the program applies a function `f` to a field value `x` which originates from `foo`. However, at this point of function application, we are still keeping the record value `foo` itself and the value of `x` has two references.
+
+In order to update the value of `x` in place, you need to rather deconstruct `foo` into its inner values as follows.
+
+```elm
+bar =
+  let { x, y } = foo
+  in
+    { x = case x of
+          Nothing -> Nothing
+          Some x -> f x
+    , y = y
+    }
+```
 
 Note that dropping fields containing its own types is possible for self-recursive types in practice in most cases because otherwise such types' values cannot exist at runtime unless they are dynamically generated in functions or thunks in the fields.
 
