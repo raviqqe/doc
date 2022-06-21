@@ -46,7 +46,7 @@ The answer is no because in that case we need to synchronize memory operations o
 1. Thread A drops the reference *and* frees its inner memory block.
    - Or, thread A reuses the memory block for heap reuse optimization mentioned in the earlier section.
 
-So if references can be _un-synchronized_ back, we always need to use atomic operations with acquire memory ordering at the point (4) above to make all side effects performed by thread B at the point (3) visible for thread A. Otherwise, thread A might free or rewrite memory locations thread B is trying to read. So in the result, we rather increases the overhead of atomic operations for references never _synchronized_ before.
+So if references can be _un-synchronized_ back, we always need to use atomic operations with acquire memory ordering at the point (4) above to make all side effects performed by thread B at the point (3) visible for thread A. Otherwise, thread A might free or rewrite memory locations thread B is trying to read! So in the result, we rather increases the overhead of atomic operations for references never _synchronized_ before.
 
 Honestly speaking, I'm not really experienced with this low-level programming for concurrency and made some other mistakes in the first implementation in my language.
 
