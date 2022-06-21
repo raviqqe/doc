@@ -38,7 +38,7 @@ The main part of the algorithms is implemented in the source files below of a co
 
 In the Perceus reference counting GC, memory blocks have mainly two _un-synchronized_ and _synchronized_ states represented by positive and negative counts respectively. heap blocks can be _synchronized_ before they get shared with other threads and are never reverted back to _un-synchronized_ state once they get synchronized. But you may wonder if this is necessary or not. If you have a memory block with a reference count of 1, that also means it's not shared with any other threads anymore. So isn't it possible to use a common count value of 0 to represent unique references?
 
-The answer is no because we need to synchronize those un-synchronized references with the drops by the other threads once references are synchronized.
+The answer is no because in that case we need to synchronize those references _un-synchronized_ back with drops with a release memory ordering by the other threads once references are synchronized.
 
 ## Benefitting from the algorithm
 
