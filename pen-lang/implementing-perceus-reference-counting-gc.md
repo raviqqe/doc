@@ -34,11 +34,9 @@ The main part of the algorithms is implemented in the source files below of a co
 
 ### Counting back synchronized references to 0
 
-In the Perceus reference counting GC, heap blocks are never reverted back to un-synchronized state once they get synchronized. But you may wonder if this is necessary or not.
+> In this section, I use the term "synchronized" to mean "marked as shared by multiple threads." In Koka and Lean 4, they use the term "shared" to mean the same thing but I rephrased it to reduce confusion.
 
-The answer is yes.
-
-> WIP
+In the Perceus reference counting GC, heap blocks are never reverted back to un-synchronized state once they get synchronized. But you may wonder if this is necessary or not. If you have a mory block with a reference count of 1, that also means it's not shared with any other threads anymore.
 
 ## Benefitting from the algorithm
 
