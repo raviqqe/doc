@@ -36,7 +36,9 @@ The main part of the algorithms is implemented in the source files below of a co
 
 > In this section, I use the term "synchronized" to mean "marked as shared by multiple threads." In Koka and Lean 4, they use the term "shared" to mean the same thing but I rephrased it to reduce confusion.
 
-In the Perceus reference counting GC, heap blocks are never reverted back to un-synchronized state once they get synchronized. But you may wonder if this is necessary or not. If you have a mory block with a reference count of 1, that also means it's not shared with any other threads anymore.
+In the Perceus reference counting GC, reference counts have mainly two states of _un-synchronized_ and _synchronized_ represented by positive and negative counts respectively. heap blocks can be _synchronized_ before they get shared with other threads and are never reverted back to _un-synchronized_ state once they get synchronized. But you may wonder if this is necessary or not. If you have a memory block with a reference count of 1, that also means it's not shared with any other threads anymore. So isn't it possible to use a common count value of 0 to represent unique references?
+
+The answer is no because we need to synchronize those un-synchronized references with the drops by the other threads once references are synchronized.
 
 ## Benefitting from the algorithm
 
