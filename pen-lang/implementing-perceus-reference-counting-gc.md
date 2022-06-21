@@ -63,7 +63,7 @@ f : A -> A
 
 -- From here, assume we are in a function rather than a module scope.
 foo : A
-foo = { x = Nothing, y =  42 }
+foo = { x = Nothing, y = 42 }
 
 bar : A
 bar = {
