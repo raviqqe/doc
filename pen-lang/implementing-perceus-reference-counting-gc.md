@@ -66,9 +66,7 @@ bar = {
   }
 ```
 
-At the line of `Some x -> f x`, the program applies a function `f` to a field value `x` which originates from `foo`. However, at this point of function application, we are still keeping the record value `foo` itself and the value of `x` has two references.
-
-In order to update the value of `x` in place, you need to rather deconstruct `foo` into its inner values as follows.
+At the line of `Some x -> f x`, the program applies a function `f` to a field value `x` which originates from `foo`. However, at this point of the function application, we are still keeping the record value `foo` itself and the value of `x` has two references! In order to update the value of `x` in place, you need to rather deconstruct `foo` into its inner values as follows.
 
 ```elm
 bar =
