@@ -62,7 +62,7 @@ bar = {
     foo |
     x = case foo.x of
       Nothing -> Nothing
-      Some x -> f x
+      Just x -> f x
   }
 ```
 
@@ -72,9 +72,10 @@ At the line of `Some x -> f x`, the program applies a function `f` to a field va
 bar =
   let { x, y } = foo
   in
-    { x = case x of
-          Nothing -> Nothing
-          Some x -> f x
+    { x =
+      case x of
+        Nothing -> Nothing
+        Just x -> f x
     , y = y
     }
 ```
