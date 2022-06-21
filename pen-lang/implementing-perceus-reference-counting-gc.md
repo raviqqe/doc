@@ -21,7 +21,7 @@ What I've implemented so far in Pen are two core functionalities of the Perceus 
 
 - In-place updates of records on heap
   - This corresponds to heap reuse specialization described above.
-- Relaxed atomic operations on reference counts
+- Relaxed atomic operations on references not shared by multiple threads
 
 Due to some differences of language features between Koka and Pen, I needed to make some modifications to the algorithm. First, Pen doesn't need any complex algorithm for in-place record updates with heap reuse specialization because it has [syntax for record updates](https://pen-lang.org/references/language/types.html#records) and its lowered directly into its mid-level intermediate representation (MIR) where the RC algorithm is applied.
 
