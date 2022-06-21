@@ -46,6 +46,8 @@ The answer is no because in that case we need to synchronize those references _u
 1. Thread A drops the reference *and* frees its inner memory block.
    - Or, thread A reuses the memory block for heap reuse optimization mentioned in the earlier section.
 
+So if references can be _un-synchronized_ back, we always need to use atomic operations with an acquire memory ordering at the point (4) above to make all side effects performed by thread B at the point (3) visible for thread A. Otherwise, thread A might free or rewrite memory locations thread B is trying to read.
+
 ## Benefitting from the algorithm
 
 In general, to get most out of heap reuse in the algorithm, you need to write your code so that data structures filled with old data get updated with small updates of new data. Pen's compiler previously had a performance bug where a relatively old data structure was merged into a new one of the same type. As a result, the code to merge two pieces of data was taking almost double in time although semantically the logic was correct.
