@@ -66,8 +66,8 @@ foo : A
 foo = { x = Nothing, y = 42 }
 
 bar : A
-bar = {
-    foo |
+bar = 
+  { foo |
     x = case foo.x of
       Nothing -> Nothing
       Just x -> f x
