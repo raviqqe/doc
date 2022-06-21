@@ -10,7 +10,7 @@ The Perceus reference counting algorithm is a thread-safe ownership-based refere
 
 - Heap reuse on data structure construction and deconstruction (pattern matching)
 - Heap reuse specialization (in-place updates of data structures)
-- Non-atomic operations or atomic operations with a relaxed memory ordering for heap blocks not shared by multiple threads
+- Non-atomic operations or atomic operations with relaxed memory ordering for heap blocks not shared by multiple threads
 - Borrow inference to reduce reference count operations
 
 By implementing all of those optimizations in [the Koka programming language](https://github.com/koka-lang/koka), they achieved GC overhead much less and execution time faster than the other languages including OCaml, Haskell, and even C++ in several algorithms and data structures that frequently keep common sub-structures of them, such as red-black trees. For more information, see [the latest version of the paper][perceus].
@@ -38,7 +38,7 @@ The main part of the algorithms is implemented in the source files below of a co
 
 In the Perceus reference counting GC, memory blocks have mainly two _un-synchronized_ and _synchronized_ states represented by positive and negative counts respectively. heap blocks are _synchronized_ before they get shared with other threads and are never reverted back to _un-synchronized_ state once they get synchronized. But you may wonder if this is necessary or not. If we have a memory block with a reference count of 1, that also means it's not shared with any other threads anymore. So isn't it possible to use a common count value of 0 to represent unique references and reduce overhead of some atomic operations potentially?
 
-The answer is no because in that case we need to synchronize those references _un-synchronized_ back with drops of those references by the other threads with a release memory ordering. For example, let's consider a situation where a thread shares a reference with the other thread:
+The answer is no because in that case we need to synchronize those references _un-synchronized_ back with drops of those references by the other threads with release memory ordering. For example, let's consider a situation where a thread shares a reference with the other thread:
 
 1. Thread A shares a reference with thread B.
 1. Some computation goes on...
@@ -46,7 +46,7 @@ The answer is no because in that case we need to synchronize those references _u
 1. Thread A drops the reference *and* frees its inner memory block.
    - Or, thread A reuses the memory block for heap reuse optimization mentioned in the earlier section.
 
-So if references can be _un-synchronized_ back, we always need to use atomic operations with an acquire memory ordering at the point (4) above to make all side effects performed by thread B at the point (3) visible for thread A. Otherwise, thread A might free or rewrite memory locations thread B is trying to read. So in the result, we rather increases the overhead of atomic operations for references never _synchronized_ before.
+So if references can be _un-synchronized_ back, we always need to use atomic operations with acquire memory ordering at the point (4) above to make all side effects performed by thread B at the point (3) visible for thread A. Otherwise, thread A might free or rewrite memory locations thread B is trying to read. So in the result, we rather increases the overhead of atomic operations for references never _synchronized_ before.
 
 Honestly speaking, I'm not really experienced with this low-level programming for concurrency and made some other mistakes in the first implementation in my language.
 
