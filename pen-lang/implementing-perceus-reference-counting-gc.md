@@ -87,7 +87,7 @@ When I look at [the Koka's documentation](https://koka-lang.github.io/koka/doc/b
 
 In my experience so far, implementing the Perceus algorithm appears to be fairly straightforward compared with the other non-RC GC algorithms while there are some points to be careful about especially if you are not familiar with low-level concurrency and atomic instructions.
 
-I'm pretty happy having the algorithm implemented in my language and seeing it performing well despite its simple implementation. The Perceus RC can be a game changer in functional programming as it outperforms traditional GC's in common patterns of functional programming. However, it's definitely not for everyone and most likely affects your language design.
+I'm pretty happy having the algorithm implemented in my language and seeing it performing well despite its simple implementation. The Perceus RC can be a game changer in functional programming as it outperforms traditional GC's on several common patterns in functional programming. However, it's definitely not for everyone and most likely affects your language design.
 
 Finally, thanks for reading! I would appreciate your feedbacks on this post and [the Pen programming language][pen]. The language's new release has been blocked by [LLVM 14 adoption in Homebrew](https://github.com/Homebrew/homebrew-core/pull/97618) but the ticket had some progress in the last few weeks. So I can probably release v0.4 of it soon...
 
