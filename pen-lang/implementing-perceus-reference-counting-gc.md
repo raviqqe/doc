@@ -91,7 +91,7 @@ bar =
     }
 ```
 
-Note that dropping fields containing its own types is possible for self-recursive types in most cases in practice because otherwise such types' values cannot exist at runtime unless they are dynamically generated in functions or thunks in those fields.
+Note that, even if languages do not support record deconstruction, dropping fields containing its own types is possible for self-recursive types in most cases in practice because otherwise such types' values cannot exist at runtime unless they are dynamically generated in functions or thunks in those fields.
 
 When I look at [the Koka's documentation](https://koka-lang.github.io/koka/doc/book.html#sec-copying), it seems to have record type support but I couldn't figure out how it solves this case yet. It's also an option to expose the compiler's details and allow annotations to enforce in-place updates for end-users while it might not be the best option in a long term.
 
