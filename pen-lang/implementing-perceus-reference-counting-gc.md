@@ -121,7 +121,7 @@ The implementation uses lists to represent a field and lives so that it causes m
 
 The map update benchmark includes the time taken by insertion too for map initialization.
 
-- A number of entries: 10,000
+- A number of entries: 100,000
 - Key type: 64-bit floating point number
 - Data structure: [Hash-Array Mapped Trie (HAMT)](https://en.wikipedia.org/wiki/Hash_array_mapped_trie)
 - Implementation
