@@ -4,6 +4,7 @@
     "bazel",
     "bindgen",
     "cloe",
+    "deallocation",
     "deserialization",
     "dyndep",
     "hamt",
