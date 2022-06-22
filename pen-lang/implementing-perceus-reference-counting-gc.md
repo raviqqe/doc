@@ -50,7 +50,7 @@ So if references can be _un-synchronized_ back, we always need to use atomic ope
 
 ## Benefitting from the algorithm
 
-In general, to get the most out of heap reuse in the Perceus algorithm, we need to write codes so that data structures filled with old data are updated with small portion of new data. Pen's compiler previously had a performance bug where a relatively old data structure was merged into a new one of the same type. As a result, the code to merge two pieces of data was taking almost double in time although the logic was semantically correct.
+In general, to get the most out of heap reuse in the Perceus algorithm, we need to write codes so that data structures filled with old data are updated with a small portion of new data. Pen's compiler previously had a performance bug where a relatively old data structure was merged into a new one of the same type. As a result, the code to merge two pieces of data was taking almost double in time although the logic was semantically correct.
 
 ### Recursive data types
 
@@ -91,7 +91,7 @@ bar =
     }
 ```
 
-Note that, even if languages do not support record deconstruction, dropping fields containing its own types is possible for self-recursive types in most cases in practice because otherwise such types' values cannot exist at runtime unless they are dynamically generated in functions or thunks in those fields.
+Note that, even if languages do not support record deconstruction, for self-recursive types, dropping fields containing the types themselves is possible in most cases in practice because otherwise such types' values cannot exist at runtime unless they are dynamically generated in functions or thunks in those fields.
 
 When I look at [the Koka's documentation](https://koka-lang.github.io/koka/doc/book.html#sec-copying), it seems to support record types but I couldn't find out how it handles this specific case yet. It's also an option to expose the compiler's details and allow annotations to enforce in-place updates for end-users while it might not be the best option in a long term.
 
