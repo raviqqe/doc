@@ -103,9 +103,9 @@ Here, I would like to show some benchmark results. Details of the benchmark conf
 
 |                       | Atomic RC (s) | Perceus RC (s) | Improvement (times) |
 | --------------------- | ------------- | -------------- | ------------------- |
-| Conway's game of life | 1.712         | 1.175          | 1.5                 |
-| Hash map creation     |               |                | 1.5                 |
-| Hash map update       |               |                | 1.5                 |
+| Conway's game of life | 2.136         | 1.142          | 1.87                |
+| Hash map insertion    | 0.909         | 0.255          | 3.57                |
+| Hash map update       | 1.935         | 0.449          | 4.31                |
 
 #### Conway's game of life
 
@@ -139,6 +139,33 @@ Also, special thanks to the developers of [Koka][koka] for answering my question
 ## Appendix
 
 ### Raw benchmark results
+
+Environment:
+
+```sh
+> uname -a
+Linux xenon 5.13.0-1033-gcp #40~20.04.1-Ubuntu SMP Tue Jun 14 00:44:12 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+> lscpu
+Architecture:            x86_64
+  CPU op-mode(s):        32-bit, 64-bit
+  Address sizes:         46 bits physical, 48 bits virtual
+CPU(s):                  4
+  On-line CPU(s) list:   0-3
+Vendor ID:               GenuineIntel
+  Model name:            Intel(R) Xeon(R) CPU @ 2.20GHz
+Virtualization features:
+  Hypervisor vendor:     KVM
+Caches (sum of all):
+  L1d:                   64 KiB (2 instances)
+  L1i:                   64 KiB (2 instances)
+  L2:                    512 KiB (2 instances)
+  L3:                    55 MiB (1 instance)
+
+> lsmem
+Memory block size:       128M
+Total online memory:       4G
+```
 
 #### Conway's game of life
 
