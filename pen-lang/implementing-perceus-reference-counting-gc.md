@@ -103,7 +103,7 @@ I'm pretty happy having the algorithm implemented in my language and seeing it p
 
 Finally, thanks for reading! I would appreciate your feedbacks on this post and [the Pen programming language][pen]. The language's new release has been blocked by [LLVM 14 adoption in Homebrew](https://github.com/Homebrew/homebrew-core/pull/97618) but the ticket had some progress in the last few weeks. So I can probably release v0.4 of it soon...
 
-Also, special thanks to [Koka][koka]'s developers answering my questions on the algorithm! That was really helpful!
+Also, special thanks to developers of [Koka][koka] answering my questions on the algorithm! That was really helpful!
 
 [koka]: https://github.com/koka-lang/koka
 [pen]: https://github.com/pen-lang/pen
