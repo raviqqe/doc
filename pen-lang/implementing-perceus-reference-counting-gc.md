@@ -74,7 +74,8 @@ bar =
   { foo |
     x = case foo.x of
       Nothing -> Nothing
-      Just x -> f x -- Two references to `x` on evaluation of `f x` here!
+      -- There are two references to `x` on evaluation of `f x` here!
+      Just x -> f x
   }
 ```
 
