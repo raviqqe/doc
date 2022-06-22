@@ -99,7 +99,7 @@ When I look at [the Koka's documentation](https://koka-lang.github.io/koka/doc/b
 
 ## Benchmarking
 
-Here, I would like to show some benchmark results. Details of the benchmark configurations are in a section later. Note that Pen still lacks some basic optimizations to reduce heap allocations (e.g. lambda lifting, unboxing small values on heap.) So the eventual performance improvements by Perceus RC would be lower than those results
+Here, I'm excited to show benchmark results and their significant improvments. Details of the benchmark configurations are in a section later. Note that Pen still lacks some basic optimizations to reduce heap allocations (e.g. lambda lifting, unboxing small values on heap.) So the eventual performance improvements by Perceus RC would be lower than those results.
 
 |                       | Atomic RC (s) | Perceus RC (s) | Improvement (times) |
 | --------------------- | ------------- | -------------- | ------------------- |
