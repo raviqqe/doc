@@ -107,6 +107,8 @@ Here, I'm excited to show benchmark results and their significant improvments. D
 | Hash map insertion    | 0.909         | 0.255          | 3.57                |
 | Hash map update       | 1.935         | 0.449          | 4.31                |
 
+### Configuration
+
 #### Conway's game of life
 
 [The implementation](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/examples/life-game) uses lists to represent a field and lives so that it causes many allocations and deallocations of memory blocks on heap.
