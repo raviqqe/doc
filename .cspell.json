@@ -8,6 +8,7 @@
     "dyndep",
     "hamt",
     "hhkb",
+    "koka",
     "malloc",
     "marp",
     "mlir",
