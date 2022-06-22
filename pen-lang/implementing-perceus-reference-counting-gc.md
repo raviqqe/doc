@@ -124,7 +124,7 @@ The map update benchmark includes the time taken by insertion too for map initia
 - A number of entries: 10,000
 - Key type: 64-bit floating point number
 - Data structure: [Hash-Array Mapped Trie (HAMT)](https://en.wikipedia.org/wiki/Hash_array_mapped_trie)
-- Implementations
+- Implementation
   - [Insertion](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/benchmark/number-set)
   - [Update](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/benchmark/number-set-update)
 
