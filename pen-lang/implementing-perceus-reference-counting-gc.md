@@ -57,7 +57,10 @@ In general, to get most out of heap reuse in the Perceus algorithm, we need to w
 When your language has record types and syntax for record field access, things might be a little complex. Let's think about the following pseudo code where we want to update a recursive data structure of type `A` in place (The code is written in [Elm](https://elm-lang.org/) but assume that we implemented it with Perceus.):
 
 ```elm
-type alias A = { x: Maybe A, y: Int }
+type alias A =
+  { x : Maybe A
+  , y : Int
+  }
 
 f : A -> A
 
