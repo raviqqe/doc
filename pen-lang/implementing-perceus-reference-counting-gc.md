@@ -70,10 +70,11 @@ foo = { x = Nothing, y = 42 }
 
 bar : A
 bar =
+  -- Here, we want to reuse a memory block of `foo`...
   { foo |
     x = case foo.x of
       Nothing -> Nothing
-      Just x -> f x
+      Just x -> f x -- Two references to `x` on evaluation of `f x` here!
   }
 ```
 
