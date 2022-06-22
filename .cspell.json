@@ -5,6 +5,7 @@
     "bindgen",
     "cloe",
     "deallocation",
+    "deallocations",
     "deserialization",
     "dyndep",
     "hamt",
