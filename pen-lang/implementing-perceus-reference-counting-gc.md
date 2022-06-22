@@ -99,7 +99,25 @@ When I look at [the Koka's documentation](https://koka-lang.github.io/koka/doc/b
 
 ## Benchmarking
 
-> WIP
+Here, I would like to show some benchmark results. Details of the benchmark configurations are in a section later. Note that Pen still lacks some basic optimizations to reduce heap allocations (e.g. lambda lifting, unboxing small values on heap.) So the eventual performance improvements by Perceus RC would be lower than those results
+
+|                       | Atomic RC (s) | Perceus RC (s) | Improvement (times) |
+| --------------------- | ------------- | -------------- | ------------------- |
+| Conway's game of life | 1.712         | 1.175          | 1.5                 |
+| Hash map creation     |               |                | 1.5                 |
+| Hash map update       |               |                | 1.5                 |
+
+#### Conway's game of life
+
+[The implementation](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/examples/life-game) uses lists to represent a field and lives so that it causes many allocations and deallocations of memory blocks on heap.
+
+- Field size: 20 x 40
+- Iterations: 100
+
+#### Hash map creation/update
+
+- A number of entries: 10,000
+- Key type: 64-bit floating point number
 
 ## Conclusion
 
@@ -117,3 +135,58 @@ Also, special thanks to the developers of [Koka][koka] for answering my question
 [haskell]: https://www.haskell.org/
 [immutable beans]: https://arxiv.org/abs/1908.05647
 [perceus]: https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/
+
+## Appendix
+
+### Raw benchmark results
+
+#### Conway's game of life
+
+```sh
+> hyperfine -w 3 ./life-old ./life-new
+Benchmark 1: ./life-old
+  Time (mean ± σ):      2.136 s ±  0.033 s    [User: 1.699 s, System: 0.392 s]
+  Range (min … max):    2.097 s …  2.206 s    10 runs
+
+Benchmark 2: ./life-new
+  Time (mean ± σ):      1.142 s ±  0.035 s    [User: 1.087 s, System: 0.009 s]
+  Range (min … max):    1.102 s …  1.203 s    10 runs
+
+Summary
+  './life-new' ran
+    1.87 ± 0.06 times faster than './life-old'
+```
+
+#### Hash map insertion
+
+```sh
+> hyperfine -w 3 ./insert-old ./insert-new
+Benchmark 1: ./insert-old
+  Time (mean ± σ):     909.0 ms ±  14.2 ms    [User: 605.7 ms, System: 250.6 ms]
+  Range (min … max):   890.7 ms … 932.8 ms    10 runs
+
+Benchmark 2: ./insert-new
+  Time (mean ± σ):     254.8 ms ±   5.1 ms    [User: 189.1 ms, System: 15.0 ms]
+  Range (min … max):   247.0 ms … 263.4 ms    12 runs
+
+Summary
+  './insert-new' ran
+    3.57 ± 0.09 times faster than './insert-old'
+```
+
+#### Hash map update
+
+```sh
+> hyperfine -w 3 ./update-old ./update-new
+Benchmark 1: ./update-old
+  Time (mean ± σ):      1.935 s ±  0.032 s    [User: 1.405 s, System: 0.476 s]
+  Range (min … max):    1.879 s …  1.976 s    10 runs
+
+Benchmark 2: ./update-new
+  Time (mean ± σ):     448.6 ms ±  14.4 ms    [User: 381.5 ms, System: 15.1 ms]
+  Range (min … max):   430.9 ms … 484.3 ms    10 runs
+
+Summary
+  './update-new' ran
+    4.31 ± 0.16 times faster than './update-old'
+```
