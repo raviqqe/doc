@@ -2,7 +2,7 @@
 
 Reference counting (RC) has rather been a minor party to the other garbage collection (GC) algorithms in functional programming in the last decades as, for example, [OCaml][ocaml] and [Haskell][haskell] use non-RC GC. However, several recent papers, such as [Counting Immutable Beans: Reference Counting Optimized for Purely Functional Programming][immutable beans] and [Perceus: Garbage Free Reference Counting with Reuse][perceus], showed efficiency of highly optimized RC GC in functional languages with sacrifice or restriction of some language features like circular references. The latter paper introduced an efficient RC GC algorithm called Perceus that is basically _all-in-one_ RC.
 
-In this post, I describe my experience and some caveats about implementing and gaining benefits from the Perceus RC. I've been developing [a programming language called Pen](https://github.com/pen-lang/pen) and implemented large part of the Perceus RC there. I hope this post helps someone who is implementing the algorithm or even deciding if it's worth implementing it in their own languages.
+In this post, I describe my experience and some caveats about implementing and gaining benefits from the Perceus RC. I've been developing [a programming language called Pen][pen] and implemented large part of the Perceus RC there. I hope this post helps someone who is implementing the algorithm or even deciding if it's worth implementing it in their own languages.
 
 ## Overview of Perceus
 
@@ -13,7 +13,7 @@ The Perceus reference counting algorithm is a thread-safe ownership-based refere
 - Non-atomic operations or atomic operations with relaxed memory ordering for heap blocks not shared by multiple threads
 - Borrow inference to reduce reference count operations
 
-By implementing all of those optimizations in [the Koka programming language](https://github.com/koka-lang/koka), they achieved GC overhead much less and execution time faster than the other languages including OCaml, Haskell, and even C++ in several algorithms and data structures that frequently keep common sub-structures of them, such as red-black trees. For more information, see [the latest version of the paper][perceus].
+By implementing all of those optimizations in [the Koka programming language][koka], they achieved GC overhead much less and execution time faster than the other languages including OCaml, Haskell, and even C++ in several algorithms and data structures that frequently keep common sub-structures of them, such as red-black trees. For more information, see [the latest version of the paper][perceus].
 
 ## Implementing the algorithm
 
@@ -103,6 +103,9 @@ I'm pretty happy having the algorithm implemented in my language and seeing it p
 
 Finally, thanks for reading! I would appreciate your feedbacks on this post and [the Pen programming language][pen]. The language's new release has been blocked by [LLVM 14 adoption in Homebrew](https://github.com/Homebrew/homebrew-core/pull/97618) but the ticket had some progress in the last few weeks. So I can probably release v0.4 of it soon...
 
+Also, special thanks to [Koka][koka]'s developers answering my questions on the algorithm! That was really helpful!
+
+[koka]: https://github.com/koka-lang/koka
 [pen]: https://github.com/pen-lang/pen
 [ocaml]: https://ocaml.org/
 [haskell]: https://www.haskell.org/
