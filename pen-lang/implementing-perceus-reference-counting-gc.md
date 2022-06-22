@@ -101,11 +101,11 @@ When I look at [the Koka's documentation](https://koka-lang.github.io/koka/doc/b
 
 Here, I'm excited to show benchmark results and their significant improvements. Details of the benchmark configurations are in a section later. Note that Pen still lacks some basic optimizations to reduce heap allocations (e.g. lambda lifting, unboxing small values on heap.) So the eventual performance improvements by Perceus RC would be lower than those results.
 
-|                       | Atomic RC (s) | Perceus RC (s) | Improvement (times) |
-| --------------------- | ------------- | -------------- | ------------------- |
-| Conway's game of life | 2.136         | 1.142          | 1.87                |
-| Hash map insertion    | 0.909         | 0.255          | 3.57                |
-| Hash map update       | 1.935         | 0.449          | 4.31                |
+|                       | Atomic RC (seconds) | Perceus RC (seconds) | Improvement (times) |
+| --------------------- | ------------------- | -------------------- | ------------------- |
+| Conway's game of life | 2.136               | 1.142                | 1.87                |
+| Hash map insertion    | 0.909               | 0.255                | 3.57                |
+| Hash map update       | 1.935               | 0.449                | 4.31                |
 
 ### Configuration
 
