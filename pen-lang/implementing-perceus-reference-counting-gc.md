@@ -111,15 +111,22 @@ Here, I'm excited to show benchmark results and their significant improvements. 
 
 #### Conway's game of life
 
-[The implementation](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/examples/life-game) uses lists to represent a field and lives so that it causes many allocations and deallocations of memory blocks on heap.
+The implementation uses lists to represent a field and lives so that it causes many allocations and deallocations of memory blocks on heap.
 
 - Field size: 20 x 40
 - Iterations: 100
+- [Implementation](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/examples/life-game)
 
-#### Hash map creation/update
+#### Hash map insertion/update
+
+The map update benchmark includes the time taken by insertion too for map initialization.
 
 - A number of entries: 10,000
 - Key type: 64-bit floating point number
+- Data structure: [Hash-Array Mapped Trie (HAMT)](https://en.wikipedia.org/wiki/Hash_array_mapped_trie)
+- Implementations
+  - [Insertion](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/benchmark/number-set)
+  - [Update](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/benchmark/number-set-update)
 
 ## Conclusion
 
