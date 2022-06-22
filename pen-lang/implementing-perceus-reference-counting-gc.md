@@ -23,7 +23,7 @@ What I've implemented so far in Pen are two core functionalities of the Perceus 
   - This corresponds to heap reuse specialization described above.
 - Relaxed atomic operations on references not shared by multiple threads
 
-Due to some differences of language features between Koka and Pen, I needed to make some modifications to the algorithm. First, Pen doesn't need any complex algorithm for in-place record updates with heap reuse specialization because it has [syntax for record updates](https://pen-lang.org/references/language/types.html#records) and its lowered directly into its mid-level intermediate representation (MIR) where the RC algorithm is applied.
+Due to some differences in language features between Koka and Pen, I needed to make some modifications to the algorithm. First, Pen doesn't need any complex algorithm for in-place record updates with heap reuse specialization because it has [syntax for record updates](https://pen-lang.org/references/language/types.html#records) and its lowered directly into its mid-level intermediate representation (MIR) where the RC algorithm is applied.
 
 Secondly, although I've also implemented generic reuse of heap blocks that matches their frees and allocations in functions initially, I've reverted it back for now since I realized that it won't improve performance much in Pen because of lack of pattern matching syntax with deconstruction and another optimization of small record unboxing planned to be implemented later. In addition, the implementation doesn't include borrow inference yet as it had the least contribution to performance reported in a previous paper.
 
