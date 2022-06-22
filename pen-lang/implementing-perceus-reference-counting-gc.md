@@ -50,7 +50,7 @@ So if references can be _un-synchronized_ back, we always need to use atomic ope
 
 ## Benefitting from the algorithm
 
-In general, to get most out of heap reuse in the Perceus algorithm, we need to write codes so that data structures filled with old data are updated with new data. Pen's compiler previously had a performance bug where a relatively old data structure was merged into a new one of the same type. As a result, the code to merge two pieces of data was taking almost double in time although the logic was semantically correct.
+In general, to get most out of heap reuse in the Perceus algorithm, we need to write codes so that data structures filled with old data are updated with small portion of new data. Pen's compiler previously had a performance bug where a relatively old data structure was merged into a new one of the same type. As a result, the code to merge two pieces of data was taking almost double in time although the logic was semantically correct.
 
 ### Recursive data types
 
