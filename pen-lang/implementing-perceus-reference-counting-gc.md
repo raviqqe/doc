@@ -64,7 +64,7 @@ type alias A =
 
 f : A -> A
 
--- From here, assume we are in a function rather than a module scope.
+-- From here, assume that we are in a function scope rather than a module scope.
 foo : A
 foo = { x = Nothing, y = 42 }
 
