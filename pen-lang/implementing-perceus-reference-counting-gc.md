@@ -95,6 +95,10 @@ Note that, even if languages do not support record deconstruction, for self-recu
 
 When I look at [the Koka's documentation](https://koka-lang.github.io/koka/doc/book.html#sec-copying), it seems to support record types but I couldn't find out how it handles this specific case yet. It's also an option to expose the compiler's details and allow annotations to enforce in-place updates for end-users while it might not be the best option in a long term.
 
+## Benchmarking
+
+> WIP
+
 ## Conclusion
 
 In my experience so far, implementing the Perceus algorithm appears to be fairly straightforward compared with the other non-RC GC algorithms while there are a few stumbling blocks especially if you are not familiar with low-level concurrency and atomic instructions.
