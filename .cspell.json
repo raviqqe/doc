@@ -4,11 +4,14 @@
     "bazel",
     "bindgen",
     "cloe",
+    "deallocation",
+    "deallocations",
     "deserialization",
     "dyndep",
     "hamt",
     "hhkb",
     "koka",
+    "lsmem",
     "malloc",
     "marp",
     "mlir",
@@ -20,6 +23,7 @@
     "tailcallopt",
     "valgrind",
     "wadler",
-    "wasi"
+    "wasi",
+    "xeon"
   ]
 }

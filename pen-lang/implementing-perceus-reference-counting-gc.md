@@ -70,9 +70,11 @@ foo = { x = Nothing, y = 42 }
 
 bar : A
 bar =
+  -- Here, we want to reuse a memory block of `foo`...
   { foo |
     x = case foo.x of
       Nothing -> Nothing
+      -- There are two references to `x` on evaluation of `f x` here!
       Just x -> f x
   }
 ```
@@ -95,6 +97,39 @@ Note that, even if languages do not support record deconstruction, for self-recu
 
 When I look at [the Koka's documentation](https://koka-lang.github.io/koka/doc/book.html#sec-copying), it seems to support record types but I couldn't find out how it handles this specific case yet. It's also an option to expose the compiler's details and allow annotations to enforce in-place updates for end-users while it might not be the best option in a long term.
 
+## Benchmarking
+
+Here, I'm excited to show some benchmark results and their improvements. Details of their configurations are in a section later. Note that Pen still lacks some basic optimizations to reduce heap allocations (e.g. lambda lifting, unboxing small values on heap.) So the eventual performance improvements by Perceus would be lower than those results.
+
+Since I've never implemented the other GC methods like mark-and-sweep for Pen before, this is not a comparison of RC GC vs non-RC GC but rather a proof of how performant traditional thread-safe RC can be adopting Perceus on functional programming languages.
+
+|                       | Atomic RC (seconds) | Perceus RC (seconds) | Improvement (times) |
+| --------------------- | ------------------- | -------------------- | ------------------- |
+| Conway's game of life | 2.136               | 1.142                | 1.87                |
+| Hash map insertion    | 0.909               | 0.255                | 3.57                |
+| Hash map update       | 1.935               | 0.449                | 4.31                |
+
+### Configuration
+
+#### Conway's game of life
+
+The implementation uses lists to represent a field and lives so that it causes many allocations and deallocations of memory blocks on heap.
+
+- Field size: 20 x 40
+- Iterations: 100
+- [Implementation](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/examples/life-game)
+
+#### Hash map insertion/update
+
+The map update benchmark includes the time taken by insertion for map initialization as well.
+
+- A number of entries: 100,000
+- Key type: 64-bit floating point number
+- Data structure: [Hash-Array Mapped Trie (HAMT)](https://en.wikipedia.org/wiki/Hash_array_mapped_trie)
+- Implementation
+  - [Insertion](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/benchmark/number-set)
+  - [Update](https://github.com/pen-lang/pen/tree/319d1b881dbd9b19407c1f9eed7a163253eca83b/benchmark/number-set-update)
+
 ## Conclusion
 
 In my experience so far, implementing the Perceus algorithm appears to be fairly straightforward compared with the other non-RC GC algorithms while there are a few stumbling blocks especially if you are not familiar with low-level concurrency and atomic instructions.
@@ -111,3 +146,85 @@ Also, special thanks to the developers of [Koka][koka] for answering my question
 [haskell]: https://www.haskell.org/
 [immutable beans]: https://arxiv.org/abs/1908.05647
 [perceus]: https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/
+
+## Appendix
+
+### Raw benchmark results
+
+Environment:
+
+```sh
+> uname -a
+Linux xenon 5.13.0-1033-gcp #40~20.04.1-Ubuntu SMP Tue Jun 14 00:44:12 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+> lscpu
+Architecture:            x86_64
+  CPU op-mode(s):        32-bit, 64-bit
+  Address sizes:         46 bits physical, 48 bits virtual
+CPU(s):                  4
+  On-line CPU(s) list:   0-3
+Vendor ID:               GenuineIntel
+  Model name:            Intel(R) Xeon(R) CPU @ 2.20GHz
+Virtualization features:
+  Hypervisor vendor:     KVM
+Caches (sum of all):
+  L1d:                   64 KiB (2 instances)
+  L1i:                   64 KiB (2 instances)
+  L2:                    512 KiB (2 instances)
+  L3:                    55 MiB (1 instance)
+
+> lsmem
+Memory block size:       128M
+Total online memory:       4G
+```
+
+#### Conway's game of life
+
+```sh
+> hyperfine -w 3 ./life-old ./life-new
+Benchmark 1: ./life-old
+  Time (mean ± σ):      2.136 s ±  0.033 s    [User: 1.699 s, System: 0.392 s]
+  Range (min … max):    2.097 s …  2.206 s    10 runs
+
+Benchmark 2: ./life-new
+  Time (mean ± σ):      1.142 s ±  0.035 s    [User: 1.087 s, System: 0.009 s]
+  Range (min … max):    1.102 s …  1.203 s    10 runs
+
+Summary
+  './life-new' ran
+    1.87 ± 0.06 times faster than './life-old'
+```
+
+#### Hash map insertion
+
+```sh
+> hyperfine -w 3 ./insert-old ./insert-new
+Benchmark 1: ./insert-old
+  Time (mean ± σ):     909.0 ms ±  14.2 ms    [User: 605.7 ms, System: 250.6 ms]
+  Range (min … max):   890.7 ms … 932.8 ms    10 runs
+
+Benchmark 2: ./insert-new
+  Time (mean ± σ):     254.8 ms ±   5.1 ms    [User: 189.1 ms, System: 15.0 ms]
+  Range (min … max):   247.0 ms … 263.4 ms    12 runs
+
+Summary
+  './insert-new' ran
+    3.57 ± 0.09 times faster than './insert-old'
+```
+
+#### Hash map update
+
+```sh
+> hyperfine -w 3 ./update-old ./update-new
+Benchmark 1: ./update-old
+  Time (mean ± σ):      1.935 s ±  0.032 s    [User: 1.405 s, System: 0.476 s]
+  Range (min … max):    1.879 s …  1.976 s    10 runs
+
+Benchmark 2: ./update-new
+  Time (mean ± σ):     448.6 ms ±  14.4 ms    [User: 381.5 ms, System: 15.1 ms]
+  Range (min … max):   430.9 ms … 484.3 ms    10 runs
+
+Summary
+  './update-new' ran
+    4.31 ± 0.16 times faster than './update-old'
+```
