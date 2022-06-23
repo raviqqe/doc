@@ -101,7 +101,7 @@ When I look at [the Koka's documentation](https://koka-lang.github.io/koka/doc/b
 
 Here, I'm excited to show some benchmark results and their improvements. Details of their configurations are in a section later. Note that Pen still lacks some basic optimizations to reduce heap allocations (e.g. lambda lifting, unboxing small values on heap.) So the eventual performance improvements by Perceus would be lower than those results.
 
-Since I've never implemented the other GC methods like mark-and-sweep for Pen before, this is not a comparison of RC GC vs non-RC GC but rather a proof of how performant traditional thread-safe RC can be adopting Perceus for functional programming languages.
+Since I've never implemented the other GC methods like mark-and-sweep for Pen before, this is not a comparison of RC GC vs non-RC GC but rather a proof of how performant traditional thread-safe RC can be adopting Perceus on functional programming languages.
 
 |                       | Atomic RC (seconds) | Perceus RC (seconds) | Improvement (times) |
 | --------------------- | ------------------- | -------------------- | ------------------- |
