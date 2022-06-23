@@ -11,6 +11,7 @@
     "hamt",
     "hhkb",
     "koka",
+    "lsmem",
     "malloc",
     "marp",
     "mlir",
@@ -22,6 +23,7 @@
     "tailcallopt",
     "valgrind",
     "wadler",
-    "wasi"
+    "wasi",
+    "xeon"
   ]
 }
