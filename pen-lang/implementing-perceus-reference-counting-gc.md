@@ -121,7 +121,7 @@ The implementation uses lists to represent a field and lives so that it causes m
 
 #### Hash map insertion/update
 
-The map update benchmark includes the time taken by insertion too for map initialization.
+The map update benchmark includes the time taken by insertion for map initialization as well.
 
 - A number of entries: 100,000
 - Key type: 64-bit floating point number
