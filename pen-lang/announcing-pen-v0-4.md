@@ -1,6 +1,6 @@
 # Announcing the Pen programming language v0.4
 
-I've been working on [a new programming language called Pen][pen] for almost a year. And I'm excited to announce [its v0.4 release][pen-v0-4] here!
+I've been working on [a new programming language called Pen][pen] for almost a year. And I'm excited to announce [its v0.4 release](https://github.com/pen-lang/pen/releases/tag/v0.4.0) here!
 
 In this post, I would like to introduce the Pen programming language to new people, and describe the current status and new features included in the release.
 
@@ -48,12 +48,13 @@ As I mentioned above, LLVM was upgraded to 14 in the new release, which fixed ma
 
 ## Conclusion
 
-Thank you for reading this article! And if you are interested in [the Pen programming language][pen], please [install](https://pen-lang/introduction/install.html) and try it out!
+We've hit the great v0.4 milestone of Pen.
+
+Thank you for reading this article! And if you are interested in [Pen][pen], please [install](https://pen-lang/introduction/install.html), try it out, and give some feedback!
 
 <!--
 Therefore, although every function is asynchronous and preemptible, it doesn't require any CPU architecture-specific implementation of context switches. They are simply `ret` instructions.
 -->
 
 [pen]: https://pen-lang.org
-[pen-v0-4]: https://github.com/pen-lang/pen/releases/tag/v0.4.0
 [perceus]: https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/
