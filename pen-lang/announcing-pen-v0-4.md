@@ -18,9 +18,13 @@ Since a v0.4 release of the language had been blocked by the [LLVM 14](https://r
 
 ### The Perceus reference counting GC
 
-One of the biggest changes in a compiler is adoption of [the Perceus reference counting GC]perceus]. It is one of the state-of-the-art GC algorithms for functional programming languages.
+One of the biggest changes in a compiler is adoption of [the Perceus reference counting GC][perceus]. It is one of the state-of-the-art GC algorithms for functional programming languages.
+
+> WIP
 
 ### `go` expression
+
+> WIP
 
 ### LLVM upgrade to 14
 
