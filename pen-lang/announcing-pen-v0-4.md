@@ -4,6 +4,14 @@ I'm excited to announce [a v0.4 release of the Pen programming language](https:/
 
 In this post, I would like to introduce the Pen programming language to new people, and describe the current status and new features included in the release.
 
+## Install
+
+> WIP
+
+```sh
+brew install pen-lang/pen/pen
+```
+
 ## Introduction
 
 The Pen programming language is a programming language for _scalable_ software development. It's a statically typed functional programming language with automatic precise memory management. It aims to make development of large-scale applications easy and scalable by focusing on **maintainability** and **portability** of software. Programs written in Pen should be simple, testable, and flexible against changes.
