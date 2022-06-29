@@ -34,6 +34,8 @@ As I mentioned above, LLVM was upgraded to 14 in the new release, which fixed ma
 - `pen test` command failed on macOS with multiple tests.
 - macOS with M1 chips could not run binaries compiled by the compiler.
 
+> WIP
+
 ## Conclusion
 
 Thank you for reading this article! And if you are interested in [the Pen programming language](), please [install](https://pen-lang/introduction/install.html) and try it out!
