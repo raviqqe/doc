@@ -6,7 +6,7 @@ In this post, I would like to introduce the Pen programming language to new peop
 
 ## Introduction
 
-The Pen programming language is a programming language for scalable software development. It's a statically typed functional programming language with automatic precise memory management. It aims to make development of large-scale applications easy and scalable by focusing on **maintainability** and **portability** of software. Programs written in Pen should be simple, testable, and flexible against changes.
+The Pen programming language is a programming language for _scalable_ software development. It's a statically typed functional programming language with automatic precise memory management. It aims to make development of large-scale applications easy and scalable by focusing on **maintainability** and **portability** of software. Programs written in Pen should be simple, testable, and flexible against changes.
 
 The language that influenced Pen the most is [Go](https://go.dev/). You can also call Pen as a **functional** descendant of the Go programming language with focus on **application programming**. Pen shares the same goal of Go like simplicity, reliability, efficiency, etc. Though, Pen explicitly excludes system programming from its domain to pursue further simplicity.
 
