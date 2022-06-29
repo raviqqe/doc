@@ -38,7 +38,7 @@ Similarly to Go's `gofmt` and differently from some other formatters like `rustf
 
 ### Documentation generator
 
-> WIP
+The new release also includes a new `pen document` command that generates a documentation file of a package in Markdown. To generate the documentation, you can simply run `pen document` with some options, such as a package name and URL, in a package directory. For more information, see `pen document --help`.
 
 ### `Http` and `Sql` standard packages
 
