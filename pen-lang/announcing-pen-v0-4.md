@@ -12,6 +12,10 @@ The language that influenced Pen the most is [Go](https://go.dev/). You can also
 
 ## Current status
 
+Pen is still under heavy development. Currently, the language is at the stage of finalizing its syntax. Although the language syntax started with a very small number of constructs at the beginning. We've been adding more and more operations
+
+We have quite a few standard libraries too now.
+
 ## Changes in v0.4
 
 Since a v0.4 release of the language had been blocked by the [LLVM 14](https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html) release, it includes many new features in the language and complementary tools. Here, I've listed some major features of them.
@@ -25,6 +29,12 @@ One of the biggest changes in a compiler is adoption of [the Perceus reference c
 ### `go` expression
 
 > WIP
+
+### `Http` and `Sql` standard packages
+
+In addition to new functions and types in the `Core` and `Os` standard packages, we've added `Http` and `Sql` standard packages. As their names suggest, the `Http` package provides HTTP server and client and the `Sql` package provides a `Sql` client.
+
+Because those packages are dependent on the third-party crates ([`hyper`](https://github.com/hyperium/hyper) and [`sqlx`](https://github.com/launchbadge/sqlx) respectively) in Rust, they are planned **not** to be included the default installation bundle of the language. But they are likely to be separated into different Git repositories.
 
 ### LLVM upgrade to 14
 
