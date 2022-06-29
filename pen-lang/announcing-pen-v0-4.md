@@ -2,9 +2,15 @@
 
 I've been working on [a new programming language called Pen][pen] for almost a year. And I'm excited to announce [its v0.4 release][pen-v0-4] here!
 
+In this post, I would like to introduce the Pen programming language to new people, and describe the current status and new features included in the release.
+
 ## Introduction
 
-The Pen programming language is a programming language for scalable software development. It aims to make development of large-scale applications easy and low-cost by focusing on **maintainability** and **portability** of software. Programs written in Pen should be simple, testable, and flexible against changes.
+The Pen programming language is a programming language for scalable software development. It's a statically typed functional programming language with automatic precise memory management. It aims to make development of large-scale applications easy and scalable by focusing on **maintainability** and **portability** of software. Programs written in Pen should be simple, testable, and flexible against changes.
+
+The language that influenced Pen the most is [Go](https://go.dev/). You can also call Pen as a **functional** descendant of the Go programming language with focus on **application programming**. Pen shares the same goal of Go like simplicity, reliability, efficiency, etc. Though, Pen explicilty excludes system programming from its domain to pursue further simplicity.
+
+## Current status
 
 ## Changes in v0.4
 
@@ -12,7 +18,7 @@ Since a v0.4 release of the language had been blocked by the [LLVM 14](https://r
 
 ### The Perceus reference counting GC
 
-One of the biggest changes in a compiler is adoption of the Perceus reference counting GC.
+One of the biggest changes in a compiler is adoption of [the Perceus reference counting GC]perceus]. It is one of the state-of-the-art GC algorithms for functional programming languages.
 
 ### `go` expression
 
@@ -34,3 +40,4 @@ Therefore, although every function is asynchronous and preemptible, it doesn't r
 
 [pen]: https://pen-lang.org
 [pen-v0-4]: https://github.com/pen-lang/pen/releases/tag/v0.4.0
+[perceus]: https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/
