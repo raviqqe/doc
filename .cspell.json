@@ -17,6 +17,7 @@
     "mlir",
     "nounwind",
     "perceus",
+    "preemptible",
     "quic",
     "raviqqe",
     "struct",
