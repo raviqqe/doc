@@ -18,7 +18,7 @@ We have quite a few standard libraries too now.
 
 ## Changes in v0.4
 
-Since a v0.4 release of the language had been blocked by the [LLVM 14](https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html) release, it includes many new features in the language and complementary tools. Here, I've listed some major features of them.
+Since a v0.4 release of the language had been blocked by the [LLVM 14](https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html) release, it includes many new features in the language and complementary tools. Here are some major features of them.
 
 ### The Perceus reference counting GC
 
@@ -27,6 +27,16 @@ One of the biggest changes in a compiler is adoption of [the Perceus reference c
 > WIP
 
 ### `go` expression
+
+> WIP
+
+### Formatter
+
+Now, Pen is equipped with its official formatter command of `pen format`. This command formats each source file or ones in a directory of the entire package at once. It can also receive source from standard inputs so that it integrates with existing editors and IDEs easily.
+
+Similarly to Go's `gofmt` and differently from some other formatters like `rustfmt` in Rust, the source formatter of Pen does not define any canonical form of source codes given the same tokens. But it rather tries to align indents, and add and remove spaces and newlines given hints extracted from the original source codes so that developers can still control their source codes to make them look beautiful in their own contexts.
+
+### Documentation generator
 
 > WIP
 
@@ -48,7 +58,7 @@ As I mentioned above, LLVM was upgraded to 14 in the new release, which fixed ma
 
 ## Conclusion
 
-We've hit the great v0.4 milestone of Pen.
+We've hit the great v0.4 milestone of Pen. New language syntax, standard packages, other functionalities
 
 Thank you for reading this article! And if you are interested in [Pen][pen], please [install](https://pen-lang/introduction/install.html), try it out, and give some feedback!
 
