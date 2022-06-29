@@ -48,7 +48,7 @@ As I mentioned above, LLVM was upgraded to 14 in the new release, which fixed ma
 
 ## Conclusion
 
-Thank you for reading this article! And if you are interested in [the Pen programming language](), please [install](https://pen-lang/introduction/install.html) and try it out!
+Thank you for reading this article! And if you are interested in [the Pen programming language][pen], please [install](https://pen-lang/introduction/install.html) and try it out!
 
 <!--
 Therefore, although every function is asynchronous and preemptible, it doesn't require any CPU architecture-specific implementation of context switches. They are simply `ret` instructions.
