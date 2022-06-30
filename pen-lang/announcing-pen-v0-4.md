@@ -81,6 +81,9 @@ There are quite a few features planned for the next version of Pen including:
 
 - Generic built-in functions
 - Proper implementation of the C calling convention for FFI
+- More functionalities in standard packages
+
+The C calling convention is already implemented. However, the current naive implementation is inefficient and sometimes requires heap allocations. By implementing it properly, C/Rust functions can be called without unnecessary overheads.
 
 ## Conclusion
 
