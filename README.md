@@ -1,8 +1,10 @@
-# slides
+# doc
 
-Presentation slides written in Markdown
+Documents and slides written in Markdown.
 
 ## Usage
+
+To see slides in HTML,
 
 ```sh
 ./serve.sh
