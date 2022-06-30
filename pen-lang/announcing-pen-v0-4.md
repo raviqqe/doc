@@ -38,6 +38,10 @@ One of the biggest changes in a compiler is adoption of [the Perceus reference c
 
 > WIP
 
+### Rust FFI
+
+[A `pen-ffi` crate](https://crates.io/crates/pen-ffi) is a Rust FFI library for Pen. Thanks to both languages' semantics based on ownerships, they can interoperate with each other very easily. The new standard packages included in this release like `Http` and `Sql` packages are actually simple wrappers of popular crates in Rust. You can also use the FFI library to write your own packages in Pen that wrap Rust crates to utilize existing resources written in Rust and benefit from its growing ecosystem.
+
 ### Formatter
 
 Now, Pen is equipped with its official formatter command of `pen format`. This command formats each source file or ones in a directory of the entire package at once. It can also receive source from standard inputs so that it integrates with existing editors and IDEs easily.
