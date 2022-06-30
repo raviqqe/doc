@@ -77,7 +77,7 @@ Now, most programs written in Pen should work also on macOS with M1 chips as wel
 
 ## Conclusion
 
-We've hit the great v0.4 milestone of Pen. New language syntax, standard packages, other functionalities
+We've hit the great v0.4 milestone of Pen! It contains new syntax, standard packages, and other complementary functionalities.
 
 Thank you for reading this article! And if you are interested in [Pen][pen], please [install](https://pen-lang/introduction/install.html), try it out, and give some feedback!
 
