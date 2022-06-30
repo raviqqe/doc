@@ -1,6 +1,6 @@
 # Announcing the Pen programming language v0.4
 
-I'm excited to announce [a v0.4 release of the Pen programming language](https://github.com/pen-lang/pen/releases/tag/v0.4.0) here! I've been working on [the new functional programming language called Pen][pen] for almost a year. And recently, I released its new version with new syntax constructs, standard packages, [Rust](https://www.rust-lang.org/) FFI and complementary tools like formatter and documentation generator.
+I'm excited to announce [a v0.4 release of the Pen programming language](https://github.com/pen-lang/pen/releases/tag/v0.4.0) here! I've been working on [the new functional programming language called Pen][pen] for almost a year. And recently, I released its new version with new syntax constructs, standard packages, [Rust](https://www.rust-lang.org/) FFI (Foreign Function Interface) and complementary tools like formatter and documentation generator.
 
 In this post, I would like to introduce the Pen programming language to new people, and describe the current status and new features included in the latest release.
 
@@ -74,6 +74,12 @@ As I mentioned above, LLVM was upgraded to 14 in the new release, which fixed ma
 - macOS with M1 chips could not run binaries compiled by the compiler.
 
 Now, most programs written in Pen should work also on macOS with M1 chips as well as on x86-64 chips. Although there is a plan to support macOS as the first tier platform, we can't guarantee that Pen works properly there due to limitation of CI infrastructure.
+
+## What's next?
+
+There are quite a few features planned for the next version of Pen including:
+
+- Proper implementation of the C calling convention for FFI
 
 ## Conclusion
 
