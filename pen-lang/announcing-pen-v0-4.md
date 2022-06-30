@@ -79,6 +79,7 @@ Now, most programs written in Pen should work also on macOS with M1 chips as wel
 
 There are quite a few features planned for the next version of Pen including:
 
+- Generic built-in functions
 - Proper implementation of the C calling convention for FFI
 
 ## Conclusion
