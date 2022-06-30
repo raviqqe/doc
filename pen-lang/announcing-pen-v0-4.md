@@ -34,13 +34,20 @@ One of the biggest changes in a compiler is adoption of [the Perceus reference c
 
 > WIP
 
-### `go` expression
-
-> WIP
-
 ### Rust FFI
 
 [A `pen-ffi` crate](https://crates.io/crates/pen-ffi) is a Rust FFI library for Pen. Thanks to both languages' semantics based on ownerships, they can interoperate with each other very easily. The new standard packages included in this release like `Http` and `Sql` packages are actually simple wrappers of popular crates in Rust. You can also use the FFI library to write your own packages in Pen that wrap Rust crates to utilize existing resources written in Rust and benefit from its growing ecosystem.
+
+### `go` expression
+
+It's still experimental but we've introduced the first piece of parallel and concurrent computation primitives, `go` expression. By using the `go` expression originating from Go, you can delegate heavy computation, slow I/O, or any other computation you want to perform concurrently to the other execution contexts like threads.
+
+```pen
+future = go \() number {
+  # Some heavy computation...
+  x + y
+}
+```
 
 ### Formatter
 
