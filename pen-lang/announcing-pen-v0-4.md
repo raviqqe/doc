@@ -22,7 +22,9 @@ The language that influenced Pen the most is [Go](https://go.dev/). You can also
 
 ## Current status
 
-Pen is still under heavy development. Currently, the language is at the stage of finalizing its syntax. Although the language syntax started with a very small number of constructs at the beginning. We've been adding more and more operations
+<!-- Pen is still under heavy development. So any functionality changes are expected in the next few releases. -->
+
+Currently, the language is at the stage of finalizing its syntax. Although the language syntax started with a very small number of constructs at the beginning. We've been adding more and more operations
 
 We have quite a few standard libraries too now.
 
