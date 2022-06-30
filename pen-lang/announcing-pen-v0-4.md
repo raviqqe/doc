@@ -6,7 +6,7 @@ In this post, I would like to introduce the Pen programming language to new peop
 
 ## Install
 
-> WIP
+To try out the Pen programming language, you can use [Homebrew](https://brew.sh) to install it on Linux, macOS, and [WSL](https://docs.microsoft.com/en-us/windows/wsl/install).
 
 ```sh
 brew install pen-lang/pen/pen
