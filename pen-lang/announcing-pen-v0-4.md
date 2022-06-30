@@ -22,7 +22,7 @@ The language that influenced Pen the most is [Go](https://go.dev/). You can also
 
 ## Current status
 
-Currently, the language is at the stage of syntax finalization. The last missing piece of the syntax constructs is [generic built-in functions](https://github.com/pen-lang/pen/discussions/1083) similar to Go's. They are expected to be called directly and behave more like built-in operators. By introducing them, Pen can have more built-in operations avoiding complexity increase due to addition of syntax constructs. And it can also become more flexiable as a language against requirement changes in the future.
+Currently, the language is at the stage of syntax finalization. The last missing piece of the syntax constructs is [generic built-in functions](https://github.com/pen-lang/pen/discussions/1083) similar to Go's. They are expected to be called directly and behave more like built-in operators. By introducing them, Pen can have more built-in operations avoiding complexity increase due to addition of syntax constructs. And it can also become more flexible as a language against requirement changes in the future.
 
 ## Changes in v0.4
 
