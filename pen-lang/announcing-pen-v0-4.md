@@ -73,7 +73,7 @@ As I mentioned above, LLVM was upgraded to 14 in the new release, which fixed ma
 - `pen test` command failed on macOS with multiple tests.
 - macOS with M1 chips could not run binaries compiled by the compiler.
 
-> WIP
+Now, most programs written in Pen should work also on macOS with M1 chips as well as on x86-64 chips. Although there is a plan to support macOS as the first tier platform, we can't guarantee that Pen works properly there due to limitation of CI infrastructure.
 
 ## Conclusion
 
