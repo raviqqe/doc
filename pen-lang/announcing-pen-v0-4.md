@@ -1,6 +1,6 @@
 # Announcing the Pen programming language v0.4
 
-I'm excited to announce [a v0.4 release of the Pen programming language](https://github.com/pen-lang/pen/releases/tag/v0.4.0) here! I've been working on [a new programming language called Pen][pen] for almost a year. And recently, we've released its v0.4 with new syntax constructs, standard packages, and complementary toolls like formatter and documentation generator.
+I'm excited to announce [a v0.4 release of the Pen programming language](https://github.com/pen-lang/pen/releases/tag/v0.4.0) here! I've been working on [the new functional programming language called Pen][pen] for almost a year. And recently, I released its v0.4 with new syntax constructs, standard packages, and complementary toolls like formatter and documentation generator.
 
 In this post, I would like to introduce the Pen programming language to new people, and describe the current status and new features included in the release.
 
