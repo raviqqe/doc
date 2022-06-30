@@ -30,9 +30,7 @@ Since a v0.4 release of the language had been blocked by the [LLVM 14](https://r
 
 ### The Perceus reference counting GC
 
-One of the biggest changes in a compiler is adoption of [the Perceus reference counting GC][perceus]. It is one of the state-of-the-art GC algorithms for functional programming languages.
-
-> WIP
+One of the biggest changes in a compiler is implementation of [the Perceus reference counting GC][perceus] (Garbage Collection.) It is one of the state-of-the-art GC algorithms for functional programming languages. Differently from non-reference counting GCs which are more popular in other functional programming languages, such as OCaml and Haskell, its implementation is relatively simple although it performs comparably to them as described in the paper. Also, adoption of a reference counting GC makes programs written in Pen more portable because other GC methods commonly requires full view of memory to track which memory locations are reachable. Though, checking the memory at runtime requires target-specific logic or is impossible on some targets like WASM.
 
 ### Rust FFI
 
