@@ -90,10 +90,6 @@ We've hit the great v0.4 milestone of Pen! It contains new syntax, standard pack
 
 Thank you for reading this article! And if you are interested in [Pen][pen], please [install](https://pen-lang/introduction/install.html), try it out, and give some feedback!
 
-<!--
-Therefore, although every function is asynchronous and preemptible, it doesn't require any CPU architecture-specific implementation of context switches. They are simply `ret` instructions.
--->
-
 [pen]: https://pen-lang.org
 [perceus]: https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/
 [discussion-1083]: https://github.com/pen-lang/pen/discussions/1083
