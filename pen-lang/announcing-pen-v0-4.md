@@ -50,7 +50,7 @@ future = go \() number {
 
 ### Formatter
 
-Now, Pen is equipped with its official formatter command of `pen format`. This command formats each source file or ones in a directory of the entire package at once. It can also receive source from standard inputs so that it integrates with existing editors and IDEs easily.
+Pen is now equipped with its official formatter command, `pen format`. This command formats each source file or all in a package at once. It can also receive source from standard input and emit formatted one to standard output so that it integrates with editors and IDEs easily.
 
 Similarly to Go's `gofmt` and differently from some other formatters like `rustfmt` in Rust, the source formatter of Pen does not define any canonical form of source codes given the same tokens. But it rather tries to align indents, and add and remove spaces and newlines given hints extracted from the original source codes so that developers can still control their source codes to make them look beautiful in their own contexts. For more information, see `pen format --help`.
 
