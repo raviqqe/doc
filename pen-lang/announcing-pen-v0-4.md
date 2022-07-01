@@ -69,7 +69,7 @@ Because those packages depend on the third-party crates ([`hyper`](https://githu
 As I mentioned first, LLVM was upgraded to 14 in the new release finally, which fixed many bugs including the ones related to [tail call optimization](https://github.com/raviqqe/llvm-tail-call-opt-bug). Examples of fixed bugs are:
 
 - Certain operations on the built-in map type led to segmentation faults.
-- `pen test` command failed on macOS with multiple tests.
+- `pen test` command failed on macOS when running multiple tests.
 - macOS with M1 chips could not run binaries compiled by the compiler.
 
 Now, most programs written in Pen should work also on macOS with M1 chips as well as on x86-64 chips. Although there is a plan to support macOS as the first tier platform, we can't guarantee that Pen works properly there due to limitation of CI infrastructure.
