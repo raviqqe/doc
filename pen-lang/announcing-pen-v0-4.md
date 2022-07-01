@@ -66,7 +66,7 @@ Because those packages depend on the third-party crates ([`hyper`](https://githu
 
 ### LLVM upgrade to 14
 
-As I mentioned above, LLVM was upgraded to 14 in the new release, which fixed many bugs including the ones related to [tail call optimization](https://github.com/raviqqe/llvm-tail-call-opt-bug). Examples of fixed bugs are:
+As I mentioned first, LLVM was upgraded to 14 in the new release finally, which fixed many bugs including the ones related to [tail call optimization](https://github.com/raviqqe/llvm-tail-call-opt-bug). Examples of fixed bugs are:
 
 - Certain operations on the built-in map type led to segmentation faults.
 - `pen test` command failed on macOS with multiple tests.
