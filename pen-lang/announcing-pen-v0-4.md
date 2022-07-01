@@ -24,7 +24,7 @@ The language that influenced Pen the most is [Go](https://go.dev/). You can also
 
 ## Current status
 
-Currently, the language is at the stage of syntax finalization. The last missing piece of the syntax constructs is [generic built-in functions](https://github.com/pen-lang/pen/discussions/1083) similar to Go's. They are expected to be called directly and behave similarly to built-in operators rather than normal functions. By introducing them, Pen can implement more built-in operations without increasing the language's complexity due to addition of syntax constructs. Also, that makes Pen more flexible as a language against requirement changes in the future.
+Currently, the language is at the stage of syntax finalization. The last missing piece of the syntax constructs is [generic built-in functions][discussion-1083] similar to Go's. They are expected to be called directly and behave similarly to built-in operators rather than normal functions. By introducing them, Pen can implement more built-in operations without increasing the language's complexity due to addition of syntax constructs. Also, that makes Pen more flexible as a language against requirement changes in the future.
 
 ## Changes in v0.4
 
@@ -78,7 +78,7 @@ Now, most programs written in Pen should work also on macOS with M1 chips as wel
 
 There are quite a few features planned for the next version of Pen including:
 
-- Generic built-in functions
+- [Generic built-in functions][discussion-1083]
 - Proper implementation of the C calling convention for FFI
 - More functionalities in standard packages
 
@@ -96,3 +96,4 @@ Therefore, although every function is asynchronous and preemptible, it doesn't r
 
 [pen]: https://pen-lang.org
 [perceus]: https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/
+[discussion-1083]: https://github.com/pen-lang/pen/discussions/1083
