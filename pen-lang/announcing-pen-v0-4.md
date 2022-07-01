@@ -28,7 +28,7 @@ Currently, the language is at the stage of syntax finalization. The last missing
 
 ## Changes in v0.4
 
-Since a v0.4 release of the language is dependent on and had been blocked by a release of [LLVM 14](https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html), it includes many new features in the language and complementary tools. Here are some major features of them.
+Since a v0.4 release of the language is dependent on and had been blocked by a release of [LLVM 14](https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html), it includes many new features in the language and complementary tools. Here are major ones of them.
 
 ### The Perceus reference counting GC
 
