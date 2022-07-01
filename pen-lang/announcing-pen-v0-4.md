@@ -36,7 +36,7 @@ One of the biggest changes in a compiler is implementation of [the Perceus refer
 
 ### Rust FFI
 
-[A `pen-ffi` crate](https://crates.io/crates/pen-ffi) is a Rust FFI library for Pen. Thanks to both languages' semantics based on ownerships, they can interoperate with each other very easily. The new standard packages included in this release like `Http` and `Sql` packages are actually simple wrappers of third-party crates in Rust. You can also use the Rust FFI library to write your own packages in Pen that wrap Rust crates to utilize existing resources written in Rust and benefit from its growing ecosystem.
+[A `pen-ffi` crate](https://crates.io/crates/pen-ffi) is a Rust FFI library for Pen. Thanks to both languages' semantics based on ownerships, they can interoperate with each other very easily. The new standard packages included in this release like `Http` and `Sql` packages are actually simple wrappers of third-party crates in Rust. Using the Rust FFI library, you can also write your own packages in Pen while utilizing existing resources written in Rust and benefiting from its growing ecosystem.
 
 ### `go` expression
 
