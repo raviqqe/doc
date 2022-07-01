@@ -1,6 +1,6 @@
 # Announcing the Pen programming language v0.4
 
-The Pen programming language is a general-purpose, strongly and statically typed, functional programming language with automatic precise memory management based on ownerships. And I'm excited to announce [its v0.4 release](https://github.com/pen-lang/pen/releases/tag/v0.4.0) here!
+The Pen programming language is a new parallel, concurrent, statically typed, functional programming language. And I'm excited to announce [its v0.4 release](https://github.com/pen-lang/pen/releases/tag/v0.4.0) here!
 
 I've been working on [the new functional programming language called Pen][pen] for almost a year. And recently, I released its new version with new syntax constructs, standard packages, [Rust](https://www.rust-lang.org/) FFI (Foreign Function Interface) and complementary tools like formatter and documentation generator.
 
