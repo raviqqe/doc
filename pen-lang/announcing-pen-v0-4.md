@@ -45,7 +45,6 @@ It's still experimental but we've introduced the first piece of parallel computa
 ```pen
 future = go \() number {
   # Some heavy computation...
-  x + y
 }
 ```
 
