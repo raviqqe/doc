@@ -40,7 +40,7 @@ One of the biggest changes in a compiler is implementation of [the Perceus refer
 
 ### `go` expression
 
-It's still experimental but we've introduced the first piece of parallel computation primitives, `go` expression. By using the `go` expression which originates from Go, you can delegate heavy computation, slow I/O, or any other computation you want to perform concurrently to the other execution contexts like threads.
+It's still experimental but we've introduced the first piece of parallel computation primitives, `go` expression. By using the `go` expression which originates from Go, you can delegate heavy computation, slow I/O, or any other computation you want to perform concurrently to other execution contexts like threads.
 
 ```pen
 future = go \() number {
