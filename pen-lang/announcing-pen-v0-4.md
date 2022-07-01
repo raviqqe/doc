@@ -62,7 +62,7 @@ The new release also includes a new `pen document` command that generates docume
 
 In addition to new functions and types in the `Core` and `Os` standard packages, we've added `Http` and `Sql` standard packages. As their names suggest, the `Http` package provides HTTP server and client logic, and the `Sql` package provides `Sql` client logic.
 
-Because those packages are dependent on the third-party crates ([`hyper`](https://github.com/hyperium/hyper) and [`sqlx`](https://github.com/launchbadge/sqlx) respectively) in Rust, they are planned **not** to be included the default installation bundle of the language. But they are likely to be separated into different Git repositories.
+Because those packages depend on the third-party crates ([`hyper`](https://github.com/hyperium/hyper) and [`sqlx`](https://github.com/launchbadge/sqlx) respectively) in Rust, they are currently planned **not** to be included the default installation bundle of the language. But they are likely to be separated into different Git repositories.
 
 ### LLVM upgrade to 14
 
