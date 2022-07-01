@@ -79,7 +79,7 @@ Now, most programs written in Pen should work also on macOS with M1 chips as wel
 There are quite a few features planned for the next version of Pen including:
 
 - [Generic built-in functions][discussion-1083]
-- Proper implementation of the C calling convention for FFI
+- [Proper implementation of the C calling convention for FFI](https://github.com/pen-lang/pen/issues/444)
 - More functionalities in standard packages
 
 The C calling convention is already implemented. However, the current naive implementation is inefficient and sometimes requires heap allocations. By implementing it properly, C/Rust functions can be called without unnecessary overheads.
