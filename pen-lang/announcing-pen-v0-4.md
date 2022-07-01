@@ -4,7 +4,7 @@ The Pen programming language is a new parallel, concurrent, statically typed, fu
 
 I've been working on this programming language project for almost a year. Recently, we've released its new version with new syntax constructs, standard packages, [Rust](https://www.rust-lang.org/) FFI (Foreign Function Interface) and complementary tools like formatter and documentation generator.
 
-In this post, I would like to introduce the Pen programming language to new people, and describe the current status and new features included in the latest release.
+In this post, I would like to introduce the Pen programming language, and describe the current status and new features included in the latest release.
 
 ## Install
 
