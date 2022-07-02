@@ -24,7 +24,7 @@ The language that influenced Pen the most is [Go](https://go.dev/). You can also
 
 ## Current status
 
-Currently, the language is at the stage of syntax finalization. The last missing piece of the syntax constructs is [generic built-in functions][discussion-1083] similar to Go's. They are expected to be called directly and behave similarly to built-in operators rather than normal functions. By introducing them, Pen can implement more built-in operations without increasing the language's complexity due to addition of syntax constructs. Also, that makes Pen more flexible as a language against requirement changes in the future.
+Currently, the language is at the stage of syntax finalization for v1. The last missing piece of the syntax constructs is [generic built-in functions][discussion-1083] similar to Go's. They are expected to be called directly and behave similarly to built-in operators rather than normal functions. By introducing them, Pen can implement more built-in operations without increasing the language's complexity due to addition of syntax constructs. Also, that makes Pen more flexible as a language against requirement changes in the future.
 
 ## Changes in v0.4
 
@@ -52,7 +52,7 @@ future = go \() number {
 
 Pen is now equipped with its official formatter command, `pen format`. This command formats each source file or all in a package at once. It can also receive source from standard input and emit formatted one to standard output so that it integrates with editors and IDEs easily.
 
-Similarly to Go's `gofmt` and differently from some other formatters like `rustfmt` in Rust, the source formatter of Pen does not define any canonical form of source codes given the same tokens. But it rather tries to align indents, and add and remove spaces and newlines given hints extracted from the original source codes so that developers can still control their source codes to make them look readable in their own contexts. For more information, see `pen format --help`.
+Similarly to Go's `gofmt` and differently from some other formatters like `rustfmt` in Rust, the source formatter of Pen does not define any canonical form of source codes given the same sequences of tokens. But it rather tries to align indents, and add and remove spaces and newlines given hints extracted from the original source codes so that developers can still control their source codes to make them look readable in their own contexts. For more information, see `pen format --help`.
 
 ### Documentation generator
 
@@ -82,11 +82,15 @@ There are quite a few features planned for the next version of Pen including:
 - [Proper implementation of the C calling convention for FFI](https://github.com/pen-lang/pen/issues/444)
 - More functionalities in standard packages
 
-The C calling convention is already implemented. However, the current naive implementation is inefficient and sometimes requires heap allocations. By implementing it properly, C/Rust functions can be called without unnecessary overheads.
+The C calling convention is already implemented. However, the current naive implementation is inefficient and sometimes requires heap allocations. By implementing it properly, Pen can call C/Rust functions without unnecessary overheads.
 
 ## Conclusion
 
-We've hit the great v0.4 milestone of Pen! It contains new syntax, standard packages, and other complementary functionalities.
+We've hit the great v0.4 milestone of Pen! It contains new syntax, standard packages, and other complementary functionalities. Those features include:
+
+- The state-of-the-art reference counting GC
+- Parallel computation primitive (`go` expression)
+- `Http` and `Sql` standard packages
 
 Thank you for reading this article! And if you are interested in [Pen][pen], please [install](https://pen-lang/introduction/install.html), try it out, and give some feedback!
 
