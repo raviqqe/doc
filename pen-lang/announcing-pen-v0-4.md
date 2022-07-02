@@ -86,7 +86,11 @@ The C calling convention is already implemented. However, the current naive impl
 
 ## Conclusion
 
-We've hit the great v0.4 milestone of Pen! It contains new syntax, standard packages, and other complementary functionalities.
+We've hit the great v0.4 milestone of Pen! It contains new syntax, standard packages, and other complementary functionalities. Those featrues include:
+
+- The state-of-the-art reference counting GC
+- Parallel computation primitive (`go` expression)
+- `Http` and `Sql` standard packages
 
 Thank you for reading this article! And if you are interested in [Pen][pen], please [install](https://pen-lang/introduction/install.html), try it out, and give some feedback!
 
