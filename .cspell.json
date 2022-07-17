@@ -16,6 +16,7 @@
     "malloc",
     "marp",
     "mlir",
+    "musttail",
     "nounwind",
     "perceus",
     "preemptible",
