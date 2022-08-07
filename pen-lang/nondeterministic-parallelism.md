@@ -163,14 +163,20 @@ f = \(x foo, y foo) [number] {
 
 # What else do we need?
 
-- The race
+- The `go` and `race` built-in functions can represent many concurrency patterns found in other languages.
+  - [Concurrency in Go](https://www.oreilly.com/library/view/concurrency-in-go/9781491941294/)
+- Circular dependency is apparently impossible to get represented.
+  - e.g. actors talking to and depending on each other
+- There isn't any research on what primitives for concurrent/parallel computation is necessary for programming languages.
+- Existing researches are more about what we can build on the currently available primitives like multi-core CPUs, threads, atomic memory operations, etc.
 
 ---
 
 # Summary
 
-- Progress
-  - Reference counting optimization
-- Next plans
-  - Standard library improvements
+- Pen now has two `go` and `race` built-in functions.
+- They can represent many concurrent/parallel programming patterns.
+- Questions
+  - Are they expressive enough in practice?
+  - What concurrent/parallel computation primitives are necessary for languages to be expressive enough?
   - Application development?
