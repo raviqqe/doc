@@ -16,6 +16,13 @@
 - Capability-based effect system
   - Pass down "effect values" to functions.
 - Parallel computation without data race
+  - Synchronizaton by data structures (e.g. thunks, lazy lists, etc.)
+
+---
+
+# Overview of Pen (continued)
+
+## Example
 
 ```pen
 import Os'Console
@@ -31,9 +38,11 @@ main = \(os Os) none | error {
 
 # Nondeterministic parallel computation
 
-- Foo
-- Nondeterminism is not necessary for parallel computation.
+- Parallel computation is nondeterministic in general.
+- You can't know which piece of computation finishes first (or even if it does!) before running them.
+- **Nondeterminism is not necessary** for parallel computation.
   - e.g. purely functional programs can be parallelized automatically.
+- **Nondeterminism is sometimes beneficial** in parallel computation.
 
 ---
 
