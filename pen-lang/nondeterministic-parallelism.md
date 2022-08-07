@@ -74,7 +74,7 @@ f = \(x foo, y foo) [number] {
 # Nondeterministic parallel computation
 
 - Parallel computation is nondeterministic in general.
-- You can't know which piece of computation finishes first (or even if it does!) before running them.
+- You can't know which codes finish first (or even if they do!) before running them.
 - **Nondeterminism is not necessary** for parallel computation.
   - e.g. purely functional programs can be parallelized automatically.
 - **Nondeterminism is sometimes beneficial** in parallel computation.
