@@ -36,41 +36,6 @@ main = \(os Os) none | error {
 
 ---
 
-# Examples
-
-## Deterministic parallel computation
-
-```pen
-import Os'Console
-
-f = \(x foo, y foo) bar {
-  v = go(\() number {
-    computeA(x)
-  })
-
-  w = computeB(y)
-
-  aggregate(v(), w)
-}
-```
-
----
-
-# Examples
-
-## Nondeterministic parallel computation
-
-```pen
-import Os'Console
-
-f = \(x foo, y foo) [number] {
-  # computeA and computeB produces two series of data computed concurrently.
-  race([[number] computeA(x), computeB(y)])
-}
-```
-
----
-
 # Nondeterministic parallel computation
 
 - Parallel computation is nondeterministic in general.
@@ -83,6 +48,27 @@ f = \(x foo, y foo) [number] {
 ---
 
 # Nondeterminisum in other languages
+
+---
+
+## `Promise` in JavaScript
+
+```javascript
+const foo = async () => {
+  // ...
+};
+
+const bar = async () => {
+  // ...
+};
+
+const main = async () => {
+  const x = foo();
+  const y = await bar();
+
+  (await x) + y;
+};
+```
 
 ## Channels in Go
 
@@ -112,11 +98,72 @@ func main() {
 
 ---
 
-## `Promise.race()` JavaScript
+## `Promise.race()` in JavaScript
 
 ```javascript
 Promise.race([compute(x), compute(y)]);
 ```
+
+---
+
+# Examples in Pen
+
+## Futures
+
+- Deterministic parallel computation
+
+```pen
+import Os'Console
+
+f = \(x foo, y foo) bar {
+  v = go(\() number {
+    computeA(x)
+  })
+
+  w = computeB(y)
+
+  aggregate(v(), w)
+}
+```
+
+---
+
+# Examples in Pen
+
+## Racing two futures
+
+- Nondeterministic parallel computation
+
+```pen
+import Os'Console
+
+f = \(x foo, y foo) [number] {
+  race([[number] [number computeA(x)], [number computeB(y)]])
+}
+```
+
+---
+
+# Examples in Pen
+
+## Lazy lists (streams or channels)
+
+- Nondeterministic parallel computation
+
+```pen
+import Os'Console
+
+f = \(x foo, y foo) [number] {
+  # computeA and computeB produces two series of data computed concurrently.
+  race([[number] computeA(x), computeB(y)])
+}
+```
+
+---
+
+# What else do we need?
+
+- The race
 
 ---
 
