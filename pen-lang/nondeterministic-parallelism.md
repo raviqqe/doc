@@ -77,7 +77,7 @@ f = \(x foo, y foo) [number] {
 - You can't know which codes finish first (or even if they do!) before running them.
 - **Nondeterminism is not necessary** for parallel computation.
   - e.g. purely functional programs can be parallelized automatically.
-- **Nondeterminism is sometimes beneficial** in parallel computation.
+- **Nondeterminism somtimes gives better performance** in parallel computation.
 
 ---
 
