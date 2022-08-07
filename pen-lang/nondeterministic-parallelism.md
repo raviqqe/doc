@@ -70,9 +70,9 @@ const main = async () => {
 };
 ```
 
-## Channels in Go
+---
 
-- a.k.a. concurrent queues
+## Channels in Go
 
 ```go
 func main() {
