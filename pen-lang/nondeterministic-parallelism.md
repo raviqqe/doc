@@ -20,9 +20,9 @@
 
 ---
 
-# Overview of Pen (continued)
+# Examples
 
-## Example
+## Capability-based effect system
 
 ```pen
 import Os'Console
@@ -31,6 +31,26 @@ main = \(os Os) none | error {
   Console'Print(os, "Hello, world!")?
 
   none
+}
+```
+
+---
+
+# Examples
+
+## Deterministic parallel computation
+
+```pen
+import Os'Console
+
+f = \(x foo, y foo) bar {
+  v = go(\() number {
+    computeExpensive(x)
+  })
+
+  w = computeExpensive(y)
+
+  aggregate(v(), w)
 }
 ```
 
@@ -51,7 +71,6 @@ main = \(os Os) none | error {
 ## Channels in Go
 
 - a.k.a. concurrent queues
-
 
 ```go
 func main() {
@@ -74,7 +93,6 @@ func main() {
   }
 }
 ```
-
 
 ---
 
