@@ -14,7 +14,7 @@
   - Reference counting with in-place mutation
   - No circular dependency
 - Capability-based effect system
-  - Pass down "effect values" to functions.
+  - Pass down "effect arguments" to functions.
 - Parallel computation without data race
   - Synchronizaton by data structures (e.g. thunks, lazy lists, etc.)
 
