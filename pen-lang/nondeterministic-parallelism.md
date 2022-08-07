@@ -78,10 +78,11 @@ f = \(x foo, y foo) [number] {
 - **Nondeterminism is not necessary** for parallel computation.
   - e.g. purely functional programs can be parallelized automatically.
 - **Nondeterminism somtimes gives better performance** in parallel computation.
+  - e.g. consumers want to consume values in an order in which they get produced.
 
 ---
 
-# Common representation of nondeterminisum
+# Nondeterminisum in other languages
 
 ## Channels in Go
 
@@ -111,7 +112,11 @@ func main() {
 
 ---
 
-# Functional representation of concurrent queues
+## `Promise.race()` JavaScript
+
+```javascript
+Promise.race([compute(x), compute(y)]);
+```
 
 ---
 
