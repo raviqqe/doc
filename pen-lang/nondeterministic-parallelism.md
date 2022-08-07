@@ -45,12 +45,27 @@ import Os'Console
 
 f = \(x foo, y foo) bar {
   v = go(\() number {
-    computeExpensive(x)
+    computeA(x)
   })
 
-  w = computeExpensive(y)
+  w = computeB(y)
 
   aggregate(v(), w)
+}
+```
+
+---
+
+# Examples
+
+## Nondeterministic parallel computation
+
+```pen
+import Os'Console
+
+f = \(x foo, y foo) [number] {
+  # computeA and computeB produces two series of data computed concurrently.
+  race([[number] computeA(x), computeB(y)])
 }
 ```
 
