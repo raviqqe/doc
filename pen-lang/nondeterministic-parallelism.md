@@ -16,7 +16,7 @@
 - Capability-based effect system
   - Pass down "effect arguments" to functions.
 - Parallel computation without data race
-  - Synchronizaton by data structures (e.g. thunks, lazy lists, etc.)
+  - Synchronization by data structures (e.g. thunks, lazy lists, etc.)
 
 ---
 
@@ -42,12 +42,12 @@ main = \(os Os) none | error {
 - You can't know which codes finish first (or even if they do!) before running them.
 - **Nondeterminism is not necessary** for parallel computation.
   - e.g. purely functional programs can be parallelized automatically.
-- **Nondeterminism somtimes gives better performance** in parallel computation.
+- **Nondeterminism sometimes gives better performance** in parallel computation.
   - e.g. consumers want to consume values in an order in which they get produced.
 
 ---
 
-# Nondeterminisum in other languages
+# Nondeterminism in other languages
 
 ---
 
