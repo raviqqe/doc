@@ -38,7 +38,7 @@
 - Others
   - Dialect-specific passes
 
-## Smell of maching learning
+## Smell of machine learning
 
 - `bfloat16` in the `builtin` dialect.
 - Linear algebra-related dialects
