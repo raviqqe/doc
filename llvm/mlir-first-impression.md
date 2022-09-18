@@ -47,3 +47,5 @@
   - e.g. `tensor<$1x$2xf32> * tensor<$2x$3xf32> = tensor<$1x$3xf32>`
 
 ## References
+
+- [MLIR documentation](https://mlir.llvm.org/docs/)
