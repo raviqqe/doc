@@ -22,9 +22,15 @@
   - Given to operations as name-value pairs
   - Attributes are also typed.
 - Types
-- Dialects
-  - Defines custom operations and types.
-  - e.g. `builtin`, `llvm`, `scf`, `gpu`, `async`
+
+### Dialects
+
+- Defines custom operations and types.
+- e.g. `builtin`, `llvm`, `scf`, `gpu`, `async`
+
+### Passes
+
+- SCE, DCE,
 
 ## Smell of maching learning
 
