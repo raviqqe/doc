@@ -10,15 +10,20 @@
 ## Core concepts
 
 - Operations
-  - Module (`builtin.module`)
-  - Function (`func.func`)
+  - Operations are statically and fully typed.
+  - e.g. module (`builtin.module`,) function (`func.func`)
 - Regions
   - SSA CFG region
   - Graph region
 - Blocks
   - A list of operations (instructions)
   - Or, a set of operations (nodes)
+- Attributes
+  - Given to operations as name-value pairs
+  - Attributes are also typed.
+- Types
 - Dialects
+  - Defines custom operations and types.
   - e.g. `builtin`, `llvm`, `scf`, `gpu`, `async`
 
 ## Smell of maching learning
