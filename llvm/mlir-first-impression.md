@@ -25,12 +25,18 @@
 
 ### Dialects
 
-- Defines custom operations and types.
+- Defines custom operations, types, and attributes.
 - e.g. `builtin`, `llvm`, `scf`, `gpu`, `async`
 
 ### Passes
 
-- SCE, DCE,
+- Transformation
+  - e.g. canonicalization, SCE, DCE, function inlining, SCCP, etc.
+- Conversion
+  - Converts a dialect to another
+  - e.g. `scf` to `llvm`
+- Others
+  - Dialect-specific passes
 
 ## Smell of maching learning
 
@@ -39,3 +45,5 @@
   - e.g. `linalg`, `tensor`, `sparse_tensor`, `quant`
 - Tensor shape inference
   - e.g. `tensor<$1x$2xf32> * tensor<$2x$3xf32> = tensor<$1x$3xf32>`
+
+## References
