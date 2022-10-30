@@ -63,6 +63,7 @@
 - Using lists as maps to track variable types
   - `List (String, Type)`
   - It was faster than using persistent data structures.
+    - `list < hash map < persistent hash map`
 
 ---
 
