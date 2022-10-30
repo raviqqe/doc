@@ -112,6 +112,7 @@
 
 # Future work
 
+- Apply those methods everywhere.
 - Slow type canonicalization in HIR
 - `Rc` all the things (?)
 - Function passes
