@@ -10,9 +10,12 @@
 
 ## What made the compiler faster?
 
-- Codes
+- Code
+  - Imperative vs. functional
 - Data
-  - Small data makes (apparently)
+  - Minimizing data
+  - Sharing data
+  - "Compressing" data
 
 ---
 
