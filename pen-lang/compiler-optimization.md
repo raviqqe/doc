@@ -39,7 +39,7 @@
 # Imperative vs. functional
 
 - Transformation for functional languages often written in a functional way.
-  - e.g. in papers and books
+  - In papers and books
 - It's faster to run imperative algorithms with destructive data structures in Rust.
   - Sometimes, codes get even shorter and more concise.
 - Iteration over recursion
