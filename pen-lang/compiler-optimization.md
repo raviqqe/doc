@@ -106,10 +106,6 @@
 
 ---
 
-# Others
-
-> TBD
-
 ---
 
 # Future work
@@ -117,3 +113,4 @@
 - Slow type canonicalization in HIR
 - `Rc` all the things (?)
 - Function passes
+  - Is it better for L1 and L2 caches?
