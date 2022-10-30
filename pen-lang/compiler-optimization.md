@@ -105,6 +105,8 @@
 - Split those common codes into functions in IR.
 - All the later passes get slower by the increased data size.
 - LLVM handles the "decompression" anyway.
+  - Function inlining
+  - CSE
 
 ---
 
