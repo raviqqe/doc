@@ -15,7 +15,7 @@
 - Data
   - Minimizing data
   - Sharing data
-  - "Compressing" data
+  - "Compressing" IR
 
 ---
 
@@ -23,9 +23,9 @@
 
 ---
 
-## "Compressing" data
+## "Compressing" IR
 
-- It's better to "decompress" data later.
+- It's better to "decompress" IR (intermediate representation) later.
   - Function inlining
 - All the later passes get slower by the increased data size.
 - LLVM handles the "decompression" anyway.
