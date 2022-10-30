@@ -92,7 +92,7 @@
 ## Examples
 
 - Collecting types of local variables
-- Collecting free variables
+- Collecting free variables of continuations
 
 ---
 
