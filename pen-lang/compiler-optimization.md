@@ -25,6 +25,12 @@
 
 ---
 
+# Future work
+
+- Function passes
+
+---
+
 # Conclusion
 
 - Small data makes (apparently)
