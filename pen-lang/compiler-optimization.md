@@ -70,7 +70,8 @@
 # Minimizing data
 
 - Minimize `enum`s.
-  - If only one member is too big, there would be too many empty part in a collection of them.
+  - If only a member is too big, the enum gets also big.
+  - There would be too many empty data in a collection of them.
   - `Box` large members.
 
 ## Examples
