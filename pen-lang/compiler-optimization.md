@@ -72,7 +72,7 @@
 - Minimize `enum`s.
   - If only a member is too big, the enum gets also big.
   - There would be too many empty data in a collection of them.
-  - `Box` large members.
+  - Box large members.
 
 ## Examples
 
