@@ -2,7 +2,21 @@
 
 ---
 
-##
+# Pen's compiler is 4.5 times faster!
+
+- Since the last meetup
+
+---
+
+## What made the compiler faster?
+
+- Codes
+- Data
+  - Small data makes (apparently)
+
+---
+
+## Imperative algorithms
 
 ---
 
