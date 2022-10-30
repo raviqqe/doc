@@ -106,8 +106,6 @@
 
 ---
 
----
-
 # Future work
 
 - Slow type canonicalization in HIR
