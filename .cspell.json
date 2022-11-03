@@ -20,6 +20,7 @@
     "marp",
     "mlir",
     "musttail",
+    "noalias",
     "nounwind",
     "perceus",
     "preemptible",
