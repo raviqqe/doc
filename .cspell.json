@@ -10,7 +10,7 @@
     "deallocations",
     "deserialization",
     "dyndep",
-    "entrypoint",
+    "entrypoints",
     "gofmt",
     "hamt",
     "hhkb",
