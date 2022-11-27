@@ -24,6 +24,7 @@
     "noalias",
     "nounwind",
     "perceus",
+    "permutate",
     "preemptible",
     "println",
     "quic",
