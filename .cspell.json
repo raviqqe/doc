@@ -5,6 +5,7 @@
     "bazel",
     "bfloat",
     "bindgen",
+    "bumpalo",
     "bytecodes",
     "canonicalization",
     "cloe",
