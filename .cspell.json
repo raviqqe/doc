@@ -16,6 +16,7 @@
     "gofmt",
     "hamt",
     "hhkb",
+    "interp",
     "iteratees",
     "koka",
     "linalg",
@@ -30,6 +31,7 @@
     "perceus",
     "permutate",
     "preemptible",
+    "preopens",
     "println",
     "quic",
     "raviqqe",
@@ -42,6 +44,7 @@
     "suspendable",
     "tailcallopt",
     "valgrind",
+    "wabt",
     "wadler",
     "wasi",
     "xeon"
