@@ -1,5 +1,6 @@
 {
   "words": [
+    "alloc",
     "allocs",
     "bazel",
     "bfloat",
@@ -21,6 +22,7 @@
     "lsmem",
     "malloc",
     "marp",
+    "mfmt",
     "mlir",
     "musttail",
     "noalias",
@@ -34,6 +36,7 @@
     "ribbit",
     "rustfmt",
     "sccp",
+    "schemat",
     "sqlx",
     "struct",
     "suspendable",
