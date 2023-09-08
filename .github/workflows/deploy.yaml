@@ -21,7 +21,7 @@ jobs:
       - run: npm run build
       - uses: actions/upload-pages-artifact@v2
         with:
-          path: dist
+          path: doc/dist
   deploy:
     runs-on: ubuntu-latest
     environment:
