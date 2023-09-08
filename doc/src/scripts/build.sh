@@ -2,4 +2,4 @@
 
 set -e
 
-foo
+npx astro build
