@@ -1,2 +1,5 @@
 *.html
 *.pdf
+.astro
+dist
+node_modules
