@@ -2,6 +2,18 @@ name: test
 on:
   - push
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: doc
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          cache: npm
+      - run: npm install
+      - run: npm run build
   format:
     runs-on: ubuntu-latest
     steps:
