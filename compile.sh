@@ -8,4 +8,4 @@ fi
 
 file=$1
 
-marp --pdf "$file"
+npx @marp-team/marp-cli -s .
