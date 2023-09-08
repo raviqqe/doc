@@ -4,9 +4,9 @@ set -ex
 
 directory=$(dirname $0)/..
 
-npx @marp-team/marp-cli --html --input-dir $directory/../.. --output $directory
+npx @marp-team/marp-cli --html --input-dir $directory/../.. --output $directory/pages
 
-rm -r $directory/doc
-rm $directory/README.html
+rm -r $directory/pages/doc
+rm $directory/pages/README.html
 
 npx astro build
