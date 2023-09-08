@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: https://raviqqe.com
+      url: https://raviqqe.github.io/doc/
     needs: build
     steps:
       - uses: actions/deploy-pages@v2
