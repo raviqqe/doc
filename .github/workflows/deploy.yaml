@@ -11,7 +11,7 @@ concurrency:
   group: deploy
   cancel-in-progress: true
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,11 +22,4 @@ jobs:
       - uses: actions/upload-pages-artifact@v2
         with:
           path: doc/dist
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: https://raviqqe.github.io/doc/
-    needs: build
-    steps:
       - uses: actions/deploy-pages@v2
