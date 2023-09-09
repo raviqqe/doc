@@ -1,3 +1,7 @@
 import { glob } from "glob";
 
-await glob("../**/*.md");
+console.log(
+  (await glob("../**/*.md", { ignore: ["node_modules", "doc"] })).filter(
+    (path) => !path.includes("/doc/"),
+  ),
+);

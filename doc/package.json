@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "npm run build:documents && npm run build:toc && astro build",
-    "build:documents": "@marp-team/marp-cli --html --input-dir $directory/.. --output $directory/public",
+    "build:documents": "marp --html --input-dir .. --output public",
     "build:toc": "tsx src/scripts/build-table-of-contents.ts",
     "preview": "astro preview"
   },
