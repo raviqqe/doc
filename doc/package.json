@@ -14,8 +14,10 @@
     "@astrojs/mdx": "^1.0.3",
     "@astrojs/sitemap": "^3.0.0",
     "@marp-team/marp-cli": "^3.2.1",
+    "@types/lodash": "^4.14.198",
     "astro": "^3.0.10",
-    "glob": "^10.3.4"
+    "glob": "^10.3.4",
+    "lodash-unified": "^1.0.3"
   },
   "devDependencies": {
     "tsx": "^3.12.8"

@@ -2,10 +2,11 @@ import { glob } from "glob";
 import { readFile, writeFile } from "node:fs/promises";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
+import { sortBy } from "lodash-unified";
 
 await writeFile(
   "src/components/TableOfContents.md",
-  (
+  sortBy(
     await Promise.all(
       (await glob("../**/*.md", { ignore: ["node_modules/**", "src/**"] }))
         .filter((path) => !path.includes("README"))
@@ -24,8 +25,10 @@ await writeFile(
 
           return { title, path: htmlPath, time };
         }),
-    )
+    ),
+    "time",
   )
+    .reverse()
     .map(({ title, path, time }) => `- [${title}](${path}) (${time})`)
     .join("\n"),
 );
