@@ -14,7 +14,7 @@ To try out he Pen, you can use [Homebrew](https://brew.sh) to install it on Linu
 brew install pen-lang/pen/pen
 ```
 
-For more information on how to write and build programs in Pen, see [Getting started](https://pen-lang.org/introduction/getting-started.html).
+For more information on how to write and build programs in Pen, see [Getting started](https://pen-lang.org/introduction/install/).
 
 ## Introduction
 
@@ -92,7 +92,7 @@ We've hit the great v0.4 milestone of Pen! It contains new syntax, standard pack
 - Parallel computation primitive (`go` expression)
 - `Http` and `Sql` standard packages
 
-Thank you for reading this article! And if you are interested in [Pen][pen], please [install](https://pen-lang.org/introduction/install.html), try it out, and give some feedback!
+Thank you for reading this article! And if you are interested in [Pen][pen], please [install](https://pen-lang.org/introduction/install/), try it out, and give some feedback!
 
 [pen]: https://pen-lang.org
 [perceus]: https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/

@@ -120,8 +120,8 @@ build .pen/objects/df9ec1801702a48a.bc: dyndep | .pen/objects/9122981f18913b17.j
 
 # 実装
 
-- https://github.com/pen-lang/pen/blob/main/lib/infra/src/ninja_module_build_script_compiler.rs
-- https://github.com/pen-lang/pen/blob/main/lib/infra/src/ninja_build_script_dependency_compiler.rs
+- [`ninja_build_script_compiler.rs`](https://github.com/pen-lang/pen/blob/2e756ee4e36e131eba7dd13728ea33283d35d90c/lib/infra/src/ninja_build_script_compiler.rs)
+- [`ninja_build_script_dependency_compiler.rs`](https://github.com/pen-lang/pen/blob/2e756ee4e36e131eba7dd13728ea33283d35d90c/lib/infra/src/ninja_build_script_dependency_compiler.rs)
 
 ---
 

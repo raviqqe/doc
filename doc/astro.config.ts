@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
+import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
@@ -8,5 +9,5 @@ export default defineConfig({
     service: { entrypoint: "astro/assets/services/sharp" },
     remotePatterns: [{ protocol: "https" }],
   },
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), prefetch(), sitemap()],
 });
