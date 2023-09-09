@@ -13,7 +13,7 @@ const writeToc = async (directory: string, component: string) =>
           title: (await readFile(path, "utf-8"))
             .split("\n")[0]
             .replace("# ", ""),
-          path: path.replace(/^..\//, "").replace(".md", ".html"),
+          path: path.replace(/^..\//, "").replace(".md", ""),
           time: (
             await promisify(exec)(
               `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
