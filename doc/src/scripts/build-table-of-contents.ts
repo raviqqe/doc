@@ -18,7 +18,7 @@ const writeToc = async (directory: string, component: string) =>
             const htmlPath = path.replace(/^..\//, "").replace(".md", ".html");
             const time = (
               await promisify(exec)(
-                `git log --format=format:%ci --name-only --diff-filter=A ${path}`,
+                `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
               )
             ).stdout
               .split(" ")[0]
