@@ -15,3 +15,48 @@ const { frontmatter } = Astro.props;
 		<slot />
 	</body>
 </html>
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;700&display=swap");
+
+  :root {
+    --black-color: #333;
+    --gray-color: #666;
+    --red-color: #d00;
+    --white-color: #fdfdfd;
+
+    --background-color: var(--white-color);
+    --text-color: var(--black-color);
+
+    --monospace-font-family: monospace;
+
+    font: 16px "Noto Sans", sans-serif;
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 1rem 1.2rem;
+  }
+
+  a,
+  a:visited {
+    color: var(--red-color);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.15rem;
+  }
+
+  code {
+    font-family: var(--monospace-font-family);
+    background: var(--gray-color);
+    color: var(--white-color);
+    font-size: 0.85rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.3rem;
+  }
+</style>
