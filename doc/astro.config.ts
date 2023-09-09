@@ -9,5 +9,5 @@ export default defineConfig({
     service: { entrypoint: "astro/assets/services/sharp" },
     remotePatterns: [{ protocol: "https" }],
   },
-  integrations: [mdx(), prefetch(), sitemap()],
+  integrations: [mdx(), prefetch({ intentSelector: ["a"] }), sitemap()],
 });
