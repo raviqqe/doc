@@ -37,7 +37,9 @@ const writeToc = async (directory: string, component: string) =>
       .reverse()
       .map(
         ({ title, htmlPath, pdfPath, time }) =>
-          `- [${title}](${htmlPath}) (${pdfPath ? "" : ""}${time})`,
+          `- [${title}](${htmlPath}) (${
+            pdfPath ? `[PDF](${pdfPath}), ` : ""
+          }${time})`,
       )
       .join("\n"),
   );
