@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "src/scripts/build.sh",
+    "build:toc": "src/scripts/build_table_of_contents.sh",
     "preview": "astro preview"
   },
   "dependencies": {

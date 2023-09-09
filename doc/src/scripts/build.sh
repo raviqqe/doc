@@ -8,4 +8,5 @@ npx @marp-team/marp-cli --html --input-dir $directory/.. --output $directory/pub
 
 rm -r $directory/public/doc
 
+npm run build:toc
 npx astro build
