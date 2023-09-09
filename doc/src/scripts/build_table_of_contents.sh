@@ -5,6 +5,8 @@ set -e
 cd $(dirname $0)/../../..
 
 for file in $(find . -name '*.md' | grep -iv -e node_modules -e readme -e doc); do
-  echo $file
-  cat $file | grep '^# .*$' | head -n 1 | sed 's/# *//g'
+  path=$(echo $file | sed 's/\.md/\.html/g' | sed 's/^\.\///')
+  title=$(cat $file | grep '^# .*$' | head -n 1 | sed 's/# *//g')
+
+  echo "- [$title]($path)"
 done
