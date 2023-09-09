@@ -7,10 +7,10 @@ await Promise.all(
     const title = content.split("\n")[0].replace("# ", "");
 
     await writeFile(
-      path,
+      path.replace("../", "src/pages/"),
       [
         "---",
-        "layout: ../../layouts/Default.astro",
+        "layout: ../../../layouts/Default.astro",
         `title: ${title}`,
         "---",
         content,
