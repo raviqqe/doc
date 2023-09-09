@@ -4,7 +4,7 @@ import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://raviqqe.com",
+  site: "https://raviqqe.github.io/doc",
   image: {
     service: { entrypoint: "astro/assets/services/sharp" },
     remotePatterns: [{ protocol: "https" }],
