@@ -4,7 +4,7 @@ set -e
 
 cd $(dirname $0)/../../..
 
-for file in $(find . -name '*.md' | grep -iv -e node_modules -e readme -e doc); do
+for file in $(find . -name '*.md' | sort | grep -iv -e node_modules -e readme -e doc); do
   path=$(echo $file | sed 's/\.md/\.html/g' | sed 's/^\.\///')
   title=$(cat $file | grep '^# .*$' | head -n 1 | sed 's/# *//g')
 
