@@ -6,6 +6,8 @@
     "bazel",
     "bfloat",
     "bindgen",
+    "buday",
+    "builddir",
     "bumpalo",
     "bytecodes",
     "bytevector",
@@ -54,6 +56,7 @@
     "wabt",
     "wadler",
     "wasi",
+    "wasmtime",
     "xeon"
   ]
 }
