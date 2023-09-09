@@ -19,7 +19,7 @@ const writeToc = async (directory: string, component: string) =>
               .split("\n")[0]
               .replace("# ", ""),
             htmlPath,
-            pdfPath: (await stat(join("src/public", pdfPath))) ? pdfPath : null,
+            pdfPath: (await stat(join("public", pdfPath))) ? pdfPath : null,
             time: (
               await promisify(exec)(
                 `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
