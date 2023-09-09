@@ -22,8 +22,10 @@ await writeFile(
             .split(" ")[0]
             .replaceAll("-", "/");
 
-          return `- [${title}](${htmlPath}) (${time})`;
+          return { title, path: htmlPath, time };
         }),
     )
-  ).join("\n"),
+  )
+    .map(({ title, path, time }) => `- [${title}](${path}) (${time})`)
+    .join("\n"),
 );
