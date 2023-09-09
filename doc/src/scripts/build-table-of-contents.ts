@@ -1,3 +1,3 @@
-import glob from "glob";
+import { glob } from "glob";
 
 await glob("../**/*.md");

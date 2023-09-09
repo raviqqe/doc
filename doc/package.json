@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "src/scripts/build.sh",
-    "build:toc": "src/scripts/build_table_of_contents.sh",
+    "build": "npm run build:documents && npm run build:toc && astro build",
+    "build:documents": "@marp-team/marp-cli --html --input-dir $directory/.. --output $directory/public",
+    "build:toc": "tsx src/scripts/build-table-of-contents.ts",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -14,5 +15,8 @@
     "@astrojs/sitemap": "^3.0.0",
     "astro": "^3.0.10",
     "glob": "^10.3.4"
+  },
+  "devDependencies": {
+    "tsx": "^3.12.8"
   }
 }
