@@ -6,9 +6,11 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "src/scripts/build.sh",
+    "build:toc": "src/scripts/build_table_of_contents.sh",
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/mdx": "^1.0.3",
     "@astrojs/sitemap": "^3.0.0",
     "astro": "^3.0.10"
   }
