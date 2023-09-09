@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "npm run build:slides && npm run build:posts && npm run build:toc && astro build",
     "build:slides": "marp --html --input-dir ../slides --output public/slides",
-    "build:posts": "cp -r ../posts src/pages",
+    "build:posts": "tsx src/scripts/build-posts.ts",
     "build:toc": "tsx src/scripts/build-table-of-contents.ts",
     "preview": "astro preview"
   },
@@ -21,6 +21,7 @@
     "lodash-unified": "^1.0.3"
   },
   "devDependencies": {
+    "@types/node": "^20.6.0",
     "tsx": "^3.12.8"
   }
 }

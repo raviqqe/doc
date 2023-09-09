@@ -1,17 +1,66 @@
 ---
-const { title, description } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
+		<meta name="description" content={frontmatter.description} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{frontmatter.title}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;700&display=swap");
+
+  :root {
+    --black-color: #333;
+    --gray-color: #666;
+    --red-color: #d00;
+    --white-color: #fdfdfd;
+
+    --background-color: var(--white-color);
+    --text-color: var(--black-color);
+
+    --monospace-font-family: monospace;
+
+    font: 16px "Noto Sans", sans-serif;
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 1rem 1.2rem;
+  }
+
+  a,
+  a:visited {
+    color: var(--red-color);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.15rem;
+  }
+
+	code, pre {
+    font-family: var(--monospace-font-family);
+    border-radius: 0.3rem;
+	}
+
+	pre {
+		padding: 0.5rem;
+	}
+
+  code {
+    font-size: 0.9rem;
+  }
+</style>
