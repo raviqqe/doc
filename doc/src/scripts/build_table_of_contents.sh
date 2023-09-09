@@ -1,7 +1,10 @@
 #!/bin/sh
 
-set -ex
+set -e
 
-cd $(dirname)/../../..
+cd $(dirname $0)/../../..
 
-find . --name '*.md'
+for file in $(find . -name '*.md' | grep -iv -e node_modules -e readme -e doc); do
+  echo $file
+  cat $file | grep '^# .*$' | head -n 1 | sed 's/# *//g'
+done
