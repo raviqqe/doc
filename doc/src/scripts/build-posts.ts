@@ -13,6 +13,7 @@ await Promise.all(
         "layout: ../../../layouts/Default.astro",
         `title: ${title}`,
         "---",
+        "",
         content,
       ].join("\n"),
     );
