@@ -1,6 +1,5 @@
 import { glob } from "glob";
 import { readFile, writeFile } from "node:fs/promises";
-import { sortBy } from "lodash-unified";
 
 await Promise.all(
   (await glob(`../posts/**/*.md`)).map(async (path) => {
@@ -8,6 +7,7 @@ await Promise.all(
     const title = content.split("\n")[0].replace("# ", "");
 
     await writeFile(
+      path,
       [
         "---",
         "layout: ../../layouts/Default.astro",
