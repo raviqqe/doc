@@ -9,23 +9,21 @@ const writeToc = async (directory: string, component: string) =>
     `src/components/${component}.md`,
     sortBy(
       await Promise.all(
-        (await glob(`../${directory}/**/*.md`))
-          .filter((path) => !path.includes("README"))
-          .map(async (path) => {
-            const title = (await readFile(path, "utf-8"))
-              .split("\n")[0]
-              .replace("# ", "");
-            const htmlPath = path.replace(/^..\//, "").replace(".md", ".html");
-            const time = (
-              await promisify(exec)(
-                `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
-              )
-            ).stdout
-              .split(" ")[0]
-              .replaceAll("-", "/");
+        (await glob(`../${directory}/**/*.md`)).map(async (path) => {
+          const title = (await readFile(path, "utf-8"))
+            .split("\n")[0]
+            .replace("# ", "");
+          const htmlPath = path.replace(/^..\//, "").replace(".md", ".html");
+          const time = (
+            await promisify(exec)(
+              `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
+            )
+          ).stdout
+            .split(" ")[0]
+            .replaceAll("-", "/");
 
-            return { title, path: htmlPath, time };
-          }),
+          return { title, path: htmlPath, time };
+        }),
       ),
       "time",
     )
