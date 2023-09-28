@@ -24,7 +24,7 @@
     "lodash-unified": "^1.0.3"
   },
   "devDependencies": {
-    "@types/node": "^20.7.0",
+    "@types/node": "^20.7.1",
     "tsx": "^3.13.0"
   }
 }
