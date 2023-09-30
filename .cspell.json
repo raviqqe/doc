@@ -13,7 +13,7 @@
     "bumpalo",
     "bytecodes",
     "bytevector",
-    "callee",
+    "callees",
     "canonicalization",
     "cloe",
     "cond",
