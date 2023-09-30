@@ -6,6 +6,7 @@
     "bazel",
     "bfloat",
     "bindgen",
+    "biwa",
     "buday",
     "builddir",
     "bumpalo",
@@ -57,6 +58,7 @@
     "wadler",
     "wasi",
     "wasmtime",
-    "xeon"
+    "xeon",
+    "yhara"
   ]
 }
