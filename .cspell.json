@@ -2,10 +2,12 @@
   "words": [
     "alloc",
     "allocs",
+    "assv",
     "astro",
     "bazel",
     "bfloat",
     "bindgen",
+    "biwa",
     "buday",
     "builddir",
     "bumpalo",
@@ -57,6 +59,7 @@
     "wadler",
     "wasi",
     "wasmtime",
-    "xeon"
+    "xeon",
+    "yhara"
   ]
 }
