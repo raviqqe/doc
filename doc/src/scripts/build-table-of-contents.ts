@@ -2,13 +2,13 @@ import { glob } from "glob";
 import { readFile, stat, writeFile } from "node:fs/promises";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
-import { sortBy } from "lodash-unified";
+import { chain, sortBy } from "lodash-unified";
 import { join } from "node:path";
 
 const writeToc = async (directory: string, component: string) =>
   await writeFile(
     `src/components/${component}.md`,
-    sortBy(
+    chain(
       await Promise.all(
         (await glob(`../${directory}/**/*.md`)).map(async (path) => {
           const htmlPath = path.replace(/^..\//, "").replace(".md", "");
@@ -32,14 +32,21 @@ const writeToc = async (directory: string, component: string) =>
           };
         }),
       ),
-      "time",
     )
+      .sortBy("time")
+      .groupBy(({ time }) => Number(time.split("/")[0]))
+      .map(([year, posts]) => [year, posts])
+      .value()
       .reverse()
       .map(
-        ({ title, htmlPath, pdfPath, time }) =>
-          `- [${title}](${htmlPath}) (${
-            pdfPath ? `[PDF](${pdfPath}), ` : ""
-          }${time})`,
+        ([year, posts]) =>
+          `# ${year}` +
+          posts.map(
+            ({ title, htmlPath, pdfPath, time }) =>
+              `- [${title}](${htmlPath}) (${
+                pdfPath ? `[PDF](${pdfPath}), ` : ""
+              }${time})`,
+          ),
       )
       .join("\n"),
   );
