@@ -14,4 +14,5 @@ export default defineConfig({
     prefetch({ selector: "a", intentSelector: "a" }),
     sitemap(),
   ],
+  site: "https://raviqqe.gitub.io/doc",
 });
