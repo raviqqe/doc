@@ -2,7 +2,7 @@ import { glob } from "glob";
 import { readFile, stat, writeFile } from "node:fs/promises";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
-import { chain } from "lodash-unified";
+import { chain } from "lodash";
 import { join } from "node:path";
 
 const writeToc = async (directory: string, component: string) =>
