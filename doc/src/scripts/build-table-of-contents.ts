@@ -35,19 +35,18 @@ const writeToc = async (directory: string, component: string) =>
     )
       .sortBy("time")
       .groupBy(({ time }) => Number(time.split("/")[0]))
-      .map(([year, posts]) => [year, posts])
+      .toPairsIn()
       .value()
       .reverse()
-      .map(
-        ([year, posts]) =>
-          `# ${year}` +
-          posts.map(
-            ({ title, htmlPath, pdfPath, time }) =>
-              `- [${title}](${htmlPath}) (${
-                pdfPath ? `[PDF](${pdfPath}), ` : ""
-              }${time})`,
-          ),
-      )
+      .map(([year, posts]) => [
+        `# ${year}`,
+        posts.map(
+          ({ title, htmlPath, pdfPath, time }) =>
+            `- [${title}](${htmlPath}) (${
+              pdfPath ? `[PDF](${pdfPath}), ` : ""
+            }${time})`,
+        ),
+      ])
       .join("\n"),
   );
 
