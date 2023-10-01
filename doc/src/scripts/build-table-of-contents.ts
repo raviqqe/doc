@@ -34,8 +34,11 @@ const writeToc = async (directory: string, component: string) =>
       ),
     )
       .sortBy("time")
+      .reverse()
       .groupBy(({ time }) => Number(time.split("/")[0]))
       .toPairsIn()
+      .sort()
+      .reverse()
       .value()
       .reverse()
       .map(([year, posts]) => [
