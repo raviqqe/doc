@@ -29,8 +29,8 @@ Secondly, although I've also implemented generic reuse of heap blocks that match
 
 The main part of the algorithm is implemented in the source files of a compiler itself and an FFI library in Rust listed below:
 
-- https://github.com/pen-lang/pen/blob/d44df6d9cdcbe97fcdd5ac14c4de30f4897664ff/lib/mir-fmm/src/reference_count/pointer.rs
-- https://github.com/pen-lang/pen/blob/d44df6d9cdcbe97fcdd5ac14c4de30f4897664ff/lib/ffi/src/arc/arc_block.rs
+- [`lib/mir-fmm/src/reference_count/pointer.rs`](https://github.com/pen-lang/pen/blob/d44df6d9cdcbe97fcdd5ac14c4de30f4897664ff/lib/mir-fmm/src/reference_count/pointer.rs)
+- [`lib/ffi/src/arc/arc_block.rs`](https://github.com/pen-lang/pen/blob/d44df6d9cdcbe97fcdd5ac14c4de30f4897664ff/lib/ffi/src/arc/arc_block.rs)
 
 ### Counting back synchronized references to 0
 
