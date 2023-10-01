@@ -2,7 +2,7 @@ import { glob } from "glob";
 import { readFile, stat, writeFile } from "node:fs/promises";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
-import { chain, sortBy } from "lodash-unified";
+import { chain } from "lodash-unified";
 import { join } from "node:path";
 
 const writeToc = async (directory: string, component: string) =>
@@ -39,9 +39,7 @@ const writeToc = async (directory: string, component: string) =>
       .toPairsIn()
       .sort()
       .reverse()
-      .value()
-      .reverse()
-      .map(([year, posts]) => [
+      .flatMap(([year, posts]) => [
         `# ${year}`,
         posts.map(
           ({ title, htmlPath, pdfPath, time }) =>
@@ -50,6 +48,7 @@ const writeToc = async (directory: string, component: string) =>
             }${time})`,
         ),
       ])
+      .value()
       .join("\n"),
   );
 
