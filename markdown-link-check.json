@@ -1,0 +1,9 @@
+{
+  "ignorePatterns": [
+    { "pattern": "^algorithms-and-data-structures$" },
+    { "pattern": "^programming-languages$" },
+    { "pattern": "^https://crates.io" },
+    { "pattern": "^https://twitter.com" },
+    { "pattern": "^https://www.researchgate.net" }
+  ]
+}

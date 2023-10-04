@@ -16,6 +16,7 @@
     "allocs",
     "assv",
     "astro",
+    "astrojs",
     "bazel",
     "bfloat",
     "bindgen",
