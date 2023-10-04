@@ -1,4 +1,11 @@
 {
+  "ignoreRegExpList": ["url"],
+  "patterns": [
+    {
+      "name": "url",
+      "pattern": "/https:\\/\\/[^ ()\\[\\]]*/"
+    }
+  ],
   "words": [
     "alloc",
     "allocs",
