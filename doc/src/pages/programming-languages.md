@@ -113,6 +113,10 @@ description: Programming languages and related technologies.
 
 ### Algorithms and data structures
 
+- [Optimizing Hash-Array Mapped Tries for Fast and Lean Immutable JVM Collections](https://michael.steindorfer.name/publications/oopsla15.pdf)
+- [LazyList | Scala](https://www.scala-lang.org/api/current/scala/collection/immutable/LazyList.html)
+- [Foreign Function Interface | Deno](https://docs.deno.com/runtime/manual/runtime/ffi_api)
+
 #### RRB tree
 
 - [RRB-Trees: Efficient Immutable Vectors](https://infoscience.epfl.ch/record/169879/files/RMTrees.pdf)
@@ -122,14 +126,6 @@ description: Programming languages and related technologies.
   - [The blog post](https://hypirion.com/musings/thesis)
   - [pvec-rs](https://github.com/arazabishov/pvec-rs)
   - [Other implementations and descriptions of RRB trees | Closure core library](https://cljdoc.org/d/org.clojure/core.rrb-vector/0.1.2/doc/other-implementations-and-descriptions-of-rrb-trees)
-
-#### HAMT
-
-- [Optimizing Hash-Array Mapped Tries for Fast and Lean Immutable JVM Collections](https://michael.steindorfer.name/publications/oopsla15.pdf)
-
-#### Lazy list
-
-- [LazyList | Scala](https://www.scala-lang.org/api/current/scala/collection/immutable/LazyList.html)
 
 #### Coroutine
 
@@ -142,7 +138,7 @@ description: Programming languages and related technologies.
 - [Persistence, façades and Roslyn’s red-green trees](https://ericlippert.com/2012/06/08/red-green-trees/)
 - [Lossless Syntax Tree Pattern | Oil](https://github.com/oilshell/oil/wiki/Lossless-Syntax-Tree-Pattern)
 
-## WASM
+### WASM
 
 - [Emscripten](https://emscripten.org/index.html)
 - [Wasmtime](https://github.com/bytecodealliance/wasmtime)
@@ -152,11 +148,7 @@ description: Programming languages and related technologies.
 - [`microsoft/mimalloc`](https://github.com/microsoft/mimalloc)
 - [`bytecodealliance/wasm-micro-runtime`](https://github.com/bytecodealliance/wasm-micro-runtime)
 
-## Module system
-
-- [Foreign Function Interface | Deno](https://docs.deno.com/runtime/manual/runtime/ffi_api)
-
-## Parallel computation
+## Concurrency and parallellism
 
 - [Keynote: Announcing Broadway - ElixirConf EU 2019](https://www.youtube.com/watch?v=IzFmNQGzApQ)
   - Basic back pressure can be implemented as queue limits.
