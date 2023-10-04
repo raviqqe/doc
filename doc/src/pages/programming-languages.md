@@ -14,7 +14,6 @@ description: Programming languages and related technologies.
 - [Expresso](https://github.com/willtim/Expresso)
 - [Flix](https://flix.dev/)
 - [Gluon](https://github.com/gluon-lang/gluon)
-- [Haskell](https://github.com/ghc/ghc)
 - [IntercalScript](https://github.com/Storyyeller/IntercalScript)
   - Case objects are similar to polymorphic variants in OCaml.
 - [Koka](https://github.com/koka-lang/koka)
@@ -43,6 +42,11 @@ description: Programming languages and related technologies.
   - The package namespace system like Go works only with object-oriented programming as classes create sub-namespaces.
 - [Channels - A Tour of Go](https://tour.golang.org/concurrency/2)
 - [DQNEO/babygo](https://github.com/DQNEO/babygo)
+
+### Haskell
+
+- [Glasgow Haskell Compiler](https://github.com/ghc/ghc)
+- [The Spineless Tagless G-machine](https://www.microsoft.com/en-us/research/wp-content/uploads/1992/04/spineless-tagless-gmachine.pdf)
 
 ### Ruby
 
@@ -116,14 +120,12 @@ description: Programming languages and related technologies.
 
 - [LazyList | Scala](https://www.scala-lang.org/api/current/scala/collection/immutable/LazyList.html)
 
-## Coroutines
+#### Coroutines
 
 - [From folklore to fact: comparing implementations of stacks and continuations](https://dl.acm.org/doi/10.1145/3385412.3385994)
 - [Stackful coroutine実装まとめ](https://qiita.com/raviqqe/items/b34f067aed697a0ba63a)
 
-## Lazy evaluation
-
-- [The Spineless Tagless G-machine](https://www.microsoft.com/en-us/research/wp-content/uploads/1992/04/spineless-tagless-gmachine.pdf)
+#### Lazy evaluation
 
 ## WASM
 
