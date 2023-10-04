@@ -1,7 +1,0 @@
-{
-  "ignorePatterns": [
-    { "pattern": "^https://crates.io" },
-    { "pattern": "^https://twitter.com" },
-    { "pattern": "^https://www.researchgate.net" }
-  ]
-}
