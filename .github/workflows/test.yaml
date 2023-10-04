@@ -22,17 +22,9 @@ jobs:
       - run: npx prettier --check '**/*.md'
   lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: doc
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci
-      - run: npm run build
-      - run: |
-          npm run start -- --host &
-          while ! curl -fs http://localhost:4321/doc > /dev/null; do :; done
-          go run github.com/raviqqe/muffet@latest http://localhost:4321/doc
+      - run: npx markdown-link-check --config markdown-link-check.json $(git ls-files | grep '\.mdx\?$')
   spell-check:
     runs-on: ubuntu-latest
     steps:
