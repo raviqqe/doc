@@ -34,7 +34,7 @@ description: Programming languages and related technologies.
 - [Go](https://github.com/golang/go)
   - The package namespace system like Go works only with object-oriented programming as classes create sub-namespaces.
 - [Channels - A Tour of Go](https://tour.golang.org/concurrency/2)
-- [DQNEO/babygo](https://github.com/DQNEO/babygo)
+- [`DQNEO/babygo`](https://github.com/DQNEO/babygo)
 
 ### Haskell
 
@@ -68,10 +68,10 @@ description: Programming languages and related technologies.
 ### Rust
 
 - [Guide to Rustc Development](https://rustc-dev-guide.rust-lang.org/)
-- [Kixiron/rust-langdev](https://github.com/Kixiron/rust-langdev)
+- [`Kixiron/rust-langdev`](https://github.com/Kixiron/rust-langdev)
 - [Reading Arc in Rust (Japanese)](https://qiita.com/qnighy/items/35db580a139d21f38410)
 
-## Tecnologies and concepts
+## Technologies and concepts
 
 ### Language design
 
@@ -128,7 +128,7 @@ description: Programming languages and related technologies.
 - [Improving RRB-Tree Performance through Transience](https://hypirion.com/thesis.pdf)
   - [c-rrb](https://github.com/hypirion/c-rrb)
   - [The blog post](https://hypirion.com/musings/thesis)
-  - [pvec-rs](https://github.com/arazabishov/pvec-rs)
+  - [`arazabishov/pvec-rs`](https://github.com/arazabishov/pvec-rs)
   - [Other implementations and descriptions of RRB trees | Closure core library](https://cljdoc.org/d/org.clojure/core.rrb-vector/0.1.2/doc/other-implementations-and-descriptions-of-rrb-trees)
 
 #### Coroutine
@@ -140,7 +140,7 @@ description: Programming languages and related technologies.
 
 #### Lossless syntax tree
 
-- [Persistence, façades and Roslyn’s red-green trees](https://ericlippert.com/2012/06/08/red-green-trees/)
+- [Persistence, facades and Roslyn’s red-green trees](https://ericlippert.com/2012/06/08/red-green-trees/)
 - [Lossless Syntax Tree Pattern | Oil](https://github.com/oilshell/oil/wiki/Lossless-Syntax-Tree-Pattern)
 
 ### WASM
@@ -153,11 +153,11 @@ description: Programming languages and related technologies.
 - [`microsoft/mimalloc`](https://github.com/microsoft/mimalloc)
 - [`bytecodealliance/wasm-micro-runtime`](https://github.com/bytecodealliance/wasm-micro-runtime)
 
-## Concurrency and parallellism
+## Concurrency and parallelism
 
 - [Keynote: Announcing Broadway - ElixirConf EU 2019](https://www.youtube.com/watch?v=IzFmNQGzApQ)
   - Basic back pressure can be implemented as queue limits.
-  - [dashbitco/broadway](https://github.com/dashbitco/broadway)
+  - [`dashbitco/broadway`](https://github.com/dashbitco/broadway)
   - [Akka Stream](https://doc.akka.io/docs/akka/current/stream/index.html)
 - [Runtime Support for Multicore Haskell](https://www.microsoft.com/en-us/research/wp-content/uploads/2009/09/multicore-ghc.pdf)
 
