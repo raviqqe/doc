@@ -55,7 +55,9 @@ description: Programming languages and related technologies.
 - [Kixiron/rust-langdev](https://github.com/Kixiron/rust-langdev)
 - [Reading Arc in Rust (Japanese)](https://qiita.com/qnighy/items/35db580a139d21f38410)
 
-## Language design
+## Tecnologies and concepts
+
+### Language design
 
 - [Less is more: language features](https://blog.ploeh.dk/2015/04/13/less-is-more-language-features/)
 - [プログラミング言語の未来はどうなるか](https://keens.github.io/blog/2021/01/04/future_of_proguramming_languages/)
@@ -65,7 +67,7 @@ description: Programming languages and related technologies.
 - [Go at Google: Language Design in the Service of Software Engineering](https://go.dev/talks/2012/splash.article)
 - [Language Design](https://cs.lmu.edu/~ray/notes/languagedesignnotes/)
 
-## Type system
+### Type system
 
 - [Lecture slides of recursive types at Cornell University](https://www.cs.cornell.edu/courses/cs4110/2012fa/lectures/lecture27.pdf)
 - [Algebraic subtyping](https://www.cs.tufts.edu/~nr/cs257/archive/stephen-dolan/thesis.pdf)
@@ -73,28 +75,30 @@ description: Programming languages and related technologies.
 - [Practical type inference for arbitrary-rank types](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/putting.pdf)
 - [Complete and Easy Bidirectional Typechecking for Higher-Rank Polymorphism](https://arxiv.org/abs/1306.6032)
 
-## Effect system
+### Effect system
 
 - [Effects bibliography](https://github.com/yallop/effects-bibliography)
 - [libhandler](https://github.com/koka-lang/libhandler)
 
-## Garbage collection
+### Garbage collection
 
-### Reference counting
+#### Reference counting
 
 - [Counting Immutable Beans: Reference Counting Optimized for Purely Functional Programming](https://arxiv.org/abs/1908.05647)
   - [Slides](https://leanprover.github.io/talks/IFL2019.pdf)
 - [Perceus: Garbage Free Reference Counting with Reuse](https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/)
 - [Reference Counting with Frame Limited Reuse](https://www.microsoft.com/en-us/research/publication/reference-counting-with-frame-limited-reuse-extended-version/)
 
-### Immix GC
+#### Immix GC
 
 - [mu/immix-rust](https://gitlab.anu.edu.au/mu/immix-rust)
 - [Immix: A Mark-Region Garbage Collector with Space Efficiency, Fast Collection, and Mutator Performance](https://www.cs.utexas.edu/users/speedway/DaCapo/papers/immix-pldi-2008.pdf)
 - [Taking Off the Gloves with Reference Counting Immix](http://users.cecs.anu.edu.au/~steveb/pubs/papers/rcix-oopsla-2013.pdf)
 - [Rust as a Language for High Performance GC Implementation](http://users.cecs.anu.edu.au/~steveb/pubs/papers/rust-ismm-2016.pdf)
 
-## Data structures
+### Algorithms and data structures
+
+#### RRB tree
 
 - [RRB-Trees: Efficient Immutable Vectors](https://infoscience.epfl.ch/record/169879/files/RMTrees.pdf)
   - [elm-array](https://github.com/exists-forall/elm-array)
@@ -103,12 +107,19 @@ description: Programming languages and related technologies.
   - [The blog post](https://hypirion.com/musings/thesis)
   - [pvec-rs](https://github.com/arazabishov/pvec-rs)
   - [Other implementations and descriptions of RRB trees | Closure core library](https://cljdoc.org/d/org.clojure/core.rrb-vector/0.1.2/doc/other-implementations-and-descriptions-of-rrb-trees)
+
+#### HAMT
+
 - [Optimizing Hash-Array Mapped Tries for Fast and Lean Immutable JVM Collections](https://michael.steindorfer.name/publications/oopsla15.pdf)
+
+#### Lazy list
+
 - [LazyList | Scala](https://www.scala-lang.org/api/current/scala/collection/immutable/LazyList.html)
 
 ## Coroutines
 
 - [From folklore to fact: comparing implementations of stacks and continuations](https://dl.acm.org/doi/10.1145/3385412.3385994)
+- [Stackful coroutine実装まとめ](https://qiita.com/raviqqe/items/b34f067aed697a0ba63a)
 
 ## Lazy evaluation
 
