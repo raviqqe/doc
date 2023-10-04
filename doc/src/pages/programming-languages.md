@@ -35,9 +35,9 @@ description: Programming languages and related technologies.
 - [TypeScript](https://github.com/microsoft/TypeScript)
 - [Unison](https://www.unisonweb.org/)
 - [Yatima](https://github.com/yatima-inc/yatima)
+- [Racket](https://racket-lang.org/)
 - [Ruby](https://www.ruby-lang.org)
   - [Parallel and Thread-Safe Ruby at High-Speed with TruffleRuby](https://speakerdeck.com/eregon/parallel-and-thread-safe-ruby-at-high-speed-with-truffleruby)
-- [Racket](https://racket-lang.org/)
 
 ## Language design
 
