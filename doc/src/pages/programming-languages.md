@@ -14,10 +14,6 @@ description: Programming languages and related technologies.
 - [Expresso](https://github.com/willtim/Expresso)
 - [Flix](https://flix.dev/)
 - [Gluon](https://github.com/gluon-lang/gluon)
-- [Go](https://github.com/golang/go)
-  - The package namespace system like Go works only with object-oriented programming as classes create sub-namespaces.
-  - [Channels - A Tour of Go](https://tour.golang.org/concurrency/2)
-  - [DQNEO/babygo](https://github.com/DQNEO/babygo)
 - [Haskell](https://github.com/ghc/ghc)
 - [IntercalScript](https://github.com/Storyyeller/IntercalScript)
   - Case objects are similar to polymorphic variants in OCaml.
@@ -29,18 +25,35 @@ description: Programming languages and related technologies.
   - Its garbage collection with deferred reference counting is interesting.
 - [OCaml](https://github.com/ocaml/ocaml)
 - [Scala](https://www.scala-lang.org/)
-- [Scheme](https://www.scheme.org/)
-  - [R7RS](https://small.r7rs.org/attachment/r7rs.pdf)
 - [Swift](https://swift.org/)
 - [TypeScript](https://github.com/microsoft/TypeScript)
 - [Unison](https://www.unisonweb.org/)
 - [Yatima](https://github.com/yatima-inc/yatima)
+
+### Scheme
+
+- [R7RS](https://small.r7rs.org/attachment/r7rs.pdf)
 - [Racket](https://racket-lang.org/)
+- [scheme.org](https://www.scheme.org/)
+- [SRFI](https://srfi.schemers.org/)
+
+### Go
+
+- [Go](https://github.com/golang/go)
+  - The package namespace system like Go works only with object-oriented programming as classes create sub-namespaces.
+- [Channels - A Tour of Go](https://tour.golang.org/concurrency/2)
+- [DQNEO/babygo](https://github.com/DQNEO/babygo)
 
 ### Ruby
 
 - [Ruby](https://www.ruby-lang.org)
 - [Parallel and Thread-Safe Ruby at High-Speed with TruffleRuby](https://speakerdeck.com/eregon/parallel-and-thread-safe-ruby-at-high-speed-with-truffleruby)
+
+### Rust
+
+- [Guide to Rustc Development](https://rustc-dev-guide.rust-lang.org/)
+- [Kixiron/rust-langdev](https://github.com/Kixiron/rust-langdev)
+- [Reading Arc in Rust (Japanese)](https://qiita.com/qnighy/items/35db580a139d21f38410)
 
 ## Language design
 
@@ -73,7 +86,6 @@ description: Programming languages and related technologies.
   - [Slides](https://leanprover.github.io/talks/IFL2019.pdf)
 - [Perceus: Garbage Free Reference Counting with Reuse](https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/)
 - [Reference Counting with Frame Limited Reuse](https://www.microsoft.com/en-us/research/publication/reference-counting-with-frame-limited-reuse-extended-version/)
-- [Reading Arc in Rust (Japanese)](https://qiita.com/qnighy/items/35db580a139d21f38410)
 
 ### Immix GC
 
@@ -125,10 +137,6 @@ description: Programming languages and related technologies.
   - [Akka Stream](https://doc.akka.io/docs/akka/current/stream/index.html)
 - [Runtime Support for Multicore Haskell](https://www.microsoft.com/en-us/research/wp-content/uploads/2009/09/multicore-ghc.pdf)
 
-## Compiler design
+## Books
 
-- [Guide to Rustc Development](https://rustc-dev-guide.rust-lang.org/)
-
-## Other projects
-
-- [Kixiron/rust-langdev](https://github.com/Kixiron/rust-langdev)
+- [Language Server Protocol の仕様 及び実装方法](https://zenn.dev/mtshiba/books/language_server_protocol)
