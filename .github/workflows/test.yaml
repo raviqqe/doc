@@ -39,4 +39,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: streetsidesoftware/cspell-action@main
         with:
-          files: "**/*.{md,sh}"
+          files: "**/*.{md,mdx,sh}"
