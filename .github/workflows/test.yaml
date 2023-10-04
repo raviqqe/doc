@@ -31,7 +31,7 @@ jobs:
       - run: npm run build
       - run: |
           npm run start &
-          while ! curl -f http://localhost:4321 do; done
+          while ! curl -f http://localhost:4321; do :; done
           go run github.com/raviqqe/muffet@latest http://localhost:4321
   spell-check:
     runs-on: ubuntu-latest

@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
-import remarkToc from "remark-toc";
 
 export default defineConfig({
   base: "/doc",
@@ -15,8 +14,5 @@ export default defineConfig({
     prefetch({ selector: "a", intentSelector: "a" }),
     sitemap(),
   ],
-  markdown: {
-    remarkPlugins: [remarkToc],
-  },
   site: "https://raviqqe.gitub.io/doc",
 });
