@@ -131,12 +131,12 @@ description: Programming languages and related technologies.
 
 - [LazyList | Scala](https://www.scala-lang.org/api/current/scala/collection/immutable/LazyList.html)
 
-#### Coroutines
+#### Coroutine
 
 - [From folklore to fact: comparing implementations of stacks and continuations](https://dl.acm.org/doi/10.1145/3385412.3385994)
 - [Stackful coroutine実装まとめ](https://qiita.com/raviqqe/items/b34f067aed697a0ba63a)
 
-#### Lazy evaluation
+#### Lossless syntax tree
 
 - [Persistence, façades and Roslyn’s red-green trees](https://ericlippert.com/2012/06/08/red-green-trees/)
 - [Lossless Syntax Tree Pattern | Oil](https://github.com/oilshell/oil/wiki/Lossless-Syntax-Tree-Pattern)
