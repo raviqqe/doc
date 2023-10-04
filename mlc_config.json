@@ -1,0 +1,6 @@
+{
+  "ignorePatterns": [
+    { "pattern": "^https://twitter.com" },
+    { "pattern": "^https://www.researchgate.net" }
+  ]
+}
