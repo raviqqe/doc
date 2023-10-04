@@ -41,6 +41,12 @@ description: Programming languages and related technologies.
 - [Glasgow Haskell Compiler](https://github.com/ghc/ghc)
 - [The Spineless Tagless G-machine](https://www.microsoft.com/en-us/research/wp-content/uploads/1992/04/spineless-tagless-gmachine.pdf)
 
+### Python
+
+- [CPython](https://github.com/python/cpython)
+- [PyPy](https://www.pypy.org/)
+- [Cinder](https://github.com/facebookincubator/cinder)
+
 ### Scheme
 
 - [R7RS](https://small.r7rs.org/attachment/r7rs.pdf)
@@ -55,7 +61,7 @@ description: Programming languages and related technologies.
 
 ### Ruby
 
-- [Ruby](https://www.ruby-lang.org)
+- [CRuby](https://www.ruby-lang.org)
 - [Parallel and Thread-Safe Ruby at High-Speed with TruffleRuby](https://speakerdeck.com/eregon/parallel-and-thread-safe-ruby-at-high-speed-with-truffleruby)
 
 ### Rust
