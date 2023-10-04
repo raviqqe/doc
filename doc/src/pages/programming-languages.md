@@ -133,13 +133,13 @@ description: Programming languages and related technologies.
 
 ## WASM
 
-- [emscripten](https://emscripten.org/index.html)
-- [wasmtime](https://github.com/bytecodealliance/wasmtime)
+- [Emscripten](https://emscripten.org/index.html)
+- [Wasmtime](https://github.com/bytecodealliance/wasmtime)
 - [Cranelift](https://github.com/bytecodealliance/wasmtime/tree/main/cranelift)
   - [Cranelift IR](https://github.com/bytecodealliance/wasmtime/blob/main/cranelift/docs/ir.md)
-- [wasi crate for Rust](https://github.com/bytecodealliance/wasi)
-- [mimalloc](https://github.com/microsoft/mimalloc)
-- [wasm-micro-runtime](https://github.com/bytecodealliance/wasm-micro-runtime)
+- [`bytecodealliance/wasi`](https://github.com/bytecodealliance/wasi)
+- [`microsoft/mimalloc`](https://github.com/microsoft/mimalloc)
+- [`bytecodealliance/wasm-micro-runtime`](https://github.com/bytecodealliance/wasm-micro-runtime)
 
 ## Module system
 
