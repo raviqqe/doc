@@ -119,7 +119,6 @@ description: Programming languages and related technologies.
 - [Optimizing Hash-Array Mapped Tries for Fast and Lean Immutable JVM Collections](https://michael.steindorfer.name/publications/oopsla15.pdf)
 - [LazyList | Scala](https://www.scala-lang.org/api/current/scala/collection/immutable/LazyList.html)
 - [Foreign Function Interface | Deno](https://docs.deno.com/runtime/manual/runtime/ffi_api)
-- [Pike VMとEarley法の関係についてRubyで実装して考えてみる](https://makenowjust-labs.github.io/blog/post/2023-08-06-pike-earley)
 
 #### RRB tree
 
