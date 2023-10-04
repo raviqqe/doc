@@ -128,6 +128,9 @@ description: Programming languages and related technologies.
 
 #### Lazy evaluation
 
+- [Persistence, façades and Roslyn’s red-green trees](https://ericlippert.com/2012/06/08/red-green-trees/)
+- [Lossless Syntax Tree Pattern | Oil](https://github.com/oilshell/oil/wiki/Lossless-Syntax-Tree-Pattern)
+
 ## WASM
 
 - [emscripten](https://emscripten.org/index.html)
