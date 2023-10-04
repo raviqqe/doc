@@ -153,12 +153,12 @@ description: Programming languages and related technologies.
 - [`microsoft/mimalloc`](https://github.com/microsoft/mimalloc)
 - [`bytecodealliance/wasm-micro-runtime`](https://github.com/bytecodealliance/wasm-micro-runtime)
 
-## Concurrency and parallelism
+### Concurrency and parallelism
 
 - [Keynote: Announcing Broadway - ElixirConf EU 2019](https://www.youtube.com/watch?v=IzFmNQGzApQ)
   - Basic back pressure can be implemented as queue limits.
-  - [`dashbitco/broadway`](https://github.com/dashbitco/broadway)
-  - [Akka Stream](https://doc.akka.io/docs/akka/current/stream/index.html)
+- [`dashbitco/broadway`](https://github.com/dashbitco/broadway)
+- [Akka Stream](https://doc.akka.io/docs/akka/current/stream/index.html)
 - [Runtime Support for Multicore Haskell](https://www.microsoft.com/en-us/research/wp-content/uploads/2009/09/multicore-ghc.pdf)
 
 ## Books
