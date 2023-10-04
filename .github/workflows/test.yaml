@@ -30,7 +30,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: |
-          npm run start &
+          npm run start -- --host &
           while ! curl -fs http://localhost:4321/doc > /dev/null; do :; done
           go run github.com/raviqqe/muffet@latest http://localhost:4321/doc
   spell-check:
