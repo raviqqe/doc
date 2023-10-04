@@ -134,6 +134,7 @@ description: Programming languages and related technologies.
 #### Coroutine
 
 - [From folklore to fact: comparing implementations of stacks and continuations](https://dl.acm.org/doi/10.1145/3385412.3385994)
+- [Coroutines for Go](https://research.swtch.com/coro)
 - [Stackful coroutine実装まとめ](https://qiita.com/raviqqe/items/b34f067aed697a0ba63a)
 - [Coroutine | Boost](https://www.boost.org/doc/libs/1_83_0/libs/coroutine/doc/html/index.html)
 
