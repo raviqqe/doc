@@ -97,6 +97,8 @@ description: Programming languages and related technologies.
 
 ### Garbage collection
 
+- [ラピッドイテレーションを実現するRE ENGINEの設計](https://www.docswell.com/s/CAPCOM_RandD/KQQWMK-2022-07-15-133419)
+
 #### Reference counting
 
 - [Counting Immutable Beans: Reference Counting Optimized for Purely Functional Programming](https://arxiv.org/abs/1908.05647)
