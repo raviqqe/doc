@@ -11,7 +11,7 @@ export default defineConfig({
     remotePatterns: [{ protocol: "https" }],
   },
   integrations: [
-    mdx({ remarkPlugins: [remarkToc] }),
+    mdx(),
     prefetch({ selector: "a", intentSelector: "a" }),
     sitemap(),
   ],
