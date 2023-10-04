@@ -25,17 +25,9 @@ description: Programming languages and related technologies.
 - [OCaml](https://github.com/ocaml/ocaml)
 - [Scala](https://www.scala-lang.org/)
 - [Swift](https://swift.org/)
-- [TypeScript](https://github.com/microsoft/TypeScript)
 - [Uiua](https://github.com/uiua-lang/uiua)
 - [Unison](https://www.unisonweb.org/)
 - [Yatima](https://github.com/yatima-inc/yatima)
-
-### Scheme
-
-- [R7RS](https://small.r7rs.org/attachment/r7rs.pdf)
-- [Racket](https://racket-lang.org/)
-- [scheme.org](https://www.scheme.org/)
-- [SRFI](https://srfi.schemers.org/)
 
 ### Go
 
@@ -48,6 +40,18 @@ description: Programming languages and related technologies.
 
 - [Glasgow Haskell Compiler](https://github.com/ghc/ghc)
 - [The Spineless Tagless G-machine](https://www.microsoft.com/en-us/research/wp-content/uploads/1992/04/spineless-tagless-gmachine.pdf)
+
+### Scheme
+
+- [R7RS](https://small.r7rs.org/attachment/r7rs.pdf)
+- [Racket](https://racket-lang.org/)
+- [scheme.org](https://www.scheme.org/)
+- [SRFI](https://srfi.schemers.org/)
+
+### TypeScript
+
+- [TypeScript](https://github.com/microsoft/TypeScript)
+- [Deno](https://deno.land/)
 
 ### Ruby
 
@@ -143,8 +147,7 @@ description: Programming languages and related technologies.
 
 ## Module system
 
-- [Deno](https://deno.land/)
-  - [Linking to third party code](https://deno.land/manual/linking_to_external_code)
+- [Foreign Function Interface | Deno](https://docs.deno.com/runtime/manual/runtime/ffi_api)
 
 ## Parallel computation
 
