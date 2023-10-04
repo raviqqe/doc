@@ -4,41 +4,39 @@ title: Programming languages
 description: Programming languages and related technologies.
 ---
 
-# Language design
+# Programming languages
 
-Language design resources grouped into topics
+## Languages
 
-## Programming languages
-
+- [Effekt](https://effekt-lang.org/)
+- [Elixir](https://elixir-lang.org/)
 - [Elm](https://github.com/elm)
+- [Expresso](https://github.com/willtim/Expresso)
+- [Flix](https://flix.dev/)
+- [Gluon](https://github.com/gluon-lang/gluon)
 - [Go](https://github.com/golang/go)
   - The package namespace system like Go works only with object-oriented programming as classes create sub-namespaces.
   - [Channels - A Tour of Go](https://tour.golang.org/concurrency/2)
   - [DQNEO/babygo](https://github.com/DQNEO/babygo)
-- [Gluon](https://github.com/gluon-lang/gluon)
-- [Expresso](https://github.com/willtim/Expresso)
+- [Haskell](https://github.com/ghc/ghc)
 - [IntercalScript](https://github.com/Storyyeller/IntercalScript)
   - Case objects are similar to polymorphic variants in OCaml.
-- [TypeScript](https://github.com/microsoft/TypeScript)
-- [Haskell](https://github.com/ghc/ghc)
-- [OCaml](https://github.com/ocaml/ocaml)
-- [Nim](https://github.com/nim-lang/Nim)
-  - Its garbage collection with deferred reference counting is interesting.
 - [Koka](https://github.com/koka-lang/koka)
 - [Lean 4](https://github.com/leanprover/lean4)
 - [Lobster](https://github.com/aardappel/lobster)
-- [Swift](https://swift.org/)
-- [Scala](https://www.scala-lang.org/)
-- [Effekt](https://effekt-lang.org/)
-- [Elixir](https://elixir-lang.org/)
-- [Unison](https://www.unisonweb.org/)
-- [Flix](https://flix.dev/)
-- [Yatima](https://github.com/yatima-inc/yatima)
 - [Lua](https://www.lua.org)
-- [Ruby](https://www.ruby-lang.org)
-  - [Parallel and Thread-Safe Ruby at High-Speed with TruffleRuby](https://speakerdeck.com/eregon/parallel-and-thread-safe-ruby-at-high-speed-with-truffleruby)
+- [Nim](https://github.com/nim-lang/Nim)
+  - Its garbage collection with deferred reference counting is interesting.
+- [OCaml](https://github.com/ocaml/ocaml)
+- [Scala](https://www.scala-lang.org/)
 - [Scheme](https://www.scheme.org/)
   - [R7RS](https://small.r7rs.org/attachment/r7rs.pdf)
+- [Swift](https://swift.org/)
+- [TypeScript](https://github.com/microsoft/TypeScript)
+- [Unison](https://www.unisonweb.org/)
+- [Yatima](https://github.com/yatima-inc/yatima)
+- [Ruby](https://www.ruby-lang.org)
+  - [Parallel and Thread-Safe Ruby at High-Speed with TruffleRuby](https://speakerdeck.com/eregon/parallel-and-thread-safe-ruby-at-high-speed-with-truffleruby)
 - [Racket](https://racket-lang.org/)
 
 ## Language design
