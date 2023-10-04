@@ -26,6 +26,7 @@ description: Programming languages and related technologies.
 - [Scala](https://www.scala-lang.org/)
 - [Swift](https://swift.org/)
 - [TypeScript](https://github.com/microsoft/TypeScript)
+- [Uiua](https://github.com/uiua-lang/uiua)
 - [Unison](https://www.unisonweb.org/)
 - [Yatima](https://github.com/yatima-inc/yatima)
 
@@ -153,3 +154,8 @@ description: Programming languages and related technologies.
 ## Books
 
 - [Language Server Protocol の仕様 及び実装方法](https://zenn.dev/mtshiba/books/language_server_protocol)
+
+## References
+
+- [`ChessMax/awesome-programming-languages`](https://github.com/ChessMax/awesome-programming-languages)
+- [`learn-anything/programming-languages`](https://github.com/learn-anything/programming-languages)
