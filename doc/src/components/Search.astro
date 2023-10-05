@@ -5,9 +5,22 @@ const basePath = Astro.site?.href;
 <link href=`${basePath}/pagefind/pagefind-ui.css` rel="stylesheet" />
 <script src=`${basePath}/pagefind/pagefind-ui.js` type="text/javascript"
 ></script>
-<div id="search" class="ml-3 p-4"></div>
+<div id="search"></div>
 <script>
 	window.addEventListener("DOMContentLoaded", () => {
 		new PagefindUI({ element: "#search" });
 	});
 </script>
+<style>
+	#search {
+		--pagefind-ui-scale: 0.8;
+		--pagefind-ui-primary: black;
+		--pagefind-ui-text: black;
+		--pagefind-ui-background: white;
+		--pagefind-ui-border: #ddd;
+		--pagefind-ui-tag: #ddd;
+		--pagefind-ui-border-width: 2px;
+		--pagefind-ui-border-radius: 5px;
+		--pagefind-ui-font: var(--font);
+	}
+</style>
