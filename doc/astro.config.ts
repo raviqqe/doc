@@ -20,5 +20,5 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkToc],
   },
-  site: "https://raviqqe.gitub.io/doc",
+  site: "https://raviqqe.github.io/doc",
 });
