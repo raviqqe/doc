@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run build:slides && npm run build:posts && npm run build:toc && astro build && pagefind --source dist",
+    "build": "npm run build:slides && npm run build:posts && npm run build:toc && astro build && pagefind --site dist",
     "build:slides": "npm run build:slides:html && npm run build:slides:pdf",
     "build:slides:html": "marp --html --input-dir ../slides --output public/slides",
     "build:slides:pdf": "marp --pdf --input-dir ../slides --output public/slides",
