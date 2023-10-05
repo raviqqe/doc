@@ -42,7 +42,7 @@
     "entrypoints",
     "expresso",
     "flix",
-    "fontmatter",
+    "frontmatter",
     "gofmt",
     "hamt",
     "hhkb",
