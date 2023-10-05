@@ -1,6 +1,4 @@
 ---
-import Search from "astro-pagefind/components/Search";
-
 const { frontmatter } = Astro.props;
 ---
 
@@ -19,7 +17,6 @@ const { frontmatter } = Astro.props;
 			src="https://plausible.io/js/plausible.js"></script>
 	</head>
 	<body>
-		<Search />
 		<slot />
 	</body>
 </html>
