@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
+import pagefind from "astro-pagefind";
 import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
 import remarkToc from "remark-toc";
@@ -12,6 +13,7 @@ export default defineConfig({
   },
   integrations: [
     mdx(),
+    pagefind(),
     prefetch({ selector: "a", intentSelector: "a" }),
     sitemap(),
   ],
