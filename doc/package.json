@@ -21,6 +21,7 @@
     "astro": "^3.2.2",
     "glob": "^10.3.10",
     "lodash": "^4.17.21",
+    "pagefind": "^1.0.3",
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
