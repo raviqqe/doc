@@ -70,7 +70,6 @@ description: Programming languages and related technologies.
 ### Rust
 
 - [Guide to Rustc Development](https://rustc-dev-guide.rust-lang.org/)
-- [`Kixiron/rust-langdev`](https://github.com/Kixiron/rust-langdev)
 - [Reading Arc in Rust (Japanese)](https://qiita.com/qnighy/items/35db580a139d21f38410)
 
 ## Technologies and concepts
@@ -171,3 +170,4 @@ description: Programming languages and related technologies.
 
 - [`ChessMax/awesome-programming-languages`](https://github.com/ChessMax/awesome-programming-languages)
 - [`learn-anything/programming-languages`](https://github.com/learn-anything/programming-languages)
+- [`Kixiron/rust-langdev`](https://github.com/Kixiron/rust-langdev)
