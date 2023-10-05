@@ -18,7 +18,7 @@
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/sitemap": "^3.0.0",
     "@marp-team/marp-cli": "^3.3.1",
-    "astro": "^3.2.2",
+    "astro": "^3.2.3",
     "glob": "^10.3.10",
     "lodash": "^4.17.21",
     "pagefind": "^1.0.3",
