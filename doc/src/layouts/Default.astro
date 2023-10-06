@@ -36,6 +36,10 @@ const { frontmatter } = Astro.props;
     font:
       16px "Noto Sans",
       sans-serif;
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert(1) hue-rotate(180deg) contrast(1.2) saturate(2);
+    }
   }
 
   body {
@@ -50,11 +54,12 @@ const { frontmatter } = Astro.props;
   a:visited {
     color: var(--red-color);
     text-decoration: none;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
   }
 
   a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 0.15rem;
+    text-decoration-thickness: 0.2rem;
   }
 
   code,
