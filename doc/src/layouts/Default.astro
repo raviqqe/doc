@@ -1,76 +1,73 @@
 ---
-import Search from "../components/Search.astro";
-
 const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={frontmatter.description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{frontmatter.title}</title>
-		<script
-			defer
-			data-domain="raviqqe.com"
-			src="https://plausible.io/js/plausible.js"></script>
-	</head>
-	<body>
-		<Search />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={frontmatter.description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+    <script
+      defer
+      data-domain="raviqqe.com"
+      src="https://plausible.io/js/plausible.js"></script>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;700&display=swap");
 
-	:root {
-		--black-color: #333;
-		--red-color: #d00;
-		--white-color: #fdfdfd;
+  :root {
+    --black-color: #333;
+    --red-color: #d00;
+    --white-color: #fdfdfd;
 
-		--background-color: var(--white-color);
-		--text-color: var(--black-color);
+    --background-color: var(--white-color);
+    --text-color: var(--black-color);
 
-		--monospace-font-family: monospace;
+    --monospace-font-family: monospace;
 
-		font:
-			16px "Noto Sans",
-			sans-serif;
-	}
+    font:
+      16px "Noto Sans",
+      sans-serif;
+  }
 
-	body {
-		background-color: var(--background-color);
-		color: var(--text-color);
-		max-width: 42rem;
-		margin: 0 auto;
-		padding: 1rem 1.2rem;
-	}
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 1rem 1.2rem;
+  }
 
-	a,
-	a:visited {
-		color: var(--red-color);
-		text-decoration: none;
-	}
+  a,
+  a:visited {
+    color: var(--red-color);
+    text-decoration: none;
+  }
 
-	a:hover {
-		text-decoration: underline;
-		text-decoration-thickness: 0.15rem;
-	}
+  a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.15rem;
+  }
 
-	code,
-	pre {
-		font-family: var(--monospace-font-family);
-		border-radius: 0.3rem;
-	}
+  code,
+  pre {
+    font-family: var(--monospace-font-family);
+    border-radius: 0.3rem;
+  }
 
-	pre {
-		padding: 1rem;
-	}
+  pre {
+    padding: 1rem;
+  }
 
-	code {
-		font-size: 0.9rem;
-	}
+  code {
+    font-size: 0.9rem;
+  }
 </style>
