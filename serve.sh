@@ -2,4 +2,4 @@
 
 set -e
 
-npx @marp-team/marp-cli -s .
+npx @marp-team/marp-cli -s slides
