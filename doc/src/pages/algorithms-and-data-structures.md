@@ -6,7 +6,7 @@ description: Algorithms and data structures.
 
 # Algorithms and data structures
 
-## Table of Contents
+#### Table of Contents
 
 ## Algorithms
 
