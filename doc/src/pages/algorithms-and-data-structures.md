@@ -16,7 +16,7 @@ description: Algorithms and data structures.
 ### Vehicle routing problem
 
 - [Heuristics for Vehicle Routing Problem: A Survey and Recent Advances](https://arxiv.org/abs/2303.04147)
-- [Record Breaking Optimization Results Using the Ruin and Recreate Principle][ruin-and-recreate]
+- [Record Breaking Optimization Results Using the Ruin and Recreate Principle](https://www.semanticscholar.org/paper/Record-Breaking-Optimization-Results-Using-the-Ruin-Schrimpf-Schneider/4f80e70e51e368858c3df0787f05c3aa2b9650b4)
 - [`graphhopper/jsprit`](https://github.com/graphhopper/jsprit)
 - [`reinterpretcat/vrp`](https://github.com/reinterpretcat/vrp)
 
