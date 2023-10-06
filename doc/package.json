@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run build:slides && npm run build:posts && npm run build:toc && astro build && pagefind --site dist",
+    "build": "npm run build:slides && npm run build:posts && npm run build:toc && astro build",
     "build:slides": "npm run build:slides:html && npm run build:slides:pdf",
     "build:slides:html": "marp --input-dir ../slides --output public/slides",
     "build:slides:pdf": "marp --pdf --input-dir ../slides --output public/slides",
@@ -21,7 +21,6 @@
     "astro": "^3.2.3",
     "glob": "^10.3.10",
     "lodash": "^4.17.21",
-    "pagefind": "^1.0.3",
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
