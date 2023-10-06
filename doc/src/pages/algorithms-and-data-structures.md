@@ -8,8 +8,6 @@ description: Algorithms and data structures.
 
 #### Table of Contents
 
----
-
 ## Algorithms
 
 - [ビットDP(bit DP)の考え方 - 集合に対する動的計画法](https://algo-logic.info/bit-dp/#)
