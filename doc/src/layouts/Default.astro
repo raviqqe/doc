@@ -36,6 +36,10 @@ const { frontmatter } = Astro.props;
     font:
       16px "Noto Sans",
       sans-serif;
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert(1) hue-rotate(180deg) contrast(1.2);
+    }
   }
 
   body {
