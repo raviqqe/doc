@@ -6,7 +6,7 @@ description: Programming languages and related technologies.
 
 # Programming languages
 
-## Table of Contents
+#### Table of Contents
 
 ## Languages
 
