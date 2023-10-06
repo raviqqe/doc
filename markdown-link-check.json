@@ -1,4 +1,5 @@
 {
+  "aliveStatusCodes": [200, 202, 206],
   "ignorePatterns": [
     { "pattern": "^algorithms-and-data-structures$" },
     { "pattern": "^programming-languages$" },
