@@ -8,6 +8,8 @@ description: Programming languages and related technologies.
 
 #### Table of Contents
 
+---
+
 ## Languages
 
 - [Effekt](https://effekt-lang.org/)
