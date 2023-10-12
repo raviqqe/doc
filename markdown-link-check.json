@@ -6,6 +6,9 @@
     { "pattern": "^https://crates.io" },
     { "pattern": "^https://dl.acm.org" },
     { "pattern": "^https://twitter.com" },
+    {
+      "pattern": "^https://www.microsoft.com/en-us/research/wp-content/uploads/"
+    },
     { "pattern": "^https://www.researchgate.net" }
   ],
   "retryCount": 5
