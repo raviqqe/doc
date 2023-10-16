@@ -38,7 +38,12 @@ const { frontmatter } = Astro.props;
       sans-serif;
 
     @media (prefers-color-scheme: dark) {
-      filter: invert(1) hue-rotate(180deg) contrast(1.2) saturate(3);
+      /* TODO Use a dark mode one-liner when a `saturate` function is fixed. */
+      /* filter: invert(1) hue-rotate(180deg) contrast(1.5) saturate(3); */
+
+      --black-color: #eee;
+      --red-color: #f55;
+      --white-color: black;
     }
   }
 
