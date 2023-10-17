@@ -1,9 +1,12 @@
 import { glob } from "glob";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
+import { argv } from "node:process";
+
+const [, directory] = argv;
 
 await Promise.all(
-  (await glob("../posts/**/*.md")).map(async (path) => {
+  (await glob(`../${directory}/**/*.md`)).map(async (path) => {
     const content = await readFile(path, "utf-8");
     path = path.replace("../", "src/pages/");
 
