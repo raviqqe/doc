@@ -10,6 +10,7 @@
     "build:slides:html": "marp --input-dir ../slides --output public/slides",
     "build:slides:pdf": "marp --pdf --input-dir ../slides --output public/slides",
     "build:posts": "tsx src/scripts/build-directory.ts posts",
+    "build:notes": "tsx src/scripts/build-directory.ts posts",
     "build:toc": "tsx src/scripts/build-table-of-contents.ts",
     "preview": "astro preview"
   },
