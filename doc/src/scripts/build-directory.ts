@@ -1,6 +1,6 @@
 import { glob } from "glob";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname } from "node:path";
+import { dirname, join, relative } from "node:path";
 import { argv } from "node:process";
 
 const [, , directory] = argv;
@@ -8,14 +8,14 @@ const [, , directory] = argv;
 await Promise.all(
   (await glob(`../${directory}/**/*.md`)).map(async (path) => {
     const content = await readFile(path, "utf-8");
-    path = path.replace("../", "src/pages/");
+    path = join("src/pages", relative("..", path));
 
     await mkdir(dirname(path), { recursive: true });
     await writeFile(
       path,
       [
         "---",
-        "layout: ../../../layouts/Default.astro",
+        `layout: ${relative(dirname(path), "src/layouts/Default.astro")}`,
         `title: ${content.split("\n")[0].replace("# ", "")}`,
         "---",
         "",
