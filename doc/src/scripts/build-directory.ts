@@ -3,7 +3,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { argv } from "node:process";
 
-const [, directory] = argv;
+const [, , directory] = argv;
 
 await Promise.all(
   (await glob(`../${directory}/**/*.md`)).map(async (path) => {
