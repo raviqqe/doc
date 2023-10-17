@@ -13,6 +13,7 @@
 - [Deep Policy Dynamic Programming for Vehicle Routing Problems](https://arxiv.org/abs/2102.11756)
   - [Conference video](https://www.youtube.com/watch?v=TEIZwm6lLHg)
 - [Record Breaking Optimization Results Using the Ruin and Recreate Principle](https://www.semanticscholar.org/paper/Record-Breaking-Optimization-Results-Using-the-Ruin-Schrimpf-Schneider/4f80e70e51e368858c3df0787f05c3aa2b9650b4)
+- [Dynamic programming algorithm for the vehicle routing problem with time windows and EC social legislation](https://www.researchgate.net/publication/228713217_Dynamic_programming_algorithm_for_the_vehicle_routing_problem_with_time_windows_and_EC_social_legislation)
 - [Local Search for Vehicle Routing and Scheduling Problems: Review and Conceptual Integration](https://www.researchgate.net/publication/220403470_Local_Search_for_Vehicle_Routing_and_Scheduling_Problems_Review_and_Conceptual_Integration)
 - [Held–Karp algorithm](https://en.wikipedia.org/wiki/Held%E2%80%93Karp_algorithm)
 - [`graphhopper/jsprit`](https://github.com/graphhopper/jsprit)
