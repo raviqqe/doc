@@ -15,6 +15,7 @@ description: Algorithms and data structures.
 
 ### Vehicle routing problem
 
+- [Held–Karp algorithm](https://en.wikipedia.org/wiki/Held%E2%80%93Karp_algorithm)
 - [Heuristics for Vehicle Routing Problem: A Survey and Recent Advances](https://arxiv.org/abs/2303.04147)
 - [Deep Policy Dynamic Programming for Vehicle Routing Problems](https://arxiv.org/abs/2102.11756)
   - [Conference video](https://www.youtube.com/watch?v=TEIZwm6lLHg)
