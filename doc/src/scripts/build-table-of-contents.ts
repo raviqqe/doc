@@ -53,5 +53,6 @@ const writeToc = async (directory: string, component: string) =>
       .join("\n"),
   );
 
+await writeToc("notes", "Notes");
 await writeToc("posts", "Posts");
 await writeToc("slides", "Slides");

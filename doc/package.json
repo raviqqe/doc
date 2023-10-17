@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run build:slides && npm run build:posts && npm run build:toc && astro build",
+    "build": "npm run build:notes && npm run build:posts && npm run build:slides && npm run build:toc && astro build",
     "build:slides": "npm run build:slides:html && npm run build:slides:pdf",
     "build:slides:html": "marp --input-dir ../slides --output public/slides",
     "build:slides:pdf": "marp --pdf --input-dir ../slides --output public/slides",
-    "build:posts": "tsx src/scripts/build-posts.ts",
+    "build:notes": "tsx src/scripts/build-directory.ts notes",
+    "build:posts": "tsx src/scripts/build-directory.ts posts",
     "build:toc": "tsx src/scripts/build-table-of-contents.ts",
     "preview": "astro preview"
   },
