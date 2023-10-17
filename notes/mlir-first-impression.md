@@ -1,9 +1,3 @@
----
-layout: ../layouts/Default.astro
-title: MLIR first impression
-description: Learning notes about MLIR.
----
-
 # MLIR first impression
 
 ## Overview

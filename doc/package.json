@@ -9,7 +9,7 @@
     "build:slides": "npm run build:slides:html && npm run build:slides:pdf",
     "build:slides:html": "marp --input-dir ../slides --output public/slides",
     "build:slides:pdf": "marp --pdf --input-dir ../slides --output public/slides",
-    "build:posts": "tsx src/scripts/build-posts.ts",
+    "build:posts": "tsx src/scripts/build-directory.ts posts",
     "build:toc": "tsx src/scripts/build-table-of-contents.ts",
     "preview": "astro preview"
   },

@@ -1,9 +1,3 @@
----
-layout: ../layouts/Default.astro
-title: Algorithms and data structures
-description: Algorithms and data structures.
----
-
 # Algorithms and data structures
 
 #### Table of Contents

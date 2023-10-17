@@ -1,9 +1,3 @@
----
-layout: ../layouts/Default.astro
-title: Programming languages
-description: Programming languages and related technologies.
----
-
 # Programming languages
 
 ## Languages
