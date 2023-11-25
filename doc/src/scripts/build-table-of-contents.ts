@@ -2,42 +2,47 @@ import { glob } from "glob";
 import { readFile, stat, writeFile } from "node:fs/promises";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
-import lodash from "lodash";
+import { groupBy, sortBy } from "@raviqqe/loscore";
 import { join } from "node:path";
 
 const writeToc = async (directory: string, component: string) =>
   await writeFile(
     `src/components/${component}.md`,
-    lodash
-      .chain(
-        await Promise.all(
-          (await glob(`../${directory}/**/*.md`)).map(async (path) => {
-            const htmlPath = path.replace(/^..\//, "").replace(".md", "");
-            const pdfPath = htmlPath + ".pdf";
+    [
+      ...Object.entries(
+        groupBy(
+          sortBy(
+            await Promise.all(
+              (await glob(`../${directory}/**/*.md`)).map(async (path) => {
+                const htmlPath = path.replace(/^..\//, "").replace(".md", "");
+                const pdfPath = htmlPath + ".pdf";
 
-            return {
-              title: (await readFile(path, "utf-8"))
-                .split("\n")[0]
-                .replace("# ", ""),
-              htmlPath,
-              pdfPath: (await stat(join("public", pdfPath)).catch(() => null))
-                ? pdfPath
-                : null,
-              time: (
-                await promisify(exec)(
-                  `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
-                )
-              ).stdout
-                .split(" ")[0]
-                .replaceAll("-", "/"),
-            };
-          }),
+                return {
+                  title: (await readFile(path, "utf-8"))
+                    .split("\n")[0]
+                    .replace("# ", ""),
+                  htmlPath,
+                  pdfPath: (await stat(join("public", pdfPath)).catch(
+                    () => null,
+                  ))
+                    ? pdfPath
+                    : null,
+                  time: (
+                    await promisify(exec)(
+                      `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
+                    )
+                  ).stdout
+                    .split(" ")[0]
+                    .replaceAll("-", "/"),
+                };
+              }),
+            ),
+            ({ time }) => time,
+          ),
+          ({ time }) => Number(time.split("/")[0]),
         ),
-      )
-      .sortBy("time")
-      .reverse()
-      .groupBy(({ time }) => Number(time.split("/")[0]))
-      .toPairsIn()
+      ),
+    ]
       .sort()
       .reverse()
       .flatMap(([year, posts]) => [
@@ -49,7 +54,6 @@ const writeToc = async (directory: string, component: string) =>
             }${time})`,
         ),
       ])
-      .value()
       .join("\n"),
   );
 
