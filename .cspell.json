@@ -53,6 +53,7 @@
     "letrec",
     "libhandler",
     "linalg",
+    "loscore",
     "lsmem",
     "malloc",
     "marp",
