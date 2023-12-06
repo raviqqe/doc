@@ -80,7 +80,7 @@
 
 - [Lecture slides of recursive types at Cornell University](https://www.cs.cornell.edu/courses/cs4110/2012fa/lectures/lecture27.pdf)
 - [Algebraic subtyping](https://www.cs.tufts.edu/~nr/cs257/archive/stephen-dolan/thesis.pdf)
-  - [Polymorphism, Subtyping, and Type Inference in MLsub](https://www.repository.cam.ac.uk/handle/1810/261583)
+  - [Polymorphism, Subtyping, and Type Inference in MLsub](https://www.repository.cam.ac.uk/items/b7009a90-9bc6-4538-a388-90a2d5617de0)
 - [Practical type inference for arbitrary-rank types](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/putting.pdf)
 - [Complete and Easy Bidirectional Typechecking for Higher-Rank Polymorphism](https://arxiv.org/abs/1306.6032)
 
