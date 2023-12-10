@@ -6,7 +6,7 @@ import { groupBy, sortBy } from "@raviqqe/loscore";
 import { glob } from "glob";
 
 const writeToc = async (directory: string, component: string) =>
-  await writeFile(
+  writeFile(
     `src/components/${component}.md`,
     [
       ...Object.entries(
@@ -18,9 +18,6 @@ const writeToc = async (directory: string, component: string) =>
                 const pdfPath = htmlPath + ".pdf";
 
                 return {
-                  title: (await readFile(path, "utf-8"))
-                    .split("\n")[0]
-                    .replace("# ", ""),
                   htmlPath,
                   pdfPath: (await stat(join("public", pdfPath)).catch(
                     () => null,
@@ -34,6 +31,9 @@ const writeToc = async (directory: string, component: string) =>
                   ).stdout
                     .split(" ")[0]
                     .replaceAll("-", "/"),
+                  title: (await readFile(path, "utf-8"))
+                    .split("\n")[0]
+                    .replace("# ", ""),
                 };
               }),
             ),
