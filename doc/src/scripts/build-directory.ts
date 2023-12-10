@@ -1,7 +1,7 @@
-import { glob } from "glob";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
 import { argv } from "node:process";
+import { glob } from "glob";
 
 const [, , directory] = argv;
 

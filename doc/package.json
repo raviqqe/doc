@@ -12,6 +12,7 @@
     "build:notes": "tsx src/scripts/build-directory.ts notes",
     "build:posts": "tsx src/scripts/build-directory.ts posts",
     "build:toc": "tsx src/scripts/build-table-of-contents.ts",
+    "lint": "eslint src",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -25,7 +26,9 @@
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
+    "@raviqqe/eslint-config": "^2.0.3",
     "@types/node": "^20.10.4",
+    "eslint": "^8.55.0",
     "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.12.2",
     "tsx": "^4.6.2",

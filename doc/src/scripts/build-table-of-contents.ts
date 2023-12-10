@@ -1,12 +1,12 @@
-import { glob } from "glob";
-import { readFile, stat, writeFile } from "node:fs/promises";
 import { exec } from "node:child_process";
+import { readFile, stat, writeFile } from "node:fs/promises";
+import { join } from "node:path";
 import { promisify } from "node:util";
 import { groupBy, sortBy } from "@raviqqe/loscore";
-import { join } from "node:path";
+import { glob } from "glob";
 
 const writeToc = async (directory: string, component: string) =>
-  await writeFile(
+  writeFile(
     `src/components/${component}.md`,
     [
       ...Object.entries(
@@ -18,9 +18,6 @@ const writeToc = async (directory: string, component: string) =>
                 const pdfPath = htmlPath + ".pdf";
 
                 return {
-                  title: (await readFile(path, "utf-8"))
-                    .split("\n")[0]
-                    .replace("# ", ""),
                   htmlPath,
                   pdfPath: (await stat(join("public", pdfPath)).catch(
                     () => null,
@@ -34,6 +31,9 @@ const writeToc = async (directory: string, component: string) =>
                   ).stdout
                     .split(" ")[0]
                     .replaceAll("-", "/"),
+                  title: (await readFile(path, "utf-8"))
+                    .split("\n")[0]
+                    .replace("# ", ""),
                 };
               }),
             ),
