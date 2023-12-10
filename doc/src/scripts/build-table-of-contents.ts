@@ -48,7 +48,7 @@ const writeToc = async (directory: string, component: string) =>
       .flatMap(([year, posts]) => [
         `### ${year}`,
         ...posts
-          .toReversed()
+          .reverse()
           .map(
             ({ title, htmlPath, pdfPath, time }) =>
               `- [${title}](${htmlPath}) (${
