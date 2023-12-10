@@ -1,9 +1,9 @@
-import { glob } from "glob";
-import { readFile, stat, writeFile } from "node:fs/promises";
 import { exec } from "node:child_process";
+import { readFile, stat, writeFile } from "node:fs/promises";
+import { join } from "node:path";
 import { promisify } from "node:util";
 import { groupBy, sortBy } from "@raviqqe/loscore";
-import { join } from "node:path";
+import { glob } from "glob";
 
 const writeToc = async (directory: string, component: string) =>
   await writeFile(
