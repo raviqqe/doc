@@ -5,7 +5,7 @@ on:
       - main
   pull_request:
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npx prettier --check '**/*.md'
-  lint:
+  markdown:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
