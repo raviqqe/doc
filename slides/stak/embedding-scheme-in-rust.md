@@ -75,7 +75,7 @@ assert_eq!(vm.primitive_set().device().output(), b"Hello, world!");
 
 - A (binary) bytecode file is bundled with a crate of `stak-compiler` on release.
   - On development, they are built by `build.rs`.
-  - But on `cargo publish` of the crate, the bytecode file is bundled as an asset.
+  - On `cargo publish` of the crate, the bytecode file is bundled as an asset.
 - `cargo install stak` or the other crates do not require another Scheme interpreter anymore!
 
 ---
