@@ -63,6 +63,7 @@ assert_eq!(vm.primitive_set().device().output(), b"Hello, world!");
 
 # Related crates
 
+- `stak-macro` contains `compile_r7rs!` and `include_r7rs!`.
 - `stak-compiler`
 
 ---
