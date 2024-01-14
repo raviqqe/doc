@@ -22,6 +22,14 @@ January 14, 2024
 
 ---
 
+# Examples
+
+- Stak Scheme can be embeddable into Rust codes.
+- Rust codes can simply "import" codes written in Stak Scheme.
+- Currently, they can talk to each other only by I/O...
+
+---
+
 # Future work
 
 - Scheme embedded in Rust
