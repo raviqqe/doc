@@ -19,7 +19,8 @@ January 14, 2024
 
 - Stak Scheme can be embeddable into Rust codes.
 - Rust codes can simply "import" codes written in Stak Scheme.
-- Currently, they can talk to each other only by I/O...
+- Currently, they can talk to each other only by I/O.
+  - Object interoperability in the future!
 
 ---
 
