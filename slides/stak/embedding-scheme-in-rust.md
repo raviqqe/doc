@@ -30,7 +30,7 @@ January 14, 2024
 
 # Future work
 
-- Embedded Scheme
+- Scheme embedded in Rust
   - Scheme/Rust object interoperability
     - VTable?
     - Serde?
