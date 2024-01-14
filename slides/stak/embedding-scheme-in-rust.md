@@ -22,12 +22,6 @@ January 14, 2024
 
 ---
 
-# Progress
-
-- Self-hosted compiler
-
----
-
 # Future work
 
 - Scheme embedded in Rust
