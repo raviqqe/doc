@@ -66,7 +66,7 @@ assert_eq!(vm.primitive_set().device().output(), b"Hello, world!");
 # Related crates
 
 - `stak-macro` contains `compile_r7rs!` and `include_r7rs!`.
-- `stak-compiler` contains a `compile_r7rs` function which runs a compiler program and VM for it to compile another Scheme program.
+- `stak-compiler` contains a `compile_r7rs` function which runs compiler bytecodes and a VM for it to compile another Scheme program.
 
 ---
 
