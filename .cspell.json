@@ -89,6 +89,7 @@
     "tagless",
     "tailcallopt",
     "uiua",
+    "usize",
     "valgrind",
     "virding",
     "wabt",
