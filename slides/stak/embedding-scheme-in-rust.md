@@ -51,6 +51,11 @@ vm.run().unwrap();
 assert_eq!(vm.primitive_set().device().output(), b"Hello, world!");
 ```
 
+# Examples
+
+- `compile_r7rs!` compiles R7RS Scheme codes into bytecodes.
+- `include_r7rs!` includes and compiles R7RS Scheme codes from a file path.
+
 ---
 
 # Related crates
