@@ -29,16 +29,28 @@ Feburuary 18, 2024
 ```scheme
 (define-library (foo)
   (export foo)
+
   (import (scheme base))
 
   (begin
     (define (foo x)
       (write-u8 x))))
+```
 
+```scheme
 (import (foo))
 
 (foo 65)
 ```
+
+---
+
+# Where to put libraries?
+
+- Where to put libraries?
+  - Inlining library clauses (e.g. Gauche)
+  - Libraries as files (e.g. Chibi Scheme)
+- Stak Scheme took the inlining solution.
 
 ---
 
@@ -48,6 +60,8 @@ Feburuary 18, 2024
 
 1. Read source.
 1. Expand libraries. <- new!
+   - Read all `(define-library ...)` clauses.
+   - Expand all `(import ...)` clauses.
 1. Expand macros.
 1. Compile expressions.
 1. Encode objects.
