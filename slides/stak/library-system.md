@@ -24,7 +24,7 @@ Feburuary 18, 2024
 
 # Library system
 
-- A library system
+## Defining a library
 
 ```scheme
 (define-library (foo)
@@ -36,6 +36,8 @@ Feburuary 18, 2024
     (define (foo x)
       (write-u8 x))))
 ```
+
+## Importing a library
 
 ```scheme
 (import (foo))
@@ -51,6 +53,21 @@ Feburuary 18, 2024
   - Inlining library clauses (e.g. Gauche)
   - Libraries as files (e.g. Chibi Scheme)
 - Stak Scheme took the inlining solution.
+
+```scheme
+(define-library (foo)
+  (export foo)
+
+  (import (scheme base))
+
+  (begin
+    (define (foo x)
+      (write-u8 x))))
+
+(import (foo))
+
+(foo 65)
+```
 
 ---
 
