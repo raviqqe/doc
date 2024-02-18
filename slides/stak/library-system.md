@@ -30,7 +30,6 @@ February 18, 2024
 
 - Libraries export symbols.
 - Libraries import symbols from other libraries.
-- The main script import libraries.
 - Libraries are "called" but only once.
 
 ```scheme
@@ -48,7 +47,7 @@ February 18, 2024
 
 # Library system in R7RS
 
-## Importing a library
+## Importing a library at a top level
 
 ```scheme
 (import (foo))
