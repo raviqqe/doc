@@ -86,7 +86,7 @@ February 18, 2024
 ## Pipelines
 
 1. Read source.
-1. Expand libraries. <- new!
+1. Expand libraries. <- **new!**
    - Read all `(define-library ...)` clauses.
    - Expand all `(import ...)` clauses.
 1. Expand macros.
