@@ -28,6 +28,8 @@ February 18, 2024
 
 ## Defining a library
 
+- Libraries are "called" but only once.
+
 ```scheme
 (define-library (foo)
   (export foo)
