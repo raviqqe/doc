@@ -28,6 +28,7 @@
     "bytevector",
     "callees",
     "canonicalization",
+    "chibi",
     "cloe",
     "cond",
     "cranelift",
