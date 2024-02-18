@@ -13,7 +13,17 @@ January 14, 2024
 
 ---
 
+# Stak Scheme
+
+- A bytecode compiler and virtual machine (VM) for Scheme
+- The compiler is written in Scheme.
+- The VM is written in Rust.
+
+---
+
 # Library system
+
+- foo
 
 ---
 
