@@ -8,9 +8,7 @@ January 14, 2024
 
 # Contents
 
-- Embedding Scheme in Rust
-- Related crates
-- Release process
+- Library system
 - Future work
 
 ---
