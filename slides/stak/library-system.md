@@ -42,6 +42,19 @@ January 14, 2024
 
 ---
 
+# Implementation in a compiler
+
+## Pipelines
+
+1. Read source.
+1. Expand libraries. <- new!
+1. Expand macros.
+1. Compile expressions.
+1. Encode objects.
+1. Write bytecodes.
+
+---
+
 # Future work
 
 - Library system
