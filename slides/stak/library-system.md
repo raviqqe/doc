@@ -2,7 +2,7 @@
 
 [@raviqqe](https://github.com/raviqqe)
 
-Feburuary 18, 2024
+February 18, 2024
 
 ---
 
