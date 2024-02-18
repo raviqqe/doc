@@ -1,4 +1,4 @@
-# Embedding Stak Scheme in Rust
+# Library system in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
 
