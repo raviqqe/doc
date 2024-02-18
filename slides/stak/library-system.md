@@ -24,7 +24,21 @@ January 14, 2024
 
 # Library system
 
-- Llibrary
+- A library system
+
+```scheme
+(define-library (foo)
+  (export foo)
+  (import (scheme base))
+
+  (begin
+    (define (foo x)
+      (write-u8 x))))
+
+(import (foo))
+
+(foo 65)
+```
 
 ---
 
