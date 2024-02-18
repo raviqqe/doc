@@ -37,6 +37,10 @@ Feburuary 18, 2024
       (write-u8 x))))
 ```
 
+---
+
+# Library system
+
 ## Importing a library
 
 ```scheme
