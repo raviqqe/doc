@@ -96,6 +96,15 @@ February 18, 2024
 
 ---
 
+# Library expansion
+
+- Environments of libraries are separated by symbol prefices.
+  e.g. `foo` -> `$42$foo` where `42` is the ID of a library
+- Importing symbols from a library converts all symbols' prefices.
+- Top-level symbols do not have any prefix.
+
+---
+
 # Future work
 
 - Library system
