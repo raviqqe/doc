@@ -8,7 +8,9 @@ February 18, 2024
 
 # Contents
 
-- Library system
+- Stak Scheme
+- Library system in R7RS
+- Implementation
 - Future work
 
 ---
@@ -22,7 +24,7 @@ February 18, 2024
 
 ---
 
-# Library system
+# Library system in R7RS
 
 ## Defining a library
 
@@ -39,7 +41,7 @@ February 18, 2024
 
 ---
 
-# Library system
+# Library system in R7RS
 
 ## Importing a library
 
