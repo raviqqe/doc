@@ -44,6 +44,9 @@ January 14, 2024
 
 # Future work
 
+- Library system
+  - `(rename ...)`
+  - `(prefix ...)`
 - `eval` procedure
 
 ---
