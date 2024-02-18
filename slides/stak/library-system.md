@@ -28,6 +28,9 @@ February 18, 2024
 
 ## Defining a library
 
+- Libraries export symbols.
+- Libraries import symbols from other libraries.
+- The main script import libraries.
 - Libraries are "called" but only once.
 
 ```scheme
