@@ -116,4 +116,4 @@ February 18, 2024
 
 # Summary
 
-- Buildling a library system is fun!
+- Building a library system is fun!
