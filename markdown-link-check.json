@@ -4,13 +4,12 @@
     { "pattern": "^algorithms-and-data-structures$" },
     { "pattern": "^programming-languages$" },
     { "pattern": "^mlir-first-impression$" },
-    { "pattern": "^https://crates.io" },
-    { "pattern": "^https://dl.acm.org" },
-    { "pattern": "^https://twitter.com" },
-    {
-      "pattern": "^https://www.microsoft.com/en-us/research/"
-    },
-    { "pattern": "^https://www.researchgate.net" }
+    { "pattern": "^https://crates.io/" },
+    { "pattern": "^https://cs.lmu.edu/" },
+    { "pattern": "^https://dl.acm.org/" },
+    { "pattern": "^https://twitter.com/" },
+    { "pattern": "^https://www.microsoft.com/en-us/research/" },
+    { "pattern": "^https://www.researchgate.net/" }
   ],
   "retryCount": 5
 }
