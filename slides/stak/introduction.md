@@ -21,7 +21,8 @@ raviqqe
 
 # Stak Schemeとは
 
-- raviqqeが作っている自作処理系
+- raviqqeが作っているScheme自作処理系
+- R7RS準拠を目指している
 
 ---
 
