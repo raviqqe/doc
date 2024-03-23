@@ -6,9 +6,7 @@ raviqqe
 
 # 自己紹介
 
-- raviqqe
-- [GitHub](https://github.com/raviqqe)
-- [Bluesky](https://bsky.app/profile/raviqqe.bsky.social)
+- raviqqe ([GitHub](https://github.com/raviqqe), [Bluesky](https://bsky.app/profile/raviqqe.bsky.social))
 
 ---
 
