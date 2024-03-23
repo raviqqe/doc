@@ -22,7 +22,7 @@ raviqqe
 # Stak Schemeとは
 
 - raviqqeが作っているScheme自作処理系
-- R7RS準拠を目指している
+- R7RS準拠が目標
 
 ---
 
@@ -44,6 +44,18 @@ raviqqe
 
 ---
 
+# 今後の予定
+
+- `eval`の実装
+- ファイル操作
+- Rustとの相互運用
+  - RustとScheme間で値を共有
+
+---
+
 # まとめ
 
+- Stak Scheme自作処理系
+  - Rustで書かれている
+  - R7RS準拠にしたい
 - Scheme処理系作るのは楽しい
