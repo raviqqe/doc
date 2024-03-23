@@ -2,17 +2,14 @@
 
 raviqqe
 
-[GitHub](https://github.com/raviqqe)
-[Twitter (旧X)]()
-
 ---
 
 # 自己紹介
 
 raviqqe
 
-[GitHub](https://github.com/raviqqe)
-[Twitter (旧X)]()
+[![GitHub](https://img.shields.io/badge/github-raviqqe-red.svg?style=flat-square)](https://github.com/raviqqe)
+[![Bluesky](https://img.shields.io/badge/bluesky-raviqqe-blue.svg?style=flat-square)](https://bsky.app/profile/raviqqe.bsky.social)
 
 ---
 
