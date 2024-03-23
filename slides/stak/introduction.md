@@ -13,9 +13,15 @@ raviqqe
 
 ---
 
+# 概要
+
+- Stak SchemeというScheme処理系を作っています
+
+---
+
 # Stak Schemeとは
 
-> TBD
+- raviqqeが作っている自作処理系
 
 ---
 
