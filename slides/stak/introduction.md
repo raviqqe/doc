@@ -23,6 +23,7 @@ raviqqe
 
 - raviqqeが作っているScheme自作処理系
 - R7RS準拠が目標
+- Ribbit Schemeが元
 
 ---
 
@@ -30,6 +31,7 @@ raviqqe
 
 - カナダMontreal大学で作られたScheme処理系
 - R4RS準拠
+- 4KBメモリフットプリント
 
 ---
 
