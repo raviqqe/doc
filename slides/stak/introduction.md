@@ -48,6 +48,8 @@ raviqqe
 
 - `eval`の実装
 - ファイル操作
+- 性能改善
+  - コンパイラとVMの両方
 - Rustとの相互運用
   - RustとScheme間で値を共有
 
