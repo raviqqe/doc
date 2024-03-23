@@ -28,7 +28,8 @@ raviqqe
 
 # Ribbit Schemeとは
 
-> TBD
+- カナダMontreal大学で作られたScheme処理系
+- R4RS準拠
 
 ---
 
@@ -57,6 +58,7 @@ raviqqe
 # まとめ
 
 - Stak Scheme自作処理系
-  - Rustで書かれている
-  - R7RS準拠にしたい
+  - Schemeで書かれたコンパイラ
+  - Rustで書かれたVM
+  - R7RS準拠が目標
 - Scheme処理系作るのは楽しい
