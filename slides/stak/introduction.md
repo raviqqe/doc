@@ -65,12 +65,6 @@ Shibuya.lisp, 2024年3月28日
 
 ---
 
-# Stak Schemeの実装
-
-## Ribbit Schemeと同じところ
-
----
-
 # デモ
 
 > TBD
