@@ -29,7 +29,7 @@ Shibuya.lisp, 2024年3月28日
 
 - Lispの方言
 - 単純な言語仕様
-  - R7RSが最新
+  - [R7RS](https://small.r7rs.org/)が最新
 - 継続（`call/cc`）が有名
 
 ```scheme
