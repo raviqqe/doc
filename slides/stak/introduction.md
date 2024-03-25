@@ -10,6 +10,8 @@ Shibuya.lisp, 2024年3月28日
 - 普段はRustバックエンドエンジニア
 - プログラミング言語が好き
 
+![](https://raviqqe.com/icon.svg)
+
 ---
 
 # 概要
