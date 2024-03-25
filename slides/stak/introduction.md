@@ -31,6 +31,13 @@ Shibuya.lisp, 2024年3月28日
 - R7RSが最新のスペック
 - 継続（`call/cc`）が有名
 
+```scheme
+(display
+  (call/cc
+    (lambda (k)
+      (k "Hello, world!"))))
+```
+
 ---
 
 # Stak Schemeとは
