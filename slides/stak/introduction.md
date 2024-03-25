@@ -139,7 +139,7 @@ assert_eq!(vm.primitive_set().device().output(), b"Hello, world!");
 
 # まとめ
 
-- Stak Scheme自作処理系
+- Stak Scheme処理系
   - Schemeで書かれたコンパイラ
   - Rustで書かれたVM
   - R7RS準拠が目標
