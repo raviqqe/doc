@@ -1,8 +1,8 @@
 # Stak Schemeの紹介
 
-raviqqe
+Shibuya.lisp, 2024年3月28日
 
-2024年3月28日
+raviqqe
 
 ---
 
