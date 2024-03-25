@@ -45,8 +45,8 @@ Shibuya.lisp, 2024年3月28日
 - 自分が作っているScheme処理系
 - SchemeとRustで書かれている
 - R7RS準拠が目標
-- Ribbit Schemeが元
 - **標準ライブラリが無い環境でも動く**
+- Ribbit Schemeが元
 
 ---
 
