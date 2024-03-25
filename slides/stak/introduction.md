@@ -1,4 +1,4 @@
-# [Stak Scheme][stak]の紹介
+# Stak Schemeの紹介
 
 Shibuya.lisp, 2024年3月28日
 
