@@ -24,7 +24,8 @@ Shibuya.lisp, 2024年3月28日
 
 # Stak Schemeとは
 
-- raviqqeが作っているScheme自作処理系
+- 自分が作っているScheme処理系
+- SchemeとRustで書かれている
 - R7RS準拠が目標
 - Ribbit Schemeが元
 
@@ -40,7 +41,8 @@ Shibuya.lisp, 2024年3月28日
 
 - カナダMontreal大学で作られたScheme処理系
 - R4RS準拠
-- 4KBメモリフットプリント
+- **小さい**
+  - 4KBメモリフットプリント
 
 ---
 

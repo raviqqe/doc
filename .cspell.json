@@ -80,6 +80,7 @@
     "sccp",
     "schemat",
     "serde",
+    "shibuya",
     "sqlx",
     "srfi",
     "stackful",
