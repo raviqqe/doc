@@ -34,8 +34,8 @@ Shibuya.lisp, 2024年3月28日
 ```scheme
 (display
   (call/cc
-    (lambda (k)
-      (k "Hello, world!"))))
+    (lambda (continue)
+      (continue "Hello, world!"))))
 ```
 
 ---
