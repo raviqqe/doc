@@ -19,7 +19,8 @@ Shibuya.lisp, 2024年3月28日
 - Schemeとは
 - Stak Schemeとは
   - Ribbit Schemeとは
-  - 実装
+  - Stak/Ribbit Schemeの比較
+  - デモ
 - 今後の予定
 
 ---
