@@ -89,6 +89,7 @@ Shibuya.lisp, 2024年3月28日
 
 - R7RS準拠が目標
 - Rustで書かれた仮想マシン
+  - 命令セットはRibbit Schemeとほぼ同じ
 - Rustとの相互運用性
 
 ---
