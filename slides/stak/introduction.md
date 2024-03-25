@@ -1,4 +1,4 @@
-# [Stak Scheme][stak]の紹介
+# Stak Schemeの紹介
 
 Shibuya.lisp, 2024年3月28日
 
@@ -65,7 +65,7 @@ Shibuya.lisp, 2024年3月28日
 
 # [Ribbit Scheme][ribbit]とは
 
-- カナダMontreal大学で作られたScheme処理系
+- カナダのMontreal大学で作られたScheme処理系
 - R4RS準拠
 - **小さい**
   - 7KBメモリフットプリント
