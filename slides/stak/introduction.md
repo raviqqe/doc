@@ -8,6 +8,7 @@ Shibuya.lisp, 2024年3月28日
 
 - raviqqe ([GitHub](https://github.com/raviqqe), [Bluesky](https://bsky.app/profile/raviqqe.bsky.social))
 - 普段はRustバックエンドエンジニア
+- プログラミング言語が好き
 
 ---
 
