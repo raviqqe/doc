@@ -29,6 +29,7 @@ Shibuya.lisp, 2024年3月28日
 - 自分が作っているScheme処理系
 - SchemeとRustで書かれている
 - R7RS準拠が目標
+- **標準ライブラリが無い環境でも動く**
 - Ribbit Schemeが元
 
 ---
@@ -59,6 +60,17 @@ Shibuya.lisp, 2024年3月28日
 # Stak Schemeの実装
 
 ## Ribbit Schemeと同じところ
+
+- Schemeで書かれたバイトコードコンパイラ
+- Rustで書かれた仮想マシン
+- 全てがリスト
+  - オブジェクトに加え、バイトコードや内部スタックも
+
+---
+
+# Stak Schemeの実装
+
+## Ribbit Schemeと異なるところ
 
 - Schemeで書かれたバイトコードコンパイラ
 - Rustで書かれた仮想マシン
