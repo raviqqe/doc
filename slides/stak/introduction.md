@@ -24,6 +24,14 @@ Shibuya.lisp, 2024年3月28日
 
 ---
 
+# Schemeとは
+
+- Lispの方言
+- 単純な言語仕様
+- R7RSが最新のスペック
+
+---
+
 # Stak Schemeとは
 
 - 自分が作っているScheme処理系
