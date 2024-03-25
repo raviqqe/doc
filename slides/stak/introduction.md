@@ -49,6 +49,8 @@ Shibuya.lisp, 2024年3月28日
 - R4RS準拠
 - **小さい**
   - 7KBメモリフットプリント
+- VMを色々な言語で実装
+  - C, JavaScript, Python, x86アセンブリ等
 
 ---
 
