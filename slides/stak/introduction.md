@@ -91,20 +91,23 @@ Shibuya.lisp, 2024年3月28日
 - Rustで書かれた仮想マシン
 - Rustとの相互運用性
 
-```rust
-use stak_device::FixedBufferDevice;
-use stak_macro::compile_r7rs;
-use stak_primitive::SmallPrimitiveSet;
-use stak_vm::Vm;
+---
 
+# Rustとの相互運用性
+
+- RustからSchemeのコードを呼び出し
+- 標準ライブラリが無い環境でも動く
+  - e.g. ブラウザ上、組み込み
+
+```rust
 const HEAP_SIZE: usize = 1 << 16;
 const BUFFER_SIZE: usize = 1 << 10;
 
 let mut heap = [Default::default(); HEAP_SIZE];
-let device = FixedBufferDevice::<BUFFER_SIZE, 0>::new(&[]);
-let mut vm = Vm::new(&mut heap, SmallPrimitiveSet::new(device)).unwrap();
+let device = stak_device::FixedBufferDevice::<BUFFER_SIZE, 0>::new(&[]);
+let mut vm = stak_vm::Vm::new(&mut heap, stak_primitive::SmallPrimitiveSet::new(device)).unwrap();
 
-const PROGRAM: &[u8] = compile_r7rs!(r#"
+const PROGRAM: &[u8] = stak_macro::compile_r7rs!(r#"
     (import (scheme write))
 
     (display "Hello, world!")
