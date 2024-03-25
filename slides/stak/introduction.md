@@ -14,8 +14,11 @@ Shibuya.lisp, 2024年3月28日
 
 # 概要
 
-- Stak SchemeというScheme処理系
-- 現場
+- Schemeとは
+- Stak Schemeとは
+  - Ribbit Schemeとは
+  - 実装
+- 今後の予定
 
 ---
 
