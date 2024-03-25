@@ -29,6 +29,7 @@ Shibuya.lisp, 2024年3月28日
 - Lispの方言
 - 単純な言語仕様
 - R7RSが最新のスペック
+- 継続（`call/cc`）が有名
 
 ---
 
@@ -47,7 +48,7 @@ Shibuya.lisp, 2024年3月28日
 ## 実装されている機能
 
 - `(scheme base)`, `(scheme read)`, `(scheme write)`の大体の手続き
-- 継続 (`call-with-current-continuation`)
+- 継続 (`call/cc`)
 - 例外 (`raise`, `guard`)
 - マクロ (`define-syntax`, `syntax-rules`)
 - ライブラリシステム (`define-library`, `import`, `export`)
