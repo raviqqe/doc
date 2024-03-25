@@ -39,7 +39,7 @@ Shibuya.lisp, 2024年3月28日
 - 継続 (`call-with-current-continuation`)
 - 例外 (`raise`, `guard`)
 - マクロ (`define-syntax`, `syntax-rules`)
-- ライブラリシステム (`define-library`, `import`, `exprot`)
+- ライブラリシステム (`define-library`, `import`, `export`)
 
 ---
 
