@@ -36,6 +36,8 @@ Shibuya.lisp, 2024年3月28日
 ## 実装されている機能
 
 - `(scheme base)`, `(scheme read)`, `(scheme write)`の大体の手続き
+- 継続 (`call-with-current-continuation`)
+- 例外 (`raise`, `guard`)
 - マクロ (`define-syntax`, `syntax-rules`)
 - ライブラリシステム (`define-library`, `import`, `exprot`)
 
