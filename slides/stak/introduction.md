@@ -63,7 +63,7 @@ Shibuya.lisp, 2024年3月28日
 
 ---
 
-# Ribbit Schemeとは
+# [Ribbit Scheme][ribbit]とは
 
 - カナダMontreal大学で作られたScheme処理系
 - R4RS準拠
@@ -148,3 +148,4 @@ assert_eq!(vm.primitive_set().device().output(), b"Hello, world!");
 - Scheme処理系作るのは楽しい
 
 [stak]: https://raviqqe.com/stak/
+[ribbit]: https://arxiv.org/abs/2310.13589
