@@ -1,6 +1,8 @@
 # Stak Schemeの紹介
 
-Shibuya.lisp #114 2024年3月28日
+Shibuya.lisp #114
+
+2024年3月28日
 
 ---
 
