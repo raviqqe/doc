@@ -92,7 +92,28 @@ Shibuya.lisp, 2024年3月28日
 - Rustとの相互運用性
 
 ```rust
+use stak_device::FixedBufferDevice;
+use stak_macro::compile_r7rs;
+use stak_primitive::SmallPrimitiveSet;
+use stak_vm::Vm;
 
+const HEAP_SIZE: usize = 1 << 16;
+const BUFFER_SIZE: usize = 1 << 10;
+
+let mut heap = [Default::default(); HEAP_SIZE];
+let device = FixedBufferDevice::<BUFFER_SIZE, 0>::new(&[]);
+let mut vm = Vm::new(&mut heap, SmallPrimitiveSet::new(device)).unwrap();
+
+const PROGRAM: &[u8] = compile_r7rs!(r#"
+    (import (scheme write))
+
+    (display "Hello, world!")
+"#);
+
+vm.initialize(PROGRAM.iter().copied()).unwrap();
+vm.run().unwrap();
+
+assert_eq!(vm.primitive_set().device().output(), b"Hello, world!");
 ```
 
 ---
