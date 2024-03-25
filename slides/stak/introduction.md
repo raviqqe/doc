@@ -25,7 +25,7 @@ Shibuya.lisp, 2024年3月28日
 
 ---
 
-# Schemeとは
+# [Scheme](https://www.scheme.org/)とは
 
 - Lispの方言
 - 単純な言語仕様
