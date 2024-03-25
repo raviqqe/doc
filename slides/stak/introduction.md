@@ -1,4 +1,4 @@
-# Stak Schemeの紹介
+# [Stak Scheme][stak]の紹介
 
 Shibuya.lisp, 2024年3月28日
 
@@ -41,7 +41,7 @@ Shibuya.lisp, 2024年3月28日
 
 ---
 
-# Stak Schemeとは
+# [Stak Scheme][stak]とは
 
 - 自分が作っているScheme処理系
 - SchemeとRustで書かれている
@@ -146,3 +146,5 @@ assert_eq!(vm.primitive_set().device().output(), b"Hello, world!");
   - R7RS準拠が目標
   - Rustと相互運用できる
 - Scheme処理系作るのは楽しい
+
+[stak]: https://raviqqe.com/stak/
