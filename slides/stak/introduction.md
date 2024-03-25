@@ -52,7 +52,7 @@ Shibuya.lisp, 2024年3月28日
 
 # Stak Schemeとは
 
-## 実装されている機能
+## 実装されている言語機能
 
 - `(scheme base)`, `(scheme read)`, `(scheme write)`の大体の手続き
 - 継続 (`call/cc`)
