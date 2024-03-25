@@ -143,4 +143,5 @@ assert_eq!(vm.primitive_set().device().output(), b"Hello, world!");
   - Schemeで書かれたコンパイラ
   - Rustで書かれたVM
   - R7RS準拠が目標
+  - Rustと相互運用できる
 - Scheme処理系作るのは楽しい
