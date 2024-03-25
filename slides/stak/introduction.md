@@ -2,8 +2,6 @@
 
 Shibuya.lisp, 2024年3月28日
 
-raviqqe
-
 ---
 
 # 自己紹介
