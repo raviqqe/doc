@@ -35,6 +35,10 @@ Shibuya.lisp, 2024年3月28日
 
 ## 実装されている機能
 
+- `(scheme base)`, `(scheme read)`, `(scheme write)`の大体の手続き
+- マクロ (`define-syntax`, `syntax-rules`)
+- ライブラリシステム (`define-library`, `import`, `exprot`)
+
 ---
 
 # Ribbit Schemeとは
