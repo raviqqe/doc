@@ -14,7 +14,8 @@ raviqqe
 
 # 概要
 
-- Stak SchemeというScheme処理系を作っています
+- Stak SchemeというScheme処理系
+- 現場
 
 ---
 
@@ -26,6 +27,12 @@ raviqqe
 
 ---
 
+# Stak Schemeとは
+
+実装されている機能
+
+---
+
 # Ribbit Schemeとは
 
 - カナダMontreal大学で作られたScheme処理系
@@ -34,9 +41,12 @@ raviqqe
 
 ---
 
-# 実装
+# Stak Schemeの実装
 
-> TBD
+## Ribbit Schemeと同じところ
+
+- Schemeで書かれたバイトコードコンパイラ
+- Rustで書かれた仮想マシン
 
 ---
 
