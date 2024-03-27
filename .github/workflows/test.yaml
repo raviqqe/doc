@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: apt -y install google-chrome
+      - run: sudo apt -y install chromium
       - run: npm ci
       - run: npm run build
       - run: npm run lint
