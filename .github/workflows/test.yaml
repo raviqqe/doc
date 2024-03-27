@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
       - run: |
           sudo apt -y update --fix-missing
-          sudo apt -y install google-chrome
+          sudo apt -y install chromium
       - run: npm ci
       - run: npm run build
       - run: npm run lint
