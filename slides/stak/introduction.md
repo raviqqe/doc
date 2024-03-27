@@ -126,7 +126,9 @@ assert_eq!(vm.primitive_set().device().output(), b"Hello, world!");
 
 # デモ
 
-<iframe src="https://raviqqe.com/stak/demo/" style="width: 100%; height: 100%; border: none;"></iframe>
+https://raviqqe.com/stak/demo
+
+<iframe src="https://raviqqe.com/stak/demo" style="width: 100%; height: 100%; border: none;"></iframe>
 
 ---
 
