@@ -57,7 +57,7 @@ Shibuya.lisp #114
 
 ## 実装されている言語機能
 
-- `(scheme base)`, `(scheme read)`, `(scheme write)`の大体の手続き
+- 標準ライブラリ`(scheme base)`, `(scheme read)`, `(scheme write)`の大体の手続き
 - 継続 (`call/cc`)
 - 例外 (`raise`, `guard`)
 - マクロ (`define-syntax`, `syntax-rules`)
