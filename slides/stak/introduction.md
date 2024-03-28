@@ -148,7 +148,7 @@ https://raviqqe.com/stak/demo
   - Schemeで書かれたコンパイラ
   - Rustで書かれたVM
   - R7RS準拠が目標
-  - Rustと相互運用できる
+  - Rustとの相互運用
 - Scheme処理系作るのは楽しい
 
 [stak]: https://raviqqe.com/stak/
