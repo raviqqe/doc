@@ -137,7 +137,7 @@ https://raviqqe.com/stak/demo
 - `eval`の実装
 - ファイル操作
 - コンパイラやVMの性能改善
-- Rust上のオブジェクトの変換
+- Rustオブジェクトの変換
   - RustとScheme間で値を共有
 
 ---
