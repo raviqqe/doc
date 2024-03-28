@@ -29,6 +29,8 @@ Shibuya.lisp #114
 
 # [Scheme](https://www.scheme.org/)とは
 
+- GitHub: https://github.com/raviqqe/stak
+- ドキュメンテーション: https://raviqqe.com/stak
 - Lispの方言
 - 単純な言語仕様
   - [R7RS](https://small.r7rs.org/)が最新
