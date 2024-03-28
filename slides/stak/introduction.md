@@ -46,6 +46,8 @@ Shibuya.lisp #114
 # [Stak Scheme][stak]とは
 
 - 自分が作っているScheme処理系
+  - GitHub: https://github.com/raviqqe/stak
+  - ドキュメンテーション: https://raviqqe.com/stak
 - SchemeとRustで書かれている
 - R7RS準拠が目標
 - **標準ライブラリが無い環境でも動く**
