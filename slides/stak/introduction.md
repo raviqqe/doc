@@ -57,7 +57,7 @@ Shibuya.lisp #114
 
 ## 実装されている言語機能
 
-- `(scheme base)`, `(scheme read)`, `(scheme write)`の大体の手続き
+- 標準ライブラリ`(scheme base)`, `(scheme read)`, `(scheme write)`の大体の手続き
 - 継続 (`call/cc`)
 - 例外 (`raise`, `guard`)
 - マクロ (`define-syntax`, `syntax-rules`)
@@ -137,7 +137,7 @@ https://raviqqe.com/stak/demo
 - `eval`の実装
 - ファイル操作
 - コンパイラやVMの性能改善
-- Rust上のオブジェクトの変換
+- Rustオブジェクトの変換
   - RustとScheme間で値を共有
 
 ---
@@ -148,7 +148,7 @@ https://raviqqe.com/stak/demo
   - Schemeで書かれたコンパイラ
   - Rustで書かれたVM
   - R7RS準拠が目標
-  - Rustと相互運用できる
+  - Rustとの相互運用
 - Scheme処理系作るのは楽しい
 
 [stak]: https://raviqqe.com/stak/
