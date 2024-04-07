@@ -6,12 +6,10 @@ raviqqe
 
 ---
 
-# Foo
+# Overview
+
+- Foo
 
 ---
 
-# Future work
-
----
-
-# Foo
+# Deploying Stuff WASM
