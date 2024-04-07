@@ -23,4 +23,9 @@ raviqqe
 
 ---
 
-# Deploying Stuff WASM
+# Rust on WASM
+
+- [wasm-pack](https://github.com/rustwasm/wasm-pack)
+  - A command to deploy a npm package in WASM.
+- [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen)
+  - A crate to generate bindings from Rust in WASM to JavaScript (TypeScript.)
