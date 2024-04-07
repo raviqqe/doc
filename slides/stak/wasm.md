@@ -15,7 +15,7 @@
 
 # I went to Shibuya.lisp!
 
-- [Shibuya.lisp LISP meetup #114](https://lisp.connpass.com/event/313757/)
+- [Shibuya.lisp Lisp meetup #114](https://lisp.connpass.com/event/313757/)
 - A meetup to talk about Lisp
 - Common Lisp, Clojure, Scheme, etc.
 - I talked about the overview of Stak Scheme and how it works.
