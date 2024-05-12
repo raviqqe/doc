@@ -85,7 +85,7 @@ February 18, 2024
 
 # #1
 
-- Disassemble a compiler into
+- Disassemble procedures in a compiler into target codes.
 - No portability of the compiler
   - The other Scheme implementation cannot be used to run the compiler.
 
