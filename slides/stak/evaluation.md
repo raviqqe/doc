@@ -30,7 +30,7 @@ February 18, 2024
 (import (scheme base) (scheme write) (scheme eval))
 
 (eval
-  '(display "foo")
+  '(display "Hello, world!")
   (environment '(scheme write)))
 ```
 
