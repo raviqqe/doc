@@ -18,9 +18,17 @@ February 18, 2024
 # Stak Scheme
 
 - A bytecode compiler and virtual machine (VM) for Scheme
-- The compiler is written in Scheme.
-- The VM is written in Rust.
+  - The compiler is written in Scheme.
+  - The VM is written in Rust.
 - It aims to support R7RS-small.
+
+---
+
+# Progress
+
+- The `eval` procedure
+  - Only procedures available
+  - No macro support yet
 
 ---
 
