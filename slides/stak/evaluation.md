@@ -82,7 +82,7 @@ May 12, 2024
 # Future work
 
 - Macros in `eval`
-- Duduplication of codes between a compiler and the `(scheme eval)` library
+- Deduplication of codes between a compiler and the `(scheme eval)` library
 
 ---
 
