@@ -46,7 +46,7 @@ May 12, 2024
 ## Example
 
 ```scheme
-(import (scheme base) (scheme write) (scheme eval))
+(import (scheme base) (scheme eval))
 
 (eval
   '(display "Hello, world!")
