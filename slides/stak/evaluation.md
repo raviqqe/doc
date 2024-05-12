@@ -95,6 +95,10 @@ February 18, 2024
 
 ---
 
+# Demo
+
+---
+
 # Future work
 
 - Macros in `eval`
