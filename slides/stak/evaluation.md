@@ -26,7 +26,7 @@ May 12, 2024
 
 # Progress
 
-- The `eval` procedure
+- **The `eval` procedure**
   - Only procedures available
   - No macro support yet
 - The `stak-profile` command
@@ -53,17 +53,23 @@ May 12, 2024
 
 ---
 
-# Options
+# Environments in R7RS
 
-# #1
+- `(environment <specifier> ...)`
+  - Imports immutable environments of specifiers.
+  - Normal libraries can be used for the specifiers.
+- `(interactive-environment)`
+  - A mutable environment for REPL
 
-- Disassemble procedures in a compiler into target codes.
-- No portability of the compiler
-  - The other Scheme implementation cannot be used to run the compiler.
+---
 
-# #2
+# Implementation
 
-# #3
+- The compiler injects library and macro information built in a compiler into target codes.
+  - `($$libraries)` and `($$macros)` primitives
+- Keeps portability of the compiler.
+  - The other Scheme implementation can be used to run the compiler.
+- Duplicates codes related to compilation and macro expansion in a `(scheme eval)` library.
 
 ---
 
