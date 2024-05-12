@@ -26,57 +26,12 @@ February 18, 2024
 
 # `eval` in R7RS
 
-## Defining a library
-
-- Libraries export symbols.
-- Libraries import symbols from other libraries.
-- Libraries are "called" but only once.
-
 ```scheme
-(define-library (foo)
-  (export foo)
+(import (scheme base) (scheme write) (scheme eval))
 
-  (import (scheme base))
-
-  (begin
-    (define (foo x)
-      (write-u8 x))))
-```
-
----
-
-# Library system in R7RS
-
-## Importing a library at a top level
-
-```scheme
-(import (foo))
-
-(foo 65)
-```
-
----
-
-# Where to put libraries?
-
-- Where to put libraries?
-  - Inlining library clauses (e.g. Gauche)
-  - Libraries as files (e.g. Chibi Scheme)
-- Stak Scheme took the inlining solution.
-
-```scheme
-(define-library (foo)
-  (export foo)
-
-  (import (scheme base))
-
-  (begin
-    (define (foo x)
-      (write-u8 x))))
-
-(import (foo))
-
-(foo 65)
+(eval
+  '(display "foo")
+  (environment '(scheme write)))
 ```
 
 ---
