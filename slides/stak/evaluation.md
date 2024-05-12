@@ -108,9 +108,10 @@ February 18, 2024
 # Future work
 
 - Macros in `eval`
+- Duduplication of codes between a compiler and the `(scheme eval)` library
 
 ---
 
 # Summary
 
-- Building a library system is fun!
+- Building `eval` is fun!
