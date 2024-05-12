@@ -26,6 +26,13 @@ February 18, 2024
 
 # `eval` in R7RS
 
+- The `eval` procedure evaluates an S-expression.
+- Only global bindings in a given environment are accessible.
+
+```scheme
+(eval <expr-or-def> <environment>)
+```
+
 ```scheme
 (import (scheme base) (scheme write) (scheme eval))
 
