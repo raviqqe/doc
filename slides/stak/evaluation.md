@@ -24,7 +24,7 @@ February 18, 2024
 
 ---
 
-# Library system in R7RS
+# `eval` in R7RS
 
 ## Defining a library
 
@@ -107,10 +107,7 @@ February 18, 2024
 
 # Future work
 
-- Library system
-  - `(rename ...)`
-  - `(prefix ...)`
-- `eval` procedure
+- Macros in `eval`
 
 ---
 
