@@ -59,7 +59,7 @@ May 12, 2024
 
 - `(environment <specifier> ...)`
   - Imports immutable environments of specifiers.
-  - Normal libraries can be used for the specifiers.
+  - Normal libraries (e.g. `(scheme base)` and `(scheme write)`) can be used for the specifiers.
 - `(interactive-environment)`
   - A mutable environment for REPL
 
