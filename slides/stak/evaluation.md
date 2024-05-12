@@ -29,6 +29,8 @@ February 18, 2024
 - The `eval` procedure
   - Only procedures available
   - No macro support yet
+- The `stak-profile` command
+  - Traces and profiles Stak Scheme codes.
 
 ---
 
