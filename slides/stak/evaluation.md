@@ -9,8 +9,8 @@ May 12, 2024
 # Contents
 
 - Stak Scheme
-- Library system in R7RS
-- Implementation
+- `eval` in R7RS
+- Implementation in Stak Scheme
 - Future work
 
 ---
@@ -63,7 +63,7 @@ May 12, 2024
 
 ---
 
-# Implementation
+# Implementation in Stak Scheme
 
 - The compiler injects library and macro information built in a compiler into target codes.
   - `($$libraries)` and `($$macros)` primitives
