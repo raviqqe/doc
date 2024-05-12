@@ -81,27 +81,17 @@ February 18, 2024
 
 ---
 
-# Implementation in a compiler
+# Options
 
-## Pipelines
+# #1
 
-1. Read source.
-1. Expand libraries. <- **new!**
-   - Read all `(define-library ...)` clauses.
-   - Expand all `(import ...)` clauses.
-1. Expand macros.
-1. Compile expressions.
-1. Encode objects.
-1. Write bytecodes.
+- Disassemble a compiler into
+- No portability of the compiler
+  - The other Scheme implementation cannot be used to run the compiler.
 
----
+# #2
 
-# Library expansion
-
-- Environments of libraries are separated by symbol prefixes.
-  - e.g. `foo` -> `$42$foo` where `42` is the ID of a library
-- Importing symbols from a library converts all symbols' prefixes.
-- Top-level symbols do not have any prefix.
+# #3
 
 ---
 
