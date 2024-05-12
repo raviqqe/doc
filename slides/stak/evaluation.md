@@ -43,6 +43,8 @@ May 12, 2024
 (eval <expr-or-def> <environment>)
 ```
 
+## Example
+
 ```scheme
 (import (scheme base) (scheme write) (scheme eval))
 
