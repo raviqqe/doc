@@ -18,7 +18,7 @@
   "dependencies": {
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/prefetch": "^0.4.1",
-    "@astrojs/sitemap": "^3.1.4",
+    "@astrojs/sitemap": "^3.1.5",
     "@marp-team/marp-cli": "^3.4.0",
     "@raviqqe/loscore": "^0.2.5",
     "astro": "^4.8.7",
