@@ -16,13 +16,13 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.0.0",
+    "@astrojs/mdx": "^3.0.1",
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/sitemap": "^3.1.5",
     "@marp-team/marp-cli": "^3.4.0",
     "@raviqqe/loscore": "^0.2.5",
     "astro": "^4.8.7",
-    "glob": "^10.3.15",
+    "glob": "^10.3.16",
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
