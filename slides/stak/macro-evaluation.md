@@ -9,6 +9,7 @@ June 2, 2024
 # Contents
 
 - Stak Scheme
+- Macros in Scheme
 - Implementation in Stak Scheme
 - Future work
 
@@ -23,12 +24,31 @@ June 2, 2024
 
 ---
 
-# Macros in `eval`
+# Macros in Scheme
 
 - Macros are defined in source codes.
   - Usually in `(define-library)` forms.
 - Macros in Scheme can be expanded at compile time.
   - Stak's compiler does that.
+
+```scheme
+(define-syntax or
+  (syntax-rules ()
+    ((_)
+      #f)
+
+    ((_ test)
+      test)
+
+    ((_ test1 test2 ...)
+      (let ((x test1))
+        (if x x (or test2 ...))))))
+```
+
+---
+
+# Macros in `eval`
+
 - No data of macros at runtime!
 - We need to encode macros into bytecodes.
 
