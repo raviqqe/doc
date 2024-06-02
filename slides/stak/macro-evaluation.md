@@ -1,0 +1,35 @@
+# `eval` in Stak Scheme
+
+[@raviqqe](https://github.com/raviqqe)
+
+May 12, 2024
+
+---
+
+# Contents
+
+- Stak Scheme
+- Implementation in Stak Scheme
+- Future work
+
+---
+
+# Stak Scheme
+
+- A bytecode compiler and virtual machine (VM) for Scheme
+  - The compiler is written in Scheme.
+  - The VM is written in Rust.
+- It aims to support R7RS-small.
+
+---
+
+# Future work
+
+- Macros in `eval`
+- Deduplication of codes between a compiler and the `(scheme eval)` library
+
+---
+
+# Summary
+
+- Building `eval` is fun!
