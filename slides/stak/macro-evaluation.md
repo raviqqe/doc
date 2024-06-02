@@ -11,6 +11,7 @@ June 2, 2024
 - Stak Scheme
 - Macros in Scheme
 - Implementation in Stak Scheme
+- Demo
 - Future work
 
 ---
@@ -63,7 +64,11 @@ June 2, 2024
 - Used in Scheme source codes.
 - Expanded by a compiler into macro rules.
   - Macro rules are represented by lists, symbols, and literals.
-- At runtime, macros are compiled to macro transformers of procedures at initialization of .
+- At runtime, macros are compiled to macro transformers of procedures.
+
+---
+
+# Demo
 
 ---
 
