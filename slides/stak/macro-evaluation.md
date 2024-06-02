@@ -28,7 +28,7 @@ June 2, 2024
 - Macros in Scheme can be expanded at compile time.
   - Stak's compiler does that.
 - No data of macros at runtime!
-- We need to encode macros.
+- We need to encode macros into bytecodes.
 
 ---
 
