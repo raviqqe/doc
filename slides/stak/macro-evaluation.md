@@ -68,6 +68,15 @@ June 2, 2024
 
 ---
 
+# Implementation of macros in `eval` in Stak Scheme
+
+## Macro expansion in `eval`
+
+- The `eval` procedure expands all macros in a given expression first.
+- Then, it compiles the expression into a temporary procedure and calls it.
+
+---
+
 # Demo
 
 ---
