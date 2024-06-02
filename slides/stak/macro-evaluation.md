@@ -50,7 +50,7 @@ June 2, 2024
 # Macros in `eval`
 
 - No macros or their information at runtime when they are expanded at compile time!
-- We need to encode macros into bytecodes.
+- We need pass macros into runtime codes in some way.
 
 ---
 
