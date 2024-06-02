@@ -38,6 +38,12 @@ June 2, 2024
 
 # Implementation of macros in `eval`
 
+## `($$macros)` primitive
+
+- Used in Scheme source codes.
+- Expanded by a compiler into macro rules.
+  - Macro rules are represented by lists, symbols, and literals.
+
 ---
 
 # Future work
