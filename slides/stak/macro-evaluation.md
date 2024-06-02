@@ -30,6 +30,14 @@ June 2, 2024
 - No data of macros at runtime!
 - We need to encode macros into bytecodes.
 
+```
+
+```
+
+---
+
+# Implementation of macros in `eval`
+
 ---
 
 # Future work
@@ -40,4 +48,4 @@ June 2, 2024
 
 # Summary
 
-- Building `eval` is fun!
+- Building macros in `eval` is fun!
