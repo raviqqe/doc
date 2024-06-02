@@ -56,7 +56,7 @@ June 2, 2024
 
 ---
 
-# Implementation of macros in `eval`
+# Implementation of macros in `eval` in Stak Scheme
 
 ## `($$macros)` primitive
 
