@@ -49,6 +49,8 @@ June 2, 2024
 
 # Macros in `eval`
 
+- The `eval` procedure evaluates S-expressions.
+  - The expressions can be primitive values, procedure calls, or macro expansions.
 - No macros or their information at runtime when they are expanded at compile time!
 - We need pass macros into runtime codes in some way.
 
