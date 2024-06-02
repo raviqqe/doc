@@ -25,6 +25,9 @@ June 2, 2024
 
 # Macros in `eval`
 
+- Macros in Scheme are expanded at compile time.
+- We need to encode macros.
+
 ---
 
 # Future work
