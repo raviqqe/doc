@@ -25,7 +25,8 @@ June 2, 2024
 
 # Macros in `eval`
 
-- Macros in Scheme are expanded at compile time.
+- Macros in Scheme can be expanded at compile time.
+  - Stak's compiler does that.
 - We need to encode macros.
 
 ---
