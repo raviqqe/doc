@@ -1,4 +1,4 @@
-# `eval` in Stak Scheme
+# Macro evaluation in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
 
