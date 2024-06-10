@@ -156,7 +156,6 @@
 ## Books
 
 - [プログラマーのためのCPU入門 ― CPUは如何にしてソフトウェアを高速に実行するか](https://www.lambdanote.com/blogs/news/cpu-cpu)
-- [Language Server Protocol の仕様 及び実装方法](https://zenn.dev/mtshiba/books/language_server_protocol)
 
 ## References
 
