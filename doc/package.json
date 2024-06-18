@@ -16,7 +16,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.0",
+    "@astrojs/mdx": "^3.1.1",
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/sitemap": "^3.1.5",
     "@marp-team/marp-cli": "^3.4.0",
