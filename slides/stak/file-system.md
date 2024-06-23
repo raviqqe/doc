@@ -24,24 +24,12 @@ June 23, 2024
 
 ---
 
-# Library system in R7RS
+# File system in R7RS
 
-## Defining a library
-
-- Libraries export symbols.
-- Libraries import symbols from other libraries.
-- Libraries are "called" but only once.
-
-```scheme
-(define-library (foo)
-  (export foo)
-
-  (import (scheme base))
-
-  (begin
-    (define (foo x)
-      (write-u8 x))))
-```
+- Generic I/O
+  - Port operations: `input-port?`, `output-port?`, `call-with-port`
+  - Read operations: `read-u8`, `read-string`, `read`
+  - Write operations: `write-u8`, `write-string`, `write`
 
 ---
 
