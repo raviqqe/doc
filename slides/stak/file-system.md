@@ -55,15 +55,15 @@ June 23, 2024
 ## Generic I/O
 
 - A `port` type
+- vtable-ish implementation
 
 ```scheme
 (define-record-type port
-  (make-port* read write close last-byte)
+  (make-port read write close)
   port?
   (read port-read)
   (write port-write)
-  (close port-close)
-  (last-byte port-last-byte port-set-last-byte!))
+  (close port-close))
 ```
 
 ---
@@ -73,15 +73,14 @@ June 23, 2024
 ## Opening files
 
 ```scheme
-(define (open-file output)
-  (lambda (path)
-    (let ((descriptor ($$open-file (string->code-points path) output)))
-      (unless descriptor
-        (error "cannot open file"))
-      (make-port
-        (lambda () ($$read-file descriptor))
-        (lambda (byte) ($$write-file descriptor byte))
-        (lambda () ($$close-file descriptor))))))
+(define (open-file path output)
+  (let ((descriptor ($$open-file (string->path path) output)))
+    (unless descriptor
+      (error "cannot open file"))
+    (make-port
+      (lambda () ($$read-file descriptor))
+      (lambda (byte) ($$write-file descriptor byte))
+      (lambda () ($$close-file descriptor)))))
 ```
 
 ---
