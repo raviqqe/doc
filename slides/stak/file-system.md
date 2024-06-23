@@ -29,17 +29,12 @@ June 23, 2024
 ## Generic I/O
 
 - Port type
-  - `input-port?`
-  - `output-port?`
+  - `input-port?`, `output-port?`
   - `call-with-port`
 - Read operations
-  - `read-u8`
-  - `read-string`
-  - `read`
+  - `read-u8`, `read-string`, `read`
 - Write operations
-  - `write-u8`,
-  - `write-string`
-  - `write`
+  - `write-u8`, `write-string`, `write`
 - `close-port`
 
 ---
