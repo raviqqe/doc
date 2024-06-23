@@ -54,7 +54,7 @@ June 23, 2024
 
 ## Generic I/O
 
-- A general `port` type
+- A `port` type
 
 ```scheme
 (define-record-type port
