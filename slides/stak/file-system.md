@@ -70,6 +70,10 @@ June 23, 2024
 
 # Implementation
 
+- Primitive file operations talks to libc directly.
+- Rust's `std` crate doesn't expose some underlying details.
+  - e.g. file descriptors
+
 ## Opening files
 
 ```scheme
