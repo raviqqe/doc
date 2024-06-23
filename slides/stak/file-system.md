@@ -91,5 +91,5 @@ June 23, 2024
 
 # Future work
 
-- Efficient Scheme file compilation in Rust projects.
 - More R7RS compatibility
+- Efficient Scheme file compilation in Rust projects
