@@ -68,6 +68,24 @@ June 23, 2024
 
 ---
 
+# Implementation
+
+## Opening files
+
+```scheme
+(define (open-file output)
+  (lambda (path)
+    (let ((descriptor ($$open-file (string->code-points path) output)))
+      (unless descriptor
+        (error "cannot open file"))
+      (make-port
+        (lambda () ($$read-file descriptor))
+        (lambda (byte) ($$write-file descriptor byte))
+        (lambda () ($$close-file descriptor))))))
+```
+
+---
+
 # Future work
 
 - Efficient Scheme file compilation in Rust projects.
