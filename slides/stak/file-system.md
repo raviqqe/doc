@@ -50,7 +50,9 @@ June 23, 2024
 
 # Implementation
 
-- Directly talks to libc.
+## Generic I/O
+
+- A general `port` type
 
 ```scheme
 (define-record-type port
