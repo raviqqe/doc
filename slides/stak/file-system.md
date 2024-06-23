@@ -27,9 +27,24 @@ June 23, 2024
 # File system in R7RS
 
 - Generic I/O
-  - Port operations: `input-port?`, `output-port?`, `call-with-port`
-  - Read operations: `read-u8`, `read-string`, `read`
-  - Write operations: `write-u8`, `write-string`, `write`
+  - Port operations
+    - `input-port?`
+    - `output-port?`
+    - `call-with-port`
+  - Read operations
+    - `read-u8`
+    - `read-string`
+    - `read`
+  - Write operations
+    - `write-u8`,
+    - `write-string`
+    - `write`
+  - `close-port`
+- File operations
+  - `open-input-file`
+  - `open-output-file`
+  - `delete-file`
+  - `file-exists?`
 
 ---
 
