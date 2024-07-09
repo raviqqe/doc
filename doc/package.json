@@ -22,7 +22,7 @@
     "@marp-team/marp-cli": "^3.4.0",
     "@raviqqe/loscore": "^0.2.5",
     "astro": "^4.11.5",
-    "glob": "^10.4.3",
+    "glob": "^11.0.0",
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
