@@ -2,14 +2,15 @@
   "aliveStatusCodes": [200, 202, 206],
   "ignorePatterns": [
     { "pattern": "^algorithms-and-data-structures$" },
-    { "pattern": "^programming-languages$" },
-    { "pattern": "^mlir-first-impression$" },
+    { "pattern": "^http://jcsites.juniata.edu/" },
     { "pattern": "^https://crates.io/" },
     { "pattern": "^https://cs.lmu.edu/" },
     { "pattern": "^https://dl.acm.org/" },
     { "pattern": "^https://twitter.com/" },
     { "pattern": "^https://www.microsoft.com/en-us/research/" },
-    { "pattern": "^https://www.researchgate.net/" }
+    { "pattern": "^https://www.researchgate.net/" },
+    { "pattern": "^mlir-first-impression$" },
+    { "pattern": "^programming-languages$" }
   ],
   "retryCount": 5
 }
