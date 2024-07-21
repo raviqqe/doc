@@ -82,7 +82,6 @@ July 21, 2024
 # Future work
 
 - Faster startup time
-  - `(scheme time)` library
 - Faster `cargo install` time
   - Build scripts?
 - More compatibility
