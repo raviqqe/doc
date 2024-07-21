@@ -41,12 +41,12 @@ July 21, 2024
 - A Stak Scheme interpreter
 - `cargo install stak`
 
-# Previous architecture
+## Previous architecture
 
 1. AOT compile of source codes into bytecodes
 1. Run the bytecodes on a VM
 
-# Current architecture
+## Current architecture
 
 1. Run bytecodes of `eval`-based interpreter written in Scheme
 
