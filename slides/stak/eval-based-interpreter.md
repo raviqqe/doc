@@ -1,16 +1,16 @@
-# `eval` in Stak Scheme
+# `eval`-based interpreter in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
 
-May 12, 2024
+July 21, 2024
 
 ---
 
 # Contents
 
 - Stak Scheme
-- `eval` in R7RS
-- Implementation in Stak Scheme
+- Progress
+- The `eval`-based interpreter
 - Future work
 
 ---
@@ -26,52 +26,51 @@ May 12, 2024
 
 # Progress
 
-- **The `eval` procedure**
-  - Only procedures available
-  - No macro support yet
-- The `stak-profile` command
-  - Traces and profiles Stak Scheme codes.
+- An `eval`-based interpreter
+  - Faster startup time
+- The `process-context` library
 
 ---
 
-# `eval` in R7RS
+# The `eval`-based interpreter
 
-- The `eval` procedure evaluates an S-expression.
-- Only global bindings in a given environment are accessible.
+---
+
+# The `stak` command
+
+- A Stak Scheme interpreter
+
+# Previous architecture
+
+1. AOT compile of source codes into bytecodes
+1. Run the bytecodes on a VM
+
+# Current architecture
+
+1. Run bytecoddes of `eval`-based interpreter written in Scheme
+
+---
+
+# Interpreter in Scheme
 
 ```scheme
-(eval <expr-or-def> <environment>)
+(import
+  (scheme base)
+  ; ...
+  (scheme eval))
+
+(define (main)
+  (define program (open-input-file (list-ref (command-line) 1)))
+
+  (do ()
+    ((eof-object? (peek-char program))
+      #f)
+    (if (char-whitespace? (peek-char program))
+      (read-char program)
+      (eval (read program) (interaction-environment)))))
+
+(main)
 ```
-
-## Example
-
-```scheme
-(import (scheme base) (scheme eval))
-
-(eval
-  '(display "Hello, world!")
-  (environment '(scheme write)))
-```
-
----
-
-# Environments in R7RS
-
-- `(environment <specifier> ...)`
-  - Imports immutable environments of specifiers.
-  - Normal libraries (e.g. `(scheme base)` and `(scheme write)`) can be used for the specifiers.
-- `(interactive-environment)`
-  - A mutable environment for REPL
-
----
-
-# Implementation in Stak Scheme
-
-- The compiler injects library and macro information built in a compiler into target codes.
-  - `($$libraries)` and `($$macros)` primitives
-- Keeps portability of the compiler.
-  - The other Scheme implementation can be used to run the compiler.
-- Duplicates codes related to compilation and macro expansion in a `(scheme eval)` library.
 
 ---
 
@@ -81,11 +80,13 @@ May 12, 2024
 
 # Future work
 
-- Macros in `eval`
-- Deduplication of codes between a compiler and the `(scheme eval)` library
+- Faster startup time
+  - `(scheme time)` library
+- More compatibility
+  - `(scheme time)` library
 
 ---
 
 # Summary
 
-- Building `eval` is fun!
+- Building an interpreter!
