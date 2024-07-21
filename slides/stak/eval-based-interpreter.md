@@ -47,7 +47,7 @@ July 21, 2024
 
 # Current architecture
 
-1. Run bytecoddes of `eval`-based interpreter written in Scheme
+1. Run bytecodes of `eval`-based interpreter written in Scheme
 
 ---
 
