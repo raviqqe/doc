@@ -7,7 +7,7 @@
     { "pattern": "^https://cs.lmu.edu/" },
     { "pattern": "^https://dl.acm.org/" },
     { "pattern": "^https://twitter.com/" },
-    { "pattern": "^https://users.cecs.anu.edu.au/" },
+    { "pattern": "^http://users.cecs.anu.edu.au/" },
     { "pattern": "^https://www.microsoft.com/en-us/research/" },
     { "pattern": "^https://www.researchgate.net/" },
     { "pattern": "^mlir-first-impression$" },
