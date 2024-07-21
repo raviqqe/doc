@@ -39,6 +39,7 @@ July 21, 2024
 # The `stak` command
 
 - A Stak Scheme interpreter
+- `cargo install stak`
 
 # Previous architecture
 
@@ -82,6 +83,8 @@ July 21, 2024
 
 - Faster startup time
   - `(scheme time)` library
+- Faster `cargo install` time
+  - Build scripts?
 - More compatibility
   - `(scheme time)` library
 
