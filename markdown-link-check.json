@@ -6,6 +6,7 @@
     { "pattern": "^http://users.cecs.anu.edu.au/" },
     { "pattern": "^https://crates.io/" },
     { "pattern": "^https://cs.lmu.edu/" },
+    { "pattern": "^https://dblp.org/" },
     { "pattern": "^https://dl.acm.org/" },
     { "pattern": "^https://infoscience.epfl.ch/" },
     { "pattern": "^https://twitter.com/" },
