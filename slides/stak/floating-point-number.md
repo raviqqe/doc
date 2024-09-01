@@ -9,7 +9,7 @@ September 1, 2024
 # Contents
 
 - Stak Scheme
-- `eval` in R7RS
+- Numeric tower in R7RS
 - Implementation in Stak Scheme
 - Future work
 
