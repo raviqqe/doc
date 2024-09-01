@@ -54,7 +54,7 @@ September 1, 2024
 
 # Numeric tower in R7RS
 
-- You can give up.
+- `exact` and `inexact` conversion
 
 ---
 
