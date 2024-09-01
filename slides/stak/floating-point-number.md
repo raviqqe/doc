@@ -75,6 +75,17 @@ September 1, 2024
 
 ---
 
+# Implementation in Stak Scheme
+
+## Problems
+
+### Higher inprecision
+
+- Floating-point numbers' integer components are calculated by normal `exp` and `log` procedures.
+  - We can't calculate accurate mantissae and exponents.
+
+---
+
 # Demo
 
 ---
