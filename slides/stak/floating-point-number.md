@@ -68,7 +68,7 @@ September 1, 2024
 # Implementation in Stak Scheme
 
 - Stak Scheme supports numbers represented by 63-bit integers or 64-bit floating-point numbers internally.
-- They are switched
+- They are switched by Rust's `feature` system.
 
 ---
 
