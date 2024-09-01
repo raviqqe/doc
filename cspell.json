@@ -59,6 +59,7 @@
     "loscore",
     "lsmem",
     "malloc",
+    "mantissae",
     "marp",
     "mfmt",
     "mlir",
