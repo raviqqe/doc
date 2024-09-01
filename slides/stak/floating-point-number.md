@@ -1,4 +1,4 @@
-# `eval` in Stak Scheme
+# Floating-point numbers in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
 
