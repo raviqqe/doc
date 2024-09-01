@@ -80,7 +80,7 @@ September 1, 2024
 
 ## Problems
 
-### Higher inprecision
+### Degraded precision in bytecodes
 
 - Floating-point numbers' integer components are calculated by normal `exp` and `log` procedures.
   - We can't calculate accurate mantissae and exponents.
