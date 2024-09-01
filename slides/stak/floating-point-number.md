@@ -56,6 +56,13 @@ September 1, 2024
 
 - `exact` and `inexact` conversion
 
+```
+> (inexact 1/3)
+0.3333333333333333
+> (exact 3.14)
+7070651414971679/2251799813685248
+```
+
 ---
 
 # Demo
