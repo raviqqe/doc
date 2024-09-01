@@ -30,7 +30,14 @@ September 1, 2024
 
 ---
 
-# `eval` in R7RS
+# Numeric tower in R7RS
+
+- R7RS defines a numeric tower.
+  - `number?`
+  - `complex?`
+  - `real?`
+  - `rational?`
+  - `integer?`
 
 ---
 
