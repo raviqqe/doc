@@ -99,4 +99,4 @@ September 1, 2024
 
 # Summary
 
-- Building `eval` is fun!
+- Building floating-point numbers is fun!
