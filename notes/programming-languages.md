@@ -96,7 +96,7 @@
 #### Reference counting
 
 - [Counting Immutable Beans: Reference Counting Optimized for Purely Functional Programming](https://arxiv.org/abs/1908.05647)
-  - [Slides](https://lean-lang.org/talks/IFL2019.pdf)
+  - [Slides](https://arxiv.org/abs/1908.05647)
 - [Perceus: Garbage Free Reference Counting with Reuse](https://www.microsoft.com/en-us/research/publication/perceus-garbage-free-reference-counting-with-reuse/)
 - [Reference Counting with Frame Limited Reuse](https://www.microsoft.com/en-us/research/publication/reference-counting-with-frame-limited-reuse-extended-version/)
 
