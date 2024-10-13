@@ -2,7 +2,7 @@
 
 October 13, 2024
 
---
+---
 
 # Contents
 
@@ -27,7 +27,7 @@ October 13, 2024
 - Not in R7RS
 - It's technically the same as `(import (only (scheme base) ...))` enumerating all used symbols.
 
---
+---
 
 # `(scheme time)` library
 
@@ -37,7 +37,7 @@ October 13, 2024
   - `jiffies-per-second`
 - Implemented by Rust's `std` or `libc`
 
---
+---
 
 # Triplet rib
 
@@ -47,7 +47,7 @@ October 13, 2024
   - `jiffies-per-second`
 - Implemented by Rust's `std` or `libc`
 
---
+---
 
 # Others
 
