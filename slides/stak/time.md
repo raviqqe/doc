@@ -15,6 +15,9 @@ October 13, 2024
 - Now, the Scheme interpreter written by Stak Scheme itself starts in ~200 ms on macOS!
 - It's basically REPL without the print part.
   - It doesn't support `define-library`.
+- Libraries and macros bundled in the interpreter was huge.
+  - They are automatically compiled into the resulting bytecodes.
+- Optimizing their data structures helped a lot.
 
 --
 
