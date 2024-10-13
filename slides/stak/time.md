@@ -49,6 +49,9 @@ October 13, 2024
 # Triplet rib
 
 - Previously, Stak Scheme had a quartet data structure of `(type car cdr tag)`.
+  - This is internally two 64-bit words.
+  - `type` is a tag in a `car` pointer.
+  - `tag` is a tag in a `cdr` pointer.
 - But it is `(car cdr tag)`.
 - `type` and `tag` are merged into one.
 - This should make the new bytecode encoding easier...
