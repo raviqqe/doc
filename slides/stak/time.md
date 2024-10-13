@@ -13,7 +13,7 @@ October 13, 2024
 # Startup time optimization
 
 - Now, the Scheme interpreter written by Stak Scheme itself starts in ~200 ms on macOS!
-- foo
+- It's basically REPL without the print part.
 
 --
 
