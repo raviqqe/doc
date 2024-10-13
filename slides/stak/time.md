@@ -6,6 +6,14 @@ October 13, 2024
 
 # Contents
 
+- Startup time optimization
+
+--
+
+# Startup time optimization
+
+- Now, the Scheme interpreter written by itself starts in ~200 ms on macOS!
+
 --
 
 # `(scheme time)` library
