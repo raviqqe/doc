@@ -27,6 +27,12 @@ October 13, 2024
 - Not in R7RS
 - It's technically the same as `(import (only (scheme base) ...))` enumerating all used symbols.
 
+```scheme
+(import (shake (scheme base)))
+
+(write-string "Hello, world!")
+```
+
 ---
 
 # `(scheme time)` library
