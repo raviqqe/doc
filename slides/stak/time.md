@@ -1,7 +1,7 @@
-# Stak Scheme
+# Progress in Stak Scheme
 
 --
 
 --
 
-# Encoding
+# `(scheme time)` library
