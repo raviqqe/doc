@@ -48,7 +48,10 @@ October 13, 2024
 
 # Triplet rib
 
-- `foo`
+- Previously, Stak Scheme had a quartet data structure of `(type car cdr tag)`.
+- But it is `(car cdr tag)`.
+- `type` and `tag` are merged into one.
+- This should make the new bytecode encoding easier...
 
 ---
 
