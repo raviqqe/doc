@@ -21,11 +21,12 @@ October 13, 2024
 
 ---
 
-# Tree-shaking
+# Tree shaking
 
 - `(import (shake (scheme base)))` imports only symbols used in the codes below.
 - Not in R7RS
 - It's technically the same as `(import (only (scheme base) ...))` enumerating all used symbols.
+- Definitions are not removed like JavaScript/TypeScript's tree shaking.
 
 ```scheme
 (import (shake (scheme base)))
