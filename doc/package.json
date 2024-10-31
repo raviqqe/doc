@@ -21,7 +21,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@marp-team/marp-cli": "^4.0.0",
     "@raviqqe/loscore": "^0.2.6",
-    "astro": "^4.16.7",
+    "astro": "^4.16.8",
     "glob": "^11.0.0",
     "remark-toc": "^9.0.0"
   },
