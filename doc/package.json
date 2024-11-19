@@ -20,7 +20,7 @@
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/sitemap": "^3.2.1",
     "@marp-team/marp-cli": "^4.0.3",
-    "@raviqqe/loscore": "^0.2.6",
+    "@raviqqe/loscore": "^0.2.7",
     "astro": "^4.16.13",
     "glob": "^11.0.0",
     "remark-toc": "^9.0.0"
