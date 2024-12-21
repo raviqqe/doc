@@ -12,5 +12,6 @@ runs:
         node-version-file: doc/package.json
     - run: npm ci
       shell: bash
+      working-directory: doc
     - run: sudo apt install fonts-takao
       shell: bash
