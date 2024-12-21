@@ -8,6 +8,7 @@ runs:
     - uses: actions/setup-node@v4
       with:
         cache: npm
+        cache-dependency-path: doc/package-lock.json
         node-version-file: doc/package.json
     - run: npm ci
       shell: bash
