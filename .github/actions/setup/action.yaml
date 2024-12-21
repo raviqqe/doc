@@ -1,0 +1,14 @@
+name: setup
+description: Sets up a CI job
+inputs: {}
+outputs: {}
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        cache: npm
+    - run: npm ci
+      shell: bash
+    - run: sudo apt install fonts-takao
+      shell: bash
