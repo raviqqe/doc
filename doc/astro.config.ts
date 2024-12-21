@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, sharpImageService } from "astro/config";
 import mdx from "@astrojs/mdx";
 import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
@@ -7,7 +7,7 @@ import remarkToc from "remark-toc";
 export default defineConfig({
   base: "/doc",
   image: {
-    service: { entrypoint: "astro/assets/services/sharp" },
+    service: sharpImageService(),
     remotePatterns: [{ protocol: "https" }],
   },
   integrations: [
