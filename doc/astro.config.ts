@@ -16,7 +16,7 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
-    remarkPlugins: [remarkToc()],
+    remarkPlugins: [remarkToc],
   },
   site: "https://raviqqe.github.io/doc",
 });
