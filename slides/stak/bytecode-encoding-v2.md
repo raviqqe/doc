@@ -41,7 +41,9 @@ We can just encode/decode DAG's of nodes with zero to two edges!
 
 ---
 
-# Bytecode encoding in Ribbit Scheme
+# Bytecode encoding v1
+
+- It is roughly borrowed from Ribbit Scheme.
 
 ## Decoding
 
