@@ -20,7 +20,7 @@ December 24, 2024
 - A bytecode compiler and virtual machine (VM) for Scheme
   - The compiler is written in Scheme.
   - The VM is written in Rust.
-- It aims to support R7RS-small.
+- It aims to support the R7RS-small standard.
 
 ---
 
