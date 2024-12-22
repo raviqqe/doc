@@ -97,7 +97,7 @@ We can just encode/decode DAG's of nodes with zero to two edges!
 
 # Benchmarks
 
-## Interpreter (`stak`)
+## `stak`, the interpreter
 
 ```sh
 Benchmark 1: /Users/raviqqe/src/github.com/raviqqe/stak/target/release/stak ~/foo.scm
@@ -117,7 +117,7 @@ Relative speed comparison
 
 # Benchmarks
 
-## Minimal interpreter `mstak`
+## `mstak`, the minimal interpreter
 
 ```sh
 Benchmark 1: /Users/raviqqe/src/github.com/raviqqe/stak/cmd/minimal/target/release/mstak ~/foo.scm
