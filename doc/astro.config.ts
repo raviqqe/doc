@@ -3,6 +3,7 @@ import mdx from "@astrojs/mdx";
 import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
 import remarkToc from "remark-toc";
+import remarkMermaid from "remark-mermaidjs";
 
 export default defineConfig({
   base: "/doc",
@@ -16,7 +17,7 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
-    remarkPlugins: [remarkToc],
+    remarkPlugins: [remarkMermaid, remarkToc],
   },
   site: "https://raviqqe.github.io/doc",
 });

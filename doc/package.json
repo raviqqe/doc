@@ -25,6 +25,7 @@
     "@raviqqe/loscore": "^0.2.10",
     "astro": "^5.1.1",
     "glob": "^11.0.0",
+    "remark-mermaidjs": "^7.0.0",
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
