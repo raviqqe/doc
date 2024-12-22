@@ -63,6 +63,7 @@ December 24, 2024
 
 - ~~Faster startup time~~ Finally!
 - Easier integration with Rust
+- Better compatibility with the R7RS small
 
 ---
 
