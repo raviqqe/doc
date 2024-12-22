@@ -68,4 +68,4 @@ December 24, 2024
 
 # Summary
 
-- Building an interpreter!
+- Building a bytecode encoder is fun! 😃
