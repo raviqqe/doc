@@ -71,6 +71,7 @@ We can just encode/decode DAG's of nodes with zero to two edges!
 
 1. Decode instruction lists recursively as lists into memory.
    - Including both instructions and immediate values.
+1. Done 😄
 
 ## References
 
@@ -80,10 +81,14 @@ We can just encode/decode DAG's of nodes with zero to two edges!
 
 # Bytecode encoding v2
 
+## Pros
+
 - The new encoding algorithm:
   - Doesn't have any global symbol table during encoding/decoding.
   - Eliminates constant initialization at runtime.
     - They are natively marshalled and serialized into bytecodes.
+
+## Cons
 
 ---
 
