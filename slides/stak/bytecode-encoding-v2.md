@@ -40,6 +40,10 @@ December 22, 2024
 
 We can just encode/decode DAG's of nodes with zero to two edges!
 
+## References
+
+- [A R4RS Compliant REPL in 7 KB, Léonard et al.](https://arxiv.org/pdf/2310.13589)
+
 ---
 
 # Bytecode encoding v1
