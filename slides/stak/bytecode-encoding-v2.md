@@ -70,6 +70,7 @@ We can just encode/decode DAG's of nodes with zero to two edges!
 ## Decoding
 
 1. Decode instruction lists recursively as lists into memory.
+   - Including both instructions and immediate values.
 
 ## References
 
