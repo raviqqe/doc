@@ -55,7 +55,7 @@ We can just encode/decode DAG's of nodes with zero to two edges!
 1. Expand a symbol table.
    - Symbols may or may not have their string representations.
 1. Decode instruction lists recursively as lists into memory.
-   - When we hit symbols or non-number constants, we look up the symbol table and store their indices into decoded instructions.
+   - On encoding, when we hit symbols or non-number constants, we look up the symbol table and store their indices into decoded instructions.
 1. On initialization, we initialize constants by executing constant initialization logic attached at the beginning of the program.
 
 ---
