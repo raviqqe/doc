@@ -10,7 +10,7 @@ December 24, 2024
 
 - Stak Scheme
 - Progress
-- The `eval`-based interpreter
+  - Bytecode encoding v2
 - Future work
 
 ---
@@ -26,9 +26,7 @@ December 24, 2024
 
 # Progress
 
-- An `eval`-based interpreter
-  - Faster startup time
-- The `process-context` library
+- Bytecode encoding v2
 
 ---
 
@@ -81,9 +79,7 @@ December 24, 2024
 
 # Future work
 
-- Faster startup time
-- Faster `cargo install` time
-  - Build scripts?
+- ~~Faster startup time~~ Finally!
 - More compatibility
   - `(scheme time)` library
 
