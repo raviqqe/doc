@@ -31,7 +31,7 @@ December 22, 2024
 
 ---
 
-# Bytecode encoding in Stak Scheme
+# Bytecode encoding v1 in Stak Scheme
 
 - In Stak (and Ribbit) Scheme, everything is a list.
 - Bytecodes and data values are represented by cons's or scalars (numbers.)
