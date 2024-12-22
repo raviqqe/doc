@@ -33,17 +33,18 @@ December 24, 2024
 
 # Bytecode encoding in Ribbit Scheme
 
-```mermaid
-graph TD;
-  A-->B;
-  A-->C;
-  B-->D;
-  C-->D;
-```
+## Decoding
+
+1. Expand a symbol table.
+   - Symbols may or may not have their string represenations.
+1. foo
 
 ---
 
-# Demo
+# Bytecode encoding v2
+
+- The new bytecode format is aimed for:
+  - Faster startup time
 
 ---
 
