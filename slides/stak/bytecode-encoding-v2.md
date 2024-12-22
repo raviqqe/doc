@@ -95,6 +95,46 @@ We can just encode/decode DAG's of nodes with zero to two edges!
 
 ---
 
+# Benchmarks
+
+## Interpreter (`stak`)
+
+```sh
+Benchmark 1: /Users/raviqqe/src/github.com/raviqqe/stak/target/release/stak ~/foo.scm
+  Time (mean ± σ):     127.4 ms ±   0.9 ms    [User: 122.9 ms, System: 3.8 ms]
+  Range (min … max):   126.6 ms … 130.1 ms    23 runs
+
+Benchmark 2: ~/worktree/7a1181edfad9f3e5/target/release/stak ~/foo.scm
+  Time (mean ± σ):     196.3 ms ±   2.9 ms    [User: 190.8 ms, System: 4.4 ms]
+  Range (min … max):   189.3 ms … 199.1 ms    15 runs
+
+Relative speed comparison
+        1.00          /Users/raviqqe/src/github.com/raviqqe/stak/target/release/stak ~/foo.scm
+        1.54 ±  0.03  ~/worktree/7a1181edfad9f3e5/target/release/stak ~/foo.scm
+```
+
+---
+
+# Benchmarks
+
+## Minimal interpreter `mstak`
+
+```sh
+Benchmark 1: /Users/raviqqe/src/github.com/raviqqe/stak/cmd/minimal/target/release/mstak ~/foo.scm
+  Time (mean ± σ):      72.6 ms ±   1.9 ms    [User: 68.1 ms, System: 3.7 ms]
+  Range (min … max):    70.4 ms …  75.9 ms    40 runs
+
+Benchmark 2: ~/worktree/7a1181edfad9f3e5/cmd/minimal/target/release/mstak ~/foo.scm
+  Time (mean ± σ):     105.9 ms ±   3.3 ms    [User: 101.2 ms, System: 3.8 ms]
+  Range (min … max):   102.1 ms … 111.0 ms    26 runs
+
+Relative speed comparison
+        1.00          /Users/raviqqe/src/github.com/raviqqe/stak/cmd/minimal/target/release/mstak ~/foo.scm
+        1.46 ±  0.06  ~/worktree/7a1181edfad9f3e5/cmd/minimal/target/release/mstak ~/foo.scm
+```
+
+---
+
 # Future work
 
 - ~~Faster startup time~~ Finally!
