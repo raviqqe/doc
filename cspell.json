@@ -64,6 +64,7 @@
     "marp",
     "mfmt",
     "mlir",
+    "mstak",
     "multicore",
     "musttail",
     "neumann",
@@ -103,6 +104,7 @@
     "wadler",
     "wasi",
     "wasmtime",
+    "worktree",
     "xeon",
     "yatima",
     "yhara"
