@@ -80,8 +80,6 @@ December 24, 2024
 # Future work
 
 - ~~Faster startup time~~ Finally!
-- More compatibility
-  - `(scheme time)` library
 
 ---
 
