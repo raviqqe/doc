@@ -44,7 +44,18 @@ December 24, 2024
 # Bytecode encoding v2
 
 - The new bytecode format is aimed for:
+  - Simpler decoding
   - Faster startup time
+
+## Decoding
+
+1. Expand a symbol table.
+   - Symbols may or may not have their string represenations.
+1. foo
+
+## References
+
+- https://github.com/raviqqe/til/tree/main/dag-encoder
 
 ---
 
