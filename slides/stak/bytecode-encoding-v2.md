@@ -35,6 +35,7 @@ December 22, 2024
 
 - In Stak (and Ribbit) Scheme, everything is a list.
 - Bytecodes and data values are represented by cons's or scalars (numbers.)
+  - Only `if` instructions branch into two preceding instruction lists.
 - A program can be considered as a DAG composed of cons's with instruction codes interleaved with data.
 
 We can just encode/decode DAG's of nodes with zero to two edges!
@@ -63,7 +64,8 @@ We can just encode/decode DAG's of nodes with zero to two edges!
 
 ## Decoding
 
-1. Encode a node
+1. Decode instruction lists recursively as lists into memory.
+   - When we hit symbols or non-number constants, we look up the symbol table and store their indices into decoded instructions.
 
 ## References
 
