@@ -33,6 +33,14 @@ December 24, 2024
 
 # Bytecode encoding in Ribbit Scheme
 
+```mermaid
+graph TD;
+  A-->B;
+  A-->C;
+  B-->D;
+  C-->D;
+```
+
 ---
 
 # Demo
