@@ -36,7 +36,7 @@ December 24, 2024
 ## Decoding
 
 1. Expand a symbol table.
-   - Symbols may or may not have their string represenations.
+   - Symbols may or may not have their string representations.
 1. foo
 
 ---
@@ -50,7 +50,7 @@ December 24, 2024
 ## Decoding
 
 1. Expand a symbol table.
-   - Symbols may or may not have their string represenations.
+   - Symbols may or may not have their string representations.
 1. foo
 
 ## References
