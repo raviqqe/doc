@@ -77,6 +77,15 @@ We can just encode/decode DAG's of nodes with zero to two edges!
 
 ---
 
+# Bytecode encoding v2
+
+- The new encoding algorithm:
+  - Doesn't have any global symbol table during encoding/decoding.
+  - There is no constant initialization at runtime.
+    - They are natively marshalled and serialized into bytecodes.
+
+---
+
 # Future work
 
 - ~~Faster startup time~~ Finally!
