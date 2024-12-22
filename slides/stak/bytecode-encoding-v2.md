@@ -90,6 +90,8 @@ We can just encode/decode DAG's of nodes with zero to two edges!
 
 ## Cons
 
+- Slightly bigger bytecode sizes
+
 ---
 
 # Future work
