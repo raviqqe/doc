@@ -31,6 +31,15 @@ December 24, 2024
 
 ---
 
+# Bytecode encoding in Stak Scheme
+
+- In Stak (and Ribbit) Scheme, everything is a list.
+- Bytecodes and data values are represented by cons's or scalars (numbers.)
+- A program can be considered as a DAG composed of cons's with instruction codes.
+  - We can just encode/decode DAG's of nodes with zero to two edges!
+
+---
+
 # Bytecode encoding in Ribbit Scheme
 
 ## Decoding
@@ -49,9 +58,7 @@ December 24, 2024
 
 ## Decoding
 
-1. Expand a symbol table.
-   - Symbols may or may not have their string representations.
-1. foo
+1. Encode a node
 
 ## References
 
