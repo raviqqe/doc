@@ -4,6 +4,8 @@ Reference counting (RC) has rather been a minor party to the other garbage colle
 
 In this post, I describe my experience and some caveats about implementing and gaining benefits from the Perceus RC. I've been developing [a programming language called Pen][pen] and implemented a large part of the Perceus RC there. I hope this post helps someone who is implementing the algorithm or even deciding if it's worth implementing it in their own languages.
 
+## Table of contents
+
 ## Overview of Perceus
 
 The Perceus reference counting algorithm is a thread-safe ownership-based reference counting algorithm with several optimizations:

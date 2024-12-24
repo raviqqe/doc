@@ -4,6 +4,8 @@ Rust, as a compiled language, makes it challenging to dynamically modify the beh
 
 The code used in this article can be found in the [`examples/hot-reload` directory](https://github.com/raviqqe/stak/tree/main/examples/hot-reload) of [the Stak Scheme repository][stak].
 
+## Table of contents
+
 ## What is Scheme?
 
 [Scheme](https://www.scheme.org/) is a dialect of Lisp characterized by features such as [the first-class continuations](https://en.wikipedia.org/wiki/Continuation). It is developed through community-based specification. And, its latest version, [R7RS-small][r7rs-small], has a relatively compact specification of about 90 pages.

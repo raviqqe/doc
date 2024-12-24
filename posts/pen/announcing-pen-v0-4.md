@@ -6,6 +6,8 @@ I've been working on this programming language project for almost a year. Recent
 
 In this post, I would like to introduce [the Pen programming language][pen], and describe its current status and new features included in the latest release.
 
+## Table of contents
+
 ## Install
 
 To try out he Pen, you can use [Homebrew](https://brew.sh) to install it on Linux, macOS, and [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) on Windows.
