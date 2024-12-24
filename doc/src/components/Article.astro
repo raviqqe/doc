@@ -1,40 +1,14 @@
 ---
-import Default from "./Default.astro";
 
-const { frontmatter } = Astro.props;
 ---
 
-<Default title={frontmatter.title} description={frontmatter.description}>
-  <div class="header">
-    <a href="/">raviqqe's documents</a>
-  </div>
-  <div class="content">
-    <slot />
-  </div>
-</Default>
+<article>
+  <slot />
+</article>
 <style>
-  .header {
-    display: flex;
-    justify-content: flex-start;
-    align-self: stretch;
-    padding: 0.75rem 1rem;
-    box-sizing: border-box;
-
-    > a {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: var(--text-color);
-      text-decoration: none;
-
-      &:visited {
-        color: var(--text-color);
-      }
-    }
-  }
-
-  .content {
+  article {
     max-width: 42rem;
-    padding: 1rem 1.2rem;
+    padding: 1rem 1.25rem;
     box-sizing: border-box;
   }
 </style>
