@@ -149,7 +149,7 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
 
 ---
 
-## Future Directions
+## Future directions
 
 - Improve data type interoperability between Rust and Scheme.
 - Simplify the hot module reloading process (e.g., avoiding manual `cargo build`).
