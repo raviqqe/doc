@@ -1,8 +1,6 @@
 # Embedding Scheme in Rust
 
-Hello! Today is December 22nd! This is the December 22nd article for the [Rust Advent Calendar 2024](https://qiita.com/advent-calendar/2024/rust).
-
-Rust, as a compiled language, makes it challenging to dynamically modify the behavior of a program. In this article, we’ll explore embedding a small Scheme interpreter written in Rust called [Stak Scheme][stak] into a Rust program to dynamically (without stopping the process) modify its behavior.
+Rust, as a compiled language, makes it challenging to dynamically modify the behavior of programs. In this article, we'll explore embedding a small Scheme interpreter written in Rust called [Stak Scheme][stak] into a Rust program to dynamically (without stopping the process) modify its behavior.
 
 The code used in this article can be found in the [`examples/hot-reload` directory](https://github.com/raviqqe/stak/tree/main/examples/hot-reload) of the Stak Scheme repository.
 
@@ -23,7 +21,7 @@ The code used in this article can be found in the [`examples/hot-reload` directo
 
 ## Embedding Scheme Scripts in Rust Programs
 
-In this example, we’ll write an HTTP server in Rust and embed a Scheme script within it.
+In this example, we'll write an HTTP server in Rust and embed a Scheme script within it.
 
 ### Initializing the crate
 
@@ -48,7 +46,7 @@ cargo add --build stak-build
 
 ### Preparing the HTTP Server
 
-Next, we’ll set up an HTTP server in Rust using [`axum`](https://github.com/tokio-rs/axum), a library based on the asynchronous runtime Tokio. Add the dependencies:
+Next, we'll set up an HTTP server in Rust using [`axum`](https://github.com/tokio-rs/axum), a library based on the asynchronous runtime Tokio. Add the dependencies:
 
 ```sh
 cargo add --features rt-multi-thread tokio
