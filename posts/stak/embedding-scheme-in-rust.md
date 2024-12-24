@@ -119,8 +119,6 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 15
 kill %1
 ```
 
----
-
 ## Hot Module Reloading
 
 Enable the `hot-reload` feature in `stak`:
@@ -140,19 +138,10 @@ Modify the script dynamically without restarting the server:
 curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
 ```
 
----
-
 ## Summary
 
 - We used Stak Scheme to dynamically modify the behavior of a Rust program.
 - Scheme is awesome!
-
----
-
-## Future directions
-
-- Improve data type interoperability between Rust and Scheme.
-- Simplify the hot module reloading process (e.g., avoiding manual `cargo build`).
 
 ## References
 
