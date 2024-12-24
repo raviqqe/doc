@@ -6,7 +6,7 @@ The code used in this article can be found in the [`examples/hot-reload` directo
 
 ## What is Scheme?
 
-[Scheme](https://www.scheme.org/) is a dialect of Lisp characterized by features such as [first-class continuations](https://en.wikipedia.org/wiki/Continuation). It is developed through community-based specification, and its latest version, R7RS-small, has a relatively compact specification of about 90 pages.
+[Scheme](https://www.scheme.org/) is a dialect of Lisp characterized by features such as [the first-class continuations](https://en.wikipedia.org/wiki/Continuation). It is developed through community-based specification, and its latest version, R7RS-small, has a relatively compact specification of about 90 pages.
 
 ## What is Stak Scheme?
 
