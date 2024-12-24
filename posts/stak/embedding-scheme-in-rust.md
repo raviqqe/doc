@@ -154,6 +154,16 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
 - Improve data type interoperability between Rust and Scheme.
 - Simplify the hot module reloading process (e.g., avoiding manual `cargo build`).
 
+## References
+
+- If you don’t mind large memory footprints or strict standard compliance, there are more feature-rich Scheme interpreters written in Rust:
+  - [mattwparas/steel](https://github.com/mattwparas/steel)
+  - [volution/vonuvoli-scheme](https://github.com/volution/vonuvoli-scheme)
+- Lua and mruby are also commonly used for similar purposes:
+  - [mlua-rs/mlua](https://github.com/mlua-rs/mlua)
+- While slightly different in purpose, you can achieve similar results using small WebAssembly (WASM) interpreters along with WASM compilers for high-level languages with static typing. However, you’ll need to write glue code yourself:
+  - [wasmi-labs/wasmi](https://github.com/wasmi-labs/wasmi)
+
 ## Acknowledgments
 
 Special thanks to [yhara](https://github.com/yhara), [monochrome](https://github.com/sisshiki1969), and the programming language implementation Zulip community!
