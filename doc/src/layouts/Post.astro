@@ -14,14 +14,25 @@ import Default from "./Default.astro";
   .header {
     display: flex;
     justify-content: flex-start;
-    width: 100%;
+    align-self: stretch;
     padding: 0.5rem 1rem;
     box-sizing: border-box;
+
+    > a {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+
+      &:visited {
+        color: white;
+      }
+    }
   }
 
   .content {
+    width: 100%;
     max-width: 42rem;
-    margin: 0 auto;
     padding: 1rem 1.2rem;
     box-sizing: border-box;
   }
