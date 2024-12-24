@@ -121,7 +121,7 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 15
 kill %1
 ```
 
-## Hot Module Reloading
+### Hot Module Reloading
 
 Enable the `hot-reload` feature in `stak`:
 
