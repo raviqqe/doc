@@ -1,19 +1,20 @@
 ---
+import Article from "../components/Article.astro";
 import Default from "./Default.astro";
 
 const { frontmatter } = Astro.props;
 ---
 
 <Default title={frontmatter.title} description={frontmatter.description}>
-  <div class="header">
+  <header>
     <a href="/">raviqqe's documents</a>
-  </div>
-  <div class="content">
+  </header>
+  <Article>
     <slot />
-  </div>
+  </Article>
 </Default>
 <style>
-  .header {
+  header {
     display: flex;
     justify-content: flex-start;
     align-self: stretch;
@@ -30,11 +31,5 @@ const { frontmatter } = Astro.props;
         color: var(--text-color);
       }
     }
-  }
-
-  .content {
-    max-width: 42rem;
-    padding: 1rem 1.2rem;
-    box-sizing: border-box;
   }
 </style>
