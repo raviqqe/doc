@@ -1,0 +1,16 @@
+---
+import Default from "./Default.astro";
+---
+
+<Default>
+  <div class="header">
+    <a href="/">raviqqe's documents</a>
+    <slot />
+  </div>
+</Default>
+<style>
+  .header {
+    display: flex;
+    justify-content: flex-start;
+  }
+</style>
