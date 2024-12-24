@@ -111,7 +111,100 @@ This script calculates the sum of a list read from the standard input and writes
 
 Embed this script into Rust with the following additions to `src/main.rs`:
 
-[Detailed code omitted for brevity in translation.]
+```rust
+// 他の`use`ステートメント...
+use axum::{http::StatusCode, response};
+use stak::{
+    device::ReadWriteDevice,
+    file::VoidFileSystem,
+    include_module,
+    module::{Module, UniversalModule},
+    process_context::VoidProcessContext,
+    r7rs::{SmallError, SmallPrimitiveSet},
+    time::VoidClock,
+    vm::Vm,
+};
+
+// `main`関数など...
+
+// Scheme実行時のヒープサイズ
+const HEAP_SIZE: usize = 1 << 16;
+
+// Schemeスクリプトをインポートする．
+// 実際には、Rustのプログラム内にバイトコードとして埋め込まれる．
+static MODULE: UniversalModule = include_module!("handler.scm");
+
+async fn calculate(input: String) -> response::Result<(StatusCode, String)> {
+    // インメモリ標準出力と標準エラーのためのバッファの準備
+    let mut output = vec![];
+    let mut error = vec![];
+
+    run_scheme(
+        &MODULE.bytecode(),
+        input.as_bytes(),
+        &mut output,
+        &mut error,
+    )
+    .map_err(|error| error.to_string())?;
+
+    let error = decode_buffer(error)?;
+
+    Ok(if error.is_empty() {
+        (StatusCode::OK, decode_buffer(output)?)
+    } else {
+        (StatusCode::BAD_REQUEST, error)
+    })
+}
+
+/// Schemeのプログラムを実行する．
+fn run_scheme(
+    bytecodes: &[u8],
+    input: &[u8],
+    output: &mut Vec<u8>,
+    error: &mut Vec<u8>,
+) -> Result<(), SmallError> {
+    // Schemeのためのヒープメモリの初期化．この場合、Rust側ではスタック上に確保される．
+    let mut heap = [Default::default(); HEAP_SIZE];
+    // Schemeインタプリタの仮想マシン（VM）の初期化
+    let mut vm = Vm::new(
+        &mut heap,
+        // R7RS標準準拠のプリミティブ関数の初期化
+        SmallPrimitiveSet::new(
+            ReadWriteDevice::new(input, output, error),
+            // 標準入出力以外のプリミティブは必要ないので今回は無効化する．
+            VoidFileSystem::new(),
+            VoidProcessContext::new(),
+            VoidClock::new(),
+        ),
+    )?;
+
+    // VMをバイトコードで初期化する．
+    vm.initialize(bytecodes.iter().copied())?;
+    // バイトコードをVM上で実行する．
+    vm.run()
+}
+
+/// 標準出力や標準エラーのバッファを文字列に変換する．
+fn decode_buffer(buffer: Vec<u8>) -> response::Result<String> {
+    Ok(String::from_utf8(buffer).map_err(|error| error.to_string())?)
+}
+```
+
+また、`main`関数を以下のように変更します．
+
+```diff_rust
+  #[tokio::main]
+  async fn main() -> Result<(), Box<dyn Error>> {
+      serve(
+          tokio::net::TcpListener::bind("0.0.0.0:3000").await?,
+-         Router::new().route("/calculate", post("Hello, world!")),
++         Router::new().route("/calculate", post(calculate)),
+      )
+      .await?;
+
+      Ok(())
+  }
+```
 
 Test the program:
 
