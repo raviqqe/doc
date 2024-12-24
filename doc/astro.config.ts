@@ -4,6 +4,7 @@ import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
 import remarkToc from "remark-toc";
 import remarkMermaid from "remark-mermaidjs";
+import rehypeSlug from "rehype-slug";
 import rehypeAutoLinkHeadings from "rehype-autolink-headings";
 
 export default defineConfig({
@@ -19,7 +20,7 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [remarkMermaid, remarkToc],
-    rehypePlugins: [rehypeAutoLinkHeadings],
+    rehypePlugins: [rehypeSlug, rehypeAutoLinkHeadings],
   },
   site: "https://raviqqe.github.io/doc",
 });
