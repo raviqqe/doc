@@ -24,7 +24,7 @@ In this example, we'll write an HTTP server in Rust and embed a Scheme script wi
 
 ### Initializing the crate
 
-First, initialize a binary crate for the HTTP server with the following commands:
+First, initialize a binary crate for the HTTP server by running the following commands:
 
 ```sh
 cargo init http-server
