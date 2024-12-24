@@ -6,11 +6,11 @@ The code used in this article can be found in the [`examples/hot-reload` directo
 
 ## What is Scheme?
 
-[Scheme](https://www.scheme.org/) is a dialect of Lisp characterized by features such as [the first-class continuations](https://en.wikipedia.org/wiki/Continuation). It is developed through community-based specification. And, its latest version, [R7RS-small](https://small.r7rs.org/), has a relatively compact specification of about 90 pages.
+[Scheme](https://www.scheme.org/) is a dialect of Lisp characterized by features such as [the first-class continuations](https://en.wikipedia.org/wiki/Continuation). It is developed through community-based specification. And, its latest version, [R7RS-small][r7rs-small], has a relatively compact specification of about 90 pages.
 
 ## What is Stak Scheme?
 
-[Stak Scheme][stak] is a Scheme interpreter compliant with the [R7RS standard](https://r7rs.org/), forked from [Ribbit Scheme](https://github.com/udem-dlteam/ribbit), and has the following features:
+[Stak Scheme][stak] is a Scheme interpreter compliant with the [the R7RS-small standard][r7rs-small], forked from [Ribbit Scheme](https://github.com/udem-dlteam/ribbit), and has the following features:
 
 - A Scheme interpreter written in Rust that can be embedded in Rust programs.
 - A small memory footprint.
@@ -160,3 +160,4 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
 Special thanks to [yhara](https://github.com/yhara), [monochrome](https://github.com/sisshiki1969), and the programming language implementation Zulip community!
 
 [stak]: https://github.com/raviqqe/stak
+[r7rs-small]: https://small.r7rs.org/
