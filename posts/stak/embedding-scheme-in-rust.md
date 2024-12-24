@@ -12,14 +12,13 @@ The code used in this article can be found in the [`examples/hot-reload` directo
 
 [Stak Scheme][stak] is a Scheme interpreter compliant with the [the R7RS-small standard][r7rs-small], forked from [Ribbit Scheme](https://github.com/udem-dlteam/ribbit), and has the following features:
 
-- A Scheme interpreter written in Rust that can be embedded in Rust programs.
-- A small memory footprint.
+- A Scheme interpreter embeddable in Rust programs.
+- Small memory footprint.
 - Capability-based security:
-  - By default, Stak Scheme cannot interact with external APIs like the operating system.
-  - APIs for I/O or file access need to be explicitly enabled during the initialization of the interpreter's virtual machine (VM).
-- Written by me (the author).
+  - By default, Stak Scheme cannot interact with any external API's like operating systems.
+  - APIs for I/O or file systems need to be explicitly enabled during the initialization of the interpreter's virtual machine (VM.)
 
-## Embedding Scheme Scripts in Rust Programs
+## Embedding Scheme scripts in Rust programs
 
 In this example, we'll write an HTTP server in Rust and embed a Scheme script within it.
 
@@ -44,7 +43,7 @@ cargo add --build stak-build
 - The `stak` crate allows Rust to call the Scheme interpreter.
 - The `stak-build` crate compiles Scheme scripts into Rust bytecode via a [`build.rs` build script](https://doc.rust-lang.org/cargo/reference/build-scripts.html) (explained later).
 
-### Preparing the HTTP Server
+### Preparing the HTTP server
 
 Next, we'll set up an HTTP server in Rust using [`axum`](https://github.com/tokio-rs/axum), a library based on the asynchronous runtime Tokio. Add the dependencies:
 
@@ -79,7 +78,7 @@ curl -f -X POST http://localhost:3000/calculate # -> Hello, world!
 kill %1
 ```
 
-### Adding a Build Script
+### Adding a build script
 
 Add Scheme scripts to the `src` directory with the `.scm` extension. These files are not directly embedded into the Rust program but are converted into [bytecode](https://en.wikipedia.org/wiki/Bytecode) using the `stak-build` crate. Add the following to a `build.rs` file:
 
@@ -93,7 +92,7 @@ fn main() -> Result<(), BuildError> {
 
 This ensures the Scheme files are converted to bytecode and stored in the `target` directory when `cargo build` is run.
 
-### Creating a Scheme Script Handler
+### Writing a request handler in Scheme
 
 Add the following Scheme script to `src/handler.scm`:
 
