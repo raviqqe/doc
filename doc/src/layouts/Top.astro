@@ -1,0 +1,18 @@
+---
+import Default from "./Default.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Default title={frontmatter.title} description={frontmatter.description}>
+  <div class="content">
+    <slot />
+  </div>
+</Default>
+<style>
+  .content {
+    max-width: 42rem;
+    padding: 1rem 1.2rem;
+    box-sizing: border-box;
+  }
+</style>

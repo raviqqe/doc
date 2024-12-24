@@ -1,18 +1,23 @@
 ---
 import "@fontsource-variable/noto-sans";
 
-const { frontmatter } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={frontmatter.description} />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{frontmatter.title}</title>
+    <title>{title}</title>
     <script
       defer
       data-domain="raviqqe.com"
@@ -48,12 +53,17 @@ const { frontmatter } = Astro.props;
     }
   }
 
-  body {
+  html {
     background-color: var(--background-color);
     color: var(--text-color);
-    max-width: 42rem;
-    margin: 0 auto;
-    padding: 1rem 1.2rem;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
   }
 
   a,

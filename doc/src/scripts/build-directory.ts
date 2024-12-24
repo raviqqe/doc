@@ -15,7 +15,7 @@ await Promise.all(
       path,
       [
         "---",
-        `layout: ${relative(dirname(path), "src/layouts/Default.astro")}`,
+        `layout: ${relative(dirname(path), "src/layouts/Post.astro")}`,
         `title: ${content.split("\n")[0].replace("# ", "")}`,
         "---",
         "",
