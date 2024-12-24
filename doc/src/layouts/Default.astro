@@ -1,4 +1,6 @@
 ---
+import "@fontsource-variable/noto-sans";
+
 const { frontmatter } = Astro.props;
 ---
 
@@ -14,6 +16,7 @@ const { frontmatter } = Astro.props;
     <script
       defer
       data-domain="raviqqe.com"
+      is:inline
       src="https://plausible.io/js/plausible.js"></script>
   </head>
   <body>
@@ -21,8 +24,6 @@ const { frontmatter } = Astro.props;
   </body>
 </html>
 <style is:global>
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;700&display=swap");
-
   :root {
     --black-color: #333;
     --red-color: #d00;
@@ -34,7 +35,7 @@ const { frontmatter } = Astro.props;
     --monospace-font-family: monospace;
 
     font:
-      16px "Noto Sans",
+      16px "Noto Sans Variable",
       sans-serif;
 
     @media (prefers-color-scheme: dark) {
