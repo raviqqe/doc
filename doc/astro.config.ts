@@ -19,7 +19,7 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [remarkMermaid, remarkToc],
-    rehypePlugins: [rehypeAutoLinkHeadings()],
+    rehypePlugins: [rehypeAutoLinkHeadings],
   },
   site: "https://raviqqe.github.io/doc",
 });
