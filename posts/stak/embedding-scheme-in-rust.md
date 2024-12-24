@@ -161,6 +161,7 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
   - [volution/vonuvoli-scheme](https://github.com/volution/vonuvoli-scheme)
 - Lua and mruby are also commonly used for similar purposes:
   - [mlua-rs/mlua](https://github.com/mlua-rs/mlua)
+  - [mruby](https://mruby.org/)
 - While slightly different in purpose, you can achieve similar results using small WebAssembly (WASM) interpreters along with WASM compilers for high-level languages with static typing. However, you’ll need to write glue code yourself:
   - [wasmi-labs/wasmi](https://github.com/wasmi-labs/wasmi)
 
