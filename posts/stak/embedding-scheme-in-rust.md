@@ -60,8 +60,8 @@ use core::error::Error;
 #[tokio::main].
 async fn main() -> Result<(), Box<dyn Error>> {
     serve(
-        tokio::net::TcpListener::bind(“0.0.0.0:3000”).await?
-        Router::new().route(“/calculate”, post(“Hello, world!”)), post("Hello!
+        tokio::net::TcpListener::bind("0.0.0.0:3000").await?
+        Router::new().route("/calculate", post("Hello, world!")), post("Hello!
     )
     .await?
 
@@ -129,7 +129,7 @@ const HEAP_SIZE: usize = 1 << 16;
 
 // import Scheme scripts.
 // actually embedded as bytecode in the Rust program.
-static MODULE: UniversalModule = include_module!(“handler.scm”);
+static MODULE: UniversalModule = include_module!("handler.scm");
 
 async fn calculate(input: String) -> response::Result<(StatusCode, String)> {
     // prepare buffers for in-memory stdout and stderr
@@ -193,9 +193,9 @@ Also, change the `main` function as follows.
   #[tokio::main].
   async fn main() -> Result<(), Box<dyn Error>> {
       serve(
-          tokio::net::TcpListener::bind(“0.0.0.0:3000”).await?
-- Router::new().route(“/calculate”, post(“Hello, world!”)), + Router::new().
-+ Router::new().route(“/calculate”, post(calculate)), post("Hello, world!
+          tokio::net::TcpListener::bind("0.0.0.0:3000").await?,
+-         Router::new().route("/calculate", post("Hello, world!")),
++         Router::new().route("/calculate", post(calculate)),
       )
       .await?
 
@@ -215,22 +215,22 @@ You can see that the Scheme script is executed in the Rust program, and that the
 
 ### Hot module reloading
 
-JavaScript bundlers (Webpack, Vite, etc.) have a feature called “hot module reloading”. This function dynamically reflects the modified source file contents to the running HTTP server, etc. Stak Scheme has a similar function.
+JavaScript bundlers (Webpack, Vite, etc.) have a feature called "hot module reloading". This function dynamically reflects the modified source file contents to the running HTTP server, etc. Stak Scheme has a similar function.
 
 Stak Scheme has a similar function. Using this function, you can dynamically change the behavior of the HTTP server. First, enable the `hot-reload` feature in the `Cargo.toml` file for the `stak` crate.
 
-``toml
+```toml
 [dependencies].
-stak = { version = “0.4.1”, features = [“hot-reload”] }
+stak = { version = "0.4.1", features = ["hot-reload"] }
 
-````
+```
 
 Next, restart the HTTP server.
 
 ```sh
 # Stop the server process if it is already running.
 cargo run &
-````
+```
 
 To test it, use the `curl` command to see how it works now.
 
