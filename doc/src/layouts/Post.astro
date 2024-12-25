@@ -2,13 +2,14 @@
 import "@fontsource/ubuntu";
 import Article from "../components/Article.astro";
 import Default from "./Default.astro";
+import Logo from "../components/Logo.astro";
 
 const { frontmatter } = Astro.props;
 ---
 
 <Default title={frontmatter.title} description={frontmatter.description}>
   <header>
-    <a href="/doc"><Icon />raviqqe's documents</a>
+    <a href="/doc"><Logo /> raviqqe's documents</a>
   </header>
   <Article>
     <slot />
