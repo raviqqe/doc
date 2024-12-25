@@ -269,7 +269,7 @@ Unlike before, we see that the product of numbers in the list is returned!
 
 ## Acknowledgements
 
-I would like to give special thanks to [yhara](https://github.com/yhara), [monochrome](https://github.com/sisshiki1969) and the Zulip community of programming language processors for their help.
+I would like to give special thanks to [yhara](https://github.com/yhara), [monochrome](https://github.com/sisshiki1969), and the Zulip community of programming language processors for their help.
 
 ## Reference
 
