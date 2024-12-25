@@ -1,0 +1,32 @@
+---
+import "@fontsource/ubuntu";
+import Logo from "./Logo.astro";
+---
+
+<header>
+  <a href="/doc"><Logo /> raviqqe's documents</a>
+</header>
+<style>
+  header {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  a {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    &:visited {
+      color: var(--text-color);
+    }
+  }
+</style>

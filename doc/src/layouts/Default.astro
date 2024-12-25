@@ -2,7 +2,7 @@
 import "@fontsource/ubuntu";
 import "@fontsource-variable/noto-sans";
 import Article from "../components/Article.astro";
-import Logo from "../components/Logo.astro";
+import Header from "../components/Header.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -22,9 +22,7 @@ const { frontmatter } = Astro.props;
       src="https://plausible.io/js/plausible.js"></script>
   </head>
   <body>
-    <header>
-      <a href="/doc"><Logo /> raviqqe's documents</a>
-    </header>
+    <Header />
     <Article>
       <slot />
     </Article>
