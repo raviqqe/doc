@@ -274,9 +274,9 @@ I would like to give special thanks to [yhara](https://github.com/yhara), [monoc
 - If you don't care about memory footprints, standards compliance, etc., there are richer Scheme interpreters written in Rust.
   - [mattwparas/steel](https://github.com/mattwparas/steel)
   - [volution/vonuvoli-scheme](https://github.com/volution/vonuvoli-scheme)
-- Lua and mruby are often used for similar purposes
+- Lua and mruby are often used for similar purposes.
   - [mlua-rs/mlua](https://github.com/mlua-rs/mlua)
-- Although the purpose is slightly different, you can do something similar with a small WASM interpreter and a WASM compiler for an appropriate high-level language, including statically typed languages. However, you need to write your own glue code.
+- Although the purpose is slightly different, you can achieve something similar with a small WASM interpreter and a WASM compiler for an appropriate high-level language, including statically typed languages. However, you need to write your own glue code.
   - [wasmi-labs/wasmi](https://github.com/wasmi-labs/wasmi)
 
 [stak]: https://github.com/raviqqe/stak
