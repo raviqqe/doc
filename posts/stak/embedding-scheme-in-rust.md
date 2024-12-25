@@ -2,7 +2,7 @@
 
 Rust, as a compiled language, makes it challenging to modify the behavior of programs dynamically. In this article, we embed a small Scheme interpreter called [Stak Scheme][stak] in Rust to dynamically change the behavior of a program without stopping the process.
 
-The following codes in this article can be found in [the `examples/hot-reload` directory](https://github.com/raviqqe/stak/tree/main/examples/hot-reload) in the Stak Scheme repository.
+You can find the following codes in this article at [the `examples/hot-reload` directory](https://github.com/raviqqe/stak/tree/main/examples/hot-reload) in the Stak Scheme repository.
 
 ## Table of contents
 
