@@ -245,7 +245,7 @@ Next, change the codes in the `handler.scm` file to calculate the product of num
 - (write (apply * (read)))
 ```
 
-Rebuild the Scheme script using the `cargo` command, without restarting the **server**.
+Rebuild the Scheme script using the `cargo` command **without restarting the server**.
 
 ```sh
 cargo build
