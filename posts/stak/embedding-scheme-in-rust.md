@@ -193,16 +193,16 @@ fn decode_buffer(buffer: Vec<u8>) -> response::Result<String> {
 Also, change the `main` function as follows.
 
 ```diff
-  #[tokio::main].
+  #[tokio::main]
   async fn main() -> Result<(), Box<dyn Error>> {
       serve(
           tokio::net::TcpListener::bind("0.0.0.0:3000").await?,
 -         Router::new().route("/calculate", post("Hello, world!")),
 +         Router::new().route("/calculate", post(calculate)),
       )
-      .await?
+      .await?;
 
-      Ok(()))
+      Ok(())
   }
 ```
 
