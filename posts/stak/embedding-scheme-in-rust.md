@@ -22,7 +22,7 @@ The code used in this article can be found in the [`examples/hot-reload` directo
 
 ## Embedding Scheme scripts in Rust programs
 
-In this example, we'll write an HTTP server in Rust and embed a Scheme script within it.
+In this example, we'll write an HTTP server in Rust and embed a Scheme script inside.
 
 ### Initializing the crate
 
@@ -35,7 +35,7 @@ cd http-server
 
 ### Adding Dependencies
 
-To add Stak Scheme as a library to the Rust crate, run:
+To add Stak Scheme as a library to the Rust crate, run the following commands:
 
 ```sh
 cargo add stak
@@ -72,7 +72,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Verify the setup with:
+Let's verify the setup by sending an HTTP request with the `curl` command:
 
 ```sh
 cargo run &
@@ -82,7 +82,7 @@ kill %1
 
 ### Adding a build script
 
-Add Scheme scripts to the `src` directory with the `.scm` extension. These files are not directly embedded into the Rust program but are converted into [bytecode](https://en.wikipedia.org/wiki/Bytecode) using the `stak-build` crate. Add the following to a `build.rs` file:
+In Rust integration of Stak Scheme, you add Scheme scripts to the `src` directory with the `.scm` file extension. These files are not directly embedded into the Rust program in text but are converted into [bytecodes](https://en.wikipedia.org/wiki/Bytecode) using the `stak-build` crate. So, let's add the following to a `build.rs` file:
 
 ```rust
 use stak_build::{build_r7rs, BuildError};
@@ -92,7 +92,7 @@ fn main() -> Result<(), BuildError> {
 }
 ```
 
-This ensures the Scheme files are converted to bytecode and stored in the `target` directory when `cargo build` is run.
+This ensures the Scheme files are compiled into bytecodes and stored in the `target` directory every time `cargo build` is run.
 
 ### Writing a request handler in Scheme
 
@@ -107,12 +107,12 @@ Add the following Scheme script to `src/handler.scm`:
 (write (apply + (read)))
 ```
 
-This script calculates the sum of a list read from the standard input and writes the result to the standard output.
+`read`はS式を標準入力からパースする関数、`write`は値を標準出力に書き出す関数です．`(apply + xs)`の式でリスト`xs`内の数値の和を計算します．
 
 Embed this script into Rust with the following additions to `src/main.rs`:
 
 ```rust
-// 他の`use`ステートメント...
+// The other `use` statements...
 use axum::{http::StatusCode, response};
 use stak::{
     device::ReadWriteDevice,
@@ -192,7 +192,7 @@ fn decode_buffer(buffer: Vec<u8>) -> response::Result<String> {
 
 また、`main`関数を以下のように変更します．
 
-```diff_rust
+```diff
   #[tokio::main]
   async fn main() -> Result<(), Box<dyn Error>> {
       serve(
