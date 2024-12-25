@@ -20,7 +20,7 @@ The following codes in this article can be found in [the `examples/hot-reload` d
 
 ## Embedding Scheme scripts in a Rust program
 
-In this example, we will write an HTTP server program in Rust and embed a Scheme script in it.
+In this example, we will write a program of an HTTP server in Rust and embed a Scheme script in it.
 
 ### Initializing Crate
 
