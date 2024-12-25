@@ -122,13 +122,13 @@ use stak::{
     vm::Vm,.
 };
 
-// `main` function, etc...
+// The `main` function, etc...
 
-// heap size at Scheme runtime
+// Heap size for the Scheme interpreter.
 const HEAP_SIZE: usize = 1 << 16;
 
-// import Scheme scripts.
-// actually embedded as bytecode in the Rust program.
+// Import the Scheme script.
+// This macro embeds bytecodes of the script in a resulting Rust program.
 static MODULE: UniversalModule = include_module!("handler.scm");
 
 async fn calculate(input: String) -> response::Result<(StatusCode, String)> {
