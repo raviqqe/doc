@@ -1,8 +1,7 @@
 ---
-import "@fontsource/ubuntu";
 import "@fontsource-variable/noto-sans";
 import Article from "../components/Article.astro";
-import Logo from "../components/Logo.astro";
+import Header from "../components/Header.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -22,9 +21,7 @@ const { frontmatter } = Astro.props;
       src="https://plausible.io/js/plausible.js"></script>
   </head>
   <body>
-    <header>
-      <a href="/doc"><Logo /> raviqqe's documents</a>
-    </header>
+    <Header />
     <Article>
       <slot />
     </Article>
@@ -92,29 +89,5 @@ const { frontmatter } = Astro.props;
 
   code {
     font-size: 0.9rem;
-  }
-</style>
-<style>
-  header {
-    display: flex;
-    justify-content: flex-start;
-    align-self: stretch;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-
-  a {
-    font-family: "Ubuntu", sans-serif;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: var(--text-color);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-
-    &:visited {
-      color: var(--text-color);
-    }
   }
 </style>
