@@ -1,6 +1,6 @@
 # Embedding Scheme in Rust
 
-Rust, as a compiled language, makes it challenging to modify the behavior of programs dynamically. In this article, we embed a small Scheme interpreter written in Rust called [Stak Scheme][stak] in Rust to dynamically change the behavior of a program written in Rust (without stopping the process).
+Rust, as a compiled language, makes it challenging to modify the behavior of programs dynamically. In this article, we embed a small Scheme interpreter called [Stak Scheme][stak] in Rust to dynamically change the behavior of a program written in Rust (without stopping the process).
 
 The following code can be found in the [`examples/hot-reload` directory](https://github.com/raviqqe/stak/tree/main/examples/hot-reload) of the Stak Scheme repository.
 
