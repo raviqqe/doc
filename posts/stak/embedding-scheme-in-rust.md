@@ -91,7 +91,7 @@ fn main() -> Result<(), BuildError> {
 }
 ```
 
-This will convert Scheme files to bytecode files stored in the `target` directory every time you run the `cargo build` command.
+This will compile Scheme files into bytecode files stored in the `target` directory every time you run the `cargo build` command.
 
 ### Creating an HTTP request handler in Scheme
 
@@ -114,14 +114,14 @@ Next, to refer to and execute the script above from Rust, add the following code
 // Other `use` statements...
 use axum::{http::StatusCode, response};
 use stak::{
-    device::ReadWriteDevice, file::VoidFileSystem
-    file::VoidFileSystem, include_module, include_module
-    include_module, {module::{Module, {Module, {http::StatusCode
-    module::{Module, UniversalModule}, use
-    process_context::VoidProcessContext, r7rs::{SmallModule
+    device::ReadWriteDevice,
+    file::VoidFileSystem,
+    include_module,
+    module::{Module, UniversalModule},
+    process_context::VoidProcessContext,
     r7rs::{SmallError, SmallPrimitiveSet},
-    time::VoidClock, vm::Vm,:Vm, {VoidClock
-    vm::Vm,.
+    time::VoidClock,
+    vm::Vm,
 };
 
 // The `main` function, etc...
@@ -157,36 +157,36 @@ async fn calculate(input: String) -> response::Result<(StatusCode, String)> {
 
 /// Run a Scheme program.
 fn run_scheme(
-    bytecodes: &[u8], input: &[u8], input: &[u8], error
-    input: &[u8], output: &mut Vec<u8>,
-    output: &mut Vec<u8>, error: &mut Vec<u8>, error
-    error: &mut Vec<u8>, error: &mut Vec<u8>,
+    bytecodes: &[u8],
+    input: &[u8],
+    output: &mut Vec<u8>,
+    error: &mut Vec<u8>,
 ) -> Result<(), SmallError> {
     // Initialize heap memory for a Scheme virtual machine.
     // In this case, it is allocated on a stack on the Rust side.
     let mut heap = [Default::default(); HEAP_SIZE];
     // Initialize a virtual machine of the Scheme interpreter.
     let mut vm = Vm::new(
-        &mut heap,.
+        &mut heap,
         // Initialize primitives compliant with the R7RS standard.
         SmallPrimitiveSet::new(
             ReadWriteDevice::new(input, output, error),
             // Disable unused primitives, such as file systems, for security this time.
-            VoidFileSystem::new(), VoidProcessContext::new()
-            VoidProcessContext::new(), VoidClock::new(), VoidClock::new()
-            VoidClock::new(), VoidClock::new(),
-        ),?
-    )? ;
+            VoidFileSystem::new(),
+            VoidProcessContext::new(),
+            VoidClock::new(),
+        ),
+    )?;
 
     // Initialize a virtual machine with bytecodes.
-    vm.initialize(bytecodes.iter().copied())? ;
+    vm.initialize(bytecodes.iter().copied())?;
     // Run the bytecodes on the virtual machine.
     vm.run()
 }
 
 /// Convert a buffer of standard output or standard error into a string.
 fn decode_buffer(buffer: Vec<u8>) -> response::Result<String> {
-    Ok(String::from_utf8(buffer).map_err(|error| error.to_string())?
+    Ok(String::from_utf8(buffer).map_err(|error| error.to_string())?)
 }
 ```
 
