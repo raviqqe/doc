@@ -190,7 +190,7 @@ fn decode_buffer(buffer: Vec<u8>) -> response::Result<String> {
 
 Also, change the `main` function as follows.
 
-```diff_rust
+```diff
   #[tokio::main].
   async fn main() -> Result<(), Box<dyn Error>> {
       serve(
