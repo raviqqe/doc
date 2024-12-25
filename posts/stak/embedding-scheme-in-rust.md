@@ -22,7 +22,7 @@ You can find the following codes in this article at [the `examples/hot-reload` d
 
 ## Embedding Scheme scripts in a Rust program
 
-In this example, we will write a program of an HTTP server in Rust and embed a Scheme script in it in order to change the behavior of the HTTP server dynamically.
+In this example, we will write a program of an HTTP server in Rust and embed a Scheme script in it to change the behavior of the HTTP server dynamically.
 
 ### Initializing a crate
 
