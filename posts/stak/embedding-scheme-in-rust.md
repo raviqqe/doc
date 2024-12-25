@@ -69,7 +69,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Send an HTTP request with the `curl` command to see how it works.
+Send an HTTP request with the `curl` command to confirm that the server works correctly.
 
 ```sh
 cargo run &
