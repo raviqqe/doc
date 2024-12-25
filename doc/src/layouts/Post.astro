@@ -2,13 +2,14 @@
 import "@fontsource/ubuntu";
 import Article from "../components/Article.astro";
 import Default from "./Default.astro";
+import Logo from "../components/Logo.astro";
 
 const { frontmatter } = Astro.props;
 ---
 
 <Default title={frontmatter.title} description={frontmatter.description}>
   <header>
-    <a href="/doc">raviqqe's documents</a>
+    <a href="/doc"><Logo /> raviqqe's documents</a>
   </header>
   <Article>
     <slot />
@@ -21,17 +22,20 @@ const { frontmatter } = Astro.props;
     align-self: stretch;
     padding: 0.75rem 1rem;
     box-sizing: border-box;
+  }
 
-    > a {
-      font-family: "Ubuntu", sans-serif;
-      font-size: 1.25rem;
-      font-weight: bold;
+  a {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    &:visited {
       color: var(--text-color);
-      text-decoration: none;
-
-      &:visited {
-        color: var(--text-color);
-      }
     }
   }
 </style>
