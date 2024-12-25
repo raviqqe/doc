@@ -251,7 +251,7 @@ Rebuild the Scheme script using the `cargo` command **without restarting the ser
 cargo build
 ```
 
-Again, check the results using the `curl` command.
+Again, check the result by sending an HTTP request via the `curl` command.
 
 ```sh
 curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
