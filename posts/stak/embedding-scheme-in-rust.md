@@ -109,7 +109,7 @@ Next, add a Scheme script of an HTTP request handler in the `src` directory. Add
 Next, to refer to and execute the script above from Rust, add the following codes to the `src/main.rs` file.
 
 ```rust
-// other ``use`` statements...
+// Other `use` statements...
 use axum::{http::StatusCode, response};
 use stak::{
     device::ReadWriteDevice, file::VoidFileSystem
