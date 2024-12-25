@@ -2,7 +2,7 @@
 
 Rust, as a compiled language, makes it challenging to modify the behavior of programs dynamically. In this article, we embed a small Scheme interpreter called [Stak Scheme][stak] in Rust to dynamically change the behavior of a program without stopping the process.
 
-The following codes in this article can be found in [the `examples/hot-reload` directory](https://github.com/raviqqe/stak/tree/main/examples/hot-reload) in the Stak Scheme repository.
+You can find the following codes in this article at [the `examples/hot-reload` directory](https://github.com/raviqqe/stak/tree/main/examples/hot-reload) in the Stak Scheme repository.
 
 ## Table of contents
 
@@ -17,12 +17,12 @@ The following codes in this article can be found in [the `examples/hot-reload` d
 - A Scheme interpreter embeddable in Rust programs
 - Small memory footprint
 - Capability-based security
-  - The Stak Scheme interpreter does not support any external APIs (e.g. against operating systems) by default.
+  - The Stak Scheme interpreter does not provide any external APIs (e.g. against operating systems) by default.
   - To enable such APIs for I/O, file systems, etc., you need to enable them on initialization of the interpreter's virtual machines.
 
 ## Embedding Scheme scripts in a Rust program
 
-In this example, we will write a program of an HTTP server in Rust and embed a Scheme script in it in order to change the behavior of the HTTP server dynamically.
+In this example, we will write a program of an HTTP server in Rust and embed a Scheme script in it to change the behavior of the HTTP server dynamically.
 
 ### Initializing a crate
 
@@ -59,15 +59,15 @@ Then, add the following codes to `src/main.rs`.
 use axum::{routing::post, serve, Router};
 use core::error::Error;
 
-#[tokio::main].
+#[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
     serve(
-        tokio::net::TcpListener::bind("0.0.0.0:3000").await?
+        tokio::net::TcpListener::bind("0.0.0.0:3000").await?,
         Router::new().route("/calculate", post("Hello, world!")),
     )
-    .await?
+    .await?;
 
-    Ok(()))
+    Ok(())
 }
 ```
 
@@ -91,7 +91,7 @@ fn main() -> Result<(), BuildError> {
 }
 ```
 
-This will convert Scheme files to bytecode files stored in the `target` directory every time you run the `cargo build` command.
+This will compile Scheme files into bytecode files stored in the `target` directory every time you run the `cargo build` command.
 
 ### Creating an HTTP request handler in Scheme
 
@@ -101,7 +101,7 @@ Next, add a Scheme script of an HTTP request handler in the `src` directory. Add
 (import
   (scheme base)
   (scheme read)
-  (scheme write)))
+  (scheme write))
 
 (write (apply + (read)))
 ```
@@ -114,14 +114,14 @@ Next, to refer to and execute the script above from Rust, add the following code
 // Other `use` statements...
 use axum::{http::StatusCode, response};
 use stak::{
-    device::ReadWriteDevice, file::VoidFileSystem
-    file::VoidFileSystem, include_module, include_module
-    include_module, {module::{Module, {Module, {http::StatusCode
-    module::{Module, UniversalModule}, use
-    process_context::VoidProcessContext, r7rs::{SmallModule
+    device::ReadWriteDevice,
+    file::VoidFileSystem,
+    include_module,
+    module::{Module, UniversalModule},
+    process_context::VoidProcessContext,
     r7rs::{SmallError, SmallPrimitiveSet},
-    time::VoidClock, vm::Vm,:Vm, {VoidClock
-    vm::Vm,.
+    time::VoidClock,
+    vm::Vm,
 };
 
 // The `main` function, etc...
@@ -157,56 +157,56 @@ async fn calculate(input: String) -> response::Result<(StatusCode, String)> {
 
 /// Run a Scheme program.
 fn run_scheme(
-    bytecodes: &[u8], input: &[u8], input: &[u8], error
-    input: &[u8], output: &mut Vec<u8>,
-    output: &mut Vec<u8>, error: &mut Vec<u8>, error
-    error: &mut Vec<u8>, error: &mut Vec<u8>,
+    bytecodes: &[u8],
+    input: &[u8],
+    output: &mut Vec<u8>,
+    error: &mut Vec<u8>,
 ) -> Result<(), SmallError> {
     // Initialize heap memory for a Scheme virtual machine.
     // In this case, it is allocated on a stack on the Rust side.
     let mut heap = [Default::default(); HEAP_SIZE];
     // Initialize a virtual machine of the Scheme interpreter.
     let mut vm = Vm::new(
-        &mut heap,.
+        &mut heap,
         // Initialize primitives compliant with the R7RS standard.
         SmallPrimitiveSet::new(
             ReadWriteDevice::new(input, output, error),
             // Disable unused primitives, such as file systems, for security this time.
-            VoidFileSystem::new(), VoidProcessContext::new()
-            VoidProcessContext::new(), VoidClock::new(), VoidClock::new()
-            VoidClock::new(), VoidClock::new(),
-        ),?
-    )? ;
+            VoidFileSystem::new(),
+            VoidProcessContext::new(),
+            VoidClock::new(),
+        ),
+    )?;
 
     // Initialize a virtual machine with bytecodes.
-    vm.initialize(bytecodes.iter().copied())? ;
+    vm.initialize(bytecodes.iter().copied())?;
     // Run the bytecodes on the virtual machine.
     vm.run()
 }
 
 /// Convert a buffer of standard output or standard error into a string.
 fn decode_buffer(buffer: Vec<u8>) -> response::Result<String> {
-    Ok(String::from_utf8(buffer).map_err(|error| error.to_string())?
+    Ok(String::from_utf8(buffer).map_err(|error| error.to_string())?)
 }
 ```
 
 Also, change the `main` function as follows.
 
 ```diff
-  #[tokio::main].
+  #[tokio::main]
   async fn main() -> Result<(), Box<dyn Error>> {
       serve(
           tokio::net::TcpListener::bind("0.0.0.0:3000").await?,
 -         Router::new().route("/calculate", post("Hello, world!")),
 +         Router::new().route("/calculate", post(calculate)),
       )
-      .await?
+      .await?;
 
-      Ok(()))
+      Ok(())
   }
 ```
 
-Use the `curl` command to see how it works.
+Send an HTTP request to see how it works.
 
 ```sh
 cargo run &
@@ -261,7 +261,7 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
 
 Unlike before, we see that the product of numbers in the list is returned!
 
-## Summary
+## Conclusion
 
 - We've integrated Stak Scheme in a Rust program.
 - By using Stak Scheme, you can change the behavior of Rust programs dynamically.
