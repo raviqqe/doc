@@ -44,7 +44,7 @@ cargo add --build stak-build
 
 ### Preparation of HTTP server
 
-Next, prepare an HTTP server written in Rust. This time, we will use Tokio's HTTP library [`axum`](https://github.com/tokio-rs/axum), which is an asynchronous runtime library, to build the HTTP server. First, add dependencies with the following command.
+Next, let's prepare an HTTP server written in Rust. In this example, we use Tokio's HTTP library [`axum`](https://github.com/tokio-rs/axum). First, add dependencies with the following commands.
 
 ```sh
 cargo add --features rt-multi-thread tokio
