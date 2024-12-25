@@ -79,7 +79,7 @@ kill %1
 
 ### Adding a build script
 
-Stak Scheme adds Scheme scripts with the `.scm` file extension in the `src` directory. Instead of embedding these script files directly in Rust programs, Stak Scheme compiles these files into [bytecode](https://ja.wikipedia.org/wiki/%E3%83%90%E3%82%A4%E3%83%88%E3%82%B3 E3%83%BC%E3%83%89) files first. To do so, add the following codes using the `stak-build` crate to the `build.rs` file.
+Stak Scheme expects developers to add Scheme scripts with the `.scm` file extension in the `src` directory. Instead of embedding these script files directly in Rust programs, Stak Scheme compiles these files into [bytecode](https://en.wikipedia.org/wiki/Bytecode) files first. To do so, add the following codes using the `stak-build` crate to the `build.rs` file.
 
 ```rust
 use stak_build::{build_r7rs, BuildError};
