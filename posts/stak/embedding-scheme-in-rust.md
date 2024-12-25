@@ -89,9 +89,9 @@ fn main() -> Result<(), BuildError> {
 }
 ```
 
-This will convert the Scheme file to bytecode and save it in the `target` directory when `cargo build` is run.
+This will convert Scheme files to bytecode files stored in the `target` directory every time you run the `cargo build` command.
 
-### Creating a request handler with Scheme script
+### Creating an HTTP request handler in Scheme
 
 Next, add a Scheme script to the `src` directory and use it as a handler for HTTP requests. Add the following code to the `src/handler.scm` file.
 
