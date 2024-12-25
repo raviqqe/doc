@@ -4,6 +4,8 @@ Rust, as a compiled language, makes it challenging to modify the behavior of pro
 
 The following codes in this article can be found in [the `examples/hot-reload` directory](https://github.com/raviqqe/stak/tree/main/examples/hot-reload) in the Stak Scheme repository.
 
+## Table of contents
+
 ## What is Scheme?
 
 [Scheme](https://www.scheme.org/) is a functional programming language and a Lisp dialect. It is known for its simple language specification and support of [the first-class continuation](https://en.wikipedia.org/wiki/Continuation) as a language feature. [The R7RS-small standard][r7rs-small] is its latest specification available.
