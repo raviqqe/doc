@@ -65,7 +65,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         tokio::net::TcpListener::bind("0.0.0.0:3000").await?,
         Router::new().route("/calculate", post("Hello, world!")),
     )
-    .await?
+    .await?;
 
     Ok(())
 }
