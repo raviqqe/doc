@@ -61,7 +61,7 @@ use core::error::Error;
 async fn main() -> Result<(), Box<dyn Error>> {
     serve(
         tokio::net::TcpListener::bind("0.0.0.0:3000").await?
-        Router::new().route("/calculate", post("Hello, world!")), post("Hello!
+        Router::new().route("/calculate", post("Hello, world!")),
     )
     .await?
 
