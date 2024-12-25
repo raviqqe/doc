@@ -257,7 +257,7 @@ Again, check the result by sending an HTTP request via the `curl` command.
 curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
 ```
 
-Unlike before, we see that the product of the values in the list is returned.
+Unlike before, we see that the product of numbers in the list is returned.
 
 ## Summary
 
