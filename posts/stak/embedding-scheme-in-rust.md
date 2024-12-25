@@ -6,7 +6,7 @@ The following codes in this article can be found in [the `examples/hot-reload` d
 
 ## What is Scheme?
 
-[Scheme](https://www.scheme.org/) is a functional programming language and a Lisp dialect. It is known for its simple language specification and support of [the first-class continuation](https://ja.wikipedia.org/wiki/%E7%B6%99%E7%B6%9A) as a language feature.
+[Scheme](https://www.scheme.org/) is a functional programming language and a Lisp dialect. It is known for its simple language specification and support of [the first-class continuation](https://en.wikipedia.org/wiki/Continuation) as a language feature.
 
 ## What is Stak Scheme?
 
