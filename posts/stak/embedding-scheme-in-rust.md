@@ -216,7 +216,7 @@ You can see that the Rust program executed the Scheme script and it calculated t
 
 ### Hot module reloading
 
-JavaScript bundlers (Webpack, Vite, etc.) have a feature called "hot module reloading". This function dynamically reflects the modified source file contents to the running HTTP server, etc. Stak Scheme has a similar function.
+JavaScript bundlers (e.g. Webpack and Vite) have a feature called [Hot Module Reloading](https://webpack.js.org/concepts/hot-module-replacement/). This functionality dynamically reflects modified source files' contents to running programs, such as HTTP servers. Stak Scheme provides the same functionality in its `stak` and `stak-build` libraries.
 
 Stak Scheme has a similar function. Using this function, you can dynamically change the behavior of the HTTP server. First, enable the `hot-reload` feature in the `Cargo.toml` file for the `stak` crate.
 
