@@ -232,7 +232,7 @@ Next, restart the HTTP server.
 cargo run &
 ```
 
-To test it, use the `curl` command to see how it works now.
+Use the `curl` command to confirm the sum is calculated right now.
 
 ```sh
 curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 15
