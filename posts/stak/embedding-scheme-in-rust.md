@@ -93,7 +93,7 @@ This will convert Scheme files to bytecode files stored in the `target` director
 
 ### Creating an HTTP request handler in Scheme
 
-Next, add a Scheme script of an HTTP request handler in the `src` directory. Add the following code to the `src/handler.scm` file.
+Next, add a Scheme script of an HTTP request handler in the `src` directory. Add the following codes to the `src/handler.scm` file.
 
 ```scheme
 (import
