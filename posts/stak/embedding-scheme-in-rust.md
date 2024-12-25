@@ -77,7 +77,7 @@ curl -f -X POST http://localhost:3000/calculate # -> Hello, world!
 kill %1
 ```
 
-### Adding build scripts
+### Adding a build script
 
 Stak Scheme adds Scheme scripts with a `.scm` file extension in the `src` directory. At this time, these script files are not directly embedded in the Rust program, but once these files are added to [byte code](https://ja.wikipedia.org/wiki/%E3%83%90%E3%82%A4%E3%83%88%E3%82%B3 E3%83%BC%E3%83%89). To do so, use the `stak-build` crate described above and add the following code to the `build.rs` file.
 
