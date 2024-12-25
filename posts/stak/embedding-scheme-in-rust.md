@@ -271,7 +271,7 @@ I would like to give special thanks to [yhara](https://github.com/yhara), [monoc
 
 ## Reference
 
-- If you don't care about memory footprint, standards compliance, etc., there is a richer Scheme processor made by Rust.
+- If you don't care about memory footprints, standards compliance, etc., there are richer Scheme interpreters written in Rust.
   - [mattwparas/steel](https://github.com/mattwparas/steel)
   - [volution/vonuvoli-scheme](https://github.com/volution/vonuvoli-scheme)
 - Lua and mruby are often used for similar purposes
