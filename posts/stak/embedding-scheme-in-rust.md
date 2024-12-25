@@ -1,60 +1,58 @@
 # Embedding Scheme in Rust
 
-Rust, as a compiled language, makes it challenging to dynamically modify the behavior of programs. In this article, we'll explore embedding a small Scheme interpreter written in Rust called [Stak Scheme][stak] into a Rust program to dynamically (without stopping the process) modify its behavior.
+Rustはコンパイル系言語で動的にプログラムの動作を変更することが難しいです．この記事では[Stak Scheme][stak]というRustで書かれた小さなScheme処理系をRustのプログラムに組み込んで、Rustで書かれたプログラムの動作を動的に（プロセスを止めずに）変更します．
 
-The code used in this article can be found in the [`examples/hot-reload` directory](https://github.com/raviqqe/stak/tree/main/examples/hot-reload) of [the Stak Scheme repository][stak].
+以下のコードはStak Schemeのレポジトリの[`examples/hot-reload`ディレクトリ](https://github.com/raviqqe/stak/tree/main/examples/hot-reload)内にあります．
 
-## Table of contents
+# Schemeとは
 
-## What is Scheme?
+[Scheme](https://www.scheme.org/)はLisp方言の一つで、[一級継続](https://ja.wikipedia.org/wiki/%E7%B6%99%E7%B6%9A)が言語機能として使えることが特徴です．コミュニティベースで仕様の策定が行われており、最新の仕様であるR7RS-smallは約90ページと言語仕様が比較的小さいです．
 
-[Scheme](https://www.scheme.org/) is a dialect of Lisp characterized by features such as [the first-class continuations](https://en.wikipedia.org/wiki/Continuation). It is developed through community-based specification. And, its latest version, [R7RS-small][r7rs-small], has a relatively compact specification of about 90 pages.
+# Stak Schemeとは
 
-## What is Stak Scheme?
+[Stak Scheme][stak]は[Ribbit Scheme](https://github.com/udem-dlteam/ribbit)をフォークして作られた[R7RS標準](https://r7rs.org/)互換のScheme処理系で、以下の特徴があります．
 
-[Stak Scheme][stak] is a Scheme interpreter compliant with the [the R7RS-small standard][r7rs-small], forked from [Ribbit Scheme](https://github.com/udem-dlteam/ribbit), and has the following features:
+- Rustプログラムの中に組み込めるRustで書かれたScheme処理系
+- 小さなメモリフットプリント
+- Capability-based security
+  - Stak SchemeのインタプリタはデフォルトでOS等外部に対するAPIを扱えません．
+  - I/OやファイルのAPIを有効化するには、それらをインタプリタの仮想マシン（VM）の初期化時に有効化する必要があります．
+- 儂が書いた
 
-- A Scheme interpreter embeddable in Rust programs.
-- Small memory footprint.
-- Capability-based security:
-  - By default, Stak Scheme cannot interact with any external API's like operating systems.
-  - APIs for I/O or file systems need to be explicitly enabled during the initialization of the interpreter's virtual machine (VM.)
+# RustのプログラムにSchemeスクリプトを埋め込む
 
-## Embedding Scheme scripts in Rust programs
+今回の例では、RustでHTTPサーバのプログラムを書き、その中にSchemeのスクリプトを組み込みます．
 
-In this example, we'll write an HTTP server in Rust and embed a Scheme script inside.
+## クレートの初期化
 
-### Initializing the crate
-
-First, initialize a binary crate for the HTTP server by running the following commands:
+初めに、以下のコマンドでHTTPサーバを作るためのバイナリクレートを初期化します．
 
 ```sh
 cargo init http-server
 cd http-server
 ```
 
-### Adding Dependencies
+## ライブラリの依存関係追加
 
-To add Stak Scheme as a library to the Rust crate, run the following commands:
+Stak SchemeをライブラリとしてRustのクレートに追加するためには、以下のコマンドを実行します．
 
 ```sh
 cargo add stak
 cargo add --build stak-build
 ```
 
-- The `stak` crate allows Rust to call the Scheme interpreter.
-- The `stak-build` crate compiles Scheme scripts into Rust bytecode via a [`build.rs` build script](https://doc.rust-lang.org/cargo/reference/build-scripts.html) (explained later).
+`stak`クレートはSchemeインタプリタをRustから呼ぶライブラリです．`stak-build`クレートはSchemeのスクリプトをRustのコードに埋め込めるように[`build.rs`ビルドスクリプト](https://doc.rust-lang.org/cargo/reference/build-scripts.html)（後述）の中でコンパイルするライブラリです．
 
-### Preparing the HTTP server
+## HTTPサーバの準備
 
-Next, we'll set up an HTTP server in Rust using [`axum`](https://github.com/tokio-rs/axum), a library based on the asynchronous runtime Tokio. Add the dependencies:
+次に、Rustで書かれたHTTPサーバを準備します．今回は非同期ランタイムであるTokio純正のHTTPライブラリ[`axum`](https://github.com/tokio-rs/axum)を使ってHTTPサーバを構築します．まず、以下のコマンドで依存関係を追加します．
 
 ```sh
 cargo add --features rt-multi-thread tokio
 cargo add axum
 ```
 
-Then add the following code to `src/main.rs`:
+以下のコードを`src/main.rs`に追加します．
 
 ```rust
 use axum::{routing::post, serve, Router};
@@ -72,7 +70,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Let's verify the setup by sending an HTTP request with the `curl` command:
+`curl`コマンドでHTTPリクエストを送り、動作を確認します．
 
 ```sh
 cargo run &
@@ -80,9 +78,9 @@ curl -f -X POST http://localhost:3000/calculate # -> Hello, world!
 kill %1
 ```
 
-### Adding a build script
+## ビルドスクリプトの追加
 
-In Rust integration of Stak Scheme, you add Scheme scripts to the `src` directory with the `.scm` file extension. These files are not directly embedded into the Rust program in text but are converted into [bytecodes](https://en.wikipedia.org/wiki/Bytecode) using the `stak-build` crate. So, let's add the following to a `build.rs` file:
+Stak SchemeではSchemeスクリプトを`.scm`ファイル拡張子を付けて`src`ディレクトリ内に追加します．このとき、これらのスクリプトファイルがRustのプログラムに直接埋め込まれる訳ではなく、一度これらのファイルを[バイトコード](https://ja.wikipedia.org/wiki/%E3%83%90%E3%82%A4%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89)に変換する必要があります．そのために、先述した`stak-build`クレートを使い、以下のコードを`build.rs`ファイルに追加します．
 
 ```rust
 use stak_build::{build_r7rs, BuildError};
@@ -92,11 +90,11 @@ fn main() -> Result<(), BuildError> {
 }
 ```
 
-This ensures the Scheme files are compiled into bytecodes and stored in the `target` directory every time `cargo build` is run.
+これで`cargo build`実行時にSchemeファイルがバイトコードに変換され`target`ディレクトリ内に保存されます．
 
-### Writing a request handler in Scheme
+## Schemeスクリプトによるリクエストハンドラの作成
 
-Add the following Scheme script to `src/handler.scm`:
+次に、Schemeのスクリプトを`src`ディレクトリに追加し、それをHTTPリクエストのハンドラとして使います．以下のコードを`src/handler.scm`ファイルに追加します．
 
 ```scheme
 (import
@@ -109,10 +107,10 @@ Add the following Scheme script to `src/handler.scm`:
 
 `read`はS式を標準入力からパースする関数、`write`は値を標準出力に書き出す関数です．`(apply + xs)`の式でリスト`xs`内の数値の和を計算します．
 
-Embed this script into Rust with the following additions to `src/main.rs`:
+次に、Rustから上記のスクリプトを参照し実行します．以下のコードを`src/main.rs`ファイルに追加します．
 
 ```rust
-// The other `use` statements...
+// 他の`use`ステートメント...
 use axum::{http::StatusCode, response};
 use stak::{
     device::ReadWriteDevice,
@@ -192,7 +190,7 @@ fn decode_buffer(buffer: Vec<u8>) -> response::Result<String> {
 
 また、`main`関数を以下のように変更します．
 
-```diff
+```diff_rust
   #[tokio::main]
   async fn main() -> Result<(), Box<dyn Error>> {
       serve(
@@ -206,7 +204,7 @@ fn decode_buffer(buffer: Vec<u8>) -> response::Result<String> {
   }
 ```
 
-Test the program:
+`curl`コマンドを使って動作を確認します．
 
 ```sh
 cargo run &
@@ -214,44 +212,83 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 15
 kill %1
 ```
 
-### Hot Module Reloading
+Rustプログラムの中でSchemeのスクリプトが実行され、渡したリスト内の数値の和が計算されたことが確認できました．
 
-Enable the `hot-reload` feature in `stak`:
+## Hot module reloading
+
+JavaScriptのバンドラ（WebpackやVite等）には、hot module reloadingという機能があります．これは変更されたソースファイルの内容を動作中のHTTPサーバ等に動的に反映させる機能です．
+
+Stak Schemeにも同様の機能があります．それを用いてHTTPサーバの動作を動的に変更します．まず、`Cargo.toml`ファイルの中で`hot-reload`フィーチャを`stak`クレートに対して有効化します．
 
 ```toml
 [dependencies]
 stak = { version = "0.4.1", features = ["hot-reload"] }
 ```
 
-Modify the script dynamically without restarting the server:
+次に、HTTPサーバを再起動します．
 
-1. Change the script to calculate the product instead of the sum.
-2. Rebuild with `cargo build`.
-3. Verify the new behavior:
+```sh
+# 既に起動している場合、サーバのプロセスを止める．
+cargo run &
+```
+
+試しに、`curl`コマンドを使って現在の動作を確認します．
+
+```sh
+curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 15
+```
+
+次に、先ほどの`handler.scm`ファイルの中で和を計算していたコードを積を計算するように変更します．
+
+```diff_scheme
++ (write (apply + (read)))
+- (write (apply * (read)))
+```
+
+**サーバを再起動せず**に、`cargo`コマンドを使ってSchemeスクリプトの再ビルドを行います．
+
+```sh
+cargo build
+```
+
+再び、`curl`コマンドを使って結果を確認します．
 
 ```sh
 curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
 ```
 
-## Summary
+先程と異なり、リスト内の値の積が返されたことが確認できました．
 
-- We used Stak Scheme to dynamically modify the behavior of a Rust program.
-- Scheme is awesome!
+```
+＿人人人人人人＿
+＞　突然の積　＜
+￣Y^Y^Y^Y^Y^￣
+```
 
-## References
+# まとめ
 
-- If you don’t mind large memory footprints or strict standard compliance, there are more feature-rich Scheme interpreters written in Rust:
+- Stak Schemeを使ってRustプログラムの動作を動的に変更しました
+- Schemeはいいぞ
+
+# 今後の展望
+
+- RustとScheme間でのデータ型の相互運用性の改善
+  - 現在は標準入出力しかRustとScheme間の通信方法がありません．
+- より簡単なhot module reloadingの有効化方法
+  - 自分で`cargo build`するの面倒ですね
+
+# 謝辞
+
+[yhara](https://github.com/yhara)さん、[monochrome](https://github.com/sisshiki1969)さん、プログラミング処理系Zulipコミュニティの方々にお世話になりました．ありがとうございました．
+
+# 参考
+
+- あまりメモリフットプリント・標準準拠等を気にしないのであれば、もっとリッチなRust製Scheme処理系もあります．
   - [mattwparas/steel](https://github.com/mattwparas/steel)
   - [volution/vonuvoli-scheme](https://github.com/volution/vonuvoli-scheme)
-- Lua and mruby are also commonly used for similar purposes:
+- Luaやmrubyも同様の用途によく使われます
   - [mlua-rs/mlua](https://github.com/mlua-rs/mlua)
-  - [mruby](https://mruby.org/)
-- While slightly different in purpose, you can achieve similar results using small WebAssembly (WASM) interpreters along with WASM compilers for high-level languages with static typing. However, you’ll need to write glue codes yourself:
+- 少々目的が異なりますが、小さなWASMインタプリタと静的型付言語を含む適当な高級言語のWASMコンパイラを使えば似たようなことができると思います．ただ、自分でグルーコードを書く必要があります．
   - [wasmi-labs/wasmi](https://github.com/wasmi-labs/wasmi)
 
-## Acknowledgments
-
-Special thanks to [yhara](https://github.com/yhara), [monochrome](https://github.com/sisshiki1969), and the programming language implementation Zulip community!
-
 [stak]: https://github.com/raviqqe/stak
-[r7rs-small]: https://small.r7rs.org/
