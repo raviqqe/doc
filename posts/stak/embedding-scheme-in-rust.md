@@ -212,7 +212,7 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 15
 kill %1
 ```
 
-You can see that the Scheme script is executed in the Rust program, and that the sum of the numbers in the list you passed in is computed.
+You can see that the Rust program executed the Scheme script and it calculated the sum of numbers in the list you passed in in the HTTP request.
 
 ### Hot module reloading
 
