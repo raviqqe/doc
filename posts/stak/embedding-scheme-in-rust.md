@@ -17,7 +17,6 @@ The following codes in this article can be found in [the `examples/hot-reload` d
 - Capability-based security
   - The Stak Scheme interpreter does not support any external APIs (e.g. against operating systems) by default.
   - To enable such APIs for I/O, file systems, etc., you need to enable them on initialization of the interpreter's virtual machines.
-- I wrote
 
 ## Embedding Scheme scripts in a Rust program
 
