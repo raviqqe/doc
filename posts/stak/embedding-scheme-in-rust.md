@@ -257,12 +257,13 @@ Again, check the result by sending an HTTP request via the `curl` command.
 curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
 ```
 
-Unlike before, we see that the product of numbers in the list is returned.
+Unlike before, we see that the product of numbers in the list is returned!
 
 ## Summary
 
-- I used Stak Scheme to dynamically change the behavior of a Rust program!
-- Scheme is good.
+- We've integrated Stak Scheme in a Rust program.
+- By using Stak Scheme, you can change the behavior of Rust programs dynamically.
+- Scheme is awesome!
 
 ## Future Prospects
 
