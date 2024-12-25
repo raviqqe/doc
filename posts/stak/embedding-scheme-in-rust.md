@@ -222,7 +222,6 @@ Stak Scheme has a similar function. Using this function, you can dynamically cha
 ```toml
 [dependencies].
 stak = { version = "0.4.1", features = ["hot-reload"] }
-
 ```
 
 Next, restart the HTTP server.
