@@ -22,7 +22,7 @@ The following codes in this article can be found in [the `examples/hot-reload` d
 
 In this example, we will write a program of an HTTP server in Rust and embed a Scheme script in it in order to change the behavior of the HTTP server dynamically.
 
-### Initializing Crate
+### Initializing a crate
 
 First, initialize the binary crate to create the HTTP server with the following command.
 
@@ -31,16 +31,16 @@ cargo init http-server
 cd http-server
 ```
 
-### Adding library dependencies
+### Adding dependencies
 
-To add Stak Scheme as a library to the Rust crate, execute the following command.
+To add Stak Scheme as libraries to a Rust crate, execute the following commands in your terminal.
 
 ```sh
 cargo add stak
 cargo add --build stak-build
 ```
 
-The `stak` crate is a library that calls the Scheme interpreter from Rust. The ``stak-build` crate is a library that compiles Scheme scripts in [`build.rs` build script](https://doc.rust-lang.org/cargo/reference/build-scripts.html) (see below) so that they can be embedded in Rust code. See below) so that Scheme scripts can be embedded in Rust code.
+The `stak` crate is a library that runs the Scheme interpreter from Rust. The ``stak-build` crate is a library that compiles Scheme scripts in [`build.rs` build script](https://doc.rust-lang.org/cargo/reference/build-scripts.html) (see below) so that they can be embedded in Rust code. See below) so that Scheme scripts can be embedded in Rust code.
 
 ### Preparation of HTTP server
 
