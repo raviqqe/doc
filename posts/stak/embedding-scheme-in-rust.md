@@ -40,7 +40,7 @@ cargo add stak
 cargo add --build stak-build
 ```
 
-The `stak` crate is a library that runs the Scheme interpreter from Rust. The ``stak-build` crate is a library that compiles Scheme scripts in [`build.rs` build script](https://doc.rust-lang.org/cargo/reference/build-scripts.html) (see below) so that they can be embedded in Rust code. See below) so that Scheme scripts can be embedded in Rust code.
+The `stak` crate is a library that runs the Scheme interpreter from Rust. The `stak-build` crate is a library that compiles Scheme scripts in [`build.rs` build script](https://doc.rust-lang.org/cargo/reference/build-scripts.html) (see below) so that they can be embedded in Rust code. See below) so that Scheme scripts can be embedded in Rust code.
 
 ### Preparation of HTTP server
 
