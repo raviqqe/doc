@@ -12,7 +12,7 @@ The following codes in this article can be found in [the `examples/hot-reload` d
 
 [Stak Scheme][stak] is a Scheme implementation compatible with [the R7RS-small standard][r7rs-small]. It is originally developed as a fork of [Ribbit Scheme](https://github.com/udem-dlteam/ribbit). Stak Scheme has the following features.
 
-- Scheme implementation written in Rust that can be embedded in Rust programs
+- A Scheme interpreter embeddable in Rust programs
 - Small memory footprint
 - Capability-based security
   - The Stak Scheme interpreter does not support APIs for the OS by default.
