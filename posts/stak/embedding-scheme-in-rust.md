@@ -4,11 +4,11 @@ Rustはコンパイル系言語で動的にプログラムの動作を変更す�
 
 以下のコードはStak Schemeのレポジトリの[`examples/hot-reload`ディレクトリ](https://github.com/raviqqe/stak/tree/main/examples/hot-reload)内にあります．
 
-# Schemeとは
+## Schemeとは
 
 [Scheme](https://www.scheme.org/)はLisp方言の一つで、[一級継続](https://ja.wikipedia.org/wiki/%E7%B6%99%E7%B6%9A)が言語機能として使えることが特徴です．コミュニティベースで仕様の策定が行われており、最新の仕様であるR7RS-smallは約90ページと言語仕様が比較的小さいです．
 
-# Stak Schemeとは
+## Stak Schemeとは
 
 [Stak Scheme][stak]は[Ribbit Scheme](https://github.com/udem-dlteam/ribbit)をフォークして作られた[R7RS標準](https://r7rs.org/)互換のScheme処理系で、以下の特徴があります．
 
@@ -19,11 +19,11 @@ Rustはコンパイル系言語で動的にプログラムの動作を変更す�
   - I/OやファイルのAPIを有効化するには、それらをインタプリタの仮想マシン（VM）の初期化時に有効化する必要があります．
 - 儂が書いた
 
-# RustのプログラムにSchemeスクリプトを埋め込む
+## RustのプログラムにSchemeスクリプトを埋め込む
 
 今回の例では、RustでHTTPサーバのプログラムを書き、その中にSchemeのスクリプトを組み込みます．
 
-## クレートの初期化
+### クレートの初期化
 
 初めに、以下のコマンドでHTTPサーバを作るためのバイナリクレートを初期化します．
 
@@ -32,7 +32,7 @@ cargo init http-server
 cd http-server
 ```
 
-## ライブラリの依存関係追加
+### ライブラリの依存関係追加
 
 Stak SchemeをライブラリとしてRustのクレートに追加するためには、以下のコマンドを実行します．
 
@@ -43,7 +43,7 @@ cargo add --build stak-build
 
 `stak`クレートはSchemeインタプリタをRustから呼ぶライブラリです．`stak-build`クレートはSchemeのスクリプトをRustのコードに埋め込めるように[`build.rs`ビルドスクリプト](https://doc.rust-lang.org/cargo/reference/build-scripts.html)（後述）の中でコンパイルするライブラリです．
 
-## HTTPサーバの準備
+### HTTPサーバの準備
 
 次に、Rustで書かれたHTTPサーバを準備します．今回は非同期ランタイムであるTokio純正のHTTPライブラリ[`axum`](https://github.com/tokio-rs/axum)を使ってHTTPサーバを構築します．まず、以下のコマンドで依存関係を追加します．
 
@@ -78,7 +78,7 @@ curl -f -X POST http://localhost:3000/calculate # -> Hello, world!
 kill %1
 ```
 
-## ビルドスクリプトの追加
+### ビルドスクリプトの追加
 
 Stak SchemeではSchemeスクリプトを`.scm`ファイル拡張子を付けて`src`ディレクトリ内に追加します．このとき、これらのスクリプトファイルがRustのプログラムに直接埋め込まれる訳ではなく、一度これらのファイルを[バイトコード](https://ja.wikipedia.org/wiki/%E3%83%90%E3%82%A4%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89)に変換する必要があります．そのために、先述した`stak-build`クレートを使い、以下のコードを`build.rs`ファイルに追加します．
 
@@ -92,7 +92,7 @@ fn main() -> Result<(), BuildError> {
 
 これで`cargo build`実行時にSchemeファイルがバイトコードに変換され`target`ディレクトリ内に保存されます．
 
-## Schemeスクリプトによるリクエストハンドラの作成
+### Schemeスクリプトによるリクエストハンドラの作成
 
 次に、Schemeのスクリプトを`src`ディレクトリに追加し、それをHTTPリクエストのハンドラとして使います．以下のコードを`src/handler.scm`ファイルに追加します．
 
@@ -214,7 +214,7 @@ kill %1
 
 Rustプログラムの中でSchemeのスクリプトが実行され、渡したリスト内の数値の和が計算されたことが確認できました．
 
-## Hot module reloading
+### Hot module reloading
 
 JavaScriptのバンドラ（WebpackやVite等）には、hot module reloadingという機能があります．これは変更されたソースファイルの内容を動作中のHTTPサーバ等に動的に反映させる機能です．
 
@@ -265,23 +265,23 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
 ￣Y^Y^Y^Y^Y^￣
 ```
 
-# まとめ
+## まとめ
 
 - Stak Schemeを使ってRustプログラムの動作を動的に変更しました
 - Schemeはいいぞ
 
-# 今後の展望
+## 今後の展望
 
 - RustとScheme間でのデータ型の相互運用性の改善
   - 現在は標準入出力しかRustとScheme間の通信方法がありません．
 - より簡単なhot module reloadingの有効化方法
   - 自分で`cargo build`するの面倒ですね
 
-# 謝辞
+## 謝辞
 
 [yhara](https://github.com/yhara)さん、[monochrome](https://github.com/sisshiki1969)さん、プログラミング処理系Zulipコミュニティの方々にお世話になりました．ありがとうございました．
 
-# 参考
+## 参考
 
 - あまりメモリフットプリント・標準準拠等を気にしないのであれば、もっとリッチなRust製Scheme処理系もあります．
   - [mattwparas/steel](https://github.com/mattwparas/steel)
