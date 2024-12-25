@@ -240,7 +240,7 @@ curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 15
 
 Next, change the code in the `handler.scm` file from calculating the sum to calculating the product.
 
-```diff_scheme
+```diff
 + (write (apply + (read)))
 - (write (apply * (read)))
 ```
