@@ -132,56 +132,57 @@ const HEAP_SIZE: usize = 1 << 16;
 static MODULE: UniversalModule = include_module!("handler.scm");
 
 async fn calculate(input: String) -> response::Result<(StatusCode, String)> {
-    // prepare buffers for in-memory stdout and stderr
-    let mut output = vec!
-    String -> response::Result<(StatusCode) String> { // Prepare buffers for in-memory stdout and stderr
+    // Prepare buffers for in-memory stdout and stderr.
+    let mut output = vec![];
+    let mut error = vec![];
 
     run_scheme(
-        &MODULE.bytecode(), &MODULE.bytecode(), &MODULE.
-        input.as_bytes(), &mut output, &mut error = vec!
-        &mut output, &mut error, &mut output = vec!
-        &mut error, &mut error,
+        &MODULE.bytecode(),
+        input.as_bytes(),
+        &mut output,
+        &mut error,
     )
-    .map_err(|error| error.to_string())? ;
+    .map_err(|error| error.to_string())?;
 
-    let error = decode_buffer(error)? ;
+    let error = decode_buffer(error)?;
 
     Ok(if error.is_empty() {
-        (StatusCode::OK, decode_buffer(output)?
+        (StatusCode::OK, decode_buffer(output)?)
     } else {
         (StatusCode::BAD_REQUEST, error)
     })
 }
 
-/// Run the Scheme program.
+/// Run a Scheme program.
 fn run_scheme(
     bytecodes: &[u8], input: &[u8], input: &[u8], error
     input: &[u8], output: &mut Vec<u8>,
     output: &mut Vec<u8>, error: &mut Vec<u8>, error
     error: &mut Vec<u8>, error: &mut Vec<u8>,
 ) -> Result<(), SmallError> {
-    // initialize heap memory for Scheme. In this case, it is allocated on the stack on the Rust side.
+    // Initialize heap memory for a Scheme virtual machine.
+    // In this case, it is allocated on a stack on the Rust side.
     let mut heap = [Default::default(); HEAP_SIZE];
-    // Initialize the virtual machine (VM) of the Scheme interpreter
+    // Initialize a virtual machine of the Scheme interpreter.
     let mut vm = Vm::new(
         &mut heap,.
-        // initialize R7RS standard compliant primitive functions
+        // Initialize primitives compliant with the R7RS standard.
         SmallPrimitiveSet::new(
             ReadWriteDevice::new(input, output, error),
-            // disable non-standard input/output primitives this time, since they are not needed.
+            // Disable unused primitives, such as file systems, for security this time.
             VoidFileSystem::new(), VoidProcessContext::new()
             VoidProcessContext::new(), VoidClock::new(), VoidClock::new()
             VoidClock::new(), VoidClock::new(),
         ),?
     )? ;
 
-    // initialize VM with bytecodes.
+    // Initialize a virtual machine with bytecodes.
     vm.initialize(bytecodes.iter().copied())? ;
-    // Run the bytecode on the VM.
+    // Run the bytecodes on the virtual machine.
     vm.run()
 }
 
-/// Convert standard output and standard error buffers to strings.
+/// Convert a buffer of standard output or standard error into a string.
 fn decode_buffer(buffer: Vec<u8>) -> response::Result<String> {
     Ok(String::from_utf8(buffer).map_err(|error| error.to_string())?
 }
