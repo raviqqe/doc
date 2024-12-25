@@ -42,7 +42,7 @@ cargo add --build stak-build
 
 [The `stak` crate](https://docs.rs/stak/) is a library that runs the Scheme interpreter from Rust. [The `stak-build` crate](https://docs.rs/stak-build/) is a library that compiles Scheme scripts in [`build.rs` build scripts](https://doc.rust-lang.org/cargo/reference/build-scripts.html) (mentioned in the later section) so that you can embed them in Rust programs.
 
-### Preparation of HTTP server
+### Preparing the HTTP server
 
 Next, let's prepare an HTTP server written in Rust. In this example, we use Tokio's HTTP library [`axum`](https://github.com/tokio-rs/axum). First, add dependencies with the following commands.
 
