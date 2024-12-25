@@ -206,7 +206,7 @@ Also, change the `main` function as follows.
   }
 ```
 
-Use the `curl` command to see how it works.
+Send an HTTP request to see how it works.
 
 ```sh
 cargo run &
