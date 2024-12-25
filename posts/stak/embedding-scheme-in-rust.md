@@ -51,7 +51,7 @@ cargo add --features rt-multi-thread tokio
 cargo add axum
 ```
 
-Add the following code to `src/main.rs`.
+Then, add the following codes to `src/main.rs`.
 
 ```rust
 use axum::{routing::post, serve, Router};
