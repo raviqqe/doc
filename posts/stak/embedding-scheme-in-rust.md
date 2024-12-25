@@ -15,7 +15,7 @@ The following codes in this article can be found in [the `examples/hot-reload` d
 - A Scheme interpreter embeddable in Rust programs
 - Small memory footprint
 - Capability-based security
-  - The Stak Scheme interpreter does not support APIs for the OS by default.
+  - The Stak Scheme interpreter does not support any external APIs (e.g. against operating systems) by default.
   - To enable I/O and file APIs, they must be enabled when the interpreter's virtual machine (VM) is initialized.
 - I wrote
 
