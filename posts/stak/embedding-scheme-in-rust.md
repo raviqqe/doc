@@ -265,16 +265,9 @@ Unlike before, we see that the product of numbers in the list is returned!
 - By using Stak Scheme, you can change the behavior of Rust programs dynamically.
 - Scheme is awesome!
 
-## Future Prospects
-
-- Improve data type interoperability between Rust and Scheme
-  - Currently, standard I/O is the only way to communicate between Rust and Scheme.
-- Easier way to enable hot module reloading
-  - It's too much trouble to do `cargo build` by yourself!
-
 ## Acknowledgements
 
-I would like to thank [yhara](https://github.com/yhara), [monochrome](https://github.com/sisshiki1969) and the Zulip community of programming processors for their help. Thank you very much.
+I would like to give special thanks to [yhara](https://github.com/yhara), [monochrome](https://github.com/sisshiki1969) and the Zulip community of programming language processors for their help.
 
 ## Reference
 
