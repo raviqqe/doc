@@ -238,7 +238,7 @@ Use the `curl` command to confirm the sum is calculated right now.
 curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 15
 ```
 
-Next, change the code in the `handler.scm` file from calculating the sum to calculating the product.
+Next, change the codes in the `handler.scm` file to calculate the product of numbers instead of the sum.
 
 ```diff
 + (write (apply + (read)))
