@@ -104,7 +104,7 @@ Next, add a Scheme script of an HTTP request handler in the `src` directory. Add
 (write (apply + (read)))
 ```
 
-`read` is a function that parses an S-expression from its standard input, and `write` is a function that writes the value to the standard output. The `(apply + xs)` expression computes the sum of the numbers in the list `xs`.
+`read` is a procedure that parses an S-expression from the standard input. And, `write` is a procedure that writes out a value to the standard output. The `(apply + xs)` expression computes the sum of the numbers in the list `xs`.
 
 Next, refer to and execute the above script from Rust. Add the following code to the `src/main.rs` file.
 
