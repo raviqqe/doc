@@ -225,7 +225,7 @@ Stak Scheme provides the same functionality in its `stak` and `stak-build` libra
 
 ```toml
 [dependencies]
-stak = { version = "0.4.1", features = ["hot-reload"] }
+stak = { version = "0.4.4", features = ["hot-reload"] }
 ```
 
 Next, restart the HTTP server.
@@ -257,7 +257,7 @@ cargo build
 Again, check the result by sending an HTTP request via the `curl` command.
 
 ```sh
-curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 720
+curl -f -X POST --data '(1 2 3 4 5)' http://localhost:3000/calculate # -> 120
 ```
 
 Unlike before, we see that the product of numbers in the list is returned!
