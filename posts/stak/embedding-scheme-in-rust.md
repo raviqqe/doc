@@ -223,7 +223,7 @@ JavaScript bundlers (e.g. Webpack and Vite) have a feature called [Hot Module Re
 Stak Scheme provides the same functionality in its `stak` and `stak-build` libraries. By using it, you can dynamically change the behavior of Rust programs. First, enable the `hot-reload` feature for the `stak` crate in the `Cargo.toml` file.
 
 ```toml
-[dependencies].
+[dependencies]
 stak = { version = "0.4.1", features = ["hot-reload"] }
 ```
 
