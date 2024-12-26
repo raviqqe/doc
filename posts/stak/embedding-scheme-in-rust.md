@@ -40,9 +40,10 @@ To add Stak Scheme as libraries to a Rust crate, execute the following commands 
 ```sh
 cargo add stak
 cargo add --build stak-build
+cargo install stak-compile
 ```
 
-[The `stak` crate](https://docs.rs/stak/) is a library that runs the Scheme interpreter from Rust. [The `stak-build` crate](https://docs.rs/stak-build/) is a library that compiles Scheme scripts in [`build.rs` build scripts](https://doc.rust-lang.org/cargo/reference/build-scripts.html) (mentioned in the later section) so that you can embed them in Rust programs.
+[The `stak` crate](https://docs.rs/stak/) is a library that runs the Scheme interpreter from Rust. [The `stak-build` crate](https://docs.rs/stak-build/) is a library that compiles Scheme scripts in [`build.rs` build scripts](https://doc.rust-lang.org/cargo/reference/build-scripts.html) (mentioned in the later section) so that you can embed them in Rust programs. The `stak-compile` command is a Scheme-to-bytecode compiler for Stak Scheme.
 
 ### Preparing the HTTP server
 
