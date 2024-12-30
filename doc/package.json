@@ -21,7 +21,7 @@
     "@astrojs/mdx": "^4.0.3",
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/sitemap": "^3.2.1",
-    "@fontsource-variable/noto-sans": "^5.1.0",
+    "@fontsource-variable/noto-sans": "^5.1.1",
     "@fontsource/ubuntu": "^5.1.0",
     "@marp-team/marp-cli": "^4.0.4",
     "@raviqqe/loscore": "^0.2.12",
