@@ -30,27 +30,22 @@ const { frontmatter } = Astro.props;
 </html>
 <style is:global>
   :root {
+    --dark-black-color: #333;
     --black-color: #333;
     --red-color: #d00;
+    --light-red-color: #f66;
     --white-color: #fdfdfd;
 
-    --background-color: var(--white-color);
-    --text-color: var(--black-color);
+    --background-color: light-dark(var(--white-color), var(--dark-black-color));
+    --text-color: light-dark(var(--black-color), var(--white-color));
+    --link-color: light-dark(var(--red-color), var(--light-red-color));
 
     --monospace-font-family: monospace;
 
+    color-scheme: light dark;
     font:
       16px "Noto Sans Variable",
       sans-serif;
-
-    @media (prefers-color-scheme: dark) {
-      /* TODO Use a dark mode one-liner when a `saturate` function is fixed. */
-      /* filter: invert(1) hue-rotate(180deg) contrast(1.5) saturate(3); */
-
-      --black-color: #eee;
-      --red-color: #f66;
-      --white-color: black;
-    }
   }
 
   html {
@@ -72,7 +67,7 @@ const { frontmatter } = Astro.props;
 
   a,
   a:visited {
-    color: var(--red-color);
+    color: var(--link-color);
     text-decoration: underline;
     text-decoration-thickness: 0.05rem;
     text-underline-offset: 0.12rem;
