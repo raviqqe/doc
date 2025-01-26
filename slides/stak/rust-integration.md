@@ -65,15 +65,23 @@ assert_eq!(x.downcast_ref::<Foo>().unwrap().foo, 42);
 
 # Example 2
 
+- There is not a (positive) trait that distinguish immutable references and .
+
 ```rust
+use any_fn::{r#fn, Ref, value};
 
+fn foo(x: usize, y: &usize, z: &mut usize) {
+    *z = x + *y;
+}
+
+let x = value(0usize);
+
+r#fn::<(_, Ref<_>, _), _>(foo)
+    .call(&[&value(40usize), &value(2usize), &x])
+    .unwrap();
+
+assert_eq!(*x.downcast_ref::<usize>().unwrap(), 42);
 ```
-
----
-
-# Limitations
-
-- There is not a (positive) trait that distinguish
 
 ---
 
