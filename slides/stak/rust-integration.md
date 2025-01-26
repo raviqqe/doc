@@ -44,6 +44,9 @@ January 26, 2024
 
 # Example 1
 
+- Convert values with the `value` function.
+- Convert functions with the `#fn` function.
+
 ```rust
 use any_fn::{r#fn, value};
 
