@@ -39,6 +39,9 @@ January 26, 2024
   - A crate to define dynamically-typed functions in Rust.
 - You can convert many of statically-typed functions in Rust automatically.
   - As long as types define `core::any::Any`.
+- Different functions need different conversion.
+  - We implement different generic traits for them.
+  - Rust's trait resolution handles it (almost) automatically.
 
 ---
 
