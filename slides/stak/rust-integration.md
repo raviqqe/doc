@@ -63,6 +63,14 @@ assert_eq!(x.downcast_ref::<Foo>().unwrap().foo, 42);
 
 ---
 
+# Example 2
+
+```rust
+
+```
+
+---
+
 # Limitations
 
 - There is not a (positive) trait that distinguish
