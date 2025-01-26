@@ -1,4 +1,4 @@
-# Bytecode encoding v2 in Stak Scheme
+# Rust integration in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
 
