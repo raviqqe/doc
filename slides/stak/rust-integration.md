@@ -41,6 +41,32 @@ January 26, 2024
 
 ---
 
+# Example 1
+
+```rust
+use any_fn::{r#fn, value};
+
+struct Foo {
+    foo: usize,
+}
+
+fn foo(x: usize, y: &mut Foo) {
+    y.foo = x;
+}
+
+let x = value(Foo { foo: 0 });
+
+r#fn(foo).call(&[&value(42usize), &x]).unwrap();
+
+assert_eq!(x.downcast_ref::<Foo>().unwrap().foo, 42);
+```
+
+---
+
+- There is not a (positive) trait that distinguish
+
+---
+
 # Future work
 
 - Auto conversion of primitive types
