@@ -65,6 +65,7 @@ assert_eq!(x.downcast_ref::<Foo>().unwrap().foo, 42);
 
 # Example 2
 
+- We need to annotate conversion a bit to handle immutable reference parameters.
 - There is no (positive) trait that distinguish immutable references and unboxed values.
 
 ```rust
