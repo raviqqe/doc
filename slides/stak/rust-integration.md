@@ -41,24 +41,6 @@ January 26, 2024
 
 ---
 
-# Example 1
-
-```rust
-
-
-```
-
----
-
-# Example 2
-
-```rust
-
-
-```
-
----
-
 # Future work
 
 - Auto conversion of primitive types
