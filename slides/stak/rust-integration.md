@@ -29,7 +29,7 @@ January 26, 2024
 # Progress
 
 - Dynamically-typed functions in Rust
-- Rust integration
+- Rust integration in Stak Scheme
 
 ---
 
