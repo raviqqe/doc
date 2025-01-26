@@ -63,6 +63,8 @@ assert_eq!(x.downcast_ref::<Foo>().unwrap().foo, 42);
 
 ---
 
+# Limitations
+
 - There is not a (positive) trait that distinguish
 
 ---
