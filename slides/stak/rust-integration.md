@@ -65,7 +65,7 @@ assert_eq!(x.downcast_ref::<Foo>().unwrap().foo, 42);
 
 # Example 2
 
-- There is not a (positive) trait that distinguish immutable references and .
+- There is no (positive) trait that distinguish immutable references and unboxed types.
 
 ```rust
 use any_fn::{r#fn, Ref, value};
