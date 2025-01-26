@@ -41,11 +41,18 @@ January 26, 2024
 
 ---
 
-# Foo
+# Example 1
+
+```rust
+
 
 ```
 
-```
+---
+
+# Example 2
+
+```rust
 
 ---
 
@@ -60,3 +67,4 @@ January 26, 2024
 # Summary
 
 - Building a bytecode encoder is fun! 😃
+```
