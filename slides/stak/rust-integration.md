@@ -134,8 +134,4 @@ DynamicPrimitiveSet::<HEAP_CAPACITY>::new(&mut functions);
 
 # Summary
 
-- Building a bytecode encoder is fun! 😃
-
-```
-
-```
+- Building Rust integration is fun! 😃
