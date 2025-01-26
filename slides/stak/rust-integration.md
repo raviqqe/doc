@@ -42,8 +42,7 @@ January 26, 2024
 - Different functions need different conversion.
   - We implement different generic traits for them.
   - Rust's trait resolution handles it (almost) automatically.
-  - Other scripting languages in Rust uses the same mechanism.
-    e.g. [Rhai](https://github.com/rhaiscript/rhai), [Steel](https://github.com/mattwparas/steel), ...
+  - Other scripting languages in Rust, such as e.g. [Rhai](https://github.com/rhaiscript/rhai) and [Steel](https://github.com/mattwparas/steel), uses the same mechanism.
 
 ---
 
@@ -89,6 +88,38 @@ r#fn::<(_, Ref<_>, _), _>(foo)
     .unwrap();
 
 assert_eq!(*x.downcast_ref::<usize>().unwrap(), 42);
+```
+
+---
+
+# Rust integration in Stak Scheme
+
+- In Stak Scheme, you can define `PrimitiveSet` which is a set of primitive functions in Rust.
+- They can handle only Scheme types.
+- The new `DynamicPrimitiveSet` handles conversion of values and functions between Scheme and Rust.
+
+---
+
+# Examples
+
+```rust
+struct Foo {
+    bar: usize,
+}
+
+impl Foo {
+    fn new(bar: usize) -> Self { ... }
+    fn bar(&self) -> usize { ... }
+    fn baz(&mut self, value: usize) { ... }
+}
+
+let mut functions = [
+    r#fn(Foo::new),
+    r#fn::<(Ref<_>,), _>(Foo::bar),
+    r#fn(Foo::baz),
+];
+
+DynamicPrimitiveSet::<0>::new(&mut functions);
 ```
 
 ---
