@@ -83,6 +83,7 @@
     "println",
     "quic",
     "raviqqe",
+    "rhai",
     "ribbit",
     "rustc",
     "rustfmt",
