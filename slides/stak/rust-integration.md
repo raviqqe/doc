@@ -42,6 +42,8 @@ January 26, 2024
 - Different functions need different conversion.
   - We implement different generic traits for them.
   - Rust's trait resolution handles it (almost) automatically.
+  - Other scripting languages in Rust uses the same mechanism.
+    e.g. [Rhai](https://github.com/rhaiscript/rhai), [Steel](https://github.com/mattwparas/steel), ...
 
 ---
 
