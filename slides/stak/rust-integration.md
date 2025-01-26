@@ -10,7 +10,8 @@ January 26, 2024
 
 - Stak Scheme
 - Progress
-  - Bytecode encoding v2
+  - `any-fn` crate
+  - Stak Scheme
 - Future work
 
 ---
