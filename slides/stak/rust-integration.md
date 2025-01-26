@@ -54,6 +54,9 @@ January 26, 2024
 
 ```rust
 
+
+```
+
 ---
 
 # Future work
@@ -67,4 +70,7 @@ January 26, 2024
 # Summary
 
 - Building a bytecode encoder is fun! 😃
+
+```
+
 ```
