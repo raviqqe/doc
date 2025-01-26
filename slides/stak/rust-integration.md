@@ -119,7 +119,7 @@ let mut functions = [
     r#fn(Foo::baz),
 ];
 
-DynamicPrimitiveSet::<0>::new(&mut functions);
+DynamicPrimitiveSet::<HEAP_CAPACITY>::new(&mut functions);
 ```
 
 ---
