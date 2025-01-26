@@ -64,7 +64,6 @@ fn foo(x: usize, y: &mut Foo) {
 let x = value(Foo { foo: 0 });
 
 r#fn(foo).call(&[&value(42usize), &x]).unwrap();
-
 assert_eq!(x.downcast_ref::<Foo>().unwrap().foo, 42);
 ```
 
