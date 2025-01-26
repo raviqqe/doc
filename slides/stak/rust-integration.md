@@ -35,10 +35,10 @@ January 26, 2024
 
 # Dynamically-typed functions in Rust
 
-- `any-fn` crate
-- A crate to define dynamically-typed functions in Rust.
+- [`any-fn` crate](https://docs.rs/any-fn)
+  - A crate to define dynamically-typed functions in Rust.
 - You can convert many of statically-typed functions in Rust automatically.
-  - foo
+  - As long as types define `core::any::Any`.
 
 ---
 
