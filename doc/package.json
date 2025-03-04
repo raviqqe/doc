@@ -31,7 +31,7 @@
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
-    "@raviqqe/eslint-config": "^4.1.9",
+    "@raviqqe/eslint-config": "^4.1.15",
     "@types/node": "^22.13.9",
     "eslint": "^9.21.0",
     "playwright": "^1.50.1",
