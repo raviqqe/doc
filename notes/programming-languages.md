@@ -53,6 +53,9 @@
 - [Racket](https://racket-lang.org/)
 - [scheme.org](https://www.scheme.org/)
 - [SRFI](https://srfi.schemers.org/)
+- [R7RS pico](https://github.com/jrincayc/r7rs-pico-spec)
+- [Bottom Scheme](https://github.com/johnwcowan/r7rs-work/blob/master/BottomScheme.md)
+- [Scheme 4 In One File](https://github.com/false-schemers/s4iof)
 
 ### TypeScript
 
