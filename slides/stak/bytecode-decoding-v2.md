@@ -36,7 +36,7 @@ March 15, 2025
 # Examples
 
 - [Stripping]
-- [Stripping symbol representation]()
+- [Stripping unnecessary symbol representation by default]()
 
 ---
 
