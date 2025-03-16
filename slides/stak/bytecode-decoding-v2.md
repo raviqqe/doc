@@ -35,6 +35,9 @@ March 15, 2025
 
 # Examples
 
+- [Stripping]
+- [Stripping symbol representation]()
+
 ---
 
 # Future work
