@@ -10,8 +10,8 @@ March 15, 2025
 
 - Stak Scheme
 - Progress
-  - `any-fn` crate
   - Rust integration
+  - New bytecode decoder
 - Future work
 
 ---
@@ -28,9 +28,44 @@ March 15, 2025
 
 # Progress
 
+- Rust integration
 - New bytecode decoder
-- Examples
-- Future work
+  - Examples
+
+---
+
+# Rust integration (continued)
+
+## Scheme side
+
+`(import (stak rust))` imports Rust functions passed into a sripting engine.
+
+```scheme
+(import (scheme base) (scheme write) (stak rust))
+
+(display (add 1 2))
+```
+
+---
+
+# Rust integration (continued)
+
+## Rust side
+
+```rust
+fn main() -> Result<(), Box<dyn Error>> {
+    run_scheme(&include_module!("add.scm"))?;
+
+    Ok(())
+}
+
+fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
+    let mut heap = [Default::default(); HEAP_SIZE];
+    let mut functions = [("add", r#fn(|x: isize, y: isize| x + y))];
+
+    Engine::new(&mut heap, &mut functions)?.run(module)
+}
+```
 
 ---
 
