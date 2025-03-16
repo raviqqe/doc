@@ -35,8 +35,8 @@ March 15, 2025
 
 # Examples
 
-- [Stripping]
-- [Stripping unnecessary symbol representation by default]()
+- [Detect features #2154](https://github.com/raviqqe/stak/pull/2154)
+- [Make non-data symbols empty #2168](https://github.com/raviqqe/stak/pull/2168)
 
 ---
 
