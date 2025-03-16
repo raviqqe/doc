@@ -75,6 +75,17 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 # New bytecode decoder
 
 - Stak Scheme has a new bytecode decoder.
+- Decodes bytecodes into Markdown.
+- Decodes instructions and immediate values.
+
+## Example
+
+- Hello world program
+
+```markdown
+- constant "Hello, world!\n"
+- call 1 #f ||
+```
 
 ---
 
