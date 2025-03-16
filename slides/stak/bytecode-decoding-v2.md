@@ -113,13 +113,13 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
   - call 2 #f ||
   - call 1 #f ||
   - call 2 #f ||
-- call 1 #f ||
-- set ||
+- call 1 #f || ; <- $$close primitive function
+- set || ; <- fibonacci symbol
 ```
 
 <style scoped>
     pre {
-        font-size: 70%;
+        font-size: 65%;
     }
 </style>
 
