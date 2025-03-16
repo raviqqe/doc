@@ -40,7 +40,7 @@ March 15, 2025
 
 ## Scheme side
 
-- The `(import (stak rust))` statement imports Rust functions passed into a sripting engine.
+- The `(import (stak rust))` statement imports Rust functions passed into a scripting engine.
   - In the following example, it's the `add` function.
 
 ```scheme
