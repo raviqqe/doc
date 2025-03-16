@@ -40,6 +40,7 @@ March 15, 2025
 
 - The integration scheme changed a bit since the last meetup.
 - The `(import (stak rust))` statement imports Rust functions passed into a sripting engine.
+  - In the following example, it's the `add` function.
 
 ```scheme
 (import (scheme base) (scheme write) (stak rust))
