@@ -156,6 +156,7 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 
 - [Segregate environment for each `eval` call](https://github.com/raviqqe/stak/issues/1997)
 - [The "Inception" project](https://github.com/raviqqe/stak/issues/2157)
+  - Injecting a compiler into the `eval` library by disassembling it.
 
 ---
 
