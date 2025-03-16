@@ -28,7 +28,7 @@ March 15, 2025
 
 # Progress
 
-- Dynamically-typed functions in Rust
+- New bytecode decoder
 - Rust integration in Stak Scheme
 
 ---
