@@ -72,6 +72,10 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 
 ---
 
+# New bytecode decoder
+
+---
+
 # Examples
 
 - [Detect features #2154](https://github.com/raviqqe/stak/pull/2154)
