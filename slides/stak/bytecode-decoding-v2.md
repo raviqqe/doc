@@ -162,4 +162,4 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 
 # Summary
 
-- Building Rust integration is fun! 😃
+- Building a bytecode disassembler is fun! 😃
