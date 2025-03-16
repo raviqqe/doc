@@ -38,7 +38,8 @@ March 15, 2025
 
 ## Scheme side
 
-`(import (stak rust))` imports Rust functions passed into a sripting engine.
+- The integration scheme changed a bit since the last meetup.
+- `(import (stak rust))` imports Rust functions passed into a sripting engine.
 
 ```scheme
 (import (scheme base) (scheme write) (stak rust))
