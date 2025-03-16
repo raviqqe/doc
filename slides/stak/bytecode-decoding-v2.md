@@ -86,7 +86,7 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 
 ```markdown
 - constant "Hello, world!\n"
-- call 1 #f ||
+- call 1 #f || ; <- write-string symbol
 ```
 
 ---
