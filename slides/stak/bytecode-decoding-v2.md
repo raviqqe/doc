@@ -74,6 +74,28 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 
 # New bytecode decoder
 
+- Stak Scheme has a new bytecode decoder.
+
+---
+
+# Snapshotting Scheme programs
+
+- The repository now has snapshots of all the decoded bytecodes of Scheme programs.
+- I can review all the bytecode changes as diffs on GitHub!
+
+```diff
+  - call 1 #f find-quoted-symbols
+  - get 5
+  - call 1 #f find-quoted-symbols
+- - call 4 #f append
++ - get 5
++ - call 1 #f find-quoted-symbols
++ - call 5 #f append
+  - call 1 #f unique
+  - call 2 #f filter
+  - get 4
+```
+
 ---
 
 # Examples
