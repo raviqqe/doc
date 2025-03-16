@@ -51,6 +51,7 @@
     "hamt",
     "hhkb",
     "interp",
+    "isize",
     "iteratees",
     "karp",
     "koka",
