@@ -125,10 +125,10 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 
 ---
 
-# Snapshotting Scheme programs
+# Snapshotting bytecodes
 
 - The repository now has snapshots of all the decoded bytecodes of Scheme programs.
-- I can review all the bytecode changes as diffs on GitHub!
+- I can review all the bytecode changes as diffs in PRs on GitHub!
 
 ```diff
   - call 1 #f find-quoted-symbols
