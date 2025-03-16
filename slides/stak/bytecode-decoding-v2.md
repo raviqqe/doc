@@ -29,7 +29,8 @@ March 15, 2025
 # Progress
 
 - New bytecode decoder
-- Rust integration in Stak Scheme
+- Examples
+- Future work
 
 ---
 
@@ -42,9 +43,8 @@ March 15, 2025
 
 # Future work
 
-- Auto conversion of primitive types
-  - e.g. usize, f64
-- Garbage collection of foreign objects
+- [Segregate environment for each `eval` call](https://github.com/raviqqe/stak/issues/1997)
+- [The "Inception" project](https://github.com/raviqqe/stak/issues/2157)
 
 ---
 
