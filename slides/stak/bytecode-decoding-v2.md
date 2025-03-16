@@ -78,14 +78,50 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 - Decodes bytecodes into Markdown.
 - Decodes instructions and immediate values.
 
-## Example
+## Examples
 
-- Hello world program (without the library part)
+### Hello world program
+
+- Without the library part
 
 ```markdown
 - constant "Hello, world!\n"
 - call 1 #f ||
 ```
+
+---
+
+## Examples
+
+### Fibonacci function
+
+- Without the library part
+
+```markdown
+- constant procedure 1 #f
+  - get 0
+  - constant 2
+  - call 2 #f ||
+  - if
+    - get 0
+  - get 0
+  - constant 1
+  - call 2 #f ||
+  - call 1 #f ||
+  - get 1
+  - constant 2
+  - call 2 #f ||
+  - call 1 #f ||
+  - call 2 #f ||
+- call 1 #f ||
+- set ||
+```
+
+<style scoped>
+    pre {
+        font-size: 70%;
+    }
+</style>
 
 ---
 
