@@ -22,7 +22,7 @@ March 15, 2025
   - The compiler is written in Scheme.
   - The VM is written in Rust.
 - It aims to support the R7RS-small standard.
-- **Aims to be an interpreter with small memory footprint**
+- Aims to be an interpreter with **small memory footprint**
 
 ---
 
