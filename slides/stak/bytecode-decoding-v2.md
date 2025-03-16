@@ -127,7 +127,7 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 
 # Snapshotting bytecodes
 
-- The repository now has snapshots of all the decoded bytecodes of Scheme programs.
+- The repository now has all the decoded bytecode snapshots of Scheme programs.
 - I can review all the bytecode changes as diffs in PRs on GitHub!
 
 ```diff
