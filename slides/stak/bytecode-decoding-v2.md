@@ -101,18 +101,18 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 - constant procedure 1 #f
   - get 0
   - constant 2
-  - call 2 #f ||
+  - call 2 #f $<
   - if
     - get 0
   - get 0
   - constant 1
-  - call 2 #f ||
-  - call 1 #f ||
+  - call 2 #f $-
+  - call 1 #f fibonacci
   - get 1
   - constant 2
-  - call 2 #f ||
-  - call 1 #f ||
-  - call 2 #f ||
+  - call 2 #f $-
+  - call 1 #f fibonacci
+  - call 2 #f $+
 - call 1 #f $$close
 - set fibonacci
 ```
