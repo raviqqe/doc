@@ -80,7 +80,7 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 
 ## Example
 
-- Hello world program
+- Hello world program (without the library part)
 
 ```markdown
 - constant "Hello, world!\n"
