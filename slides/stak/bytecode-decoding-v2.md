@@ -86,7 +86,7 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
 
 ```markdown
 - constant "Hello, world!\n"
-- call 1 #f || ; <- write-string symbol
+- call 1 #f || <- write-string symbol
 ```
 
 ---
@@ -113,7 +113,7 @@ fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
   - call 2 #f ||
   - call 1 #f ||
   - call 2 #f ||
-- call 1 #f || ; <- $$close primitive function
+- call 1 #f || <- $$close primitive function
 - set || ; <- fibonacci symbol
 ```
 
