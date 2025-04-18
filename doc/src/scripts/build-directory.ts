@@ -16,7 +16,7 @@ await Promise.all(
       [
         "---",
         `layout: ${relative(dirname(path), "src/layouts/Default.astro")}`,
-        `title: ${content.split("\n")[0].replace("# ", "")}`,
+        `title: ${JSON.stringify(content.split("\n")[0].replace("# ", ""))}`,
         "---",
         "",
         content,
