@@ -16,7 +16,7 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 
 ## The other solutions
 
-## Refereces
+## References
 
 - [Stak Scheme][stak]
 - [Ribbit Scheme][ribbit]
