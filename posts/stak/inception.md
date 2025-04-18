@@ -7,8 +7,19 @@ While I implemented it orignally as a re-implementation of [Ribbit Scheme][ribbi
 
 ## TL;DR
 
-- Handling a compiler itself as data in the compiler allows you also
+- Handling a compiler itself as data in the compiler allows you.
 - S-expressions and its homoiconicity is great. 😃
+
+## The problem
+
+##
+
+## The other solutions
+
+## Refereces
+
+- [Stak Scheme][stak]
+- [Ribbit Scheme][ribbit]
 
 [stak]: https://github.com/raviqqe/stak
 [ribbit]: https://github.com/udem-dlteam/ribbit
