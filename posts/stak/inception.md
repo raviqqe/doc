@@ -16,13 +16,13 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 
 > WIP
 
-## Inception
+## Embedding a compiler into its target codes
 
-> WIP
+The basic idea to resolve the code duplication problem between the bytecode compiler and the `eval` library is simply to copy the compiler into source codes it is compiling.
 
-## The other solutions
+## The other solutions?
 
-Although this is specific to the architecture of Stak Scheme, it is technically possible to compile the compiler in S expressions and target codes separately and concatenate them together into a single chunk of target codes. However, this approach has a several downsides.
+Although this is specific to the architecture of Stak Scheme, it is technically possible to compile source codes of the compiler and target codes separately and concatenate them together into a single chunk of target codes. However, this approach has a several downsides.
 
 First, the bytecode compiler of Stak Scheme (or Ribbit Scheme) does not have any easy way to concatenate bytecodes. Because the bytecode compiler compiles source codes into bytecodes in its in-memory format of Directed Acyclic Graph (DAG) and then encodes them into its serialized format, bytecode concatenation is not as simple as concatenation of byte arrays.
 
