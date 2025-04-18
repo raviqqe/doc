@@ -14,11 +14,24 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 
 ## Code duplication of compilers between the compiler command and the `(scheme eval)` library
 
+The reason why we have this architecture of a bytecode compiler in Scheme and a virtual machine in Rust is to strip unnecessary libraries at the bytecode level. In R7RS, you can define libraries using the `define-library` syntax.
+
 > WIP
 
 ## Embedding a compiler into its target codes
 
 The basic idea to resolve the code duplication problem between the bytecode compiler and the `eval` library is simply to copy the compiler into source codes it compiles.
+
+The basic structure of the new `eval` procedure looks like the following.
+
+```scheme
+(define eval
+  (let ((compile ($$compiler)))
+    (lambda (expression environment)
+      ((compile expression environment)))))
+```
+
+You see the `($$compiler)` primitive call in the middle of the function body. The bytecode compiler replaces the primitive call with source codes of the compiler in S-expressions right after reading source codes.
 
 ## The other solutions?
 
