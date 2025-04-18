@@ -1,6 +1,6 @@
 # Inception: The self-embedding compiler in Stak Scheme
 
-![A spinnning top](https://raviqqe.s3.amazonaws.com/doc/stak/inception/spinning_top_3.jpg)
+![A spinning top](https://raviqqe.s3.amazonaws.com/doc/stak/inception/spinning_top_3.jpg)
 
 Code duplication is one of the primary sources for bugs and maintenance burden. If a language processor needs to embed itself into its target codes, what can we do?
 
@@ -22,7 +22,7 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 
 ## The other solutions
 
-Although this is specific to the artchitecture of Stak Scheme, it is technically possible to compile the compiler in S expressions and target codes separately and concatenate them together into a single chunk of target codes. However, this approach has a several downsides.
+Although this is specific to the architecture of Stak Scheme, it is technically possible to compile the compiler in S expressions and target codes separately and concatenate them together into a single chunk of target codes. However, this approach has a several downsides.
 
 First, the bytecode compiler of Stak Scheme (or Ribbit Scheme) does not have any easy way to concatenate bytecodes. Because the bytecode compiler compiles source codes into bytecodes in its in-memory format of Directed Acyclic Graph (DAG) and then encodes them into its serialized format, bytecode concatenation is not as simple as concatenation of byte arrays.
 
