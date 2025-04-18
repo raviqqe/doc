@@ -20,7 +20,9 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 
 ## The other solutions
 
-> WIP
+Although this is specific to the arthictecture of Stak Scheme, it is technically possible to compile the compiler in S expressions and target codes separately and concatenate them together into a single chunk of target codes. However, this approach has a several downsides.
+
+First, the bytecode compiler of Stak Scheme (or Ribbit Scheme) does not have any easy way to concatenate bytecodes. Because the bytecode compiler compiles source codes into bytecodes in its in-memory format of Directed Acyclic Graph (DAG) and then encodes them into its serialized format, bytecode concatenation is not as simple as concatenation of byte arrays.
 
 ## References
 
