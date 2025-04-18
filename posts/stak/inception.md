@@ -8,13 +8,19 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 ## TL;DR
 
 - Handling a compiler itself as data in the compiler allows you.
-- S-expressions and its homoiconicity is great. 😃
+- S-expressions and its homoiconicity is great. Lisp all the things! 😃
 
 ## The problem
 
+> WIP
+
 ## Inception
 
+> WIP
+
 ## The other solutions
+
+> WIP
 
 ## References
 
