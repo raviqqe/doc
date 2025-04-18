@@ -18,7 +18,7 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 
 ## Embedding a compiler into its target codes
 
-The basic idea to resolve the code duplication problem between the bytecode compiler and the `eval` library is simply to copy the compiler into source codes it is compiling.
+The basic idea to resolve the code duplication problem between the bytecode compiler and the `eval` library is simply to copy the compiler into source codes it compiles.
 
 ## The other solutions?
 
