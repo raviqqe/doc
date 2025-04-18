@@ -3,7 +3,7 @@
 Code duplication is one of the primary sources for bugs and maintenance burden. If a language processor needs to embed itself into its target codes, what can we do?
 
 [Stak Scheme][stak] is a Scheme interpreter written in Rust aiming for small memory footprints which I've been developing in the last few years.
-While I implemented it orignally as a re-implementation of [Ribbit Scheme][ribbit], I was wondering how to avoid code duplication
+While I implemented it originally as a re-implementation of [Ribbit Scheme][ribbit], I was wondering how to avoid code duplication
 
 ## TL;DR
 
