@@ -36,11 +36,11 @@ You see the `($$compiler)` primitive call in the middle of the function body. Th
 
 ## Why not concatenating bytecodes?
 
-Although this is specific to the architecture of Stak Scheme, it is technically possible to compile source codes of the compiler and target codes separately and concatenate them together into a single chunk of target codes. However, this approach has a several downsides.
+It is technically possible to compile source codes of the compiler and target codes separately and concatenate them together into a single chunk of target codes. However, this approach has a several downsides.
 
 First, the bytecode compiler of Stak Scheme (or Ribbit Scheme) does not have any easy way to concatenate bytecodes. Because the bytecode compiler compiles source codes into bytecodes in its in-memory format of Directed Acyclic Graph (DAG) and then encodes them into its serialized format, bytecode concatenation is not as simple as concatenation of byte arrays.
 
-Secondly, WIP
+Secondly, if the bytecode format changes we might need to change how to seam the two chunks of bytecodes together, which is another maintenance burden.
 
 ## References
 
