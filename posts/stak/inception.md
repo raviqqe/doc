@@ -11,7 +11,7 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 ## TL;DR
 
 - Handling a compiler itself as data in the compiler allows a compiler itself to be embedded into target codes.
-- S-expressions and its homoiconicity is great. Lisp all the things! 😃
+- S-expressions and its homoiconicity is stunning. Lisp all the things :)
 
 ## Code duplication of compilers between the compiler command and the `(scheme eval)` library
 
