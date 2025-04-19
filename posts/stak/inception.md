@@ -19,7 +19,7 @@ The reason why we have this architecture of a bytecode compiler in Scheme and a 
 
 > WIP
 
-## Embedding a compiler into its target codes
+## "Incepting" a compiler into its target codes
 
 The basic idea to resolve the code duplication problem between the bytecode compiler and the `eval` library is simply to copy the compiler into source codes it compiles.
 
