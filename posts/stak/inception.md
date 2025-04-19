@@ -40,7 +40,7 @@ It is technically possible to compile source codes of the compiler and target co
 
 First, the bytecode compiler of Stak Scheme (or Ribbit Scheme) does not have any easy way to concatenate bytecodes. Because the bytecode compiler compiles source codes into bytecodes in its in-memory format of Directed Acyclic Graph (DAG) and then encodes them into its serialized format, bytecode concatenation is not as simple as concatenation of byte arrays.
 
-Secondly, if the bytecode format changes we might need to change how to seam the two chunks of bytecodes together, which is another maintenance burden.
+Secondly, if the bytecode format changes we would need to change the way to seam the two chunks of bytecodes together, which is another maintenance burden.
 
 ## References
 
