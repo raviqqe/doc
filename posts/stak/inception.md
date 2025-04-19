@@ -15,7 +15,7 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 
 ## Code duplication between the compiler command and the `eval` library
 
-First things first, Ribbit and Stak Scheme has an irregular architecture of the whole language processor; it is composed of a bytecode compiler written in Scheme and a virtual machine in Rust. The benefit of this architecture is that we can omit a big chunk of logic from resulting artifacts, such as executable binaries. Because library expansion, macro expansion, optimization, and actual compilation down to bytecodes are all inside the compiler split from a VM, we do not have to put the extra bytes for the logic into the artifacts. I believe this is a key decision made by the research team of Ribbit Scheme for the goal of small memory footprints.
+First things first, Ribbit and Stak Scheme has an irregular architecture of the whole language processor; it is composed of a bytecode compiler written in Scheme and a virtual machine (VM) in Rust. The benefit of this architecture is that we can omit a big chunk of logic from resulting artifacts, such as executable binaries. Because library expansion, macro expansion, optimization, and actual compilation down to bytecodes are all inside the compiler split from a VM, we do not have to put the extra bytes for the logic into the artifacts. I believe this is a key decision made by the research team of Ribbit Scheme for the goal of small memory footprints.
 
 The reason why we have this architecture of a bytecode compiler in Scheme and a virtual machine in Rust is to strip unnecessary libraries at the bytecode level. In R7RS, you can define libraries using the `define-library` syntax.
 
