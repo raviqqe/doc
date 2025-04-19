@@ -13,6 +13,7 @@ export default defineConfig({
     responsiveImages: true,
   },
   image: {
+    experimentalLayout: "full-width",
     remotePatterns: [{ protocol: "https" }],
   },
   integrations: [
