@@ -9,6 +9,9 @@ import rehypeAutoLinkHeadings from "rehype-autolink-headings";
 
 export default defineConfig({
   base: "/doc",
+  experimental: {
+    responsiveImages: true,
+  },
   image: {
     remotePatterns: [{ protocol: "https" }],
   },
