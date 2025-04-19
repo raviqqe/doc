@@ -46,6 +46,8 @@ Secondly, if the bytecode format changes we would need to change the way to seam
 
 ### Compiler as a library
 
+Another option is providing a compiler as a library specifically inside one of standard libraries, such as `(scheme eval)`.
+
 > WIP
 
 ## Next steps
