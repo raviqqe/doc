@@ -44,6 +44,10 @@ First, the bytecode compiler of Stak Scheme (or Ribbit Scheme) does not have any
 
 Secondly, if the bytecode format changes we would need to change the way to seam the two chunks of bytecodes together, which is another maintenance burden.
 
+### Compiler as a library
+
+> WIP
+
 ## Next steps
 
 > WIP
