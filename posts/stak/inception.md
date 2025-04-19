@@ -5,7 +5,7 @@
 Code duplication is one of the primary sources for bugs and maintenance burden in software engineering. If a language processor itself is its target codes, what can we do?
 
 In the last few years, I've been developing a Scheme interpreter in Rust called [Stak Scheme][stak].
-Stak Scheme is a Scheme interpreter aiming for small memory footprints.
+The Scheme interpreter aims for small memory footprints with reasonable performance and to be a complete [R7RS-small][r7rs-small] implementation.
 While I implemented it originally as a re-implementation of [Ribbit Scheme][ribbit], I was wondering how to avoid code duplication. This article depicts how [Stak Scheme][stak]'s bytecode compiler embeds itself into the `eval` procedure in the target codes.
 
 ## TL;DR
@@ -59,3 +59,4 @@ Another option is providing a compiler as a library specifically inside one of s
 
 [stak]: https://github.com/raviqqe/stak
 [ribbit]: https://github.com/udem-dlteam/ribbit
+[r7rs-small]: https://small.r7rs.org/
