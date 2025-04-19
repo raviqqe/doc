@@ -34,7 +34,7 @@ The basic structure of the new `eval` procedure looks like the following.
 
 You see the `($$compiler)` primitive call in the middle of the function body. The bytecode compiler replaces the primitive call with source codes of the compiler in S-expressions right after reading source codes. The reason it is not just a `$$compiler` symbol but wrapped with parentheses making it a form of a procedure call is that we cannot differentiate such a symbol from normal uses of the symbol; the compiler itself contains the `$$compiler` symbol to replace it in source codes!
 
-## The other solutions?
+## Why not concatenating bytecodes?
 
 Although this is specific to the architecture of Stak Scheme, it is technically possible to compile source codes of the compiler and target codes separately and concatenate them together into a single chunk of target codes. However, this approach has a several downsides.
 
