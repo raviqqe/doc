@@ -10,7 +10,7 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 
 ## TL;DR
 
-- Handling a compiler itself as data in the compiler allows a compiler itself to be embedded into target codes.
+- Handling a compiler itself as data in the compiler itself allows it to be embedded into target codes.
 - S-expressions and its homoiconicity is stunning. Lisp all the things :)
 
 ## Code duplication between the compiler command and the `eval` library
