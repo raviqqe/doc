@@ -2,9 +2,10 @@
 
 ![A spinning top](https://raviqqe.s3.amazonaws.com/doc/stak/inception/spinning_top_3.jpg)
 
-Code duplication is one of the primary sources for bugs and maintenance burden. If a language processor needs to embed itself into its target codes, what can we do?
+Code duplication is one of the primary sources for bugs and maintenance burden in software engineering. If a language processor itself is its target codes, what can we do?
 
-[Stak Scheme][stak] is a Scheme interpreter written in Rust aiming for small memory footprints which I've been developing in the last few years.
+In the last few years, I've been developing a Scheme interpreter in Rust called [Stak Scheme][stak].
+[Stak Scheme][stak] is a Scheme interpreter aiming for small memory footprints.
 While I implemented it originally as a re-implementation of [Ribbit Scheme][ribbit], I was wondering how to avoid code duplication. This article depicts how [Stak Scheme][stak]'s bytecode compiler embeds itself into the `eval` procedure in the target codes.
 
 ## TL;DR
@@ -44,7 +45,7 @@ Secondly, WIP
 ## References
 
 - [Stak Scheme][stak]
-- [Ribbit Scheme][ribbit]
+- [Ribbit Scheme - A portable, compact and extensible Scheme implementation that is fully R4RS compliant.][ribbit]
 
 [stak]: https://github.com/raviqqe/stak
 [ribbit]: https://github.com/udem-dlteam/ribbit
