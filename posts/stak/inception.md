@@ -1,6 +1,6 @@
 # Inception: The self-embedding compiler in Stak Scheme
 
-![A spinning top](https://raviqqe.s3.amazonaws.com/doc/stak/inception/spinning_top_3.jpg)
+![A spinning top](https://raviqqe.s3.amazonaws.com/doc/stak/inception/spinning_top_1.jpg)
 
 Code duplication is one of the primary sources for bugs and maintenance burden. If a language processor needs to embed itself into its target codes, what can we do?
 
