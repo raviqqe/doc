@@ -132,7 +132,7 @@ Why don't we simply create a common module of the compiler logic in a separate f
 
 ### Compiler as a library
 
-Another option is providing a compiler as a library specifically inside one of standard libraries, such as `(scheme eval)`, and a compiler simply calls the "compile" procedure in the library. However, this approach is problematic in the case we update the bytecode format because Stak Scheme is self-hosted. If the host side of Stak Scheme uses the old version of bytecodes but we change the new bytecode format of VM in Rust, we cannot do anything. Also, it makes the compiler dependent on Stak Scheme itself and we will not be able to use the other implementations of R7RS Scheme as a compiler host anymore. When a compiler is embedding itself, we don't need to care about such incompatibility between the compiler, VM, and the host implementation of Scheme.
+Another option is providing a compiler as a library specifically inside one of standard libraries, such as `(scheme eval)`, in the `prelude.scm` file and a compiler simply calls the `compile` procedure in the library. However, this approach is problematic in the case we update the bytecode format because Stak Scheme is self-hosted. If the host side of Stak Scheme uses the old version of bytecodes but we change the new bytecode format of VM in Rust, we cannot do anything. Also, it makes the compiler dependent on Stak Scheme itself and we will not be able to use the other implementations of R7RS Scheme as a compiler host anymore. When a compiler is embedding itself, we don't need to care about such incompatibility between the compiler, VM, and the host implementation of Scheme.
 
 ### Concatenating bytecodes
 
