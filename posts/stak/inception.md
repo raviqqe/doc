@@ -144,7 +144,7 @@ Secondly, if the bytecode format changes we would need to change the way to seam
 
 ## Results
 
-In the process of implementing the solution, I've found a piece of performance improvement that I did not introduce on the side of the `(scheme eval)` library while it was already implemented in the compiler side. Also, as I stated earlier, we do not need to maintain two different implementations of the compiler. That does not only alleviate the development cost of maintaining the compiler but also accelerates its development because we can easily validate that new compiler changes in both the compiler script and the `(scheme eval)` library.
+In the process of implementing the solution, I've found a piece of performance improvement that I did not introduce on the side of the `(scheme eval)` library while it was already implemented in the compiler side. Also, as I stated earlier, we do not need to maintain two different implementations of the compiler anymore! That does not only alleviate the development cost of maintaining the compiler but also accelerates its development because we can easily validate that new compiler changes in both the compiler script and the `(scheme eval)` library.
 
 ## References
 
