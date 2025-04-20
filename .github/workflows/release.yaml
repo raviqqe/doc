@@ -1,4 +1,4 @@
-name: deploy
+name: release
 on:
   push:
     branches:
@@ -8,10 +8,10 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: deploy
+  group: release
   cancel-in-progress: true
 jobs:
-  deploy:
+  release:
     runs-on: ubuntu-latest
     defaults:
       run:
