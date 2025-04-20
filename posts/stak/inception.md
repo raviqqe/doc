@@ -22,7 +22,7 @@ In R7RS, you define libraries using the `define-library` syntax. This allows us 
 
 ## "Incepting" a compiler into its target codes
 
-The basic idea to resolve the code duplication problem between the bytecode compiler and the `eval` library is simply to copy the compiler into source codes it is compiling.
+The basic idea to resolve the code duplication problem between the bytecode compiler and the `eval` library is simply to copy the compiler into source codes it is compiling. In languages of Lisp variants, this is a lot easier than the other languages as S-expressions are representation of both codes and data. In this case, the former is the compiler and the latter is source codes given to it.
 
 The basic structure of the new `eval` procedure looks like the following.
 
