@@ -90,9 +90,11 @@ On the other hand, the compiler itself looks like the following:
 ```scheme
 (define compiler
   `(let ()
+    ; Combine compiler frontend and backend.
     ,@frontend
     ,@backend))
 
+; Evaluate the `compiler` expression into a `compile` procedure.
 (define compile
   (eval
     compiler
