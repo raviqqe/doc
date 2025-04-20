@@ -84,7 +84,7 @@ Now, we can embed the compiler frontend into the given source codes when we find
           ; ...
 
           ; Return a `eval` procedure which compiles an S-expression into bytecodes
-          ; and executes it as a thunk (a procedure with no argument.)
+          ; and executes it as a thunk (a procedure with no parameter.)
           (lambda (expression environment)
             (make-procedure
               (compile-arity 0 #f)
