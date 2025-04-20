@@ -128,7 +128,7 @@ While you are reading to this point, you have probably thought of many other sol
 
 ### Modularizing a compiler
 
-Why don't we simply create a common module of the compiler logic in a separate file and share it between the compiler command and the `eval` library? I did not take this path to keep the deployability of the compiler and libraries. Stak Scheme's compiler and the R7RS library set are contained within single files of `compiler.scm` and `prelude.scm` respectively. That makes the building and packaging of the compiler and libraries easier. So I didn't want to break it for the sake of less code duplication.
+Why don't we simply create a common module of the compiler logic in a separate file and share it between the compiler script and the `eval` library? I did not take this path to keep the deployability of the compiler and libraries. Stak Scheme's compiler and the R7RS library set are contained within single files of `compiler.scm` and `prelude.scm` respectively. That makes the building and packaging of the compiler and libraries easier. So I didn't want to break it for the sake of less code duplication.
 
 ### Compiler as a library
 
