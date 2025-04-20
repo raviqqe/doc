@@ -1,17 +1,18 @@
-name: deploy
+name: release
 on:
   push:
     branches:
       - main
+  pull_request:
 permissions:
   contents: read
   pages: write
   id-token: write
 concurrency:
-  group: deploy
+  group: release
   cancel-in-progress: true
 jobs:
-  deploy:
+  release:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -27,3 +28,4 @@ jobs:
         with:
           path: doc/dist
       - uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main'
