@@ -102,6 +102,9 @@ On the other hand, the compiler itself looks like the following:
       '(scheme base)
       ; ...
       )))
+
+; Read source codes, incept the compiler frontend, and finally compile it into bytecodes.
+(compile (incept (read-source)))
 ```
 
 ## The other solutions
