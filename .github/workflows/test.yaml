@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
+      - run: npx playwright install
       - run: npm run build
       - run: npm run lint
   format:
