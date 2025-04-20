@@ -90,29 +90,6 @@ On the other hand, the compiler itself looks like the following:
 ```scheme
 (define compiler
   `(let ()
-    (cond-expand
-     (stak
-      (define cons-rib cons)
-      (define rib-car car)
-      (define rib-cdr cdr)
-      (define target-procedure? procedure?))
-
-     (else
-      (define-record-type *rib*
-       (rib car cdr tag)
-       rib?
-       (car rib-car)
-       (cdr rib-cdr)
-       (tag rib-tag))
-
-      (define (cons-rib car cdr)
-       (rib car cdr pair-type))
-
-      (define (target-procedure? value)
-       (and (rib? value) (eq? (rib-tag value) procedure-type)))
-
-      (define string->uninterned-symbol string->symbol)))
-
     ,@frontend
     ,@backend))
 
