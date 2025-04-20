@@ -1,4 +1,4 @@
-import { defineConfig, sharpImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
@@ -9,8 +9,11 @@ import rehypeAutoLinkHeadings from "rehype-autolink-headings";
 
 export default defineConfig({
   base: "/doc",
+  experimental: {
+    responsiveImages: true,
+  },
   image: {
-    service: sharpImageService(),
+    experimentalLayout: "full-width",
     remotePatterns: [{ protocol: "https" }],
   },
   integrations: [
