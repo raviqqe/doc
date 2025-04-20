@@ -98,6 +98,8 @@ So now, we can embed the compiler frontend into the given source codes when we f
      ))
 ```
 
+The code is basically finding the `($$compiler)` directive call and replacing it with the expression that forms the `eval` procedure. In Lisp dialects, this is easier than in the other languages as both codes and data are representeed in the same syntax, S-expressions.
+
 On the other hand, the compiler itself looks like the following:
 
 ```scheme
