@@ -124,7 +124,7 @@ On the other hand, the compiler itself looks like the following:
 
 ## The other solutions
 
-While you are reading to this point, you have probably thought of many other solutions. Indeed, I believe this is not the simplest solution for removing code duplication of the compiler logic although I do this is the best. The following sections describe the other solutions that didn't work well with Stak Scheme but might do for the other projets of language processors.
+While you are reading to this point, you have probably thought of many other solutions. Indeed, I believe this is not the simplest solution for removing code duplication of the compiler logic although I do this is the best. The following sections describe the other solutions that didn't work well with Stak Scheme but might do for the other projects of language processors.
 
 ### Modularizing a compiler
 
