@@ -150,8 +150,8 @@ What's even interesting is that the standalone interpreter of Stak Scheme is wri
 
 ```mermaid
 graph TD
-    A[stak command] -->|eval <script>| B
-    B[compiler.scm script] -->C
+    A[stak command] -->|"(eval <script>)"| B
+    B[compiler.scm script] -->|"(eval compiler)"| C
     C["eval procedure<br/>in (scheme eval) library"] --> A
 ```
 
