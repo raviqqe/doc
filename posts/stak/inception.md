@@ -37,7 +37,7 @@ You see the `($$compiler)` primitive call in the middle of the function body. Th
 
 ### Compiler frontends and backends
 
-Note that the previous `($$compiler)` directive is not replaced with the whole compiler in the `compile.scm` script. The script also contains the other logic, such as source code reading, expansion of library definitions, serialization of bytecodes, etc. Therefore, we first need to extra the "frontend" part of the compiler as data of S-expressions which looks like the following snippet.
+Note that the previous `($$compiler)` directive is not replaced with the whole compiler in the `compile.scm` script. The script also contains the other logic, such as source code reading, expansion of library definitions, serialization of bytecodes, etc. Therefore, we first need to extract the "frontend" part of the compiler as data in S-expressions which looks like the following snippet.
 
 ```scheme
 (define frontend
