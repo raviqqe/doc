@@ -35,7 +35,7 @@ The basic structure of the new `eval` procedure looks like the following.
 
 You see the `($$compiler)` primitive call in the middle of the function body. The bytecode compiler replaces the primitive call with source codes of the compiler in S-expressions right after reading source codes. The reason it is not just a `$$compiler` symbol but wrapped with parentheses making it a form of a procedure/macro call is that we cannot differentiate such a symbol from normal uses of the symbol; the compiler itself contains the `$$compiler` symbol to replace it in source codes!
 
-### Compiler frontends and backends
+### Compiler frontend and backend
 
 Note that the previous `($$compiler)` directive is not replaced with the whole compiler in the `compile.scm` script. The script also contains the other logic, such as source code reading, expansion of library definitions, serialization of bytecodes, etc. Therefore, we first need to extract the "frontend" part of the compiler as data in S-expressions which looks like the following snippet.
 
