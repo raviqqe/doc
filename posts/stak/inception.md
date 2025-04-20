@@ -64,7 +64,7 @@ Note that the previous `($$compiler)` directive is not replaced with the whole c
 
 The compiler frontend contains all parts that the `eval` procedure need including macro system, optimization, and bytecode compilation. We instantiate the frontend of an S-expression into concrete codes in both the body of the compiler script itself and the `eval` procedure in target codes.
 
-Now, we can embed the compiler frontend into the given source codes when we find any `($$compiler)` directive inside them.
+So now, we can embed the compiler frontend into the given source codes when we find any `($$compiler)` directive inside them.
 
 ```scheme
 ; The given expression is source codes which is already parsed into an S-expression.
