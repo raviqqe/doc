@@ -67,10 +67,12 @@ The compiler frontend contains all parts that the `eval` procedure need includin
 Now, we can embed the compiler frontend into the given source codes when we find any `($$compiler)` directive inside them.
 
 ```scheme
+; The given expression is source codes which is already parsed into an S-expression.
 (define (incept expression)
   (cond
     ((not (pair? expression))
       expression)
+    ; Find a `($$compiler)` directive call in source codes.
     ((and
         (pair? (car expression))
         (null? (cdar expression))
