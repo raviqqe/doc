@@ -62,11 +62,11 @@ Note that the previous `($$compiler)` directive is not replaced with the whole c
     ))
 ```
 
-Now, we can incept it into the given source codes when we find any `($$compiler)` directive inside them.
+The compiler frontend contains all parts that the `eval` procedure need including macro system, optimization, and bytecode compilation. We instantiate the frontend of an S-expression into concrete codes in both the body of the compiler script itself and the `eval` procedure in target codes.
+
+Now, we can embed it into the given source codes when we find any `($$compiler)` directive inside them.
 
 ```scheme
-; Inception
-
 (define (incept expression)
   (cond
     ((not (pair? expression))
