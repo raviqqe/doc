@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
 permissions:
   contents: read
   pages: write
@@ -27,3 +28,4 @@ jobs:
         with:
           path: doc/dist
       - uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main'
