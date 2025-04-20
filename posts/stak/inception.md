@@ -152,7 +152,7 @@ What's even interesting is that the standalone interpreter of Stak Scheme is wri
 graph TD
     A[stak command] --> B
     B[compiler.scm script] -->C
-    C["eval procedure in (scheme eval) library"] --> A
+    C["eval procedure<br/>in (scheme eval) library"] --> A
 ```
 
 ## References
