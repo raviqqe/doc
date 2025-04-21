@@ -146,7 +146,7 @@ Secondly, if the bytecode format changes we would need to change the way to seam
 
 ## Happy ending
 
-During the process of implementing the solution, I've found a piece of performance improvement that I did not introduce on the side of the `(scheme eval)` library while it was already implemented in the compiler side. Also, as I stated earlier, we do not need to maintain two different implementations of the compiler anymore! That does not only alleviate the development cost of maintaining the compiler but also accelerates its development because we can easily validate that new compiler changes work in both the compiler script and the `(scheme eval)` library.
+During the process of implementing the solution, I found a piece of performance improvement that I did not introduce on the side of the `(scheme eval)` library while it was already implemented in the compiler side. Also, as I stated earlier, we do not need to maintain two different implementations of the compiler anymore! That does not only alleviate the development cost of maintaining the compiler but also accelerates its development because we can easily validate that new compiler changes work in both the compiler script and the `(scheme eval)` library.
 
 What's even interesting is that the standalone interpreter of Stak Scheme is written in Scheme using the `eval` procedure while the interpreter is used to run the `compile.scm` script. Consequently, we have three-level nesting of the `eval` procedure calls across the previous and current versions of Stak Scheme. It's like you are in an infinite loop of dreams as depicted in the movie, Inception!
 
