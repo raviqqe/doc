@@ -31,7 +31,6 @@ export default defineConfig({
       [
         rehypeMermaid,
         {
-          colorScheme: "dark",
           dark: true,
           strategy: "img-svg",
         },
