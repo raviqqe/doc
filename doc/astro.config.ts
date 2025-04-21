@@ -28,7 +28,14 @@ export default defineConfig({
     },
     remarkPlugins: [remarkToc],
     rehypePlugins: [
-      [rehypeMermaid, { colorScheme: "dark", dark: true }],
+      [
+        rehypeMermaid,
+        {
+          colorScheme: "dark",
+          dark: true,
+          strategy: "img-svg",
+        },
+      ],
       rehypeSlug,
       rehypeAutoLinkHeadings,
     ],
