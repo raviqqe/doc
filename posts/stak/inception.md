@@ -2,7 +2,7 @@
 
 ![A spinning top](https://raviqqe.s3.amazonaws.com/doc/stak/inception/spinning_top_3.jpg)
 
-Code duplication is one of the primary sources of bugs and maintenance burden in software engineering. If a language processor itself is its target codes, what can we do?
+Code duplication is one of the primary sources of bugs and maintenance burdens in software engineering. If a language processor itself is its target codes, what can we do?
 
 In the last few years, I've been developing a Scheme interpreter in Rust called [Stak Scheme][stak].
 The Scheme interpreter aims for small memory footprints with [reasonable performance](https://github.com/raviqqe/stak?tab=readme-ov-file#performance) and to be a complete implementation of the [R7RS-small][r7rs-small] standard.
@@ -11,7 +11,7 @@ While I implemented it originally as a re-implementation of [Ribbit Scheme][ribb
 ## TL;DR
 
 - Handling a compiler itself as data in the compiler itself allows it to be embedded into target codes.
-- S-expressions and its homoiconicity is stunning. Lisp all the things :)
+- S-expressions and their homoiconicity are stunning. Lisp all the things :)
 
 ## Table of contents
 
