@@ -160,7 +160,7 @@ graph TD
 ## References
 
 - [Stak Scheme][stak]
-- [Ribbit Scheme - A portable, compact and extensible Scheme implementation that is fully R4RS compliant.][ribbit]
+- [Ribbit Scheme - A portable, compact, and extensible Scheme implementation that is fully R4RS compliant.][ribbit]
 - [The R7RS-small standard][r7rs-small]
 
 [stak]: https://github.com/raviqqe/stak
