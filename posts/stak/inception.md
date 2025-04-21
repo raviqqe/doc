@@ -138,7 +138,7 @@ Another option is providing a compiler as a library specifically inside one of t
 
 ### Concatenating bytecodes
 
-It is technically possible to compile source codes of the compiler and target codes separately and concatenate them together into a single chunk of target codes. However, this approach has a several downsides.
+It is technically possible to compile source codes of the compiler and target codes separately and concatenate them together into a single chunk of target codes. However, this approach has several downsides.
 
 First, the bytecode compiler of Stak Scheme (or Ribbit Scheme) does not have any easy way to concatenate bytecodes as byte sequences. Because the bytecode compiler compiles source codes into bytecodes in its in-memory format of Directed Acyclic Graph (DAG) and then encodes them into its serialized format, combining bytecodes is not as simple as concatenation of byte arrays. In Stak Scheme, bytecodes are more than simple sequences of instructions but they represent codes and data in a more natural way. For example, conditional jumps are nodes connected with two outgoing edges leading to nodes of the next instructions for its true and false cases.
 
