@@ -22,9 +22,13 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
+    syntaxHighlight: {
+      type: "shiki",
+      excludeLangs: ["mermaid"],
+    },
     remarkPlugins: [remarkToc],
     rehypePlugins: [
-      [rehypeMermaid, { dark: true, colorScheme: "dark" }],
+      [rehypeMermaid, { colorScheme: "dark", dark: true }],
       rehypeSlug,
       rehypeAutoLinkHeadings,
     ],
