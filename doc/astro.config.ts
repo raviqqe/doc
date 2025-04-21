@@ -2,8 +2,8 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
+import rehypeMermaid from "rehype-mermaid";
 import remarkToc from "remark-toc";
-import remarkMermaid from "remark-mermaidjs";
 import rehypeSlug from "rehype-slug";
 import rehypeAutoLinkHeadings from "rehype-autolink-headings";
 
@@ -22,8 +22,12 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
-    remarkPlugins: [remarkMermaid, remarkToc],
-    rehypePlugins: [rehypeSlug, rehypeAutoLinkHeadings],
+    remarkPlugins: [remarkToc],
+    rehypePlugins: [
+      [rehypeMermaid, { dark: true, colorScheme: "dark" }],
+      rehypeSlug,
+      rehypeAutoLinkHeadings,
+    ],
   },
   site: "https://raviqqe.github.io/doc",
 });
