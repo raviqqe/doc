@@ -159,8 +159,8 @@ graph TD
 
 ## References
 
-- [Stak Scheme - The miniature, embeddable R7RS Scheme implementation in Rust ][stak]
-- [Ribbit Scheme - A portable, compact, and extensible Scheme implementation that is fully R4RS compliant.][ribbit]
+- [Stak Scheme: The miniature, embeddable R7RS Scheme implementation in Rust ][stak]
+- [Ribbit Scheme: A portable, compact, and extensible Scheme implementation that is fully R4RS compliant.][ribbit]
 - [Scheme programming language][scheme]
 - [The R7RS-small standard][r7rs-small]
 
