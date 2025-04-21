@@ -96,6 +96,7 @@
     "schemat",
     "serde",
     "shibuya",
+    "shiki",
     "sqlx",
     "srfi",
     "stackful",
