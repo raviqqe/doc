@@ -140,7 +140,7 @@ graph TD
   F("(compile source)") --> G
   G[bytecodes]
   S("(read)") -->|raw source| T
-  T("(inject eval-library source)") -->|full source| F
+  T("(incept eval-library source)") -->|full source| F
 ```
 
 ## The other solutions
