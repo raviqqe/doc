@@ -128,9 +128,9 @@ As a result, we have the final compiler architecture described by the following 
 
 ```mermaid
 graph TD
-  A[Compiler frontend] --> C
+  A["Compiler frontend (macro expansion, optimization, compilation, ...)"] --> C
   A --> D
-  B[Compiler backend] --> C
+  B["Compiler backend (bytecode serialization, feature detection, ...)"] --> C
   C[compiler body] --> E
   D["(scheme eval) library"] --> T
   E("(eval compiler)") -->|compile procedure| F
