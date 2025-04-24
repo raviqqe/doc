@@ -124,6 +124,15 @@ On the other hand, the compiler itself looks like the following:
 (compile (incept (read-source)))
 ```
 
+As a result, we have the final architecture described by the following diagram of its overview in the compiler script.
+
+```mermaid
+graph TD
+    A[stak command] -->|"(eval script)"| B
+    B[compiler.scm script] -->|"(eval compiler)"| C
+    C["eval procedure in (scheme eval) library"] -->|built into binary| A
+```
+
 ## The other solutions
 
 While you are reading to this point, you have probably thought of many other solutions. Indeed, I believe this is not the simplest solution for removing code duplication of the compiler logic although I do this is the best. The following sections describe the other solutions that didn't work well with Stak Scheme but might do for other projects of language processors.
