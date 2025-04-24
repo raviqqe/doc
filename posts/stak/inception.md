@@ -124,7 +124,7 @@ On the other hand, the compiler itself looks like the following:
 (compile (incept (read-source)))
 ```
 
-As a result, we have the final compiler architecture described by the following diagram. Note that we feed the compiler frontend as data into both the compiler itself and the `(scheme eval)` library.
+As a result, we have the final compiler architecture described by the following diagram. Note that we feed the compiler frontend as data into both the compiler itself and the `(scheme eval)` library. Then, we embed the `(scheme eval)` library into given source codes before compilation.
 
 - The compiler frontend includes macro expansion, optimization, and compilation.
 - The compiler backend includes the bytecode serialization, library system, etc.
