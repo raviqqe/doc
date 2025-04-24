@@ -124,18 +124,20 @@ On the other hand, the compiler itself looks like the following:
 (compile (incept (read-source)))
 ```
 
-As a result, we have the final architecture described by the following diagram of its overview in the compiler script.
+As a result, we have the final compiler architecture described by the following diagram of its overview in the compiler script.
 
 ```mermaid
 graph TD
   A[Compiler frontend] --> C
+  A --> D
   B[Compiler backend] --> C
   C[compiler body] --> E
-  D["(scheme eval) library"] --> C
+  D["(scheme eval) library"] --> T
   E["(eval compiler)"] -->|compile procedure| F
   F("(compile source)") --> G
   G[bytecodes]
-  S("(read)") --> F
+  S("(read)") --> T
+  T[source code] --> F
 ```
 
 ## The other solutions
