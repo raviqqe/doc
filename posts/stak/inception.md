@@ -6,7 +6,7 @@ Code duplication is one of the primary sources of bugs and maintenance burdens i
 
 In the last few years, I've been developing a [Scheme][scheme] interpreter in Rust called [Stak Scheme][stak].
 The Scheme interpreter aims for small memory footprints with [reasonable performance](https://github.com/raviqqe/stak?tab=readme-ov-file#performance) and to be a complete implementation of the [R7RS-small][r7rs-small] standard.
-While I implemented it originally as a re-implementation of [Ribbit Scheme][ribbit], I was wondering how to avoid code duplication of its compiler and the `eval` library. This article explains how Stak Scheme's bytecode compiler "incepts" itself into the `eval` procedure in its target codes.
+While I implemented it originally as a re-implementation of [Ribbit Scheme][ribbit], I had been wondering how to avoid code duplication of its compiler and the `eval` library. This article explains how Stak Scheme's bytecode compiler "incepts" itself into the `eval` procedure in its target codes.
 
 ## TL;DR
 
