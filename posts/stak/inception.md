@@ -126,12 +126,15 @@ On the other hand, the compiler itself looks like the following:
 
 As a result, we have the final compiler architecture described by the following diagram.
 
+- The compiler frontend includes macro expansion, optimization, and compilation.
+- The compiler backend includes the bytecode serialization, library system, etc.
+
 ```mermaid
 graph TD
-  A["Compiler frontend (macro expansion, optimization, compilation, ...)"] --> C
+  A[Compiler frontend] --> C
   A --> D
-  B["Compiler backend (bytecode serialization, feature detection, ...)"] --> C
-  C[compiler body] --> E
+  B[Compiler backend] --> C
+  C[Compiler] --> E
   D["(scheme eval) library"] --> T
   E("(eval compiler)") -->|compile procedure| F
   F("(compile source)") --> G
