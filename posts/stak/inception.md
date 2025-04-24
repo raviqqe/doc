@@ -73,7 +73,7 @@ So now, we can embed the compiler frontend into the given source codes when we f
   (cond
     ((not (pair? expression))
       expression)
-    ; Find a `($$compiler)` directive call in source codes.
+    ; Find a `($$compiler)` directive in source codes.
     ((and
         (pair? (car expression))
         (null? (cdar expression))
