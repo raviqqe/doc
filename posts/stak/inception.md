@@ -128,9 +128,14 @@ As a result, we have the final architecture described by the following diagram o
 
 ```mermaid
 graph TD
-    A[stak command] -->|"(eval script)"| B
-    B[compiler.scm script] -->|"(eval compiler)"| C
-    C["eval procedure in (scheme eval) library"] -->|built into binary| A
+  A[Compiler frontend] --> C
+  B[Compiler backend] --> C
+  C[compiler body] --> E
+  D["(scheme eval) library"] --> C
+  E["(eval compiler)"] -->|compile procedure| F
+  F("(compile source)") --> G
+  G[bytecodes]
+  S("(read)") --> F
 ```
 
 ## The other solutions
