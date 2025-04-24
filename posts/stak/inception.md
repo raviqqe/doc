@@ -47,19 +47,18 @@ Note that the previous `($$compiler)` directive is not replaced with the whole c
   '(
     ; Macro system
 
-    ;; Types
-
-    (define-record-type macro-state
-     (make-macro-state id literals static-symbols dynamic-symbols)
-     macro-state?
+    ; ...
+    (define (expand-macro context expression)
+     (define (expand expression)
+      (expand-macro context expression))
     ; ...
 
     ; Compilation
 
-    ;; Context
-
-    (define-record-type compilation-context
-     (make-compilation-context environment metadata)
+    ; ...
+    (define (compile-expression context expression continuation)
+     (cond
+      ((symbol? expression)
     ; ...
     ))
 ```
