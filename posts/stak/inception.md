@@ -139,8 +139,8 @@ graph TD
   E("(eval compiler)") --> F
   F("(compile source)") --> G
   G[bytecodes]
-  S("(read)") --> T
-  T[source code] --> F
+  S("(read)") -->|raw source| T
+  T("(inject eval-library source)") -->|full source| F
 ```
 
 ## The other solutions
