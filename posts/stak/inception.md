@@ -124,7 +124,7 @@ On the other hand, the compiler itself looks like the following:
 (compile (incept (read-source)))
 ```
 
-As a result, we have the final compiler architecture described by the following diagram of its overview in the compiler script.
+As a result, we have the final compiler architecture described by the following diagram.
 
 ```mermaid
 graph TD
