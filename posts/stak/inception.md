@@ -136,7 +136,7 @@ graph TD
   B[Compiler backend] --> C
   C[Compiler] --> E
   D["(scheme eval) library"] --> T
-  E("(eval compiler)") --> F
+  E("(eval compiler)") -->|compile procedure| F
   F("(compile source)") --> G
   G[bytecodes]
   S("(read)") -->|raw source| T
