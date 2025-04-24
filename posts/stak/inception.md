@@ -36,7 +36,7 @@ The basic structure of the `eval` procedure looks like the following in the curr
       ((compile expression environment)))))
 ```
 
-You see the `($$compiler)` primitive call in the middle of the function body. (`$$` is the prefix for primitive procedures in Stak Scheme.) The bytecode compiler replaces the primitive call with source codes of the compiler in S-expressions right after reading source codes. The reason it is not just a `$$compiler` symbol but wrapped with parentheses making it a form of a procedure/macro call is that we cannot differentiate such a symbol from normal uses of the symbol; the compiler itself contains the `$$compiler` symbol to replace it in source codes!
+You see the `($$compiler)` primitive call in the middle of the function body. (`$$` is the prefix for primitive procedures in Stak Scheme.) The bytecode compiler replaces the primitive call with source codes of the compiler in S-expressions right after reading source codes. The reason it is not just a `$$compiler` symbol but wrapped with parentheses making it a form of a procedure/macro call is that we cannot differentiate such a symbol from normal uses of the symbol with Stak Scheme self-hosted; the compiler itself contains the `$$compiler` symbol to replace it in source codes!
 
 ### Compiler frontend and backend
 
