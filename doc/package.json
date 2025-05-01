@@ -18,14 +18,14 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.5",
+    "@astrojs/mdx": "^4.2.6",
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/sitemap": "^3.3.1",
     "@fontsource-variable/noto-sans": "^5.2.6",
     "@fontsource/ubuntu": "^5.2.5",
     "@marp-team/marp-cli": "^4.1.2",
     "@raviqqe/loscore": "^0.2.12",
-    "astro": "^5.7.9",
+    "astro": "^5.7.10",
     "glob": "^11.0.2",
     "rehype-mermaid": "^3.0.0",
     "remark-toc": "^9.0.0"
