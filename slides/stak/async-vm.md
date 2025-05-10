@@ -10,6 +10,7 @@ May 10, 2025
 
 - Stak Scheme
 - Progress
+  - Asyncrhonous operations
   - Asynchronous operations
 - Future work
 
