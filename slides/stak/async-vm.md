@@ -10,7 +10,7 @@ May 10, 2025
 
 - Stak Scheme
 - Progress
-  - Bytecode encoding v2
+  - Asynchronous operations
 - Future work
 
 ---
