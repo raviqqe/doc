@@ -54,6 +54,8 @@ May 10, 2025
 
 # Asynchronous operations
 
+- The Stak Scheme virtual machine now handles asynchronous operations.
+
 ---
 
 # Future work
