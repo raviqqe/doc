@@ -9,7 +9,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: release
+  group: release-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   release:
