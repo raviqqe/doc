@@ -1,4 +1,4 @@
-# Asynchronous operations in the Stak Scheme virtual machine
+# Asynchronous operations in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
 
@@ -41,7 +41,7 @@ May 10, 2025
   - If we check returned values and they are error values, we throw the errors.
   - Otherwise, we simply return them.
 - In the new implementation of error handling, Rust primitives return `Result<V, E>` where `E` is an arbitrary error type.
-  - The virtual machine now capures such errors if error handlers are assigned in the Scheme side.
+  - The virtual machine now captures such errors if error handlers are assigned in the Scheme side.
 
 ---
 
@@ -52,7 +52,7 @@ May 10, 2025
 
 ---
 
-# Asynchronous operations
+# Asynchronous operations in virtual machines
 
 - The Stak Scheme virtual machine now handles asynchronous operations.
 
