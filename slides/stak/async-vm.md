@@ -55,6 +55,7 @@ May 10, 2025
 # Asynchronous operations in virtual machines
 
 - The Stak Scheme virtual machine now handles asynchronous operations.
+- Functions asynchronous potentially are marked with [the `winter-maybe-async` crate](https://crates.io/crates/winter-maybe-async).
 
 ---
 
