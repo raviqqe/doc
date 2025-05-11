@@ -46,7 +46,8 @@ May 10, 2025
   - If we check returned values and they are error values, we throw the errors in Scheme.
   - Otherwise, we simply return the values again in Scheme.
 - In the new implementation of error handling, Rust primitives return `Result<V, E>` where `E` is an arbitrary error type.
-  - The virtual machine now captures such errors if error handlers are assigned in the Scheme side.
+  - The virtual machine captures such errors if error handlers are assigned in the Scheme side.
+  - Then, it continues execution from the points of the error handlers.
 
 ---
 
