@@ -57,7 +57,7 @@ May 10, 2025
 - The Stak Scheme virtual machine now handles asynchronous operations.
 - Functions asynchronous potentially are marked with [the `winter-maybe-async` crate](https://crates.io/crates/winter-maybe-async).
 - The current limitation is that it cannot make asynchronous and synchronous APIs coexist...
-  - [Feature unification | foo](https://doc.rust-lang.org/nightly/cargo/reference/features.html#feature-unification)
+  - [Feature unification | The Cargo book](https://doc.rust-lang.org/nightly/cargo/reference/features.html#feature-unification)
 
 ---
 
