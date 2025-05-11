@@ -11,6 +11,7 @@ May 10, 2025
 - Stak Scheme
 - Progress
   - Rust error handling in Scheme
+  - The self-embedding compiler
   - Asynchronous operations
 - Future work
 
@@ -55,6 +56,13 @@ May 10, 2025
 
 - [VM implementation in Rust](https://github.com/raviqqe/stak/blob/d53e20ae2bca0a334fcc4513e54133a71279be99/vm/src/vm.rs#L100)
 - [Error handler implementation in Scheme](https://github.com/raviqqe/stak/blob/d53e20ae2bca0a334fcc4513e54133a71279be99/prelude.scm#L1779)
+
+---
+
+# The self-embedding compiler
+
+- The Stak Scheme compiler compiles itself to embed it into the `(scheme eval)` library while compiling given source codes.
+- [The article about it](https://raviqqe.com/doc/posts/stak/inception/)
 
 ---
 
