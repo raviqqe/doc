@@ -24,6 +24,11 @@ May 10, 2025
 - It aims to support the R7RS-small standard.
 - Forked from [Ribbit Scheme](https://github.com/udem-dlteam/ribbit)
 
+## References
+
+- [GitHub](https://github.com/raviqqe/stak)
+- [Website](https://raviqqe.com/stak)
+
 ---
 
 # Progress
