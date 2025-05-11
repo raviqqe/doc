@@ -42,8 +42,7 @@ May 10, 2025
 
 # Rust error handling in Scheme
 
-- Stak Scheme could handle errors from Rust.
-  - But it was in a very limited way.
+- Stak Scheme could handle errors from Rust in a limited way.
   - Rust primitives **return** error values.
   - If we check returned values and they are error values, we throw the errors in Scheme.
   - Otherwise, we simply return the values again in Scheme.
