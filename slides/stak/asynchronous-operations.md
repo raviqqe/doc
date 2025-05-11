@@ -83,6 +83,7 @@ May 10, 2025
 
 # Future work
 
+- Synchronous and asynchronous APIs in the same crate
 - `case-lambda` syntax
 - `define-library` syntax in the command line interpreter
 - `include` syntax
