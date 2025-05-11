@@ -84,7 +84,7 @@ May 10, 2025
 # Future work
 
 - `case-lambda` syntax
-- `define-library` syntax in an interpreter
+- `define-library` syntax in the command line interpreter
 - `include` syntax
 
 ---
