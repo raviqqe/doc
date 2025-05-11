@@ -10,6 +10,9 @@ May 10, 2025
 
 - Stak Scheme
 - Progress
+  - Rust error handling in Scheme
+  - The self-embedding compiler
+  - Asynchronous operations in virtual machines
 - Future work
 
 ---
