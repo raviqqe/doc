@@ -67,6 +67,12 @@ May 10, 2025
 
 ---
 
+# Demo
+
+- [The REPL on browser thing](https://raviqqe.com/stak/)
+
+---
+
 # Future work
 
 - `include` syntax
