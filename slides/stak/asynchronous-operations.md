@@ -12,7 +12,7 @@ May 10, 2025
 - Progress
   - Rust error handling in Scheme
   - The self-embedding compiler
-  - Asynchronous operations
+  - Asynchronous operations in virtual machines
 - Future work
 
 ---
@@ -35,17 +35,16 @@ May 10, 2025
 # Progress
 
 - Rust error handling in Scheme
+- The self-embedding compiler
 - Asynchronous operations in virtual machines
 
 ---
 
 # Rust error handling in Scheme
 
-- Stak Scheme could handle errors from Rust.
-  - But it was in a very limited way.
+- Stak Scheme could handle errors from Rust in a limited way.
   - Rust primitives **return** error values.
   - If we check returned values and they are error values, we throw the errors in Scheme.
-  - Otherwise, we simply return the values again in Scheme.
 - In the new implementation of error handling, Rust primitives return `Result<V, E>` where `E` is an arbitrary error type.
   - The virtual machine captures such errors if error handlers are assigned in the Scheme side.
   - Then, it continues execution from the points of the error handlers.
@@ -84,6 +83,8 @@ May 10, 2025
 # Future work
 
 - Synchronous and asynchronous APIs in the same crate
+- Unicode support
+- Tree shaking
 - `case-lambda` syntax
 - `define-library` syntax in the command line interpreter
 - `include` syntax
@@ -92,4 +93,4 @@ May 10, 2025
 
 # Summary
 
-- Building a bytecode encoder is fun! 😃
+- Building Scheme is fun! 🥳
