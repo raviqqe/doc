@@ -83,6 +83,8 @@ May 10, 2025
 # Future work
 
 - Synchronous and asynchronous APIs in the same crate
+- Unicode support
+- Tree shaking
 - `case-lambda` syntax
 - `define-library` syntax in the command line interpreter
 - `include` syntax
