@@ -91,4 +91,4 @@ May 10, 2025
 
 # Summary
 
-- Building a bytecode encoder is fun! 😃
+- Building Scheme is fun! 🥳
