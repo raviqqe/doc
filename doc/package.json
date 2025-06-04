@@ -20,12 +20,12 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/prefetch": "^0.4.1",
-    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/sitemap": "^3.4.1",
     "@fontsource-variable/noto-sans": "^5.2.7",
     "@fontsource/ubuntu": "^5.2.5",
     "@marp-team/marp-cli": "^4.1.2",
     "@raviqqe/loscore": "^0.2.12",
-    "astro": "^5.8.1",
+    "astro": "^5.8.2",
     "glob": "^11.0.2",
     "rehype-mermaid": "^3.0.0",
     "remark-toc": "^9.0.0"
