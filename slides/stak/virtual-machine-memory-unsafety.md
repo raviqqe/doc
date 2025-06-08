@@ -62,6 +62,7 @@ June 7, 2025
 - The host language of Rust is memory safe.
 - So the virtual machine of Stak Scheme is memory safe.
 - However, Scheme programs are not memory safe in terms of memory on the virtual machine.
+  - You can violate invariants of the VM memory relatively easily.
   - Today, we call this VM memory unsafety.
 - It is intentionally VM memory unsafe.
   - Performance gets higher without type checks.
