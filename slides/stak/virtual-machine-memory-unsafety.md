@@ -82,7 +82,7 @@ June 7, 2025
 - However, Scheme programs are not memory safe in terms of memory on the virtual machine.
   - Today, we call this VM memory unsafety.
 - It is intentionally VM memory unsafe.
-  - Performance gets higher without type checks.
+  - Performance gets higher without primitive type checks.
   - The unsafety enables primitive operations in bytecodes.
     - e.g. direct manipulation of stacks
 
