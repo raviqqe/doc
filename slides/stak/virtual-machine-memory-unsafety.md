@@ -92,8 +92,10 @@ June 7, 2025
 
 ## Solutions
 
-- The host language of Rust is memory safe.
-- So the virtual machine of Stak Scheme is memory safe.
+- Memory safety checks in the current implementation
+  - ✅ Index bound check for a memory array
+  - ❌ Primitive type checks
+    - i.e. cons or number
 
 ---
 
