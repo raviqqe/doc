@@ -38,6 +38,11 @@ June 7, 2025
 
 ---
 
+# Library system in `eval` procedure
+
+- Stak Scheme now supports the `define-library` syntax in the `eval` procedure.
+- The `eval` procedure creates a new library environment for a given library definition.
+
 ---
 
 # Future work
