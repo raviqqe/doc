@@ -51,6 +51,7 @@ June 7, 2025
 ## What is missing in Stak Scheme virtual machine?
 
 - Ribbit Scheme's design achieves simplicity, performance, portability, and extensibility at the same time.
+  - [A Compact and Extensible Portable Scheme VM](A Compact and Extensible Portable Scheme VM)
   - Stak Scheme adopts the same design and architecture of the language processor.
 - What's missing??
   - Security!
