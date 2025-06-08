@@ -50,7 +50,8 @@ June 7, 2025
 
 ## Memory unsafety in virtual machines
 
-> WIP
+- Ribbit Scheme achieves simplicity, performance, and portability at the same time.
+- What's missing?
 
 ---
 
