@@ -48,7 +48,7 @@ June 7, 2025
 
 ---
 
-## What is missing in the virtual machine?
+## What is missing in Stak Scheme virtual machine?
 
 - Ribbit Scheme's design achieves simplicity, performance, portability, and extensibility at the same time.
   - Stak Scheme adopts the same design and architecture of the language processor.
@@ -58,6 +58,19 @@ June 7, 2025
 ---
 
 # VM memory unsafety in Stak Scheme
+
+- The host language of Rust is memory safe.
+- So the virtual machine of Stak Scheme is memory safe.
+- However, Scheme programs are not memory safe in terms of memory on the virtual machine.
+  - Today, we call this VM memory unsafety.
+- It is intentionally VM memory unsafe.
+  - Performance gets higher without type checks.
+  - The unsafety enables primitive operations in bytecodes.
+    - e.g. direct manipulation of stacks
+
+---
+
+# Causes of VM memory unsafety
 
 - The host language of Rust is memory safe.
 - So the virtual machine of Stak Scheme is memory safe.
