@@ -48,6 +48,12 @@ June 7, 2025
 
 ---
 
+## Memory unsafety in virtual machines
+
+> WIP
+
+---
+
 # Future work
 
 - Unicode support
