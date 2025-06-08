@@ -71,7 +71,9 @@ June 7, 2025
 
 ---
 
-# Causes of VM memory unsafety
+# VM memory unsafety
+
+## Causes
 
 - The host language of Rust is memory safe.
 - So the virtual machine of Stak Scheme is memory safe.
@@ -81,6 +83,15 @@ June 7, 2025
   - Performance gets higher without type checks.
   - The unsafety enables primitive operations in bytecodes.
     - e.g. direct manipulation of stacks
+
+---
+
+# VM memory unsafety
+
+## Solutions
+
+- The host language of Rust is memory safe.
+- So the virtual machine of Stak Scheme is memory safe.
 
 ---
 
