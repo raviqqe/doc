@@ -93,9 +93,11 @@ June 7, 2025
 ## Solutions
 
 - Memory safety checks in the current implementation
-  - ✅ Index bound check for a memory array
-  - ❌ Primitive type checks
-    - i.e. cons or number
+  1. ✅ Index bound check on memory read/write
+  1. ✅ Index bound check on pointer construction
+  1. ❌ Language-level type checks
+  1. ❌ Primitive type checks
+     - i.e. cons or number
 
 ---
 
