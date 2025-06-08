@@ -49,7 +49,11 @@ June 7, 2025
 
 ---
 
-## What is missing in Stak Scheme virtual machine?
+# VM memory unsafety
+
+---
+
+# What is missing in Stak Scheme virtual machine?
 
 - Ribbit Scheme's design achieves simplicity, performance, portability, and extensibility at the same time.
   - [A Compact and Extensible Portable Scheme VM](https://www.iro.umontreal.ca/~feeley/papers/OLearyFeeleyMOREVMS23.pdf)
@@ -73,8 +77,6 @@ June 7, 2025
 
 ---
 
-# VM memory unsafety
-
 ## Causes
 
 - The host language of Rust is memory safe.
@@ -88,11 +90,7 @@ June 7, 2025
 
 ---
 
-# VM memory unsafety
-
-## Solution
-
-### Current status
+## Current status
 
 - For both host and VM memory safety
 - Checks in the current implementation
@@ -102,7 +100,7 @@ June 7, 2025
   1. ✅ Index bound check on memory read/write
   1. ❌ Index bound check on pointer construction
 
-### Upcoming plans
+## Upcoming plans
 
 - 1 in Rust?
 - 4 instead of 3?
