@@ -12,6 +12,7 @@ June 7, 2025
 - Progress
   - Library system in `eval` procedure
   - `case-lambda` syntax
+- Memory unsafety in virtual machines
 - Future work
 
 ---
