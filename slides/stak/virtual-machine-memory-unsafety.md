@@ -43,6 +43,7 @@ June 7, 2025
 
 - Stak Scheme now supports the `define-library` syntax in the `eval` procedure.
 - The `eval` procedure creates a new library environment for a given library definition.
+- It also allows later calls to the `eval` procedure to import the defined libraries.
 - It is implemented by sharing logic of the library system in the bytecode compiler.
   - Compiler inception again :)
 
