@@ -54,7 +54,7 @@ June 7, 2025
 - Ribbit Scheme's design achieves simplicity, performance, portability, and extensibility at the same time.
   - [A Compact and Extensible Portable Scheme VM](https://www.iro.umontreal.ca/~feeley/papers/OLearyFeeleyMOREVMS23.pdf)
   - Stak Scheme adopts the same design and architecture of the language processor.
-- What's missing??
+- What is missing??
   - Security!
 
 ---
@@ -90,14 +90,22 @@ June 7, 2025
 
 # VM memory unsafety
 
-## Solutions
+## Solution
 
-- Memory safety checks in the current implementation
-  1. ✅ Index bound check on memory read/write
-  1. ✅ Index bound check on pointer construction
+### Current status
+
+- For both host and VM memory safety
+- Checks in the current implementation
   1. ❌ Language-level type checks
   1. ❌ Primitive type checks
      - i.e. cons or number
+  1. ✅ Index bound check on memory read/write
+  1. ❌ Index bound check on pointer construction
+
+### Upcoming plans
+
+- 1 in Rust?
+- 4 instead of 3?
 
 ---
 
