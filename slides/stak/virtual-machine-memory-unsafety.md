@@ -50,11 +50,10 @@ June 7, 2025
 
 # Future work
 
-- Synchronous and asynchronous APIs in the same crate
 - Unicode support
-- Tree shaking
-- `define-library` syntax in the command line interpreter
 - `include` syntax
+- Tree shaking
+- Synchronous and asynchronous APIs in the same crate
 
 ---
 
