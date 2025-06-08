@@ -50,12 +50,23 @@ June 7, 2025
 
 ## Memory unsafety in virtual machines
 
-- Ribbit Scheme achieves simplicity, performance, and portability at the same time.
-- What's missing?
+- Ribbit Scheme's design achieves simplicity, performance, portability, and extensibility at the same time.
+  - Stak Scheme adopts the same design and architecture of the language processor.
+- What's missing??
+  - Security!
 
 ---
 
-# Security
+# Security in Stak Scheme
+
+- The host language of Rust is memory safe.
+- So the virtual machine of Stak Scheme is memory safe.
+- However, Scheme programs are not memory safe in terms of memory on the virtual machine.
+  - Today, we call this VM memory unsafety.
+- It is intentionally VM memory unsafe.
+  - Performance gets higher without type checks.
+  - The unsafety enables primitive operations in bytecodes.
+    - e.g. irect manipulation of stacks
 
 ---
 
