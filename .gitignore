@@ -3,6 +3,7 @@
 *.blg
 *.html
 *.pdf
+*.svg
 .astro
 dist
 node_modules
