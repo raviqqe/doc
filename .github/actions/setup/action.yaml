@@ -17,4 +17,4 @@ runs:
       shell: bash
     - uses: teatimeguest/setup-texlive-action@v3
       with:
-        packages: scheme-basic
+        packages: scheme-basic acmart
