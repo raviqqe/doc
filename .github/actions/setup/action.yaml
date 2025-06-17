@@ -25,5 +25,6 @@ runs:
           ifmtarg
           ifoddpage
           manyfoot
+          relsize
           scheme-medium
           totpages
