@@ -14,7 +14,7 @@ for file in $(find . -name '*.tex'); do
     rm -f *.aux
 
     for file in *.mmd; do
-      npx --package @mermaid/mermaid-cli -- mmdc -i $file -o ${file%.mmd}.svg
+      npx --package @mermaid-js/mermaid-cli -- mmdc -i $file -o ${file%.mmd}.svg
     done
 
     lualatex --halt-on-error $file
