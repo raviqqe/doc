@@ -74,6 +74,7 @@
     "mfmt",
     "mlir",
     "mlua",
+    "mmdc",
     "mruby",
     "mstak",
     "multicore",
