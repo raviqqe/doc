@@ -18,4 +18,4 @@ runs:
     - uses: teatimeguest/setup-texlive-action@v3
       with:
         packages: >
-          scheme-full
+          scheme-medium
