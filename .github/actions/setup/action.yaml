@@ -17,18 +17,4 @@ runs:
       shell: bash
     - uses: teatimeguest/setup-texlive-action@v3
       with:
-        packages: >
-          acmart
-          balance
-          comment
-          environ
-          hyperxmp
-          ifmtarg
-          ifoddpage
-          inconsolata
-          libertine
-          manyfoot
-          newtxmath
-          relsize
-          scheme-medium
-          totpages
+        packages: scheme-full
