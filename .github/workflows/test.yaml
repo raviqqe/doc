@@ -15,12 +15,18 @@ jobs:
       - uses: ./.github/actions/setup
       - run: npm run build
       - run: npm run lint
-  format:
+  markdown_format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: npx prettier --check '**/*.md'
-  markdown:
+  tex_format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cargo install tex-fmt
+      - run: tex-fmt -f **/*.bib **/*.tex
+  markdown_link:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
