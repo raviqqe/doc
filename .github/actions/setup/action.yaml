@@ -19,6 +19,7 @@ runs:
       with:
         packages: >
           acmart
+          balance
           comment
           environ
           hyperxmp
