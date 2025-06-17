@@ -19,3 +19,4 @@ runs:
       with:
         packages: >
           scheme-medium
+          totpages
