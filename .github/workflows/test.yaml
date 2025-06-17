@@ -5,7 +5,7 @@ on:
       - main
   pull_request:
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -31,10 +31,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: raviqqe/markdown-link-check@v1
-  spell-check:
+  spell_check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: streetsidesoftware/cspell-action@main
         with:
           files: "**/*.{astro,md,mdx,sh,ts}"
+  test:
+    needs:
+      - build
+      - markdown_format
+      - tex_format
+      - markdown_link
+      - spell_check
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: for result in ${{ join(needs.*.result, ' ') }}; do [ $result = success ]; done
