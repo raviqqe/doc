@@ -20,5 +20,6 @@ runs:
         packages: >
           environ
           hyperxmp
+          ifmtarg
           scheme-medium
           totpages
