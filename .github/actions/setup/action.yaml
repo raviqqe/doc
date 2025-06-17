@@ -25,7 +25,10 @@ runs:
           hyperxmp
           ifmtarg
           ifoddpage
+          inconsolata
+          libertine
           manyfoot
+          newtxmath
           relsize
           scheme-medium
           totpages
