@@ -19,5 +19,6 @@ runs:
       with:
         packages: >
           environ
+          hyperxmp
           scheme-medium
           totpages
