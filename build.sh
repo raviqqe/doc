@@ -1,6 +1,8 @@
 #!/bin/sh
 
-set -e
+set -ex
+
+mkdir -p doc/public/papers
 
 for file in $(find . -name '*.tex'); do
   (
@@ -15,4 +17,7 @@ for file in $(find . -name '*.tex'); do
     lualatex --halt-on-error $file
     lualatex --halt-on-error $file
   )
+
+  file=${file%.tex}
+  cp $file.pdf doc/public/papers/$(basename $(dirname $file)).pdf
 done
