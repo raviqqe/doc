@@ -1,0 +1,232 @@
+@inproceedings{ribbit2023,
+  author = {O'Leary, L\'{e}onard Oest and Feeley, Marc},
+  title = {A Compact and Extensible Portable Scheme VM},
+  year = {2023},
+  isbn = {9798400707551},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3594671.3594672},
+  doi = {10.1145/3594671.3594672},
+  abstract = {Virtual Machines (VM) tend to evolve over their life
+    cycle with features being added regularly and a growing footprint.
+    In a VM designed for resource constrained environments this trend
+    deteriorates the VM’s primary quality. We present how extensibility
+    is implemented in the Ribbit Scheme VM that is both compact and
+    portable to multiple languages. Our approach adds annotations to
+    the VM’s source code allowing the compiler to generate the source
+    code of a specialized VM extended with user-defined primitives and
+    with needless ones removed. This gives the best of both worlds: an
+    extensible VM packed with all and only the features needed by the
+  source code, while maintaining a small code footprint.},
+  booktitle = {Companion Proceedings of the 7th International
+  Conference on the Art, Science, and Engineering of Programming},
+  pages = {3–6},
+  numpages = {4},
+  keywords = {Compactness, Compiler, Dynamic Languages, Scheme,
+  Virtual Machines},
+  location = {Tokyo, Japan},
+  series = {Programming '23}
+}
+
+@misc{ribbit7kb2023,
+  title={A R4RS Compliant REPL in 7 KB},
+  author={Léonard Oest O'Leary and Mathis Laroche and Marc Feeley},
+  year={2023},
+  eprint={2310.13589},
+  archivePrefix={arXiv},
+  primaryClass={cs.PL},
+  url={https://arxiv.org/abs/2310.13589},
+}
+
+@inproceedings{ribbit2021,
+  author = {Yvon, Samuel and Feeley, Marc},
+  title = {A small scheme VM, compiler, and REPL in 4k},
+  year = {2021},
+  isbn = {9781450391092},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3486606.3486783},
+  doi = {10.1145/3486606.3486783},
+  abstract = {Compact language implementations are increasingly
+    popular for use in resource constrained environments. For embedded
+    applications such as robotics and home automation, it is useful to
+    support a Read-Eval-Print-Loop (REPL) so that a basic level of
+    interactive development is possible directly on the device. Due to
+    its minimalistic design, the Scheme language is particularly well
+    suited for such applications and several implementations are
+    available with different tradeoffs. In this paper we explain the
+    design and implementation of Ribbit, a compact Scheme system that
+  supports a REPL, is extensible and has a 4 KB executable code footprint.},
+  booktitle = {Proceedings of the 13th ACM SIGPLAN International
+  Workshop on Virtual Machines and Intermediate Languages},
+  pages = {14–24},
+  numpages = {11},
+  keywords = {Compiler, Dynamic Languages, Read-Eval-Print-Loop,
+  Scheme, Small Footprint, Virtual Machines},
+  location = {Chicago, IL, USA},
+  series = {VMIL 2021}
+}
+
+@inproceedings{macrosthatwork,
+  author = {Clinger, William and Rees, Jonathan},
+  title = {Macros that work},
+  year = {1991},
+  isbn = {0897914198},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/99583.99607},
+  doi = {10.1145/99583.99607},
+  booktitle = {Proceedings of the 18th ACM SIGPLAN-SIGACT Symposium
+  on Principles of Programming Languages},
+  pages = {155–162},
+  numpages = {8},
+  location = {Orlando, Florida, USA},
+  series = {POPL '91}
+}
+
+@article{ermacro,
+  author = {Clinger, William},
+  title = {Hygienic macros through explicit renaming},
+  year = {1991},
+  issue_date = {October-December 1991},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {IV},
+  number = {4},
+  issn = {1045-3563},
+  url = {https://doi.org/10.1145/1317265.1317269},
+  doi = {10.1145/1317265.1317269},
+  abstract = {This paper describes an alternative to the low-level
+    macro facility described in the Revised4 Report on the Algorithmic
+    Language Scheme [1]. The facility described here is based on
+    explicit renaming of identifiers, and was developed for the first
+    implementation of the hygienic macro expansion algorithm described
+    in [2]. It was the first low-level macro facility to be designed
+    for compatibility with a high-level hygienic macro system, and it
+  remains one of the easiest to understand.},
+  journal = {SIGPLAN Lisp Pointers},
+  month = oct,
+  pages = {25–28},
+  numpages = {4}
+}
+
+@article{topologicalsort,
+  author = {Kahn, A. B.},
+  title = {Topological sorting of large networks},
+  year = {1962},
+  issue_date = {Nov. 1962},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {5},
+  number = {11},
+  issn = {0001-0782},
+  url = {https://doi.org/10.1145/368996.369025},
+  doi = {10.1145/368996.369025},
+  abstract = {Topological Sorting is a procedure required for many
+    problems involving analysis of networks. An example of one such
+    problem is PERT. The present paper presents a very general method
+    for obtaining topological order. It permits treatment of larger
+    networks than can be handled on present procedures and achieves
+    this with greater efficiency. Although the procedure can be adapted
+    to any machine, it is discussed in terms of the 7090. A PERT
+    network of 30,000 activities can be ordered in less than one hour
+    of machine time.  The method was developed as a byproduct of
+    procedure needed by Westinghouse, Baltimore. It has not been
+    programmed and at present there are no plans to implement it. In
+    regard to the techniques described, Westinghouse's present and
+    anticipated needs are completely served by the Lockheed program,
+  which is in current use.},
+  journal = {Commun. ACM},
+  month = nov,
+  pages = {558–562},
+  numpages = {5}
+}
+
+@article{hygienicmacrotechnology,
+  author = {Clinger, William D. and Wand, Mitchell},
+  title = {Hygienic macro technology},
+  year = {2020},
+  issue_date = {June 2020},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {4},
+  number = {HOPL},
+  url = {https://doi.org/10.1145/3386330},
+  doi = {10.1145/3386330},
+  abstract = {The fully parenthesized Cambridge Polish syntax of
+    Lisp, originally regarded as a temporary expedient to be replaced
+    by more conventional syntax, possesses a peculiar virtue: A read
+    procedure can parse it without knowing the syntax of any
+    expressions, statements, definitions, or declarations it may
+    represent. The result of that parsing is a list structure that
+    establishes a standard representation for uninterpreted abstract
+    syntax trees. This representation provides a convenient basis for
+    macro processing, which allows the programmer to specify that some
+    simple piece of abstract syntax should be replaced by some other,
+    more complex piece of abstract syntax. As is well-known, this
+    yields an abstraction mechanism that does things that procedural
+    abstraction cannot, such as introducing new binding structures. The
+    existence of that standard representation for uninterpreted
+    abstract syntax trees soon led Lisp to a greater reliance upon
+    macros than was common in other high-level languages. The
+    importance of those features is suggested by the ten pages devoted
+    to macros in an earlier ACM HOPL paper, “The Evolution of Lisp.”
+    However, na'ive macro expansion was a leaky abstraction, because
+    the movement of a piece of syntax from one place to another might
+    lead to the accidental rebinding of a program’s identifiers.
+    Although this problem was recognized in the 1960s, it was 20 years
+    before a reliable solution was discovered, and another 10 before a
+    solution was discovered that was reliable, flexible, and efficient.
+    In this paper, we summarize that early history with greater focus
+    on hygienic macros, and continue the story by describing the
+    further development, adoption, and influence of hygienic and
+    partially hygienic macro technology in Scheme. The interplay
+    between the desire for standardization and the development of new
+    algorithms is a major theme of that story. We then survey the ways
+    in which hygienic macro technology has been adapted into recent
+    non-parenthetical languages. Finally, we provide a short history of
+  attempts to provide a formal account of macro processing.},
+  journal = {Proc. ACM Program. Lang.},
+  month = jun,
+  articleno = {80},
+  numpages = {110},
+  keywords = {Lisp, Scheme, hygiene, macro}
+}
+
+@misc{floatselftag,
+  title={Float Self-Tagging},
+  author={Olivier Melançon and Manuel Serrano and Marc Feeley},
+  year={2025},
+  eprint={2411.16544},
+  archivePrefix={arXiv},
+  primaryClass={cs.PL},
+  url={https://arxiv.org/abs/2411.16544},
+}
+
+@online{tr7,
+  author={José Bollo},
+  title={TR7: tiny R7RS-small scheme interpreter},
+  url={https://jobol.gitlab.io/tr7/},
+  year = {2022},
+}
+
+@online{treeshaking,
+  author={JS Foundation},
+  title={Tree Shaking | webpack},
+  url={https://webpack.js.org/guides/tree-shaking/},
+  year={2025},
+}
+
+@online{webpack,
+  author={JS Foundation},
+  title={Webpack},
+  url={https://webpack.js.org/},
+  year={2025},
+}
+
+@online{rolldown,
+  author={VoidZero Inc.},
+  title={Rolldown: Fast Rust-based bundler for JavaScript},
+  url={https://rolldown.rs/},
+  year={2025},
+}
