@@ -18,6 +18,4 @@ runs:
     - uses: teatimeguest/setup-texlive-action@v3
       with:
         packages: >
-          acmart
-          scheme-basic
-          xkeyval
+          scheme-full
