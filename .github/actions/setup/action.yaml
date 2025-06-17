@@ -5,9 +5,6 @@ outputs: {}
 runs:
   using: composite
   steps:
-    - uses: homebrew/actions/setup-homebrew@main
-    - run: brew install texlive
-      shell: bash
     - uses: actions/setup-node@v4
       with:
         cache: npm
@@ -18,3 +15,13 @@ runs:
       working-directory: doc
     - run: sudo apt install fonts-takao
       shell: bash
+    - uses: teatimeguest/setup-texlive-action@v3
+      with:
+        packages: >
+          comment
+          environ
+          hyperxmp
+          ifmtarg
+          manyfoot
+          scheme-medium
+          totpages
