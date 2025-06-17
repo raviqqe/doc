@@ -13,6 +13,10 @@ for file in $(find . -name '*.tex'); do
 
     rm -f *.aux
 
+    for file in *.mmd; do
+      npx mmdc -i $file -o ${file%.mmd}.svg
+    done
+
     lualatex --halt-on-error $file
     bibtex $file
     lualatex --halt-on-error $file
