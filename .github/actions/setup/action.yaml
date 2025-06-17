@@ -5,7 +5,7 @@ outputs: {}
 runs:
   using: composite
   steps:
-    - uses: homebrew/actions/setup-homebrew@master
+    - uses: homebrew/actions/setup-homebrew@main
     - run: brew install texlive
       shell: bash
     - uses: actions/setup-node@v4
