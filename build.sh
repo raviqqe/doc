@@ -2,7 +2,8 @@
 
 set -ex
 
-mkdir -p doc/public/papers
+directory=doc/public/papers
+mkdir -p $directory
 
 for file in $(find . -name '*.tex'); do
   (
@@ -19,5 +20,5 @@ for file in $(find . -name '*.tex'); do
   )
 
   file=${file%.tex}
-  cp $file.pdf doc/public/papers/$(basename $(dirname $file)).pdf
+  cp $file.pdf $directory/$(basename $(dirname $file)).pdf
 done
