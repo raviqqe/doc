@@ -25,6 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: cargo install tex-fmt
+      - run: git ls-files
       - run: tex-fmt -f **/*.bib **/*.tex
   markdown_link:
     runs-on: ubuntu-latest
