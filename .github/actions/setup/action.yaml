@@ -18,10 +18,14 @@ runs:
     - uses: teatimeguest/setup-texlive-action@v3
       with:
         packages: >
+          acmart
+          balance
           comment
           environ
           hyperxmp
           ifmtarg
+          ifoddpage
           manyfoot
+          relsize
           scheme-medium
           totpages

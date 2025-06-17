@@ -13,7 +13,7 @@
     "build:slides:pdf": "marp --pdf --html --input-dir ../slides --output public/slides",
     "build:notes": "node src/scripts/build-directory.ts notes",
     "build:posts": "node src/scripts/build-directory.ts posts",
-    "build:papers": "cd .. && ./build.sh",
+    "build:papers": "cd .. && tools/build.sh",
     "build:toc": "node src/scripts/build-table-of-contents.ts",
     "lint": "eslint src",
     "preview": "astro preview"

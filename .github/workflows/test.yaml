@@ -5,7 +5,7 @@ on:
       - main
   pull_request:
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -15,20 +15,37 @@ jobs:
       - uses: ./.github/actions/setup
       - run: npm run build
       - run: npm run lint
-  format:
+  markdown_format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: npx prettier --check '**/*.md'
-  markdown:
+  tex_format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cargo install tex-fmt
+      - run: tex-fmt -f $(git ls-files *.bib *.tex)
+  markdown_link:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: raviqqe/markdown-link-check@v1
-  spell-check:
+  spell_check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: streetsidesoftware/cspell-action@main
         with:
           files: "**/*.{astro,md,mdx,sh,ts}"
+  test:
+    needs:
+      - build
+      - markdown_format
+      - tex_format
+      - markdown_link
+      - spell_check
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: for result in ${{ join(needs.*.result, ' ') }}; do [ $result = success ]; done
