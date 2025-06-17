@@ -23,6 +23,7 @@ runs:
           environ
           hyperxmp
           ifmtarg
+          ifoddpage
           manyfoot
           scheme-medium
           totpages
