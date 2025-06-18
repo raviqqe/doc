@@ -166,8 +166,8 @@ files given as command line arguments.
 
     \digraph{embedding}{
       rankdir=LR;
-      a -> b -> c;
-      cargo build -> {stak-compile rustc};
+      % a -> b -> c;
+      "cargo build" -> {stak-compile rustc};
       % B -> SC
       %
       % SS(Scheme source) -> SC[stak-compile] -> SB(Scheme bytecode)
