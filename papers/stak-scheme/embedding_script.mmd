@@ -1,10 +1,9 @@
 graph TD
-  A[start] --> B
   B[cargo build] --> C
   B --> D
-  C[rustc] --> E
-  D[stak-compile] --> E
-  E[end]
-  B[stak-compile] -->|"(eval source)"| C
-  B[compiler.scm script] -->|"(eval compiler)"| C
-  C["eval procedure in (scheme eval) library"] -->|built into binary| A
+  C[rustc] --> X
+  D[stak-compile] --> SB(Scheme bytecode)
+
+  R(Rust source) --> C
+  S(Scheme source) --> D
+  X(Executable)
