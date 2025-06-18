@@ -17,7 +17,8 @@ for file in $(find . -name '*.tex'); do
 
     for mermaid_file in *.mmd; do
       npx --package @mermaid-js/mermaid-cli -- \
-        mmdc ${CI:+-p $root_directory/puppeteer.json} -i $mermaid_file -o ${mermaid_file%.mmd}.png
+        mmdc ${CI:+-p $root_directory/puppeteer.json} \
+        --scale 5 -i $mermaid_file -o ${mermaid_file%.mmd}.png
     done
 
     lualatex --halt-on-error $file
