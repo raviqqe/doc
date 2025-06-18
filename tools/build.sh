@@ -13,10 +13,14 @@ for file in $(find . -name '*.tex'); do
 
     rm -f *.aux
 
-    lualatex --halt-on-error $file
+    latex() {
+      lualatex --halt-on-error --shell-escape $file
+    }
+
+    latex
     bibtex $file
-    lualatex --halt-on-error $file
-    lualatex --halt-on-error $file
+    latex
+    latex
   )
 
   file=${file%.tex}
