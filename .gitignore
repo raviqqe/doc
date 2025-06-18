@@ -3,6 +3,7 @@
 *.blg
 *.html
 *.pdf
+*.png
 *.svg
 .astro
 dist
