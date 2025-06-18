@@ -1,6 +1,7 @@
 \documentclass[sigplan, anonymous, review]{acmart}
 \keywords{Compiler, Virtual Machine, Dynamic Language, Scheme}
 
+\usepackage[pdf]{graphviz}
 \usepackage{svg}
 
 \newcommand{\anchor}{\textcolor{blue}{\texttt{anchor}}}
@@ -162,7 +163,11 @@ files given as command line arguments.
   \begin{center}
     \caption{Workflow of embedding Stak Scheme in Rust}
     \label{figure:build}
-    \includegraphics[width=0.4\textwidth]{embedding_script.png}
+
+    \digraph{abc}{
+      rankdir=LR;
+      a -> b -> c;
+    }
   \end{center}
 \end{figure}
 

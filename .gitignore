@@ -1,6 +1,7 @@
 *.aux
 *.bbl
 *.blg
+*.dot
 *.html
 *.pdf
 *.png
