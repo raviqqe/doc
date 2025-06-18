@@ -167,6 +167,13 @@ files given as command line arguments.
     \digraph{abc}{
       rankdir=LR;
       a -> b -> c;
+      B[cargo build] -> RC
+      B -> SC
+
+      SS(Scheme source) -> SC[stak-compile] -> SB(Scheme bytecode)
+      ->|include| RS
+      RS(Rust source) -> RC[rustc / linker] -> RB(executable file)
+
     }
   \end{center}
 \end{figure}
