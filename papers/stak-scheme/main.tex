@@ -1,7 +1,6 @@
 \documentclass[sigplan, anonymous, review]{acmart}
 \keywords{Compiler, Virtual Machine, Dynamic Language, Scheme}
 
-\newcommand{\anchor}{\textcolor{blue}{\texttt{anchor}}}
 \newcommand{\draft}[1]{CONTENT HIDDEN FOR REVIEWS}
 
 \begin{CCSXML}
@@ -155,6 +154,15 @@ Rust programs can execute them on the virtual machines.
 For the latter use case, we
 provide a standalone command of \texttt{stak} which runs Scheme script
 files given as command line arguments.
+
+\begin{figure}
+  \begin{center}
+    \caption{Workflow of embedding Stak Scheme in Rust}
+    \label{figure:build}
+    \vspace{1em}
+    \includegraphics[width=0.35\textwidth]{build.png}
+  \end{center}
+\end{figure}
 
 \subsection{Compiler} \label{compiler}
 

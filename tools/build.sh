@@ -2,8 +2,6 @@
 
 set -ex
 
-root_directory=$PWD
-
 directory=doc/public/papers
 mkdir -p $directory
 
@@ -15,15 +13,14 @@ for file in $(find . -name '*.tex'); do
 
     rm -f *.aux
 
-    for mermaid_file in *.mmd; do
-      npx --package @mermaid-js/mermaid-cli -- \
-        mmdc ${CI:+-p $root_directory/puppeteer.json} -i $mermaid_file -o ${mermaid_file%.mmd}.svg
-    done
+    latex() {
+      lualatex --halt-on-error --shell-escape $file
+    }
 
-    lualatex --halt-on-error $file
+    latex
     bibtex $file
-    lualatex --halt-on-error $file
-    lualatex --halt-on-error $file
+    latex
+    latex
   )
 
   file=${file%.tex}
