@@ -1,9 +1,8 @@
 graph TD
   B[cargo build] --> C
   B --> D
-  C[rustc] --> X
 
-  SS(Scheme source) --> D[stak-compile] --> SB(Scheme bytecode)
+  SS(Scheme source) --> SC[stak-compile] --> SB(Scheme bytecode) --> RS
+  RS(Rust source) --> RC[rustc] --> X
 
-  R(Rust source) --> C
   X(Executable)
