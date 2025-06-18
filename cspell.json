@@ -111,6 +111,7 @@
     "tagless",
     "tailcallopt",
     "uiua",
+    "uninterned",
     "usize",
     "valgrind",
     "virding",
