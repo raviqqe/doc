@@ -3,6 +3,4 @@ graph TD
   B --> SC
 
   SS(Scheme source) --> SC[stak-compile] --> SB(Scheme bytecode) --> RS
-  RS(Rust source) --> RC[rustc] --> X
-
-  X(Executable)
+  RS(Rust source) --> RC[rustc] --> RB(executable file)
