@@ -164,16 +164,15 @@ files given as command line arguments.
     \caption{Workflow of embedding Stak Scheme in Rust}
     \label{figure:build}
 
-    \digraph{abc}{
+    \digraph{embedding}{
       rankdir=LR;
       a -> b -> c;
-      B[cargo build] -> RC
-      B -> SC
-
-      SS(Scheme source) -> SC[stak-compile] -> SB(Scheme bytecode)
-      ->|include| RS
-      RS(Rust source) -> RC[rustc / linker] -> RB(executable file)
-
+      cargo build -> {stak-compile rustc};
+      % B -> SC
+      %
+      % SS(Scheme source) -> SC[stak-compile] -> SB(Scheme bytecode)
+      % ->|include| RS
+      % RS(Rust source) -> RC[rustc / linker] -> RB(executable file)
     }
   \end{center}
 \end{figure}
