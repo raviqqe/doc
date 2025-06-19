@@ -194,6 +194,30 @@ executable file.
 (write (fibonacci 32))
 \end{lstlisting}
 
+\begin{lstlisting}[float, caption=Disassembled \texttt{foo.bc} file, label=list:bytecode]
+...
+constant procedure 1 #f
+  get 0
+  constant 2
+  call 2 #f $<
+  if
+    get 0
+  get 0
+  constant 1
+  call 2 #f $-
+  call 1 #f fibonacci
+  get 1
+  constant 2
+  call 2 #f $-
+  call 1 #f fibonacci
+  call 2 #f $+
+call 1 #f ||
+set fibonacci
+constant 32
+call 1 #f fibonacci
+call 1 #f write
+\end{lstlisting}
+
 \begin{lstlisting}[float, caption=\texttt{main.rs} file, label=list:rust]
 fn main() -> Result<(), Box<dyn Error>> {
   // Include and run a Scheme module.
