@@ -157,6 +157,9 @@ files given as command line arguments.
 
 Figure \ref{figure:build} shows an example of a build workflow for
 embedding a Stak Scheme script into a Rust program.
+After a user triggers \texttt{cargo build} command, which is a
+command of the Cargo build system for Rust, a \texttt{build.rs} build
+script invokes the \texttt{stak-compile}.
 
 \begin{figure}
   \begin{center}
