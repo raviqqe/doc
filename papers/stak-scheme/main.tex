@@ -1,6 +1,8 @@
 \documentclass[sigplan, anonymous, review]{acmart}
 \keywords{Compiler, Virtual Machine, Dynamic Language, Scheme}
 
+\usepackage{listings}
+
 \newcommand{\draft}[1]{CONTENT HIDDEN FOR REVIEWS}
 
 \begin{CCSXML}
@@ -171,6 +173,12 @@ into a bytecode file \texttt{foo.bc}.
     \includegraphics[width=0.35\textwidth]{build.png}
   \end{center}
 \end{figure}
+
+\begin{verbatim}
+(import (scheme base) (scheme write))
+
+(write (+ 1 2 3))
+\end{verbatim}
 
 \subsection{Compiler} \label{compiler}
 
