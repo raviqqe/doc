@@ -166,7 +166,8 @@ After a user triggers \texttt{cargo build} command, which is of the
 Cargo build system for Rust, a build
 script invokes the \texttt{stak-compile} command of the Stak Scheme
 bytecode compiler to compile a Scheme source file \texttt{foo.scm}
-(List \ref{list:scheme}) into a bytecode file \texttt{foo.bc}.
+(List \ref{list:scheme}) into a bytecode file \texttt{foo.bc}
+(List \ref{list:bytecode}).
 After that, the Rust compiler \texttt{rustc} compiles a Rust source file
 \texttt{main.rs} (List \ref{list:rust}) that includes the bytecode
 file to produce the final
