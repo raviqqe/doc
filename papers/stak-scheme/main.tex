@@ -180,13 +180,33 @@ into a bytecode file \texttt{foo.bc}.
 \begin{lstlisting}[caption=\texttt{foo.scm} file, label={list:scheme}]
 (import (scheme base) (scheme write))
 
-(write (+ 1 2 3))
+(define (fibonacci x)
+  (if (< x 2)
+    x
+    (+
+      (fibonacci (- x 1))
+      (fibonacci (- x 2)))))
+
+(write (fibonacci 32))
 \end{lstlisting}
 
 \begin{lstlisting}[caption=\texttt{main.rs} file, label={list:rust}]
-(import (scheme base) (scheme write))
+fn main() -> Result<(), Box<dyn Error>> {
+    // Include and run a Scheme module.
+    run_scheme(&include_module!("foo.scm"))?;
 
-(write (+ 1 2 3))
+    Ok(())
+}
+
+fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
+    // Initialize a heap memory for a Scheme scripting engine.
+    let mut heap = [Default::default(); HEAP_SIZE];
+    // Initialize the engine.
+    let mut engine = Engine::new(&mut heap, &mut [])?;
+
+    // Finally, run the Scheme module in the engine.
+    engine.run(module)
+}
 \end{lstlisting}
 
 \subsection{Compiler} \label{compiler}
