@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <link
       rel="sitemap"
-      href={new URL("sitemap-index.xml", import.meta.env.BASE_URL).toString()}
+      href={`${import.meta.env.BASE_URL}/sitemap-index.xml`}
     />
     <meta name="generator" content={Astro.generator} />
     <title>{frontmatter.title}</title>
