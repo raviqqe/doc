@@ -181,7 +181,7 @@ executable file.
   \end{center}
 \end{figure}
 
-\begin{lstlisting}[caption=\texttt{foo.scm} file, label={list:scheme}]
+\begin{lstlisting}[float, caption=\texttt{foo.scm} file, label=list:scheme]
 (import (scheme base) (scheme write))
 
 (define (fibonacci x)
@@ -194,7 +194,7 @@ executable file.
 (write (fibonacci 32))
 \end{lstlisting}
 
-\begin{lstlisting}[caption=\texttt{main.rs} file, label={list:rust}]
+\begin{lstlisting}[float, caption=\texttt{main.rs} file, label=list:rust]
 fn main() -> Result<(), Box<dyn Error>> {
   // Include and run a Scheme module.
   run_scheme(&include_module!("foo.scm"))?;
