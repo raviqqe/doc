@@ -192,20 +192,20 @@ into a bytecode file \texttt{foo.bc}.
 
 \begin{lstlisting}[caption=\texttt{main.rs} file, label={list:rust}]
 fn main() -> Result<(), Box<dyn Error>> {
-    // Include and run a Scheme module.
-    run_scheme(&include_module!("foo.scm"))?;
+  // Include and run a Scheme module.
+  run_scheme(&include_module!("foo.scm"))?;
 
-    Ok(())
+  Ok(())
 }
 
 fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
-    // Initialize a heap memory for an engine.
-    let mut heap = [Default::default(); HEAP_SIZE];
-    // Initialize the engine.
-    let mut engine = Engine::new(&mut heap, &mut [])?;
+  // Initialize a heap memory for an engine.
+  let mut heap = [Default::default(); HEAP_SIZE];
+  // Initialize the engine.
+  let mut engine = Engine::new(&mut heap, &mut [])?;
 
-    // Finally, run the Scheme module in the engine.
-    engine.run(module)
+  // Finally, run the Scheme module in the engine.
+  engine.run(module)
 }
 \end{lstlisting}
 
