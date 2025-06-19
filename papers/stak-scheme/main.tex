@@ -1,7 +1,16 @@
 \documentclass[sigplan, anonymous, review]{acmart}
-\keywords{Compiler, Virtual Machine, Dynamic Language, Scheme}
+
+\usepackage{algorithm2e}
+\DontPrintSemicolon
+\SetKwProg{Function}{function}{ do}{end}
+
+\usepackage{listings}
+\lstdefinestyle{code}{basicstyle=\ttfamily\footnotesize}
+\lstset{style=code}
 
 \newcommand{\draft}[1]{CONTENT HIDDEN FOR REVIEWS}
+
+\keywords{Compiler, Virtual Machine, Dynamic Language, Scheme}
 
 \begin{CCSXML}
   <ccs2012>
@@ -26,10 +35,6 @@
 \ccsdesc[500]{Software and its engineering~Functional languages}
 \ccsdesc[500]{Software and its engineering~Interpreters}
 % \ccsdesc[100]{Software and its engineering~Embedded software}
-
-\usepackage{algorithm2e}
-\DontPrintSemicolon
-\SetKwProg{Function}{function}{ do}{end}
 
 \begin{document}
 \title{Stak Scheme: The tiny R7RS-small implementation}
@@ -155,6 +160,19 @@ For the latter use case, we
 provide a standalone command of \texttt{stak} which runs Scheme script
 files given as command line arguments.
 
+Figure \ref{figure:build} shows an example workflow of
+embedding a Stak Scheme script into a Rust program.
+After a user triggers the \texttt{cargo build} command, which is of the
+Cargo build system for Rust, a build
+script invokes the \texttt{stak-compile} command of the Stak Scheme
+bytecode compiler to compile a Scheme source file \texttt{foo.scm}
+(List \ref{list:scheme}) into a bytecode file \texttt{foo.bc}
+(List \ref{list:bytecode}).
+After that, the Rust compiler \texttt{rustc} compiles a Rust source file
+\texttt{main.rs} (List \ref{list:rust}) that includes the bytecode
+file to produce the final
+executable file.
+
 \begin{figure}
   \begin{center}
     \caption{Workflow of embedding Stak Scheme in Rust}
@@ -163,6 +181,63 @@ files given as command line arguments.
     \includegraphics[width=0.35\textwidth]{build.png}
   \end{center}
 \end{figure}
+
+\begin{lstlisting}[float, caption=\texttt{foo.scm} file, label=list:scheme]
+(import (scheme base) (scheme write))
+
+(define (fibonacci x)
+  (if (< x 2)
+    x
+    (+
+      (fibonacci (- x 1))
+      (fibonacci (- x 2)))))
+
+(write (fibonacci 32))
+\end{lstlisting}
+
+\begin{lstlisting}[float, caption=Disassembled \texttt{foo.bc} file, label=list:bytecode]
+...
+constant procedure 1 #f
+  get 0
+  constant 2
+  call 2 #f $<
+  if
+    get 0
+  get 0
+  constant 1
+  call 2 #f $-
+  call 1 #f fibonacci
+  get 1
+  constant 2
+  call 2 #f $-
+  call 1 #f fibonacci
+  call 2 #f $+
+call 1 #f $$close
+set fibonacci
+constant 32
+call 1 #f fibonacci
+call 1 #f write
+\end{lstlisting}
+
+\begin{lstlisting}[float, caption=\texttt{main.rs} file, label=list:rust]
+fn main() -> Result<(), Box<dyn Error>> {
+  // Include and run a Scheme module.
+  run_scheme(&include_module!("foo.scm"))?;
+
+  Ok(())
+}
+
+fn run_scheme(module: &UniversalModule)
+    -> Result<(), EngineError> {
+  // Initialize a heap memory for an engine.
+  let mut heap = [Default::default(); HEAP_SIZE];
+  // Initialize the engine.
+  let mut engine = Engine::new(&mut heap, &mut [])?;
+
+  // Finally, run the Scheme module in the engine.
+  engine.run(module)
+}
+\end{lstlisting}
 
 \subsection{Compiler} \label{compiler}
 
