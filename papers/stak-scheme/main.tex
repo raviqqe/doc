@@ -1,9 +1,12 @@
 \documentclass[sigplan, anonymous, review]{acmart}
 
-\usepackage{listings}
 \usepackage{algorithm2e}
 \DontPrintSemicolon
 \SetKwProg{Function}{function}{ do}{end}
+
+\usepackage{listings}
+\lstdefinestyle{code}{basicstyle=\ttfamily\small}
+\lstset{style=code}
 
 \newcommand{\draft}[1]{CONTENT HIDDEN FOR REVIEWS}
 
@@ -174,7 +177,7 @@ into a bytecode file \texttt{foo.bc}.
   \end{center}
 \end{figure}
 
-\begin{lstlisting}[basicstyle=\ttfamily\small, caption=\texttt{foo.scm} file]
+\begin{lstlisting}[caption=\texttt{foo.scm} file]
 (import (scheme base) (scheme write))
 
 (write (+ 1 2 3))
