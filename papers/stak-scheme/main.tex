@@ -1,7 +1,13 @@
 \documentclass[sigplan, anonymous, review]{acmart}
-\keywords{Compiler, Virtual Machine, Dynamic Language, Scheme}
+
+\usepackage{listings}
+\usepackage{algorithm2e}
+\DontPrintSemicolon
+\SetKwProg{Function}{function}{ do}{end}
 
 \newcommand{\draft}[1]{CONTENT HIDDEN FOR REVIEWS}
+
+\keywords{Compiler, Virtual Machine, Dynamic Language, Scheme}
 
 \begin{CCSXML}
   <ccs2012>
@@ -26,10 +32,6 @@
 \ccsdesc[500]{Software and its engineering~Functional languages}
 \ccsdesc[500]{Software and its engineering~Interpreters}
 % \ccsdesc[100]{Software and its engineering~Embedded software}
-
-\usepackage{algorithm2e}
-\DontPrintSemicolon
-\SetKwProg{Function}{function}{ do}{end}
 
 \begin{document}
 \title{Stak Scheme: The tiny R7RS-small implementation}
@@ -172,11 +174,11 @@ into a bytecode file \texttt{foo.bc}.
   \end{center}
 \end{figure}
 
-\begin{verbatim}
+\begin{lstlisting}[language=Python, caption=Python example]
 (import (scheme base) (scheme write))
 
 (write (+ 1 2 3))
-\end{verbatim}
+\end{lstlisting}
 
 \subsection{Compiler} \label{compiler}
 
