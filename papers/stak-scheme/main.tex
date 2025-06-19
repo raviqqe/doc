@@ -198,7 +198,8 @@ fn main() -> Result<(), Box<dyn Error>> {
   Ok(())
 }
 
-fn run_scheme(module: &UniversalModule) -> Result<(), EngineError> {
+fn run_scheme(module: &UniversalModule)
+    -> Result<(), EngineError> {
   // Initialize a heap memory for an engine.
   let mut heap = [Default::default(); HEAP_SIZE];
   // Initialize the engine.
