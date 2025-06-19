@@ -159,7 +159,9 @@ Figure \ref{figure:build} shows an example of a workflow for
 embedding a Stak Scheme script into a Rust program.
 After a user triggers \texttt{cargo build} command, which is of the
 Cargo build system for Rust, a \texttt{build.rs} build
-script invokes the \texttt{stak-compile}.
+script invokes the \texttt{stak-compile} command of the Stak Scheme
+bytecode compiler to compile a Scheme source file \texttt{foo.scm}
+into a bytecode file \texttt{foo.bc}.
 
 \begin{figure}
   \begin{center}
