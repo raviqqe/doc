@@ -177,7 +177,13 @@ into a bytecode file \texttt{foo.bc}.
   \end{center}
 \end{figure}
 
-\begin{lstlisting}[caption=\texttt{foo.scm} file]
+\begin{lstlisting}[caption=\texttt{foo.scm} file, label={list:scheme}]
+(import (scheme base) (scheme write))
+
+(write (+ 1 2 3))
+\end{lstlisting}
+
+\begin{lstlisting}[caption=\texttt{main.rs} file, label={list:rust}]
 (import (scheme base) (scheme write))
 
 (write (+ 1 2 3))
