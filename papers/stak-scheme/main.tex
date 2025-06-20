@@ -830,12 +830,12 @@ depending of libraries given source programs import.
 
 One of the reasons why Stak Scheme is tiny and its performance is still
 comparable with the other Scheme implementations is that its
-programs are not memory safe on the virtual machines even though
+programs are not memory safe on the virtual machine even though
 the host language is memory safe.
 The programs written in Stak Scheme are able to access any memory
-locations on the virtual machines as long as the host languages allow that.
+locations on the virtual machine as long as the host languages allow that.
 In the virtual machine we implemented in Rust, this memory
-unsafety on virtual machines sometimes arises as panics with little
+unsafety on the virtual machine sometimes arises as panics with little
 contextual information.
 Such panics are hard to debug, especially when debug information is
 stripped out from executable files of the interpreter.
@@ -857,7 +857,7 @@ in the context of dynamic programming languages where we do not define
 any entrypoint functions.
 When we implement it in Stak Scheme, tree shaking would not only
 reduce the size of bytecode but also decrease the startup latencies
-because it reduces time for bytecode decoding on virtual machines.
+because it reduces time for bytecode decoding on the virtual machine.
 Since we expand libraries and macros statically
 in our bytecode compiler, we believe that it is relatively easy to
 implement tree shaking compared with other implementations of Scheme
