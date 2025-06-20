@@ -47,7 +47,8 @@
   In this paper, we present Stak Scheme, the tiny R7RS-small
   Scheme implementation.
   The whole interpreter of Stak Scheme contains no more than 10 KLOC as
-  its core part is composed of a bytecode compiler written in 1.5 KLOC of Scheme
+  its core parts are composed of a bytecode compiler written in 1.5
+  KLOC of Scheme
   and a virtual machine written in 1.5 KLOC of Rust.
   Despite its minimal and naive design, Stak Scheme
   supports all major language features of the R7RS-small standard including
@@ -94,11 +95,12 @@ heap allocations or system APIs\footnote{
 We make the following contributions in this paper:
 
 \begin{itemize}
-  \item We provide the smallest R7RS-small implementations ever in
+  \item We provide the smallest R7RS-small implementation ever in
     terms of lines of code, which is implemented
     in Scheme and a system programming language.
-    The core part of the implementation is composed only of a 1.5 KLOC bytecode
-    compiler in Scheme and 1.5 KLOC virtual machine in Rust.
+    The core parts of the implementation are composed only of a 1.5
+    KLOC bytecode
+    compiler in Scheme and a 1.5 KLOC virtual machine in Rust.
   \item We extend Ribbit Virtual Machine (RVM) from the previous
     work of Ribbit Scheme to build an interpreter compatible with the
     R7RS-small standard on top of it.
@@ -106,15 +108,15 @@ We make the following contributions in this paper:
     loaded with a large chunk of language features and standard
     libraries defined in the R7RS-small standard.
   \item We propose our simple bytecode encoding and decoding algorithms
-    alternative to the ones used in Ribbit Scheme, which encodes and
-    decodes code and data in bytecode uniformly.
+    alternative to those used in Ribbit Scheme, which encode and
+    decode both code and data uniformly.
 \end{itemize}
 
-The main components of Stak Scheme are split into two.
-The first component is a bytecode compiler which compiles source
-code in Scheme into bytecode (Section \ref{compiler}).
-The other component is a virtual machine which executes the compiled
-bytecode (Section \ref{vm}).
+The main components of Stak Scheme are divided into two parts:
+a bytecode compiler which compiles source code in Scheme into
+bytecode (Section \ref{compiler}),
+and a virtual machine which executes the compiled bytecode
+(Section \ref{vm}).
 In the compiler and the virtual machine, we introduce our simple
 bytecode encoding and
 decoding algorithms that convert code and data in bytecode
@@ -155,7 +157,7 @@ For the former use case, we
 compile Scheme scripts ahead into bytecode files and include them in
 Rust programs by the Cargo build
 system\footnote{\url{https://doc.rust-lang.org/cargo/}} so that the
-Rust programs can execute them on the virtual machines.
+Rust programs can execute them on the virtual machine.
 For the latter use case, we
 provide a standalone command of \texttt{stak} which runs Scheme script
 files given as command line arguments.
@@ -281,7 +283,7 @@ algorithm described in Macros That Work \cite{macrosthatwork}.
 
 The compilation phase compiles the expanded expressions to
 bytecode in its in-memory format. Note that we use the same
-in-memory format of the bytecode on our virtual machines as well.
+in-memory format of the bytecode on our virtual machine as well.
 Hence, we can reuse the
 compilation logic inside the \texttt{(scheme eval)} library as it is
 as well as the logic of library expansion and macro expansion.
@@ -304,16 +306,16 @@ About the first item, to make the compiler compatible with any R7RS-small
 implementations but not only Stak Scheme, we marshal immediate values
 inside bytecode instructions into their "universal"
 representations compatible with any R7RS-small hosts that emulate
-the data representations in our virtual machines
+the data representations in our virtual machine
 described later in Section \ref{vm}.
 For example, we represent a string as a tuple of its length, a list of
 character code points, and a tag for the string type in the compiler,
 which is expressed as a pair of the length and the list
 with a pointer tag on the \texttt{cdr} side in the virtual
-machines of Stak Scheme.
+machine of Stak Scheme.
 
 Finally, the bytecode encoding phase encodes the in-memory representation of
-bytecode into its serialized format and write them into output files.
+bytecode into its serialized format and writes it into an output file.
 We discuss the details of bytecode encoding in \ref{encoding}.
 
 \subsection{Virtual machine} \label{vm}
@@ -345,26 +347,26 @@ Secondly, while Ribbit Scheme's virtual machine uses Ribs, triplets of
 word-sized fields for internal representation of Scheme values, Stak
 Scheme represents them as a traditional pair data structure of two
 word size with optional tags attached to pointers in \texttt{cdr}.
-This design choice simply saves a third of heap memory on the virtual machines
+This design choice simply saves a third of heap memory on the virtual machine
 compared to Ribbit Scheme while it requires extra bit operations to
 extract cons pointers and tags.
 We use the optional pointer tags to encode instruction
 codes or underlying data types primarily.
 As well as Ribbit Scheme, we have only two primitive data types on virtual
-machines; numbers and cons's.
+machine; numbers and cons's.
 Numbers are literally internal representations of mathematical numbers.
 We currently provide three number
 representations of 63-bit integers, 64-bit floating-point numbers,
 and a mixture of 63-bit integers and 62-bit floating-point numbers
 via Float Self-Tagging \cite{floatselftag}.
 They are exclusive with each other and developers choose one
-of the number representations when compiling the virtual machines.
+of the number representations when compiling the virtual machine.
 Cons's are pairs of two primitive values and represented as
-pointers into heap memory on the virtual machines.
+pointers into heap memory on the virtual machine.
 In our Rust implementation of the virtual machine, we use an array of
 primitive values as heap memory and indices into the array as cons
 pointers.
-In other implementations of the virtual machines, we can still fall
+In other implementations of the virtual machine, we can still fall
 back to the data structures of Ribs where we allocate another
 word-sized field for the tags if pointer tags are not available.
 
@@ -407,8 +409,8 @@ Currently, we provide the implementation of the virtual machine only
 in Rust.
 However, as well as RVM, we believe that we can implement Stak Scheme's
 virtual machine in different programming languages from low-level to high-level.
-Besides, we do not assume linear memory on virtual machines in such
-host languages of virtual machines.
+Besides, we do not assume linear memory on the virtual machine in such
+host languages.
 Developers can also utilize garbage collectors of
 the host languages in implementations of the virtual machine.
 We discuss this topic in Section \ref{portvm} as future work further.
@@ -418,8 +420,7 @@ virtual machine and its encoding and decoding algorithms in details.
 
 \subsection{Bytecode} \label{bytecode}
 
-Stak Scheme's bytecode represent programs for the virtual machines to
-execute.
+Stak Scheme's bytecode represents a program for the virtual machine to execute.
 As described in Section \ref{vm},
 we represent both code and data of instructions and immediate
 values inside them in pair data structures consisting of two fields of
@@ -432,9 +433,9 @@ and decoding.
 
 While we provide only the Rust implementation of the virtual machine,
 we keep the serialized format of bytecode portable across
-different implementations of the virtual machines in other languages.
+different implementations of the virtual machine in other languages.
 As such, we do not use, for example, snapshots of linear
-memories of the virtual machines onto which we expand bytecode as a
+memory of the virtual machine onto which we expand bytecode as a
 serialization format of bytecode.
 
 \subsubsection{Encoding} \label{encoding}
@@ -445,8 +446,8 @@ We embed the serialized bytecode inside Rust programs for later
 execution of them.
 The serialized format of bytecode needs to be compact to save space in
 resulting binaries, portable to be executable in different
-implementations of the virtual machines, and performant so that we
-decode them efficiently on the virtual machines.
+implementations of the virtual machine, and performant so that we
+decode them efficiently on the virtual machine.
 
 For the bytecode encoding, we use an algorithm similar to topological
 sort \cite{topologicalsort} with the following requirements.
@@ -468,7 +469,7 @@ sort \cite{topologicalsort} with the following requirements.
   \item We do not use any complex data structures but only singly-linked lists
     during encoding to keep the decoding algorithm simple by its using
     only primitive data structures of numbers and cons's available on
-    the virtual machines.
+    the virtual machine.
 \end{itemize}
 
 Algorithm \ref{algorithm:encode} describes an overview of the bytecode
@@ -546,7 +547,7 @@ sequences to the output $O$.
 \subsubsection{Decoding} \label{decoding}
 
 We decode the serialized form of bytecode into heap memory on
-our virtual machines.
+our virtual machine.
 The bytecode decoding in Stak Scheme happens by looking at each byte in
 the serialized bytecode from the beginning to the end.
 A chunk of bytecode for a Scheme program is a sequence of
@@ -742,10 +743,10 @@ for the sake of the better feature parity with
 the other Scheme implementations while Stak Scheme does not implement
 the full numeric tower defined in the R7RS-small standard.
 
-The results in Table \ref{table:computation} indicates that Stak
-Scheme's computational performance is still comparable with the other
-Scheme implementations and dynamic languages at the range of 1.15
-time faster to 2.33 time slower computation times
+The results in Table \ref{table:computation} indicate that Stak
+Scheme's computational performance is still comparable with other
+Scheme implementations and dynamic languages, with performance
+ranging from 1.15 times faster to 2.33 times slower,
 despite its minimal design and implementation.
 
 \begin{table*}
@@ -831,12 +832,12 @@ depending of libraries given source programs import.
 
 One of the reasons why Stak Scheme is tiny and its performance is still
 comparable with the other Scheme implementations is that its
-programs are not memory safe on the virtual machines even though
+programs are not memory safe on the virtual machine even though
 the host language is memory safe.
 The programs written in Stak Scheme are able to access any memory
-locations on the virtual machines as long as the host languages allow that.
+locations on the virtual machine as long as the host languages allow that.
 In the virtual machine we implemented in Rust, this memory
-unsafety on virtual machines sometimes arises as panics with little
+unsafety on the virtual machine sometimes arises as panics with little
 contextual information.
 Such panics are hard to debug, especially when debug information is
 stripped out from executable files of the interpreter.
@@ -858,7 +859,7 @@ in the context of dynamic programming languages where we do not define
 any entrypoint functions.
 When we implement it in Stak Scheme, tree shaking would not only
 reduce the size of bytecode but also decrease the startup latencies
-because it reduces time for bytecode decoding on virtual machines.
+because it reduces time for bytecode decoding on the virtual machine.
 Since we expand libraries and macros statically
 in our bytecode compiler, we believe that it is relatively easy to
 implement tree shaking compared with other implementations of Scheme
