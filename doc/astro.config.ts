@@ -9,12 +9,10 @@ import rehypeAutoLinkHeadings from "rehype-autolink-headings";
 
 export default defineConfig({
   base: "/doc",
-  experimental: {
-    responsiveImages: true,
-  },
   image: {
-    experimentalLayout: "full-width",
+    layout: "full-width",
     remotePatterns: [{ protocol: "https" }],
+    responsiveStyles: true,
   },
   integrations: [
     mdx(),
