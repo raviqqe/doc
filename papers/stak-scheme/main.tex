@@ -55,7 +55,7 @@
   \texttt{syntax-rules}, continuations, exception handling, and the
   fully-featured \texttt{eval} procedure.
   Our bytecode encoding and decoding algorithms convert codes and
-  data in bytecodes uniformly
+  data in bytecode uniformly
   between its in-memory graph format and serialized byte sequences.
   Our evaluation proves that the implementation of Stak Scheme is
   compact compared to the prior work of a small R7RS-small implementation
@@ -107,18 +107,18 @@ We make the following contributions in this paper:
     libraries defined in the R7RS-small standard.
   \item We propose our simple bytecode encoding and decoding algorithms
     alternative to the ones used in Ribbit Scheme, which encodes and
-    decodes codes and data in bytecodes uniformly.
+    decodes codes and data in bytecode uniformly.
 \end{itemize}
 
 The main components of Stak Scheme are split into two.
-The first component is a bytecode compiler which compiles source files in Scheme
-into bytecodes (Section \ref{compiler}).
+The first component is a bytecode compiler which compiles source
+code in Scheme into bytecode (Section \ref{compiler}).
 The other component is a virtual machine which executes the compiled
-bytecodes (Section \ref{vm}).
+bytecode (Section \ref{vm}).
 In the compiler and the virtual machine, we introduce our simple
 bytecode encoding and
-decoding algorithms that convert codes and data in bytecodes
-uniformly (Section \ref{bytecodes}).
+decoding algorithms that convert codes and data in bytecode
+uniformly (Section \ref{bytecode}).
 Another interesting trait of Stak Scheme is that the bytecode compiler itself
 is an ingredient of the \texttt{(scheme eval)} library.
 While compiling given source files, the compiler embeds itself
@@ -131,9 +131,9 @@ languages in spite of its minimal design (Section \ref{evaluation}).
 
 Stak Scheme is a tiny R7RS-small implementation consisting of a
 bytecode compiler written in Scheme and a virtual machine written in Rust.
-The bytecode compiler compiles Scheme source files and encodes their bytecodes
+The bytecode compiler compiles Scheme source files and encodes their bytecode
 into byte sequences.
-The virtual machine decodes the serialized bytecodes back into their
+The virtual machine decodes the serialized bytecode back into their
 in-memory format and executes them.
 This split architecture of a bytecode compiler and a virtual machine inherited
 from Ribbit Scheme allows us to strip
@@ -141,7 +141,7 @@ out unnecessary logic from resulting binaries.
 For example, we do not include the logic to parse S-expressions
 in the virtual machine.
 Instead, we compile and bundle the \texttt{read} procedure which parses
-S-expressions in bytecodes only if their source files import the
+S-expressions in bytecode only if their source files import the
 \texttt{(scheme read)} standard library, which contains the
 \texttt{read} procedure.
 We discuss further details about the design and implementation of the
@@ -242,7 +242,7 @@ fn run_scheme(module: &UniversalModule)
 \subsection{Compiler} \label{compiler}
 
 The bytecode compiler of Stak Scheme compiles source files in Scheme
-into bytecodes.
+into bytecode.
 The Scheme script of the compiler is compatible with any R7RS-small
 implementations including Stak Scheme itself for the purpose of bootstrapping.
 In the current implementation, a single Scheme file of 1.5 KLOC
@@ -280,21 +280,21 @@ The hygienic macro system is the implementation of the
 algorithm described in Macros That Work \cite{macrosthatwork}.
 
 The compilation phase compiles the expanded expressions to
-bytecodes in their in-memory format. Note that we use the same
-in-memory format of the bytecodes on our virtual machines as well.
+bytecode in their in-memory format. Note that we use the same
+in-memory format of the bytecode on our virtual machines as well.
 Hence, we can reuse the
 compilation logic inside the \texttt{(scheme eval)} library as it is
 as well as the logic of library expansion and macro expansion.
 We describe further details about how we reuse the compiler and build
 the \texttt{(scheme eval)} library in Section \ref{inception}.
 
-Before encoding bytecodes, we marshal them for the following purposes:
+Before encoding bytecode, we marshal them for the following purposes:
 
 \begin{itemize}
   \item We marshal immediate values of certain data types in bytecode
     instructions into their serializable representations.
   \item We make boxed values of certain data types, such as strings and
-    characters, unique in bytecodes so that we process them only once
+    characters, unique in bytecode so that we process them only once
     in the later bytecode encoding and reduce resulting bytecode sizes.
   \item We strip out string representation of symbols that are never used
     at runtime.
@@ -313,7 +313,7 @@ with a pointer tag on the \texttt{cdr} side in the virtual
 machines of Stak Scheme.
 
 Finally, the bytecode encoding phase encodes the in-memory representation of
-bytecodes into its serialized format and write them into output files.
+bytecode into its serialized format and write them into output files.
 We discuss the details of bytecode encoding in \ref{encoding}.
 
 \subsection{Virtual machine} \label{vm}
@@ -323,10 +323,10 @@ Scheme, Ribbit Virtual Machine (RVM).
 Therefore, they share the large part of their design.
 For example, both Ribbit and Stak Scheme's virtual machines represent
 codes and data as graphs of pair-like data structures in heap memory.
-They initialize virtual machines by decoding bytecodes onto
+They initialize virtual machines by decoding bytecode onto
 their heap memory.
 However, we have several differences in instructions, Scheme value
-representation, and bytecodes.
+representation, and bytecode.
 
 First, while \texttt{constant}, \texttt{get}, \texttt{set}, and
 \texttt{if} instructions in Stak Scheme are nearly identical to the ones in
@@ -413,37 +413,37 @@ Developers can also utilize garbage collectors of
 the host languages in implementations of the virtual machine.
 We discuss this topic in Section \ref{portvm} as future work further.
 
-In Section \ref{bytecodes}, we describe the bytecode format for the
+In Section \ref{bytecode}, we describe the bytecode format for the
 virtual machine and its encoding and decoding algorithms in details.
 
-\subsection{Bytecodes} \label{bytecodes}
+\subsection{bytecode} \label{bytecode}
 
-Stak Scheme's bytecodes represent programs for the virtual machines to
+Stak Scheme's bytecode represent programs for the virtual machines to
 execute.
 As described in Section \ref{vm},
 we represent both codes and data of instructions and immediate
 values inside them in pair data structures consisting of two fields of
 \texttt{car} and \texttt{cdr}.
-Therefore, the problem of encoding and decoding bytecodes falls into
+Therefore, the problem of encoding and decoding bytecode falls into
 the one on graphs of the pairs.
 Furthermore, the graphs generated by the compiler are guaranteed to be
 Directed Acyclic Graphs (DAGs), which even simplifies the encoding
 and decoding.
 
 While we provide only the Rust implementation of the virtual machine,
-we keep the serialized format of bytecodes portable across
+we keep the serialized format of bytecode portable across
 different implementations of the virtual machines in other languages.
 As such, we do not use, for example, snapshots of linear
-memories of the virtual machines onto which we expand bytecodes as a
-serialization format of bytecodes.
+memories of the virtual machines onto which we expand bytecode as a
+serialization format of bytecode.
 
 \subsubsection{Encoding} \label{encoding}
 
-We encode bytecodes from its in-memory format into its serialized format in the
+We encode bytecode from its in-memory format into its serialized format in the
 bytecode compiler.
-We embed the serialized bytecodes inside Rust programs for later
+We embed the serialized bytecode inside Rust programs for later
 execution of them.
-The serialized format of bytecodes needs to be compact to save space in
+The serialized format of bytecode needs to be compact to save space in
 resulting binaries, portable to be executable in different
 implementations of the virtual machines, and performant so that we
 decode them efficiently on the virtual machines.
@@ -457,14 +457,14 @@ sort \cite{topologicalsort} with the following requirements.
     Expectantly, we encode values of most of the data types without
     introducing ad-hoc encoding rules for each data type.
   \item We encode values that are unique, such as symbols, in
-    bytecodes only once
+    bytecode only once
     because they should have (surprisingly) only one instance.
     We also uniquify values of several other boxed data
     types in a prior pass of bytecode marshalling in the
     compiler discussed in Section \ref{compiler}.
     We should not duplicate the continuations of \texttt{if}
     instructions either but encode them only once to avoid the exponential bloat
-    of the serialized bytecodes \cite{ribbit7kb2023}.
+    of the serialized bytecode \cite{ribbit7kb2023}.
   \item We do not use any complex data structures but only singly-linked lists
     during encoding to keep the decoding algorithm simple by its using
     only primitive data structures of numbers and cons's available on
@@ -474,11 +474,11 @@ sort \cite{topologicalsort} with the following requirements.
 Algorithm \ref{algorithm:encode} describes an overview of the bytecode
 encoding.
 The $encode$ function encodes a given value of
-underlying bytecodes recursively where $I$ is an input of in-memory
-bytecodes to encode,
-$O$ is an output of serialized bytecodes, $C$ is a precomputed map of
+underlying bytecode recursively where $I$ is an input of in-memory
+bytecode to encode,
+$O$ is an output of serialized bytecode, $C$ is a precomputed map of
 reference counts
-at which times each cons appears in the bytecodes and $D$ is a
+at which times each cons appears in the bytecode and $D$ is a
 dictionary of \textit{shared} cons's represented as a list.
 
 For each given value, we check if the value is a cons or not.
@@ -491,14 +491,14 @@ Then, we encode the value's index in the dictionary $D$ and a flag of whether it
 is removed from the dictionary or not into the output via the
 $encodeIndex$ function.
 The operation to move the values to the top of the dictionary is based on the
-assumption of reference locality of such shared values in bytecodes.
+assumption of reference locality of such shared values in bytecode.
 If the value is not in the dictionary $D$, we encode the child values in
 \texttt{car} and \texttt{cdr} recursively as well as its tag.
 Then, if its reference count is not zero, we push the shared value to
 the top of the dictionary because it is the first time for the shared value
-to appear in the bytecodes.
+to appear in the bytecode.
 Across the function, we track how many times the cons's appear and
-decrement their counts every time when they show up in the bytecodes.
+decrement their counts every time when they show up in the bytecode.
 When the counts of cons's reach zero, they are removed from the
 dictionary $D$ as described above.
 The $encodeCons$, $encodeNumber$, $encodeIndex$, and $encodePush$
@@ -509,7 +509,7 @@ sequences to the output $O$.
   \caption{Bytecode encoding}
   \label{algorithm:encode}
 
-  \KwIn{In-memory bytecodes $I$}
+  \KwIn{In-memory bytecode $I$}
   \KwOut{Byte sequence $O$}
 
   \Function{encode(x, O)}{
@@ -545,18 +545,18 @@ sequences to the output $O$.
 
 \subsubsection{Decoding} \label{decoding}
 
-We decode the serialized form of bytecodes into heap memory on
+We decode the serialized form of bytecode into heap memory on
 our virtual machines.
 The bytecode decoding in Stak Scheme happens by looking at each byte in
-the serialized bytecodes from the beginning to the end.
-A chunk of bytecodes for a Scheme program is a sequence of
+the serialized bytecode from the beginning to the end.
+A chunk of bytecode for a Scheme program is a sequence of
 variadic-length decode instructions of either $number$, $cons$, or $share$.
 
 Algorithm \ref{algorithm:decode} describes an overview of the
 bytecode decoding.
-We initialize $I$ of an input with bytecodes and $S$ of a stack for decoded
+We initialize $I$ of an input with bytecode and $S$ of a stack for decoded
 values and $D$ of a dictionary with empty lists.
-The decoding starts with looking at the first byte in the bytecodes.
+The decoding starts with looking at the first byte in the bytecode.
 If it is a $number$ instruction, we decode and push a number onto the stack.
 If it is a $cons$ instruction, we decode a tag and construct a cons
 from \texttt{car} and \texttt{cdr} values popped from the stack
@@ -568,17 +568,17 @@ dictionary $D$ and push it onto the top of the stack.
 Note that we also move the shared value to the top in the dictionary as well.
 In addition, we remove the value from the dictionary if a flag $r$ is
 true, which indicates that the value is not referenced anymore after the point.
-Until we consume all the bytecodes, we keep reading the decode instructions and
+Until we consume all the bytecode, we keep reading the decode instructions and
 decode values.
 Finally, the value at the top $car(S)$ is the root of the decoded
-in-memory bytecodes.
+in-memory bytecode.
 
 \begin{algorithm}
   \caption{Bytecode decoding}
   \label{algorithm:decode}
 
   \KwIn{Byte sequence $I$}
-  \KwOut{In-memory bytecodes $O$}
+  \KwOut{In-memory bytecode $O$}
 
   $S \gets []$ \;
   $D \gets []$ \;
@@ -788,7 +788,7 @@ programming languages from low-level to high-level.
 Although Ribbit Scheme's bytecode encoding is very efficient
 for small Scheme programs already,
 Stak Scheme's encoding algorithm deviates quite a bit to encode and decode
-large chunks of bytecodes.
+large chunks of bytecode.
 First, the bytecode encoding of Ribbit Scheme requires a global symbol table.
 Because this table is used for both global variables and cache of
 boxed constant values, we suffer from the larger and larger global tables
@@ -800,14 +800,14 @@ As we discussed in Section \ref{encoding}, we take another approach that
 does not require any global symbol table.
 Secondly, Ribbit Scheme's bytecode encoder encodes instructions
 with immediate values of only primitive data types.
-To encode complex data structures in the bytecodes, the encoder
-generates bytecodes to initialize such values attached at the
+To encode complex data structures in the bytecode, the encoder
+generates bytecode to initialize such values attached at the
 beginning of the programs.
 In Stak Scheme, we instead encode instructions and their immediate
 values uniformly as graphs of pair data structures even when the
 immediate values are not of primitive data types.
 Our preliminary experiments shows speedup of startup
-latencies of Scheme programs at the sacrifice of compact bytecodes
+latencies of Scheme programs at the sacrifice of compact bytecode
 increasing their sizes in bytes.
 
 TR7 \cite{tr7} is the tiny R7RS Scheme implementation written in C.
@@ -857,7 +857,7 @@ compiler technology, the term of tree shaking is used
 in the context of dynamic programming languages where we do not define
 any entrypoint functions.
 When we implement it in Stak Scheme, tree shaking would not only
-reduce the size of bytecodes but also decrease the startup latencies
+reduce the size of bytecode but also decrease the startup latencies
 because it reduces time for bytecode decoding on virtual machines.
 Since we expand libraries and macros statically
 in our bytecode compiler, we believe that it is relatively easy to
