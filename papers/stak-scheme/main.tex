@@ -54,7 +54,7 @@
   but not limited to the library system, hygienic macros with
   \texttt{syntax-rules}, continuations, exception handling, and the
   fully-featured \texttt{eval} procedure.
-  Our bytecode encoding and decoding algorithms convert codes and
+  Our bytecode encoding and decoding algorithms convert code and
   data in bytecode uniformly
   between its in-memory graph format and serialized byte sequences.
   Our evaluation proves that the implementation of Stak Scheme is
@@ -95,7 +95,7 @@ We make the following contributions in this paper:
 
 \begin{itemize}
   \item We provide the smallest R7RS-small implementations ever in
-    terms of lines of codes, which is implemented
+    terms of lines of code, which is implemented
     in Scheme and a system programming language.
     The core part of the implementation is composed only of a 1.5 KLOC bytecode
     compiler in Scheme and 1.5 KLOC virtual machine in Rust.
@@ -107,7 +107,7 @@ We make the following contributions in this paper:
     libraries defined in the R7RS-small standard.
   \item We propose our simple bytecode encoding and decoding algorithms
     alternative to the ones used in Ribbit Scheme, which encodes and
-    decodes codes and data in bytecode uniformly.
+    decodes code and data in bytecode uniformly.
 \end{itemize}
 
 The main components of Stak Scheme are split into two.
@@ -117,7 +117,7 @@ The other component is a virtual machine which executes the compiled
 bytecode (Section \ref{vm}).
 In the compiler and the virtual machine, we introduce our simple
 bytecode encoding and
-decoding algorithms that convert codes and data in bytecode
+decoding algorithms that convert code and data in bytecode
 uniformly (Section \ref{bytecode}).
 Another interesting trait of Stak Scheme is that the bytecode compiler itself
 is an ingredient of the \texttt{(scheme eval)} library.
@@ -260,14 +260,14 @@ The compiler is composed of the following stages.
   \item Bytecode encoding
 \end{enumerate}
 
-First, we parse source codes as S-expressions from source
+First, we parse source code as S-expressions from source
 files skipping whitespace characters and comments.
 Then, in the stage of compiler inception, we \textit{incept} the compiler
-itself into the source codes, which is described in details later in
+itself into the source code, which is described in details later in
 Section \ref{inception}.
 In library and macro expansions, we expand library and macro
 syntaxes, such as \texttt{define-library}, \texttt{import},
-\texttt{define-syntax}, and \texttt{syntax-rules} in the source codes.
+\texttt{define-syntax}, and \texttt{syntax-rules} in the source code.
 Following the specification of the library system in the R7RS-small
 standard, we need to segregate environments of different libraries.
 We represent such environments by creating symbols from
@@ -322,7 +322,7 @@ Stak Scheme's virtual machine is designed after the one of Ribbit
 Scheme, Ribbit Virtual Machine (RVM).
 Therefore, they share the large part of their design.
 For example, both Ribbit and Stak Scheme's virtual machines represent
-codes and data as graphs of pair-like data structures in heap memory.
+code and data as graphs of pair-like data structures in heap memory.
 They initialize virtual machines by decoding bytecode onto
 their heap memory.
 However, we have several differences in instructions, Scheme value
@@ -390,7 +390,7 @@ in Table \ref{table:types}.
       Pair & number or cons & number or cons \\
       Null & number & cons \\
       Boolean & number or cons & cons \\
-      Procedure & cons (environment) & cons (signature and codes) \\
+      Procedure & cons (environment) & cons (signature and code) \\
       String & number (length) & cons (code points) \\
       Symbol & number or cons (value of global variable) & cons
       (string representation) \\
@@ -421,7 +421,7 @@ virtual machine and its encoding and decoding algorithms in details.
 Stak Scheme's bytecode represent programs for the virtual machines to
 execute.
 As described in Section \ref{vm},
-we represent both codes and data of instructions and immediate
+we represent both code and data of instructions and immediate
 values inside them in pair data structures consisting of two fields of
 \texttt{car} and \texttt{cdr}.
 Therefore, the problem of encoding and decoding bytecode falls into
@@ -633,16 +633,16 @@ ultimately need the full compiler we described in Section
 \ref{compiler} inside the \texttt{(scheme eval)} library.
 
 To realize that, we \textit{incept} the compiler itself into the
-source codes during the bytecode compilation.
+source code during the bytecode compilation.
 In particular, the compiler script replaces
-the \texttt{(\$\$compiler)} primitive call in the source codes
+the \texttt{(\$\$compiler)} primitive call in the source code
 with the compiler function right after the source code reading.
-In the compiler script, we first define codes of the compiler as
+In the compiler script, we first define code of the compiler as
 data stored in variables.
 The compiler body is split into two parts.
 The first part contains all the components required by the \texttt{eval}
 procedure, such as the library system, the macro system, and the
-bytecode compilation logic, that we embed into the source codes.
+bytecode compilation logic, that we embed into the source code.
 The other half contains the other parts for the compiler, such
 as bytecode marshalling and encoding logic.
 In the main procedure of the compiler script, we combine the two
@@ -655,19 +655,19 @@ Our evaluation of Stak Scheme demonstrates the minimality of its design and
 implementation as well as its reasonable performance compared with
 other Scheme implementations and scripting languages.
 
-\subsection{Lines of codes}
+\subsection{Lines of code}
 
 To evaluate the compactness of our implementation of Stak Scheme,
-we compare lines of codes between our Stak Scheme implementation and
+we compare lines of code between our Stak Scheme implementation and
 another small R7RS implementation, TR7 \cite{tr7}.
 To the best of our knowledge, TR7 is the smallest R7RS implementation
 among the ones written in Scheme and a certain system programming language.
 
-To count lines of codes, we exclude test codes, comments, and blank
-lines from source codes in each implementation.
-For Stak Scheme, there is no test codes written in Scheme but only in Rust.
-In the Rust codes, we removed modules that are compiled only for tests.
-In TR7, because it separates test codes into different files, we simply did not
+To count lines of code, we exclude test code, comments, and blank
+lines from source code in each implementation.
+For Stak Scheme, there is no test code written in Scheme but only in Rust.
+In the Rust code, we removed modules that are compiled only for tests.
+In TR7, because it separates test code into different files, we simply did not
 include such files.
 Besides, we apply code formatters of \texttt{rustfmt} (v1.8.0),
 \texttt{clang-format} (v20.1.7), and \texttt{schemat} (v0.4.1) for
@@ -684,7 +684,7 @@ contributes to reduce the code size of its implementation in Rust.
 
 \begin{table}
   \begin{center}
-    \caption{Lines of codes}
+    \caption{Lines of code}
     \label{table:loc}
     \begin{tabular}{l|rrrrrrrr}
       \hline
@@ -705,7 +705,7 @@ Stak Scheme and TR7 implement all the primary language features,
 such as library system and hygienic macros, already.
 As adding missing functions or syntaxes are trivial changes,
 implementing such additional functionalities would not change the
-order of their lines of codes.
+order of their lines of code.
 
 \subsection{Computational benchmarks}
 
@@ -716,7 +716,7 @@ benchmarks shown in Table \ref{table:computation}.
 
 The interpreters of Scheme and other languages we compare are not equipped with
 any JIT compilation or other methods compiling the languages into
-native codes.
+native code.
 The following list is the versions and implementations of
 the language interpreters used in the benchmarks.
 For interpreters of non-Scheme dynamic languages, we choose CPython and
@@ -775,7 +775,7 @@ including x86-64 assembly, C, JavaScript, Bash, Scheme, etc.
 They have first coined the basic architecture of Ribbit Scheme
 \cite{ribbit2021} where its implementation is composed of an
 Ahead-Of-Time (AOT) bytecode compiler and a tiny virtual machine.
-The AOT compiler compiles source codes in Scheme and produces
+The AOT compiler compiles source code in Scheme and produces
 executable binaries bundled with virtual machines of specified backends.
 This architecture allows users to strip unnecessary language
 features and minimize resulting binaries.
@@ -850,7 +850,7 @@ One of methods to reduce the size of programs in dynamic programming
 languages is tree shaking\cite{treeshaking}, which is commonly used
 in bundlers of JavaScript, such as Webpack \cite{webpack} and Rolldown
 \cite{rolldown}.
-Tree shaking "shakes down" unnecessary codes from
+Tree shaking "shakes down" unnecessary code from
 the whole programs with checks of visibility and side effects.
 Although dead code elimination is a commonly known pass in the
 compiler technology, the term of tree shaking is used
@@ -884,7 +884,7 @@ not only prove its portability but also extends its use cases.
 Stak Scheme is a tiny R7RS-small implementation written in Scheme and
 Rust.
 Although our implementation of Stak Scheme is minimal in terms of
-lines of codes, it still demonstrates reasonable performance.
+lines of code, it still demonstrates reasonable performance.
 Our evaluation shows that Stak Scheme is
 comparable with the other Scheme implementations and dynamic
 programming languages in terms of computational time performance.
