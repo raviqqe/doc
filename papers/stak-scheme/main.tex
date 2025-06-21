@@ -834,10 +834,13 @@ Chicken Scheme, allow code generation portable to many platforms
 thanks to C compilers, they usually come with embedded Scheme
 interpreters for the \texttt{eval} procedure.
 Thus, Scheme-to-C compilers are not the optimal approach for small
-R7RS-smamll Scheme implementations due to duplication of logic between the
+R7RS-small Scheme implementations due to duplication of logic between the
 compiler and the interpreter.
 Native Scheme compilers like Chez Scheme is also another approach to
 implement Scheme which generates native codes directly from Scheme source code.
+Although native code compilers generate well-optimized code, such
+compilers tend to be large in terms of lines of code.
+As such, we did not take the approach for Stak Scheme either.
 
 \section{Future work}
 
