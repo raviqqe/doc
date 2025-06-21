@@ -354,15 +354,15 @@ We use the optional pointer tags to encode instruction
 codes or underlying data types primarily.
 As well as Ribbit Scheme, we have only two primitive data types on virtual
 machine; numbers and cons's.
-Numbers are literally internal representations of mathematical numbers.
+A number is literally an internal representation of a mathematical number.
 We currently provide three number
 representations of 63-bit integers, 64-bit floating-point numbers,
 and a mixture of 63-bit integers and 62-bit floating-point numbers
 via Float Self-Tagging \cite{floatselftag}.
 They are exclusive with each other and developers choose one
 of the number representations when compiling the virtual machine.
-Cons's are pairs of two primitive values and represented as
-pointers into heap memory on the virtual machine.
+A cons is a pair of two primitive values and represented as
+a pointer into heap memory on the virtual machine.
 In our Rust implementation of the virtual machine, we use an array of
 primitive values as heap memory and indices into the array as cons
 pointers.
