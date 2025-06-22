@@ -471,7 +471,7 @@ To encode complex data structures in the bytecode, the encoder
 generates bytecode to initialize such values attached at the
 beginning of the programs.
 In Stak Scheme, we instead encode instructions and their immediate
-values uniformly as graphs of pair data structures even when the
+values uniformly in a single chunk of bytecode even when the
 immediate values are not of primitive data types.
 Our preliminary experiments shows speedup of startup
 latencies of Scheme programs at the sacrifice of compact bytecode
