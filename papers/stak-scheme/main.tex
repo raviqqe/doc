@@ -588,7 +588,8 @@ sequences to the output $O$.
 
 We decode the serialized form of bytecode into heap memory on
 our virtual machine.
-The bytecode decoding in Stak Scheme happens by looking at each byte in
+The bytecode decoding in Stak Scheme happens by looking at each
+decode instruction in
 the serialized bytecode from the beginning to the end.
 A chunk of bytecode for a Scheme program is a sequence of
 variadic-length decode instructions of either $number$, $cons$, or $share$.
