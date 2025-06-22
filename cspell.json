@@ -9,6 +9,16 @@
       "pattern": "/https:\\/\\/[^ ()\\[\\]]*/"
     }
   ],
+  "ignorePaths": [
+    "*.aux",
+    "*.bbl",
+    "*.bib",
+    "*.blg",
+    "*.drawio",
+    "dist",
+    "node_modules",
+    "public"
+  ],
   "ignoreRegExpList": ["repository", "url"],
   "words": [
     "akka",
@@ -74,6 +84,7 @@
     "marp",
     "mattwparas",
     "mfmt",
+    "micropython",
     "mlir",
     "mlua",
     "mmdc",
@@ -115,6 +126,7 @@
     "tailcallopt",
     "uiua",
     "uninterned",
+    "uniquify",
     "usize",
     "valgrind",
     "virding",
@@ -129,6 +141,7 @@
     "xeon",
     "yatima",
     "yhara",
+    "yota",
     "zulip"
   ]
 }
