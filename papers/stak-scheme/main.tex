@@ -465,8 +465,8 @@ the performance degrade makes builds of Scheme programs painful due
 to lengthy build times.
 Therefore, our encoding algorithm in Stak Scheme takes another approach that
 does not require any global symbol table.
-Secondly, Ribbit Scheme's bytecode encoder encodes instructions
-with immediate values of only primitive data types.
+Secondly, Ribbit Scheme's bytecode encoder encodes
+immediate values of only primitive data types in instructions.
 To encode complex data structures in the bytecode, the encoder
 generates bytecode to initialize such values attached at the
 beginning of the programs.
