@@ -443,8 +443,8 @@ In the following sections, we describe details of bytecode encoding
 and decoding in Stak Scheme.
 Although Ribbit Scheme's bytecode encoding is very efficient
 for small Scheme programs already, Stak Scheme's encoding algorithm
-deviates from it to encode and decode larger chunks of bytecode.
-
+deviates from it to encode and decode bytecode compiled out of source
+code written for the R7RS-small standard.
 The key motivation to introduce our new encoding and decoding
 algorithms different from those of Ribbit Scheme is the differences
 between the R4RS and R7RS-small standards, which Ribbit and Stak Scheme
