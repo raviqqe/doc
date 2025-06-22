@@ -460,7 +460,7 @@ Because this table is used for both global variables and as a cache of
 boxed constant values, we suffer from the larger and larger global tables
 as we grow the size of source programs and standard libraries.
 When we self-host our fairly large bytecode compiler in Stak Scheme,
-the performance degrade makes builds of Scheme programs painful due
+the performance degradation makes builds of Scheme programs painful due
 to lengthy build times.
 Therefore, our encoding algorithm in Stak Scheme takes another approach that
 does not require any global symbol table.
