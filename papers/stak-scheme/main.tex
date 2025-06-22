@@ -284,9 +284,9 @@ algorithm described in Macros That Work \cite{macrosthatwork}.
 The compilation phase compiles the expanded expressions to
 bytecode in its in-memory format. Note that we use the same
 in-memory format of the bytecode in our virtual machine as well.
-Hence, we can reuse the
-compilation logic inside the \texttt{(scheme eval)} library as it is
-as well as the logic of library expansion and macro expansion.
+Hence, we can reuse the compilation logic as it is
+as well as the logic of library expansion and macro expansion inside
+the \texttt{(scheme eval)} library.
 We describe further details about how we reuse the compiler and build
 the \texttt{(scheme eval)} library in Section \ref{inception}.
 
