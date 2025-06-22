@@ -539,7 +539,7 @@ Then, if its reference count is not zero, we push the shared value to
 the top of the dictionary because it is the first time for the shared value
 to appear in the bytecode.
 Across the function, we track how many times the cons's appear and
-decrement their counts every time when they show up in the bytecode.
+decrement their refrence counts every time when they show up in the bytecode.
 When the counts of cons's reach zero, they are removed from the
 dictionary $D$ as described above.
 The $encodeCons$, $encodeNumber$, $encodeIndex$, and $encodePush$
