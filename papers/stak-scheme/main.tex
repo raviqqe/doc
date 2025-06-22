@@ -456,7 +456,7 @@ Although Ribbit Scheme's bytecode encoding is very efficient
 for small programs in Scheme already, Stak Scheme's encoding algorithm
 deviates from it to encode and decode bytecode compiled out of source
 code written for the R7RS-small standard.
-In Ribbit Scheme, the bytecode encoding requires a global symbol table.
+First, the bytecode encoding in Ribbit Scheme requires a global symbol table.
 Because this table is used for both global variables and as a cache of
 boxed constant values, we suffer from the larger and larger global tables
 as we grow the size of source programs and standard libraries.
