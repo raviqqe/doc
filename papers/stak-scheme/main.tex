@@ -345,8 +345,8 @@ procedure unlike Ribbit Scheme either.
 
 Secondly, while Ribbit Scheme's virtual machine uses Ribs, triplets of
 word-sized fields for internal representation of Scheme values, Stak
-Scheme represents them as a traditional pair data structure of two
-word size with optional tags attached to pointers in \texttt{cdr}.
+Scheme represents them as a traditional pair data structure of a
+two-word size with optional tags attached to pointers in \texttt{cdr}.
 This design choice simply saves a third of heap memory on the virtual machine
 compared to Ribbit Scheme while it requires extra bit operations to
 extract cons pointers and tags.
