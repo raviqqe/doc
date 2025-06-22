@@ -453,9 +453,8 @@ symbols for a Scheme program, the R7RS-small standard defines
 separate environments for each library and a main program.
 
 That being said, although Ribbit Scheme's bytecode encoding is very efficient
-for programs in R4RS Scheme already, Stak Scheme's encoding algorithm
-deviates from it to encode and decode bytecode compiled out of source
-code written for the R7RS-small standard.
+for small programs in R4RS Scheme already, Stak Scheme's encoding algorithm
+deviates from it for two primary points.
 First, the bytecode encoding in Ribbit Scheme requires a global symbol table.
 Because this table is used for both global variables and as a cache of
 boxed constant values, we suffer from the larger and larger global tables
