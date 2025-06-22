@@ -604,8 +604,8 @@ If it is a $number$ instruction, we decode and push a number onto the stack.
 If it is a $cons$ instruction, we decode a tag and construct a cons
 from \texttt{car} and \texttt{cdr} values popped from the stack
 and the tag to push it onto the stack.
-If it is a $share$ instruction and of a \textit{push} operation, we push the
-value at the top of a stack to the top of the dictionary.
+If it is a $share$ instruction and of a \textit{push} operation, we
+copy and push the value at the top of a stack to the top of the dictionary.
 Otherwise, we reference a shared value with its index in the
 dictionary $D$ and push it onto the top of the stack.
 Note that we also move the shared value to the top in the dictionary as well.
