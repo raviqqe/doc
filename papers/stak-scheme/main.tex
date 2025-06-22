@@ -144,7 +144,7 @@ out unnecessary logic from resulting binaries.
 For example, we do not include the logic to parse S-expressions
 in the virtual machine.
 Instead, we compile and bundle the \texttt{read} procedure which parses
-S-expressions in bytecode only if their source files import the
+S-expressions in bytecode only if its source code imports the
 \texttt{(scheme read)} standard library, which contains the
 \texttt{read} procedure.
 We discuss further details about the design and implementation of the
