@@ -598,7 +598,8 @@ Algorithm \ref{algorithm:decode} describes an overview of the
 bytecode decoding.
 We initialize $I$ of an input with bytecode and $S$ of a stack for decoded
 values and $D$ of a dictionary with empty lists.
-The decoding starts with looking at the first byte in the bytecode.
+The decoding starts with looking at the first decode instruction in
+the bytecode.
 If it is a $number$ instruction, we decode and push a number onto the stack.
 If it is a $cons$ instruction, we decode a tag and construct a cons
 from \texttt{car} and \texttt{cdr} values popped from the stack
