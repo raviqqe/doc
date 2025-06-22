@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: streetsidesoftware/cspell-action@main
         with:
-          files: "**/*.{astro,md,mdx,sh,ts}"
+          files: "**/*.{astro,md,mdx,sh,tex,ts}"
   test:
     needs:
       - build
