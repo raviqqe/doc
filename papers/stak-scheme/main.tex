@@ -778,12 +778,16 @@ embedded scripting.
   \item[mruby] mruby 3.4.0
 \end{description}
 
-For the benchmarks, we use the version of Stak Scheme that uses a
+For the benchmarks, we use the version of Stak Scheme (\texttt{stak})
+that uses a
 mixture of 63-bit integers and 62-bit floating-point numbers with Float
 Self-Tagging \cite{floatselftag} as its number representation
 for the sake of the better feature parity with
 the other Scheme implementations while Stak Scheme does not implement
-the full numeric tower defined in the R7RS-small standard.
+the full numeric tower defined in the R7RS-small standard unlike others.
+We also use \texttt{mstak} as a baseline, which is the version of
+Stak Scheme and comes with a number representation of only 63-bit
+integers and standard libraries backed by \texttt{libc}.
 
 The results in Table \ref{table:computation} indicate that Stak
 Scheme's computational performance is still comparable with other
@@ -813,7 +817,7 @@ despite its minimal design and implementation.
 
 Ribbit Scheme \cite{ribbit2023} is the tiny and portable R4RS Scheme
 implementation we designed Stak Scheme after. They provide
-Ribbit Virtual Machines (RVMs) in various programming languages
+Ribbit Virtual Machines (RVMs) implemented in various programming languages
 including x86-64 assembly, C, JavaScript, Bash, Scheme, etc.
 They have first coined the basic architecture of Ribbit Scheme
 \cite{ribbit2021} where its implementation is composed of an
