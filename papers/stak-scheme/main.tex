@@ -841,7 +841,7 @@ contains its entire interpreter in one \texttt{tr7.c} source file and a
 \texttt{tr7.h} header file whereas Stak Scheme uses both Scheme and
 Rust for its bytecode compiler and virtual machine.
 TR7 allows users to strip language features from the interpreter via
-the C preprocessor macros prefixed with \texttt{USE\_}.
+the C preprocessor flags prefixed with \texttt{USE\_}.
 On the other hand, Stak Scheme allows users to strip out the majority of
 the interpreter logic, such as S-expression parsing, library system, and
 macro expansion, from resulting binaries in its bytecode compiler
