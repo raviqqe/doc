@@ -109,8 +109,8 @@ We make the following contributions in this paper:
     libraries defined in the R7RS-small standard.
   \item We propose our simple bytecode encoding and decoding algorithms
     alternative to those used in Ribbit Scheme, which encode and
-    decode both code and data uniformly and translate symbols from
-    different environments directly.
+    decode both code and data uniformly and enable direct translation
+    of symbols from different environments.
 \end{itemize}
 
 The main components of Stak Scheme are divided into two parts:
@@ -144,7 +144,7 @@ out unnecessary logic from resulting binaries.
 For example, we do not include the logic to parse S-expressions
 in the virtual machine.
 Instead, we compile and bundle the \texttt{read} procedure which parses
-S-expressions in bytecode only if their source files import the
+S-expressions in bytecode only if its source code imports the
 \texttt{(scheme read)} standard library, which contains the
 \texttt{read} procedure.
 We discuss further details about the design and implementation of the
@@ -160,7 +160,7 @@ Rust programs by the Cargo build
 system\footnote{\url{https://doc.rust-lang.org/cargo/}} so that the
 Rust programs can execute them on the virtual machine.
 For the latter use case, we
-provide a standalone command of \texttt{stak} which runs Scheme script
+provide a standalone command named \texttt{stak} which runs Scheme script
 files given as command line arguments.
 
 Figure \ref{figure:build} shows an example workflow of
@@ -173,8 +173,7 @@ bytecode compiler to compile a Scheme source file \texttt{foo.scm}
 (List \ref{list:bytecode}).
 After that, the Rust compiler \texttt{rustc} compiles a Rust source file
 \texttt{main.rs} (List \ref{list:rust}) that includes the bytecode
-file to produce the final
-executable file.
+file to produce a final executable file.
 
 \begin{figure}
   \begin{center}
@@ -284,10 +283,10 @@ algorithm described in Macros That Work \cite{macrosthatwork}.
 
 The compilation phase compiles the expanded expressions to
 bytecode in its in-memory format. Note that we use the same
-in-memory format of the bytecode on our virtual machine as well.
-Hence, we can reuse the
-compilation logic inside the \texttt{(scheme eval)} library as it is
-as well as the logic of library expansion and macro expansion.
+in-memory format of the bytecode in our virtual machine as well.
+Hence, we can reuse the compilation logic as it is
+as well as the logic of library expansion and macro expansion inside
+the \texttt{(scheme eval)} library.
 We describe further details about how we reuse the compiler and build
 the \texttt{(scheme eval)} library in Section \ref{inception}.
 
@@ -336,18 +335,18 @@ First, while \texttt{constant}, \texttt{get}, \texttt{set}, and
 Ribbit Scheme, the \texttt{call} instruction carries slightly
 different semantics.
 In Stak Scheme, the \texttt{call} instructions
-contain function call signatures of arities and
-flags indicating whether the function calls are variadic or not.
-This arity information is used to align argument and parameter counts and
-resolve the \textit{rest} parameters comparing it with signatures of
-called procedures.
+contain function call signatures of an arity and
+a flag indicating whether the function call is variadic or not.
+This call signature is used to align argument and parameter counts and
+resolve a \textit{rest} parameter comparing it with a signature of
+the called procedure.
 Thus, Stak Scheme does not have any \texttt{apply} primitive
 procedure unlike Ribbit Scheme either.
 
 Secondly, while Ribbit Scheme's virtual machine uses Ribs, triplets of
 word-sized fields for internal representation of Scheme values, Stak
-Scheme represents them as a traditional pair data structure of two
-word size with optional tags attached to pointers in \texttt{cdr}.
+Scheme represents them as a traditional pair data structure of a
+two-word size with optional tags attached to pointers in \texttt{cdr}.
 This design choice simply saves a third of heap memory on the virtual machine
 compared to Ribbit Scheme while it requires extra bit operations to
 extract cons pointers and tags.
@@ -412,8 +411,8 @@ However, as well as RVM, we believe that we can implement Stak Scheme's
 virtual machine in different programming languages from low-level to high-level.
 Besides, we do not assume linear memory on the virtual machine in such
 host languages.
-Developers can also utilize garbage collectors of
-the host languages in implementations of the virtual machine.
+As such, developers can also utilize garbage collectors of
+the host languages in implementations of the virtual machine if they want to.
 We discuss this topic in Section \ref{portvm} as future work further.
 
 In Section \ref{bytecode}, we describe the bytecode format for the
@@ -421,7 +420,7 @@ virtual machine and its encoding and decoding algorithms in details.
 
 \subsection{Bytecode} \label{bytecode}
 
-Stak Scheme's bytecode represents a program for the virtual machine to execute.
+Stak Scheme's bytecode represents programs for the virtual machine to execute.
 As described in Section \ref{vm},
 we represent both code and data of instructions and immediate
 values inside them in pair data structures consisting of two fields of
@@ -439,8 +438,8 @@ As such, we do not use, for example, snapshots of linear
 memory of the virtual machine onto which we expand bytecode as a
 serialization format of bytecode.
 
-In the following sections, we describe details of bytecode encoding
-and decoding in Stak Scheme.
+In the following Section \ref{encoding} and Section \ref{decoding},
+we describe details of bytecode encoding and decoding in Stak Scheme.
 The key motivation to introduce our new encoding and decoding
 algorithms different from the prior work of Ribbit Scheme is the differences
 between the R4RS and R7RS-small standards, which Ribbit and Stak Scheme
@@ -470,7 +469,7 @@ To encode complex data structures in the bytecode, the encoder
 generates bytecode to initialize such values attached at the
 beginning of the original programs.
 In Stak Scheme, we instead encode instructions and their immediate
-values uniformly in bytecode even when the immediate values are not
+values in bytecode uniformly even when the immediate values are not
 of primitive data types.
 This approach also allows direct translation of symbols inside
 different environments in bytecode from their in-memory format to
@@ -540,8 +539,8 @@ Then, if its reference count is not zero, we push the shared value to
 the top of the dictionary because it is the first time for the shared value
 to appear in the bytecode.
 Across the function, we track how many times the cons's appear and
-decrement their counts every time when they show up in the bytecode.
-When the counts of cons's reach zero, they are removed from the
+decrement their reference counts every time when they show up in the bytecode.
+When the reference counts of cons's reach zero, they are removed from the
 dictionary $D$ as described above.
 The $encodeCons$, $encodeNumber$, $encodeIndex$, and $encodePush$
 functions write their corresponding decode instructions as byte
@@ -589,23 +588,25 @@ sequences to the output $O$.
 
 We decode the serialized form of bytecode into heap memory on
 our virtual machine.
-The bytecode decoding in Stak Scheme happens by looking at each byte in
-the serialized bytecode from the beginning to the end.
 A chunk of bytecode for a Scheme program is a sequence of
 variadic-length decode instructions of either $number$, $cons$, or $share$.
+The bytecode decoding in Stak Scheme happens by looking at each
+decode instruction in
+the serialized bytecode from the beginning to the end.
 
 Algorithm \ref{algorithm:decode} describes an overview of the
 bytecode decoding.
 We initialize $I$ of an input with bytecode and $S$ of a stack for decoded
 values and $D$ of a dictionary with empty lists.
-The decoding starts with looking at the first byte in the bytecode.
+The decoding starts with looking at the first decode instruction in
+the bytecode.
 If it is a $number$ instruction, we decode and push a number onto the stack.
 If it is a $cons$ instruction, we decode a tag and construct a cons
 from \texttt{car} and \texttt{cdr} values popped from the stack
 and the tag to push it onto the stack.
-If it is a $share$ instruction and of a \textit{push} operation, we push the
-value at the top of a stack to the top of the dictionary.
-Otherwise, we reference a shared value with its index in the
+If it is a $share$ instruction and of a \textit{push} operation, we
+copy and push the value at the top of a stack to the top of the dictionary.
+Otherwise, we reference a shared value at its index in the
 dictionary $D$ and push it onto the top of the stack.
 Note that we also move the shared value to the top in the dictionary as well.
 In addition, we remove the value from the dictionary if a flag $r$ is
@@ -678,7 +679,7 @@ To realize that, we \textit{incept} the compiler itself into the
 source code during the bytecode compilation.
 In particular, the compiler script replaces
 the \texttt{(\$\$compiler)} primitive call in the source code
-with the compiler function right after the source code reading.
+with the compiler library right after the source code reading.
 In the compiler script, we first define code of the compiler as
 data stored in variables.
 The compiler body is split into two parts.
@@ -713,7 +714,7 @@ In TR7, because it separates test code into different files, we simply did not
 include such files.
 Besides, we apply code formatters of \texttt{rustfmt} (v1.8.0),
 \texttt{clang-format} (v20.1.7), and \texttt{schemat} (v0.4.1) for
-Rust, C, and Scheme respectively.
+Rust, C, and Scheme respectively for the consistent format of the source code.
 
 As Table \ref{table:loc} shows, Stak Scheme almost
 halves the code size compared to TR7.
@@ -777,12 +778,16 @@ embedded scripting.
   \item[mruby] mruby 3.4.0
 \end{description}
 
-For the benchmarks, we use the version of Stak Scheme that uses a
+For the benchmarks, we use the version of Stak Scheme (\texttt{stak})
+that uses a
 mixture of 63-bit integers and 62-bit floating-point numbers with Float
 Self-Tagging \cite{floatselftag} as its number representation
 for the sake of the better feature parity with
 the other Scheme implementations while Stak Scheme does not implement
-the full numeric tower defined in the R7RS-small standard.
+the full numeric tower defined in the R7RS-small standard unlike others.
+We also use \texttt{mstak} as a baseline, which is the version of
+Stak Scheme and comes with a number representation of only 63-bit
+integers and standard libraries backed by \texttt{libc}.
 
 The results in Table \ref{table:computation} indicate that Stak
 Scheme's computational performance is still comparable with other
@@ -812,19 +817,19 @@ despite its minimal design and implementation.
 
 Ribbit Scheme \cite{ribbit2023} is the tiny and portable R4RS Scheme
 implementation we designed Stak Scheme after. They provide
-Ribbit Virtual Machines (RVMs) in various programming languages
+Ribbit Virtual Machines (RVMs) implemented in various programming languages
 including x86-64 assembly, C, JavaScript, Bash, Scheme, etc.
 They have first coined the basic architecture of Ribbit Scheme
 \cite{ribbit2021} where its implementation is composed of an
 Ahead-Of-Time (AOT) bytecode compiler and a tiny virtual machine.
 The AOT compiler compiles source code in Scheme and produces
-executable binaries bundled with virtual machines of specified backends.
+an executable binary bundled with a virtual machine of a specified backend.
 This architecture allows users to strip unnecessary language
 features and minimize resulting binaries.
 In RVM, every code or data is represented in
 Ribs, which are tuples of three fields.
 That does not only make the implementation of
-virtual machines simple but make them portable across different
+RVMs simple but make them portable across different
 programming languages from low-level to high-level.
 
 TR7 \cite{tr7} is the tiny R7RS Scheme implementation written in C.
@@ -836,24 +841,24 @@ contains its entire interpreter in one \texttt{tr7.c} source file and a
 \texttt{tr7.h} header file whereas Stak Scheme uses both Scheme and
 Rust for its bytecode compiler and virtual machine.
 TR7 allows users to strip language features from the interpreter via
-the C preprocessor macros prefixed with \texttt{USE\_}.
+the C preprocessor flags prefixed with \texttt{USE\_}.
 On the other hand, Stak Scheme allows users to strip out the majority of
 the interpreter logic, such as S-expression parsing, library system, and
 macro expansion, from resulting binaries in its bytecode compiler
-depending of libraries given source programs import.
+depending of libraries that given source programs import.
 
 While there are many methods to implement Scheme, all Ribbit Scheme,
-TR7, and Stak Scheme adopts bytecode virtual machines for their
+TR7, and Stak Scheme adopt bytecode virtual machines for their
 compact implementations.
 Although Scheme-to-C compilers, such as the Gambit Scheme compiler and
 Chicken Scheme, allow code generation portable to many platforms
-thanks to C compilers, they usually come with embedded Scheme
-interpreters for the \texttt{eval} procedure.
-Thus, Scheme-to-C compilers are not the optimal approach for small
+thanks to C compilers, they usually come with certain forms of embedded Scheme
+interpreters for implementation of the \texttt{eval} procedure.
+Thus, Scheme-to-C compilers are not the optimal approach for minimal
 R7RS-small Scheme implementations due to the duplication of logic between the
 compiler and the interpreter.
 Native Scheme compilers like Chez Scheme is also another approach to
-implement Scheme which generates native codes directly from Scheme source code.
+implement Scheme which generates native code directly from Scheme source code.
 Although native code compilers generate well-optimized code, such
 compilers tend to be large in terms of lines of code.
 As such, we did not take the approach for Stak Scheme either.
@@ -866,7 +871,7 @@ One of the reasons why Stak Scheme is tiny and its performance is still
 comparable with the other Scheme implementations is that its
 programs are not memory safe on the virtual machine even though
 the host language is memory safe.
-The programs written in Stak Scheme are able to access any memory
+In other words, programs written in Stak Scheme are able to access any memory
 locations on the virtual machine as long as the host languages allow that.
 In the virtual machine we implemented in Rust, this memory
 unsafety on the virtual machine sometimes arises as panics with little
@@ -920,7 +925,7 @@ Although our implementation of Stak Scheme is minimal in terms of
 lines of code, it still demonstrates reasonable performance.
 Our evaluation shows that Stak Scheme is
 comparable with the other Scheme implementations and dynamic
-programming languages in terms of computational time performance.
+programming languages in terms of computational performance.
 
 We plan to further improve the design and implementation of Stak
 Scheme in the future. The upcoming work includes but is not limited
