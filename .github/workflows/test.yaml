@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive
     defaults:
       run:
         working-directory: doc
