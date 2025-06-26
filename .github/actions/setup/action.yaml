@@ -13,5 +13,5 @@ runs:
     - run: npm ci
       shell: bash
       working-directory: doc
-    - run: sudo apt install fonts-takao texlive-full
+    - run: sudo apt install fonts-takao
       shell: bash
