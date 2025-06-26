@@ -13,8 +13,5 @@ runs:
     - run: npm ci
       shell: bash
       working-directory: doc
-    - run: sudo apt install fonts-takao
+    - run: sudo apt install fonts-takao texlive-full
       shell: bash
-    - uses: teatimeguest/setup-texlive-action@v3
-      with:
-        packages: scheme-full
