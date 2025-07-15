@@ -752,6 +752,29 @@ As adding missing functions or syntaxes are trivial changes,
 implementing such additional functionalities would not change the
 order of their lines of code.
 
+\subsection{Binary sizes}
+
+As well as lines of code, we compare sizes of executable files of
+interpreters among Stak Scheme and the other Scheme implementations
+to evaluate the compactness of Stak Scheme.
+Table \ref{table:binary} shows the sizes of the executable files.
+
+\begin{table}
+  \begin{center}
+    \caption{Binary sizes}
+    \label{table:binary}
+    \begin{tabular}{l|rrrrrrrr}
+      \hline
+      Language & Stak & TR7  \\
+      \hline
+      Scheme & 3792 & 116 \\
+      C / Rust & 5878 & 16775 \\
+      Total & 9670 & 16891 \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
 \subsection{Computational benchmarks}
 
 We compare interpreters of Stak Scheme, other R7RS-small Scheme
