@@ -101,7 +101,7 @@ We make the following contributions in this paper:
     The core parts of the implementation are composed only of a 1.5
     KLOC bytecode
     compiler in Scheme and a 1.5 KLOC virtual machine in Rust.
-  \item We extend Ribbit Virtual Machine (RVM) from the previous
+  \item We extend the Ribbit Virtual Machine (RVM) from the previous
     work of Ribbit Scheme to build an interpreter compatible with the
     R7RS-small standard on top of it.
     We prove that the architecture of RVM is scalable even when
@@ -290,13 +290,13 @@ the \texttt{(scheme eval)} library.
 We describe further details about how we reuse the compiler and build
 the \texttt{(scheme eval)} library in Section \ref{inception}.
 
-Before encoding bytecode, we marshal them for the following purposes:
+Before encoding the bytecode, we marshal them for the following purposes:
 
 \begin{itemize}
   \item We marshal immediate values of certain data types in bytecode
     instructions into their serializable representations.
   \item We make boxed values of certain data types, such as strings and
-    characters, unique in bytecode so that we process them only once
+    characters, unique in the bytecode so that we process them only once
     in the later bytecode encoding and reduce resulting bytecode sizes.
   \item We strip out string representation of symbols that are never used
     at runtime.
@@ -321,7 +321,7 @@ We discuss the details of bytecode encoding in \ref{encoding}.
 \subsection{Virtual machine} \label{vm}
 
 Stak Scheme's virtual machine is designed after the one of Ribbit
-Scheme, Ribbit Virtual Machine (RVM).
+Scheme, the Ribbit Virtual Machine (RVM).
 Therefore, they share the large part of their design.
 For example, both Ribbit and Stak Scheme's virtual machines represent
 code and data as graphs of pair-like data structures in heap memory.
@@ -340,8 +340,10 @@ a flag indicating whether the function call is variadic or not.
 This call signature is used to align argument and parameter counts and
 resolve a \textit{rest} parameter comparing it with a signature of
 the called procedure.
-Thus, Stak Scheme does not have any \texttt{apply} primitive
-procedure unlike Ribbit Scheme either.
+Thus, although Ribbit Scheme implements the \texttt{apply}
+procedure as a virtual machine primitive, Stak Scheme does not have
+such primitive but all the logic for the variadic argument handling
+of the \texttt{apply} procedure resides in the \texttt{call} instruction.
 
 Secondly, while Ribbit Scheme's virtual machine uses Ribs, triplets of
 word-sized fields for internal representation of Scheme values, Stak
@@ -817,7 +819,7 @@ despite its minimal design and implementation.
 
 Ribbit Scheme \cite{ribbit2023} is the tiny and portable R4RS Scheme
 implementation we designed Stak Scheme after. They provide
-Ribbit Virtual Machines (RVMs) implemented in various programming languages
+the Ribbit Virtual Machines (RVMs) implemented in various programming languages
 including x86-64 assembly, C, JavaScript, Bash, Scheme, etc.
 They have first coined the basic architecture of Ribbit Scheme
 \cite{ribbit2021} where its implementation is composed of an
