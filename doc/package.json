@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@raviqqe/eslint-config": "^4.1.16",
-    "@types/node": "^24.0.13",
+    "@types/node": "^24.0.14",
     "eslint": "^9.31.0",
     "playwright": "^1.54.1",
     "prettier": "^3.6.2",
