@@ -296,7 +296,7 @@ Before encoding the bytecode, we marshal them for the following purposes:
   \item We marshal immediate values of certain data types in bytecode
     instructions into their serializable representations.
   \item We make boxed values of certain data types, such as strings and
-    characters, unique in bytecode so that we process them only once
+    characters, unique in the bytecode so that we process them only once
     in the later bytecode encoding and reduce resulting bytecode sizes.
   \item We strip out string representation of symbols that are never used
     at runtime.
