@@ -759,6 +759,18 @@ interpreters among Stak Scheme and the other Scheme implementations
 to evaluate the compactness of Stak Scheme.
 We compile these executable files for x86-64 on Ubuntu 24.04 with
 the Linux kernel at version 6.14.1.
+For the comparison, we use the version of Stak Scheme (\texttt{stak})
+that uses a mixture of 63-bit integers and 62-bit floating-point
+numbers with Float Self-Tagging \cite{floatselftag} as its number
+representation for the sake of the better feature parity with
+the other Scheme implementations while Stak Scheme does not implement
+the full numeric tower defined in the R7RS-small standard unlike others.
+That version of Stak Scheme comes with its R7RS standard libraries built on
+the standard libraries of Rust.
+We also use \texttt{mstak} as a baseline, which is the version of
+Stak Scheme and comes with a number representation of only 63-bit
+integers and standard libraries backed by \texttt{libc}.
+
 Table \ref{table:binary} shows the sizes of the executable files.
 We also calculate
 
@@ -806,19 +818,6 @@ embedded scripting.
   \item[ruby] MRI Ruby 3.4.4
   \item[mruby] mruby 3.4.0
 \end{description}
-
-For the benchmarks, we use the version of Stak Scheme (\texttt{stak})
-that uses a
-mixture of 63-bit integers and 62-bit floating-point numbers with Float
-Self-Tagging \cite{floatselftag} as its number representation
-for the sake of the better feature parity with
-the other Scheme implementations while Stak Scheme does not implement
-the full numeric tower defined in the R7RS-small standard unlike others.
-That version of Stak Scheme comes with its R7RS standard libraries built on
-the standard libraries of Rust.
-We also use \texttt{mstak} as a baseline, which is the version of
-Stak Scheme and comes with a number representation of only 63-bit
-integers and standard libraries backed by \texttt{libc}.
 
 The results in Table \ref{table:computation} indicate that Stak
 Scheme's computational performance is still comparable with other
