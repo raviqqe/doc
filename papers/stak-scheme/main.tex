@@ -773,7 +773,8 @@ representation of only 63-bit integers and its standard libraries backed
 by the C standard libraries.
 
 Table \ref{table:binary} shows the sizes of the executable files.
-We also calculate
+As you see in the table, the binary size of \texttt{mstak} is almost
+a third of \texttt{tr7i}.
 
 \begin{table}
   \begin{center}
@@ -799,7 +800,8 @@ implementations, and
 dynamic languages other than Scheme in computational
 benchmarks shown in Table \ref{table:computation}.
 
-The interpreters of Scheme and other languages we compare are not equipped with
+The interpreters of Scheme and other languages we compare are not
+equipped with
 any JIT compilation or other methods compiling the languages into
 native code.
 The following list is the versions and implementations of
@@ -848,7 +850,8 @@ despite its minimal design and implementation.
 
 Ribbit Scheme \cite{ribbit2023} is the tiny and portable R4RS Scheme
 implementation we designed Stak Scheme after. They provide
-the Ribbit Virtual Machines (RVMs) implemented in various programming languages
+the Ribbit Virtual Machines (RVMs) implemented in various
+programming languages
 including x86-64 assembly, C, JavaScript, Bash, Scheme, etc.
 They have first coined the basic architecture of Ribbit Scheme
 \cite{ribbit2021} where its implementation is composed of an
