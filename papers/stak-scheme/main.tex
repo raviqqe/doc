@@ -96,7 +96,7 @@ We make the following contributions in this paper:
 
 \begin{itemize}
   \item We provide the smallest R7RS-small implementation ever in
-    terms of lines of code, which is implemented
+    terms of its lines of code and binary size, which is implemented
     in Scheme and a system programming language.
     The core parts of the implementation are composed only of a 1.5
     KLOC bytecode
@@ -752,6 +752,56 @@ As adding missing functions or syntaxes are trivial changes,
 implementing such additional functionalities would not change the
 order of their lines of code.
 
+\subsection{Binary sizes}
+
+As well as lines of code, we compare binary sizes of executable files of
+interpreters among Stak Scheme and the other Scheme implementations
+to evaluate their compactness.
+We compile these executable files for the x86-64 CPU architecture on
+the operating system of Ubuntu 24.04.
+For the comparison, we pick the default version of Stak Scheme (\texttt{stak})
+that uses a mixture of 63-bit integers and 62-bit floating-point
+numbers with Float Self-Tagging \cite{floatselftag} as its number
+representation for the sake of the better feature parity with
+the other Scheme implementations while Stak Scheme does not implement
+the full numeric tower defined in the R7RS-small standard unlike others.
+That version of Stak Scheme comes with its R7RS standard libraries built on
+the standard libraries of Rust.
+We also compare \texttt{mstak} as a baseline, which comes with a number
+representation of only 63-bit integers and its standard libraries backed
+by the C standard libraries.
+We strip debug information from these executable files because
+our focus is the size comparison of the interpreter logic itself.
+
+Table \ref{table:binary} shows the sizes of the executable files.
+The numbers are without the sizes of dynamic libraries common across
+all the executable files.
+As you see in the table, the binary size of \texttt{mstak} is almost
+a third of \texttt{tr7i}.
+On the other hand, \texttt{stak} is far larger than \texttt{mstak} and
+\texttt{tr7i} due to the bulky Rust libraries.
+For a reference, we compare \texttt{chibi-scheme-static}, which is an
+interpreter executable file of Chibi Scheme with its library linked statically.
+It shows the binary size a few times larger than \texttt{mstak} or
+\texttt{tr7i}.
+
+\begin{table}
+  \begin{center}
+    \caption{Binary sizes}
+    \label{table:binary}
+    \begin{tabular}{l|r}
+      \hline
+      Interpreter & Size / bytes \\
+      \hline
+      mstak & 104,552 \\
+      stak & 758,432 \\
+      tr7i & 301,536 \\
+      chibi-scheme-static & 1,407,384 \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
 \subsection{Computational benchmarks}
 
 We compare interpreters of Stak Scheme, other R7RS-small Scheme
@@ -759,7 +809,8 @@ implementations, and
 dynamic languages other than Scheme in computational
 benchmarks shown in Table \ref{table:computation}.
 
-The interpreters of Scheme and other languages we compare are not equipped with
+The interpreters of Scheme and other languages we compare are not
+equipped with
 any JIT compilation or other methods compiling the languages into
 native code.
 The following list is the versions and implementations of
@@ -779,17 +830,6 @@ embedded scripting.
   \item[ruby] MRI Ruby 3.4.4
   \item[mruby] mruby 3.4.0
 \end{description}
-
-For the benchmarks, we use the version of Stak Scheme (\texttt{stak})
-that uses a
-mixture of 63-bit integers and 62-bit floating-point numbers with Float
-Self-Tagging \cite{floatselftag} as its number representation
-for the sake of the better feature parity with
-the other Scheme implementations while Stak Scheme does not implement
-the full numeric tower defined in the R7RS-small standard unlike others.
-We also use \texttt{mstak} as a baseline, which is the version of
-Stak Scheme and comes with a number representation of only 63-bit
-integers and standard libraries backed by \texttt{libc}.
 
 The results in Table \ref{table:computation} indicate that Stak
 Scheme's computational performance is still comparable with other
@@ -819,7 +859,8 @@ despite its minimal design and implementation.
 
 Ribbit Scheme \cite{ribbit2023} is the tiny and portable R4RS Scheme
 implementation we designed Stak Scheme after. They provide
-the Ribbit Virtual Machines (RVMs) implemented in various programming languages
+the Ribbit Virtual Machines (RVMs) implemented in various
+programming languages
 including x86-64 assembly, C, JavaScript, Bash, Scheme, etc.
 They have first coined the basic architecture of Ribbit Scheme
 \cite{ribbit2021} where its implementation is composed of an
