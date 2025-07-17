@@ -759,7 +759,7 @@ interpreters among Stak Scheme and the other Scheme implementations
 to evaluate their compactness.
 We compile these executable files for the x86-64 CPU architecture on
 the operating system of Ubuntu 24.04.
-For the comparison, we build the default version of Stak Scheme (\texttt{stak})
+For the comparison, we pick the default version of Stak Scheme (\texttt{stak})
 that uses a mixture of 63-bit integers and 62-bit floating-point
 numbers with Float Self-Tagging \cite{floatselftag} as its number
 representation for the sake of the better feature parity with
@@ -767,7 +767,7 @@ the other Scheme implementations while Stak Scheme does not implement
 the full numeric tower defined in the R7RS-small standard unlike others.
 That version of Stak Scheme comes with its R7RS standard libraries built on
 the standard libraries of Rust.
-We also use \texttt{mstak} as a baseline, which comes with a number
+We also compare \texttt{mstak} as a baseline, which comes with a number
 representation of only 63-bit integers and its standard libraries backed
 by the C standard libraries.
 
