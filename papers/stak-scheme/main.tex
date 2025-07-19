@@ -795,7 +795,7 @@ the other part of 64 KB, such as machine code.
 For the non-bytecode part, we do not implement our VM in x86-64
 assembly like Ribbit Scheme yet and implement our R7RS standard libraries
 based upon and linked with the C standard library,
-which contributes to the binary size bloat.
+which contributes to the size bloat of the machine code.
 This is partially due to lack of bytecode size optimization from Stak
 Scheme which Ribbit Scheme implements already, such as the LZSS compression,
 RIBN's optimal encoding.
