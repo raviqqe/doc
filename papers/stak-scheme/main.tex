@@ -796,12 +796,12 @@ For the non-bytecode part, we do not implement our VM in x86-64
 assembly like Ribbit Scheme yet and implement our R7RS standard libraries
 based upon and linked with the C standard library,
 which contributes to the size bloat of the machine code.
-This is partially due to lack of bytecode size optimization from Stak
-Scheme which Ribbit Scheme implements already, such as the LZSS compression,
-RIBN's optimal encoding.
-But also, the biggest impact on the large binary size is the part
-other than the interpreter bytecode as the bytecode costs only 42 KB
-in total size.
+The relatively large bytecode size is partially due to lack of
+bytecode size optimization from Stak Scheme which Ribbit Scheme
+implements already, such as the LZSS compression, RIBN's optimal encoding.
+Another reason for the large bytecode size is our full-fledged
+\texttt{eval} procedure in the interpreter, which encompasses the
+entire bytecode compiler.
 Although we can technically implement another interpreter in Scheme
 itself which does not incorporate the existing Scheme to bytecode compiler,
 we do not due to the concern on the potential degrade of
