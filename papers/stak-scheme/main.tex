@@ -793,8 +793,8 @@ exceedingly large compared to Ribbit Scheme.
 The total binary size of Stak Scheme consists of 42 KB bytecode and
 the other part of 62 KB, such as machine code.
 The large bytecode size is partially due to lack of
-bytecode size optimization from Stak Scheme which Ribbit Scheme
-implements already, such as RIBN's \texttt{optimal} encoding and the
+bytecode size optimization from Stak Scheme which Ribbit Scheme already
+implements, such as RIBN's \texttt{optimal} encoding and the
 LZSS compression.
 Another reason for the large bytecode size is our full-fledged
 \texttt{eval} procedure in the interpreter, which contains the
@@ -806,7 +806,7 @@ which contributes to the size bloat of the machine code.
 Although we can technically implement another interpreter
 (e.g. AST-based) in Scheme itself which does not integrate the
 existing Scheme-to-bytecode compiler as well as Ribbit Scheme,
-we do not concerning the potential degrade of
+we do not concerning the potential degradation of
 computational performance and the maintenance cost of keeping two
 language processors in the single Scheme implementation.
 
