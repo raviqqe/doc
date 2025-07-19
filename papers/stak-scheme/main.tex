@@ -803,12 +803,12 @@ LZSS compression.
 Another reason for the large bytecode size is our full-fledged
 \texttt{eval} procedure in the interpreter, which contains the
 whole bytecode compiler.
-Although we can technically implement another interpreter in Scheme
-itself which does not integrate the existing Scheme-to-bytecode
-compiler like Ribbit Scheme,
-we do not due to the concern on the potential degrade of
+Although we can technically implement another interpreter
+(e.g. AST-based) in Scheme itself which does not integrate the
+existing Scheme-to-bytecode compiler as well as Ribbit Scheme,
+we do not concerning the potential degrade of
 computational performance and the maintenance cost of keeping two
-language processors for the same Scheme implementation.
+language processors in the single Scheme implementation.
 
 \begin{table}
   \begin{center}
