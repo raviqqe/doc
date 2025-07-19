@@ -803,7 +803,8 @@ Another reason for the large bytecode size is our full-fledged
 \texttt{eval} procedure in the interpreter, which encompasses the
 entire bytecode compiler.
 Although we can technically implement another interpreter in Scheme
-itself which does not incorporate the existing Scheme to bytecode compiler,
+itself which does not integrate the existing Scheme-to-bytecode
+compiler like Ribbit Scheme,
 we do not due to the concern on the potential degrade of
 computational performance and the maintenance cost of keeping two
 language processors for the same Scheme implementation.
