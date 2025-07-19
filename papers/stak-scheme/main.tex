@@ -47,9 +47,8 @@
   In this paper, we present Stak Scheme, the tiny R7RS-small
   Scheme implementation.
   The whole interpreter of Stak Scheme contains no more than 10 KLOC as
-  its core parts are composed of a bytecode compiler written in 1.5
-  KLOC of Scheme
-  and a virtual machine written in 1.5 KLOC of Rust.
+  its core parts are composed of a bytecode compiler written in 1.6 KLOC
+  of Scheme and a virtual machine written in 1.5 KLOC of Rust.
   Despite its minimal and naive design, Stak Scheme
   supports all major language features of the R7RS-small standard including
   but not limited to the library system, hygienic macros with
@@ -98,9 +97,8 @@ We make the following contributions in this paper:
   \item We provide the smallest R7RS-small implementation ever in
     terms of its lines of code and binary size, which is implemented
     in Scheme and a system programming language.
-    The core parts of the implementation are composed only of a 1.5
-    KLOC bytecode
-    compiler in Scheme and a 1.5 KLOC virtual machine in Rust.
+    The core parts of the implementation are composed only of a 1.6 KLOC
+    bytecode compiler in Scheme and a 1.5 KLOC virtual machine in Rust.
   \item We extend the Ribbit Virtual Machine (RVM) from the previous
     work of Ribbit Scheme to build an interpreter compatible with the
     R7RS-small standard on top of it.
@@ -247,7 +245,7 @@ The bytecode compiler of Stak Scheme compiles source files in Scheme
 into bytecode.
 The Scheme script of the compiler is compatible with any R7RS-small
 implementations including Stak Scheme itself for the purpose of bootstrapping.
-In the current implementation, a single Scheme file of 1.5 KLOC
+In the current implementation, a single Scheme file of 1.6 KLOC
 contains the whole bytecode compiler.
 
 The compiler is composed of the following stages.
