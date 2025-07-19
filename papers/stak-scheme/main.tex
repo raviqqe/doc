@@ -785,13 +785,23 @@ interpreter executable file of Chibi Scheme with its library linked statically.
 It shows the binary size a few times larger than \texttt{mstak} or
 \texttt{tr7i}.
 
-Unlike the statement in the Ribbit Scheme paper
-\cite{ribbit7kb2023} where they estimate the R7RS-small
-implementation on top of Ribbit Scheme would range from 15 KB to 30
-KB in its binary size, Stak Scheme weighs over 100 KB.
+While Ribbit Scheme achieves its 7 KB binary size
+of a REPL executable file implementing the full R4RS standard
+\cite{ribbit7kb2023}, Stak Scheme weighs 104 KB.
+Even when we consider the size of the R7RS-small standard, this is
+quite large compared with Ribbit Scheme.
+The 104 KB binary size of Stak Scheme consists of 42 KB bytecode and
+the other part of 64 KB, such as machine code.
+For the non-bytecode part, we do not implement our VM in x86-64
+assembly like Ribbit Scheme and we implement R7RS standard libraries
+based upon and linked with the C standard library,
+which contributes to the binary size bloat.
 This is partially due to lack of bytecode size optimization from Stak
 Scheme which Ribbit Scheme implements already, such as the LZSS compression,
 RIBN's optimal encoding.
+But also, the biggest impact on the large binary size is the part
+other than the interpreter bytecode as the bytecode costs only 42 KB
+in total size.
 Although we can technically implement another interpreter in Scheme
 itself which does not incorporate the existing Scheme to bytecode compiler,
 we do not due to the concern on the potential degrade of
