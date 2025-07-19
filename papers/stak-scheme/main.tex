@@ -789,6 +789,9 @@ Unlike the statement in the Ribbit Scheme paper
 \cite{ribbit7kb2023} where they estimate the R7RS-small
 implementation on top of Ribbit Scheme would range from 15 KB to 30
 KB in its binary size, Stak Scheme weighs over 100 KB.
+This is partially due to lack of bytecode size optimization from Stak
+Scheme which Ribbit Scheme implements already, such as the LZSS compression,
+RIBN's optimal encoding.
 Although we can technically implement another interpreter in Scheme
 itself which does not incorporate the existing Scheme to bytecode compiler,
 we do not due to the concern on the potential degrade of
