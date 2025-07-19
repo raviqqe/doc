@@ -798,7 +798,8 @@ based upon and linked with the C standard library,
 which contributes to the size bloat of the machine code.
 The relatively large bytecode size is partially due to lack of
 bytecode size optimization from Stak Scheme which Ribbit Scheme
-implements already, such as the LZSS compression, RIBN's optimal encoding.
+implements already, such as RIBN's \texttt{optimal} encoding and the
+LZSS compression.
 Another reason for the large bytecode size is our full-fledged
 \texttt{eval} procedure in the interpreter, which encompasses the
 entire bytecode compiler.
