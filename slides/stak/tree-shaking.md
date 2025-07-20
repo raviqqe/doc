@@ -9,8 +9,8 @@ July 20, 2025
 # Contents
 
 - Stak Scheme
-- File system in R7RS
-- Implementation
+- Progress
+- Tree shaking
 - Future work
 
 ---
@@ -91,5 +91,4 @@ July 20, 2025
 
 # Future work
 
-- More R7RS compatibility
-- Efficient Scheme file compilation in Rust projects
+- Unicode in the `(scheme char)` library
