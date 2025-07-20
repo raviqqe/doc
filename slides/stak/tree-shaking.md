@@ -37,6 +37,15 @@ July 20, 2025
 - Scheme is an **impure** functional programming language.
 - Any procedure calls might have side effects in Scheme.
 - Even in libraries, we might have top-level procedure calls.
+- Variable definitions might also cause side effects.
+- No immutable definitions in the R7RS standard.
+- Tree shaking is so difficult. 😃
+
+```typescript
+const foo: number = 42;
+
+const bar = (x: number): number => x * foo;
+```
 
 ---
 
