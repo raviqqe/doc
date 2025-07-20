@@ -24,68 +24,13 @@ July 20, 2025
 
 ---
 
-# File system in R7RS
+# Progress
 
-## Generic I/O
-
-- Port type
-  - `input-port?`, `output-port?`
-  - `call-with-port`
-- Read operations
-  - `read-u8`, `read-string`, `read`
-- Write operations
-  - `write-u8`, `write-string`, `write`
-- `close-port`
+- foo
 
 ---
 
-# File system in R7RS
-
-## File operations
-
-- `open-input-file`
-- `open-output-file`
-- `delete-file`
-- `file-exists?`
-
----
-
-# Implementation
-
-## Generic I/O
-
-- A `port` type
-- vtable-ish implementation
-
-```scheme
-(define-record-type port
-  (make-port read write close)
-  port?
-  (read port-read)
-  (write port-write)
-  (close port-close))
-```
-
----
-
-# Implementation
-
-- Primitive file operations talks to libc directly.
-- Rust's `std` crate doesn't expose some underlying details.
-  - e.g. file descriptors
-
-## Opening files
-
-```scheme
-(define (open-file path output)
-  (let ((descriptor ($$open-file (string->path path) output)))
-    (unless descriptor
-      (error "cannot open file"))
-    (make-port
-      (lambda () ($$read-file descriptor))
-      (lambda (byte) ($$write-file descriptor byte))
-      (lambda () ($$close-file descriptor)))))
-```
+# Tree shaking
 
 ---
 
