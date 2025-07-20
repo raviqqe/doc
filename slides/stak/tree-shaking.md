@@ -34,8 +34,14 @@ July 20, 2025
 
 # Tree shaking
 
+- Scheme is an **impure** functional programming language.
+- Any procedure calls might have side effects in Scheme.
+- Even in libraries, we might have top-level procedure calls.
+
 ---
 
 # Future work
 
+- Debug mode
+  - Stack trace
 - Unicode in the `(scheme char)` library
