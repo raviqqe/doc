@@ -84,7 +84,7 @@ bar = (x) => x;
 - Tree shaking in Stak Scheme changes the semantics of Scheme a little bit.
 - A top-level procedure call requires all symbols inside the expression for the program.
 - A variable in a variable definition depends on all symbols inside its value expression.
-  - We assume that the symbols of variable definitions do not appear in
+  - We assume that variable definitions whose symbols (variable names) are not required can be shaken off.
 
 ---
 
