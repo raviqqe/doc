@@ -64,7 +64,7 @@ bar = (x) => x;
 
 # Scheme
 
-- Every variable or function definition is a _variable_.
+- Every variable or function definition is _variable_.
 
 ```scheme
 (define foo 42)
@@ -76,6 +76,10 @@ bar = (x) => x;
 (set! foo 0)
 (set! bar #f)
 ```
+
+---
+
+# Tree shaking in Stak Scheme
 
 ---
 
