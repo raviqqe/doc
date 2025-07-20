@@ -26,7 +26,9 @@ July 20, 2025
 
 # Progress
 
-- foo
+- Tree shaking
+- Unicode (UTF-8) support in I/O
+- The `include` syntax
 
 ---
 
