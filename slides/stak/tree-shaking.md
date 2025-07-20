@@ -45,6 +45,11 @@ July 20, 2025
 
 # TypeScript
 
+- Many bundlers, such as Webpack and Rolldown, implement tree shaking by default.
+- ECMAScript introduced `const` variable definitions relatively recently.
+- ESM is much easier to analyze statically.
+  `
+
 ```typescript
 const foo: number = 42;
 
