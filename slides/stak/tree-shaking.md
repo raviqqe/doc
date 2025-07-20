@@ -64,6 +64,8 @@ bar = (x) => x;
 
 # Scheme
 
+- Every variable or function definition is a _variable_.
+
 ```scheme
 (define foo 42)
 
