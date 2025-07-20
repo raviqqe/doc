@@ -45,7 +45,7 @@ July 20, 2025
 
 # TypeScript
 
-- Many bundlers, such as Webpack and Rolldown, implement tree shaking by default.
+- Many bundlers, such as [Webpack](https://webpack.js.org/) and [Rolldown](https://rolldown.rs/), implement tree shaking by default.
 - ECMAScript introduced `const` variable definitions relatively recently.
 - ESM is much easier to analyze statically.
   `
