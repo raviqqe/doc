@@ -47,7 +47,7 @@ July 20, 2025
 
 - Many bundlers, such as [Webpack](https://webpack.js.org/) and [Rolldown](https://rolldown.rs/), implement tree shaking by default.
 - ECMAScript introduced `const` variable definitions relatively recently.
-- ESM is much easier to analyze statically.
+- ESM is much easier to analyze statically than the other module systems like CommonJS.
   `
 
 ```typescript
