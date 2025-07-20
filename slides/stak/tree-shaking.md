@@ -41,10 +41,33 @@ July 20, 2025
 - No immutable definitions in the R7RS standard.
 - Tree shaking is so difficult. 😃
 
+---
+
+# TypeScript
+
 ```typescript
 const foo: number = 42;
 
 const bar = (x: number): number => x * foo;
+
+// These results in static analysis or runtime errors.
+foo = 0;
+bar = (x) => x;
+```
+
+---
+
+# Scheme
+
+```scheme
+(define foo 42)
+
+(define (bar x)
+  (* x foo))
+
+; Any top-level definitions might be overwritten at runtime.
+(set! foo 0)
+(set! bar #f)
 ```
 
 ---
