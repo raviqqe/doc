@@ -88,7 +88,7 @@ bar = (x) => x;
 
 ---
 
-# Tree shaking algorithm
+# Algorithm
 
 1. Collect all symbols in a main program and top-level procedure calls in libraries.
 2. Mark these symbols required.
