@@ -99,6 +99,12 @@ bar = (x) => x;
 
 ---
 
+# Results
+
+- [PR 2549: Tree shaking](https://github.com/raviqqe/stak/pull/2549/files)
+
+---
+
 # Future work
 
 - Debug mode
