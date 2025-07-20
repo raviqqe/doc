@@ -88,6 +88,17 @@ bar = (x) => x;
 
 ---
 
+# Tree shaking algorithm
+
+1. Collect all symbols in a main program and top-level procedure calls in libraries.
+2. Mark these symbols required.
+   - They are the _root_ of symbols.
+3. Collect all dependencies between symbols in procedure and variable definitions in libraries.
+4. Mark the library symbols required transitively.
+5. Remove all definitions of symbols not required.
+
+---
+
 # Future work
 
 - Debug mode
