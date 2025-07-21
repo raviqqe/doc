@@ -24,7 +24,7 @@
     "@astrojs/sitemap": "^3.4.1",
     "@fontsource-variable/noto-sans": "^5.2.7",
     "@fontsource/ubuntu": "^5.2.6",
-    "@marp-team/marp-cli": "^4.2.0",
+    "@marp-team/marp-cli": "^4.2.1",
     "@raviqqe/loscore": "^0.2.12",
     "astro": "^5.12.0",
     "glob": "^11.0.3",
