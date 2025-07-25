@@ -891,6 +891,8 @@ The interpreters of Scheme and other languages we compare are not
 equipped with
 any JIT compilation or other methods compiling the languages into
 native code.
+We run our benchmarks on a Macbook Air with macOS Sequoia 15.5 and the Apple
+M2 CPU of the 64-bit ARM architecture.
 The following list is the versions and implementations of
 the language interpreters used in the benchmarks.
 For interpreters of non-Scheme dynamic languages, we choose CPython and
@@ -924,10 +926,10 @@ despite its minimal design and implementation.
       Benchmark & mstak & stak & tr7i & gsi & chibi-scheme & python3
       & micropython & ruby & mruby \\
       \hline
-      fibonacci & 1.00 & 1.06 & 1.03 & 1.11 & 0.82 & 0.50 & 1.15 &
-      0.55 & 0.67 \\
-      sum & 1.00 & 1.10 & 0.92 & 1.01 & 0.80 & 0.61 & 0.48 & 0.59 & 0.86 \\
-      tak & 1.00 & 1.03 & 0.80 & 0.84 & 1.09 & 0.43 & 0.91 & 0.59 & 0.52 \\
+      fibonacci & 1.00 & 1.14 & 1.36 & 1.67 & 0.92 & 0.89 & 1.20 &
+      0.63 & 0.83 \\
+      sum & 1.00 & 1.22 & 1.20 & 1.67 & 0.98 & 0.61 & 0.36 & 0.64 & 1.15 \\
+      tak & 1.00 & 1.13 & 0.97 & 1.27 & 1.23 & 0.75 & 0.99 & 0.62 & 0.63 \\
       \hline
     \end{tabular}
   \end{center}
