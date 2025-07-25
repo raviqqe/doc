@@ -716,6 +716,17 @@ implement tree shaking in Stak Scheme compared with other
 implementations of Scheme where, for example, the
 \texttt{define-syntax} syntax is defined as a macro expanded at runtime.
 
+In addition, Stak Scheme also provides non-standard libraries under
+the `stak` namespace including.
+
+\begin{itemize}
+  \item The \texttt{(stak base)} library: Arithmetic operations and basic types.
+  \item The \texttt{(stak parameter)} library: Parameter objects.
+  \item The \texttt{(stak io)} library: I/O operations.
+  \item The \texttt{(stak continue)} library: Continuations.
+  \item The \texttt{(stak exception)} library: Exception handling.
+\end{itemize}
+
 \section{Evaluation} \label{evaluation}
 
 Our evaluation of Stak Scheme demonstrates the minimality of its design and
