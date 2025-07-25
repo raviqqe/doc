@@ -718,9 +718,9 @@ implementations where, for example, the
 \texttt{define-syntax} syntax is defined as a macro expanded at runtime.
 We apply tree shaking only to the code of libraries but not main
 programs because developers of main programs have full control over
-them already; if tree shaking reduces the size of main programs, that
-is the implication of unused procedures and variables there, or
-potentially bugs.
+them already; if tree shaking can reduce the size of the main programs,
+that is the implication of unused procedures and variables, or
+potentially bugs there.
 Note that we skew the semantics of Scheme slightly to simplify the
 implementation although the tree shaking pass is enabled by default.
 For instance, when we define a variable with the \texttt{define} syntax and
