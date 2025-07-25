@@ -150,13 +150,13 @@ compiler and virtual machine in Section \ref{compiler} and Section
 \ref{vm} respectively.
 
 We design Stak Scheme for two use cases. One is to embed Scheme
-programs inside Rust programs as dynamic scripts.
+programs as dynamic scripts inside Rust programs.
 The other is to run standalone Scheme scripts on command lines directly.
 For the former use case, we
 compile Scheme scripts ahead into bytecode files and include them in
 Rust programs by the Cargo build
 system\footnote{\url{https://doc.rust-lang.org/cargo/}} so that the
-Rust programs can execute them on the virtual machine.
+Rust programs can execute them on the virtual machine at runtime.
 For the latter use case, we
 provide a standalone command named \texttt{stak} which runs Scheme script
 files given as command line arguments.
@@ -914,7 +914,7 @@ embedded scripting.
 The results in Table \ref{table:computation} indicate that Stak
 Scheme's computational performance is still comparable with other
 Scheme implementations and dynamic languages, with performance
-ranging from 1.15 times faster to 2.33 times slower,
+ranging from 1.67 times faster to 2.77 times slower,
 despite its minimal design and implementation.
 
 \begin{table*}
@@ -1032,7 +1032,7 @@ programming languages in terms of computational performance.
 
 We plan to further improve the design and implementation of Stak
 Scheme in the future. The upcoming work includes but is not limited
-to type checking, tree shaking, and porting the virtual machine to
+to type checking, and porting the virtual machine to
 another system programming language.
 
 \begin{acks}
