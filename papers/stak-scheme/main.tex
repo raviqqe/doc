@@ -694,7 +694,6 @@ run the whole compiler.
 
 \subsection{Tree shaking}
 
-Stak Scheme's bytecode compiler is equipped with tree shaking.
 One of methods to reduce the size of programs in dynamic programming
 languages is tree shaking \cite{treeshaking}, which is commonly used
 in bundlers of JavaScript, such as Webpack \cite{webpack} and Rolldown
@@ -705,9 +704,11 @@ Although dead code elimination is a commonly known pass in the
 compiler technology, the term of tree shaking is used
 in the context of dynamic programming languages where we do not define
 any entrypoint functions.
-When we implement it in Stak Scheme, tree shaking would not only
-reduce the size of bytecode but also decrease the startup latencies
-because it reduces time for bytecode decoding on the virtual machine.
+
+Stak Scheme's bytecode compiler is equipped with tree shaking.
+It does not only reduce the size of bytecode but also
+decrease the startup latencies because it reduces time for bytecode
+decoding on the virtual machine.
 Since we expand libraries and macros statically
 in our bytecode compiler, we believe that it is relatively easy to
 implement tree shaking compared with other implementations of Scheme
