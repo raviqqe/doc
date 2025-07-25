@@ -692,6 +692,61 @@ In the main procedure of the compiler script, we combine the two
 parts into one and apply the \texttt{eval} procedure against it to
 run the whole compiler.
 
+\subsection{Tree shaking}
+
+One of methods to reduce the size of programs in dynamic programming
+languages is tree shaking \cite{treeshaking}, which is commonly used
+by optimizers and bundlers of JavaScript from Closure Compiler
+\cite{closurecompiler}, to more recent ones, such as
+Webpack \cite{webpack} and Rolldown \cite{rolldown}.
+Tree shaking shakes down unnecessary code from a whole program
+beyond its modules boundaries with the analysis of symbol visibility
+and side effects.
+Although dead code elimination is a commonly known pass in the
+compiler techniques, the term of tree shaking is used
+in the context of dynamic programming languages where functions'
+dependencies are not obvious statically.
+
+Stak Scheme's bytecode compiler is equipped with a tree shaking pass.
+It does not only reduce the size of bytecode but also
+decreases the startup latencies because it reduces time spent for bytecode
+decoding and program initialization on the virtual machine.
+Since we expand libraries and macros statically
+in our bytecode compiler, it is relatively simple to
+implement tree shaking in Stak Scheme compared with other Scheme
+implementations where, for example, the
+\texttt{define-syntax} syntax is defined as a macro expanded at runtime.
+We apply tree shaking only to the code of libraries but not main
+programs because developers of main programs have full control over
+them already; if tree shaking can reduce the size of the main programs,
+that is the implication of unused procedures and variables, or
+potentially bugs there.
+Note that we skew the semantics of Scheme slightly to simplify the
+implementation although the tree shaking pass is enabled by default.
+For instance, when we define a variable with the \texttt{define} syntax and
+specify its value of a procedure call expression
+(e.g. \texttt{(define x (foo y))},) we remove the variable definition
+whenever the defined variable is not used anywhere else even if the
+procedure call causes side effects.
+
+In addition, Stak Scheme also provides non-standard micro libraries
+split out from the standard \texttt{(scheme base)} library under
+the \texttt{stak} namespace.
+Their names and functionalities are listed below.
+
+\begin{description}
+  \item[\texttt{(stak base)}] Arithmetic operations and basic types.
+  \item[\texttt{(stak parameter)}] Parameter objects.
+  \item[\texttt{(stak io)}] I/O operations and ports.
+  \item[\texttt{(stak continue)}] Continuations and winding.
+  \item[\texttt{(stak exception)}] Exception handling.
+\end{description}
+
+These micro libraries collectively provide the functionality of the entire
+\texttt{(scheme base)} library.
+They are especially useful on platforms where the size of bytecode
+and/or startup latencies of the Scheme programs are critical.
+
 \section{Evaluation} \label{evaluation}
 
 Our evaluation of Stak Scheme demonstrates the minimality of its design and
@@ -947,26 +1002,6 @@ stripped out from executable files of the interpreter.
 We have a plan to implement basic type checks in our virtual machine
 in the host language of Rust in order to enhance memory safety on
 the virtual machine without sacrificing its performance.
-
-\subsection{Tree shaking}
-
-One of methods to reduce the size of programs in dynamic programming
-languages is tree shaking \cite{treeshaking}, which is commonly used
-in bundlers of JavaScript, such as Webpack \cite{webpack} and Rolldown
-\cite{rolldown}.
-Tree shaking "shakes down" unnecessary code from
-the whole programs with checks of visibility and side effects.
-Although dead code elimination is a commonly known pass in the
-compiler technology, the term of tree shaking is used
-in the context of dynamic programming languages where we do not define
-any entrypoint functions.
-When we implement it in Stak Scheme, tree shaking would not only
-reduce the size of bytecode but also decrease the startup latencies
-because it reduces time for bytecode decoding on the virtual machine.
-Since we expand libraries and macros statically
-in our bytecode compiler, we believe that it is relatively easy to
-implement tree shaking compared with other implementations of Scheme
-where, for example, the \texttt{define-syntax} syntax is defined as a macro.
 
 \subsection{Porting virtual machines to other languages} \label{portvm}
 
