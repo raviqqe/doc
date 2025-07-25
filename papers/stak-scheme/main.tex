@@ -716,6 +716,18 @@ in our bytecode compiler, it is relatively simple to
 implement tree shaking in Stak Scheme compared with other Scheme
 implementations where, for example, the
 \texttt{define-syntax} syntax is defined as a macro expanded at runtime.
+We apply tree shaking only to the code of libraries but not main
+programs because developers of main programs have full control over
+them already; if tree shaking reduces the size of main programs, that
+is the implication of unused procedures and variables there, or
+potentially bugs.
+Note that we skew the semantics of Scheme a little to simplify the
+implementation although the tree shaking pass is enabled by default.
+For instance, when we define a variable with `define` syntax and
+specify its value of a procedure call expression
+(e.g. \texttt{(define x (foo y))},) we remove the variable definition
+whenever the defined variable is not used anywhere else even if the
+procedure call causes side effects.
 
 In addition, Stak Scheme also provides non-standard micro libraries under
 the \texttt{stak} namespace split out from the standard \texttt{(scheme base)}
