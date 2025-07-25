@@ -723,7 +723,7 @@ is the implication of unused procedures and variables there, or
 potentially bugs.
 Note that we skew the semantics of Scheme slightly to simplify the
 implementation although the tree shaking pass is enabled by default.
-For instance, when we define a variable with `define` syntax and
+For instance, when we define a variable with \texttt{define} syntax and
 specify its value of a procedure call expression
 (e.g. \texttt{(define x (foo y))},) we remove the variable definition
 whenever the defined variable is not used anywhere else even if the
