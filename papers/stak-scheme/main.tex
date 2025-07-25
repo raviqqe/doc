@@ -706,10 +706,10 @@ compiler techniques, the term of tree shaking is used
 in the context of dynamic programming languages where functions'
 dependencies are not apparent statically.
 
-Stak Scheme's bytecode compiler is equipped with tree shaking.
+Stak Scheme's bytecode compiler is equipped with a tree shaking pass.
 It does not only reduce the size of bytecode but also
 decrease the startup latencies because it reduces time for bytecode
-decoding on the virtual machine.
+decoding and program initialization on the virtual machine.
 Since we expand libraries and macros statically
 in our bytecode compiler, we believe that it is relatively easy to
 implement tree shaking compared with other implementations of Scheme
