@@ -15,7 +15,7 @@
     "build:posts": "node src/scripts/build-directory.ts posts",
     "build:papers": "cd .. && tools/build.sh",
     "build:toc": "node src/scripts/build-table-of-contents.ts",
-    "lint": "eslint src",
+    "lint": "biome ci",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -34,9 +34,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.1.4",
     "@raviqqe/biome-config": "^2.0.14",
-    "@raviqqe/eslint-config": "^4.1.17",
     "@types/node": "^24.2.0",
-    "eslint": "^9.32.0",
     "playwright": "^1.54.2",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
