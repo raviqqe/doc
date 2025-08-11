@@ -17,6 +17,7 @@ runs:
       with:
         stable: true
     - run: brew install texlive
+      shell: bash
     - run: sudo apt update --fix-missing
       shell: bash
     - run: sudo apt install fonts-takao
