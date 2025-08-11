@@ -15,7 +15,7 @@ const writeToc = async (directory: string, component: string) =>
             await Promise.all(
               (await glob(`../${directory}/**/*.md`)).map(async (path) => {
                 const htmlPath = path.replace(/^..\//, "").replace(".md", "");
-                const pdfPath = htmlPath + ".pdf";
+                const pdfPath = `${htmlPath}.pdf`;
 
                 return {
                   htmlPath,
