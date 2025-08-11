@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
 import rehypeMermaid from "rehype-mermaid";
 import remarkToc from "remark-toc";
@@ -14,11 +13,7 @@ export default defineConfig({
     remotePatterns: [{ protocol: "https" }],
     responsiveStyles: true,
   },
-  integrations: [
-    mdx(),
-    prefetch({ selector: "a", intentSelector: "a" }),
-    sitemap(),
-  ],
+  integrations: [mdx(), sitemap()],
   markdown: {
     syntaxHighlight: {
       type: "shiki",
@@ -37,5 +32,6 @@ export default defineConfig({
       rehypeAutoLinkHeadings,
     ],
   },
+  prefetch: true,
   site: "https://raviqqe.github.io/doc",
 });
