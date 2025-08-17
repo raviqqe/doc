@@ -69,6 +69,7 @@ August 17, 2025
 # Other progress
 
 - `define-syntax` syntax in `define-syntax` syntax
+- The `write`, `write-simple`, and `write-shared` procedures
 
 ---
 
