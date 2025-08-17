@@ -66,11 +66,17 @@ August 17, 2025
 
 ---
 
-# Other progress
+# Other compatibility improvements
 
 - `define-syntax` syntax in `define-syntax` syntax
 - The `write`, `write-simple`, and `write-shared` procedures
 - Partial implementation of [SRFI 1](https://srfi.schemers.org/srfi-1/srfi-1.html)
+
+---
+
+# Other progress
+
+- Rewriting [Aruba](https://github.com/cucumber/aruba) in Go.
 
 ---
 
