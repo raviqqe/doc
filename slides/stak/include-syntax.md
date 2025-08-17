@@ -51,7 +51,7 @@ August 17, 2025
 
 - The `include` syntax embeds S-expressions read from a specified path into source code at the location.
   - The `include-ci` syntax is its case-insensitive variant.
-- Its argument must be "a string literal."
+- Its argument must be **a string literal**.
 - The `include` syntax is in the `(scheme base)` library.
 
 ---
