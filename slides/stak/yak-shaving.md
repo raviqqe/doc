@@ -79,6 +79,7 @@ August 17, 2025
 - Rewriting [Aruba](https://github.com/cucumber/aruba) in Go.
   - https://github.com/raviqqe/aruba-go
 - [Monza editor, the `textarea` element with syntax highlight](https://raviqqe.com/monza-editor/)
+- Using a proper terminal library in [REPL on the website](https://raviqqe.com/stak/)
 
 ---
 
