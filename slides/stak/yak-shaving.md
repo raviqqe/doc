@@ -56,6 +56,16 @@ August 17, 2025
 
 ---
 
+# The current implementation in Stak Scheme
+
+- The `include` syntax is the top-level "meta" syntax.
+  - Similar to `define-library` and `import` library syntaxes.
+- It is not part of the `(scheme base)` library.
+- The syntax is processed by the compiler completely statically.
+  `
+
+---
+
 # Future work
 
 - Unicode support in the `(scheme char)` library
