@@ -34,8 +34,8 @@ Augest 17, 2025
 
 # Progress
 
-- Library system in `eval` procedure
-- `case-lambda` syntax
+- The (almost) full R7RS-small compatibility
+- The website optimization
 
 ---
 
