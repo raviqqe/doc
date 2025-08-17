@@ -70,6 +70,7 @@ August 17, 2025
 
 - `define-syntax` syntax in `define-syntax` syntax
 - The `write`, `write-simple`, and `write-shared` procedures
+- Partial implementation of [SRFI 1](https://srfi.schemers.org/srfi-1/srfi-1.html)
 
 ---
 
