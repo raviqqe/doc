@@ -55,7 +55,7 @@ August 17, 2025
 - The `include` syntax is in the `(scheme base)` library.
 
 ```scheme
-(include "foo.scm") ; -> (write-string "Hello, world!")
+(include "./foo.scm") ; -> (write-string "Hello, world!")
 ```
 
 ---
