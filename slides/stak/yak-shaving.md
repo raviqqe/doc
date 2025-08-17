@@ -39,6 +39,12 @@ August 17, 2025
 
 ---
 
+# The (almost) full R7RS-small compatibility
+
+- Stak Scheme is (almost) fully compatible with R7RS-small.
+  - Other than the `include` and `include-ci` syntaxes...
+  - Stak Scheme does not implement the full numeric tower either.
+
 ---
 
 # Future work
