@@ -35,7 +35,7 @@ August 17, 2025
 # Progress
 
 - The (almost) full R7RS-small compatibility
-- The website optimization
+- The website improvements
 
 ---
 
