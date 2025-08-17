@@ -66,6 +66,12 @@ August 17, 2025
 
 ---
 
+# Other progress
+
+- `define-syntax` syntax in `define-syntax` syntax
+
+---
+
 # Future work
 
 - Unicode support in the `(scheme char)` library
