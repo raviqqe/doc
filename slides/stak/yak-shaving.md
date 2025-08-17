@@ -2,7 +2,7 @@
 
 [@raviqqe](https://github.com/raviqqe)
 
-Augest 17, 2025
+August 17, 2025
 
 ---
 
