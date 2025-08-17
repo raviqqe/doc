@@ -51,6 +51,7 @@ August 17, 2025
 
 - Unicode support in the `(scheme char)` library
 - `close` primitive optimization
+- Closure space safety
 
 ---
 
