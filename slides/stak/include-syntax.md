@@ -54,6 +54,10 @@ August 17, 2025
 - Its argument must be **a string literal**.
 - The `include` syntax is in the `(scheme base)` library.
 
+```scheme
+(include "foo.scm") ; -> (write-string "Hello, world!")
+```
+
 ---
 
 # The current implementation in Stak Scheme
