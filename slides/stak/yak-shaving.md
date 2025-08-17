@@ -49,7 +49,7 @@ August 17, 2025
 
 # The `include` syntax
 
-- The `include` syntax allows
+- The `include` syntax embeds S-expressions read from a specified path into source code at the location.
 - Its argument must be "a string literal."
 
 ---
