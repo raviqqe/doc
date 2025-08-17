@@ -62,6 +62,7 @@ August 17, 2025
   - Similar to `define-library` and `import` library syntaxes.
 - It is not part of the `(scheme base)` library.
 - The syntax is processed by the compiler completely statically.
+  - You cannot even call it with any arguments of the other macros whose denotations are string literals.
 
 ---
 
