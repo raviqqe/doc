@@ -47,6 +47,13 @@ August 17, 2025
 
 ---
 
+# The `include` syntax
+
+- The `include` syntax allows
+- Its argument must be "a string literal."
+
+---
+
 # Future work
 
 - Unicode support in the `(scheme char)` library
