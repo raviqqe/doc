@@ -62,7 +62,6 @@ August 17, 2025
   - Similar to `define-library` and `import` library syntaxes.
 - It is not part of the `(scheme base)` library.
 - The syntax is processed by the compiler completely statically.
-  `
 
 ---
 
