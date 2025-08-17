@@ -10,9 +10,8 @@ August 17, 2025
 
 - Stak Scheme
 - Progress
-  - Library system in `eval` procedure
-  - `case-lambda` syntax
-- Memory unsafety in virtual machines
+  - The `include` syntax
+  - Other R7RS compatibility improvements
 - Future work
 
 ---
@@ -34,7 +33,8 @@ August 17, 2025
 
 # Progress
 
-- The (almost) full R7RS-small compatibility
+- (Almost) full R7RS-small compatibility
+  - The `include` syntax
 - The website improvements
 
 ---
