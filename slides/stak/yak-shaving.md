@@ -77,6 +77,7 @@ August 17, 2025
 # Other progress
 
 - Rewriting [Aruba](https://github.com/cucumber/aruba) in Go.
+  - https://github.com/raviqqe/aruba-go
 
 ---
 
