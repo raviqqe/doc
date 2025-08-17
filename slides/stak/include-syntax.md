@@ -1,4 +1,4 @@
-# Yak shaving in Stak Scheme
+# The `include` syntax in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
 
