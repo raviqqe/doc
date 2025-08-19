@@ -43,4 +43,4 @@
 
 # Demo
 
-<iframe src="https://raviqqe.com/stak/demo" style="width: 100%; height: 100%; border: none;"></iframe>
+<iframe src="https://raviqqe.com/stak/demo/interpreter" style="width: 100%; height: 100%; border: none;"></iframe>
