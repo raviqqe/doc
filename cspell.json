@@ -17,6 +17,7 @@
     "*.drawio",
     "dist",
     "node_modules",
+    "pnpm-lock.yaml",
     "public"
   ],
   "ignoreRegExpList": ["repository", "url"],
