@@ -3,12 +3,12 @@
   "type": "module",
   "version": "0.1.0",
   "engines": {
-    "node": ">=23.9.0"
+    "node": ">=24.6.0"
   },
   "scripts": {
     "start": "astro dev",
-    "build": "npm run build:notes && npm run build:posts && npm run build:slides && npm run build:toc && npm run build:papers && playwright install && astro build",
-    "build:slides": "npm run build:slides:html && npm run build:slides:pdf",
+    "build": "node --run build:notes && node --run build:posts && node --run build:slides && node --run build:toc && node --run build:papers && playwright install && astro build",
+    "build:slides": "node --run build:slides:html && node --run build:slides:pdf",
     "build:slides:html": "marp --html --input-dir ../slides --output public/slides",
     "build:slides:pdf": "marp --pdf --html --input-dir ../slides --output public/slides",
     "build:notes": "node src/scripts/build-directory.ts notes",
