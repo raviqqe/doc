@@ -3,12 +3,13 @@
   "type": "module",
   "version": "0.1.0",
   "engines": {
-    "node": ">=23.9.0"
+    "node": ">=24.6.0"
   },
+  "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b",
   "scripts": {
     "start": "astro dev",
-    "build": "npm run build:notes && npm run build:posts && npm run build:slides && npm run build:toc && npm run build:papers && playwright install && astro build",
-    "build:slides": "npm run build:slides:html && npm run build:slides:pdf",
+    "build": "node --run build:notes && node --run build:posts && node --run build:slides && node --run build:toc && node --run build:papers && playwright install && astro build",
+    "build:slides": "node --run build:slides:html && node --run build:slides:pdf",
     "build:slides:html": "marp --html --input-dir ../slides --output public/slides",
     "build:slides:pdf": "marp --pdf --html --input-dir ../slides --output public/slides",
     "build:notes": "node src/scripts/build-directory.ts notes",
@@ -39,6 +40,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
+    "sharp": "^0.34.3",
     "typescript": "^5.9.2"
   }
 }

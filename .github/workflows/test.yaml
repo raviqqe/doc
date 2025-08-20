@@ -15,8 +15,8 @@ jobs:
         with:
           lfs: true
       - uses: ./.github/actions/setup
-      - run: npm run build
-      - run: npm run lint
+      - run: node --run build
+      - run: node --run lint
   markdown_format:
     runs-on: ubuntu-latest
     steps:
