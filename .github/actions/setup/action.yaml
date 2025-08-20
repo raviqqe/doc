@@ -15,5 +15,5 @@ runs:
       working-directory: doc
     - run: sudo apt update --fix-missing
       shell: bash
-    - run: sudo apt install fonts-takao texlive-full
+    - run: sudo apt install fonts-takao
       shell: bash
