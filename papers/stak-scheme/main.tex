@@ -1,11 +1,14 @@
 \documentclass[sigplan, anonymous, review]{acmart}
 
+\newcommand{\captionskip}{5pt}
+
 \usepackage{algorithm2e}
 \DontPrintSemicolon
 \SetKwProg{Function}{function}{ do}{end}
+\SetAlCapSkip{\captionskip}
 
 \usepackage{caption}
-\captionsetup{position=bottom, aboveskip=5pt, belowskip=5px}
+\captionsetup{position=bottom, aboveskip=\captionskip, belowskip=\captionskip}
 
 \usepackage{listings}
 \lstdefinestyle{code}{basicstyle=\ttfamily\footnotesize}
