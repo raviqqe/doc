@@ -1,9 +1,8 @@
 \documentclass[sigplan, anonymous, review]{acmart}
 
 \newcommand{\captionskip}{5pt}
-
-\usepackage{caption}
-\captionsetup{aboveskip=\captionskip, belowskip=\captionskip}
+\setlength{\abovecaptionskip}{\captionskip}
+\setlength{\belowcaptionskip}{\captionskip}
 
 \usepackage{algorithm2e}
 \DontPrintSemicolon
