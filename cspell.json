@@ -22,6 +22,7 @@
   ],
   "ignoreRegExpList": ["repository", "url"],
   "words": [
+    "aboveskip",
     "akka",
     "alloc",
     "allocs",
@@ -30,6 +31,7 @@
     "astro",
     "astrojs",
     "bazel",
+    "belowskip",
     "bfloat",
     "bibtex",
     "bindgen",
