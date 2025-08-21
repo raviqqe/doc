@@ -4,9 +4,12 @@
 \DontPrintSemicolon
 \SetKwProg{Function}{function}{ do}{end}
 
+\usepackage{caption}
+\captionsetup{skip=5pt}
+
 \usepackage{listings}
 \lstdefinestyle{code}{basicstyle=\ttfamily\footnotesize}
-\lstset{style=code}
+\lstset{captionpos=b, style=code}
 
 \newcommand{\draft}[1]{CONTENT HIDDEN FOR REVIEWS}
 
@@ -175,10 +178,10 @@ file to produce a final executable file.
 
 \begin{figure}
   \begin{center}
+    \includegraphics[width=0.35\textwidth]{build.png}
+
     \caption{Workflow of embedding Stak Scheme in Rust}
     \label{figure:build}
-    \vspace{1em}
-    \includegraphics[width=0.35\textwidth]{build.png}
   \end{center}
 \end{figure}
 
@@ -383,8 +386,6 @@ in Table \ref{table:types}.
 
 \begin{table*}
   \begin{center}
-    \caption{Internal representation of Scheme values}
-    \label{table:types}
     \begin{tabular}{lll}
       \hline
       Type & car & cdr \\
@@ -402,6 +403,9 @@ in Table \ref{table:types}.
       Record & cons (metadata) & cons (fields) \\
       \hline
     \end{tabular}
+
+    \caption{Internal representation of Scheme values}
+    \label{table:types}
   \end{center}
 \end{table*}
 
@@ -547,9 +551,6 @@ functions write their corresponding decode instructions as byte
 sequences to the output $O$.
 
 \begin{algorithm}
-  \caption{Bytecode encoding}
-  \label{algorithm:encode}
-
   \KwIn{In-memory bytecode $I$}
   \KwOut{Byte sequence $O$}
 
@@ -582,6 +583,9 @@ sequences to the output $O$.
   }
 
   $encode(I, O)$ \;
+
+  \caption{Bytecode encoding}
+  \label{algorithm:encode}
 \end{algorithm}
 
 \subsubsection{Decoding} \label{decoding}
@@ -617,9 +621,6 @@ Finally, the value at the top $car(S)$ is the root of the decoded
 in-memory bytecode.
 
 \begin{algorithm}
-  \caption{Bytecode decoding}
-  \label{algorithm:decode}
-
   \KwIn{Byte sequence $I$}
   \KwOut{In-memory bytecode $O$}
 
@@ -664,6 +665,9 @@ in-memory bytecode.
   }
 
   $O \gets car(S)$ \;
+
+  \caption{Bytecode decoding}
+  \label{algorithm:decode}
 \end{algorithm}
 
 \subsection{Compiling the \texttt{eval} procedure} \label{inception}
@@ -782,8 +786,6 @@ contributes to reduce the code size of its implementation in Rust.
 
 \begin{table}
   \begin{center}
-    \caption{Lines of code}
-    \label{table:loc}
     \begin{tabular}{l|rrrrrrrr}
       \hline
       Language & Stak & TR7  \\
@@ -793,6 +795,9 @@ contributes to reduce the code size of its implementation in Rust.
       Total & 9670 & 16891 \\
       \hline
     \end{tabular}
+
+    \caption{Lines of code}
+    \label{table:loc}
   \end{center}
 \end{table}
 
@@ -865,8 +870,6 @@ language processors in the single Scheme implementation.
 
 \begin{table}
   \begin{center}
-    \caption{Binary sizes}
-    \label{table:binary}
     \begin{tabular}{l|r}
       \hline
       Interpreter & Size / bytes \\
@@ -877,6 +880,9 @@ language processors in the single Scheme implementation.
       chibi-scheme-static & 1,407,384 \\
       \hline
     \end{tabular}
+
+    \caption{Binary sizes}
+    \label{table:binary}
   \end{center}
 \end{table}
 
@@ -919,8 +925,6 @@ despite its minimal design and implementation.
 
 \begin{table*}
   \begin{center}
-    \caption{Computational benchmarks (relative time. lower is better.)}
-    \label{table:computation}
     \begin{tabular}{l|rrrrrrrrr}
       \hline
       Benchmark & mstak & stak & tr7i & gsi & chibi-scheme & python3
@@ -932,6 +936,9 @@ despite its minimal design and implementation.
       tak & 1.00 & 1.13 & 0.97 & 1.27 & 1.23 & 0.75 & 0.99 & 0.62 & 0.63 \\
       \hline
     \end{tabular}
+
+    \caption{Computational benchmarks (relative time. lower is better.)}
+    \label{table:computation}
   \end{center}
 \end{table*}
 
