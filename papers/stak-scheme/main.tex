@@ -15,11 +15,13 @@
 \lstset{captionpos=b, style=code}
 
 \newcommand{\draft}[1]{
+  \makeatletter
   \if@ACM@review
   CONTENT HIDDEN FOR REVIEWS
   \else
   #1
   \fi
+  \makeatother
 }
 
 \keywords{Compiler, Virtual Machine, Dynamic Language, Scheme}
