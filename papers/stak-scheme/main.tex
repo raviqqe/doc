@@ -1,5 +1,13 @@
 \documentclass[sigplan, anonymous, review]{acmart}
 
+\makeatletter
+\if@ACM@review
+\newcommand{\draft}[1]{CONTENT HIDDEN FOR REVIEWS}
+\else
+\newcommand{\draft}[1]{#1}
+\fi
+\makeatother
+
 \newcommand{\captionskip}{5pt}
 
 \usepackage{algorithm2e}
@@ -13,14 +21,6 @@
 \usepackage{listings}
 \lstdefinestyle{code}{basicstyle=\ttfamily\footnotesize}
 \lstset{captionpos=b, style=code}
-
-\makeatletter
-\if@ACM@review
-\newcommand{\draft}[1]{CONTENT HIDDEN FOR REVIEWS}
-\else
-\newcommand{\draft}[1]{#1}
-\fi
-\makeatother
 
 \keywords{Compiler, Virtual Machine, Dynamic Language, Scheme}
 
