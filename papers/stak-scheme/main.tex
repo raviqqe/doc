@@ -14,15 +14,13 @@
 \lstdefinestyle{code}{basicstyle=\ttfamily\footnotesize}
 \lstset{captionpos=b, style=code}
 
-\newcommand{\draft}[1]{
-  \makeatletter
-  \if@ACM@review
-  CONTENT HIDDEN FOR REVIEWS
-  \else
-  #1
-  \fi
-  \makeatother
-}
+\makeatletter
+\if@ACM@review
+\newcommand{\draft}[1]{CONTENT HIDDEN FOR REVIEWS}
+\else
+\newcommand{\draft}[1]{#1}
+\fi
+\makeatother
 
 \keywords{Compiler, Virtual Machine, Dynamic Language, Scheme}
 
