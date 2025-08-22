@@ -433,6 +433,8 @@ virtual machine and its encoding and decoding algorithms in details.
 \subsection{Bytecode} \label{bytecode}
 
 Stak Scheme's bytecode represents programs for the virtual machine to execute.
+In the design of the bytecode, we aim the portability and compactness for both
+in-memory and serialized bytecode formats.
 As described in Section \ref{vm},
 we represent both code and data of instructions and immediate
 values inside them in pair data structures consisting of two fields of
