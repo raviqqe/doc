@@ -750,8 +750,8 @@ programs because developers of main programs have full control over
 them already; if tree shaking can reduce the size of the main programs,
 that is the implication of unused procedures and variables, or
 potentially bugs there.
-Note that we skew the semantics of Scheme slightly to simplify the
-implementation although the tree shaking pass is enabled by default.
+Note that the tree shaking pass is disabled by default because we skew the
+semantics of Scheme slightly to simplify its implementation.
 For instance, when we define a variable with the \texttt{define} syntax and
 specify its value of a procedure call expression
 (e.g. \texttt{(define x (foo y))},) we remove the variable definition
