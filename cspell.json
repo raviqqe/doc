@@ -121,6 +121,7 @@
     "sccp",
     "schemat",
     "serde",
+    "sexp",
     "shibuya",
     "shiki",
     "sqlx",
