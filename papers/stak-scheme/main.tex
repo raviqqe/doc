@@ -446,9 +446,10 @@ virtual machine and its encoding and decoding algorithms in details.
 \subsection{Bytecode} \label{bytecode}
 
 Stak Scheme's bytecode represents programs for the virtual machine to execute.
-Following the bytecode design in Ribbit Scheme \cite{ribbit2023}, we pursue
-portability and compactness of both the bytecode formats on memory
-and disk and the bytecode decoder which the virtual machine is equipped with.
+Following the bytecode design in Ribbit Scheme \cite{ribbit2023}, we pursue both
+portability and compactness of the bytecode formats on memory
+and disk, and the bytecode decoder which the virtual machine is
+equipped with while keeping its performance in computation time.
 While we provide only the Rust implementation of the virtual machine,
 we keep the serialized format of bytecode portable across
 different implementations of the virtual machine in other languages.
