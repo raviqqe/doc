@@ -828,10 +828,12 @@ contributes to reduce the code size of its implementation in Rust.
 \end{table}
 
 Although both Stak Scheme and TR7 do not implement the complete
-specification of R7RS-small, we believe that the other
+specification of the R7RS-small standard, we believe that the other
 implementations would not be comparable with them since
-Stak Scheme and TR7 implement all the primary language features,
+they implement all the primary language features,
 such as library system and hygienic macros, already.
+The current implementation of Stak Scheme lacks only precise
+implementation of the \texttt{include} and \texttt{include-ci} syntaxes.
 As adding missing functions or syntaxes are trivial changes,
 implementing such additional functionalities would not change the
 order of their lines of code.
