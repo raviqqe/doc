@@ -786,8 +786,8 @@ other Scheme implementations and scripting languages.
 
 To evaluate the compactness of our implementation of Stak Scheme,
 we compare lines of code between our Stak Scheme implementation and
-another small R7RS implementation, TR7 \cite{tr7}.
-To the best of our knowledge, TR7 is the smallest R7RS implementation
+another R7RS-small implementation, TR7 \cite{tr7}.
+To the best of our knowledge, TR7 is the tiniest R7RS-small implementation
 among the ones written in Scheme and a certain system programming language.
 
 To count lines of code, we exclude test code, comments, and blank
@@ -798,7 +798,8 @@ In TR7, because it separates test code into different files, we simply did not
 include such files.
 Besides, we apply code formatters of \texttt{rustfmt} (v1.8.0),
 \texttt{clang-format} (v20.1.7), and \texttt{schemat} (v0.4.1) for
-Rust, C, and Scheme respectively for the consistent format of the source code.
+Rust, C, and Scheme files respectively for the consistent format of
+the source code.
 
 As Table \ref{table:loc} shows, Stak Scheme almost
 halves the code size compared to TR7.
@@ -815,9 +816,9 @@ contributes to reduce the code size of its implementation in Rust.
       \hline
       Language & Stak & TR7  \\
       \hline
-      Scheme & 3792 & 116 \\
-      C / Rust & 5878 & 16775 \\
-      Total & 9670 & 16891 \\
+      Scheme & 4,952 & 116 \\
+      C / Rust & 4,175 & 16,775 \\
+      Total & 9,127 & 16,891 \\
       \hline
     \end{tabular}
 
@@ -827,10 +828,12 @@ contributes to reduce the code size of its implementation in Rust.
 \end{table}
 
 Although both Stak Scheme and TR7 do not implement the complete
-specification of R7RS-small, we believe that the other
+specification of the R7RS-small standard, we believe that the other
 implementations would not be comparable with them since
-Stak Scheme and TR7 implement all the primary language features,
+they implement all the primary language features,
 such as library system and hygienic macros, already.
+The current implementation of Stak Scheme lacks only precise
+implementation of the \texttt{include} and \texttt{include-ci} syntaxes.
 As adding missing functions or syntaxes are trivial changes,
 implementing such additional functionalities would not change the
 order of their lines of code.
