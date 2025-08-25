@@ -1067,8 +1067,8 @@ locations on the virtual machine as long as the host languages allow that.
 In the virtual machine we implemented in Rust, this memory
 unsafety on the virtual machine sometimes arises as panics with little
 contextual information.
-Such panics are hard to debug, especially when debug information is
-stripped out from executable files of the interpreter.
+Such panics are hard to debug, especially when an executable file of
+the interpreter is stripped of debug information.
 We have a plan to implement basic type checks in our virtual machine
 in the host language of Rust in order to enhance memory safety on
 the virtual machine without sacrificing its performance.
