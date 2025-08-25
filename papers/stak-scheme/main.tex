@@ -920,15 +920,29 @@ language processors in the single Scheme implementation.
 We compare interpreters of Stak Scheme and other Scheme
 implementations compliant to the R7RS-small standard in computational
 benchmarks shown in Table \ref{table:computation}.
+The following list is the benchmarks we run the Scheme interpreters
+against. In order to measure
+
+\begin{description}
+  \item[empty] The TR7 interpreter at the commit \texttt{e821e555}
+    on the \texttt{v2} branch
+  \item[] The interpreter of Gambit Scheme v4.9.7
+  \item[chibi-scheme] Chibi Scheme v0.11
+  \item[gosh] Gauche 0.9.15
+\end{description}
 
 The following list is the versions and the implementations of
 Scheme interpreters compared in the benchmarks.
 
 \begin{description}
+  \item[mstak] Stak Scheme 0.10.38 (integer only, libc)
+  \item[stak] Stak Scheme 0.10.38 (the \texttt{std} library in Rust)
+  \item[mstak bc] The bytecode interpreter for \texttt{mstak}
+  \item[stak bc] The bytecode interpreter for \texttt{stak}
   \item[tr7i] The TR7 interpreter at the commit \texttt{e821e555}
     on the \texttt{v2} branch
-  \item[gsi] The interpreter of Gambit Scheme v4.9.7
-  \item[chibi-scheme] Chibi Scheme v0.11
+  \item[gsi] The interpreter of Gambit Scheme 4.9.7
+  \item[chibi-scheme] Chibi Scheme 0.11
   \item[gosh] Gauche 0.9.15
 \end{description}
 
