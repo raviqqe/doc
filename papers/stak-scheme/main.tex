@@ -964,9 +964,12 @@ M2 CPU of the 64-bit ARM architecture.
 
 The results in Table \ref{table:computation} indicate that Stak
 Scheme's computational performance is still comparable with other
-Scheme implementations, with performance
-ranging from 1.67 times faster to 4.35 times slower,
+Scheme implementations with performance, for example, 1.67 times
+faster than \textbf{gsi} in the \textbf{fibonacci} benchmark,
 despite its minimal design and implementation.
+However, it suffers on the \textbf{sum} benchmark against
+\textbf{gosh} where Stak Scheme is not
+particularly optimized for but uses normals tail calls for iterations,
 
 \begin{table*}
   \begin{center}
