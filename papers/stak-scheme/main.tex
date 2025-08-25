@@ -856,6 +856,10 @@ the standard libraries of Rust.
 We also compare \texttt{mstak} as a baseline, which comes with a number
 representation of only 63-bit integers and its standard libraries backed
 by the C standard libraries.
+For a reference, we compare \texttt{chibi-scheme-static}, which is an
+executable file of the Chibi Scheme interpreter compiled with its library linked
+statically and C compiler flags of \texttt{SEXP\_USE\_NO\_FEATURES=1} and
+\texttt{SEXP\_USE\_FLONUMS=1} to minimize its binary size.
 We strip debug information from these executable files because
 our focus is the size comparison of the interpreter logic itself.
 
@@ -866,11 +870,7 @@ As you see in the table, the binary size of \texttt{mstak} is almost
 a third of \texttt{tr7i}.
 On the other hand, \texttt{stak} is far larger than \texttt{mstak} and
 \texttt{tr7i} due to the bulky Rust libraries.
-For a reference, we compare \texttt{chibi-scheme-static}, which is an
-executable file of the Chibi Scheme interpreter compiled with its library linked
-statically and C compiler flags of \texttt{SEXP\_USE\_NO\_FEATURES=1} and
-\texttt{SEXP\_USE\_FLONUMS=1} to minimize its binary size.
-It shows the binary size a few times larger than \texttt{mstak} or
+Chibi Scheme shows the binary size a few times larger than \texttt{mstak} or
 \texttt{tr7i}.
 
 While Ribbit Scheme \cite{ribbit7kb2023} achieves its 7 KB binary size
