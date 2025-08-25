@@ -737,7 +737,7 @@ in the context of dynamic programming languages where functions'
 dependencies are not obvious statically.
 
 Stak Scheme's bytecode compiler is equipped with a tree shaking pass.
-It does not only reduce the size of bytecode but also
+It not only reduces the size of bytecode but also
 decreases the startup latencies because it reduces time spent for bytecode
 decoding and program initialization on the virtual machine.
 Since we expand libraries and macros statically
@@ -988,7 +988,7 @@ This architecture allows users to strip unnecessary language
 features and minimize resulting binaries.
 In RVM, every code or data is represented in
 Ribs, which are tuples of three fields.
-That does not only make the implementation of
+That not only makes the implementation of
 RVMs simple but make them portable across different
 programming languages from low-level to high-level.
 
