@@ -76,9 +76,8 @@
   between its in-memory graph format and serialized byte sequences.
   Our evaluation proves that the implementation of Stak Scheme is
   compact compared to the prior work of a small R7RS-small implementation
-  whereas its performance is still
-  comparable with other implementations of Scheme and the other
-  scripting languages despite its minimal design.
+  whereas its performance is still comparable with other
+  implementations of Scheme despite its minimal design.
 \end{abstract}
 
 \maketitle
@@ -149,10 +148,10 @@ is an ingredient of the \texttt{(scheme eval)} library.
 While compiling given source files, the compiler embeds itself
 into the source files (Section \ref{inception}) to build up the library.
 Finally, our evaluation demonstrates that the performance of Stak Scheme is
-comparable with other Scheme implementations and scripting
-languages in spite of its minimal design (Section \ref{evaluation}).
+comparable with other Scheme implementations in spite of its minimal
+design (Section \ref{evaluation}).
 
-\section{Stak Scheme}
+\section{Stak Scheme} \label{stak}
 
 Stak Scheme is a tiny R7RS-small implementation consisting of a
 bytecode compiler written in Scheme and a virtual machine written in Rust.
@@ -287,7 +286,7 @@ The compiler is composed of the following stages.
 First, we parse source code as S-expressions from source
 files skipping whitespace characters and comments.
 Then, in the stage of compiler inception, we \textit{incept} the compiler
-itself into the source code, which is described in details later in
+itself into the source code, which is described in detail later in
 Section \ref{inception}.
 In library and macro expansions, we expand library and macro
 syntaxes, such as \texttt{define-library}, \texttt{import},
@@ -441,7 +440,7 @@ the host languages in implementations of the virtual machine if they want to.
 We discuss this topic in Section \ref{portvm} as future work further.
 
 In Section \ref{bytecode}, we describe the bytecode format for the
-virtual machine and its encoding and decoding algorithms in details.
+virtual machine and its encoding and decoding algorithms in detail.
 
 \subsection{Bytecode} \label{bytecode}
 
@@ -780,7 +779,7 @@ and/or startup latencies of the Scheme programs are critical.
 
 Our evaluation of Stak Scheme demonstrates the minimality of its design and
 implementation as well as its reasonable performance compared with
-other Scheme implementations and scripting languages.
+other Scheme implementations.
 
 \subsection{Lines of code}
 
@@ -918,52 +917,84 @@ language processors in the single Scheme implementation.
 
 \subsection{Computational benchmarks}
 
-We compare interpreters of Stak Scheme, other R7RS-small Scheme
-implementations, and
-dynamic languages other than Scheme in computational
+We compare interpreters of Stak Scheme and other Scheme
+implementations compliant with the R7RS-small standard in computational
 benchmarks shown in Table \ref{table:computation}.
-
-The interpreters of Scheme and other languages we compare are not
-equipped with
-any JIT compilation or other methods compiling the languages into
-native code.
-We run our benchmarks on a Macbook Air with macOS Sequoia 15.5 and the Apple
-M2 CPU of the 64-bit ARM architecture.
-The following list is the versions and implementations of
-the language interpreters used in the benchmarks.
-For interpreters of non-Scheme dynamic languages, we choose CPython and
-MRI Ruby in addition to their small implementations of MicroPython
-and mruby, which are optimized against their binary sizes for
-embedded scripting.
+The following benchmarks are used to evaluate the Scheme interpreters.
+In addition to typical microbenchmarks of \textbf{fibonacci},
+\textbf{sum}, and \textbf{tak} for pure computations, we add
+\textbf{empty} and \textbf{hello} in order to assess the
+lightweightness of the interpreters.
+We run each benchmark 10 times with 5 warm-up runs and report the
+average execution time as well as the standard deviation.
 
 \begin{description}
-  \item[tr7i] The TR7 interpreter at the commit \texttt{e821e555}
-    on the \texttt{v2} branch
-  \item[gsi] The interpreter of Gambit Scheme v4.9.5
-  \item[chibi-scheme] Chibi Scheme v0.11
-  \item[python3] CPython 3.13.3
-  \item[micropython] MicroPython v1.25.0
-  \item[ruby] CRuby 3.4.4
-  \item[mruby] mruby 3.4.0
+  \item[empty] runs no code (an empty script.)
+  \item[fibonacci] calculates a Fibonacci number.
+  \item[hello] prints a string of ``Hello, world!"
+  \item[sum] sums integers.
+  \item[tak] calculates a value of the Tak function.
 \end{description}
 
+The following list is the versions and the implementations of
+Scheme interpreters compared in the benchmarks.
+For Stak Scheme, we run the benchmarks against its bytecode interpreters as well
+which run bytecode pre-compiled from Scheme source code directly
+emulating situations of embedded scripting described in Section \ref{stak}.
+
+\begin{description}
+  \item[mstak] Stak Scheme 0.10.38 (63-bit integer only, libc)
+  \item[stak] Stak Scheme 0.10.38 (64-bit floating point number support, the
+    \texttt{std} library in Rust)
+  \item[mstak bc] The bytecode interpreter for \texttt{mstak}
+  \item[stak bc] The bytecode interpreter for \texttt{stak}
+  \item[tr7i] The TR7 interpreter at the commit \texttt{e821e555}
+    on the \texttt{v2} branch
+  \item[gsi] The interpreter of Gambit Scheme 4.9.7
+  \item[chibi-scheme] Chibi Scheme 0.11
+  \item[gosh] Gauche 0.9.15
+\end{description}
+
+The interpreters listed above are not equipped with any JIT compilation
+or other methods compiling the languages into native code.
+They are rather AST-based or bytecode-based interpreters.
+We run our benchmarks on a MacBook Air with macOS Sequoia 15.5 and an Apple
+M2 CPU with the 64-bit ARM architecture.
+
 The results in Table \ref{table:computation} indicate that Stak
-Scheme's computational performance is still comparable with other
-Scheme implementations and dynamic languages, with performance
-ranging from 1.67 times faster to 2.78 times slower,
+Scheme's computational performance remains comparable with other
+Scheme implementations with performance, for instance, 1.65 times
+faster than \textbf{gsi} in the \textbf{fibonacci} benchmark,
 despite its minimal design and implementation.
+In contrast, it suffers on the \textbf{sum} benchmark against
+\textbf{gosh} as Stak Scheme is not
+particularly optimized for but uses tail calls for iterations,
+In the benchmarks of \textbf{empty} and \textbf{hello}, our interpreters,
+especially its bytecode interpreters, perform significantly better
+than the other Scheme implementations.
+This does not only highlight the lightweight nature of the Stak Scheme
+implementation, but also demonstrates that
+the split architecture of a bytecode compiler and a virtual machine,
+as exemplified by both Stak Scheme and Ribbit Scheme is well-suited for
+embedded scripting.
 
 \begin{table*}
   \begin{center}
-    \begin{tabular}{l|rrrrrrrrr}
+    \begin{tabular}{l|llllllllllllllllll}
       \hline
-      Benchmark & mstak & stak & tr7i & gsi & chibi-scheme & python3
-      & micropython & ruby & mruby \\
+      Benchmark & mstak & stak & mstak bc & stak bc &
+      gsi & chibi-scheme & gosh \\
       \hline
-      fibonacci & 1.00 & 1.14 & 1.36 & 1.67 & 0.92 & 0.89 & 1.20 &
-      0.63 & 0.83 \\
-      sum & 1.00 & 1.22 & 1.20 & 1.67 & 0.98 & 0.61 & 0.36 & 0.64 & 1.15 \\
-      tak & 1.00 & 1.13 & 0.97 & 1.27 & 1.23 & 0.75 & 0.99 & 0.62 & 0.63 \\
+      empty & 1.00 \pm 0.02 & 1.04 \pm 0.02 & 0.13 \pm 0.00 & 0.37
+      \pm 0.01 & 0.46 \pm 0.02 & 3.70 \pm 0.03 & 1.25 \pm 0.04 \\
+      fibonacci & 1.00 \pm 0.00 & 1.12 \pm 0.00 & 0.99 \pm 0.00 &
+      1.06 \pm 0.00 & 1.65 \pm 0.00 & 0.92 \pm 0.00 & 0.39 \pm 0.01 \\
+      hello & 1.00 \pm 0.01 & 1.06 \pm 0.02 & 0.14 \pm 0.01 & 0.37
+      \pm 0.01 & 0.50 \pm 0.01 & 9.96 \pm 0.06 & 3.55 \pm 0.05 \\
+      sum & 1.00 \pm 0.00 & 1.12 \pm 0.00 & 1.14 \pm 0.02 & 1.06 \pm
+      0.00 & 1.63 \pm 0.00 & 0.97 \pm 0.00 & 0.23 \pm 0.00 \\
+      tak & 1.00 \pm 0.01 & 1.08 \pm 0.01 & 0.94 \pm 0.01 & 0.98 \pm
+      0.01 & 1.21 \pm 0.01 & 1.21 \pm 0.01 & 0.48 \pm 0.00 \\
       \hline
     \end{tabular}
 
@@ -1064,8 +1095,8 @@ Rust.
 Although our implementation of Stak Scheme is minimal in terms of
 lines of code and binary size, it still demonstrates reasonable performance.
 Our evaluation shows that Stak Scheme is
-comparable with the other Scheme implementations and dynamic
-programming languages in terms of computational performance.
+comparable with the other Scheme implementations in terms of
+computational performance.
 
 We plan to further improve the design and implementation of Stak
 Scheme in the future. The upcoming work includes but is not limited
