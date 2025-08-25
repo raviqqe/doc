@@ -76,7 +76,7 @@
   between its in-memory graph format and serialized byte sequences.
   Our evaluation proves that the implementation of Stak Scheme is
   compact compared to the prior work of a small R7RS-small implementation
-  whereas its performance is still comparable with other
+  whereas its performance is still comparable to other
   implementations of Scheme despite its minimal design.
 \end{abstract}
 
@@ -90,7 +90,7 @@ In the Rust programming language as well as in other system
 programming languages, it is cumbersome to evaluate programs
 dynamically at runtime. At the same time, bundling large runtimes of
 scripting languages into binaries is not always acceptable,
-especially on resource constrained platforms, such as embedded systems.
+especially on resource-constrained platforms, such as embedded systems.
 On the other hand, Scheme and the other programming languages in the
 Lisp family have widely
 been used for such scripting purposes, such as Script-Fu \cite{scriptfu}
@@ -375,8 +375,8 @@ compared to Ribbit Scheme while it requires extra bit operations to
 extract cons pointers and tags.
 We use the optional pointer tags to encode instruction
 codes or underlying data types primarily.
-Like Ribbit Scheme, we have only two primitive data types on virtual
-machine; numbers and cons cells.
+Like Ribbit Scheme, we have only two primitive data types on the virtual
+machine: numbers and cons cells.
 A number is literally an internal representation of a mathematical number.
 We currently provide three number
 representations of 63-bit integers, 64-bit floating-point numbers,
@@ -536,7 +536,7 @@ sort \cite{topologicalsort} with the following requirements.
     of the serialized bytecode \cite{ribbit7kb2023}.
   \item We do not use any complex data structures but only singly-linked lists
     during encoding to keep the decoding algorithm simple by its using
-    only primitive data structures of numbers and cons's available on
+    only primitive data structures of numbers and cons cells available on
     the virtual machine.
 \end{itemize}
 
@@ -548,7 +548,7 @@ bytecode to encode,
 $O$ is an output of serialized bytecode, $C$ is a precomputed map of
 reference counts
 at which times each cons appears in the bytecode and $D$ is a
-dictionary of \textit{shared} cons's represented as a list.
+dictionary of \textit{shared} cons cells represented as a list.
 
 For each given value, we check if the value is a cons or not.
 If not, we encode it as a number.
@@ -566,9 +566,9 @@ If the value is not in the dictionary $D$, we encode the child values in
 Then, if its reference count is not zero, we push the shared value to
 the top of the dictionary because it is the first time for the shared value
 to appear in the bytecode.
-Across the function, we track how many times the cons's appear and
+Across the function, we track how many times the cons cells appear and
 decrement their reference counts every time when they show up in the bytecode.
-When the reference counts of cons's reach zero, they are removed from the
+When the reference counts of cons cells reach zero, they are removed from the
 dictionary $D$ as described above.
 The $encodeCons$, $encodeNumber$, $encodeIndex$, and $encodePush$
 functions write their corresponding decode instructions as byte
@@ -921,7 +921,7 @@ We compare interpreters of Stak Scheme and other Scheme
 implementations compliant with the R7RS-small standard in computational
 benchmarks shown in Table \ref{table:computation}.
 The following benchmarks are used to evaluate the Scheme interpreters.
-In addition to typical microbenchmarks of \textbf{fibonacci},
+In addition to typical micro-benchmarks of \textbf{fibonacci},
 \textbf{sum}, and \textbf{tak} for pure computations, we add
 \textbf{empty} and \textbf{hello} in order to assess the
 lightweightness of the interpreters.
@@ -970,7 +970,7 @@ In contrast, it suffers on the \textbf{sum} benchmark against
 \textbf{gosh} as Stak Scheme is not
 particularly optimized for such iteration pattern but uses tail calls for it.
 In the benchmarks of \textbf{empty} and \textbf{hello}, our interpreters,
-especially its bytecode interpreters, perform significantly better
+especially their bytecode versions, perform significantly better
 than the other Scheme implementations.
 This not only highlights the lightweight nature of the Stak Scheme
 implementation, but also demonstrates that
@@ -1020,7 +1020,7 @@ features and minimize resulting binaries.
 In RVM, every code or data is represented in
 Ribs, which are tuples of three fields.
 That not only makes the implementation of
-RVMs simple but make them portable across different
+RVMs simple but makes them portable across different
 programming languages from low-level to high-level.
 
 TR7 \cite{tr7} is the tiny R7RS Scheme implementation written in C.
@@ -1075,7 +1075,7 @@ the virtual machine without sacrificing its performance.
 
 \subsection{Porting virtual machines to other languages} \label{portvm}
 
-Although we believe that our bytecode decoding algorithm work
+Although we believe that our bytecode decoding algorithm works
 universally across different host languages, we did not implement them in
 virtual machines written in programming languages other than Rust yet.
 For the first step, we have a plan to implement another virtual
@@ -1110,7 +1110,7 @@ another system programming language.
   Stak Scheme.
   I would also like to express my appreciation to all pre-submission
   reviewers for their feedback on this paper.
-  Léonard Oest O'Leary from the team in the University of Montréal provided
+  Léonard Oest O'Leary from the team at the University of Montréal provided
   valuable comments including suggestions for improving the
   evaluation sections.
   William E. Byrd gave us general advice on academic writing and provided
