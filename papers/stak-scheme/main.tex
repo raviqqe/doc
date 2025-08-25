@@ -971,8 +971,12 @@ However, it suffers on the \textbf{sum} benchmark against
 \textbf{gosh} where Stak Scheme is not
 particularly optimized for but uses tail calls for iterations,
 In the benchmarks of \textbf{empty} and \textbf{hello}, Stak Scheme,
-especially its bytecode interpreters performs reasonably well
+especially its bytecode interpreters performs significantly well
 compared to the other Scheme implementations.
+This does not only proves the lightweightness of the Scheme
+implementation of Stak Scheme, but also demonstrates that
+the split architecture of a bytecode compiler and a virtual machine
+of Stak Scheme as well as Ribbit Scheme is suitable for embedded scripting.
 
 \begin{table*}
   \begin{center}
