@@ -921,14 +921,8 @@ We compare interpreters of Stak Scheme and other Scheme
 implementations compliant to the R7RS-small standard in computational
 benchmarks shown in Table \ref{table:computation}.
 
-The interpreters we compare are not equipped with
-any JIT compilation or other methods compiling the languages into
-native code.
-They are rather AST-based or bytecode-based interpreters.
-We run our benchmarks on a Macbook Air with macOS Sequoia 15.5 and the Apple
-M2 CPU of the 64-bit ARM architecture.
-The following list is the versions and implementations of
-the language interpreters used in the benchmarks.
+The following list is the versions and the implementations of
+Scheme interpreters compared in the benchmarks.
 
 \begin{description}
   \item[tr7i] The TR7 interpreter at the commit \texttt{e821e555}
@@ -938,10 +932,16 @@ the language interpreters used in the benchmarks.
   \item[gosh] Gauche 0.9.15
 \end{description}
 
+The interpreters listed above are not equipped with any JIT compilation
+or other methods compiling the languages into native code.
+They are rather AST-based or bytecode-based interpreters.
+We run our benchmarks on a Macbook Air with macOS Sequoia 15.5 and the Apple
+M2 CPU of the 64-bit ARM architecture.
+
 The results in Table \ref{table:computation} indicate that Stak
 Scheme's computational performance is still comparable with other
 Scheme implementations, with performance
-ranging from 1.67 times faster to 2.78 times slower,
+ranging from 1.67 times faster to 4.35 times slower,
 despite its minimal design and implementation.
 
 \begin{table*}
