@@ -536,7 +536,7 @@ sort \cite{topologicalsort} with the following requirements.
     of the serialized bytecode \cite{ribbit7kb2023}.
   \item We do not use any complex data structures but only singly-linked lists
     during encoding to keep the decoding algorithm simple by its using
-    only primitive data structures of numbers and cons's available on
+    only primitive data structures of numbers and cons cells available on
     the virtual machine.
 \end{itemize}
 
@@ -548,7 +548,7 @@ bytecode to encode,
 $O$ is an output of serialized bytecode, $C$ is a precomputed map of
 reference counts
 at which times each cons appears in the bytecode and $D$ is a
-dictionary of \textit{shared} cons's represented as a list.
+dictionary of \textit{shared} cons cells represented as a list.
 
 For each given value, we check if the value is a cons or not.
 If not, we encode it as a number.
@@ -566,9 +566,9 @@ If the value is not in the dictionary $D$, we encode the child values in
 Then, if its reference count is not zero, we push the shared value to
 the top of the dictionary because it is the first time for the shared value
 to appear in the bytecode.
-Across the function, we track how many times the cons's appear and
+Across the function, we track how many times the cons cells appear and
 decrement their reference counts every time when they show up in the bytecode.
-When the reference counts of cons's reach zero, they are removed from the
+When the reference counts of cons cells reach zero, they are removed from the
 dictionary $D$ as described above.
 The $encodeCons$, $encodeNumber$, $encodeIndex$, and $encodePush$
 functions write their corresponding decode instructions as byte
