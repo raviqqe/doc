@@ -151,7 +151,7 @@ Finally, our evaluation demonstrates that the performance of Stak Scheme is
 comparable with other Scheme implementations in spite of its minimal
 design (Section \ref{evaluation}).
 
-\section{Stak Scheme}
+\section{Stak Scheme} \label{stak}
 
 Stak Scheme is a tiny R7RS-small implementation consisting of a
 bytecode compiler written in Scheme and a virtual machine written in Rust.
@@ -937,6 +937,9 @@ lightweightness of the interpreters.
 
 The following list is the versions and the implementations of
 Scheme interpreters compare in the benchmarks.
+For Stak Scheme, we run benchmarks against its bytecode interpreters as well
+which run pre-compiled bytecode directly emulating situations of
+embedded scripting describe in \ref{stak}.
 
 \begin{description}
   \item[mstak] Stak Scheme 0.10.38 (63-bit integer only, libc)
