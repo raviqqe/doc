@@ -24,8 +24,8 @@ importers:
         specifier: ^4.2.3
         version: 4.2.3(typescript@5.9.2)
       '@raviqqe/loscore':
-        specifier: ^0.2.14
-        version: 0.2.14
+        specifier: ^0.2.16
+        version: 0.2.16
       astro:
         specifier: ^5.13.4
         version: 5.13.4(@types/node@24.3.0)(rollup@4.49.0)(typescript@5.9.2)
@@ -675,8 +675,8 @@ packages:
     peerDependencies:
       '@biomejs/biome': ^2.1.4
 
-  '@raviqqe/loscore@0.2.14':
-    resolution: {integrity: sha512-f+Fkg0Jnv/O1UqLDDYeqpkn+do45nXx8rgwEZiQywwPf+fO0ewiSw26ka0DejRZ6dXUi3G1pxYYX/n2W7qHUKw==}
+  '@raviqqe/loscore@0.2.16':
+    resolution: {integrity: sha512-rC61mdCO/ydqW9GGpEtko/2DKgjaAdheN5Gilfo0pCWtLdriOw875QJ2JOQWttuxa2GsgrrSPDxSZGmYbMliLw==}
     engines: {node: '>=24.6.0'}
 
   '@rollup/pluginutils@5.2.0':
@@ -3545,7 +3545,7 @@ snapshots:
     dependencies:
       '@biomejs/biome': 2.2.2
 
-  '@raviqqe/loscore@0.2.14': {}
+  '@raviqqe/loscore@0.2.16': {}
 
   '@rollup/pluginutils@5.2.0(rollup@4.49.0)':
     dependencies:
