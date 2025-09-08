@@ -22,7 +22,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.4",
     "@astrojs/sitemap": "^3.5.1",
-    "@fontsource-variable/noto-sans": "^5.2.7",
+    "@fontsource-variable/noto-sans": "^5.2.8",
     "@fontsource/ubuntu": "^5.2.7",
     "@marp-team/marp-cli": "^4.2.3",
     "@raviqqe/loscore": "^0.2.17",
