@@ -18,8 +18,8 @@ importers:
         specifier: ^5.2.7
         version: 5.2.7
       '@fontsource/ubuntu':
-        specifier: ^5.2.6
-        version: 5.2.6
+        specifier: ^5.2.7
+        version: 5.2.7
       '@marp-team/marp-cli':
         specifier: ^4.2.3
         version: 4.2.3(typescript@5.9.2)
@@ -382,8 +382,8 @@ packages:
   '@fontsource-variable/noto-sans@5.2.7':
     resolution: {integrity: sha512-VaA+clV7xTOx+pSOdyjr9nR7khjrJGr7ZHs2KXlx+AqLyG/SUVBadNwauCH0rvF/eZkZr67neNxdKMOLtVxweg==}
 
-  '@fontsource/ubuntu@5.2.6':
-    resolution: {integrity: sha512-ktUjEGS/QmvNmhO8Vb6kEv+BgTRspRUon07SkC7Rh/T4ziu8AfwJe2xuJzGxWv8fJqx0ZNYeCCJdABta7991sA==}
+  '@fontsource/ubuntu@5.2.7':
+    resolution: {integrity: sha512-LRhiKD1lbpdreOcghtVbZTvO0bwmV371T+Cst8sMKMG9k9JZUgcc6fMPFaiQ3hH6kIuoi8fx3ST41jsKE0t6Fw==}
 
   '@fortawesome/fontawesome-free@6.7.2':
     resolution: {integrity: sha512-JUOtgFW6k9u4Y+xeIaEiLr3+cjoUPiAuLXoyKOJSia6Duzb7pq+A76P9ZdPDoAoxHdHzq6gE9/jKBGXlZT8FbA==}
@@ -3265,7 +3265,7 @@ snapshots:
 
   '@fontsource-variable/noto-sans@5.2.7': {}
 
-  '@fontsource/ubuntu@5.2.6': {}
+  '@fontsource/ubuntu@5.2.7': {}
 
   '@fortawesome/fontawesome-free@6.7.2': {}
 
