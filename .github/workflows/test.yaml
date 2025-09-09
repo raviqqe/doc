@@ -7,16 +7,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: doc
     steps:
       - uses: actions/checkout@v5
         with:
           lfs: true
       - uses: ./.github/actions/setup
       - run: node --run build
-      - run: node --run lint
+      - run: pnpm -r lint
   markdown_format:
     runs-on: ubuntu-latest
     steps:
