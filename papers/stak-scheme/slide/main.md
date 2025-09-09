@@ -6,7 +6,7 @@ At Scheme Workshop 2025
 
 ---
 
-# Portable memory
+# Portable memory snapshot
 
 ```mermaid
 flowchart LR
