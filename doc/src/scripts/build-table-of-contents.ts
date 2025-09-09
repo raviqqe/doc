@@ -5,6 +5,8 @@ import { promisify } from "node:util";
 import { groupBy, sortBy } from "@raviqqe/loscore";
 import { glob } from "glob";
 
+const excludedPattern = /slides\/papers/;
+
 const writeToc = async (directory: string, component: string) =>
   writeFile(
     `src/components/${component}.md`,
@@ -13,29 +15,32 @@ const writeToc = async (directory: string, component: string) =>
         groupBy(
           sortBy(
             await Promise.all(
-              (await glob(`../${directory}/**/*.md`)).map(async (path) => {
-                const htmlPath = path.replace(/^..\//, "").replace(".md", "");
-                const pdfPath = `${htmlPath}.pdf`;
+              (await glob(`../${directory}/**/*.md`))
+                .values()
+                .filter((path) => !excludedPattern.test(path))
+                .map(async (path) => {
+                  const htmlPath = path.replace(/^..\//, "").replace(".md", "");
+                  const pdfPath = `${htmlPath}.pdf`;
 
-                return {
-                  htmlPath,
-                  pdfPath: (await stat(join("public", pdfPath)).catch(
-                    () => null,
-                  ))
-                    ? pdfPath
-                    : null,
-                  time: (
-                    await promisify(exec)(
-                      `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
-                    )
-                  ).stdout
-                    .split(" ")[0]
-                    .replaceAll("-", "/"),
-                  title: (await readFile(path, "utf-8"))
-                    .split("\n")[0]
-                    .replace("# ", ""),
-                };
-              }),
+                  return {
+                    htmlPath,
+                    pdfPath: (await stat(join("public", pdfPath)).catch(
+                      () => null,
+                    ))
+                      ? pdfPath
+                      : null,
+                    time: (
+                      await promisify(exec)(
+                        `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
+                      )
+                    ).stdout
+                      .split(" ")[0]
+                      .replaceAll("-", "/"),
+                    title: (await readFile(path, "utf-8"))
+                      .split("\n")[0]
+                      .replace("# ", ""),
+                  };
+                }),
             ),
             ({ time }) => time,
           ),
@@ -51,8 +56,7 @@ const writeToc = async (directory: string, component: string) =>
           .reverse()
           .map(
             ({ htmlPath, pdfPath, time, title }) =>
-              `- [${title}](${htmlPath}) (${
-                pdfPath ? `[PDF](${pdfPath}), ` : ""
+              `- [${title}](${htmlPath}) (${pdfPath ? `[PDF](${pdfPath}), ` : ""
               }${time})`,
           ),
       ])
