@@ -2,7 +2,7 @@
 
 Yota Toyama
 
-At Scheme Workshop 2025
+@ Scheme Workshop 2025
 
 ---
 
