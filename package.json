@@ -1,1 +1,10 @@
-{}
+{
+  "scripts": {
+    "build": "node --run build:mermaid && node --run build:tex",
+    "build:mermaid": "tools/build_mermaid.sh",
+    "build:tex": "tools/build_tex.sh"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.9.0"
+  }
+}
