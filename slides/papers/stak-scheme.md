@@ -1,8 +1,8 @@
 # Stak Scheme: The tiny R7RS-small implementation
 
-Yota Toyama
+## Scheme Workshop 2025
 
-@ Scheme Workshop 2025
+Yota Toyama
 
 ---
 
