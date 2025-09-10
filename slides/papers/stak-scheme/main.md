@@ -70,9 +70,19 @@ Yota Toyama
 ### Scheme
 
 ```scheme
-(display "foo")
-(display "foo")
-(display "bar")
+(define-library (foo)
+  (export foo)
+
+  (begin (define foo 42)))
+
+(define-library (bar)
+  (export foo)
+
+  (begin (define foo 42)))
+
+(import (foo) (prefix (bar) bar))
+
+(cons foo bar-foo)
 ```
 
 ---
