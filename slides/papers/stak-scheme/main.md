@@ -10,24 +10,39 @@ Yota Toyama
 
 ---
 
+## Background
+
+- Ribbit Scheme is a tiny R4RS-small implementation in 7 KB!
+- Maybe, I'm gonna write the VM from scratch...
+
+---
+
+## Code graphs
+
+---
+
 # Examples
 
+---
+
+## Example: Library system
+
+### Scheme
+
 ```scheme
-(import (scheme base) (scheme write))
-
-(define (display-name x)
-  (display x)
-  (newline))
-
-(display "Hello, ")
-(display-name 42)
-
-(display "Hello, ")
-(display-name 'foo)
+(display "foo")
+(display "foo")
+(display "bar")
 ```
 
 ---
 
-# Portable memory snapshot
+## Example: Library system
+
+### Code graph
+
+---
+
+# Code graph
 
 ![](./fibonacci.svg)
