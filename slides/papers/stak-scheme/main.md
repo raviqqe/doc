@@ -24,7 +24,6 @@ Yota Toyama
 - Stak Scheme is the tiny R7RS-small implementation.
   - The bytecode compiler is written in Scheme.
   - The virtual machine is written in Rust.
-- Can we implement the entire R7RS-small standard on its VM? 🤔
 
 ---
 
