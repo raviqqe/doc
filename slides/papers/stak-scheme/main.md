@@ -80,9 +80,9 @@ Yota Toyama
 
   (begin (define foo 42)))
 
-(import (foo) (prefix (bar) bar))
+(import (foo) (prefix (bar) bar-))
 
-(cons foo bar-foo)
+(+ foo bar-foo)
 ```
 
 ---
