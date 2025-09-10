@@ -28,9 +28,13 @@ Yota Toyama
 
 ---
 
-###### Stak Scheme
-
 ## Virtual machine
+
+- The stack machine.
+- Everything is a pair.
+  - Bytecode
+  - Values
+    - Including lists, characters, strings, etc.
 
 ---
 
