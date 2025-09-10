@@ -15,15 +15,15 @@ Yota Toyama
 ```scheme
 (import (scheme base) (scheme write))
 
-(define (print-value x)
-  (write x)
+(define (display-name x)
+  (display x)
   (newline))
 
 (display "Hello, ")
-(display-value 42)
+(display-name 42)
 
 (display "Hello, ")
-(display-value 'foo)
+(display-name 'foo)
 ```
 
 ---
