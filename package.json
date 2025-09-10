@@ -2,7 +2,8 @@
   "scripts": {
     "build": "node --run build:mermaid && node --run build:tex && cd doc && node --run build",
     "build:mermaid": "tools/build_mermaid.sh",
-    "build:tex": "tools/build_tex.sh"
+    "build:tex": "tools/build_tex.sh",
+    "lint": "pnpm -r lint"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^11.9.0"
