@@ -10,6 +10,24 @@ Yota Toyama
 
 ---
 
+# Examples
+
+```scheme
+(import (scheme base) (scheme write))
+
+(define (print-value x)
+  (write x)
+  (newline))
+
+(display "Hello, ")
+(display-value 42)
+
+(display "Hello, ")
+(display-value 'foo)
+```
+
+---
+
 # Portable memory snapshot
 
 ![](./code-graph.svg)
