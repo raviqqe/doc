@@ -2,21 +2,15 @@
   "name": "doc",
   "type": "module",
   "version": "0.1.0",
-  "engines": {
-    "node": ">=24.6.0"
-  },
-  "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b",
   "scripts": {
     "start": "astro dev",
-    "build": "node --run build:notes && node --run build:posts && node --run build:slides && node --run build:toc && node --run build:papers && playwright install && astro build",
+    "build": "node --run build:notes && node --run build:posts && node --run build:slides && node --run build:toc && playwright install && astro build",
     "build:slides": "node --run build:slides:html && node --run build:slides:pdf",
     "build:slides:html": "marp --html --input-dir ../slides --output public/slides",
     "build:slides:pdf": "marp --pdf --html --input-dir ../slides --output public/slides",
     "build:notes": "node src/scripts/build-directory.ts notes",
     "build:posts": "node src/scripts/build-directory.ts posts",
-    "build:papers": "cd .. && tools/build.sh",
     "build:toc": "node src/scripts/build-table-of-contents.ts",
-    "lint": "biome ci",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -32,8 +26,6 @@
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.3",
-    "@raviqqe/biome-config": "^2.0.17",
     "@types/node": "^24.3.1",
     "playwright": "^1.55.0",
     "prettier": "^3.6.2",
