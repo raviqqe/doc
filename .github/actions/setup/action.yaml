@@ -11,11 +11,9 @@ runs:
     - uses: actions/setup-node@v4
       with:
         cache: pnpm
-        cache-dependency-path: doc/pnpm-lock.yaml
-        node-version-file: doc/package.json
+        node-version-file: package.json
     - run: pnpm i --frozen-lockfile
       shell: bash
-      working-directory: doc
     - run: sudo apt update --fix-missing
       shell: bash
     - run: sudo apt install fonts-takao
