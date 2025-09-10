@@ -7,10 +7,12 @@
     "build": "node --run build:mermaid && node --run build:tex && pnpm -r build",
     "build:mermaid": "puppeteer browsers install chrome-headless-shell && tools/build_mermaid.sh",
     "build:tex": "tools/build_tex.sh",
-    "lint": "pnpm -r lint"
+    "lint": "biome ci"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.2.3",
     "@mermaid-js/mermaid-cli": "^11.9.0",
+    "@raviqqe/biome-config": "^2.0.17",
     "puppeteer": "^24.19.0"
   }
 }

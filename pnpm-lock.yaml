@@ -8,9 +8,15 @@ importers:
 
   .:
     devDependencies:
+      '@biomejs/biome':
+        specifier: ^2.2.3
+        version: 2.2.3
       '@mermaid-js/mermaid-cli':
         specifier: ^11.9.0
         version: 11.9.0(puppeteer@24.19.0(typescript@5.9.2))
+      '@raviqqe/biome-config':
+        specifier: ^2.0.17
+        version: 2.0.17(@biomejs/biome@2.2.3)
       puppeteer:
         specifier: ^24.19.0
         version: 24.19.0(typescript@5.9.2)
@@ -48,12 +54,6 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0
     devDependencies:
-      '@biomejs/biome':
-        specifier: ^2.2.3
-        version: 2.2.3
-      '@raviqqe/biome-config':
-        specifier: ^2.0.17
-        version: 2.0.17(@biomejs/biome@2.2.3)
       '@types/node':
         specifier: ^24.3.1
         version: 24.3.1
