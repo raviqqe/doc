@@ -12,6 +12,6 @@ Yota Toyama
 
 # Portable memory snapshot
 
-![](code-graph.svg)
+![](./code-graph.svg)
 
 ---
