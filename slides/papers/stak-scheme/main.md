@@ -12,10 +12,10 @@ Yota Toyama
 
 ## Background
 
-- Ribbit Scheme is a tiny R4RS-small implementation.
+- Ribbit Scheme is a tiny R4RS implementation.
   - The bytecode compiler is written in Scheme.
   - The virtual machine is written in some host language.
-- Can we put the whole R7RS-small implementation on its VM? 🤔
+- Can we implement the entire R7RS-small standard on its VM? 🤔
 
 ---
 
@@ -45,7 +45,7 @@ Yota Toyama
 
 ---
 
-## Example: Library system
+## Duplicate strings
 
 ### Scheme
 
@@ -57,7 +57,13 @@ Yota Toyama
 
 ---
 
-## Example: Library system
+## Duplicate strings
+
+### Code graph
+
+---
+
+## Library system
 
 ### Code graph
 
