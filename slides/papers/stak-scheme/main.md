@@ -61,6 +61,8 @@ Yota Toyama
 
 ### Code graph
 
+![](./fibonacci.svg)
+
 ---
 
 ## Library system
@@ -72,6 +74,14 @@ Yota Toyama
 (display "foo")
 (display "bar")
 ```
+
+---
+
+## Library system
+
+### Code graph
+
+![](./fibonacci.svg)
 
 ---
 
