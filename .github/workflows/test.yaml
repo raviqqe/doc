@@ -29,6 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+      - run: node --run build:mermaid
       - uses: raviqqe/markdown-link-check@v1
   spell_check:
     runs-on: ubuntu-latest
