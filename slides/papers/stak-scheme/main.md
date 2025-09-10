@@ -65,10 +65,20 @@ Yota Toyama
 
 ## Library system
 
-### Code graph
+### Scheme
+
+```scheme
+(display "foo")
+(display "foo")
+(display "bar")
+```
 
 ---
 
-# Code graph
+Appendix
+
+---
+
+# Fibonacci function
 
 ![](./fibonacci.svg)
