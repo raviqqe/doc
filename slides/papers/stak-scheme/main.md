@@ -45,6 +45,20 @@ Yota Toyama
 
 ---
 
+## If instruction
+
+### Scheme
+
+```scheme
+(display "foo")
+(display "foo")
+(display "bar")
+```
+
+---
+
+---
+
 ## Duplicate strings
 
 ### Scheme
