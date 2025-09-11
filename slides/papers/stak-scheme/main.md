@@ -57,6 +57,20 @@ Yota Toyama
 
 ---
 
+---
+
+## Duplicate strings
+
+### Scheme
+
+```scheme
+(display "foo")
+(display "foo")
+(display "bar")
+```
+
+---
+
 ## Duplicate strings
 
 ### Code graph
