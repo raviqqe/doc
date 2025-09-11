@@ -65,6 +65,14 @@ Yota Toyama
 
 ---
 
+## If instruction
+
+### Code graph
+
+![](./fibonacci.svg)
+
+---
+
 ## Duplicate strings
 
 ### Scheme
