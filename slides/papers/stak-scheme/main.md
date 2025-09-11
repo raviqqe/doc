@@ -29,7 +29,7 @@ Yota Toyama
 
 # Virtual machine
 
-- The stack machine.
+- A stack machine.
 - Everything is a pair.
   - Bytecode
   - Values
