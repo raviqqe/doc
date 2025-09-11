@@ -10,7 +10,7 @@ Yota Toyama
 
 ---
 
-## Background
+# Background
 
 - Ribbit Scheme is a tiny R4RS implementation.
   - The bytecode compiler is written in Scheme.
@@ -19,7 +19,7 @@ Yota Toyama
 
 ---
 
-## Stak Scheme
+# Stak Scheme
 
 - Stak Scheme is the tiny R7RS-small implementation.
   - The bytecode compiler is written in Scheme.
@@ -27,7 +27,7 @@ Yota Toyama
 
 ---
 
-## Virtual machine
+# Virtual machine
 
 - The stack machine.
 - Everything is a pair.
@@ -37,7 +37,7 @@ Yota Toyama
 
 ---
 
-## Code graphs
+# Code graphs
 
 ---
 
