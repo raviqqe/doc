@@ -69,7 +69,7 @@ Yota Toyama
 
 ### Code graph
 
-![](./fibonacci.svg)
+![](./if-instruction.svg)
 
 ---
 
@@ -89,7 +89,7 @@ Yota Toyama
 
 ### Code graph
 
-![](./fibonacci.svg)
+![](./duplicate-strings.svg)
 
 ---
 
