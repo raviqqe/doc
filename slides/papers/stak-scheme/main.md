@@ -59,6 +59,10 @@ Yota Toyama
 
 ### Code graph
 
+```scheme
+(display (if x "foo" "bar"))
+```
+
 ---
 
 ## Duplicate strings
