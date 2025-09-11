@@ -1,5 +1,5 @@
 flowchart LR
   c0[get x] --> c1{if}
-  c1 --> c2["const \"foo\""] --> c4
-  c1 --> c3["const \"bar\""] --> c4
+  c1 --> c2[const #quote;foo#quote;] --> c4
+  c1 --> c3[const #quote;bar#quote;] --> c4
   c4[call display]
