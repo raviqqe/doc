@@ -1,4 +1,7 @@
 flowchart LR
-  c0[const #quot;foo#quot;] --> c1[call display] --> c2
-  c2[const #quot;foo#quot;] --> c3[call display] --> c4
-  c4[const #quot;bar#quot;] --> c5[call display]
+  d0[#quot;foo#quot;] --> c0
+  d0[#quot;bar#quot;] --> c4
+  d0 --> c2
+  c0[const ] --> c1[call display] --> c2
+  c2[const] --> c3[call display] --> c4
+  c4[const] --> c5[call display]
