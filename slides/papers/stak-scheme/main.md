@@ -47,9 +47,9 @@ Yota Toyama
 
 ---
 
-## If instruction
+# If instruction
 
-### Scheme
+## Scheme
 
 ```scheme
 (display (if x "foo" "bar"))
@@ -57,17 +57,17 @@ Yota Toyama
 
 ---
 
-## If instruction
+# If instruction
 
-### Code graph
+## Code graph
 
 ![](./if-instruction.svg)
 
 ---
 
-## Duplicate strings
+# Duplicate strings
 
-### Scheme
+## Scheme
 
 ```scheme
 (display "foo")
@@ -77,17 +77,17 @@ Yota Toyama
 
 ---
 
-## Duplicate strings
+# Duplicate strings
 
-### Code graph
+## Code graph
 
 ![](./duplicate-strings.svg)
 
 ---
 
-## Library system
+# Library system
 
-### Scheme
+## Scheme
 
 ```scheme
 (define-library (foo)
