@@ -119,7 +119,7 @@ Yota Toyama
 
 ### Code graph
 
-![](./fibonacci.svg)
+![](./library-system.svg)
 
 ---
 
