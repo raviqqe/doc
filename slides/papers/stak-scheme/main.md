@@ -50,9 +50,7 @@ Yota Toyama
 ### Scheme
 
 ```scheme
-(display (if x "foo")
-(display "foo")
-(display "bar")
+(display (if x "foo" "bar"))
 ```
 
 ---
