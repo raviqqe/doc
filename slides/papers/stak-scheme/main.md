@@ -59,16 +59,6 @@ Yota Toyama
 
 ### Code graph
 
-```scheme
-(display (if x "foo" "bar"))
-```
-
----
-
-## If instruction
-
-### Code graph
-
 ![](./if-instruction.svg)
 
 ---

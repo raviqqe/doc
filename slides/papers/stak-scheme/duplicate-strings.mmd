@@ -1,6 +1,5 @@
 flowchart LR
-  f0[["(fib x)"]] --> c0
-  c0[get 0] --> c1[const 2] --> c2[call <] --> c4
-  c4[if] -->  c5[get 0]
-  c4 -->  c6[get 0] --> c7[const 1] --> c8[call -] --> c9[call fib] --> c10
-  c10[get 1] --> c11[const 2] --> c12[call -] --> c13[call fib] --> c14[call +]
+  c0[get x] --> c1{if}
+  c1 --> c2[const #quot;foo#quot;] --> c4
+  c1 --> c3[const #quot;bar#quot;] --> c4
+  c4[call display]
