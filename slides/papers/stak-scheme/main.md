@@ -94,12 +94,12 @@ Yota Toyama
 (define-library (foo)
   (export foo)
 
-  (begin (define foo 42)))
+  (begin (define foo 123)))
 
 (define-library (bar)
   (export foo)
 
-  (begin (define foo 42)))
+  (begin (define foo 456)))
 
 (import (foo) (prefix (bar) bar-))
 
