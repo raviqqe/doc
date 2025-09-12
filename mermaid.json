@@ -1,4 +1,6 @@
 {
   "$ref": "https://mermaid.js.org/schemas/config.schema.json",
-  "flowchart": {}
+  "flowchart": {
+    "padding": 5
+  }
 }
