@@ -6,10 +6,6 @@ Yota Toyama
 
 ---
 
-# Stak Scheme
-
----
-
 # Background
 
 - Ribbit Scheme is a tiny R4RS implementation.
