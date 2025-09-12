@@ -30,7 +30,7 @@ Yota Toyama
 # Virtual machine
 
 - A stack machine
-- Everything is a pair.
+- **Everything is a pair**.
   - Bytecode
   - Values
     - Including lists, characters, strings, etc.
