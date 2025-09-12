@@ -1,5 +1,6 @@
 {
   "flowchart": {
+    "nodeSpacing": 15,
     "padding": 5
   }
 }
