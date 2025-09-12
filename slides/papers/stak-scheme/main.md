@@ -33,7 +33,7 @@ Yota Toyama
 - **Everything is a pair**.
   - Bytecode
   - Values
-    - Including lists, characters, strings, etc.
+    - e.g. lists, characters, strings, etc.
 - VM-level homoiconicity
 
 ---
