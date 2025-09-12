@@ -59,7 +59,7 @@ Yota Toyama
 
 ## Code graph
 
-![height: 450px](./if-instruction.svg)
+![height:450px](./if-instruction.svg)
 
 ---
 
