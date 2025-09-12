@@ -34,6 +34,7 @@ Yota Toyama
   - Bytecode
   - Values
     - Including lists, characters, strings, etc.
+- VM-level homoiconicity
 
 ---
 
@@ -122,3 +123,9 @@ Yota Toyama
 # Fibonacci function
 
 ![](./fibonacci.svg)
+
+---
+
+# References
+
+- https://en.wikipedia.org/wiki/Homoiconicity
