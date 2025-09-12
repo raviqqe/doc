@@ -1,6 +1,13 @@
 flowchart LR
-  f0[["(fib x)"]] --> c0
-  c0[get 0] --> c1[const 2] --> c2[call <] --> c4
+  d0(fibonacci) -.-> d1
+  d0 -.-> c9
+  d0 -.-> c13
+  d1(lambda x) -.-> c0
+  d2(<) -.-> c2
+  d3("-") -.-> c8
+  d3 -.-> c12
+  d4(+) -.-> c14
+  c0[get 0] --> c1[const 2] --> c2[call] --> c4
   c4[if] -->  c5[get 0]
-  c4 -->  c6[get 0] --> c7[const 1] --> c8[call -] --> c9[call fib] --> c10
-  c10[get 1] --> c11[const 2] --> c12[call -] --> c13[call fib] --> c14[call +]
+  c4 -->  c6[get 0] --> c7[const 1] --> c8[call] --> c9[call] --> c10
+  c10[get 1] --> c11[const 2] --> c12[call] --> c13[call] --> c14[call]

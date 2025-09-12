@@ -6,11 +6,7 @@ Yota Toyama
 
 ---
 
-# Stak Scheme
-
----
-
-## Background
+# Background
 
 - Ribbit Scheme is a tiny R4RS implementation.
   - The bytecode compiler is written in Scheme.
@@ -19,7 +15,7 @@ Yota Toyama
 
 ---
 
-## Stak Scheme
+# Stak Scheme
 
 - Stak Scheme is the tiny R7RS-small implementation.
   - The bytecode compiler is written in Scheme.
@@ -27,17 +23,21 @@ Yota Toyama
 
 ---
 
-## Virtual machine
+# Virtual machine
 
-- The stack machine.
-- Everything is a pair.
+- A stack machine
+- **Everything is a pair**.
   - Bytecode
   - Values
-    - Including lists, characters, strings, etc.
+    - e.g. lists, characters, strings, etc.
+  - A stack
+- VM-level homoiconicity
 
 ---
 
-## Code graphs
+# Code graph
+
+> WIP
 
 ---
 
@@ -45,9 +45,27 @@ Yota Toyama
 
 ---
 
-## Duplicate strings
+# If instruction
 
-### Scheme
+## Scheme
+
+```scheme
+(display (if x "foo" "bar"))
+```
+
+---
+
+# If instruction
+
+## Code graph
+
+![height:450px](./if-instruction.svg)
+
+---
+
+# Duplicate strings
+
+## Scheme
 
 ```scheme
 (display "foo")
@@ -57,32 +75,32 @@ Yota Toyama
 
 ---
 
-## Duplicate strings
+# Duplicate strings
 
-### Code graph
+## Code graph
 
-![](./fibonacci.svg)
+![height:450px](./duplicate-strings.svg)
 
 ---
 
-## Library system
+# Library system
 
-### Scheme
+## Scheme
 
 ```scheme
 (define-library (foo)
   (export foo)
 
-  (begin (define foo 42)))
+  (begin
+    (define foo 123)))
+```
 
-(define-library (bar)
-  (export foo)
+```scheme
+(import (prefix (foo) bar-))
 
-  (begin (define foo 42)))
+(define foo 456)
 
-(import (foo) (prefix (bar) bar-))
-
-(+ foo bar-foo)
+(+ bar-foo foo)
 ```
 
 ---
@@ -91,7 +109,7 @@ Yota Toyama
 
 ### Code graph
 
-![](./fibonacci.svg)
+![height:450px](./library-system.svg)
 
 ---
 
@@ -102,3 +120,9 @@ Yota Toyama
 # Fibonacci function
 
 ![](./fibonacci.svg)
+
+---
+
+# References
+
+- https://en.wikipedia.org/wiki/Homoiconicity

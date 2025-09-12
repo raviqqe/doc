@@ -1,0 +1,14 @@
+flowchart LR
+  d0(#quot;foo#quot;) -.-> c0
+  d0 -.-> c2
+  d1(#quot;bar#quot;) -.-> c4
+
+  subgraph s[ ]
+    c0[const ] --> c1[call] --> c2
+    c2[const] --> c3[call] --> c4
+    c4[const] --> c5[call]
+  end
+
+  d2(display) -.-> c1
+  d2 -.-> c3
+  d2 -.-> c5
