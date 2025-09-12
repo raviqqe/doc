@@ -1,9 +1,9 @@
 flowchart LR
   d0(x) -.-> c0
   d1(#quot;foo#quot;) -.-> c2
-  d2(#quot;bar#quot;) -.-> c3
   d3(display) -.-> c4
   c0[get x] --> c1{if}
   c1 --> c2[const] --> c4
   c1 --> c3[const] --> c4
   c4[call]
+  d2(#quot;bar#quot;) -.-> c3
