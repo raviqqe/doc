@@ -79,7 +79,7 @@ Yota Toyama
 
 ## Code graph
 
-![](./duplicate-strings.svg)
+![height:450px](./duplicate-strings.svg)
 
 ---
 
@@ -109,7 +109,7 @@ Yota Toyama
 
 ### Code graph
 
-![](./library-system.svg)
+![height:450px](./library-system.svg)
 
 ---
 
