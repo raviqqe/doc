@@ -94,7 +94,8 @@ Yota Toyama
 (define-library (foo)
   (export foo)
 
-  (begin (define foo 123)))
+  (begin
+    (define foo 123)))
 ```
 
 ```scheme
