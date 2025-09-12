@@ -34,6 +34,7 @@ Yota Toyama
   - Bytecode
   - Values
     - e.g. lists, characters, strings, etc.
+  - A stack
 - VM-level homoiconicity
 
 ---
