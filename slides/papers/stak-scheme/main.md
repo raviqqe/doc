@@ -95,15 +95,14 @@ Yota Toyama
   (export foo)
 
   (begin (define foo 123)))
+```
 
-(define-library (bar)
-  (export foo)
+```scheme
+(import (prefix (foo) bar-))
 
-  (begin (define foo 456)))
+(define foo 456)
 
-(import (foo) (prefix (bar) bar-))
-
-(+ foo bar-foo)
+(+ bar-foo foo)
 ```
 
 ---
