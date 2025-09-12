@@ -3,7 +3,7 @@ flowchart LR
   d1(#quot;foo#quot;) -.-> c2
   d3(display) -.-> c4
 
-  subgraph " "
+  subgraph s[ ]
     c0[get x] --> c1{if} --> c2[const] & c3[const] --> c4[call]
   end
 
