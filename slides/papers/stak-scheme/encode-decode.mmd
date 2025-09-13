@@ -2,7 +2,7 @@ flowchart LR
   s[source code] -.-> compile
 
   subgraph compiler
-    compile -->|code graph| encode
+    compile -- code graph --> encode
   end
 
   encode -.-> bytecode -.-> decode
