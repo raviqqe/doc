@@ -131,11 +131,7 @@ Yota Toyama
 
 ---
 
-# Code graph as pairs
-
----
-
-# Code graph as pairs
+# Code graph in depth
 
 ---
 
