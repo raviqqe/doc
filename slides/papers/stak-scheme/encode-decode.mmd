@@ -5,8 +5,8 @@ flowchart LR
     compile --> encode
   end
 
-  compiler --> bytecode --> vm
+  compiler --> bytecode --> decode
 
   subgraph vm[VM]
-    foo
+    decode --> run
   end
