@@ -1,16 +1,13 @@
+<!--
+theme: default
+paginate: true
+-->
+
 # Stak Scheme: The tiny R7RS-small implementation
 
 ## Scheme Workshop 2025
 
 Yota Toyama
-
-<!--
-# Table of contents
-
-- Background
-- Stak Scheme
-- Code graph
--->
 
 ---
 
