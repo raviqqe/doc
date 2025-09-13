@@ -12,6 +12,7 @@ Yota Toyama
   - The bytecode compiler is written in Scheme.
   - The virtual machine is written in some host language.
 - Can we implement the entire R7RS-small standard on its VM? 🤔
+  - => Yes, we can!
 
 ---
 
