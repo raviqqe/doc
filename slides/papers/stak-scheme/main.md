@@ -121,9 +121,9 @@ Yota Toyama
 
 ---
 
-## Library system
+# Library system
 
-### Code graph
+## Code graph
 
 ![h:450px](./library-system.svg)
 
