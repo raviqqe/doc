@@ -2,13 +2,13 @@ flowchart LR
   d0[source code] -.-> c1
 
   subgraph s0[compiler]
-    c1[parse] -- S-expression --> c2[inception] --> c3
+    c1[parse] --->|S-expression| c2[inception] --> c3
 
     subgraph s1[compile]
       c3[library expansion] --> c4[macro expansion] --> c5[compile]
     end
 
-    s1 -.-> c2
+    s1 -.->|S-expression| c2
 
     c4 --> c5[encode]
   end
