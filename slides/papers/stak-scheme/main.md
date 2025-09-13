@@ -40,7 +40,8 @@ Yota Toyama
   - Values
     - e.g. lists, characters, strings, etc.
   - A stack
-- VM-level homoiconicity
+- Binary-level homoiconicity
+- Von Neumann architecture
 
 ---
 
