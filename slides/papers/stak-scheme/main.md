@@ -138,12 +138,24 @@ Yota Toyama
 
 ---
 
+# Examples
+
+> WIP
+
+---
+
 # Encoding & decoding
 
 - The compiler encodes a code graph into a byte sequence.
 - The VM decodes a code graph into a byte sequence.
 
 ![](encode-decode.svg)
+
+---
+
+# The `eval` procedure
+
+> WIP
 
 ---
 
