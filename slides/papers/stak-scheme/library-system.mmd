@@ -7,8 +7,10 @@ flowchart LR
   d4 -.-> d2
 
   subgraph s0["(foo) library"]
-    c0[const] --> c1[set] --> c2
+    c0[const] --> c1[set]
   end
+
+  c1 --> c2
 
   subgraph s1[ ]
     c2[const] --> c3[set] --> c4
