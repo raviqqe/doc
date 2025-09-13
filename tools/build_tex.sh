@@ -2,9 +2,6 @@
 
 set -ex
 
-directory=doc/public/papers
-mkdir -p $directory
-
 for file in $(find . -name '*.tex'); do
   (
     cd $(dirname $file)
@@ -24,7 +21,4 @@ for file in $(find . -name '*.tex'); do
     texlive $latex
     texlive $latex
   )
-
-  file=${file%.tex}
-  cp $file.pdf $directory/$(basename $(dirname $file)).pdf
 done
