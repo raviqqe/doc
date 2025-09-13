@@ -142,19 +142,10 @@ Yota Toyama
 
 # Compactness
 
-## Lines of code
-
-|      | KLOC |
-| ---- | ---: |
-| Stak |  9.1 |
-| TR7  | 16.8 |
-
-## Binary size
-
-|       |  KB |
-| ----- | --: |
-| mstak | 109 |
-| tr7i  | 301 |
+|      | Lines of code / KLOC | Binary size / KB |
+| ---- | -------------------: | ---------------: |
+| Stak |                  9.1 |              109 |
+| TR7  |                 16.8 |              301 |
 
 ---
 
