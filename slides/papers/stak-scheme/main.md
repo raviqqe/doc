@@ -24,6 +24,7 @@ Yota Toyama
 # Stak Scheme
 
 - Stak Scheme, the tiny R7RS-small implementation
+- Based on Rbbit Virtual Machine
 
 ## Comparison to Ribbit Scheme
 
