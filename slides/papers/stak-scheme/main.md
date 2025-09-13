@@ -1,3 +1,8 @@
+<!--
+theme: default
+paginate: true
+-->
+
 # Stak Scheme: The tiny R7RS-small implementation
 
 ## Scheme Workshop 2025
@@ -8,18 +13,26 @@ Yota Toyama
 
 # Background
 
-- Ribbit Scheme is a tiny R4RS implementation.
-  - The bytecode compiler is written in Scheme.
-  - The virtual machine is written in some host language.
-- Can we implement the entire R7RS-small standard on its VM? 🤔
+- Ribbit Scheme, the tiny R4RS implementation
+  - Bytecode compiler: Scheme
+  - Virtual machine (VM): x86-64 assembly, C, Javascript, Bash, etc.
+- Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
+  - Yes, we can!
 
 ---
 
 # Stak Scheme
 
-- Stak Scheme is the tiny R7RS-small implementation.
-  - The bytecode compiler is written in Scheme.
-  - The virtual machine is written in Rust.
+- Stak Scheme, the tiny R7RS-small implementation
+
+## Comparison to Ribbit Scheme
+
+|                   | Stak          | Ribbit                                   |
+| ----------------- | ------------- | ---------------------------------------- |
+| Data structure    | Pair          | Rib                                      |
+| Bytecode encoding | Local caching | Global caching + constant initialization |
+| Compiler          | Scheme        | Scheme                                   |
+| VM                | Rust          | Many languages                           |
 
 ---
 
@@ -29,15 +42,18 @@ Yota Toyama
 - **Everything is a pair**.
   - Bytecode
   - Values
-    - e.g. lists, characters, strings, etc.
+    - Lists, characters, strings, etc.
   - A stack
-- VM-level homoiconicity
+- Binary-level homoiconicity
+- "Von Neumann architecture"
 
 ---
 
 # Code graph
 
-> WIP
+- A representation of a Scheme program on memory
+- Directed Acyclic Graph (DAG)
+- Used at both **compile time** in the compiler and **runtime** in the VM.
 
 ---
 
@@ -110,6 +126,49 @@ Yota Toyama
 ### Code graph
 
 ![height:450px](./library-system.svg)
+
+---
+
+# Code graph in depth
+
+- A pair consists of `car`, `cdr`, and a tag on the side of `cdr`.
+- Again, this representation is used for everything including in-memory bytecode and Scheme values.
+
+![](code-graph-in-depth.svg)
+
+---
+
+# Examples
+
+> WIP
+
+---
+
+# Encoding & decoding
+
+- The compiler encodes a code graph into a byte sequence.
+- The VM decodes a code graph into a byte sequence.
+
+![](encode-decode.svg)
+
+---
+
+# The `eval` procedure
+
+> WIP
+
+---
+
+# Compactness
+
+|       | Lines of code (KLOC) | Binary size (KB) |
+| ----- | -------------------: | ---------------: |
+| mstak |                9,127 |          108,648 |
+| tr7i  |               16,891 |          301,536 |
+
+## References
+
+- [TR7: tiny R7RS-small scheme interpreter](https://jobol.gitlab.io/tr7/)
 
 ---
 
