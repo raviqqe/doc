@@ -147,6 +147,8 @@ Yota Toyama
 | Stak |                9,127 |          108,648 |
 | TR7  |               16,891 |          301,536 |
 
+- [TR7: tiny R7RS-small scheme interpreter](https://jobol.gitlab.io/tr7/)
+
 ---
 
 # Appendix
