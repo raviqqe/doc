@@ -75,7 +75,7 @@ Yota Toyama
 
 ## Code graph
 
-![height:450px](./if-instruction.svg)
+![h:450px](./if-instruction.svg)
 
 ---
 
@@ -95,7 +95,7 @@ Yota Toyama
 
 ## Code graph
 
-![height:450px](./duplicate-strings.svg)
+![h:450px](./duplicate-strings.svg)
 
 ---
 
@@ -125,7 +125,7 @@ Yota Toyama
 
 ### Code graph
 
-![height:450px](./library-system.svg)
+![h:450px](./library-system.svg)
 
 ---
 
@@ -155,7 +155,7 @@ Yota Toyama
 
 # The `eval` procedure
 
-![](eval.svg)
+![h:450px](eval.svg)
 
 ---
 
