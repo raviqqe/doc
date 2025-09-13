@@ -1,11 +1,2 @@
 flowchart LR
-  subgraph c0[ ]
-    a0[car] ~~~ d0[cdr]
-  end
-
-  d0 --> c1
-
-  subgraph c1[ ]
-    direction LR
-    a1[car] ~~~ d1[cdr]
-  end
+  c0[car|cdr] --> c0[car|cdr]
