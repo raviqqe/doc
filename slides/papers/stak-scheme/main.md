@@ -155,7 +155,7 @@ Yota Toyama
 
 # The `eval` procedure
 
-![h:450px](eval.svg)
+![bg right h:700px](eval.svg)
 
 ---
 
