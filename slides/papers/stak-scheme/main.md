@@ -38,7 +38,7 @@ Yota Toyama
     - e.g. lists, characters, strings, etc.
   - A stack
 - Binary-level homoiconicity
-- Von Neumann architecture
+- "Von Neumann architecture"
 
 ---
 
