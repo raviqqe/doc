@@ -27,12 +27,12 @@ Yota Toyama
 
 ## Comparison to Ribbit Scheme
 
-|                   | Stak             | Ribbit                          |
-| ----------------- | ---------------- | ------------------------------- |
-| Data structure    | Pair             | Rib                             |
-| Bytecode encoding | Topological sort | Topological sort + symbol table |
-| Compiler          | Scheme           | Scheme                          |
-| VM                | Rust             | Many languages                  |
+|                   | Stak                          | Ribbit                          |
+| ----------------- | ----------------------------- | ------------------------------- |
+| Data structure    | Pair                          | Rib                             |
+| Bytecode encoding | Topological sort + node cache | Topological sort + symbol table |
+| Compiler          | Scheme                        | Scheme                          |
+| VM                | Rust                          | Many languages                  |
 
 ---
 
