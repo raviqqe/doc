@@ -25,14 +25,14 @@ Yota Toyama
 
 - Stak Scheme, the tiny R7RS-small implementation
 
-## Comparison with Ribbit Scheme
+## Comparison to Ribbit Scheme
 
-|                   | Stak   | Ribbit         |
-| ----------------- | ------ | -------------- |
-| Data structure    | Pair   | Rib            |
-| Bytecode encoding | Pair   | Rib            |
-| Compiler          | Scheme | Scheme         |
-| VM                | Rust   | Many languages |
+|                   | Stak             | Ribbit                                     |
+| ----------------- | ---------------- | ------------------------------------------ |
+| Data structure    | Pair             | Rib                                        |
+| Bytecode encoding | Topological sort | Topological sort + constant initialization |
+| Compiler          | Scheme           | Scheme                                     |
+| VM                | Rust             | Many languages                             |
 
 ---
 
