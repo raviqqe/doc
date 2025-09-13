@@ -38,9 +38,6 @@ importers:
       '@fontsource/ubuntu':
         specifier: ^5.2.7
         version: 5.2.7
-      '@raviqqe/loscore':
-        specifier: ^0.2.17
-        version: 0.2.17
       astro:
         specifier: ^5.13.6
         version: 5.13.7(@types/node@24.3.1)(jiti@1.21.7)(rollup@4.50.1)(typescript@5.9.2)(yaml@2.8.1)
@@ -57,6 +54,9 @@ importers:
       '@types/node':
         specifier: ^24.3.1
         version: 24.3.1
+      es-toolkit:
+        specifier: ^1.39.10
+        version: 1.39.10
       playwright:
         specifier: ^1.55.0
         version: 1.55.0
@@ -661,10 +661,6 @@ packages:
     engines: {node: ^24.6.0}
     peerDependencies:
       '@biomejs/biome': ^2.1.4
-
-  '@raviqqe/loscore@0.2.17':
-    resolution: {integrity: sha512-w8SHY8qimh8MydKwjagIryoJqLFyzxdRaKj70sEBKyEKS4KE4Kuejtdo4OttzFetQeLSz0tE/iiHA1um76JCRQ==}
-    engines: {node: '>=24.6.0'}
 
   '@react-aria/focus@3.21.1':
     resolution: {integrity: sha512-hmH1IhHlcQ2lSIxmki1biWzMbGgnhdxJUM0MFfzc71Rv6YAzhlx4kX3GYn4VNcjCeb6cdPv4RZ5vunV4kgMZYQ==}
@@ -1631,6 +1627,9 @@ packages:
 
   es-module-lexer@1.7.0:
     resolution: {integrity: sha512-jEQoCwk8hyb2AZziIOLhDqpm5+2ww5uIE6lkO/6jcOCusfk6LhMHpXXfBLXTZ7Ydyt0j4VoUQv6uGNYbdW+kBA==}
+
+  es-toolkit@1.39.10:
+    resolution: {integrity: sha512-E0iGnTtbDhkeczB0T+mxmoVlT4YNweEKBLq7oaU4p11mecdsZpNWOglI4895Vh4usbQ+LsJiuLuI2L0Vdmfm2w==}
 
   esast-util-from-estree@2.0.0:
     resolution: {integrity: sha512-4CyanoAudUSBAn5K13H4JhsMH6L9ZP7XbLVe/dKybkxMO7eDyLsT8UHl9TRNrU2Gr9nz+FovfSIjuXWJ81uVwQ==}
@@ -4007,8 +4006,6 @@ snapshots:
     dependencies:
       '@biomejs/biome': 2.2.3
 
-  '@raviqqe/loscore@0.2.17': {}
-
   '@react-aria/focus@3.21.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@react-aria/interactions': 3.25.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -5047,6 +5044,8 @@ snapshots:
       is-arrayish: 0.2.1
 
   es-module-lexer@1.7.0: {}
+
+  es-toolkit@1.39.10: {}
 
   esast-util-from-estree@2.0.0:
     dependencies:
