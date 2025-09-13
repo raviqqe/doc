@@ -27,11 +27,12 @@ Yota Toyama
 
 ## Comparison with Ribbit Scheme
 
-|                | Stak   | Ribbit         |
-| -------------- | ------ | -------------- |
-| Data structure | Pair   | Rib            |
-| Compiler       | Scheme | Scheme         |
-| VM             | Rust   | Many languages |
+|                   | Stak   | Ribbit         |
+| ----------------- | ------ | -------------- |
+| Data structure    | Pair   | Rib            |
+| Bytecode encoding | Pair   | Rib            |
+| Compiler          | Scheme | Scheme         |
+| VM                | Rust   | Many languages |
 
 ---
 
