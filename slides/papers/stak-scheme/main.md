@@ -123,20 +123,20 @@ Yota Toyama
 
 ---
 
+# Code graph in depth
+
+- A pair consists of `car`, `cdr`, and a tag on the side of `cdr`.
+
+![](code-graph-in-depth.svg)
+
+---
+
 # Encoding & decoding
 
 - The compiler encodes a code graph into a byte sequence.
 - The VM decodes a code graph into a byte sequence.
 
 ![](encode-decode.svg)
-
----
-
-# Code graph in depth
-
-- A pair consists of `car`, `cdr`, and a tag on the side of `cdr`.
-
-![](code-graph-in-depth.svg)
 
 ---
 
