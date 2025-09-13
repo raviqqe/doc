@@ -4,6 +4,14 @@
 
 Yota Toyama
 
+<!--
+# Table of contents
+
+- Background
+- Stak Scheme
+- Code graph
+-->
+
 ---
 
 # Background
@@ -38,7 +46,8 @@ Yota Toyama
 
 # Code graph
 
-> WIP
+- A representation of a Scheme program on memory.
+- Used at both compile time in the compiler and runtime in the VM.
 
 ---
 
@@ -119,6 +128,10 @@ Yota Toyama
 - The compiler encodes a code graph into a byte sequence.
 - The VM decodes a code graph into a byte sequence.
 - The encoding and decoding algorithms are similar to the ones of Ribbit Scheme.
+
+---
+
+# Code graph as pairs
 
 ---
 
