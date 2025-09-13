@@ -129,7 +129,7 @@ Yota Toyama
 - The VM decodes a code graph into a byte sequence.
 - The encoding and decoding algorithms are similar to the ones of Ribbit Scheme.
 
-![]()
+![](encode-decode.svg)
 
 ---
 
