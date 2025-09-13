@@ -42,7 +42,7 @@ Yota Toyama
 - **Everything is a pair**.
   - Bytecode
   - Values
-    - e.g. lists, characters, strings, etc.
+    - Lists, characters, strings, etc.
   - A stack
 - Binary-level homoiconicity
 - "Von Neumann architecture"
