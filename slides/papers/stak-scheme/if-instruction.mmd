@@ -1,10 +1,10 @@
 flowchart LR
-  d0(x) -.-> c0
-  d1(#quot;foo#quot;) -.-> c2
-  d3(display) -.-> c4
+  c0 -.-> d0(x)
+  c2 -.-> d1(#quot;foo#quot;)
+  c4 -.-> d3(display)
 
   subgraph s[ ]
-    c0[get x] --> c1{if} --> c2[const] & c3[const] --> c4[call]
+    c0[get] --> c1{if} --> c2[const] & c3[const] --> c4[call]
   end
 
-  d2(#quot;bar#quot;) -.-> c3
+  c3 -.-> d2(#quot;bar#quot;)

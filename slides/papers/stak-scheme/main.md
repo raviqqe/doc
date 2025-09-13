@@ -4,6 +4,14 @@
 
 Yota Toyama
 
+<!--
+# Table of contents
+
+- Background
+- Stak Scheme
+- Code graph
+-->
+
 ---
 
 # Background
@@ -12,6 +20,7 @@ Yota Toyama
   - The bytecode compiler is written in Scheme.
   - The virtual machine is written in some host language.
 - Can we implement the entire R7RS-small standard on its VM? 🤔
+  - => Yes, we can!
 
 ---
 
@@ -37,7 +46,8 @@ Yota Toyama
 
 # Code graph
 
-> WIP
+- A representation of a Scheme program on memory.
+- Used at both **compile time** in the compiler and **runtime** in the VM.
 
 ---
 
@@ -110,6 +120,18 @@ Yota Toyama
 ### Code graph
 
 ![height:450px](./library-system.svg)
+
+---
+
+# Encoding & decoding
+
+- The compiler encodes a code graph into a byte sequence.
+- The VM decodes a code graph into a byte sequence.
+- The encoding and decoding algorithms are similar to the ones of Ribbit Scheme.
+
+---
+
+# Code graph in depth
 
 ---
 
