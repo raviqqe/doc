@@ -23,7 +23,7 @@ Yota Toyama
 
 # Stak Scheme
 
-- Stak Scheme is the tiny R7RS-small implementation.
+- Stak Scheme, the tiny R7RS-small implementation
 
 ## Comparison with Ribbit Scheme
 
