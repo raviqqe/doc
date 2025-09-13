@@ -13,9 +13,9 @@ Yota Toyama
 
 # Background
 
-- Ribbit Scheme is a tiny R4RS implementation.
-  - The bytecode compiler is written in Scheme.
-  - The virtual machine is written in some host language.
+- Ribbit Scheme, the tiny R4RS implementation
+  - Bytecode compiler: Scheme
+  - Virtual machine: x86-64 assembly, C, Javascript, Bash, etc.
 - Can we implement the entire R7RS-small standard on its VM? 🤔
   - Yes, we can!
 
@@ -24,8 +24,14 @@ Yota Toyama
 # Stak Scheme
 
 - Stak Scheme is the tiny R7RS-small implementation.
-  - The bytecode compiler is written in Scheme.
-  - The virtual machine is written in Rust.
+
+## Comparison with Ribbit Scheme
+
+|                | Stak   | Ribbit         |
+| -------------- | ------ | -------------- |
+| Data structure | Pair   | Rib            |
+| Compiler       | Scheme | Scheme         |
+| VM             | Rust   | Many languages |
 
 ---
 
