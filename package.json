@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.3",
+    "@marp-team/marp-cli": "^4.2.3",
     "@mermaid-js/mermaid-cli": "^11.9.0",
     "@raviqqe/biome-config": "^2.0.17",
     "puppeteer": "^24.19.0"

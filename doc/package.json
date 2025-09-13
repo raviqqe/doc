@@ -16,7 +16,6 @@
     "@astrojs/sitemap": "^3.5.1",
     "@fontsource-variable/noto-sans": "^5.2.8",
     "@fontsource/ubuntu": "^5.2.7",
-    "@marp-team/marp-cli": "^4.2.3",
     "@raviqqe/loscore": "^0.2.17",
     "astro": "^5.13.6",
     "glob": "^11.0.3",
