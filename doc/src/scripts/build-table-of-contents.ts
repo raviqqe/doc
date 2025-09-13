@@ -2,7 +2,7 @@ import { exec } from "node:child_process";
 import { readFile, stat, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { promisify } from "node:util";
-import { groupBy, sortBy } from "@raviqqe/loscore";
+import { groupBy, sortBy } from "es-toolkit";
 import { glob } from "glob";
 
 const excludedPattern = /slides\/papers/;
@@ -42,7 +42,7 @@ const writeToc = async (directory: string, component: string) =>
                   };
                 }),
             ),
-            ({ time }) => time,
+            ["time"],
           ),
           ({ time }) => Number(time.split("/")[0]),
         ),
@@ -56,8 +56,7 @@ const writeToc = async (directory: string, component: string) =>
           .reverse()
           .map(
             ({ htmlPath, pdfPath, time, title }) =>
-              `- [${title}](${htmlPath}) (${
-                pdfPath ? `[PDF](${pdfPath}), ` : ""
+              `- [${title}](${htmlPath}) (${pdfPath ? `[PDF](${pdfPath}), ` : ""
               }${time})`,
           ),
       ])
