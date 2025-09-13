@@ -47,7 +47,7 @@ Yota Toyama
 # Code graph
 
 - A representation of a Scheme program on memory.
-- Used at both compile time in the compiler and runtime in the VM.
+- Used at both **compile time** in the compiler and **runtime** in the VM.
 
 ---
 
