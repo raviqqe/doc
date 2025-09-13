@@ -154,7 +154,6 @@ Yota Toyama
 |       |  KB |
 | ----- | --: |
 | mstak | 109 |
-| stak  | 9.1 |
 | tr7i  | 301 |
 
 ---
