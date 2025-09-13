@@ -27,12 +27,12 @@ Yota Toyama
 
 ## Comparison to Ribbit Scheme
 
-|                   | Stak         | Ribbit             |
-| ----------------- | ------------ | ------------------ |
-| Data structure    | Pair         | Rib                |
-| Bytecode encoding | Node caching | Global cache table |
-| Compiler          | Scheme       | Scheme             |
-| VM                | Rust         | Many languages     |
+|                   | Stak          | Ribbit                                   |
+| ----------------- | ------------- | ---------------------------------------- |
+| Data structure    | Pair          | Rib                                      |
+| Bytecode encoding | Local caching | Global caching + constant initialization |
+| Compiler          | Scheme        | Scheme                                   |
+| VM                | Rust          | Many languages                           |
 
 ---
 
