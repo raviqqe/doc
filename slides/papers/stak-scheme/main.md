@@ -16,7 +16,7 @@ Yota Toyama
 - Ribbit Scheme, the tiny R4RS implementation
   - Bytecode compiler: Scheme
   - Virtual machine: x86-64 assembly, C, Javascript, Bash, etc.
-- Can we implement the entire R7RS-small standard on its VM? 🤔
+- Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
   - Yes, we can!
 
 ---
@@ -24,7 +24,6 @@ Yota Toyama
 # Stak Scheme
 
 - Stak Scheme, the tiny R7RS-small implementation
-- Based on Ribbit Virtual Machine.
 
 ## Comparison to Ribbit Scheme
 
