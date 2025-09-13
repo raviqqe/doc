@@ -6,8 +6,6 @@
     "start": "astro dev",
     "build": "node --run build:notes && node --run build:posts && node --run build:slides && node --run build:toc && playwright install && astro build",
     "build:slides": "node --run build:slides:html && node --run build:slides:pdf",
-    "build:slides:html": "marp --allow-local-files --html --input-dir ../slides --output public/slides",
-    "build:slides:pdf": "marp --allow-local-files --pdf --input-dir ../slides --output public/slides",
     "build:notes": "node src/scripts/build-directory.ts notes",
     "build:posts": "node src/scripts/build-directory.ts posts",
     "build:toc": "node src/scripts/build-table-of-contents.ts",
