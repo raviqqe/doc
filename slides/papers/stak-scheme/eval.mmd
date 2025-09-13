@@ -2,7 +2,6 @@ flowchart LR
   d0[source code] -.-> c1
 
   subgraph s0[compiler]
-    direction TB
     c1[parse] --->|S-expression| c2[inception] --> c3
 
     subgraph s1[compile]
