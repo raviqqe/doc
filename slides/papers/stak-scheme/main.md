@@ -155,7 +155,7 @@ Yota Toyama
 
 # The `eval` procedure
 
-> WIP
+![](eval.svg)
 
 ---
 
