@@ -134,6 +134,8 @@ Yota Toyama
 
 # Code graph in depth
 
+![](code-graph-in-depth.svg)
+
 ---
 
 # Appendix
