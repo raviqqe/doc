@@ -114,6 +114,15 @@ Yota Toyama
 
 ---
 
+# Encoding & decoding
+
+- The compiler encodes a code graph into a byte sequence.
+- The VM decodes a code graph into a byte sequence.
+- Ribbit Scheme uses a cache table of a **static** size.
+- Stak Scheme uses a cache table of a **dynamic** size.
+
+---
+
 # Appendix
 
 ---
