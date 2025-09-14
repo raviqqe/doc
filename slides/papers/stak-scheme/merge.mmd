@@ -29,8 +29,8 @@ flowchart LR
   subgraph s3[Remove from cache]
     direction TB
 
-    c9[pair 0] --> c11[pair 2]
-    c10[pair 1]:::current --> c11
+    c9[pair 0] --> c11[pair 2]:::remove
+    c10[pair 1] --> c11
   end
 
  classDef current color:lightskyblue,stroke:lightskyblue
