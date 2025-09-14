@@ -1,12 +1,12 @@
 flowchart LR
-  subgraph s0[Split]
+  subgraph s0[Merge]
     direction TB
 
     c0[car . cdrₜ] --> c1[car . cdrₜ]
     c0 --> c2[car . cdrₜ]
   end
 
-  s0 ~~~ s1
+  s0 -.-> s1
 
   subgraph s1[Merge]
     direction TB
