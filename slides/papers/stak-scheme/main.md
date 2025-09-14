@@ -163,12 +163,6 @@ Yota Toyama
 
 ---
 
-# Decoding branches
-
-![](decode-branch.svg)
-
----
-
 # `eval` and compiler
 
 - The compiler from S-expression to code graph is **data**.

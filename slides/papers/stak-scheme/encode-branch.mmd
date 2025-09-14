@@ -1,0 +1,14 @@
+flowchart TB
+  subgraph Split
+    direction LR
+
+    c0[car . cdrₜ] --> c2[car . cdrₜ]
+    c1[car . cdrₜ] --> c2
+  end
+
+  subgraph Merge
+    direction LR
+
+    c3[car . cdrₜ] --> c2[car . cdrₜ]
+    c4[car . cdrₜ] --> c2
+  end
