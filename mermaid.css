@@ -1,9 +1,9 @@
-.red > rect {
+.red * {
   color: lightpink;
   stroke: lightpink;
 }
 
-.blue > rect {
+.blue * {
   color: lightskyblue;
   stroke: lightskyblue;
 }
