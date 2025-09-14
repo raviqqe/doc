@@ -12,8 +12,8 @@
     "build:slides:pdf": "node --run marp -- --pdf",
     "build:tex": "tools/build_tex.sh",
     "lint": "biome ci",
-    "marp": "marp --allow-local-files --theme invert --input-dir slides",
-    "marp:serve": "node --run marp -- --server slides"
+    "marp": "marp --allow-local-files --theme dark --input-dir slides",
+    "marp:serve": "node --run marp -- --server"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.3",
