@@ -153,7 +153,7 @@ Yota Toyama
 
 ---
 
-# The `eval` procedure
+# Compiler and `eval` procedure
 
 ![bg right h:700px](eval.svg)
 
