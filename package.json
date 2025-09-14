@@ -12,7 +12,7 @@
     "build:slides:pdf": "node --run marp -- --pdf",
     "build:tex": "tools/build_tex.sh",
     "lint": "biome ci",
-    "marp": "marp --allow-local-files --theme dark --input-dir slides",
+    "marp": "marp --allow-local-files --input-dir slides --parallel",
     "marp:serve": "node --run marp -- --server"
   },
   "devDependencies": {
