@@ -132,7 +132,7 @@ Yota Toyama
 # Code graph in depth
 
 - A pair consists of `car`, `cdr`, and a tag on the side of `cdr`.
-- Universal representation for everything including in-memory bytecode and Scheme values
+- Universal representation for both in-memory bytecode and Scheme values
 
 ![](code-graph-in-depth.svg)
 
