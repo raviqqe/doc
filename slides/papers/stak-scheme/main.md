@@ -14,7 +14,7 @@ Yota Toyama
 
 # Background
 
-- [Ribbit Scheme, the tiny R4RS implementation](https://github.com/udem-dlteam/ribbit)
+- [Ribbit Scheme, the tiny R4RS implementation][ribbit]
   - Bytecode compiler: Scheme
   - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, etc.
     - Simple, portable, compact, and fast
@@ -211,3 +211,6 @@ Yota Toyama
 # References
 
 - https://en.wikipedia.org/wiki/Homoiconicity
+
+[ribbit]: https://github.com/udem-dlteam/ribbit
+[stak]: https://github.com/raviqqe/stak
