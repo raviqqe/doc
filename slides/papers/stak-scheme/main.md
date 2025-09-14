@@ -14,7 +14,7 @@ Yota Toyama
 
 # Background
 
-- Ribbit Scheme, the tiny R4RS implementation
+- [Ribbit Scheme, the tiny R4RS implementation](https://github.com/udem-dlteam/ribbit)
   - Bytecode compiler: Scheme
   - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, etc.
     - Simple, portable, compact, and fast
