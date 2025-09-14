@@ -148,6 +148,7 @@ Yota Toyama
 
 # Encoding & decoding
 
+- A code graph is encoded by a topological sort.
 - The compiler encodes a code graph into a byte sequence.
 - The VM decodes a code graph into a byte sequence.
 
@@ -158,6 +159,8 @@ Yota Toyama
 ---
 
 # Encoding merges
+
+- Merged nodes are **cached locally**.
 
 ![](merge.svg)
 
