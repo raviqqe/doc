@@ -1,9 +1,15 @@
-.red rect {
-  color: lightpink;
-  stroke: lightpink;
-}
+#my-svg {
+  .red {
+    & > rect {
+      color: lightpink;
+      stroke: lightpink;
+    }
+  }
 
-.blue rect {
-  color: lightskyblue;
-  stroke: lightskyblue;
+  .blue rect {
+    & > rect {
+      color: lightskyblue;
+      stroke: lightskyblue;
+    }
+  }
 }
