@@ -2,10 +2,10 @@ flowchart LR
   d0(source code) -.-> compile
 
   subgraph compiler
-    compile -- code graph --> encode
+    compile --> d1(code graph) --> encode
   end
 
-  encode -.-> d1(bytecode) -.-> decode
+  encode -.-> d2(bytecode) -.-> decode
 
   subgraph vm[VM]
     decode --> run
