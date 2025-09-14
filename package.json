@@ -8,10 +8,12 @@
     "build": "node --run build:mermaid && node --run build:slides && node --run build:tex && pnpm -r build",
     "build:mermaid": "puppeteer browsers install chrome-headless-shell && tools/build_mermaid.sh",
     "build:slides": "node --run build:slides:html && node --run build:slides:pdf",
-    "build:slides:html": "marp --allow-local-files --html --input-dir slides",
-    "build:slides:pdf": "marp --allow-local-files --pdf --input-dir slides",
+    "build:slides:html": "node --run marp -- --html",
+    "build:slides:pdf": "node --run marp -- --pdf",
     "build:tex": "tools/build_tex.sh",
-    "lint": "biome ci"
+    "lint": "biome ci",
+    "marp": "marp --allow-local-files --theme invert --input-dir slides",
+    "marp:serve": "node --run marp -- --server slides"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.3",
