@@ -157,13 +157,13 @@ Yota Toyama
 
 ---
 
-# Encoding
+# Encoding branches
 
 ![](encode-branch.svg)
 
 ---
 
-# Decoding
+# Decoding branches
 
 ![](decode-branch.svg)
 
