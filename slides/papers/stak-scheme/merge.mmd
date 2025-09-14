@@ -1,5 +1,5 @@
 flowchart LR
-  subgraph s0[Merge]
+  subgraph s0[ ]
     direction TB
 
     c0[car . cdrₜ]:::current --> c2[car . cdrₜ]
@@ -8,11 +8,20 @@ flowchart LR
 
   s0 -.-> s1
 
-  subgraph s1[Merge]
+  subgraph s1[ ]
     direction TB
 
     c3[car . cdrₜ] --> c5[car . cdrₜ]
     c4[car . cdrₜ] --> c5
+  end
+
+  s1 -.-> s2
+
+  subgraph s2[ ]
+    direction TB
+
+    c6[car . cdrₜ] --> c8[car . cdrₜ]
+    c7[car . cdrₜ] --> c8
   end
 
  classDef current stroke:red
