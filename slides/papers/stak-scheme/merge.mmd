@@ -1,5 +1,5 @@
 flowchart LR
-  subgraph s0[ ]
+  subgraph s0[Encode pair]
     direction TB
 
     c0[pair 0]:::current --> c2[pair 2]
@@ -17,7 +17,7 @@ flowchart LR
 
   s1 -.-> s2
 
-  subgraph s2[ ]
+  subgraph s2[Encode pair]
     direction TB
 
     c6[pair 0] --> c8[pair 2]
@@ -26,7 +26,7 @@ flowchart LR
 
   s2 -.-> s3
 
-  subgraph s3[ ]
+  subgraph s3[Remove from cache]
     direction TB
 
     c9[pair 0] --> c11[pair 2]
