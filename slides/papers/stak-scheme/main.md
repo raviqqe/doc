@@ -159,7 +159,7 @@ Yota Toyama
 # `eval` and compiler
 
 - The compiler from S-expression to code graph is **data**.
-- `(incept source)` embeds the compiler as the `(stak compile)` library into source code.
+- `(incept source)` embeds the compiler as a library into source code.
 - `((eval compiler) source)` compiles the source code.
 
 ![bg right:30% h:650px](eval.svg)
