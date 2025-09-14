@@ -28,12 +28,12 @@ Yota Toyama
 
 ## Comparison to Ribbit Scheme
 
-|                   | Stak          | Ribbit                                   |
-| ----------------- | ------------- | ---------------------------------------- |
-| Data structure    | Pair          | Rib                                      |
-| Bytecode encoding | Local caching | Global caching + constant initialization |
-| Compiler          | Scheme        | Scheme                                   |
-| VM                | Rust          | Many languages                           |
+|                   | Stak          | Ribbit                               |
+| ----------------- | ------------- | ------------------------------------ |
+| Data structure    | Pair          | Rib                                  |
+| Bytecode encoding | Dynamic cache | Global cache + continuation/constant |
+| Compiler          | Scheme        | Scheme                               |
+| VM                | Rust          | Many languages                       |
 
 ---
 
@@ -160,7 +160,7 @@ Yota Toyama
 
 # Encoding merges
 
-- Merged pairs (nodes) are cached _locally_.
+- Merged pairs (nodes) are cached _locally_ and _dynamically_.
 - On the first visit, the pair is added to cache.
 - On the last visit, the pair is removed from cache.
 
