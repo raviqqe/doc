@@ -1,11 +1,11 @@
 flowchart LR
-  s[source code] -.-> compile
+  d0(source code) -.-> compile
 
   subgraph compiler
     compile -- code graph --> encode
   end
 
-  encode -.-> bytecode -.-> decode
+  encode -.-> d1(bytecode) -.-> decode
 
   subgraph vm[VM]
     decode --> run
