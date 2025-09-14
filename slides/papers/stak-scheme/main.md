@@ -182,10 +182,10 @@ Yota Toyama
 
 # Compactness
 
-|       | Lines of code (KLOC) | Binary size (KB) |
-| ----- | -------------------: | ---------------: |
-| mstak |                9,127 |          108,648 |
-| tr7i  |               16,891 |          301,536 |
+|       | Lines of code (LOC) | Binary size (KB) |
+| ----- | ------------------: | ---------------: |
+| mstak |               9,127 |          108,648 |
+| tr7i  |              16,891 |          301,536 |
 
 ## References
 
