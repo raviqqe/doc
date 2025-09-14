@@ -11,7 +11,7 @@ flowchart LR
   subgraph s1[ ]
     direction TB
 
-    c3[pair 0] --> c5[pair 2]
+    c3[pair 0] --> c5[pair 2]:::current
     c4[pair 1] --> c5
   end
 
@@ -21,7 +21,16 @@ flowchart LR
     direction TB
 
     c6[pair 0] --> c8[pair 2]
-    c7[pair 1] --> c8
+    c7[pair 1]:::current --> c8
   end
 
- classDef current stroke:red
+  s2 -.-> s3
+
+  subgraph s3[ ]
+    direction TB
+
+    c9[pair 0] --> c11[pair 2]
+    c10[pair 1]:::current --> c11
+  end
+
+ classDef current stroke:lightskyblue
