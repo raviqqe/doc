@@ -157,9 +157,9 @@ Yota Toyama
 
 ---
 
-# Encoding branches
+# Encoding merges
 
-![](encode-branch.svg)
+![](merge.svg)
 
 ---
 
