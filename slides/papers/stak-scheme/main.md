@@ -151,9 +151,9 @@ Yota Toyama
 - The compiler encodes a code graph into a byte sequence.
 - The VM decodes a code graph into a byte sequence.
 
-![h:150px](encode.svg)
+![h:180px](encode.svg)
 
-![h:150px](decode.svg)
+![h:180px](decode.svg)
 
 ---
 
