@@ -161,8 +161,8 @@ Yota Toyama
 # Encoding merges
 
 - Merged pairs (nodes) are **cached locally**.
-- On the first visit, a merged node is added to cache.
-- On the last visit, a merged node is removed from cache.
+- On the first visit, the pair is added to cache.
+- On the last visit, the pair is removed from cache.
 
 ![](merge.svg)
 
