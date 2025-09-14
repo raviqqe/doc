@@ -2,8 +2,8 @@ flowchart LR
   subgraph s0[Encode pair]
     direction TB
 
-    c0[pair 0]:::current --> c2[pair 2]
-    c1[pair 1] --> c2
+    c0[pair 1]:::blue --> c2[pair 3]
+    c1[pair 2] --> c2
   end
 
   s0 -.-> s1
@@ -11,8 +11,8 @@ flowchart LR
   subgraph s1[Add to cache]
     direction TB
 
-    c3[pair 0] --> c5[pair 2]:::current
-    c4[pair 1] --> c5
+    c3[pair 1] --> c5[pair 3]:::blue
+    c4[pair 2] --> c5
   end
 
   s1 ~~~ s2
@@ -20,8 +20,8 @@ flowchart LR
   subgraph s2[Encode pair]
     direction TB
 
-    c6[pair 0] --> c8[pair 2]
-    c7[pair 1]:::current --> c8
+    c6[pair 1] --> c8[pair 3]
+    c7[pair 2]:::blue --> c8
   end
 
   s2 -.-> s3
@@ -29,9 +29,6 @@ flowchart LR
   subgraph s3[Remove from cache]
     direction TB
 
-    c9[pair 0] --> c11[pair 2]:::remove
-    c10[pair 1] --> c11
+    c9[pair 1] --> c11[pair 3]:::red
+    c10[pair 2] --> c11
   end
-
- classDef current color:lightskyblue,stroke:lightskyblue
- classDef remove color:lightpink,stroke:lightpink

@@ -1,3 +1,25 @@
-.default {
-  color: red;
+#my-svg {
+  .red {
+    --color: lightpink;
+
+    & > rect {
+      stroke: var(--color);
+    }
+
+    & span {
+      color: var(--color);
+    }
+  }
+
+  .blue {
+    --color: lightskyblue;
+
+    & > rect {
+      stroke: var(--color);
+    }
+
+    & span {
+      color: var(--color);
+    }
+  }
 }

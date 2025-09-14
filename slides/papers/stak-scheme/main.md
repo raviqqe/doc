@@ -14,9 +14,10 @@ Yota Toyama
 
 # Background
 
-- Ribbit Scheme, the tiny R4RS implementation
+- [Ribbit Scheme, the tiny R4RS implementation][ribbit]
   - Bytecode compiler: Scheme
   - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, etc.
+    - Simple, portable, compact, and fast
 - Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
   - Yes, we can!
 
@@ -25,15 +26,16 @@ Yota Toyama
 # Stak Scheme
 
 - Stak Scheme, the tiny R7RS-small implementation
+- Open source on GitHub: [`raviqqe/stak`][stak]
 
 ## Comparison to Ribbit Scheme
 
-|                   | Stak          | Ribbit                                   |
-| ----------------- | ------------- | ---------------------------------------- |
-| Data structure    | Pair          | Rib                                      |
-| Bytecode encoding | Local caching | Global caching + constant initialization |
-| Compiler          | Scheme        | Scheme                                   |
-| VM                | Rust          | Many languages                           |
+|                       | Stak          | Ribbit                               |
+| --------------------- | ------------- | ------------------------------------ |
+| **Data structure**    | Pair          | Rib                                  |
+| **Bytecode encoding** | Dynamic cache | Global cache + continuation/constant |
+| Compiler              | Scheme        | Scheme                               |
+| VM                    | Rust          | Many languages                       |
 
 ---
 
@@ -148,6 +150,7 @@ Yota Toyama
 
 # Encoding & decoding
 
+- A code graph is encoded by a topological sort.
 - The compiler encodes a code graph into a byte sequence.
 - The VM decodes a code graph into a byte sequence.
 
@@ -158,6 +161,10 @@ Yota Toyama
 ---
 
 # Encoding merges
+
+- Merged pairs (nodes) are cached _locally_ and _dynamically_.
+- On the first visit, the pair is added to cache.
+- On the last visit, the pair is removed from cache.
 
 ![](merge.svg)
 
@@ -205,3 +212,6 @@ Yota Toyama
 # References
 
 - https://en.wikipedia.org/wiki/Homoiconicity
+
+[ribbit]: https://github.com/udem-dlteam/ribbit
+[stak]: https://github.com/raviqqe/stak

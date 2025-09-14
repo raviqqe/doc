@@ -1,6 +1,6 @@
 {
   "flowchart": {
-    "htmlLabels": false,
+    "htmlLabels": true,
     "nodeSpacing": 10,
     "padding": 5,
     "rankSpacing": 30
