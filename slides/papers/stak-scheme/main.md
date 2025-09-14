@@ -155,7 +155,7 @@ Yota Toyama
 
 # `eval` and compiler
 
-- Compiler from S-expression to code graph is **data**.
+- The compiler from S-expression to code graph is **data**.
 
 ![bg right h:700px](eval.svg)
 
