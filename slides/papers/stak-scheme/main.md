@@ -160,7 +160,7 @@ Yota Toyama
 
 # Encoding merges
 
-- Merged nodes are **cached locally**.
+- Merged pairs (nodes) are **cached locally**.
 
 ![](merge.svg)
 
