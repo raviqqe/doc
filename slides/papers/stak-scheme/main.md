@@ -1,5 +1,6 @@
 <!--
 theme: default
+class: invert
 paginate: true
 -->
 
@@ -15,7 +16,7 @@ Yota Toyama
 
 - Ribbit Scheme, the tiny R4RS implementation
   - Bytecode compiler: Scheme
-  - Virtual machine (VM): x86-64 assembly, C, Javascript, Bash, etc.
+  - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, etc.
 - Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
   - Yes, we can!
 
@@ -52,7 +53,7 @@ Yota Toyama
 # Code graph
 
 - A representation of a Scheme program on memory
-- Directed Acyclic Graph (DAG)
+- Directed Acyclic Graph (DAG) of pairs
 - Used at both **compile time** in the compiler and **runtime** in the VM.
 
 ---
@@ -75,7 +76,7 @@ Yota Toyama
 
 ## Code graph
 
-![height:450px](./if-instruction.svg)
+![h:450px](./if-instruction.svg)
 
 ---
 
@@ -95,7 +96,7 @@ Yota Toyama
 
 ## Code graph
 
-![height:450px](./duplicate-strings.svg)
+![h:450px](./duplicate-strings.svg)
 
 ---
 
@@ -121,26 +122,27 @@ Yota Toyama
 
 ---
 
-## Library system
+# Library system
 
-### Code graph
+## Code graph
 
-![height:450px](./library-system.svg)
+![h:450px](./library-system.svg)
 
 ---
 
 # Code graph in depth
 
 - A pair consists of `car`, `cdr`, and a tag on the side of `cdr`.
-- Again, this representation is used for everything including in-memory bytecode and Scheme values.
+  - Tags represent either instructions or data types.
+- Universal representation for both in-memory bytecode and Scheme values
 
 ![](code-graph-in-depth.svg)
 
----
-
+<!--
 # Examples
 
 > WIP
+-->
 
 ---
 
@@ -149,13 +151,25 @@ Yota Toyama
 - The compiler encodes a code graph into a byte sequence.
 - The VM decodes a code graph into a byte sequence.
 
-![](encode-decode.svg)
+![h:180px](encode.svg)
+
+![h:180px](decode.svg)
 
 ---
 
-# The `eval` procedure
+# Encoding merges
 
-> WIP
+![](merge.svg)
+
+---
+
+# `eval` and compiler
+
+- The compiler from S-expression to code graph is **data**.
+- `(incept source)` embeds the compiler as a library into source code.
+- `((eval compiler) source)` compiles the source code.
+
+![bg right:30% h:650px](eval.svg)
 
 ---
 
@@ -169,6 +183,12 @@ Yota Toyama
 ## References
 
 - [TR7: tiny R7RS-small scheme interpreter](https://jobol.gitlab.io/tr7/)
+
+---
+
+# Future work
+
+> WIP
 
 ---
 

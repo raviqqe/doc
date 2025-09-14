@@ -6,13 +6,13 @@ flowchart LR
   d3 -.-> d2(#quot;foo#quot;)
   d4 -.-> d2
 
-  subgraph s0["(foo) library"]
+  subgraph library
     c0[const] --> c1[set]
   end
 
   c1 --> c2
 
-  subgraph s1[ ]
+  subgraph main
     c2[const] --> c3[set] --> c4
     c4[get] --> c5[get] --> c6[call]
   end
