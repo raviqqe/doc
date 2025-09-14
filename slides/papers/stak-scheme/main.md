@@ -52,7 +52,7 @@ Yota Toyama
 # Code graph
 
 - A representation of a Scheme program on memory
-- Directed Acyclic Graph (DAG)
+- Directed Acyclic Graph (DAG) of pairs
 - Used at both **compile time** in the compiler and **runtime** in the VM.
 
 ---
