@@ -138,11 +138,11 @@ Yota Toyama
 
 ![](code-graph-in-depth.svg)
 
----
-
+<!--
 # Examples
 
 > WIP
+-->
 
 ---
 
