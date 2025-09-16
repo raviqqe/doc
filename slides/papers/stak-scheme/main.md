@@ -47,7 +47,7 @@ Yota Toyama
   - Values
     - Lists, characters, strings, etc.
   - A stack
-- Binary-level homoiconicity
+- Binary-level [homoiconicity][homoiconicity]
 - "Von Neumann architecture"
 
 ---
@@ -132,22 +132,6 @@ Yota Toyama
 
 ---
 
-# Code graph in depth
-
-- A pair consists of `car`, `cdr`, and a tag on the side of `cdr`.
-  - Tags represent either instructions or data types.
-- Universal representation for both in-memory bytecode and Scheme values
-
-![](code-graph-in-depth.svg)
-
-<!--
-# Examples
-
-> WIP
--->
-
----
-
 # Encoding & decoding
 
 - A code graph is encoded by a topological sort.
@@ -205,19 +189,36 @@ Yota Toyama
 
 ---
 
+# References
+
+- [Ribbit Scheme][ribbit]
+
+[ribbit]: https://github.com/udem-dlteam/ribbit
+[stak]: https://github.com/raviqqe/stak
+[homoiconicity]: https://en.wikipedia.org/wiki/Homoiconicity
+
+---
+
 # Appendix
+
+---
+
+# Code graph in depth
+
+- A pair consists of `car`, `cdr`, and a tag on the side of `cdr`.
+  - Tags represent either instructions or data types.
+- Universal representation for both in-memory bytecode and Scheme values
+
+![](code-graph-in-depth.svg)
+
+<!--
+# Examples
+
+> WIP
+-->
 
 ---
 
 # Fibonacci function
 
 ![](./fibonacci.svg)
-
----
-
-# References
-
-- https://en.wikipedia.org/wiki/Homoiconicity
-
-[ribbit]: https://github.com/udem-dlteam/ribbit
-[stak]: https://github.com/raviqqe/stak
