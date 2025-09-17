@@ -19,7 +19,7 @@
     "@biomejs/biome": "^2.2.4",
     "@marp-team/marp-cli": "^4.2.3",
     "@mermaid-js/mermaid-cli": "^11.10.1",
-    "@raviqqe/biome-config": "^2.0.17",
-    "puppeteer": "^24.19.0"
+    "@raviqqe/biome-config": "^2.0.18",
+    "puppeteer": "^24.22.0"
   }
 }
