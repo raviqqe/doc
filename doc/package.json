@@ -14,7 +14,7 @@
     "@astrojs/mdx": "^4.3.5",
     "@astrojs/sitemap": "^3.5.1",
     "@fontsource-variable/noto-sans": "^5.2.9",
-    "@fontsource/ubuntu": "^5.2.7",
+    "@fontsource/ubuntu": "^5.2.8",
     "astro": "^5.13.6",
     "glob": "^11.0.3",
     "rehype-mermaid": "^3.0.0",
