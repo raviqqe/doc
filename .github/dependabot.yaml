@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: daily
   - package-ecosystem: npm
-    directory: /doc
+    directory: /
     schedule:
       interval: daily
     groups:
