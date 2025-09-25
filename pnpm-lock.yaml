@@ -15,8 +15,8 @@ importers:
         specifier: ^4.2.3
         version: 4.2.3(typescript@5.9.2)
       '@mermaid-js/mermaid-cli':
-        specifier: ^11.10.1
-        version: 11.10.1(puppeteer@24.22.2(typescript@5.9.2))
+        specifier: ^11.12.0
+        version: 11.12.0(puppeteer@24.22.2(typescript@5.9.2))
       '@raviqqe/biome-config':
         specifier: ^2.0.18
         version: 2.0.18(@biomejs/biome@2.2.4)
@@ -88,8 +88,8 @@ packages:
   '@antfu/install-pkg@1.1.0':
     resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
 
-  '@antfu/utils@9.2.0':
-    resolution: {integrity: sha512-Oq1d9BGZakE/FyoEtcNeSwM7MpDO2vUBi11RWBZXf75zPsbUVWmUs03EqkRFrcgbXyKTas0BdZWC1wcuSoqSAw==}
+  '@antfu/utils@9.2.1':
+    resolution: {integrity: sha512-TMilPqXyii1AsiEii6l6ubRzbo76p6oshUSYPaKsmXDavyMLqjzVDkcp3pHp5ELMUNJHATcEOGxKTTsX9yYhGg==}
 
   '@astrojs/compiler@2.13.0':
     resolution: {integrity: sha512-mqVORhUJViA28fwHYaWmsXSzLO9osbdZ5ImUfxBarqsYdMlPbqAqGJCxsNzvppp1BEzc1mJNjOVvQqeDN8Vspw==}
@@ -621,8 +621,8 @@ packages:
   '@mdx-js/mdx@3.1.1':
     resolution: {integrity: sha512-f6ZO2ifpwAQIpzGWaBQT2TXxPv6z3RBzQKpVftEWN78Vl/YweF1uwussDx8ECAXVtr3Rs89fKyG9YlzUs9DyGQ==}
 
-  '@mermaid-js/mermaid-cli@11.10.1':
-    resolution: {integrity: sha512-SNsni3hXCJxvKNgGFmZbmMpICiGbQdciJGb/s/kC38nVeGNPj3Grl5EKjYzNO3s62eOCrx6qBWT/+zc6a6In9A==}
+  '@mermaid-js/mermaid-cli@11.12.0':
+    resolution: {integrity: sha512-a0swOS6PByXKi0dZnLQQIhbtUEu7ubc6bojmIqXqvUPq7mIJukCNEvVBTv6IAbuEWqB3Ti8QntupoGdz3ej+kg==}
     engines: {node: ^18.19 || >=20.0}
     hasBin: true
     peerDependencies:
@@ -2146,6 +2146,11 @@ packages:
     engines: {node: '>= 18'}
     hasBin: true
 
+  marked@16.3.0:
+    resolution: {integrity: sha512-K3UxuKu6l6bmA5FUwYho8CfJBlsUWAooKtdGgMcERSpF7gcBUrCGsLH7wDaaNOzwq18JzSUDyoEb/YsrqMac3w==}
+    engines: {node: '>= 20'}
+    hasBin: true
+
   marked@4.3.0:
     resolution: {integrity: sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==}
     engines: {node: '>= 12'}
@@ -2228,6 +2233,9 @@ packages:
 
   mermaid@11.11.0:
     resolution: {integrity: sha512-9lb/VNkZqWTRjVgCV+l1N+t4kyi94y+l5xrmBmbbxZYkfRl5hEDaTPMOcaWKCl1McG8nBEaMlWwkcAEEgjhBgg==}
+
+  mermaid@11.12.0:
+    resolution: {integrity: sha512-ZudVx73BwrMJfCFmSSJT84y6u5brEoV8DOItdHomNLz32uBjNrelm7mg95X7g+C6UoQH/W6mBLGDEDv73JdxBg==}
 
   mhchemparser@4.2.1:
     resolution: {integrity: sha512-kYmyrCirqJf3zZ9t/0wGgRZ4/ZJw//VwaRVGA75C4nhE60vtnIzhl9J9ndkX/h6hxSN7pjg/cE0VxbnNM+bnDQ==}
@@ -3444,7 +3452,7 @@ snapshots:
       package-manager-detector: 1.3.0
       tinyexec: 1.0.1
 
-  '@antfu/utils@9.2.0': {}
+  '@antfu/utils@9.2.1': {}
 
   '@astrojs/compiler@2.13.0': {}
 
@@ -3753,7 +3761,7 @@ snapshots:
   '@iconify/utils@3.0.2':
     dependencies:
       '@antfu/install-pkg': 1.1.0
-      '@antfu/utils': 9.2.0
+      '@antfu/utils': 9.2.1
       '@iconify/types': 2.0.0
       debug: 4.4.3
       globals: 15.15.0
@@ -3955,13 +3963,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mermaid-js/mermaid-cli@11.10.1(puppeteer@24.22.2(typescript@5.9.2))':
+  '@mermaid-js/mermaid-cli@11.12.0(puppeteer@24.22.2(typescript@5.9.2))':
     dependencies:
-      '@mermaid-js/mermaid-zenuml': 0.2.2(mermaid@11.11.0)
+      '@mermaid-js/mermaid-zenuml': 0.2.2(mermaid@11.12.0)
       chalk: 5.6.2
       commander: 14.0.1
       import-meta-resolve: 4.2.0
-      mermaid: 11.11.0
+      mermaid: 11.12.0
       puppeteer: 24.22.2(typescript@5.9.2)
     transitivePeerDependencies:
       - '@babel/core'
@@ -3970,10 +3978,10 @@ snapshots:
       - supports-color
       - ts-node
 
-  '@mermaid-js/mermaid-zenuml@0.2.2(mermaid@11.11.0)':
+  '@mermaid-js/mermaid-zenuml@0.2.2(mermaid@11.12.0)':
     dependencies:
       '@zenuml/core': 3.41.4
-      mermaid: 11.11.0
+      mermaid: 11.12.0
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/template'
@@ -5670,6 +5678,8 @@ snapshots:
 
   marked@15.0.12: {}
 
+  marked@16.3.0: {}
+
   marked@4.3.0: {}
 
   mathjax-full@3.2.2:
@@ -5891,6 +5901,31 @@ snapshots:
       khroma: 2.1.0
       lodash-es: 4.17.21
       marked: 15.0.12
+      roughjs: 4.6.6
+      stylis: 4.3.6
+      ts-dedent: 2.2.0
+      uuid: 11.1.0
+    transitivePeerDependencies:
+      - supports-color
+
+  mermaid@11.12.0:
+    dependencies:
+      '@braintree/sanitize-url': 7.1.1
+      '@iconify/utils': 3.0.2
+      '@mermaid-js/parser': 0.6.2
+      '@types/d3': 7.4.3
+      cytoscape: 3.33.1
+      cytoscape-cose-bilkent: 4.1.0(cytoscape@3.33.1)
+      cytoscape-fcose: 2.2.0(cytoscape@3.33.1)
+      d3: 7.9.0
+      d3-sankey: 0.12.3
+      dagre-d3-es: 7.0.11
+      dayjs: 1.11.18
+      dompurify: 3.2.7
+      katex: 0.16.22
+      khroma: 2.1.0
+      lodash-es: 4.17.21
+      marked: 16.3.0
       roughjs: 4.6.6
       stylis: 4.3.6
       ts-dedent: 2.2.0
