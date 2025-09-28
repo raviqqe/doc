@@ -26,6 +26,7 @@ Yota Toyama
 # Stak Scheme
 
 - Stak Scheme, the tiny R7RS-small implementation
+  - Aims to be simple, portable, compact, and fast.
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
 ## Comparison to Ribbit Scheme
