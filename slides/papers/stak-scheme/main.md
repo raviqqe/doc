@@ -26,16 +26,17 @@ Yota Toyama
 # Stak Scheme
 
 - Stak Scheme, the tiny R7RS-small implementation
+  - Simple, portable, compact, and fast
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
 ## Comparison to Ribbit Scheme
 
-|                       | Stak          | Ribbit                               |
-| --------------------- | ------------- | ------------------------------------ |
-| **Data structure**    | Pair          | Rib                                  |
-| **Bytecode encoding** | Dynamic cache | Global cache + continuation/constant |
-| Compiler              | Scheme        | Scheme                               |
-| VM                    | Rust          | Many languages                       |
+|                       | Stak           | Ribbit                               |
+| --------------------- | -------------- | ------------------------------------ |
+| **Data structure**    | Pair (doublet) | Rib (triplet)                        |
+| **Bytecode encoding** | Dynamic cache  | Global cache + continuation/constant |
+| Compiler              | Scheme         | Scheme                               |
+| VM                    | Rust           | Many languages                       |
 
 ---
 
@@ -47,16 +48,30 @@ Yota Toyama
   - Values
     - Lists, characters, strings, etc.
   - A stack
-- Binary-level [homoiconicity][homoiconicity]
-- "Von Neumann architecture"
+
+<!-- - Binary-level [homoiconicity][homoiconicity] -->
+<!-- - "Von Neumann architecture" -->
 
 ---
 
 # Code graph
 
 - A representation of a Scheme program on memory
+  - Universal between code and data
+    - e.g. no special garbage collection for code
 - Directed Acyclic Graph (DAG) of pairs
 - Used at both **compile time** in the compiler and **runtime** in the VM.
+
+---
+
+# Compiling and running a program
+
+- A code graph is a program representation in memory.
+- Bytecode is a serialized code graph.
+
+![h:180px](compile.svg)
+
+![h:180px](run.svg)
 
 ---
 
@@ -135,8 +150,8 @@ Yota Toyama
 # Encoding & decoding
 
 - A code graph is encoded by a topological sort.
-- The compiler encodes a code graph into a byte sequence.
-- The VM decodes a code graph into a byte sequence.
+- The compiler encodes a code graph into bytecode.
+- The VM decodes bytecode into a code graph.
 
 ![h:180px](encode.svg)
 
@@ -144,9 +159,9 @@ Yota Toyama
 
 ---
 
-# Encoding merges
+# Encoding shared nodes
 
-- Merged pairs (nodes) are cached _locally_ and _dynamically_.
+- Shared nodes are cached _locally_ and _dynamically_.
 - On the first visit, the pair is added to cache.
 - On the last visit, the pair is removed from cache.
 
