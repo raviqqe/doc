@@ -48,8 +48,9 @@ Yota Toyama
   - Values
     - Lists, characters, strings, etc.
   - A stack
-- Binary-level [homoiconicity][homoiconicity]
-- "Von Neumann architecture"
+
+<!-- - Binary-level [homoiconicity][homoiconicity] -->
+<!-- - "Von Neumann architecture" -->
 
 ---
 
