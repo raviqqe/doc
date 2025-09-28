@@ -159,9 +159,9 @@ Yota Toyama
 
 ---
 
-# Encoding merges
+# Encoding shared nodes
 
-- Merged pairs (nodes) are cached _locally_ and _dynamically_.
+- Shared nodes are cached _locally_ and _dynamically_.
 - On the first visit, the pair is added to cache.
 - On the last visit, the pair is removed from cache.
 
