@@ -40,17 +40,6 @@ Yota Toyama
 
 ---
 
-# Compiling and running a program
-
-- A code graph is a program representation in memory.
-- Bytecode is a serialized code graph.
-
-![h:180px](compile.svg)
-
-![h:180px](run.svg)
-
----
-
 # Virtual machine
 
 - A stack machine
@@ -72,6 +61,17 @@ Yota Toyama
     - e.g. no special garbage collection logic for code
 - Directed Acyclic Graph (DAG) of pairs
 - Used at both **compile time** in the compiler and **runtime** in the VM.
+
+---
+
+# Compiling and running a program
+
+- A code graph is a program representation in memory.
+- Bytecode is a serialized code graph.
+
+![h:180px](compile.svg)
+
+![h:180px](run.svg)
 
 ---
 
