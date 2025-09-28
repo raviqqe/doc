@@ -150,8 +150,8 @@ Yota Toyama
 # Encoding & decoding
 
 - A code graph is encoded by a topological sort.
-- The compiler encodes a code graph into a byte sequence.
-- The VM decodes a code graph into a byte sequence.
+- The compiler encodes a code graph into bytecode.
+- The VM decodes bytecode into a code graph.
 
 ![h:180px](encode.svg)
 
