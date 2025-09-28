@@ -58,7 +58,7 @@ Yota Toyama
 
 - A representation of a Scheme program on memory
   - Universal between code and data
-    - e.g. no special garbage collection logic for code
+    - e.g. no special garbage collection for code
 - Directed Acyclic Graph (DAG) of pairs
 - Used at both **compile time** in the compiler and **runtime** in the VM.
 
