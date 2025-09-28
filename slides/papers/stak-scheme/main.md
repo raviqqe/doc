@@ -40,7 +40,10 @@ Yota Toyama
 
 ---
 
-# Compiling and running program in Scheme
+# Compiling and running a program
+
+- A code graph is a program representation in memory.
+- Bytecode is a serialized code graph.
 
 ![h:180px](compile.svg)
 
