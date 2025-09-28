@@ -40,6 +40,14 @@ Yota Toyama
 
 ---
 
+# Compiling and running program in Scheme
+
+![h:180px](compile.svg)
+
+![h:180px](run.svg)
+
+---
+
 # Virtual machine
 
 - A stack machine
