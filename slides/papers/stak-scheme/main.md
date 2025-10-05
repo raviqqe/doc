@@ -33,7 +33,7 @@ Yota Toyama
 
 |                       | Stak           | Ribbit                               |
 | --------------------- | -------------- | ------------------------------------ |
-| **Data structure**    | Pair (doublet) | Rib (triplet)                        |
+| Data structure        | Pair (doublet) | Rib (triplet)                        |
 | **Bytecode encoding** | Dynamic cache  | Global cache + continuation/constant |
 | Compiler              | Scheme         | Scheme                               |
 | VM                    | Rust           | Many languages                       |
