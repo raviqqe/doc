@@ -16,7 +16,7 @@ Yota Toyama
 
 - [Ribbit Scheme, the tiny R4RS implementation][ribbit]
   - Bytecode compiler: Scheme
-  - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, etc.
+  - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, ...
     - Simple, portable, compact, and fast
 - Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
   - Yes, we can!
@@ -46,7 +46,7 @@ Yota Toyama
 - **Everything is a pair**.
   - Bytecode
   - Values
-    - Lists, characters, strings, etc.
+    - Lists, characters, strings, ...
   - A stack
 
 <!-- - Binary-level [homoiconicity][homoiconicity] -->
