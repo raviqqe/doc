@@ -2,4 +2,6 @@ packages:
   - doc
 
 ignoredBuiltDependencies:
+  - esbuild
   - puppeteer
+  - sharp
