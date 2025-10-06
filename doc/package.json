@@ -21,7 +21,7 @@
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.6.2",
+    "@types/node": "^24.7.0",
     "es-toolkit": "^1.39.10",
     "playwright": "^1.55.1",
     "prettier": "^3.6.2",
