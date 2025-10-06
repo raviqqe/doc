@@ -206,7 +206,7 @@ Yota Toyama
 
 # Acknowledgements
 
-Huge thanks to:
+Huge thanks 🙏 to:
 
 - The authors of Ribbit Scheme
   - Especially, the dynamic programming language team at the University of Montréal
