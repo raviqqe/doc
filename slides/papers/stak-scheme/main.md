@@ -37,12 +37,12 @@ Yota Toyama
 
 ## Comparison to Ribbit Scheme
 
-|                       | Stak           | Ribbit                               |
-| --------------------- | -------------- | ------------------------------------ |
-| Compiler              | Scheme         | Scheme                               |
-| VM                    | Rust           | Many languages                       |
-| Data structure        | Pair (doublet) | Rib (triplet)                        |
-| **Bytecode encoding** | Dynamic cache  | Global cache + continuation/constant |
+|                      | Stak           | Ribbit                               |
+| -------------------- | -------------- | ------------------------------------ |
+| Compiler             | Scheme         | Scheme                               |
+| VM                   | Rust           | Many languages                       |
+| Data structure       | Pair (doublet) | Rib (triplet)                        |
+| **Program encoding** | Dynamic cache  | Global cache + continuation/constant |
 
 ---
 
@@ -50,10 +50,10 @@ Yota Toyama
 
 - A stack machine
 - **Everything is a pair**.
-  - Bytecode
   - Values
     - Lists, characters, strings, ...
-  - A stack
+  - Stack
+  - **Code graph**
 
 <!-- - Binary-level [homoiconicity][homoiconicity] -->
 <!-- - "Von Neumann architecture" -->
