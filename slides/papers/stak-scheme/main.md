@@ -49,7 +49,7 @@ Yota Toyama
 # Virtual machine
 
 - A stack machine
-- **Everything is a pair**.
+- Everything is a **pair**.
   - Values
     - Lists, characters, strings, ...
   - Stack
