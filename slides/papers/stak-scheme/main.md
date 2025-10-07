@@ -45,7 +45,7 @@ Yota Toyama
 # Code graph
 
 - A representation of a Scheme program on memory
-  - Directed Acyclic Graph (DAG) of ribs (i.e. pairs)
+  - Directed Acyclic Graph (DAG) of **ribs** (i.e. pairs)
 - Universal between code and data
   - e.g. no special garbage collection for code
 - Used at both **compile time** in the compiler and **runtime** in the VM.
