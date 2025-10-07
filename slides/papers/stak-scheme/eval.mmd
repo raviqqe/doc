@@ -1,12 +1,14 @@
-flowchart
-  d0(source code) -.-> c1
+flowchart LR
+  d0(source) -.-> c1
 
   subgraph s0[ ]
-    c1[parse] --->|S-expression| c2[incept]:::red --> c3[compile]:::blue
+    subgraph s1[compile]
+      c1[parse] --->|S-exp| c2[incept]:::red --> c3[compile']:::blue
 
-    c3 -.->|S-expression| c2
+      c3 -.->|S-exp| c2
+    end
 
     c3 --> c4[encode]
   end
 
-  c4 -.-> d1(bytecode)
+  c4 -.-> d1(bytes)

@@ -188,7 +188,7 @@ Yota Toyama
 - `(incept source)` embeds the compiler as a library into source code.
 - `((eval compiler) source)` compiles the source code.
 
-![bg right:30% h:650px](eval.svg)
+![](eval.svg)
 
 ---
 
