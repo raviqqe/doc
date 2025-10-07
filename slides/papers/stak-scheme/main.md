@@ -72,7 +72,7 @@ Yota Toyama
 |                         | Stak           | Ribbit                               |
 | ----------------------- | -------------- | ------------------------------------ |
 | Data structure          | Pair (doublet) | Rib (triplet)                        |
-| **Code graph encoding** | Dynamic cache  | Global cache + continuation/constant |
+| **Code graph encoding** | Local cache    | Global cache + continuation/constant |
 
 ---
 
