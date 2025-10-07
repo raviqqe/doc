@@ -46,7 +46,7 @@ Yota Toyama
 
 - A representation of a Scheme program on memory
   - Directed Acyclic Graph (DAG) of **Ribs** (i.e. pairs)
-- Universal between code and data
+- Universal between **code and data**
   - e.g. no special garbage collection for code
 
 ![](./fibonacci.svg)
@@ -93,7 +93,7 @@ Yota Toyama
 # Code graph
 
 - A representation of a Scheme program on memory
-  - Universal between **code and data**
+  - Universal between code and data
     - e.g. no special garbage collection for code
 - Directed Acyclic Graph (DAG) of pairs
 - Used at both **compile time** in the compiler and **runtime** in the VM.
