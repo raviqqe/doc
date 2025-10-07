@@ -29,7 +29,9 @@ Yota Toyama
 
 # Inside Ribbit Scheme
 
+- Bytecode compiler + VM
 - Ribbit Virtual Machine (RVM)
+  - A stack machine
 
 ![](./fibonacci.svg)
 
