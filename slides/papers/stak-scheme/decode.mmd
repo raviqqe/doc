@@ -1,5 +1,5 @@
 flowchart LR
-  d0(bytecode) -.-> decode
+  d0(bytes) -.-> decode
 
   subgraph VM
     decode:::blue -.-> d1(code graph) -.-> run
