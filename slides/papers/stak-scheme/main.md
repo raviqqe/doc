@@ -48,8 +48,8 @@ Yota Toyama
 
 # Compiling and running a program
 
-- A code graph is a program representation in memory.
-- Bytecode is a serialized code graph.
+- A compiler compiles source code into a serialized code graph.
+- The VM deserializes it into a **code graph**.
 
 ![h:180px](compile.svg)
 
