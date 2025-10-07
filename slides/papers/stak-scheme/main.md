@@ -21,9 +21,10 @@ Yota Toyama
 # Background
 
 - [Ribbit Scheme, the tiny R4RS implementation][ribbit]
+  - Simple, portable, compact, and fast
+- Two components
   - Bytecode compiler: Scheme
   - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, ...
-    - Simple, portable, compact, and fast
 
 ---
 
