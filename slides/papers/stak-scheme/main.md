@@ -69,10 +69,10 @@ Yota Toyama
 
 ## Comparison to Ribbit Scheme
 
-|                    | Stak           | Ribbit                               |
-| ------------------ | -------------- | ------------------------------------ |
-| Data structure     | Pair (doublet) | Rib (triplet)                        |
-| **Graph encoding** | Dynamic cache  | Global cache + continuation/constant |
+|                         | Stak           | Ribbit                               |
+| ----------------------- | -------------- | ------------------------------------ |
+| Data structure          | Pair (doublet) | Rib (triplet)                        |
+| **Code graph encoding** | Dynamic cache  | Global cache + continuation/constant |
 
 ---
 
