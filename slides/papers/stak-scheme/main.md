@@ -48,7 +48,6 @@ Yota Toyama
   - Directed Acyclic Graph (DAG) of **Ribs** (i.e. pairs)
 - Universal between code and data
   - e.g. no special garbage collection for code
-- Used at both **compile time** in the compiler and **runtime** in the VM.
 
 ![](./fibonacci.svg)
 
@@ -83,10 +82,11 @@ Yota Toyama
 
 - A compiler compiles source code into a serialized code graph.
 - The VM deserializes it into a **code graph**.
+- Code graphs are used at both in the compiler and on the VM.
 
-![h:180px](compile.svg)
+![h:160px](compile.svg)
 
-![h:180px](run.svg)
+![h:160px](run.svg)
 
 ---
 
