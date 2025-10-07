@@ -192,10 +192,11 @@ Yota Toyama
 
 ---
 
-# Don't forget macros
+# Don't forget macros...
 
-- Macros are usually expanded
-- But for `eval`
+- `define-syntax` defines user-defined macros.
+- Macros and libraries can be expanded statically.
+- `eval` needs to know their definitions.
   - Transfer macros and libraries from the compiler to the VM.
 
 ---
