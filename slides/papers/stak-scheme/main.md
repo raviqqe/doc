@@ -4,6 +4,12 @@ class: invert
 paginate: true
 -->
 
+<style>
+strong {
+  color: lightpink;
+}
+</style>
+
 # Stak Scheme: The tiny R7RS-small implementation
 
 ## Scheme Workshop 2025
@@ -16,7 +22,7 @@ Yota Toyama
 
 - [Ribbit Scheme, the tiny R4RS implementation][ribbit]
   - Bytecode compiler: Scheme
-  - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, etc.
+  - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, ...
     - Simple, portable, compact, and fast
 - Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
   - Yes, we can!
@@ -31,12 +37,12 @@ Yota Toyama
 
 ## Comparison to Ribbit Scheme
 
-|                       | Stak           | Ribbit                               |
-| --------------------- | -------------- | ------------------------------------ |
-| **Data structure**    | Pair (doublet) | Rib (triplet)                        |
-| **Bytecode encoding** | Dynamic cache  | Global cache + continuation/constant |
-| Compiler              | Scheme         | Scheme                               |
-| VM                    | Rust           | Many languages                       |
+|                      | Stak           | Ribbit                               |
+| -------------------- | -------------- | ------------------------------------ |
+| Compiler             | Scheme         | Scheme                               |
+| VM                   | Rust           | Many languages                       |
+| Data structure       | Pair (doublet) | Rib (triplet)                        |
+| **Program encoding** | Dynamic cache  | Global cache + continuation/constant |
 
 ---
 
@@ -44,10 +50,10 @@ Yota Toyama
 
 - A stack machine
 - **Everything is a pair**.
-  - Bytecode
   - Values
-    - Lists, characters, strings, etc.
-  - A stack
+    - Lists, characters, strings, ...
+  - Stack
+  - **Code graph**
 
 <!-- - Binary-level [homoiconicity][homoiconicity] -->
 <!-- - "Von Neumann architecture" -->
@@ -200,7 +206,12 @@ Yota Toyama
 
 # Acknowledgements
 
-> WIP
+Huge thanks 🙏 to:
+
+- The authors of Ribbit Scheme
+  - Especially, the dynamic programming language team at the University of Montréal
+- Léonard Oest O’Leary and William E. Byrd for early comments on the draft
+- [@sisshiki1969](https://github.com/sisshiki1969) and [@yhara](https://github.com/yhara) for discussions on the language processor design
 
 ---
 
@@ -225,12 +236,6 @@ Yota Toyama
 - Universal representation for both in-memory bytecode and Scheme values
 
 ![](code-graph-in-depth.svg)
-
-<!--
-# Examples
-
-> WIP
--->
 
 ---
 
