@@ -78,7 +78,7 @@ Yota Toyama
 
 # Compiling and running a program
 
-- A compiler compiles source code into a encoded **code graph**.
+- A compiler compiles source code into an encoded **code graph**.
 - The VM decodes and runs it as a program.
 - Code graphs are used at both in the compiler and on the VM.
 
