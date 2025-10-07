@@ -76,7 +76,7 @@ Yota Toyama
 
 ---
 
-# Compiling and running a program
+# Compiling & running a program
 
 - A compiler compiles source code into an encoded **code graph**.
 - The VM decodes and runs it as a program.
@@ -182,7 +182,7 @@ Yota Toyama
 
 ---
 
-# `eval` and the compiler
+# `eval` & the compiler
 
 - The compiler from S-expression to code graph is **data**.
 - `(incept compiler source)` **embeds the compiler** into source code.
