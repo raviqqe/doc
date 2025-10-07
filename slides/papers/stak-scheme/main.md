@@ -24,8 +24,18 @@ Yota Toyama
   - Bytecode compiler: Scheme
   - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, ...
     - Simple, portable, compact, and fast
-- Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
-  - Yes, we can!
+
+---
+
+# Inside Ribbit Scheme
+
+---
+
+Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
+
+---
+
+Yes, we can! 😏
 
 ---
 
