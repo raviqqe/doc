@@ -174,7 +174,7 @@ Yota Toyama
 
 # Encoding shared nodes
 
-- Shared nodes are cached _locally_ and _dynamically_.
+- Shared nodes are cached _locally_.
 - On the first visit, the pair is added to cache.
 - On the last visit, the pair is removed from cache.
 
