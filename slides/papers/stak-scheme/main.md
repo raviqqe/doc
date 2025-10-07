@@ -33,7 +33,7 @@ Yota Toyama
 - Ribbit Virtual Machine (RVM)
   - A stack machine
 - Everything is a list.
-  - Code graph
+  - Code
   - Values
     - Lists, characters, strings, ...
   - Call/value stacks
