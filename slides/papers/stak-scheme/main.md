@@ -182,7 +182,7 @@ Yota Toyama
 
 ---
 
-# `eval` and compiler
+# `eval` and the compiler
 
 - The compiler from S-expression to code graph is **data**.
 - `(incept source)` embeds the compiler as a library into source code.
