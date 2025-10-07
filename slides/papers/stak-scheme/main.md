@@ -29,6 +29,10 @@ Yota Toyama
 
 # Inside Ribbit Scheme
 
+- Ribbit Virtual Machine (RVM)
+
+![](./fibonacci.svg)
+
 ---
 
 # Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
