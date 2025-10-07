@@ -39,8 +39,6 @@ Yota Toyama
   - A stack
 - "Von Neumann architecture"
 
-- Binary-level [homoiconicity][homoiconicity]
-
 ---
 
 # Code graph
