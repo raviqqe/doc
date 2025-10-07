@@ -36,7 +36,7 @@ Yota Toyama
   - Code graph
   - Values
     - Lists, characters, strings, ...
-  - A stack
+  - Call/value stacks
 - "Von Neumann architecture"
 
 ---
