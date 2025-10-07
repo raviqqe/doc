@@ -38,6 +38,7 @@ Yota Toyama
     - Lists, characters, strings, ...
   - Call/value stacks
 - "Von Neumann architecture"
+  - Both code and data in heap
 
 ---
 
