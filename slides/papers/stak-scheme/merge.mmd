@@ -1,5 +1,5 @@
 flowchart LR
-  subgraph s0[Encode pair]
+  subgraph s0[Encode pair 1]
     direction TB
 
     c0[pair 1]:::blue --> c2[pair 3]
@@ -8,7 +8,7 @@ flowchart LR
 
   s0 -.-> s1
 
-  subgraph s1[Add to cache]
+  subgraph s1[Encode & cache pair 3]
     direction TB
 
     c3[pair 1] --> c5[pair 3]:::blue
@@ -17,7 +17,7 @@ flowchart LR
 
   s1 ~~~ s2
 
-  subgraph s2[Encode pair]
+  subgraph s2[Encode pair 2]
     direction TB
 
     c6[pair 1] --> c8[pair 3]
@@ -26,7 +26,7 @@ flowchart LR
 
   s2 -.-> s3
 
-  subgraph s3[Remove from cache]
+  subgraph s3[Remove pair 3]
     direction TB
 
     c9[pair 1] --> c11[pair 3]:::red

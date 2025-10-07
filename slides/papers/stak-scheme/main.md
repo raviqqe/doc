@@ -21,11 +21,43 @@ Yota Toyama
 # Background
 
 - [Ribbit Scheme, the tiny R4RS implementation][ribbit]
-  - Bytecode compiler: Scheme
+  - Simple, portable, compact, and fast
+- Two components
+  - Compiler: Scheme
   - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, ...
-    - Simple, portable, compact, and fast
-- Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
-  - Yes, we can!
+
+---
+
+# Ribbit Scheme in depth
+
+- Ribbit Virtual Machine (RVM)
+  - A stack machine
+- **Everything is a list**.
+  - Code
+  - Values
+    - Lists, characters, strings, ...
+  - Call/value stacks
+- "Von Neumann architecture"
+  - Both code and data in heap
+
+---
+
+# Code graph
+
+- A representation of a Scheme program on memory
+  - Directed Acyclic Graph (DAG) of **Ribs** (i.e. pairs)
+- Universal between **code** and **data**
+  - e.g. no special garbage collection for code
+
+![](./fibonacci.svg)
+
+---
+
+# Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
+
+---
+
+# Yes, we can! 😏
 
 ---
 
@@ -37,47 +69,22 @@ Yota Toyama
 
 ## Comparison to Ribbit Scheme
 
-|                      | Stak           | Ribbit                               |
-| -------------------- | -------------- | ------------------------------------ |
-| Compiler             | Scheme         | Scheme                               |
-| VM                   | Rust           | Many languages                       |
-| Data structure       | Pair (doublet) | Rib (triplet)                        |
-| **Program encoding** | Dynamic cache  | Global cache + continuation/constant |
-
----
-
-# Virtual machine
-
-- A stack machine
-- **Everything is a pair**.
-  - Values
-    - Lists, characters, strings, ...
-  - Stack
-  - **Code graph**
-
-<!-- - Binary-level [homoiconicity][homoiconicity] -->
-<!-- - "Von Neumann architecture" -->
-
----
-
-# Code graph
-
-- A representation of a Scheme program on memory
-  - Universal between code and data
-    - e.g. no special garbage collection for code
-- Directed Acyclic Graph (DAG) of pairs
-- Used at both **compile time** in the compiler and **runtime** in the VM.
+|                         | Stak           | Ribbit                               |
+| ----------------------- | -------------- | ------------------------------------ |
+| Data structure          | Pair (doublet) | Rib (triplet)                        |
+| **Code graph encoding** | Local cache    | Global cache + continuation/constant |
 
 ---
 
 # Compiling and running a program
 
-- A code graph is a program representation in memory.
-- Bytecode is a serialized code graph.
+- A compiler compiles source code into a encoded **code graph**.
+- The VM decodes and runs it as a program.
+- Code graphs are used at both in the compiler and on the VM.
 
-![h:180px](compile.svg)
+![h:160px](compile.svg)
 
-![h:180px](run.svg)
+![h:160px](run.svg)
 
 ---
 
@@ -156,32 +163,38 @@ Yota Toyama
 # Encoding & decoding
 
 - A code graph is encoded by a topological sort.
-- The compiler encodes a code graph into bytecode.
-- The VM decodes bytecode into a code graph.
+- The compiler encodes a code graph into bytes.
+- The VM decodes bytes into a code graph.
 
-![h:180px](encode.svg)
+![h:160px](encode.svg)
 
-![h:180px](decode.svg)
+![h:160px](decode.svg)
 
 ---
 
 # Encoding shared nodes
 
-- Shared nodes are cached _locally_ and _dynamically_.
-- On the first visit, the pair is added to cache.
-- On the last visit, the pair is removed from cache.
+- Shared nodes are cached _locally_.
+- On the first visit, a node is added to cache.
+- On the last visit, the node is removed from cache.
 
 ![](merge.svg)
 
 ---
 
-# `eval` and compiler
+# `eval` and the compiler
 
 - The compiler from S-expression to code graph is **data**.
-- `(incept source)` embeds the compiler as a library into source code.
-- `((eval compiler) source)` compiles the source code.
+- `(incept compiler source)` **embeds the compiler** into source code.
+- `((eval compiler) source)` compiles the source code into a code graph.
 
-![bg right:30% h:650px](eval.svg)
+![](eval.svg)
+
+---
+
+# Don't forget macros
+
+> TODO
 
 ---
 
@@ -226,6 +239,19 @@ Huge thanks 🙏 to:
 ---
 
 # Appendix
+
+---
+
+# Virtual machine
+
+- A stack machine
+- Everything is a **pair**.
+  - Code graph
+  - Values
+    - Lists, characters, strings, ...
+  - A stack
+- Binary-level [homoiconicity][homoiconicity]
+- "Von Neumann architecture"
 
 ---
 
