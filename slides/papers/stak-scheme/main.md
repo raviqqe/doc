@@ -218,10 +218,10 @@ Huge thanks 🙏 to:
 # Virtual machine
 
 - A stack machine
-- **Everything is a pair**.
-  - Bytecode
+- Everything is a **pair**.
+  - Code graph
   - Values
-    - Lists, characters, strings, etc.
+    - Lists, characters, strings, ...
   - A stack
 - Binary-level [homoiconicity][homoiconicity]
 - "Von Neumann architecture"
