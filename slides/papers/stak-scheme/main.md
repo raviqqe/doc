@@ -33,6 +33,13 @@ Yota Toyama
 - Ribbit Virtual Machine (RVM)
   - A stack machine
 - Everything is a list.
+  - Code graph
+  - Values
+    - Lists, characters, strings, ...
+  - A stack
+- "Von Neumann architecture"
+
+- Binary-level [homoiconicity][homoiconicity]
 
 ---
 
