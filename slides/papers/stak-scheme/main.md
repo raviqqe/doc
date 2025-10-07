@@ -175,8 +175,8 @@ Yota Toyama
 # Encoding shared nodes
 
 - Shared nodes are cached _locally_.
-- On the first visit, the pair is added to cache.
-- On the last visit, the pair is removed from cache.
+- On the first visit, a node is added to cache.
+- On the last visit, the node is removed from cache.
 
 ![](merge.svg)
 
