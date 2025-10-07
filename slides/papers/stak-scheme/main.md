@@ -194,7 +194,9 @@ Yota Toyama
 
 # Don't forget macros
 
-> TODO
+- Macros are usually expanded
+- But for `eval`
+  - Transfer macros and libraries from the compiler to the VM.
 
 ---
 
