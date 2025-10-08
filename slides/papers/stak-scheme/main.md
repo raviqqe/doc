@@ -76,9 +76,9 @@ Yota Toyama
 
 ---
 
-# Compiling and running a program
+# Compiling & running a program
 
-- A compiler compiles source code into a encoded **code graph**.
+- A compiler compiles source code into an encoded **code graph**.
 - The VM decodes and runs it as a program.
 - Code graphs are used at both in the compiler and on the VM.
 
@@ -182,7 +182,7 @@ Yota Toyama
 
 ---
 
-# `eval` and the compiler
+# `eval` & the compiler
 
 - The compiler from S-expression to code graph is **data**.
 - `(incept compiler source)` **embeds the compiler** into source code.
@@ -192,9 +192,12 @@ Yota Toyama
 
 ---
 
-# Don't forget macros
+# Don't forget macros...
 
-> TODO
+- `define-syntax` defines user-defined macros.
+- Macros and libraries can be expanded statically.
+- `eval` needs to know their definitions.
+  - Transfer macros and libraries from the compiler to the VM.
 
 ---
 
@@ -208,6 +211,18 @@ Yota Toyama
 ## References
 
 - [TR7: tiny R7RS-small scheme interpreter](https://jobol.gitlab.io/tr7/)
+
+---
+
+# Benchmarks
+
+| Benchmark | mstak | stak | mstak (embed) | stak (embed) | tr7i |  gsi | chibi | gosh |
+| --------- | ----: | ---: | ------------: | -----------: | ---: | ---: | ----: | ---: |
+| empty     |  1.00 | 1.04 |          0.14 |         0.38 | 0.77 | 0.51 |  3.63 | 1.27 |
+| hello     |  1.00 | 1.04 |          0.13 |         0.36 | 0.73 | 0.53 |  9.84 | 3.62 |
+| fibonacci |  1.00 | 1.12 |          0.96 |         1.05 | 1.35 | 1.66 |  0.93 | 0.45 |
+| sum       |  1.00 | 1.13 |          1.01 |         1.06 | 1.19 | 1.64 |  0.98 | 0.24 |
+| tak       |  1.00 | 1.09 |          0.89 |         0.98 | 0.96 | 1.23 |  1.21 | 0.54 |
 
 ---
 
