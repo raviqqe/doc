@@ -33,8 +33,8 @@ Yota Toyama
   - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, ...
 
 <!--
-In this talk, I would like to introduce a new R7RS Scheme implementation called Stak Scheme.
-Currently, its primary use case is to embed it in Rust programs as a scripting language.
+- As a background, a few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
+- It aims to be simple, portable, compact, and fast.
 -->
 
 ---
