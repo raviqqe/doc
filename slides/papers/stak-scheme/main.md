@@ -68,6 +68,11 @@ So, before going into details of Stak Scheme, let me describe the basic design o
 Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
 
 Something interesting about RVM is that everything is a list including all Scheme values, Scheme program, and stacks to define the state of the virtual machine.
+
+And because of that, RVM adopts "Von Neumann architecture" in a way.
+
+On the heap memory in RVM, everything is structured as lists.
+So you can manipulate code and data on RVM in exactly the same way.
 -->
 
 ---
