@@ -16,6 +16,12 @@ strong {
 
 Yota Toyama
 
+<!--
+- In this talk, I would like to introduce a new R7RS Scheme implementation called Stak Scheme.
+- It is primarily designed as an embedded scripting language for Rust.
+- But it can also run by itself as a command line interpreter.
+-->
+
 ---
 
 # Background
@@ -25,6 +31,11 @@ Yota Toyama
 - Two components
   - Compiler: Scheme
   - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, ...
+
+<!--
+In this talk, I would like to introduce a new R7RS Scheme implementation called Stak Scheme.
+Currently, its primary use case is to embed it in Rust programs as a scripting language.
+-->
 
 ---
 
