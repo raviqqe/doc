@@ -87,6 +87,12 @@ So you can manipulate code and data on RVM in exactly the same way.
 
 ![](./fibonacci.svg)
 
+<!--
+On RVM, a Scheme program is represented as a data structure called a code graph, which is basically a DAG of pairs.
+
+
+-->
+
 ---
 
 # Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
