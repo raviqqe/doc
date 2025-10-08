@@ -60,6 +60,10 @@ The virtual machine runs the bytecode as a Scheme program.
 - "Von Neumann architecture"
   - Both code and data in heap
 
+<!--
+
+-->
+
 ---
 
 # Code graph
