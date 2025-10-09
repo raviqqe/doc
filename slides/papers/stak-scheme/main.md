@@ -92,7 +92,12 @@ On RVM, a Scheme program is represented as a data structure called a code graph,
 
 This example is the one of the fibonacci function implemented on RVM.
 
-And, as I described before, this code graph is
+And, as I mentioned before, we use this code graph for both code and data.
+
+Because of that, for example, when we want to implement the `eval` procedure,
+we simply compile an S-expression into a code graph, and execute it as a procedure.
+
+I'm gonna talk more about it later.
 -->
 
 ---
