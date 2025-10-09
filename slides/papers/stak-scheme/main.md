@@ -62,8 +62,6 @@ The virtual machine runs the bytecode as a Scheme program.
   - Standalone interpreter
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
-## Comparison to Ribbit Scheme
-
 |                         | Stak           | Ribbit                               |
 | ----------------------- | -------------- | ------------------------------------ |
 | Data structure          | Pair (doublet) | Rib (triplet)                        |
