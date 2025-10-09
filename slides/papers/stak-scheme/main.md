@@ -60,15 +60,11 @@ The virtual machine runs the bytecode as a Scheme program.
   - Both code and data in heap
 
 <!--
-Stak Scheme borrows many of the design of Ribbit Scheme.
-
-So, before going into details of Stak Scheme, let me describe the basic design of Ribbit Scheme.
-
 Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
 
 Something interesting about RVM is that everything is a list including all Scheme values, Scheme program, and stacks to define the state of the virtual machine.
 
-And because of that, RVM adopts "Von Neumann architecture" in a way.
+So RVM adopts "Von Neumann architecture" in a way.
 
 On the heap memory in RVM, everything is structured as lists.
 
