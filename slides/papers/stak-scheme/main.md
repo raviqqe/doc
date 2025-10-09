@@ -34,7 +34,7 @@ In this talk, I would like to introduce a new tiny R7RS Scheme implementation ca
 <!--
 A few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
 
-Its VM aims to be simple, portable, compact, and fast.
+Its VM aims to be simple, portable, compact, and fast at the same time.
 
 In Ribbit Scheme, one of the primary features is the split architecture of the compiler and the virtual machine.
 
