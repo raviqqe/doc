@@ -107,6 +107,8 @@ But it can also run by itself as a command line interpreter.
   - Both code and data in heap
 
 <!--
+Before going into the biggest differences between Stak Scheme and Ribbit Scheme, let me explain a bit more about Ribbit VM.
+
 Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
 
 Something interesting about RVM is that everything is a list including all Scheme values, Scheme program, and stacks to define the state of the virtual machine.
