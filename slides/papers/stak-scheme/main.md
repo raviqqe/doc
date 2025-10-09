@@ -99,7 +99,7 @@ I'm gonna talk more about it later.
 
 ---
 
-# Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
+# Can we implement the entire R7RS-small standard on RVM? 🤔
 
 ---
 
