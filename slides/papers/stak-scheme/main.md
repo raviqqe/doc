@@ -148,7 +148,7 @@ I'm gonna talk more about it later.
 
 ---
 
-# Compiling & running a program
+# Compiling and running a program
 
 - A compiler compiles source code into an encoded **code graph**.
 - The VM decodes and runs it as a program.
@@ -212,7 +212,7 @@ I'm gonna talk more about it later.
 
 ---
 
-# Encoding & decoding
+# Encoding and decoding
 
 - A code graph is encoded by a topological sort.
 - The compiler encodes a code graph into bytes.
@@ -239,7 +239,7 @@ On decoding, we do the same thing but in a reverse order.
 
 ---
 
-# `eval` & the compiler
+# `eval` and the compiler
 
 - The compiler from S-expression to code graph is **data**.
 - `(incept compiler source)` **embeds the compiler** into source code.
