@@ -291,18 +291,19 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 
 # Compactness
 
+- TR7, the tiniest R7RS-small implementation before Stak Scheme
+
 |       | Lines of code (LOC) | Binary size (KB) |
 | ----- | ------------------: | ---------------: |
 | mstak |               9,127 |          108,648 |
 | tr7i  |              16,891 |          301,536 |
 
-## References
-
-- [TR7: tiny R7RS-small scheme interpreter](https://jobol.gitlab.io/tr7/)
-
 ---
 
 # Benchmarks
+
+- Relative computation time
+- Fast startup time for small programs
 
 | Benchmark | mstak | stak | mstak (embed) | stak (embed) | tr7i |  gsi | chibi | gosh |
 | --------- | ----: | ---: | ------------: | -----------: | ---: | ---: | ----: | ---: |
@@ -316,7 +317,10 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 
 # Future work
 
-> WIP
+- Type check as the first step
+  - RVM is flexible but not as secure as other modern ones.
+- Porting to another host language
+  - e.g. Go, TypeScript, assembly...
 
 ---
 
