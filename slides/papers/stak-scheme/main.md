@@ -55,7 +55,7 @@ The virtual machine runs the bytecode as a Scheme program.
 
 # Stak Scheme
 
-- Stak Scheme, the tiny R7RS-small implementation
+- Stak Scheme, the tiny **R7RS-small** implementation
   - Simple, portable, compact, and fast
 - Two use cases
   - Embedded scripting language for Rust
