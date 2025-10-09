@@ -73,10 +73,10 @@ And the answer is yes, we did.
   - Standalone interpreter
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
-|                         | Stak           | Ribbit                               |
-| ----------------------- | -------------- | ------------------------------------ |
-| Data structure          | Pair (doublet) | Rib (triplet)                        |
-| **Code graph encoding** | Local cache    | Global cache + continuation/constant |
+|                   | Stak         | Ribbit                               |
+| ----------------- | ------------ | ------------------------------------ |
+| Bytecode encoding | Local cache  | Global cache + continuation/constant |
+| `eval` procedure  | The compiler | Separate implementation              |
 
 <!--
 So that's why we developed Stak Scheme, the tiny R7RS-small implementation.
