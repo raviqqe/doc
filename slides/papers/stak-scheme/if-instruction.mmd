@@ -4,7 +4,7 @@ flowchart LR
   c4 -.-> d3(display)
 
   subgraph s[ ]
-    c0[get] -->|control flow| c1{if} --> c2[const] & c3[const] --> c4[call]
+    c0[get] -->|control flow| c1{if} --> c2[const] & c3[const] --> c4[call]:::red
   end
 
   c3 -.-> d2(#quot;bar#quot;)
