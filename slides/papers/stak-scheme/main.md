@@ -32,7 +32,7 @@ In this talk, I would like to introduce a new tiny R7RS Scheme implementation ca
   - Virtual Machine (VM) written in x86-64 assembly, C, Javascript, Bash, ...
 
 <!--
-As a background, a few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
+As a background, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation a few years ago.
 
 It aims to be simple, portable, compact, and fast.
 
