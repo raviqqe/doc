@@ -45,23 +45,6 @@ The virtual machine runs the bytecode as a Scheme program.
 
 ---
 
-# R4RS vs R7RS-small
-
-- R4RS lacks some good programming constructs...
-- R7RS-small adds:
-  - Hygienic macros
-    - i.e. `define-syntax` and `syntax-rules`
-  - Library system
-  - More built-in procedures and libraries
-
-<!--
-So Ribbit Scheme implements R4RS, which is a bit old standard of Scheme.
-
-And Stak Scheme implements the latest R7RS-small standard.
--->
-
----
-
 # Can we implement the entire R7RS-small standard on RVM? 🤔
 
 ---
@@ -259,6 +242,26 @@ I'm gonna talk more about it later.
 - `((eval compiler) source)` compiles the source code into a code graph.
 
 ![](eval.svg)
+
+---
+
+# R4RS vs R7RS-small
+
+- R4RS lacks some good programming constructs...
+- R7RS-small adds:
+  - Hygienic macros
+    - i.e. `define-syntax` and `syntax-rules`
+  - Library system
+  - More built-in procedures and libraries
+
+<!--
+So Ribbit Scheme implements R4RS, which is a bit old standard of Scheme.
+
+And Stak Scheme implements the latest R7RS-small standard.
+
+When it comes to the differences between R4RS and R7RS-small,
+R7RS-small added some big functionalities like hygienic macros, and the library system.
+-->
 
 ---
 
