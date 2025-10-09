@@ -117,7 +117,7 @@ Something interesting about RVM is that everything is a list including all Schem
 
 In other words, RVM adopts "Von Neumann architecture" in a way.
 
-On the heap memory in RVM, everything is structured as lists.
+In the heap memory, everything is structured as lists while we have flat memory blocks on linear memory.
 
 You can manipulate code and data on RVM in exactly the same way.
 -->
