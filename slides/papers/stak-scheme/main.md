@@ -232,6 +232,11 @@ I'm gonna talk more about it later.
 
 ![](merge.svg)
 
+<!--
+
+On decoding, we do the same thing but in a reverse order.
+-->
+
 ---
 
 # `eval` & the compiler
