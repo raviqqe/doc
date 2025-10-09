@@ -82,8 +82,7 @@ So you can manipulate code and data on RVM in exactly the same way.
 
 - A representation of a Scheme program on memory
   - Directed Acyclic Graph (DAG) of **Ribs** (i.e. pairs)
-- Universal between **code** and **data**
-  - e.g. no special garbage collection for code
+- Contains both **code** and **data**.
 
 ![](./fibonacci.svg)
 
@@ -91,6 +90,8 @@ So you can manipulate code and data on RVM in exactly the same way.
 On RVM, a Scheme program is represented as a data structure called a code graph, which is basically a DAG of pairs.
 
 This example is the one of the fibonacci function implemented on RVM.
+
+And, as I described before, this code graph is
 -->
 
 ---
