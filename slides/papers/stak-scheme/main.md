@@ -29,7 +29,7 @@ In this talk, I would like to introduce a new tiny R7RS Scheme implementation ca
   - R4RS REPL in 7 KB
 - Two components
   - Compiler written in Scheme
-  - Virtual Machine (VM) written in x86-64 assembly, C, Javascript, Bash, ...
+  - Virtual Machine (Ribbit VM) written in x86-64 assembly, C, Javascript, Bash, ...
 
 <!--
 Before going into the details of Stak Scheme, let me give you some background.
