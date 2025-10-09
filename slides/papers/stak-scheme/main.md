@@ -313,6 +313,14 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 | sum       |  1.00 | 1.13 |          1.01 |         1.06 | 1.19 | 1.64 |  0.98 | 0.24 |
 | tak       |  1.00 | 1.09 |          0.89 |         0.98 | 0.96 | 1.23 |  1.21 | 0.54 |
 
+<!--
+In terms of speed, Stak Scheme is comparable with the other Scheme implementation.
+
+It's steadily faster than TR7 and the interpreter of Gambit Scheme.
+
+But it's still far behind from the latest interpreters of Gauche.
+-->
+
 ---
 
 # Future work
