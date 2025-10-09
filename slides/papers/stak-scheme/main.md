@@ -32,8 +32,6 @@ In this talk, I would like to introduce a new tiny R7RS Scheme implementation ca
   - Virtual Machine (Ribbit VM) written in x86-64 assembly, C, Javascript, Bash, ...
 
 <!--
-Before going into the details of Stak Scheme, let me give you some background.
-
 A few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
 
 It aims to be simple, portable, compact, and fast.
