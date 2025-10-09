@@ -52,12 +52,15 @@ RVM is very compact and reasonably fast.
 
 The question is, can we implement the entire R7RS-small, the latest standard of Scheme, on RVM?
 
-The key motivation of Stak Scheme is to implement the entire R7RS-small standard on Ribbit Scheme's VM.
 -->
 
 ---
 
 # Yes, we can (or did)! 😏
+
+<!--
+And the answer is, Yes, we did.
+-->
 
 ---
 
