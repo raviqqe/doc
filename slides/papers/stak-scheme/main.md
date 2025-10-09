@@ -31,8 +31,8 @@ But it can also run by itself as a command line interpreter.
 - [Ribbit Scheme, the tiny R4RS implementation][ribbit]
   - Simple, portable, compact, and fast
 - Two components
-  - Compiler: Scheme
-  - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, ...
+  - Compiler written in Scheme
+  - Virtual Machine (VM) written in x86-64 assembly, C, Javascript, Bash, ...
 
 <!--
 As a background, a few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
