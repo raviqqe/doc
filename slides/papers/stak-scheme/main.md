@@ -296,13 +296,11 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 | mstak |               9,127 |          108,648 |
 | tr7i  |              16,891 |          301,536 |
 
-## References
-
-- [TR7: tiny R7RS-small scheme interpreter](https://jobol.gitlab.io/tr7/)
-
 ---
 
 # Benchmarks
+
+- Relative computational time
 
 | Benchmark | mstak | stak | mstak (embed) | stak (embed) | tr7i |  gsi | chibi | gosh |
 | --------- | ----: | ---: | ------------: | -----------: | ---: | ---: | ----: | ---: |
