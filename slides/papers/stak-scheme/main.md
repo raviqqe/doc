@@ -248,6 +248,16 @@ On decoding, we do the same thing but in a reverse order.
 
 ![](eval.svg)
 
+<!--
+In Ribbit Scheme, the `eval` procedure is implemented separately from the compiler.
+
+But in Stak Scheme, the compiler itself is part of the `eval` procedure.
+
+This is because the compiler is relatively large for R7RS as it includes the macro nad library systems.
+
+It is very tedious to maintain two separate implementations of the compiler.
+-->
+
 ---
 
 # R4RS vs R7RS-small
