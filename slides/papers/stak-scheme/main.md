@@ -96,7 +96,7 @@ But it can also run by itself as a command line interpreter.
 
 # Ribbit VM in depth
 
-- Ribbit Virtual Machine (RVM)
+- Ribbit VM (RVM)
   - A stack machine
 - **Everything is a list**.
   - Code
