@@ -339,6 +339,8 @@ For example, because of the unified representation of code and data,
 user input might maliciously try to modify the code of the Scheme program dynamically.
 
 To prevent that, we need type checking in primitives on RVM.
+
+Porting to another host language.
 -->
 
 ---
