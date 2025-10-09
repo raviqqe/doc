@@ -317,10 +317,14 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 
 # Future work
 
-- Type check as the first step
+- Type checking
   - RVM is flexible but not as secure as other modern ones.
 - Porting to another host language
   - e.g. Go, TypeScript, assembly...
+
+<!--
+
+-->
 
 ---
 
