@@ -291,6 +291,8 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 
 # Compactness
 
+- TR7, the tiniest R7RS-small implementation before Stak Scheme
+
 |       | Lines of code (LOC) | Binary size (KB) |
 | ----- | ------------------: | ---------------: |
 | mstak |               9,127 |          108,648 |
