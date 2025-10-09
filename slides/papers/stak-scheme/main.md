@@ -182,7 +182,7 @@ I'm gonna talk more about it later.
 (display "bar")
 ```
 
-![h:450px](./duplicate-strings.svg)
+![h:400px](./duplicate-strings.svg)
 
 ---
 
