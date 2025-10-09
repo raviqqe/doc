@@ -83,7 +83,7 @@ So you can manipulate code and data on RVM in exactly the same way.
 - A representation of a Scheme program on memory
   - Directed Acyclic Graph (DAG) of **Ribs** (i.e. pairs)
 - Contains both **code** and **data**.
-  - e.g. no special `eval` interpreter
+  - e.g. no special interpreter for `eval`
 
 ![](./fibonacci.svg)
 
