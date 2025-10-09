@@ -106,7 +106,7 @@ I'm gonna talk more about it later.
 
 ---
 
-# Yes, we can! 😏
+# Yes, we can (or did)! 😏
 
 ---
 
