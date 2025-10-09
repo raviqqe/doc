@@ -373,19 +373,6 @@ Huge thanks 🙏 to:
 
 ---
 
-# Virtual machine
-
-- A stack machine
-- Everything is a **pair**.
-  - Code graph
-  - Values
-    - Lists, characters, strings, ...
-  - A stack
-- Binary-level [homoiconicity][homoiconicity]
-- "Von Neumann architecture"
-
----
-
 # Code graph in depth
 
 - A pair consists of `car`, `cdr`, and a tag on the side of `cdr`.
