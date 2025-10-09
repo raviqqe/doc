@@ -111,6 +111,8 @@ Before going into the biggest differences between Stak Scheme and Ribbit Scheme,
 
 Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
 
+And we use the same one for Stak Scheme.
+
 Something interesting about RVM is that everything is a list including all Scheme values, Scheme program, and stacks to define the state of the virtual machine.
 
 So RVM adopts "Von Neumann architecture" in a way.
