@@ -78,7 +78,7 @@ It aims to be simple, portable, compact, and fast.
 
 But it also implements the entire R7RS-small standard.
 
-Stak Scheme is primarily designed as an embedded scripting language for Rust.
+Stak Scheme is primarily designed as an embedded scripting language.
 
 But it can also run by itself as a command line interpreter.
 -->
