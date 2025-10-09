@@ -159,6 +159,11 @@ I'm gonna talk more about it later.
 ![h:160px](run.svg)
 
 <!--
+As I mentioned before, on Stak Scheme, the compiler compiles source code into bytecode.
+
+The virtual machine, RVM runs bytecode as a program.
+
+In both the compiler and the VM, we use code graphs as a representation of a compiled Scheme program.
 -->
 
 ---
