@@ -70,6 +70,14 @@ The virtual machine runs the bytecode as a Scheme program.
 | **Code graph encoding** | Local cache    | Global cache + continuation/constant |
 
 <!--
+So that's why we developed Stak Scheme, the tiny R7RS-small implementation.
+
+Its purpose is basically the same as Ribbit Scheme.
+
+It aims to be simple, portable, compact, and fast.
+
+But it also implements the entire R7RS-small standard.
+
 It is primarily designed as an embedded scripting language for Rust.
 
 But it can also run by itself as a command line interpreter.
