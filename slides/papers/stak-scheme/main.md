@@ -59,7 +59,7 @@ The question is, can we implement the entire R7RS-small, the latest standard of 
 # Yes, we can (or did)! 😏
 
 <!--
-And the answer is, Yes, we did.
+And the answer is yes, we did.
 -->
 
 ---
