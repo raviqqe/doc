@@ -320,6 +320,8 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 - RVM is simple, portable, compact, and fast.
   - But not secure...
 - Type check as the first step
+- Porting to another host language
+  - e.g. Go, TypeScript, assembly...
 
 ---
 
