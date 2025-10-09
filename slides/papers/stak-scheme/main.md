@@ -18,10 +18,6 @@ Yota Toyama
 
 <!--
 In this talk, I would like to introduce a new tiny R7RS Scheme implementation called Stak Scheme.
-
-It is primarily designed as an embedded scripting language for Rust.
-
-But it can also run by itself as a command line interpreter.
 -->
 
 ---
@@ -123,6 +119,12 @@ I'm gonna talk more about it later.
 | ----------------------- | -------------- | ------------------------------------ |
 | Data structure          | Pair (doublet) | Rib (triplet)                        |
 | **Code graph encoding** | Local cache    | Global cache + continuation/constant |
+
+<!--
+It is primarily designed as an embedded scripting language for Rust.
+
+But it can also run by itself as a command line interpreter.
+-->
 
 ---
 
