@@ -335,7 +335,10 @@ RVM looks good at every perspective.
 
 RVM is not as secure as other modern ones due to its flexibility.
 
-For example, because of the unified representation of code and data, user input might maliciously try to modifiy the code of the Scheme program dynamically.
+For example, because of the unified representation of code and data,
+user input might maliciously try to modify the code of the Scheme program dynamically.
+
+To prevent that, we need type checking in primitives on RVM.
 -->
 
 ---
