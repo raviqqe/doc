@@ -115,7 +115,7 @@ And we use the same one for Stak Scheme.
 
 Something interesting about RVM is that everything is a list including all Scheme values, Scheme program, and stacks to define the state of the virtual machine.
 
-So RVM adopts "Von Neumann architecture" in a way.
+In other words, RVM adopts "Von Neumann architecture" in a way.
 
 On the heap memory in RVM, everything is structured as lists.
 
