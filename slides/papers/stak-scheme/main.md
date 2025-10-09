@@ -318,7 +318,7 @@ In terms of speed, Stak Scheme is comparable with the other Scheme implementatio
 
 It's steadily faster than TR7 and the interpreter of Gambit Scheme.
 
-But it's still far behind from the latest interpreters of Gauche.
+It's still far behind from the modern interpreters of Gauche.
 -->
 
 ---
