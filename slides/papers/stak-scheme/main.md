@@ -112,7 +112,7 @@ So you can manipulate code and data on RVM in exactly the same way.
 # Code graph
 
 - A representation of a Scheme program on memory
-  - Directed Acyclic Graph (DAG) of **Ribs** (i.e. pairs)
+  - Directed Acyclic Graph (DAG) of **pairs**
 - Contains both **code** and **data**.
   - e.g. no special interpreter for `eval`
 
