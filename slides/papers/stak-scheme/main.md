@@ -29,7 +29,7 @@ In this talk, I would like to introduce a new tiny R7RS Scheme implementation ca
   - R4RS REPL in 7 KB
 - Two separate components
   - Compiler written in Scheme
-  - Virtual Machine (Ribbit VM) written in x86-64 assembly, C, Javascript, Bash, ...
+  - Virtual Machine (Ribbit VM, or just **RVM**) written in x86-64 assembly, C, Javascript, Bash, ...
 
 <!--
 A few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
@@ -48,6 +48,10 @@ The virtual machine runs the bytecode as a Scheme program.
 # Can we implement the entire R7RS-small standard on RVM? 🤔
 
 <!--
+RVM is very compact and reasonably fast.
+
+The question is, can we implement the entire R7RS-small standard on RVM?
+
 The key motivation of Stak Scheme is to implement the entire R7RS-small standard on Ribbit Scheme's VM.
 -->
 
