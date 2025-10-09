@@ -34,7 +34,7 @@ In this talk, I would like to introduce a new tiny R7RS Scheme implementation ca
 <!--
 Before going into the details of Stak Scheme, let me give you some background.
 
-As a background, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation a few years ago.
+A few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
 
 It aims to be simple, portable, compact, and fast.
 
