@@ -166,17 +166,9 @@ I'm gonna talk more about it later.
 
 # If instruction
 
-## Scheme
-
 ```scheme
 (display (if x "foo" "bar"))
 ```
-
----
-
-# If instruction
-
-## Code graph
 
 ![h:450px](./if-instruction.svg)
 
@@ -184,27 +176,17 @@ I'm gonna talk more about it later.
 
 # Duplicate strings
 
-## Scheme
-
 ```scheme
 (display "foo")
 (display "foo")
 (display "bar")
 ```
 
----
-
-# Duplicate strings
-
-## Code graph
-
 ![h:450px](./duplicate-strings.svg)
 
 ---
 
 # Library system
-
-## Scheme
 
 ```scheme
 (define-library (foo)
@@ -225,8 +207,6 @@ I'm gonna talk more about it later.
 ---
 
 # Library system
-
-## Code graph
 
 ![h:450px](./library-system.svg)
 
