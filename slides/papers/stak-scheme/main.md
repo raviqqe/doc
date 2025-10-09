@@ -17,7 +17,7 @@ strong {
 Yota Toyama
 
 <!--
-In this talk, I would like to introduce a new R7RS Scheme implementation called Stak Scheme.
+In this talk, I would like to introduce a new tiny R7RS Scheme implementation called Stak Scheme.
 
 It is primarily designed as an embedded scripting language for Rust.
 
