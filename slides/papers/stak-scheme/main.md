@@ -40,7 +40,7 @@ It aims to be simple, portable, compact, and fast.
 
 In Ribbit Scheme, one of the primary features is the split architecture of the compiler and the virtual machine.
 
-The compiler compiles source code in Scheme into something like bytecode.
+The compiler compiles source code in Scheme into bytecode.
 
 The virtual machine runs the bytecode as a Scheme program.
 -->
