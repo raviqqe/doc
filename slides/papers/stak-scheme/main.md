@@ -83,7 +83,7 @@ But it can also run by itself as a command line interpreter.
 
 ---
 
-# Ribbit Scheme in depth
+# Ribbit VM in depth
 
 - Ribbit Virtual Machine (RVM)
   - A stack machine
