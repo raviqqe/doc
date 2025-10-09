@@ -333,7 +333,9 @@ It's still far behind from the modern interpreters of Gauche.
 <!--
 RVM looks good at every perspective.
 
-RVM looks good at every perspective.
+RVM is not as secure as other modern ones due to its flexibility.
+
+For example, because of the unified representation of code and data, user input might maliciously try to modifiy the code of the Scheme program dynamically.
 -->
 
 ---
