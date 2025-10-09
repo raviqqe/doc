@@ -332,6 +332,7 @@ Huge thanks 🙏 to:
   - Especially, the dynamic programming language team at the University of Montréal
 - Léonard Oest O’Leary and William E. Byrd for early comments on the draft
 - [@sisshiki1969](https://github.com/sisshiki1969) and [@yhara](https://github.com/yhara) for discussions on the language processor design
+- And, of course, all the reviewers!
 
 ---
 
