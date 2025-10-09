@@ -331,7 +331,9 @@ It's still far behind from the modern interpreters of Gauche.
   - e.g. Go, TypeScript, assembly...
 
 <!--
+RVM looks good at every perspective.
 
+RVM looks good at every perspective.
 -->
 
 ---
