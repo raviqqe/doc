@@ -119,7 +119,7 @@ In other words, RVM adopts "Von Neumann architecture" in a way.
 
 On the heap memory in RVM, everything is structured as lists.
 
-So you can manipulate code and data on RVM in exactly the same way.
+You can manipulate code and data on RVM in exactly the same way.
 -->
 
 ---
