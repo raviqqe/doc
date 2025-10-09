@@ -27,7 +27,7 @@ In this talk, I would like to introduce a new tiny R7RS Scheme implementation ca
 - [Ribbit Scheme, the tiny R4RS implementation][ribbit]
   - Simple, portable, compact, and fast
   - R4RS REPL in 7 KB
-- Two components
+- Two separate components
   - Compiler written in Scheme
   - Virtual Machine (Ribbit VM) written in x86-64 assembly, C, Javascript, Bash, ...
 
