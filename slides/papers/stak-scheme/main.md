@@ -16,21 +16,87 @@ strong {
 
 Yota Toyama
 
+<!--
+In this talk, I would like to introduce a new tiny R7RS Scheme implementation called Stak Scheme.
+-->
+
 ---
 
 # Background
 
 - [Ribbit Scheme, the tiny R4RS implementation][ribbit]
   - Simple, portable, compact, and fast
-- Two components
-  - Compiler: Scheme
-  - Virtual Machine (VM): x86-64 assembly, C, Javascript, Bash, ...
+  - R4RS REPL in 7 KB
+- Two separate components
+  - Compiler written in Scheme
+  - Virtual Machine (Ribbit VM, or just **RVM**) written in x86-64 assembly, C, Javascript, Bash, ...
+
+<!--
+A few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
+
+Its VM aims to be simple, portable, compact, and fast at the same time.
+
+In Ribbit Scheme, one of the primary features is the split architecture of the compiler and the virtual machine.
+
+The compiler compiles source code in Scheme into bytecode.
+
+The virtual machine runs the bytecode as a Scheme program.
+-->
 
 ---
 
-# Ribbit Scheme in depth
+# Can we implement the entire R7RS-small standard on RVM? 🤔
 
-- Ribbit Virtual Machine (RVM)
+<!--
+RVM is very compact and reasonably fast.
+
+The question is, can we implement the entire R7RS-small, the latest standard of Scheme, on RVM?
+
+-->
+
+---
+
+# Yes, we can (or did)! 😏
+
+<!--
+And the answer is yes, we did.
+-->
+
+---
+
+# Stak Scheme
+
+- Stak Scheme, the tiny **R7RS-small** implementation
+  - Simple, portable, compact, and fast
+- Two use cases
+  - Embedded scripting language
+  - Standalone interpreter
+- Open source on GitHub: [`raviqqe/stak`][stak]
+
+|                   | Stak              | Ribbit                               |
+| ----------------- | ----------------- | ------------------------------------ |
+| Bytecode encoding | Local cache       | Global cache + continuation/constant |
+| `eval` procedure  | Uses the compiler | Separate from the compiler           |
+
+<!--
+So that's why we developed Stak Scheme, the tiny R7RS-small implementation.
+
+Its purpose is basically the same as Ribbit Scheme.
+
+It aims to be simple, portable, compact, and fast.
+
+But it also implements the entire R7RS-small standard.
+
+Stak Scheme is primarily designed as an embedded scripting language.
+
+But it can also run by itself as a command line interpreter.
+-->
+
+---
+
+# Ribbit VM in depth
+
+- Ribbit VM (RVM)
   - A stack machine
 - **Everything is a list**.
   - Code
@@ -40,43 +106,49 @@ Yota Toyama
 - "Von Neumann architecture"
   - Both code and data in heap
 
+<!--
+Before going into the biggest differences between Stak Scheme and Ribbit Scheme, let me explain a bit more about Ribbit VM.
+
+Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
+
+And we use the same one for Stak Scheme.
+
+Something interesting about RVM is that everything is a list including all Scheme values, Scheme program, and stacks to define the state of the virtual machine.
+
+In other words, RVM adopts "Von Neumann architecture" in a way.
+
+In the heap memory, everything is structured as lists while we have flat memory blocks on linear memory.
+
+You can manipulate code and data on RVM in exactly the same way.
+-->
+
 ---
 
 # Code graph
 
 - A representation of a Scheme program on memory
-  - Directed Acyclic Graph (DAG) of **Ribs** (i.e. pairs)
-- Universal between **code** and **data**
-  - e.g. no special garbage collection for code
+  - Directed Acyclic Graph (DAG) of **pairs**
+- Contains both **code** and **data**.
+  - e.g. no special interpreter for `eval`
 
 ![](./fibonacci.svg)
 
----
+<!--
+On RVM, a Scheme program is represented as a data structure called a code graph, which is basically a DAG of pairs.
 
-# Can we implement the entire R7RS-small standard on the Ribbit VM? 🤔
+This example is the one of the fibonacci function implemented on RVM.
 
----
+And, as I mentioned before, we use this code graph for both code and data.
 
-# Yes, we can! 😏
+Because of that, for example, when we want to implement the `eval` procedure,
+we simply compile an S-expression into a code graph, and execute it as a procedure.
 
----
-
-# Stak Scheme
-
-- Stak Scheme, the tiny R7RS-small implementation
-  - Simple, portable, compact, and fast
-- Open source on GitHub: [`raviqqe/stak`][stak]
-
-## Comparison to Ribbit Scheme
-
-|                         | Stak           | Ribbit                               |
-| ----------------------- | -------------- | ------------------------------------ |
-| Data structure          | Pair (doublet) | Rib (triplet)                        |
-| **Code graph encoding** | Local cache    | Global cache + continuation/constant |
+I'm gonna talk more about it later.
+-->
 
 ---
 
-# Compiling & running a program
+# Compiling and running a program
 
 - A compiler compiles source code into an encoded **code graph**.
 - The VM decodes and runs it as a program.
@@ -94,17 +166,9 @@ Yota Toyama
 
 # If instruction
 
-## Scheme
-
 ```scheme
 (display (if x "foo" "bar"))
 ```
-
----
-
-# If instruction
-
-## Code graph
 
 ![h:450px](./if-instruction.svg)
 
@@ -112,27 +176,17 @@ Yota Toyama
 
 # Duplicate strings
 
-## Scheme
-
 ```scheme
 (display "foo")
 (display "foo")
 (display "bar")
 ```
 
----
-
-# Duplicate strings
-
-## Code graph
-
-![h:450px](./duplicate-strings.svg)
+![h:350px](./duplicate-strings.svg)
 
 ---
 
 # Library system
-
-## Scheme
 
 ```scheme
 (define-library (foo)
@@ -154,13 +208,11 @@ Yota Toyama
 
 # Library system
 
-## Code graph
-
 ![h:450px](./library-system.svg)
 
 ---
 
-# Encoding & decoding
+# Encoding and decoding
 
 - A code graph is encoded by a topological sort.
 - The compiler encodes a code graph into bytes.
@@ -180,15 +232,51 @@ Yota Toyama
 
 ![](merge.svg)
 
+<!--
+
+On decoding, we do the same thing but in a reverse order.
+-->
+
 ---
 
-# `eval` & the compiler
+# `eval` and the compiler
 
+- The compiler itself is part of the `eval` procedure.
 - The compiler from S-expression to code graph is **data**.
 - `(incept compiler source)` **embeds the compiler** into source code.
 - `((eval compiler) source)` compiles the source code into a code graph.
 
 ![](eval.svg)
+
+<!--
+In Ribbit Scheme, the `eval` procedure is implemented separately from the compiler.
+
+But in Stak Scheme, the compiler itself is part of the `eval` procedure.
+
+This is because the compiler is relatively large for R7RS as it includes the macro nad library systems.
+
+It is very tedious to maintain two separate implementations of the compiler.
+-->
+
+---
+
+# R4RS vs R7RS-small
+
+- R4RS lacks some good programming constructs...
+- R7RS-small adds:
+  - Hygienic macros
+    - i.e. `define-syntax` and `syntax-rules`
+  - Library system
+  - More built-in procedures and libraries
+
+<!--
+So Ribbit Scheme implements R4RS, which is a bit old standard of Scheme.
+
+And Stak Scheme implements the latest R7RS-small standard.
+
+When it comes to the differences between R4RS and R7RS-small,
+R7RS-small added some big functionalities like hygienic macros, and the library system.
+-->
 
 ---
 
@@ -240,6 +328,7 @@ Huge thanks 🙏 to:
   - Especially, the dynamic programming language team at the University of Montréal
 - Léonard Oest O’Leary and William E. Byrd for early comments on the draft
 - [@sisshiki1969](https://github.com/sisshiki1969) and [@yhara](https://github.com/yhara) for discussions on the language processor design
+- And, of course, all the reviewers!
 
 ---
 
