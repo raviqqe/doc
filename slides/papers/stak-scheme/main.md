@@ -47,6 +47,17 @@ The virtual machine runs the bytecode as a Scheme program.
 
 ---
 
+# R4RS vs R7RS-small
+
+- R4RS lacks some good programming constructs...
+- R7RS-small adds:
+  - Hygienic macros
+    - i.e. `define-syntax` and `syntax-rules`
+  - Library system
+  - More built-in procedures and libraries
+
+---
+
 # Can we implement the entire R7RS-small standard on RVM? 🤔
 
 ---
