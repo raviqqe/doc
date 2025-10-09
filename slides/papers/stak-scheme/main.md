@@ -47,6 +47,35 @@ The virtual machine runs the bytecode as a Scheme program.
 
 ---
 
+# Can we implement the entire R7RS-small standard on RVM? 🤔
+
+---
+
+# Yes, we can (or did)! 😏
+
+---
+
+# Stak Scheme
+
+- Stak Scheme, the tiny R7RS-small implementation
+  - Simple, portable, compact, and fast
+- Open source on GitHub: [`raviqqe/stak`][stak]
+
+## Comparison to Ribbit Scheme
+
+|                         | Stak           | Ribbit                               |
+| ----------------------- | -------------- | ------------------------------------ |
+| Data structure          | Pair (doublet) | Rib (triplet)                        |
+| **Code graph encoding** | Local cache    | Global cache + continuation/constant |
+
+<!--
+It is primarily designed as an embedded scripting language for Rust.
+
+But it can also run by itself as a command line interpreter.
+-->
+
+---
+
 # Ribbit Scheme in depth
 
 - Ribbit Virtual Machine (RVM)
@@ -95,35 +124,6 @@ Because of that, for example, when we want to implement the `eval` procedure,
 we simply compile an S-expression into a code graph, and execute it as a procedure.
 
 I'm gonna talk more about it later.
--->
-
----
-
-# Can we implement the entire R7RS-small standard on RVM? 🤔
-
----
-
-# Yes, we can (or did)! 😏
-
----
-
-# Stak Scheme
-
-- Stak Scheme, the tiny R7RS-small implementation
-  - Simple, portable, compact, and fast
-- Open source on GitHub: [`raviqqe/stak`][stak]
-
-## Comparison to Ribbit Scheme
-
-|                         | Stak           | Ribbit                               |
-| ----------------------- | -------------- | ------------------------------------ |
-| Data structure          | Pair (doublet) | Rib (triplet)                        |
-| **Code graph encoding** | Local cache    | Global cache + continuation/constant |
-
-<!--
-It is primarily designed as an embedded scripting language for Rust.
-
-But it can also run by itself as a command line interpreter.
 -->
 
 ---
