@@ -241,6 +241,7 @@ On decoding, we do the same thing but in a reverse order.
 
 # `eval` and the compiler
 
+- The compiler itself is part of the `eval` procedure.
 - The compiler from S-expression to code graph is **data**.
 - `(incept compiler source)` **embeds the compiler** into source code.
 - `((eval compiler) source)` compiles the source code into a code graph.
