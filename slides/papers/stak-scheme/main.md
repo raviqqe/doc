@@ -47,6 +47,10 @@ The virtual machine runs the bytecode as a Scheme program.
 
 # Can we implement the entire R7RS-small standard on RVM? 🤔
 
+<!--
+So the key motivation of Stak Scheme is to implement the entire R7RS-small standard on Ribbit Scheme's VM.
+-->
+
 ---
 
 # Yes, we can (or did)! 😏
