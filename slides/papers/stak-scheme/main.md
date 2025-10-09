@@ -340,7 +340,9 @@ user input might maliciously try to modify the code of the Scheme program dynami
 
 To prevent that, we need type checking in primitives on RVM.
 
-Porting to another host language.
+Porting to another host language is another next goal for Stak Scheme,
+
+to actually prove its portability as well as Ribbit Scheme..
 -->
 
 ---
