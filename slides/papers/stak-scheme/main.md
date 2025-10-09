@@ -302,7 +302,6 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 
 - Relative computation time
 - Fast startup time for small programs
-  - e.g. empty and hello world programs
 
 | Benchmark | mstak | stak | mstak (embed) | stak (embed) | tr7i |  gsi | chibi | gosh |
 | --------- | ----: | ---: | ------------: | -----------: | ---: | ---: | ----: | ---: |
