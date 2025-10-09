@@ -317,7 +317,9 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 
 # Future work
 
-> WIP
+- RVM is simple, portable, compact, and fast.
+  - But not secure...
+- Type check as the first step
 
 ---
 
