@@ -73,10 +73,10 @@ And the answer is yes, we did.
   - Standalone interpreter
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
-|                   | Stak              | Ribbit                               |
-| ----------------- | ----------------- | ------------------------------------ |
-| Bytecode encoding | Local cache       | Global cache + continuation/constant |
-| `eval` procedure  | Uses the compiler | Separate from the compiler           |
+|                     | Stak              | Ribbit                               |
+| ------------------- | ----------------- | ------------------------------------ |
+| "Bytecode" encoding | Local cache       | Global cache + continuation/constant |
+| `eval` procedure    | Uses the compiler | Separate from the compiler           |
 
 <!--
 So that's why we developed Stak Scheme, the tiny R7RS-small implementation.
@@ -211,6 +211,10 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 (+ bar-foo foo)
 ```
+
+<!--
+
+-->
 
 ---
 
