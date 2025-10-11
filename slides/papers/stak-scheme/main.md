@@ -214,21 +214,6 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 ---
 
-# Encoding shared nodes
-
-- Shared nodes are cached _locally_.
-- On the first visit, a node is added to cache.
-- On the last visit, the node is removed from cache.
-
-![](merge.svg)
-
-<!--
-
-On decoding, we do the same thing but in a reverse order.
--->
-
----
-
 # `eval` and the compiler
 
 - The compiler itself is part of the `eval` procedure.
@@ -402,3 +387,18 @@ Huge thanks 🙏 to:
 # Fibonacci function
 
 ![](./fibonacci.svg)
+
+---
+
+# Encoding shared nodes
+
+- Shared nodes are cached _locally_.
+- On the first visit, a node is added to cache.
+- On the last visit, the node is removed from cache.
+
+![](merge.svg)
+
+<!--
+
+On decoding, we do the same thing but in a reverse order.
+-->
