@@ -214,6 +214,12 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 ---
 
+# Structured memory snapshot
+
+> TODO
+
+---
+
 # `eval` and the compiler
 
 - The compiler itself is part of the `eval` procedure.
