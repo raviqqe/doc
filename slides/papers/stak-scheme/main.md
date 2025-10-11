@@ -74,15 +74,15 @@ And the answer is yes, we did.
 - Language processor design the same as Ribbit Scheme
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
-|                     | Stak         | Ribbit                               |
-| ------------------- | ------------ | ------------------------------------ |
-| "Bytecode" encoding | Local cache  | Global cache + continuation/constant |
-| `eval` procedure    | The compiler | Separate from the compiler           |
+|                     | Stak                       | Ribbit                        |
+| ------------------- | -------------------------- | ----------------------------- |
+| "Bytecode" encoding | Structured memory snapshot | Serialization + serialization |
+| `eval` procedure    | The compiler               | Separate from the compiler    |
 
 <!--
-That's how Stak Scheme started.
+That's how the project of Stak Scheme started.
 
-Its purpose is basically the same as Ribbit Scheme.
+Its goal is basically the same as Ribbit Scheme.
 
 It aims to be simple, portable, compact, and fast.
 
@@ -108,8 +108,6 @@ But it can also run by itself as a command line interpreter.
   - Both code and data in heap
 
 <!--
-Before going into the biggest differences between Stak Scheme and Ribbit Scheme, let me explain a bit more about Ribbit VM.
-
 Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
 
 And we use the same one for Stak Scheme.
@@ -153,7 +151,7 @@ I'm gonna talk more about it later.
 
 - A compiler compiles source code into an encoded **code graph**.
 - The VM decodes and runs it as a program.
-- Code graphs are used at both in the compiler and on the VM.
+- Code graphs are used at both **compile time** and **runtime**.
 
 ![h:160px](compile.svg)
 
@@ -171,31 +169,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 # Examples
 
----
-
-# If instruction
-
-```scheme
-(display (if x "foo" "bar"))
-```
-
-![h:450px](./if-instruction.svg)
-
----
-
-# Duplicate strings
-
-```scheme
-(display "foo")
-(display "foo")
-(display "bar")
-```
-
-![h:350px](./duplicate-strings.svg)
-
----
-
-# Library system
+## Library system
 
 ```scheme
 (define-library (foo)
@@ -219,7 +193,9 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 ---
 
-# Library system
+# Examples
+
+## Library system
 
 ![h:450px](./library-system.svg)
 
@@ -227,7 +203,6 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 # Encoding and decoding
 
-- A code graph is encoded by a topological sort.
 - The compiler encodes a code graph into bytes.
 - The VM decodes bytes into a code graph.
 
@@ -237,18 +212,16 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 ---
 
-# Encoding shared nodes
+# Structured memory snapshot
 
-- Shared nodes are cached _locally_.
-- On the first visit, a node is added to cache.
-- On the last visit, the node is removed from cache.
-
-![](merge.svg)
-
-<!--
-
-On decoding, we do the same thing but in a reverse order.
--->
+- A code graph is encoded by a topological sort.
+  - With caching for shared nodes.
+- Encoding is a structured memory snapshot.
+  - A cache table as a list
+- It natively encodes:
+  - Symbols from different libraries
+  - Symbols in `syntax-rules`
+  - Unique constants
 
 ---
 
@@ -392,6 +365,26 @@ Huge thanks 🙏 to:
 
 ---
 
+# If instruction
+
+```scheme
+(display (if x "foo" "bar"))
+```
+
+![h:450px](./if-instruction.svg)
+
+---
+
+# Duplicate strings
+
+```scheme
+(display "foo")
+(display "foo")
+(display "bar")
+```
+
+## ![h:350px](./duplicate-strings.svg)
+
 # Code graph in depth
 
 - A pair consists of `car`, `cdr`, and a tag on the side of `cdr`.
@@ -405,3 +398,18 @@ Huge thanks 🙏 to:
 # Fibonacci function
 
 ![](./fibonacci.svg)
+
+---
+
+# Encoding shared nodes
+
+- Shared nodes are cached _locally_.
+- On the first visit, a node is added to cache.
+- On the last visit, the node is removed from cache.
+
+![](merge.svg)
+
+<!--
+
+On decoding, we do the same thing but in a reverse order.
+-->
