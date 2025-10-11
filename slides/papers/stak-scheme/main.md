@@ -383,7 +383,9 @@ Huge thanks 🙏 to:
 (display "bar")
 ```
 
-## ![h:350px](./duplicate-strings.svg)
+![h:350px](./duplicate-strings.svg)
+
+---
 
 # Code graph in depth
 
