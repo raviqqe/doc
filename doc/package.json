@@ -11,17 +11,17 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.6",
+    "@astrojs/mdx": "^4.3.7",
     "@astrojs/sitemap": "^3.6.0",
     "@fontsource-variable/noto-sans": "^5.2.9",
     "@fontsource/ubuntu": "^5.2.7",
-    "astro": "^5.14.1",
+    "astro": "^5.14.3",
     "glob": "^11.0.3",
     "rehype-mermaid": "^3.0.0",
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.7.0",
+    "@types/node": "^24.7.1",
     "es-toolkit": "^1.40.0",
     "playwright": "^1.56.0",
     "prettier": "^3.6.2",
