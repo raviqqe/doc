@@ -17,7 +17,7 @@ strong {
 Yota Toyama
 
 <!--
-In this talk, I would like to introduce a new tiny R7RS Scheme implementation called Stak Scheme.
+In this talk, I introduce a new tiny R7RS Scheme implementation called Stak Scheme.
 -->
 
 ---
@@ -29,7 +29,7 @@ In this talk, I would like to introduce a new tiny R7RS Scheme implementation ca
   - R4RS REPL in 7 KB
 - Two separate components
   - Compiler written in Scheme
-  - Virtual Machine (Ribbit VM, or just **RVM**) written in x86-64 assembly, C, Javascript, Bash, ...
+  - Virtual Machine (**Ribbit VM**, or just **RVM**) written in x86-64 assembly, C, Javascript, Bash, ...
 
 <!--
 A few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
@@ -56,7 +56,7 @@ The question is, can we implement the entire R7RS-small, the latest standard of 
 
 ---
 
-# Yes, we can (or did)! 😏
+# Yes, we can! 😏
 
 <!--
 And the answer is yes, we did.
@@ -71,15 +71,16 @@ And the answer is yes, we did.
 - Two use cases
   - Embedded scripting language
   - Standalone interpreter
+- Language processor design the same as Ribbit Scheme
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
-|                   | Stak              | Ribbit                               |
-| ----------------- | ----------------- | ------------------------------------ |
-| Bytecode encoding | Local cache       | Global cache + continuation/constant |
-| `eval` procedure  | Uses the compiler | Separate from the compiler           |
+|                     | Stak         | Ribbit                               |
+| ------------------- | ------------ | ------------------------------------ |
+| "Bytecode" encoding | Local cache  | Global cache + continuation/constant |
+| `eval` procedure    | The compiler | Separate from the compiler           |
 
 <!--
-So that's why we developed Stak Scheme, the tiny R7RS-small implementation.
+That's how Stak Scheme started.
 
 Its purpose is basically the same as Ribbit Scheme.
 
@@ -94,7 +95,7 @@ But it can also run by itself as a command line interpreter.
 
 ---
 
-# Ribbit VM in depth
+# The VM in depth
 
 - Ribbit VM (RVM)
   - A stack machine
@@ -158,6 +159,14 @@ I'm gonna talk more about it later.
 
 ![h:160px](run.svg)
 
+<!--
+As I mentioned before, on Stak Scheme, the compiler compiles source code into bytecode.
+
+The virtual machine, RVM runs bytecode as a program.
+
+In both the compiler and the VM, we use code graphs as a representation of a compiled Scheme program.
+-->
+
 ---
 
 # Examples
@@ -203,6 +212,10 @@ I'm gonna talk more about it later.
 
 (+ bar-foo foo)
 ```
+
+<!--
+
+-->
 
 ---
 
@@ -280,10 +293,10 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 
 ---
 
-# Don't forget macros...
+# Macros and libraries in `eval`
 
-- `define-syntax` defines user-defined macros.
-- Macros and libraries can be expanded statically.
+- Macros and libraries are expanded at compile time.
+- `eval` needs their data at runtime.
 - `eval` needs to know their definitions.
   - Transfer macros and libraries from the compiler to the VM.
 
@@ -293,10 +306,16 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 
 - TR7, the tiniest R7RS-small implementation before Stak Scheme
 
-|       | Lines of code (LOC) | Binary size (KB) |
-| ----- | ------------------: | ---------------: |
-| mstak |               9,127 |          108,648 |
-| tr7i  |              16,891 |          301,536 |
+|       | Lines of code | Binary size (KB) |
+| ----- | ------------: | ---------------: |
+| mstak |         9,127 |          108,648 |
+| tr7i  |        16,891 |          301,536 |
+
+<!--
+First, we compared the compactness of Stak Scheme with TR7.
+
+TR7 is the tiniest R7RS-small implementation before Stak Scheme.
+-->
 
 ---
 
@@ -313,14 +332,37 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 | sum       |  1.00 | 1.13 |          1.01 |         1.06 | 1.19 | 1.64 |  0.98 | 0.24 |
 | tak       |  1.00 | 1.09 |          0.89 |         0.98 | 0.96 | 1.23 |  1.21 | 0.54 |
 
+<!--
+In terms of speed, Stak Scheme is comparable with the other Scheme implementation.
+
+It's steadily faster than TR7 and the interpreter of Gambit Scheme.
+
+It's still far behind from the modern interpreters of Gauche.
+-->
+
 ---
 
 # Future work
 
-- Type check as the first step
+- Type checking
   - RVM is flexible but not as secure as other modern ones.
 - Porting to another host language
   - e.g. Go, TypeScript, assembly...
+
+<!--
+RVM looks good at every perspective.
+
+RVM is not as secure as other modern ones due to its flexibility.
+
+For example, because of the unified representation of code and data,
+user input might maliciously try to modify the code of the Scheme program dynamically.
+
+To prevent that, we need type checking in primitives on RVM.
+
+Porting to another host language is another next goal for Stak Scheme,
+
+to actually prove its portability as well as Ribbit Scheme..
+-->
 
 ---
 
@@ -347,19 +389,6 @@ Huge thanks 🙏 to:
 ---
 
 # Appendix
-
----
-
-# Virtual machine
-
-- A stack machine
-- Everything is a **pair**.
-  - Code graph
-  - Values
-    - Lists, characters, strings, ...
-  - A stack
-- Binary-level [homoiconicity][homoiconicity]
-- "Von Neumann architecture"
 
 ---
 

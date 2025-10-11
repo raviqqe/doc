@@ -1,5 +1,5 @@
 flowchart LR
-  c0 -.-> d0(#quot;foo#quot;)
+  c0 -.-> d0(#quot;foo#quot;):::red
   c2 -.-> d0
   c4 -.-> d1(#quot;bar#quot;)
 
@@ -9,6 +9,6 @@ flowchart LR
     c4[const] --> c5[call]
   end
 
-  c1 -.-> d2(display)
+  c1 -.-> d2(display):::red
   c3 -.-> d2
   c5 -.-> d2
