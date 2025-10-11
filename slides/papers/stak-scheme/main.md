@@ -203,10 +203,10 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 # Encoding and decoding
 
-- A code graph is encoded by a topological sort.
-  - With caching for shared nodes.
 - The compiler encodes a code graph into bytes.
 - The VM decodes bytes into a code graph.
+- A code graph is encoded by a topological sort.
+  - With caching for shared nodes.
 
 ![h:160px](encode.svg)
 
