@@ -216,6 +216,9 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 # Structured memory snapshot
 
+- Encoding
+- Please read the paper.
+
 > TODO
 
 ---
