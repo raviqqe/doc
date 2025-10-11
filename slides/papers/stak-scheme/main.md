@@ -74,10 +74,10 @@ And the answer is yes, we did.
 - Language processor design the same as Ribbit Scheme
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
-|                     | Stak         | Ribbit                               |
-| ------------------- | ------------ | ------------------------------------ |
-| "Bytecode" encoding | Local cache  | Global cache + continuation/constant |
-| `eval` procedure    | The compiler | Separate from the compiler           |
+|                     | Stak                       | Ribbit                        |
+| ------------------- | -------------------------- | ----------------------------- |
+| "Bytecode" encoding | Structured memory snapshot | Serialization + serialization |
+| `eval` procedure    | The compiler               | Separate from the compiler    |
 
 <!--
 That's how Stak Scheme started.
