@@ -218,6 +218,9 @@ In both the compiler and the VM, we use code graphs as a representation of a com
   - With caching for shared nodes.
 - Encoding is a structured memory snapshot.
   - A cache table as a list
+- It natively encodes:
+  - Symbols from different libraries
+  - Symbols in `syntax-rules`
 
 ---
 
