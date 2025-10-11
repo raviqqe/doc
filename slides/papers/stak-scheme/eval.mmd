@@ -1,7 +1,7 @@
 flowchart LR
   d0(source) -.-> c1
 
-  subgraph s0[ ]
+  subgraph s0[Compiler]
     subgraph s1[compile]
       c1[parse] --->|S-exp| c2[incept]:::red --> c3[compile']:::blue
 
