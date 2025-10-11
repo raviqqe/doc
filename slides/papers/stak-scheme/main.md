@@ -71,15 +71,16 @@ And the answer is yes, we did.
 - Two use cases
   - Embedded scripting language
   - Standalone interpreter
+- Language processor design the same as Ribbit Scheme
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
-|                     | Stak              | Ribbit                               |
-| ------------------- | ----------------- | ------------------------------------ |
-| "Bytecode" encoding | Local cache       | Global cache + continuation/constant |
-| `eval` procedure    | Uses the compiler | Separate from the compiler           |
+|                     | Stak         | Ribbit                               |
+| ------------------- | ------------ | ------------------------------------ |
+| "Bytecode" encoding | Local cache  | Global cache + continuation/constant |
+| `eval` procedure    | The compiler | Separate from the compiler           |
 
 <!--
-So that's why we developed Stak Scheme, the tiny R7RS-small implementation.
+That's how Stak Scheme started.
 
 Its purpose is basically the same as Ribbit Scheme.
 
@@ -94,7 +95,7 @@ But it can also run by itself as a command line interpreter.
 
 ---
 
-# Ribbit VM in depth
+# The VM in depth
 
 - Ribbit VM (RVM)
   - A stack machine
@@ -292,10 +293,10 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 
 ---
 
-# Don't forget macros...
+# Macros and libraries in `eval`
 
-- `define-syntax` defines user-defined macros.
-- Macros and libraries can be expanded statically.
+- Macros and libraries are expanded at compile time.
+- `eval` needs their data at runtime.
 - `eval` needs to know their definitions.
   - Transfer macros and libraries from the compiler to the VM.
 
