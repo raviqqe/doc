@@ -80,7 +80,7 @@ And the answer is yes, we did.
 | `eval` procedure    | The compiler               | Separate from the compiler    |
 
 <!--
-That's how Stak Scheme started.
+That's how the project of Stak Scheme started.
 
 Its purpose is basically the same as Ribbit Scheme.
 
