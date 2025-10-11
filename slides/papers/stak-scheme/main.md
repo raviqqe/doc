@@ -151,7 +151,7 @@ I'm gonna talk more about it later.
 
 - A compiler compiles source code into an encoded **code graph**.
 - The VM decodes and runs it as a program.
-- Code graphs are used both in the compiler and on the VM.
+- Code graphs are used at both **compile time** and **runtime**.
 
 ![h:160px](compile.svg)
 
