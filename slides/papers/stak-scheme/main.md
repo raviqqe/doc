@@ -311,7 +311,7 @@ R7RS-small added some big functionalities like hygienic macros, and the library 
 | tr7i  |        16,891 |          301,536 |
 
 <!--
-First, we compared the compactness of Stak Scheme with TR7
+First, we compared the compactness of Stak Scheme with TR7.
 
 TR7 is the tiniest R7RS-small implementation before Stak Scheme.
 -->
