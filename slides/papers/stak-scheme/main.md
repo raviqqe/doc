@@ -169,31 +169,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 # Examples
 
----
-
-# If instruction
-
-```scheme
-(display (if x "foo" "bar"))
-```
-
-![h:450px](./if-instruction.svg)
-
----
-
-# Duplicate strings
-
-```scheme
-(display "foo")
-(display "foo")
-(display "bar")
-```
-
-![h:350px](./duplicate-strings.svg)
-
----
-
-# Library system
+## Library system
 
 ```scheme
 (define-library (foo)
@@ -217,7 +193,9 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 ---
 
-# Library system
+# Examples
+
+## Library system
 
 ![h:450px](./library-system.svg)
 
@@ -389,6 +367,26 @@ Huge thanks 🙏 to:
 # Appendix
 
 ---
+
+# If instruction
+
+```scheme
+(display (if x "foo" "bar"))
+```
+
+![h:450px](./if-instruction.svg)
+
+---
+
+# Duplicate strings
+
+```scheme
+(display "foo")
+(display "foo")
+(display "bar")
+```
+
+## ![h:350px](./duplicate-strings.svg)
 
 # Code graph in depth
 
