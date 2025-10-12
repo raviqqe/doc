@@ -222,7 +222,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 - It natively encodes:
   - Symbols from different libraries
   - Symbols in `syntax-rules`
-  - Unique constants
+  - Unique constants (e.g. strings)
 
 ![bg right height:450px](merge.svg)
 
