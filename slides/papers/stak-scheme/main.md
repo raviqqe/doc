@@ -236,6 +236,10 @@ Its purpose is to transfer a code graph as a compiled Scheme program in the comp
 
 Behind the scenes, it works just like a topological sort with a cache table with shared nodes.
 
+The point is that this cache table is implemented in the VM's heap memory.
+
+It does not require any extra complex data structure in the host language like hash maps,
+which contributes to the portability of the VM.
 -->
 
 ---
