@@ -43,6 +43,8 @@ In Ribbit Scheme, one of the primary features is the split architecture of the c
 The compiler compiles source code in Scheme into bytecode.
 
 The virtual machine runs the bytecode as a Scheme program.
+
+Proving its portability, the VM is implemented in various host languages including assembly, C, Javascript, and even Bash.
 -->
 
 ---
