@@ -25,14 +25,16 @@ In this talk, I introduce a new tiny R7RS Scheme implementation called Stak Sche
 # Background
 
 - [Ribbit Scheme, the tiny R4RS implementation][ribbit]
-  - Simple, portable, compact, and fast
   - R4RS REPL in 7 KB
+  - Simple, portable, compact, and fast
 - Two separate components
   - Compiler written in Scheme
   - Virtual Machine (**Ribbit VM**, or just **RVM**) written in x86-64 assembly, C, Javascript, Bash, ...
 
 <!--
-A few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
+There is a tiny R4RS Scheme implementation called Ribbit Scheme.
+
+It is very tiny as its R4RS REPL fits in 7 KB.
 
 Its VM aims to be simple, portable, compact, and fast at the same time.
 
