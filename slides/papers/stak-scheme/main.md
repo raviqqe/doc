@@ -279,7 +279,7 @@ In some way, we need to make the compiler available at runtime.
 - `eval` needs their information at runtime.
   - Macro definitions
   - Initialization code for libraries
-- Generic encoding/decoding transfers macro and library data naturally.
+- The encoding/decoding transfers macro and library data naturally.
 
 <!--
 Stak Scheme implements the R7RS-small standard.
