@@ -261,18 +261,26 @@ But in Stak Scheme, the compiler itself is part of the `eval` procedure.
 We took this design because the compiler is relatively large for R7RS as it includes the macro and library systems.
 
 It is very tedious to maintain two separate implementations of the compiler.
+
+However, Stak Scheme's compiler and VM are two separate components.
+
+In some way, we need to make the compiler available at runtime.
 -->
 
 ---
 
-# R4RS vs R7RS-small
+# Macros and libraries in `eval`
 
-- R4RS lacks some good programming constructs...
-- R7RS-small adds:
+- R7RS-small adds some good programming constructs...
   - Hygienic macros
     - i.e. `define-syntax` and `syntax-rules`
   - Library system
   - More built-in procedures and libraries
+- Macros and libraries are expanded at compile time.
+- `eval` needs their data at runtime.
+  - `syntax-rules` patterns
+  - Initialization code for libraries
+- Generic encoding/decoding transfers macros and libraries naturally.
 
 <!--
 So Ribbit Scheme implements R4RS, which is a bit old standard of Scheme.
@@ -282,15 +290,6 @@ And Stak Scheme implements the latest R7RS-small standard.
 When it comes to the differences between R4RS and R7RS-small,
 R7RS-small added some big functionalities like hygienic macros, and the library system.
 -->
-
----
-
-# Macros and libraries in `eval`
-
-- Macros and libraries are expanded at compile time.
-- `eval` needs their data at runtime.
-- `eval` needs to know their definitions.
-  - Transfer macros and libraries from the compiler to the VM.
 
 ---
 
