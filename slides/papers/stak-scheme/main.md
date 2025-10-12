@@ -277,7 +277,7 @@ In some way, we need to make the compiler available at runtime.
   - Library system
 - Macros and libraries are expanded at compile time.
 - `eval` needs their information at runtime.
-  - `syntax-rules` patterns
+  - Macro definitions
   - Initialization code for libraries
 - Generic encoding/decoding transfers macros and libraries naturally.
 
