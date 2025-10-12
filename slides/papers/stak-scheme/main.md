@@ -76,7 +76,7 @@ And the answer is yes, we did.
 |                     | Stak                       | Ribbit                      |
 | ------------------- | -------------------------- | --------------------------- |
 | "Bytecode" encoding | Structured memory snapshot | Serialization + compression |
-| `eval` procedure    | The compiler itself        | Separate from the compiler  |
+| `eval` procedure    | The compiler itself        | A separate library          |
 
 <!--
 That's how the project of Stak Scheme started.
