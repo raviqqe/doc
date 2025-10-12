@@ -18,6 +18,10 @@ Yota Toyama
 
 <!--
 In this talk, I introduce a new tiny R7RS Scheme implementation called Stak Scheme.
+
+I'm Yota Toyama.
+
+I'm a developer of Stak Scheme.
 -->
 
 ---
