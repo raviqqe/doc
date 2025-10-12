@@ -10,3 +10,5 @@
 .astro
 dist
 node_modules
+
+!*.drawio.svg
