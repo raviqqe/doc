@@ -218,7 +218,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 - A code graph is encoded by a topological sort.
   - Caches shared nodes
   - A cache table as a list
-- It natively encodes:
+- It naturally encodes:
   - Symbols from different libraries
   - Symbols in `syntax-rules`
   - Unique constants (e.g. strings)
