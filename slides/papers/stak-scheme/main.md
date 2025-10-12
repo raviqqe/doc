@@ -172,9 +172,9 @@ I'm gonna talk more about it later.
 <!--
 The code graph is used at two places.
 
-On Ribbit Scheme and Stak Scheme, the compiler compiles source code into bytecode.
+On Ribbit Scheme and Stak Scheme, the compiler compiles source code into a code graph.
 
-The virtual machine, RVM runs bytecode as a program.
+The virtual machine, RVM runs the code graph as a program.
 
 In both the compiler and the VM, we use code graphs as a representation of a compiled Scheme program.
 -->
