@@ -89,7 +89,7 @@ And the answer is yes, we did.
 <!--
 That's how the project of Stak Scheme started.
 
-Its goal is basically the same as Ribbit Scheme.
+Its design and goal are basically the same as Ribbit Scheme.
 
 It aims to be simple, portable, compact, and fast.
 
