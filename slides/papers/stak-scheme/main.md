@@ -232,7 +232,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 <!--
 The encoding of a code graph in Stak Scheme is conceptually a structured memory snapshot.
 
-You can transfer the compiled Scheme program in the compiler into the VM by the encoding and decoding algorithms.
+Its purpose is to transfer a code graph as a compiled Scheme program in the compiler into the VM by the encoding and decoding algorithms.
 
 Behind the scenes, it works just like a topological sort with a cache table with shared nodes.
 
