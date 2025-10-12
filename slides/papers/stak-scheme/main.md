@@ -120,7 +120,7 @@ I'm gonna focus on these two topics in today's talk.
 ![bg right w:550px](lists.svg)
 
 <!--
-Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
+Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stack machine.
 
 And we use the same one for Stak Scheme.
 
