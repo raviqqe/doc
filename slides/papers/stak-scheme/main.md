@@ -67,17 +67,16 @@ And the answer is yes, we did.
 # Stak Scheme
 
 - Stak Scheme, the tiny **R7RS-small** implementation
-  - Simple, portable, compact, and fast
+  - The same language design as Ribbit Scheme
 - Two use cases
   - Embedded scripting language
   - Standalone interpreter
-- Language processor design the same as Ribbit Scheme
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
 |                     | Stak                       | Ribbit                      |
 | ------------------- | -------------------------- | --------------------------- |
 | "Bytecode" encoding | Structured memory snapshot | Serialization + compression |
-| `eval` procedure    | The compiler               | Separate from the compiler  |
+| `eval` procedure    | The compiler itself        | A separate library          |
 
 <!--
 That's how the project of Stak Scheme started.
@@ -107,7 +106,7 @@ But it can also run by itself as a command line interpreter.
 - "Von Neumann architecture"
   - Both code and data in heap
 
-![bg right:55% h:500px](types.drawio.svg)
+![bg right w:550px](lists.svg)
 
 <!--
 Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
@@ -219,12 +218,12 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 - A code graph is encoded by a topological sort.
   - Caches shared nodes
   - A cache table as a list
-- It natively encodes:
+- It naturally encodes:
   - Symbols from different libraries
   - Symbols in `syntax-rules`
   - Unique constants (e.g. strings)
 
-![bg right height:450px](merge.svg)
+![bg right:48% w:620px](merge.svg)
 
 ---
 

@@ -3,5 +3,8 @@
 set -ex
 
 for file in $(find . -name '*.drawio.svg'); do
-  cp $file ${file%.drawio.svg}.svg
+  target=${file%.drawio.svg}.svg
+
+  cp $file $target
+  svgo $target
 done
