@@ -106,7 +106,7 @@ But it can also run by itself as a command line interpreter.
 - "Von Neumann architecture"
   - Both code and data in heap
 
-![bg right w:550px](types.drawio.svg)
+![bg right w:550px](lists.drawio.svg)
 
 <!--
 Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
@@ -223,7 +223,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
   - Symbols in `syntax-rules`
   - Unique constants (e.g. strings)
 
-![bg right height:450px](merge.svg)
+![bg right height:450px](merge.drawio.svg)
 
 ---
 
