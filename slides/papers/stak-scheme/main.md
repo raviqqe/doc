@@ -161,7 +161,7 @@ I'm gonna talk more about it later.
 
 # Compiling and running a program
 
-- A compiler compiles source code into an encoded **code graph**.
+- The compiler compiles source code into an encoded **code graph**.
 - The VM decodes and runs it as a program.
 - Code graphs are used at both **compile time** and **runtime**.
 
@@ -170,7 +170,9 @@ I'm gonna talk more about it later.
 ![h:160px](run.svg)
 
 <!--
-As I mentioned before, on Stak Scheme, the compiler compiles source code into bytecode.
+The code graph is used at two places.
+
+On Ribbit Scheme and Stak Scheme, the compiler compiles source code into bytecode.
 
 The virtual machine, RVM runs bytecode as a program.
 
