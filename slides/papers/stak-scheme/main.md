@@ -120,6 +120,8 @@ I'm gonna focus on these two topics in today's talk.
 ![bg right w:550px](lists.svg)
 
 <!--
+Before going into the details of Stak Scheme, let me briefly explain RVM on which Ribbit and Stak Scheme are implemented.
+
 Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stack machine.
 
 And we use the same one for Stak Scheme.
