@@ -246,8 +246,8 @@ which contributes to the portability of the VM.
 
 # `eval` and the compiler
 
-- The compiler itself is part of the `eval` procedure.
-- The compiler from S-expression to code graph is **data**.
+- `eval = compiler + VM`
+- The compiler from S-expression to code graph is defined as **data**.
 - `(incept compiler source)` **embeds the compiler** into source code.
 - `((eval compiler) source)` compiles the source code into a code graph.
 
@@ -258,7 +258,7 @@ In Ribbit Scheme, the `eval` procedure is implemented as a library attached to a
 
 But in Stak Scheme, the compiler itself is part of the `eval` procedure.
 
-This is because the compiler is relatively large for R7RS as it includes the macro nad library systems.
+We took this design because the compiler is relatively large for R7RS as it includes the macro and library systems.
 
 It is very tedious to maintain two separate implementations of the compiler.
 -->
