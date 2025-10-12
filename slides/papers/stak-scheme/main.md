@@ -232,6 +232,8 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 <!--
 The encoding of the code graph is conceptually a strucutred memory snapshot.
 
+You can transfer the compiled Scheme program in the compiler into the VM by the encoding and decoding algorithms.
+
 Behind the scenes, it works just like a topological sort with a cache table with shared nodes.
 
 -->
