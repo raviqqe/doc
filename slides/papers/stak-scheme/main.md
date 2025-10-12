@@ -225,6 +225,8 @@ In both the compiler and the VM, we use code graphs as a representation of a com
   - Symbols in `syntax-rules`
   - Unique constants
 
+![](merge.svg)
+
 ---
 
 # `eval` and the compiler
