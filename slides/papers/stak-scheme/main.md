@@ -230,7 +230,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 ![bg right:48% w:620px](merge.svg)
 
 <!--
-The encoding of the code graph
+The encoding of the code graph is conceptually a strucutred memory snapshot.
 
 Behind the scenes, it works just like a topological sort with a cache table with shared nodes.
 
