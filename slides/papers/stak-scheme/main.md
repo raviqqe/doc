@@ -130,7 +130,7 @@ But on RVM, everything is represented as a list including all Scheme values, byt
 
 In other words, RVM adopts "Von Neumann architecture".
 
-You can manipulate code and data on RVM in exactly the same way.
+On RVM, you can manipulate code and data in exactly the same way.
 -->
 
 ---
