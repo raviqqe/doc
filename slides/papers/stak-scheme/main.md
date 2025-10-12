@@ -217,15 +217,14 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 # Structured memory snapshot
 
 - A code graph is encoded by a topological sort.
-  - With caching for shared nodes.
-- Encoding is a structured memory snapshot.
+  - Caches shared nodes
   - A cache table as a list
 - It natively encodes:
   - Symbols from different libraries
   - Symbols in `syntax-rules`
   - Unique constants
 
-![](merge.svg)
+![bg right height:450px](merge.svg)
 
 ---
 
