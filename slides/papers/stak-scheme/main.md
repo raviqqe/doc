@@ -105,7 +105,7 @@ I'm gonna focus on these two topics in today's talk.
 
 ---
 
-# The VM in depth
+# RVM in depth
 
 - Ribbit VM (RVM)
   - A stack machine
