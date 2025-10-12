@@ -29,6 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          lfs: true
       - uses: ./.github/actions/setup
       - run: node --run build:image
       - uses: raviqqe/markdown-link-check@v1
