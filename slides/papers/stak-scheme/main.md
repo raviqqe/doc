@@ -186,16 +186,20 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 # Example
 
 ```scheme
+; Define a `(foo)` library.
 (define-library (foo)
   (export foo)
 
   (begin
+    ; Define a `foo` variable.
     (define foo 123)))
 ```
 
 ```scheme
+; Import the `foo` variable with a prefix.
 (import (prefix (foo) bar-))
 
+; Define another `foo` variable.
 (define foo 456)
 
 (+ bar-foo foo)
