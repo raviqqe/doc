@@ -176,6 +176,8 @@ On Ribbit Scheme and Stak Scheme, the compiler compiles source code into a code 
 
 The virtual machine, RVM runs the code graph as a program.
 
+We have extra encoding and decoding steps to store and load a code graph as a byte sequence.
+
 In both the compiler and the VM, we use code graphs as a representation of a compiled Scheme program.
 -->
 
