@@ -67,7 +67,7 @@ And the answer is yes, we did.
 # Stak Scheme
 
 - Stak Scheme, the tiny **R7RS-small** implementation
-  - Simple, portable, compact, and fast
+  - The same language design as Ribbit Scheme
 - Two use cases
   - Embedded scripting language
   - Standalone interpreter
