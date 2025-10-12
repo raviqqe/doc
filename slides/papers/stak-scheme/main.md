@@ -74,10 +74,10 @@ And the answer is yes, we did.
 - Language processor design the same as Ribbit Scheme
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
-|                     | Stak                       | Ribbit                        |
-| ------------------- | -------------------------- | ----------------------------- |
-| "Bytecode" encoding | Structured memory snapshot | Serialization + serialization |
-| `eval` procedure    | The compiler               | Separate from the compiler    |
+|                     | Stak                       | Ribbit                      |
+| ------------------- | -------------------------- | --------------------------- |
+| "Bytecode" encoding | Structured memory snapshot | Serialization + compression |
+| `eval` procedure    | The compiler               | Separate from the compiler  |
 
 <!--
 That's how the project of Stak Scheme started.
@@ -106,6 +106,8 @@ But it can also run by itself as a command line interpreter.
   - Call/value stacks
 - "Von Neumann architecture"
   - Both code and data in heap
+
+![bg right:55% h:500px](types.drawio.svg)
 
 <!--
 Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
@@ -215,13 +217,14 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 # Structured memory snapshot
 
 - A code graph is encoded by a topological sort.
-  - With caching for shared nodes.
-- Encoding is a structured memory snapshot.
+  - Caches shared nodes
   - A cache table as a list
 - It natively encodes:
   - Symbols from different libraries
   - Symbols in `syntax-rules`
-  - Unique constants
+  - Unique constants (e.g. strings)
+
+![bg right height:450px](merge.svg)
 
 ---
 
@@ -343,7 +346,7 @@ to actually prove its portability as well as Ribbit Scheme..
 
 Huge thanks 🙏 to:
 
-- The authors of Ribbit Scheme
+- Developers of Ribbit Scheme
   - Especially, the dynamic programming language team at the University of Montréal
 - Léonard Oest O’Leary and William E. Byrd for early comments on the draft
 - [@sisshiki1969](https://github.com/sisshiki1969) and [@yhara](https://github.com/yhara) for discussions on the language processor design
@@ -383,7 +386,9 @@ Huge thanks 🙏 to:
 (display "bar")
 ```
 
-## ![h:350px](./duplicate-strings.svg)
+![h:350px](./duplicate-strings.svg)
+
+---
 
 # Code graph in depth
 
@@ -407,7 +412,7 @@ Huge thanks 🙏 to:
 - On the first visit, a node is added to cache.
 - On the last visit, the node is removed from cache.
 
-![](merge.svg)
+![](merge_old.svg)
 
 <!--
 

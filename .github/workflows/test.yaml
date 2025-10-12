@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/setup
-      - run: node --run build:mermaid
+      - run: node --run build:image
       - uses: raviqqe/markdown-link-check@v1
   spell_check:
     runs-on: ubuntu-latest
