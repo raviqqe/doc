@@ -225,7 +225,6 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 - It naturally encodes:
   - `if` instructions' continuations
   - Symbols from different libraries
-  - Symbols in `syntax-rules`
   - Unique constants (e.g. strings)
 
 ![bg right:48% w:620px](merge.svg)
