@@ -183,9 +183,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 ---
 
-# Examples
-
-## Library system
+# Example
 
 ```scheme
 (define-library (foo)
@@ -209,9 +207,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 ---
 
-# Examples
-
-## Library system
+# Example
 
 ![h:450px](./library-system.svg)
 
