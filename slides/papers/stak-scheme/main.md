@@ -230,7 +230,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 ![bg right:48% w:620px](merge.svg)
 
 <!--
-The encoding of the code graph is conceptually a structured memory snapshot.
+The encoding of a code graph in Stak Scheme is conceptually a structured memory snapshot.
 
 You can transfer the compiled Scheme program in the compiler into the VM by the encoding and decoding algorithms.
 
