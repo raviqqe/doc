@@ -112,7 +112,7 @@ I'm gonna focus on these two topics in today's talk.
 - **Everything is a list**.
   - Code
   - Values
-    - Lists, characters, strings, ...
+    - e.g. lists, characters, strings, ...
   - Call/value stacks
 - "Von Neumann architecture"
   - Both code and data in heap
