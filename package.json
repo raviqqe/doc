@@ -6,10 +6,9 @@
   "packageManager": "pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd",
   "scripts": {
     "build": "node --run build:image && node --run build:slides && node --run build:tex && pnpm -r build",
-    "build:image": "node --run build:mermaid && node --run build:drawio && node --run build:svg",
+    "build:image": "node --run build:mermaid && node --run build:drawio",
     "build:mermaid": "puppeteer browsers install chrome-headless-shell && tools/build_mermaid.sh",
     "build:drawio": "tools/build_drawio.sh",
-    "build:svg": "svgo -rf . --exclude drawio",
     "build:slides": "node --run build:slides:html && node --run build:slides:pdf",
     "build:slides:html": "node --run marp -- --html",
     "build:slides:pdf": "node --run marp -- --pdf",
