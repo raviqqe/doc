@@ -95,7 +95,7 @@ Its design and goal are similar to Ribbit Scheme.
 
 Stak Scheme is primarily designed as an embedded scripting language.
 
-But it can also run by itself as a command line interpreter.
+But it can also run by itself as a standalone interpreter on command line.
 -->
 
 ---
