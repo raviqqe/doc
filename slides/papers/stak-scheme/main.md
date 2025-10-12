@@ -89,7 +89,7 @@ And the answer is yes, we did.
 <!--
 That's how the project of Stak Scheme started.
 
-Stak Scheme is still tiny but implements the entire R7RS-small standard.
+Stak Scheme is still tiny but implements the entire R7RS-small standard on RVM.
 
 Its design and goal are similar to Ribbit Scheme.
 
