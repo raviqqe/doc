@@ -275,20 +275,20 @@ In some way, we need to make the compiler available at runtime.
   - Hygienic macros
     - i.e. `define-syntax` and `syntax-rules`
   - Library system
-  - More built-in procedures and libraries
 - Macros and libraries are expanded at compile time.
-- `eval` needs their data at runtime.
+- `eval` needs their information at runtime.
   - `syntax-rules` patterns
   - Initialization code for libraries
 - Generic encoding/decoding transfers macros and libraries naturally.
 
 <!--
-So Ribbit Scheme implements R4RS, which is a bit old standard of Scheme.
+Stak Scheme implements the R7RS-small standard.
 
-And Stak Scheme implements the latest R7RS-small standard.
+Compared to R4RS, one of the biggest features in R7RS-small is hygienic macros and the library system.
 
-When it comes to the differences between R4RS and R7RS-small,
-R7RS-small added some big functionalities like hygienic macros, and the library system.
+In the world without the `eval` procedure, we do not need macros and libraries at runtime.
+
+But we can expand them at compile time.
 -->
 
 ---
