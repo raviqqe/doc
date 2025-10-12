@@ -298,6 +298,9 @@ However, the `eval` procedure needs their information at runtime.
 # Compactness
 
 - TR7, the tiniest R7RS-small implementation before Stak Scheme
+- Stak Scheme implements all the procedures and syntaxes from R7RS-small with some limitations.
+  - Only integers and floating-point numbers
+  - Partial handling of Unicode
 
 |       | Lines of code | Binary size (KB) |
 | ----- | ------------: | ---------------: |
