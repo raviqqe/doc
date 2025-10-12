@@ -81,10 +81,10 @@ And the answer is yes, we did.
   - Standalone interpreter
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
-|                     | Stak                       | Ribbit                      |
-| ------------------- | -------------------------- | --------------------------- |
-| "Bytecode" encoding | Structured memory snapshot | Serialization + compression |
-| `eval` procedure    | The compiler itself        | A separate library          |
+|                     | Stak                       | Ribbit                         |
+| ------------------- | -------------------------- | ------------------------------ |
+| "Bytecode" encoding | Structured memory snapshot | Serialization + ad-hoc merging |
+| `eval` procedure    | The compiler itself        | A separate library             |
 
 <!--
 That's how the project of Stak Scheme started.
