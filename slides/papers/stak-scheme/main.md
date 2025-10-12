@@ -30,7 +30,7 @@ I'm a developer of Stak Scheme.
 
 - [Ribbit Scheme, the tiny R4RS implementation][ribbit]
   - R4RS REPL in 7 KB
-  - Simple, portable, compact, and fast
+  - **Compact**, **portable**, fast, and simple
 - Two separate components
   - Compiler written in Scheme
   - Virtual Machine (**Ribbit VM**, or just **RVM**) written in x86-64 assembly, C, Javascript, Bash, ...
