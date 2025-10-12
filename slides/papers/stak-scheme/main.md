@@ -223,7 +223,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
   - Symbols in `syntax-rules`
   - Unique constants (e.g. strings)
 
-![bg right w:650px](merge.svg)
+![bg right:48% w:620px](merge.svg)
 
 ---
 
