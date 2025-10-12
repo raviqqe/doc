@@ -223,6 +223,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
   - Caches shared nodes
   - **A cache table as a list**
 - It naturally encodes:
+  - `if` instructions' continuations
   - Symbols from different libraries
   - Symbols in `syntax-rules`
   - Unique constants (e.g. strings)
