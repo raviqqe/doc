@@ -147,11 +147,11 @@ On RVM, you can manipulate code and data in exactly the same way.
 <!--
 On RVM, the representation of a Scheme program is called a code graph, which is basically a DAG of pairs.
 
-This example is the one of the fibonacci function implemented on RVM.
+This example is the one of the fibonacci function.
 
-And, as I mentioned before, we use this code graph for both code and data.
+As I mentioned before, we use this code graph for both code and data.
 
-Because of that, for example, when we want to implement the `eval` procedure,
+Because of that, for example, when we want to implement the eval procedure,
 we simply compile an S-expression into a code graph, and execute it as a procedure.
 
 I'm gonna talk more about it later.
