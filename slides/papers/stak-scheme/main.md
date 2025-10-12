@@ -128,7 +128,7 @@ On a virtual machine, we need to represent bytecode and Scheme values in some wa
 
 But on RVM, everything is represented as a list including all Scheme values, bytecode, and the VM's state like a call stack.
 
-In other words, RVM adopts "Von Neumann architecture" in a way.
+In other words, RVM adopts "Von Neumann architecture".
 
 In the heap memory, everything is structured as lists while we have flat memory blocks on linear memory.
 
