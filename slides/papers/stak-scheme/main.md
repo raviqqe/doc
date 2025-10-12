@@ -71,7 +71,6 @@ And the answer is yes, we did.
 - Two use cases
   - Embedded scripting language
   - Standalone interpreter
-- Language processor design the same as Ribbit Scheme
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
 |                     | Stak                       | Ribbit                      |
