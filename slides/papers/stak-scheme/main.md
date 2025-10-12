@@ -145,7 +145,7 @@ On RVM, you can manipulate code and data in exactly the same way.
 ![](./fibonacci.svg)
 
 <!--
-On RVM, the representation of a Scheme program is called a code graph, which is basically a DAG of pairs.
+On RVM, the representation of a Scheme program is called a code graph.
 
 This example is the one of the fibonacci function.
 
