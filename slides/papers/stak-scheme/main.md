@@ -89,11 +89,9 @@ And the answer is yes, we did.
 <!--
 That's how the project of Stak Scheme started.
 
+Stak Scheme is still tiny but implements the entire R7RS-small standard.
+
 Its design and goal are similar to Ribbit Scheme.
-
-It aims to be simple, portable, compact, and fast.
-
-But it also implements the entire R7RS-small standard.
 
 Stak Scheme is primarily designed as an embedded scripting language.
 
