@@ -149,7 +149,7 @@ On RVM, the representation of a Scheme program is called a code graph, which is 
 
 This example is the one of the fibonacci function.
 
-As I mentioned before, we use this code graph for both code and data.
+A code graph is just a DAG of pairs containing both code and data for Scheme code.
 
 Because of that, for example, when we want to implement the eval procedure,
 we simply compile an S-expression into a code graph, and execute it as a procedure.
