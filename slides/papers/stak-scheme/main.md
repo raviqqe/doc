@@ -411,7 +411,7 @@ Huge thanks 🙏 to:
 - On the first visit, a node is added to cache.
 - On the last visit, the node is removed from cache.
 
-![](merge.svg)
+![](merge_old.svg)
 
 <!--
 
