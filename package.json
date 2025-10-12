@@ -9,7 +9,7 @@
     "build:image": "node --run build:mermaid && node --run build:drawio && node --run build:svg",
     "build:mermaid": "puppeteer browsers install chrome-headless-shell && tools/build_mermaid.sh",
     "build:drawio": "tools/build_drawio.sh",
-    "build:svg": "svgo -rf .",
+    "build:svg": "svgo -rf . --exclude drawio",
     "build:slides": "node --run build:slides:html && node --run build:slides:pdf",
     "build:slides:html": "node --run marp -- --html",
     "build:slides:pdf": "node --run marp -- --pdf",
