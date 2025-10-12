@@ -229,6 +229,11 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 ![bg right:48% w:620px](merge.svg)
 
+<!--
+
+
+-->
+
 ---
 
 # `eval` and the compiler
