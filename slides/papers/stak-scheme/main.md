@@ -106,7 +106,7 @@ But it can also run by itself as a command line interpreter.
 - "Von Neumann architecture"
   - Both code and data in heap
 
-![bg right h:500px](types.drawio.svg)
+![bg right w:550px](types.drawio.svg)
 
 <!--
 Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
