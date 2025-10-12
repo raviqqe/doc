@@ -96,6 +96,11 @@ Its design and goal are similar to Ribbit Scheme.
 Stak Scheme is primarily designed as an embedded scripting language.
 
 But it can also run by itself as a standalone interpreter on command line.
+
+In terms of differences from Ribbit Scheme, Stak Scheme uses a different encoding scheme for bytecode,
+and the `eval` procedure is implemented differently.
+
+I'm gonna focus on these two topics in today's talk.
 -->
 
 ---
