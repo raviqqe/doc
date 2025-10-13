@@ -288,7 +288,7 @@ Compared to R4RS, one of the biggest features in R7RS-small is hygienic macros a
 
 In the world without the `eval` procedure, we do not need macros and libraries at runtime.
 
-But we can expand them at compile time.
+We expand them at compile time.
 
 However, the `eval` procedure needs their information at runtime.
 -->
