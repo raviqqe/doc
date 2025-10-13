@@ -18,6 +18,10 @@ Yota Toyama
 
 <!--
 In this talk, I introduce a new tiny R7RS Scheme implementation called Stak Scheme.
+
+I'm Yota Toyama.
+
+I'm a developer of Stak Scheme.
 -->
 
 ---
@@ -25,14 +29,16 @@ In this talk, I introduce a new tiny R7RS Scheme implementation called Stak Sche
 # Background
 
 - [Ribbit Scheme, the tiny R4RS implementation][ribbit]
-  - Simple, portable, compact, and fast
   - R4RS REPL in 7 KB
+  - **Compact**, **portable**, fast, and simple
 - Two separate components
   - Compiler written in Scheme
   - Virtual Machine (**Ribbit VM**, or just **RVM**) written in x86-64 assembly, C, Javascript, Bash, ...
 
 <!--
-A few years ago, the research team at University of Montréal published Ribbit Scheme, the tiny R4RS implementation.
+There is a tiny R4RS Scheme implementation called Ribbit Scheme.
+
+It is very tiny as its R4RS REPL fits in 7 KB.
 
 Its VM aims to be simple, portable, compact, and fast at the same time.
 
@@ -41,6 +47,8 @@ In Ribbit Scheme, one of the primary features is the split architecture of the c
 The compiler compiles source code in Scheme into bytecode.
 
 The virtual machine runs the bytecode as a Scheme program.
+
+Proving its portability, the VM is implemented in various host languages including assembly, C, Javascript, and even Bash.
 -->
 
 ---
@@ -73,35 +81,38 @@ And the answer is yes, we did.
   - Standalone interpreter
 - Open source on GitHub: [`raviqqe/stak`][stak]
 
-|                     | Stak                       | Ribbit                      |
-| ------------------- | -------------------------- | --------------------------- |
-| "Bytecode" encoding | Structured memory snapshot | Serialization + compression |
-| `eval` procedure    | The compiler itself        | A separate library          |
+|                     | Stak                       | Ribbit                         |
+| ------------------- | -------------------------- | ------------------------------ |
+| "Bytecode" encoding | Structured memory snapshot | Serialization + ad-hoc merging |
+| `eval` procedure    | The compiler itself        | A separate library             |
 
 <!--
 That's how the project of Stak Scheme started.
 
-Its goal is basically the same as Ribbit Scheme.
+Stak Scheme is still tiny but implements the entire R7RS-small standard on RVM.
 
-It aims to be simple, portable, compact, and fast.
-
-But it also implements the entire R7RS-small standard.
+Its design and goal are similar to Ribbit Scheme.
 
 Stak Scheme is primarily designed as an embedded scripting language.
 
-But it can also run by itself as a command line interpreter.
+But it can also run by itself as a standalone interpreter on command line.
+
+In terms of differences from Ribbit Scheme, Stak Scheme uses a different encoding scheme for bytecode,
+and the `eval` procedure is implemented differently.
+
+I'm gonna focus on these two topics in today's talk.
 -->
 
 ---
 
-# The VM in depth
+# RVM in depth
 
 - Ribbit VM (RVM)
   - A stack machine
 - **Everything is a list**.
   - Code
   - Values
-    - Lists, characters, strings, ...
+    - e.g. lists, characters, strings, ...
   - Call/value stacks
 - "Von Neumann architecture"
   - Both code and data in heap
@@ -109,17 +120,17 @@ But it can also run by itself as a command line interpreter.
 ![bg right w:550px](lists.svg)
 
 <!--
-Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stak machine.
+Before going into the details of Stak Scheme, let me briefly explain RVM on which Ribbit and Stak Scheme are implemented.
 
-And we use the same one for Stak Scheme.
+Ribbit Scheme's virtual machine is called Ribbit Virtual Machine, which is a typical stack machine.
 
-Something interesting about RVM is that everything is a list including all Scheme values, Scheme program, and stacks to define the state of the virtual machine.
+On a virtual machine, we need to represent bytecode and Scheme values in some way.
 
-In other words, RVM adopts "Von Neumann architecture" in a way.
+But on RVM, everything is represented as a list including all Scheme values, bytecode, and the VM's state like a call stack.
 
-In the heap memory, everything is structured as lists while we have flat memory blocks on linear memory.
+In other words, RVM adopts "Von Neumann architecture".
 
-You can manipulate code and data on RVM in exactly the same way.
+On RVM, you can manipulate code and data in exactly the same way.
 -->
 
 ---
@@ -134,13 +145,13 @@ You can manipulate code and data on RVM in exactly the same way.
 ![](./fibonacci.svg)
 
 <!--
-On RVM, a Scheme program is represented as a data structure called a code graph, which is basically a DAG of pairs.
+On RVM, the representation of a Scheme program is called a code graph.
 
-This example is the one of the fibonacci function implemented on RVM.
+This example is the one of the fibonacci function.
 
-And, as I mentioned before, we use this code graph for both code and data.
+A code graph is just a DAG of pairs containing both code and data for Scheme code.
 
-Because of that, for example, when we want to implement the `eval` procedure,
+Because of that, for example, to implement the eval procedure,
 we simply compile an S-expression into a code graph, and execute it as a procedure.
 
 I'm gonna talk more about it later.
@@ -150,8 +161,8 @@ I'm gonna talk more about it later.
 
 # Compiling and running a program
 
-- A compiler compiles source code into an encoded **code graph**.
-- The VM decodes and runs it as a program.
+- The compiler compiles source code into a **code graph**.
+- The VM runs the code graph as a program.
 - Code graphs are used at both **compile time** and **runtime**.
 
 ![h:160px](compile.svg)
@@ -159,30 +170,36 @@ I'm gonna talk more about it later.
 ![h:160px](run.svg)
 
 <!--
-As I mentioned before, on Stak Scheme, the compiler compiles source code into bytecode.
+The code graph is used at two places.
 
-The virtual machine, RVM runs bytecode as a program.
+On Ribbit Scheme and Stak Scheme, the compiler compiles source code into a code graph.
+
+The virtual machine, RVM runs the code graph as a program.
+
+We have extra encoding and decoding steps to store and load a code graph as a byte sequence.
 
 In both the compiler and the VM, we use code graphs as a representation of a compiled Scheme program.
 -->
 
 ---
 
-# Examples
-
-## Library system
+# Example
 
 ```scheme
+; Define a `(foo)` library.
 (define-library (foo)
   (export foo)
 
   (begin
+    ; Define a `foo` variable.
     (define foo 123)))
 ```
 
 ```scheme
+; Import the `foo` variable with a prefix.
 (import (prefix (foo) bar-))
 
+; Define another `foo` variable.
 (define foo 456)
 
 (+ bar-foo foo)
@@ -194,92 +211,96 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 ---
 
-# Examples
-
-## Library system
+# Example
 
 ![h:450px](./library-system.svg)
 
 ---
 
-# Encoding and decoding
-
-- The compiler encodes a code graph into bytes.
-- The VM decodes bytes into a code graph.
-
-![h:160px](encode.svg)
-
-![h:160px](decode.svg)
-
----
-
-# Structured memory snapshot
+# Encoding as structured memory snapshot
 
 - A code graph is encoded by a topological sort.
   - Caches shared nodes
-  - A cache table as a list
+  - **A cache table as a list**
 - It naturally encodes:
+  - `if` instructions' continuations
   - Symbols from different libraries
-  - Symbols in `syntax-rules`
   - Unique constants (e.g. strings)
 
 ![bg right:48% w:620px](merge.svg)
+
+<!--
+The encoding of a code graph in Stak Scheme is conceptually a structured memory snapshot.
+
+Its purpose is to transfer a code graph as a compiled Scheme program in the compiler into the VM by the encoding and decoding algorithms.
+
+Behind the scenes, it works just like a topological sort with a cache table with shared nodes.
+
+The point is that this cache table is implemented in the VM's heap memory.
+
+It does not require any extra complex data structure in the host language like hash maps,
+which contributes to the portability of the VM.
+-->
 
 ---
 
 # `eval` and the compiler
 
-- The compiler itself is part of the `eval` procedure.
-- The compiler from S-expression to code graph is **data**.
+- `eval = compiler + VM`
+- The compiler from S-expression to code graph is defined as **data**.
 - `(incept compiler source)` **embeds the compiler** into source code.
 - `((eval compiler) source)` compiles the source code into a code graph.
 
 ![](eval.svg)
 
 <!--
-In Ribbit Scheme, the `eval` procedure is implemented separately from the compiler.
+In Ribbit Scheme, the `eval` procedure is implemented as a library attached to a main program separate from the compiler.
 
 But in Stak Scheme, the compiler itself is part of the `eval` procedure.
 
-This is because the compiler is relatively large for R7RS as it includes the macro nad library systems.
+We took this design because the compiler is relatively large for R7RS as it includes the macro and library systems.
 
 It is very tedious to maintain two separate implementations of the compiler.
--->
 
----
+However, Stak Scheme's compiler and VM are two separate components.
 
-# R4RS vs R7RS-small
-
-- R4RS lacks some good programming constructs...
-- R7RS-small adds:
-  - Hygienic macros
-    - i.e. `define-syntax` and `syntax-rules`
-  - Library system
-  - More built-in procedures and libraries
-
-<!--
-So Ribbit Scheme implements R4RS, which is a bit old standard of Scheme.
-
-And Stak Scheme implements the latest R7RS-small standard.
-
-When it comes to the differences between R4RS and R7RS-small,
-R7RS-small added some big functionalities like hygienic macros, and the library system.
+In some way, we need to make the compiler available at runtime.
 -->
 
 ---
 
 # Macros and libraries in `eval`
 
+- R7RS-small adds some good programming constructs...
+  - Hygienic macros
+    - i.e. `define-syntax` and `syntax-rules`
+  - Library system
 - Macros and libraries are expanded at compile time.
-- `eval` needs their data at runtime.
-- `eval` needs to know their definitions.
-  - Transfer macros and libraries from the compiler to the VM.
+- `eval` needs their information at runtime.
+  - Macro definitions
+  - Initialization code for libraries
+- The encoding/decoding transfers macro and library data naturally.
+
+<!--
+Stak Scheme implements the R7RS-small standard.
+
+Compared to R4RS, one of the biggest features in R7RS-small is hygienic macros and the library system.
+
+In the world without the `eval` procedure, we do not need macros and libraries at runtime.
+
+But we can expand them at compile time.
+
+However, the `eval` procedure needs their information at runtime.
+-->
 
 ---
 
 # Compactness
 
 - TR7, the tiniest R7RS-small implementation before Stak Scheme
+- Stak Scheme implements all the procedures and syntaxes from R7RS-small with some limitations.
+  - Only integers and floating-point numbers
+  - Partial handling of Unicode
 
 |       | Lines of code | Binary size (KB) |
 | ----- | ------------: | ---------------: |
