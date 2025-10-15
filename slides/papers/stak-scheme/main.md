@@ -98,7 +98,7 @@ Stak Scheme is primarily designed as an embedded scripting language.
 But it can also run by itself as a standalone interpreter on command line.
 
 In terms of differences from Ribbit Scheme, Stak Scheme uses a different encoding scheme for bytecode,
-and the `eval` procedure is implemented differently.
+and the eval procedure is implemented differently.
 
 I'm gonna focus on these two topics in today's talk.
 -->
@@ -254,9 +254,9 @@ which contributes to the portability of the VM.
 ![](eval.svg)
 
 <!--
-In Ribbit Scheme, the `eval` procedure is implemented as a library attached to a main program separate from the compiler.
+In Ribbit Scheme, the eval procedure is implemented as a library attached to a main program separate from the compiler.
 
-But in Stak Scheme, the compiler itself is part of the `eval` procedure.
+But in Stak Scheme, the compiler itself is part of the eval procedure.
 
 We took this design because the compiler is relatively large for R7RS as it includes the macro and library systems.
 
