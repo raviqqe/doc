@@ -217,7 +217,7 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 ---
 
-# Encoding as structured memory snapshot
+# Encoding for structured memory snapshot
 
 - A code graph is encoded by a topological sort.
   - Caches shared nodes
@@ -261,8 +261,6 @@ But in Stak Scheme, the compiler itself is part of the eval procedure.
 We took this design because the compiler is relatively large for R7RS as it includes the macro and library systems.
 
 It is very tedious to maintain two separate implementations of the compiler.
-
-However, Stak Scheme's compiler and VM are two separate components.
 
 In some way, we need to make the compiler available at runtime.
 -->
