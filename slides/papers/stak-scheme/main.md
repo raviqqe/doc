@@ -193,7 +193,6 @@ In both the compiler and the VM, we use code graphs as a representation of a com
   (export foo)
 
   (begin
-    ; Define a `foo` variable.
     (define foo 123)))
 ```
 
