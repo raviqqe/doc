@@ -311,6 +311,10 @@ However, the `eval` procedure needs their information at runtime.
 First, we compared the compactness of Stak Scheme with TR7.
 
 TR7 is the tiniest R7RS-small implementation before Stak Scheme.
+
+One of the biggest reasons for Stak Scheme to be so tiny is that it is implemented mostly in Scheme itself.
+
+So most of the interpreter logic is fit into the compact bytecode.
 -->
 
 ---
