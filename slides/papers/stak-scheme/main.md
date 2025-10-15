@@ -284,7 +284,7 @@ Stak Scheme implements the R7RS-small standard.
 
 Compared to R4RS, one of the biggest features in R7RS-small is hygienic macros and the library system.
 
-In the world without the `eval` procedure, we do not need macros and libraries at runtime.
+In the world without the eval procedure, we do not need macros and libraries at runtime.
 
 We expand them at compile time.
 
