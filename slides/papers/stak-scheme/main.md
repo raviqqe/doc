@@ -17,9 +17,9 @@ strong {
 Yota Toyama
 
 <!--
-In this talk, I introduce a new tiny R7RS Scheme implementation called Stak Scheme.
-
 I'm Yota Toyama.
+
+In this talk, I introduce a new tiny R7RS Scheme implementation called Stak Scheme.
 
 I'm a developer of Stak Scheme.
 -->
@@ -98,7 +98,7 @@ Stak Scheme is primarily designed as an embedded scripting language.
 But it can also run by itself as a standalone interpreter on command line.
 
 In terms of differences from Ribbit Scheme, Stak Scheme uses a different encoding scheme for bytecode,
-and the `eval` procedure is implemented differently.
+and the eval procedure is implemented differently.
 
 I'm gonna focus on these two topics in today's talk.
 -->
@@ -185,13 +185,14 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 
 # Example
 
+## Scheme
+
 ```scheme
 ; Define a `(foo)` library.
 (define-library (foo)
   (export foo)
 
   (begin
-    ; Define a `foo` variable.
     (define foo 123)))
 ```
 
@@ -205,23 +206,22 @@ In both the compiler and the VM, we use code graphs as a representation of a com
 (+ bar-foo foo)
 ```
 
-<!--
-
--->
-
 ---
 
 # Example
+
+## Code graph
 
 ![h:450px](./library-system.svg)
 
 ---
 
-# Encoding as structured memory snapshot
+# Encoding for structured memory snapshot
 
 - A code graph is encoded by a topological sort.
   - Caches shared nodes
   - **A cache table as a list**
+- Simple and portable
 - It naturally encodes:
   - `if` instructions' continuations
   - Symbols from different libraries
@@ -254,15 +254,13 @@ which contributes to the portability of the VM.
 ![](eval.svg)
 
 <!--
-In Ribbit Scheme, the `eval` procedure is implemented as a library attached to a main program separate from the compiler.
+In Ribbit Scheme, the eval procedure is implemented as a library attached to a main program.
 
-But in Stak Scheme, the compiler itself is part of the `eval` procedure.
+But in Stak Scheme, the compiler itself is part of the eval procedure.
 
 We took this design because the compiler is relatively large for R7RS as it includes the macro and library systems.
 
 It is very tedious to maintain two separate implementations of the compiler.
-
-However, Stak Scheme's compiler and VM are two separate components.
 
 In some way, we need to make the compiler available at runtime.
 -->
@@ -286,9 +284,9 @@ Stak Scheme implements the R7RS-small standard.
 
 Compared to R4RS, one of the biggest features in R7RS-small is hygienic macros and the library system.
 
-In the world without the `eval` procedure, we do not need macros and libraries at runtime.
+In the world without the eval procedure, we do not need macros and libraries at runtime.
 
-But we can expand them at compile time.
+We expand them at compile time.
 
 However, the `eval` procedure needs their information at runtime.
 -->
@@ -311,6 +309,10 @@ However, the `eval` procedure needs their information at runtime.
 First, we compared the compactness of Stak Scheme with TR7.
 
 TR7 is the tiniest R7RS-small implementation before Stak Scheme.
+
+One of the biggest reasons for Stak Scheme to be so tiny is that it is implemented mostly in Scheme itself.
+
+So most of the interpreter logic is fit into the compact bytecode.
 -->
 
 ---
@@ -344,6 +346,8 @@ It's still far behind from the modern interpreters of Gauche.
   - RVM is flexible but not as secure as other modern ones.
 - Porting to another host language
   - e.g. Go, TypeScript, assembly...
+- Unicode in the `(scheme char)` library
+- Full numeric tower
 
 <!--
 RVM looks good at every perspective.
