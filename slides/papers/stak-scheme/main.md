@@ -254,7 +254,7 @@ which contributes to the portability of the VM.
 ![](eval.svg)
 
 <!--
-In Ribbit Scheme, the eval procedure is implemented as a library attached to a main program separate from the compiler.
+In Ribbit Scheme, the eval procedure is implemented as a library attached to a main program.
 
 But in Stak Scheme, the compiler itself is part of the eval procedure.
 
