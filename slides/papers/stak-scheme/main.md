@@ -17,9 +17,9 @@ strong {
 Yota Toyama
 
 <!--
-In this talk, I introduce a new tiny R7RS Scheme implementation called Stak Scheme.
-
 I'm Yota Toyama.
+
+In this talk, I introduce a new tiny R7RS Scheme implementation called Stak Scheme.
 
 I'm a developer of Stak Scheme.
 -->
@@ -344,6 +344,8 @@ It's still far behind from the modern interpreters of Gauche.
   - RVM is flexible but not as secure as other modern ones.
 - Porting to another host language
   - e.g. Go, TypeScript, assembly...
+- Unicode in the `(scheme char)` library
+- Full numeric tower
 
 <!--
 RVM looks good at every perspective.
