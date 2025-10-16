@@ -378,13 +378,10 @@ Huge thanks 🙏 to:
 
 ---
 
-# References
+# Interpreter demo
 
-- [Ribbit Scheme][ribbit]
-
-[ribbit]: https://github.com/udem-dlteam/ribbit
-[stak]: https://github.com/raviqqe/stak
-[homoiconicity]: https://en.wikipedia.org/wiki/Homoiconicity
+- Interpreter: https://raviqqe.com/stak/demo/standalone/interpreter
+- Compiler: https://raviqqe.com/stak/demo/standalone/compiler
 
 ---
 
@@ -439,6 +436,15 @@ Huge thanks 🙏 to:
 ![](merge_old.svg)
 
 <!--
-
 On decoding, we do the same thing but in a reverse order.
 -->
+
+---
+
+# References
+
+- [Ribbit Scheme][ribbit]
+
+[ribbit]: https://github.com/udem-dlteam/ribbit
+[stak]: https://github.com/raviqqe/stak
+[homoiconicity]: https://en.wikipedia.org/wiki/Homoiconicity
