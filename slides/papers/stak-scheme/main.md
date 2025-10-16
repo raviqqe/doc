@@ -429,7 +429,6 @@ Huge thanks 🙏 to:
 ![](merge_old.svg)
 
 <!--
-
 On decoding, we do the same thing but in a reverse order.
 -->
 
