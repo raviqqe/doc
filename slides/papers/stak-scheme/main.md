@@ -378,6 +378,13 @@ Huge thanks 🙏 to:
 
 ---
 
+# Interpreter demo
+
+- Interpreter: https://raviqqe.com/stak/demo/standalone/interpreter
+- Compiler: https://raviqqe.com/stak/demo/standalone/compiler
+
+---
+
 # Appendix
 
 ---
