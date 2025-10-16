@@ -378,16 +378,6 @@ Huge thanks 🙏 to:
 
 ---
 
-# References
-
-- [Ribbit Scheme][ribbit]
-
-[ribbit]: https://github.com/udem-dlteam/ribbit
-[stak]: https://github.com/raviqqe/stak
-[homoiconicity]: https://en.wikipedia.org/wiki/Homoiconicity
-
----
-
 # Appendix
 
 ---
@@ -442,3 +432,13 @@ Huge thanks 🙏 to:
 
 On decoding, we do the same thing but in a reverse order.
 -->
+
+---
+
+# References
+
+- [Ribbit Scheme][ribbit]
+
+[ribbit]: https://github.com/udem-dlteam/ribbit
+[stak]: https://github.com/raviqqe/stak
+[homoiconicity]: https://en.wikipedia.org/wiki/Homoiconicity
