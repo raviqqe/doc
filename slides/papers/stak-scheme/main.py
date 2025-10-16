@@ -1,14 +1,24 @@
-import plotly.express as px
 import pandas as pd
+import plotly.express as px
 
-frame = pd.read_csv("./benchmark.csv")
-fig = px.histogram(
-    frame,
+df = pd.read_csv("./benchmark.csv")
+df_melted = df.melt(
+    id_vars="Benchmark", var_name="Implementation", value_name="Relative time"
+)
+
+# Plot
+fig = px.bar(
+    df_melted,
     x="Benchmark",
     y="Relative time",
-    color="smoker",
+    color="Implementation",
     barmode="group",
-    histfunc="avg",
-    height=400,
 )
+
+fig.update_layout(
+    legend_title="Implementation", template="plotly_dark", yaxis_range=[0, 2]
+)
+
+fig.add_hline(y=1, line_dash="dash", line_color="white")
+
 fig.show()
