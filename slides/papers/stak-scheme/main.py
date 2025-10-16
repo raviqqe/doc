@@ -33,4 +33,4 @@ fig.update_layout(
 
 fig.add_hline(y=1, line_dash="dash", line_color="white")
 
-fig.show()
+fig.write_image("benchmark.svg", scale=2)
