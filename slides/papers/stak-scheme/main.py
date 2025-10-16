@@ -1,3 +1,5 @@
+# spell-checker: disable
+
 import pandas as pd
 import plotly.express as px
 
