@@ -15,7 +15,7 @@ const writeToc = async (directory: string, component: string) =>
         groupBy(
           sortBy(
             await Promise.all(
-              (await glob(`../${directory}/**/*.md`))
+              (await glob(join("..", directory, "**/*.md")))
                 .values()
                 .filter((path) => !excludedPattern.test(path))
                 .map(async (path) => {
