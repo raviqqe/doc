@@ -5,8 +5,9 @@ import { argv } from "node:process";
 const [, , directory] = argv;
 
 await Promise.all(
-  (await Array.fromAsync(glob(join("..", directory, "**/*.md")))).map(
-    async (path) => {
+  (await Array.fromAsync(glob(join("..", directory, "**/*.md"))))
+    .values()
+    .map(async (path) => {
       const content = await readFile(path, "utf-8");
       path = join("src/pages", relative("..", path));
 
@@ -22,6 +23,5 @@ await Promise.all(
           content,
         ].join("\n"),
       );
-    },
-  ),
+    }),
 );
