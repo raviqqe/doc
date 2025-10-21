@@ -1,9 +1,8 @@
 import { exec } from "node:child_process";
-import { readFile, stat, writeFile } from "node:fs/promises";
+import { glob, readFile, stat, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { promisify } from "node:util";
 import { groupBy, sortBy } from "es-toolkit";
-import { glob } from "glob";
 
 const excludedPattern = /slides\/papers/;
 
@@ -15,7 +14,7 @@ const writeToc = async (directory: string, component: string) =>
         groupBy(
           sortBy(
             await Promise.all(
-              (await glob(`../${directory}/**/*.md`))
+              (await Array.fromAsync(glob(join("..", directory, "**/*.md"))))
                 .values()
                 .filter((path) => !excludedPattern.test(path))
                 .map(async (path) => {
@@ -37,8 +36,10 @@ const writeToc = async (directory: string, component: string) =>
                       .split(" ")[0]
                       .replaceAll("-", "/"),
                     title: (await readFile(path, "utf-8"))
-                      .split("\n")[0]
-                      .replace("# ", ""),
+                      .split("\n")
+                      .filter((string) => string.startsWith("# "))[0]
+                      .replace(/^# /, "")
+                      .trim(),
                   };
                 }),
             ),
