@@ -300,10 +300,10 @@ However, the `eval` procedure needs their information at runtime.
   - Only integers and floating-point numbers
   - Partial handling of Unicode
 
-|       | Lines of code | Binary size (KB) |
-| ----- | ------------: | ---------------: |
-| mstak |         9,127 |          108,648 |
-| tr7i  |        16,891 |          301,536 |
+|       | Lines of code | Binary size (bytes) |
+| ----- | ------------: | ------------------: |
+| mstak |         9,127 |             108,648 |
+| tr7i  |        16,891 |             301,536 |
 
 <!--
 First, we compared the compactness of Stak Scheme with TR7.
@@ -424,26 +424,6 @@ Huge thanks 🙏 to:
 # Fibonacci function
 
 ![](./fibonacci.svg)
-
----
-
-# Encoding shared nodes
-
-- Shared nodes are cached _locally_.
-- On the first visit, a node is added to cache.
-- On the last visit, the node is removed from cache.
-
-![](merge_old.svg)
-
-<!--
-On decoding, we do the same thing but in a reverse order.
--->
-
----
-
-# References
-
-- [Ribbit Scheme][ribbit]
 
 [ribbit]: https://github.com/udem-dlteam/ribbit
 [stak]: https://github.com/raviqqe/stak
