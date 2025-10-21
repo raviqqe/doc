@@ -37,8 +37,10 @@ const writeToc = async (directory: string, component: string) =>
                       .split(" ")[0]
                       .replaceAll("-", "/"),
                     title: (await readFile(path, "utf-8"))
-                      .split("\n")[0]
-                      .replace("# ", ""),
+                      .split("\n")
+                      .filter((string) => string.startsWith("# "))[0]
+                      .replace(/^# /, "")
+                      .trim(),
                   };
                 }),
             ),
