@@ -16,13 +16,13 @@ importers:
         version: 4.2.3(typescript@5.9.3)
       '@mermaid-js/mermaid-cli':
         specifier: ^11.12.0
-        version: 11.12.0(puppeteer@24.26.1(typescript@5.9.3))
+        version: 11.12.0(puppeteer@24.27.0(typescript@5.9.3))
       '@raviqqe/biome-config':
         specifier: ^2.0.18
         version: 2.0.18(@biomejs/biome@2.3.2)
       puppeteer:
-        specifier: ^24.26.1
-        version: 24.26.1(typescript@5.9.3)
+        specifier: ^24.27.0
+        version: 24.27.0(typescript@5.9.3)
       svgo:
         specifier: ^4.0.0
         version: 4.0.0
@@ -1606,8 +1606,8 @@ packages:
   devtools-protocol@0.0.1495869:
     resolution: {integrity: sha512-i+bkd9UYFis40RcnkW7XrOprCujXRAHg62IVh/Ah3G8MmNXpCGt1m0dTFhSdx/AVs8XEMbdOGRwdkR1Bcta8AA==}
 
-  devtools-protocol@0.0.1508733:
-    resolution: {integrity: sha512-QJ1R5gtck6nDcdM+nlsaJXcelPEI7ZxSMw1ujHpO1c4+9l+Nue5qlebi9xO1Z2MGr92bFOQTW7/rrheh5hHxDg==}
+  devtools-protocol@0.0.1521046:
+    resolution: {integrity: sha512-vhE6eymDQSKWUXwwA37NtTTVEzjtGVfDr3pRbsWEQ5onH/Snp2c+2xZHWJJawG/0hCCJLRGt4xVtEVUVILol4w==}
 
   dfa@1.2.0:
     resolution: {integrity: sha512-ED3jP8saaweFTjeGX8HQPjeC1YYyZs98jGNZx6IiBvxW7JG5v492kamAQB3m2wop07CvU/RQmzcKr6bgcC5D/Q==}
@@ -2705,12 +2705,12 @@ packages:
     resolution: {integrity: sha512-oUeWlIg0pMz8YM5pu0uqakM+cCyYyXkHBxx9di9OUELu9X9+AYrNGGRLK9tNME3WfN3JGGqQIH3b4/E9LGek/w==}
     engines: {node: '>=18'}
 
-  puppeteer-core@24.26.1:
-    resolution: {integrity: sha512-YHZdo3chJ5b9pTYVnuDuoI3UX/tWJFJyRZvkLbThGy6XeHWC+0KI8iN0UMCkvde5l/YOk3huiVZ/PvwgSbwdrA==}
+  puppeteer-core@24.27.0:
+    resolution: {integrity: sha512-yubwj2XXmTM3wRIpbhO5nCjbByPgpFHlgrsD4IK+gMPqO7/a5FfnoSXDKjmqi8A2M1Ewusz0rTI/r+IN0GU0MA==}
     engines: {node: '>=18'}
 
-  puppeteer@24.26.1:
-    resolution: {integrity: sha512-3RG2UqclzMFolM2fS4bN8t5/EjZ0VwEoAGVxG8PMGeprjLzj+x0U4auH7MQ4B6ftW+u1JUnTTN8ab4ABPdl4mA==}
+  puppeteer@24.27.0:
+    resolution: {integrity: sha512-eEcAFGxmHRSrk74DVkFAMAwfj4l3Ak8avBuA2bZaAoocY1+Fb9WLS3I7jlOc/tIOU7EmGLiDdVP08R44wADpHw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -3975,14 +3975,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mermaid-js/mermaid-cli@11.12.0(puppeteer@24.26.1(typescript@5.9.3))':
+  '@mermaid-js/mermaid-cli@11.12.0(puppeteer@24.27.0(typescript@5.9.3))':
     dependencies:
       '@mermaid-js/mermaid-zenuml': 0.2.2(mermaid@11.12.0)
       chalk: 5.6.2
       commander: 14.0.1
       import-meta-resolve: 4.2.0
       mermaid: 11.12.0
-      puppeteer: 24.26.1(typescript@5.9.3)
+      puppeteer: 24.27.0(typescript@5.9.3)
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/template'
@@ -4724,9 +4724,9 @@ snapshots:
     dependencies:
       readdirp: 4.1.2
 
-  chromium-bidi@10.5.1(devtools-protocol@0.0.1508733):
+  chromium-bidi@10.5.1(devtools-protocol@0.0.1521046):
     dependencies:
-      devtools-protocol: 0.0.1508733
+      devtools-protocol: 0.0.1521046
       mitt: 3.0.1
       zod: 3.25.76
 
@@ -5081,7 +5081,7 @@ snapshots:
 
   devtools-protocol@0.0.1495869: {}
 
-  devtools-protocol@0.0.1508733: {}
+  devtools-protocol@0.0.1521046: {}
 
   dfa@1.2.0: {}
 
@@ -6605,12 +6605,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer-core@24.26.1:
+  puppeteer-core@24.27.0:
     dependencies:
       '@puppeteer/browsers': 2.10.12
-      chromium-bidi: 10.5.1(devtools-protocol@0.0.1508733)
+      chromium-bidi: 10.5.1(devtools-protocol@0.0.1521046)
       debug: 4.4.3
-      devtools-protocol: 0.0.1508733
+      devtools-protocol: 0.0.1521046
       typed-query-selector: 2.12.0
       webdriver-bidi-protocol: 0.3.8
       ws: 8.18.3
@@ -6622,13 +6622,13 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer@24.26.1(typescript@5.9.3):
+  puppeteer@24.27.0(typescript@5.9.3):
     dependencies:
       '@puppeteer/browsers': 2.10.12
-      chromium-bidi: 10.5.1(devtools-protocol@0.0.1508733)
+      chromium-bidi: 10.5.1(devtools-protocol@0.0.1521046)
       cosmiconfig: 9.0.0(typescript@5.9.3)
-      devtools-protocol: 0.0.1508733
-      puppeteer-core: 24.26.1
+      devtools-protocol: 0.0.1521046
+      puppeteer-core: 24.27.0
       typed-query-selector: 2.12.0
     transitivePeerDependencies:
       - bare-abort-controller
