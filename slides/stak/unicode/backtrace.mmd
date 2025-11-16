@@ -1,15 +1,15 @@
-flowchart TB
+flowchart LR
   subgraph s0[ ]
     c0[call foo] -.-> i0[const 42] -.-> i1[...]
   end
 
-  s0 --> s1
+  c0 --> c1
 
   subgraph s1[ ]
     c1[call bar] -.-> i2[if] -.-> i3[...]
   end
 
-  s1 --> s2
+  c1 --> c2
 
   subgraph s2[ ]
     c2[call baz] -.-> i4[get 3] -.-> i5[...]
