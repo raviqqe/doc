@@ -78,6 +78,18 @@ Oh, no! 42 [error foo eval #f]
 
 ---
 
+# Encoding Unicode tables
+
+- Unicode defines multiple tables for character properties.
+  - e.g. categories, and case mappings
+- They can be fairly large.
+  - One of Stak Scheme's goals is a small implementation.
+- Code point table encoding
+  1. Stak Scheme calculates differences between codes in the table.
+  2. Stak Scheme calculates differences between codes in the table.
+
+---
+
 # Future work
 
 > WIP
