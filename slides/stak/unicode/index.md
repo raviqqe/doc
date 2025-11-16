@@ -84,7 +84,7 @@ Oh, no! 42 [error foo eval #f]
 
 # Encoding Unicode tables
 
-Upper to loewr case mapping table:
+Upper to lower case mapping table:
 
 ```scheme
 ; A, B, C, ... Z
