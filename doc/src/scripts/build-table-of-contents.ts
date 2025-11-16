@@ -49,8 +49,8 @@ const writeToc = async (directory: string, component: string) =>
         ),
       ),
     ]
-      .sort()
-      .reverse()
+      .toSorted()
+      .toReversed()
       .flatMap(([year, posts]) => [
         `### ${year}`,
         ...posts
