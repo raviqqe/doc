@@ -38,6 +38,10 @@ November 15, 2025
 
 # Backtrace on errors
 
+- On the VM, instructions are a linked list.
+- On a call instruction, the VM calls its procedure with a return address of the **current** call instruction.
+  - We cannot go back when it points to the next instruction.
+
 ![h:400px](backtrace.svg)
 
 ---
