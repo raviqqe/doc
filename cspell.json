@@ -16,6 +16,7 @@
     "*.blg",
     "*.drawio",
     "dist",
+    "go.*",
     "node_modules",
     "pnpm-lock.yaml",
     "public"
