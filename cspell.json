@@ -16,6 +16,7 @@
     "*.blg",
     "*.drawio",
     "dist",
+    "go.*",
     "node_modules",
     "pnpm-lock.yaml",
     "public"
@@ -103,6 +104,7 @@
     "monza",
     "mruby",
     "mstak",
+    "muffet",
     "multicore",
     "musttail",
     "neumann",

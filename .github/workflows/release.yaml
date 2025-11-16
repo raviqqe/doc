@@ -11,8 +11,20 @@ permissions:
 concurrency:
   group: release-${{ github.ref }}
   cancel-in-progress: true
+env:
+  MUFFET_OPTIONS: >
+    --accepted-status-codes 200,202,403,429
+    --buffer-size 65536
+    --exclude github.com/raviqqe/stak/blob
+    --exclude raviqqe.com/stak
+    --exclude singapore-2025.pdf
+    --exclude tab=readme-ov-file
+    --exclude twitter.com
+    --header accept:text/html,*/*
+    --header user-agent:muffet
+    --max-retries 5
 jobs:
-  release:
+  release_build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -27,3 +39,21 @@ jobs:
           path: doc/dist
       - uses: actions/deploy-pages@v4
         if: github.ref == 'refs/heads/main'
+  release_test:
+    needs:
+      - release_build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          lfs: true
+      - uses: ./.github/actions/setup
+      - run: go tool muffet $MUFFET_OPTIONS https://raviqqe.com/doc
+  release:
+    needs:
+      - release_build
+      - release_test
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: for result in ${{ join(needs.*.result, ' ') }}; do [ $result = success ]; done
