@@ -15,11 +15,12 @@ env:
   MUFFET_OPTIONS: >
     --accepted-status-codes 200,403,429
     --buffer-size 8192
+    --exclude raviqqe.com/stak
     --header accept:text/html,*/*
     --header user-agent:muffet
     --max-retries 5
 jobs:
-  web_release:
+  release_build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -36,7 +37,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
   release_test:
     needs:
-      - web_release
+      - release_build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -46,7 +47,7 @@ jobs:
       - run: go tool muffet $MUFFET_OPTIONS https://raviqqe.com/doc
   release:
     needs:
-      - web_release
+      - release_build
       - release_test
     if: always()
     runs-on: ubuntu-latest
