@@ -75,15 +75,15 @@ Oh, no! 42 [error foo eval #f]
 - Stak Scheme already supports Unicode in I/O.
   - i.e. UTF-8 encoding
 - Now, its `(scheme char)` library also supports Unicode.
+- Unicode defines multiple tables for character properties.
+  - e.g. categories, and case mappings
+- They can be fairly large...
+  - One of Stak Scheme's goals is a small implementation.
 
 ---
 
 # Encoding Unicode tables
 
-- Unicode defines multiple tables for character properties.
-  - e.g. categories, and case mappings
-- They can be fairly large.
-  - One of Stak Scheme's goals is a small implementation.
 - Code point table encoding
   1. Calculate differences between rows in a table.
      - Generate small integers that are encoded into a small number of bytes in bytecode encoding.
