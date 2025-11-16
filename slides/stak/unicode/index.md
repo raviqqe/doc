@@ -100,3 +100,10 @@ Upper to lower case mapping table:
    ```scheme
    ((65 97) (24 . 1))
    ```
+
+---
+
+# Future work
+
+- LZSS bytecode compression
+- Soft float in Scheme
