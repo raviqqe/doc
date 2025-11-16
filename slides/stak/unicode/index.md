@@ -108,18 +108,17 @@ Example: Upper to lower case mapping
 ```scheme
 (import (scheme base) (scheme char) (scheme write))
 
-(for-each
-  (lambda (char)
-    (write (cons char (char->integer char)))
-    (display #\space))
-  (list #\ß (char-upcase #\ß) (char-downcase #\ẞ)))
+(write
+  (map
+    (lambda (char) (cons char (char->integer char)))
+    (list #\ß (char-upcase #\ß) (char-downcase #\ẞ))))
 ```
 
 ```scheme
 > stak ~/foo.scm
-(#\ß . 223) (#\ß . 223) (#\ß . 223)
+((#\ß . 223) (#\ß . 223) (#\ß . 223))
 > chibi-scheme ~/foo.scm
-(#\ß . 223) (#\ẞ . 7838) (#\ß . 223)
+((#\ß . 223) (#\ẞ . 7838) (#\ß . 223))
 ```
 
 ---
