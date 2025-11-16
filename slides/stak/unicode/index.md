@@ -105,6 +105,8 @@ Example: Upper to lower case mapping
 
 # Asymmetric mapping
 
+- [ß - Wikipedia](https://en.wikipedia.org/wiki/%C3%9F#Development_of_a_capital_form)
+
 ```scheme
 (import (scheme base) (scheme char) (scheme write))
 
