@@ -84,10 +84,9 @@ Oh, no! 42 [error foo eval #f]
 
 # Encoding Unicode tables
 
-- Code point table encoding
-  1. Calculate differences between rows in a table.
-     - Generate small integers that are encoded into a small number of bytes in bytecode encoding.
-  2. Apply [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding).
+1. Calculate differences between rows in a table.
+   - Generate small integers that are encoded into a small number of bytes in bytecode encoding.
+2. Apply [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding).
 
 ---
 
