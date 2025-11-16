@@ -77,7 +77,7 @@ Oh, no! 42 [error foo eval #f]
 - Now, its `(scheme char)` library also supports Unicode.
 - Unicode defines multiple tables for character properties.
   - e.g. categories, and case mappings
-- They can be fairly large...
+- The tables can be fairly large...
   - One of Stak Scheme's goals is small memory footprints.
 
 ---
