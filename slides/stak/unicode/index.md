@@ -107,3 +107,4 @@ Upper to lower case mapping table:
 
 - LZSS bytecode compression
 - Soft float in Scheme
+- DSW garbage collection
