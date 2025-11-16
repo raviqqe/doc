@@ -18,7 +18,10 @@ const writeToc = async (directory: string, component: string) =>
                 .values()
                 .filter((path) => !excludedPattern.test(path))
                 .map(async (path) => {
-                  const htmlPath = path.replace(/^..\//, "").replace(".md", "");
+                  const htmlPath = path
+                    .replace(/^..\//, "")
+                    .replace(".md", "")
+                    .replace(/\/index$/, "");
                   const pdfPath = `${htmlPath}.pdf`;
 
                   return {
