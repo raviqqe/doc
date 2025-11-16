@@ -103,6 +103,23 @@ Example: Upper to lower case mapping
 
 ---
 
+# Asymmetric mapping
+
+```scheme
+(import (scheme base) (scheme char) (scheme write))
+
+(write (char-upcase #\ß))
+```
+
+```sh
+> stak ~/foo.scm
+#\ß
+> chibi-scheme ~/foo.scm
+#\ẞ
+```
+
+---
+
 # Future work
 
 - LZSS bytecode compression
