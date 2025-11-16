@@ -1,5 +1,5 @@
 flowchart LR
-  subgraph s0[ ]
+  subgraph s0[top frame]
     c0[call foo] -.-> i0[const 42] -.-> i1[...]
   end
 
@@ -11,6 +11,6 @@ flowchart LR
 
   c1 --> c2
 
-  subgraph s2[ ]
+  subgraph s2[bottom frame]
     c2[call baz] -.-> i4[get 3] -.-> i5[...]
   end
