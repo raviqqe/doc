@@ -84,7 +84,7 @@ Oh, no! 42 [error foo eval #f]
 
 # Encoding Unicode tables
 
-Upper to lower case mapping table:
+- Example: Upper to lower case mapping
 
 1. Parse a table.
    ```scheme
