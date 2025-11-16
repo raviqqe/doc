@@ -14,7 +14,7 @@ concurrency:
 env:
   MUFFET_OPTIONS: >
     --accepted-status-codes 200,403,429
-    --buffer-size 8192
+    --buffer-size 65536
     --exclude raviqqe.com/stak
     --header accept:text/html,*/*
     --header user-agent:muffet
