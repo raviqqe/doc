@@ -1,5 +1,5 @@
 flowchart LR
-  d0(source code) -.-> compile
+  --> d0[source code] -.-> compile
 
   subgraph Compiler
     compile -.-> d1(code graph):::red -.-> encode
