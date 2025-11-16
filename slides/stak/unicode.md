@@ -42,7 +42,7 @@ November 15, 2025
 
 ---
 
-# Backtrace on errors
+# Example
 
 Source code:
 
