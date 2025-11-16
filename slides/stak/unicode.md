@@ -9,8 +9,9 @@ November 15, 2025
 # Contents
 
 - Stak Scheme
-- `eval` in R7RS
-- Implementation in Stak Scheme
+- Progress
+  - Backtrace on errors
+  - Unicode in `(scheme char)`
 - Future work
 
 ---
@@ -27,7 +28,7 @@ November 15, 2025
 # Progress
 
 - Backtrace on errors
-- Unicode support
+- Unicode in `(scheme char)`
 
 ---
 
@@ -49,3 +50,9 @@ November 15, 2025
 ; ...
 
 ```
+
+---
+
+# Future work
+
+> WIP
