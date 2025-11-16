@@ -1,6 +1,6 @@
 import { exec } from "node:child_process";
 import { glob, readFile, stat, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { join, relative } from "node:path";
 import { promisify } from "node:util";
 import { groupBy, sortBy } from "es-toolkit";
 
@@ -18,6 +18,8 @@ const writeToc = async (directory: string, component: string) =>
                 .values()
                 .filter((path) => !excludedPattern.test(path))
                 .map(async (path) => {
+                  path = relative("..", path);
+                  console.log({ path });
                   const htmlPath = path
                     .replace(/^..\//, "")
                     .replace(".md", "")
