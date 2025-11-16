@@ -4,11 +4,11 @@ flowchart LR
   end
 
   subgraph s1[bar]
-    b0[get 3] --> b1[call foo] --> b2[...]
+    b0[get 3] --> b1[call foo]:::red --> b2[...]
     b1 --> a0
   end
 
   subgraph s2[ ]
-    c0[const 42] --> c1[call bar] --> c2[...]
+    c0[const 42] --> c1[call bar]:::red --> c2[...]
     c1 --> b0
   end
