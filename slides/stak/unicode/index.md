@@ -98,5 +98,5 @@ Upper to lower case mapping table:
    ```
 2. Apply [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding).
    ```scheme
-   ((65 . 97) (66 . 98) (67 . 99) #| ... |# (90 . 122))
+   ((65 . 97) (24 . 1))
    ```
