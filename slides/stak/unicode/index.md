@@ -42,7 +42,7 @@ November 15, 2025
 - On a call instruction, the VM calls its procedure storing a return address of the **current** call instruction.
   - We cannot go back when it points to the next instruction.
 
-![bg contain right:50%](backtrace.svg)
+![height:300px](backtrace.svg)
 
 ---
 
