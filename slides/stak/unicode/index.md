@@ -85,7 +85,10 @@ Oh, no! 42 [error foo eval #f]
 # Encoding Unicode tables
 
 1. Calculate differences between rows in a table.
-   - Generate small integers that are encoded into a small number of bytes in bytecode encoding.
+   - Small integers are encoded into small bytes in bytecode encoding.
+   ```scheme
+   ((65 . 97) (66 . 98) (67 . 99) #| ... |# (90 . 122))
+   ```
 2. Apply [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding).
 
 ## Upper to lower case mapping
