@@ -91,7 +91,7 @@ Upper to lower case mapping table:
    ; A -> a, B -> b, C -> c, ... Z -> z
    ((65 97) (66 98) (67 99) #| ... |# (90 122))
    ```
-1. Calculate differences between rows in a table.
+1. Calculate differences between rows.
    - Small integers are encoded into small bytes in bytecode encoding.
    ```scheme
    ((65 97) (1 1) (1 1) #| ... |# (1 1))
