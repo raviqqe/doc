@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 env:
   MUFFET_OPTIONS: >
-    --accepted-status-codes 200,403,429
+    --accepted-status-codes 200,202,403,429
     --buffer-size 65536
     --exclude github.com/raviqqe/stak/blob
     --exclude raviqqe.com/stak
