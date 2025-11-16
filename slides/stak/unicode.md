@@ -38,6 +38,8 @@ November 15, 2025
 
 # Backtrace on errors
 
+Source code:
+
 ```scheme
 (import (scheme base))
 
@@ -49,6 +51,8 @@ November 15, 2025
   (foo)
   #f))
 ```
+
+Output:
 
 ```
 Oh, no! 42 [error foo eval #f]
