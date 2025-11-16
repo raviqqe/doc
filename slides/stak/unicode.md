@@ -27,6 +27,25 @@ May 12, 2024
 # Progress
 
 - Backtrace on errors
-- Unicdoe support
+- Unicode support
 
 ---
+
+# Backtrace
+
+```scheme
+(import (scheme base))
+
+(define (foo)
+  (error "Oh, no!" 42)
+  #f)
+
+(define (bar)
+  (foo)
+  #f)
+
+(bar)
+
+; ...
+
+```
