@@ -1,16 +1,15 @@
 flowchart LR
-  subgraph s0[top frame]
-    c0[call foo] -.-> i0[const 42] -.-> i1[...]
+  subgraph s0[foo]
+    a0[const 42] -.-> a1[set x] -.-> a2[...]
   end
 
-  c0 --> c1
-
-  subgraph s1[ ]
-    c1[call bar] -.-> i2[if] -.-> i3[...]
+  subgraph s1[bar]
+    b0[call foo] -.-> b1[get 3] -.-> b2[...]
+    a0 --> b0
   end
 
-  c1 --> c2
-
-  subgraph s2[ ]
-    c2[call baz] -.-> i4[get 3] -.-> i5[...]
+  subgraph s2[baz]
+    c0[call bar] --> c1[const 42] --> c2[...]
+    b0 --> c0
+    b0 -.->|return| c0
   end
