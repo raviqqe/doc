@@ -17,6 +17,9 @@ env:
     --buffer-size 65536
     --exclude github.com/raviqqe/stak/blob
     --exclude raviqqe.com/stak
+    --exclude singapore-2025.pdf
+    --exclude tab=readme-ov-file
+    --exclude twitter.com
     --header accept:text/html,*/*
     --header user-agent:muffet
     --max-retries 5
