@@ -110,9 +110,7 @@ Example: Upper to lower case mapping
 
 (for-each
   (lambda (char)
-    (write char)
-    (display #\space)
-    (write (char->integer char))
+    (write (cons char (char->integer char)))
     (display #\space))
   (list #\ß (char-upcase #\ß) (char-downcase #\ẞ)))
 ```
