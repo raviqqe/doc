@@ -43,7 +43,7 @@ jobs:
       - run: tools/document.sh -l
       - run: node --run preview &
         working-directory: doc
-      - run: go tool muffet $MUFFET_OPTIONS http://localhost:4321/stak/
+      - run: go tool muffet http://localhost:4321/stak/
   spell_check:
     runs-on: ubuntu-latest
     steps:
