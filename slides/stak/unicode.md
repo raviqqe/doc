@@ -38,6 +38,12 @@ November 15, 2025
 
 # Backtrace on errors
 
+![](backtrace.svg)
+
+---
+
+# Backtrace on errors
+
 Source code:
 
 ```scheme
