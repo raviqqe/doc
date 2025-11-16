@@ -1,3 +1,7 @@
+<!--
+class: invert
+-->
+
 # Unicode in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
