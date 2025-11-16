@@ -87,7 +87,7 @@ Oh, no! 42 [error foo eval #f]
 Upper to loewr case mapping table:
 
 ```scheme
-; A, B, C, ..., Z
+; A, B, C, ... Z
 ((65 . 97) (66 . 98) (67 . 99) #| ... |# (90 . 122))
 ```
 
