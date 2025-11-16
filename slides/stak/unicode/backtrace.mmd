@@ -6,6 +6,7 @@ flowchart LR
   subgraph s1[bar]
     b0[call foo] -.-> b1[get 3] -.-> b2[...]
     a0 --> b0
+    a0 -.->|return| b0
   end
 
   subgraph s2[baz]
