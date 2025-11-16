@@ -78,7 +78,7 @@ Oh, no! 42 [error foo eval #f]
 - Unicode defines multiple tables for character properties.
   - e.g. categories, and case mappings
 - They can be fairly large...
-  - One of Stak Scheme's goals is a small implementation.
+  - One of Stak Scheme's goals is small memory footprint.
 
 ---
 
