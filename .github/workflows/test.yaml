@@ -34,6 +34,16 @@ jobs:
       - uses: ./.github/actions/setup
       - run: node --run build:image
       - uses: raviqqe/markdown-link-check@v1
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+      - uses: ./.github/actions/setup-document
+      - run: tools/document.sh -l
+      - run: node --run preview &
+        working-directory: doc
+      - run: go tool muffet $MUFFET_OPTIONS http://localhost:4321/stak/
   spell_check:
     runs-on: ubuntu-latest
     steps:
@@ -45,6 +55,7 @@ jobs:
       - markdown_format
       - tex_format
       - markdown_link
+      - web
       - spell_check
     if: always()
     runs-on: ubuntu-latest
