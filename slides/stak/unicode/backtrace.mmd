@@ -1,8 +1,16 @@
 flowchart LR
-  --> d0[source code] -.-> compile
-
-  subgraph Compiler
-    compile -.-> d1(code graph):::red -.-> encode
+  subgraph s0[ ]
+    c0[call foo] -.-> i0[const 42] -.-> i1[...]
   end
 
-  encode -.-> d2(bytes):::blue
+  s0 --> s1
+
+  subgraph s1[ ]
+    c1[call bar] -.-> i2[if] -.-> i3[...]
+  end
+
+  s1 --> s2
+
+  subgraph s2[ ]
+    c2[call baz] -.-> i4[get 3] -.-> i5[...]
+  end
