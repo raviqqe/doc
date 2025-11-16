@@ -38,7 +38,7 @@ November 15, 2025
 
 # Backtrace on errors
 
-![bg right:50% h:400px](backtrace.svg)
+![h:400px](backtrace.svg)
 
 ---
 
