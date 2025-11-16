@@ -70,6 +70,13 @@ Oh, no! 42 [error foo eval #f]
 
 ---
 
+# Unicode in `(scheme char)`
+
+- Stak Scheme already supports Unicode in I/O.
+- Now, its `(scheme char)` library also supports Unicode.
+
+---
+
 # Future work
 
 > WIP
