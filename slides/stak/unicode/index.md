@@ -25,7 +25,7 @@ November 15, 2025
 - A bytecode compiler and virtual machine (VM) for Scheme
   - The compiler is written in Scheme.
   - The VM is written in Rust.
-- It aims to support R7RS-small.
+- It implements the R7RS-small standard.
 
 ---
 
@@ -114,8 +114,8 @@ Example: Upper to lower case mapping
     (list #\ß (char-upcase #\ß) (char-downcase #\ẞ))))
 ```
 
-```scheme
-> stak ~/foo.scm
+```sh
+> stak ~/foo.scm # same for guile and gosh
 ((#\ß . 223) (#\ß . 223) (#\ß . 223))
 > chibi-scheme ~/foo.scm
 ((#\ß . 223) (#\ẞ . 7838) (#\ß . 223))
