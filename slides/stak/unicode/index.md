@@ -88,6 +88,12 @@ Oh, no! 42 [error foo eval #f]
    - Generate small integers that are encoded into a small number of bytes in bytecode encoding.
 2. Apply [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding).
 
+## Upper to lower case mapping
+
+```scheme
+((65 . 97) (66 . 98) #| ... |# (90 . 122))
+```
+
 ---
 
 # Future work
