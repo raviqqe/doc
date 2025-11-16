@@ -42,7 +42,7 @@ jobs:
           lfs: true
       - uses: ./.github/actions/setup
       - run: node --run build
-      - run: node --run start &
+      - run: node --run preview &
         working-directory: doc
       - run: go tool muffet http://localhost:4321/doc
   spell_check:
