@@ -105,10 +105,16 @@ Example: Upper to lower case mapping
 
 # Asymmetric mapping
 
-```scheme
+````scheme
 (import (scheme base) (scheme char) (scheme write))
 
-(write (char-upcase #\ß))
+(for-each
+  (lambda (char)
+    (write char)
+    (newline)
+    (write (char->integer char))
+    (newline))
+  (list #\ß (char-upcase #\ß)))
 ```
 
 ```sh
@@ -125,3 +131,4 @@ Example: Upper to lower case mapping
 - LZSS bytecode compression
 - Soft float in Scheme
 - DSW garbage collection
+````
