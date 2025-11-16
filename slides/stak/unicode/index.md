@@ -131,7 +131,3 @@ Example: Upper to lower case mapping
 - LZSS bytecode compression
 - Soft float in Scheme
 - DSW garbage collection
-
-```
-
-```
