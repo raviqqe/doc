@@ -111,20 +111,17 @@ Example: Upper to lower case mapping
 (for-each
   (lambda (char)
     (write char)
-    (newline)
+    (display #\space)
     (write (char->integer char))
-    (newline))
+    (display #\space))
   (list #\ß (char-upcase #\ß)))
 ```
 
 ```sh
 > stak ~/foo.scm
-#\ß
-223
-#\ß
-223
+#\ß 223 #\ß 223
 > chibi-scheme ~/foo.scm
-#\ẞ
+#\ß 223 #\ẞ 7838
 ```
 
 ---
