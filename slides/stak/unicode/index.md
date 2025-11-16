@@ -86,17 +86,17 @@ Oh, no! 42 [error foo eval #f]
 
 Upper to lower case mapping table:
 
-```scheme
-; A, B, C, ... Z
-((65 97) (66 98) (67 99) #| ... |# (90 122))
-```
-
+1. Parse a table.
+   ```scheme
+   ; A -> a, B -> b, C -> c, ... Z -> z
+   ((65 97) (66 98) (67 99) #| ... |# (90 122))
+   ```
 1. Calculate differences between rows in a table.
    - Small integers are encoded into small bytes in bytecode encoding.
    ```scheme
    ((65 97) (1 1) (1 1) #| ... |# (1 1))
    ```
-2. Apply [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding).
+1. Apply [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding).
    ```scheme
    ((65 97) (24 . 1))
    ```
