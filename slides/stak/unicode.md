@@ -45,11 +45,9 @@ November 15, 2025
   (error "Oh, no!" 42)
   #f)
 
-(define (bar)
+(let ()
   (foo)
-  #f)
-
-(bar)
+  #f))
 ```
 
 ```
