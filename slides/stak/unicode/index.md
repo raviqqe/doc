@@ -85,7 +85,8 @@ Oh, no! 42 [error foo eval #f]
 - They can be fairly large.
   - One of Stak Scheme's goals is a small implementation.
 - Code point table encoding
-  1. Stak Scheme calculates differences between codes in the table.
+  1. Calculate differences between rows in a table.
+     - Generate small integers that are encoded into a small number of bytes in bytecode encoding.
   2. Stak Scheme calculates differences between codes in the table.
 
 ---
