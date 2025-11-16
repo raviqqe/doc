@@ -56,7 +56,6 @@ Output:
 
 ```
 Oh, no! 42 [error foo eval #f]
-Error: halt
 ```
 
 ---
