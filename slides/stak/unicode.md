@@ -36,7 +36,7 @@ November 15, 2025
 
 ---
 
-# Backtrace
+# Backtrace on errors
 
 ```scheme
 (import (scheme base))
