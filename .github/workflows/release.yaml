@@ -34,7 +34,7 @@ jobs:
         with:
           lfs: true
       - uses: ./.github/actions/setup
-      - run: go tool muffet http://localhost:4321/doc
+      - run: go tool muffet https://raviqqe.com/doc
   release:
     needs:
       - web_release
