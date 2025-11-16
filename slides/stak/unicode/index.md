@@ -105,10 +105,6 @@ Example: Upper to lower case mapping
 
 # Asymmetric mapping
 
-- [ß - Wikipedia](https://en.wikipedia.org/wiki/%C3%9F#Development_of_a_capital_form)
-  > Because ⟨ß⟩ had been treated as a ligature, ... it had no capital form in early modern typesetting. ...
-  > A capital was first seriously proposed in 1879, but did not enter official or widespread use.
-
 ```scheme
 (import (scheme base) (scheme char) (scheme write))
 
@@ -124,6 +120,14 @@ Example: Upper to lower case mapping
 > chibi-scheme ~/foo.scm
 ((#\ß . 223) (#\ẞ . 7838) (#\ß . 223))
 ```
+
+---
+
+# Asymmetric mapping
+
+- [ß - Wikipedia](https://en.wikipedia.org/wiki/%C3%9F#Development_of_a_capital_form)
+  > Because ⟨ß⟩ had been treated as a ligature, ... it had no capital form in early modern typesetting. ...
+  > A capital was first seriously proposed in 1879, but did not enter official or widespread use.
 
 ---
 
