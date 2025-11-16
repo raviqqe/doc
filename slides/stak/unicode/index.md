@@ -114,7 +114,7 @@ Example: Upper to lower case mapping
     (display #\space)
     (write (char->integer char))
     (display #\space))
-  (list #\ß (char-upcase #\ß)))
+  (list #\ß (char-upcase #\ß) (char-downcase #\ẞ)))
 ```
 
 ```sh
