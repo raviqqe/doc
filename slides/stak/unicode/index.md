@@ -115,7 +115,7 @@ Example: Upper to lower case mapping
   (list #\ß (char-upcase #\ß) (char-downcase #\ẞ)))
 ```
 
-```sh
+```scheme
 > stak ~/foo.scm
 (#\ß . 223) (#\ß . 223) (#\ß . 223)
 > chibi-scheme ~/foo.scm
