@@ -20,6 +20,7 @@ env:
     --exclude singapore-2025.pdf
     --exclude tab=readme-ov-file
     --exclude twitter.com
+    --exclude www.gnu.org/software/.*
     --header accept:text/html,*/*
     --header user-agent:muffet
     --max-retries 5
