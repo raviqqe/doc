@@ -67,6 +67,7 @@
     "fontsource",
     "frontmatter",
     "gofmt",
+    "gomod",
     "grothendieck",
     "hamt",
     "hhkb",
