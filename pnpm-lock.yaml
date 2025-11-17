@@ -31,7 +31,7 @@ importers:
     dependencies:
       '@astrojs/mdx':
         specifier: ^4.3.10
-        version: 4.3.10(astro@5.15.7(@types/node@24.10.1)(jiti@1.21.7)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1))
+        version: 4.3.10(astro@5.15.8(@types/node@24.10.1)(jiti@1.21.7)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1))
       '@astrojs/sitemap':
         specifier: ^3.6.0
         version: 3.6.0
@@ -42,8 +42,8 @@ importers:
         specifier: ^5.2.7
         version: 5.2.8
       astro:
-        specifier: ^5.15.7
-        version: 5.15.7(@types/node@24.10.1)(jiti@1.21.7)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1)
+        specifier: ^5.15.8
+        version: 5.15.8(@types/node@24.10.1)(jiti@1.21.7)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1)
       rehype-mermaid:
         specifier: ^3.0.0
         version: 3.0.0(playwright@1.56.1)
@@ -1098,8 +1098,8 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro@5.15.7:
-    resolution: {integrity: sha512-Zmw6otInhxcjoGcEyEN+wxgdiQERQOS3VzOmAKsDdKK8Fb4x1656r+9NtaTXCRZ0/fGtHjkSvkGUhZUJLXKfxQ==}
+  astro@5.15.8:
+    resolution: {integrity: sha512-QiiRnNPdxCcAGO2UlO07o+QeGgRfEC5Dlm0x35WPB/ixFK1T2bsNB6KaXri70cVkYY1GYgoRtrWv3HCR26o9aw==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2961,8 +2961,8 @@ packages:
     resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
 
-  smol-toml@1.5.0:
-    resolution: {integrity: sha512-Jjsa8LZ+DyLbZ7gVi9d18bS8oxq0PQrTlVDfvYXgh7gxLwbW9QWgvakHD+hBLUtr5NahfStd8LQLGSPchaEJ8Q==}
+  smol-toml@1.5.2:
+    resolution: {integrity: sha512-QlaZEqcAH3/RtNyet1IPIYPsEWAaYyXXv1Krsi+1L/QHppjX4Ifm8MQsBISz9vE8cHicIq3clogsheili5vhaQ==}
     engines: {node: '>= 18'}
 
   socks-proxy-agent@8.0.5:
@@ -3503,7 +3503,7 @@ snapshots:
       remark-rehype: 11.1.2
       remark-smartypants: 3.0.2
       shiki: 3.15.0
-      smol-toml: 1.5.0
+      smol-toml: 1.5.2
       unified: 11.0.5
       unist-util-remove-position: 5.0.0
       unist-util-visit: 5.0.0
@@ -3512,12 +3512,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.3.10(astro@5.15.7(@types/node@24.10.1)(jiti@1.21.7)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1))':
+  '@astrojs/mdx@4.3.10(astro@5.15.8(@types/node@24.10.1)(jiti@1.21.7)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1))':
     dependencies:
       '@astrojs/markdown-remark': 6.3.8
       '@mdx-js/mdx': 3.1.1
       acorn: 8.15.0
-      astro: 5.15.7(@types/node@24.10.1)(jiti@1.21.7)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1)
+      astro: 5.15.8(@types/node@24.10.1)(jiti@1.21.7)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1)
       es-module-lexer: 1.7.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -4501,7 +4501,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro@5.15.7(@types/node@24.10.1)(jiti@1.21.7)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1):
+  astro@5.15.8(@types/node@24.10.1)(jiti@1.21.7)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@astrojs/internal-helpers': 0.7.4
@@ -4548,7 +4548,7 @@ snapshots:
       rehype: 13.0.2
       semver: 7.7.3
       shiki: 3.15.0
-      smol-toml: 1.5.0
+      smol-toml: 1.5.2
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tsconfck: 3.1.6(typescript@5.9.3)
@@ -7026,7 +7026,7 @@ snapshots:
 
   smart-buffer@4.2.0: {}
 
-  smol-toml@1.5.0: {}
+  smol-toml@1.5.2: {}
 
   socks-proxy-agent@8.0.5:
     dependencies:
