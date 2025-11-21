@@ -28,7 +28,7 @@ jobs:
   release_build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0 # for creation times of pages
           lfs: true
@@ -45,7 +45,7 @@ jobs:
       - release_build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           lfs: true
       - uses: ./.github/actions/setup
