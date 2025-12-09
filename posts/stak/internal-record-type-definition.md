@@ -12,8 +12,8 @@ language implementation](https://qiita.com/advent-calendar/2025/lang_dev).
 This is a note in the readme of the [`r7expander`][r7expander]
 project, which is one of the macro expanders for R7RS Scheme.
 
-The R7RS standard is the report and practically the 8th specification of the
-Scheme programming language.
+The R7RS standard is the report and practically the 7th (or 8th?) specification
+of the Scheme programming language.
 In addition to its hygienic macro system inherited from R5RS, it also provides
 a new syntax called `define-record-type` that allows
 Scheme programs to define custom data types. The following example defines a
