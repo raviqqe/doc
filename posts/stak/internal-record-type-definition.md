@@ -48,6 +48,13 @@ the syntaxes in R7RS are implemented in Scheme itself, I also had some
 difficulty to figure out the cleanest way to implement such internal record type
 definitions without introducing any ad-hoc compiler logic.
 
+## Implementation
+
+The following is the sample implementation of internal `define-record-type` with
+pure `define-syntax` and `syntax-rules` in Scheme. This is pretty much the same
+as the implementation in [Stak Scheme][stak] although it uses lists for the
+internal representation of fields.
+
 ```scheme
 (define-syntax define-record-type
   (syntax-rules ()
