@@ -148,6 +148,8 @@ validation for procedures and syntaxes.
     (vector-set! (##record-fields x) index value)))
 ```
 
+The record type primitives are marked with `##` prefixes to the symbols.
+
 There are several techniques here:
 
 - The syntax for internal definitions (i.e. `let-record-type`)
