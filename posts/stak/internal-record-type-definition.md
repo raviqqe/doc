@@ -147,6 +147,15 @@ internal representation of record fields.
     (list-set! (cdr record) index value)))
 ```
 
+There are several techniques here:
+
+- The syntax for internal definitions (i.e. `let-record-type`)
+  enters an intermediate state of the `define-record-type` expansion.
+  This allows us to share the syntax rules between the global and internal
+  definitions.
+- We generate the unique record type IDs by creating a new `cons` every time the
+  definition is evaluated.
+
 The `let-record-type` defines an internal record type definition.
 It can be used in a typical expansion of `lambda` bodies with internal
 definitions like other `let-*` variants.
