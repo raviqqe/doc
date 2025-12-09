@@ -57,10 +57,11 @@ logic or new primitives.
 The following is the sample implementation of global and internal
 `define-record-type` syntaxes with pure `define-syntax` and `syntax-rules` in
 Scheme.
-This is pretty much the same
-as the implementation in [Stak Scheme][stak] although it uses lists for the
-internal representation of record fields. Also, it skips most of input
-validation for the generated procedures and syntaxes.
+This is pretty much the same as
+[the implementation in Stak Scheme](https://github.com/raviqqe/stak/blob/e625716070b9120e6ec08684c36bb2c339159b1b/prelude.scm#L1419)
+although it uses lists for the internal representation of record fields.
+Also, it skips most of input validation for the generated procedures and
+syntaxes.
 
 ```scheme
 (define-syntax define-record-type
