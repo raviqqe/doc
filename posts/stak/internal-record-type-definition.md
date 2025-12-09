@@ -72,6 +72,7 @@ internal representation of record fields.
         (body ...)
         accessors
         0
+        ; Generate a type "ID" by making a unique referential data.
         (define id (cons 0 0))
         (define constructor (record-constructor id))
         (define predicate (record-predicate id))))
@@ -85,7 +86,7 @@ internal representation of record fields.
         statement
         ...
         (define get (record-getter index))
-        ; Zero or more is equivalent ot zero or one if there is only up to one...
+        ; Zero or more is equivalent to zero or one if there is only up to one.
         (define set (record-setter index))
         ...))
 
@@ -146,9 +147,14 @@ internal representation of record fields.
     (list-set! (cdr record) index value)))
 ```
 
-I believe [Stak Scheme][stak]'s implementation is so called the generative one,
-which [SRFI-9][srfi-9] describes. The type's identity changes every time the
-internal definitions are evaluated, while in the nongenerative version, the type's identity remains the same across multiple evaluations of the definition.
+The foo.
+
+I believe this implementation in [Stak Scheme][stak] is so called the generative
+one that [SRFI-9][srfi-9] describes.
+The type's identity changes every time the
+internal definitions are evaluated, while in the nongenerative version,
+the type's identity remains the same across multiple evaluations of the
+definition.
 
 The [SRFI-9][srfi-9] document says:
 
