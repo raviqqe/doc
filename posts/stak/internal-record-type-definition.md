@@ -10,8 +10,8 @@ repository, which is one of the macro expanders for R7RS Scheme.
 The R7RS standard is the report and practically the specification of the Scheme
 programming language. In addition to its hygienic macro system inherited from
 R5RS, it also provides a new syntax called `define-record-type` that allows
-programs to define custom product types. The following example defines a custom
-type named `foo`,
+Scheme programs to define custom data types. The following example defines a
+custom type named `foo`,
 
 ```scheme
 (define-record-type foo
