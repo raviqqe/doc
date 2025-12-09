@@ -4,7 +4,7 @@
 > have internal `define-record-type`, which we don't know how to expand into
 > internal (ordinary) definitions.
 
-This is a note in readme in the [`r7expander`][r7expander]
+This is a note in readme of the [`r7expander`][r7expander]
 repository, which is one of the macro expanders for R7RS Scheme.
 
 The R7RS standard is the report and practically the specification of the Scheme
