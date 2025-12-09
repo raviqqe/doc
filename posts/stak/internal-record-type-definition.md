@@ -45,7 +45,8 @@ so obvious how to interpret them as internal definitions that appear within the
   ; ...
 ```
 
-While I was working on [my own Scheme implementation in Rust][stak], where all
+While I was working on
+[my own Scheme implementation in Rust called Stak Scheme][stak], where all
 the syntaxes in R7RS are implemented in Scheme itself via the macro system,
 I also had some difficulty to figure out the cleanest way to implement
 such internal record type definitions without introducing any ad-hoc compiler
