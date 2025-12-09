@@ -1,8 +1,8 @@
 # Internal `define-record-type` in Scheme
 
-> Internal definitions are not translated into letrec* because outputs can have
-> internal define-record-type, which we don't know how to expand into internal
-> (ordinary) definitions.
+> Internal definitions are not translated into `letrec*` because outputs can
+> have internal `define-record-type`, which we don't know how to expand into
+> internal (ordinary) definitions.
 
 This is a statement in a readme file in the [`r7expander`][r7expander]
 repository, which is one of the macro expander for R7RS Scheme.
