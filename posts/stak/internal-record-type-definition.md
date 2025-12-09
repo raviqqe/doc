@@ -156,6 +156,9 @@ There are several techniques here:
   enters an intermediate state of the `define-record-type` expansion.
   This allows us to share the syntax rules between the global and internal
   definitions.
+- We expand accessors of a record step by step. Eventually, we expand
+  all lowered definitions into global or internal definitions depending on the
+  original syntax.
 - We generate the unique record type IDs by creating a new `cons` every time the
   definition is evaluated.
 
