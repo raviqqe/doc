@@ -9,7 +9,7 @@ language implementation](https://qiita.com/advent-calendar/2025/lang_dev).
 > have internal `define-record-type`, which we don't know how to expand into
 > internal (ordinary) definitions.
 
-This is a note in readme of the [`r7expander`][r7expander]
+This is a note in the readme of the [`r7expander`][r7expander]
 project, which is one of the macro expanders for R7RS Scheme.
 
 The R7RS standard is the report and practically the 8th specification of the
