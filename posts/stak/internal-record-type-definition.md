@@ -181,8 +181,8 @@ and after the internal record type definition.
       (lambda arguments (let-record-type (item ...) body1 body2 ...)))
 ```
 
-I believe this implementation in [Stak Scheme][stak] is so called the generative
-one that [SRFI-9][srfi-9] describes.
+I believe this implementation in [Stak Scheme][stak] is so called the
+_generative_ one that [SRFI-9][srfi-9] describes.
 The type's identity changes every time the
 internal definitions are evaluated, while in the nongenerative version,
 the type's identity remains the same across multiple evaluations of the
