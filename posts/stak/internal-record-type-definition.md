@@ -1,5 +1,10 @@
 # Internal `define-record-type` in Scheme
 
+This is the article for December 8th in the Qiita Advent Calendar 2025 about
+language implementation.
+
+## Nontrivial expansion
+
 > Internal definitions are not translated into `letrec*` because outputs can
 > have internal `define-record-type`, which we don't know how to expand into
 > internal (ordinary) definitions.
