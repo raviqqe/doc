@@ -177,7 +177,6 @@ and after the internal record type definition.
 (define-syntax lambda
   (syntax-rules (define define-syntax define-record-type define-values)
     ; ...
-
     ((_ arguments (define-record-type item ...) body1 body2 ...)
       (lambda arguments (let-record-type (item ...) body1 body2 ...)))
 ```
