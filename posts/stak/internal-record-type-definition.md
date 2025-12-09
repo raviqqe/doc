@@ -55,7 +55,8 @@ logic or primitives.
 The following is the sample implementation of internal `define-record-type` with
 pure `define-syntax` and `syntax-rules` in Scheme. This is pretty much the same
 as the implementation in [Stak Scheme][stak] although it uses lists for the
-internal representation of record fields.
+internal representation of record fields. Also, it skips most of input
+validation for procedures and syntaxes.
 
 ```scheme
 (define-syntax define-record-type
@@ -130,21 +131,21 @@ internal representation of record fields.
 
 (define (record-constructor id)
   (lambda xs
-    (data-rib record-type id xs)))
+    (make-record id xs)))
 
 (define (record-predicate id)
   (lambda (x)
     (and
       (record? x)
-      (eq? (car x) id))))
+      (eq? (record-id x) id))))
 
 (define (record-getter index)
   (lambda (record)
-    (list-ref (cdr record) index)))
+    (vector-ref (cdr record) index)))
 
 (define (record-setter index)
   (lambda (record value)
-    (list-set! (cdr record) index value)))
+    (vector-set! (cdr record) index value)))
 ```
 
 There are several techniques here:
