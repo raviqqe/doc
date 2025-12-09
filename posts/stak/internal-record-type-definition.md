@@ -6,7 +6,7 @@ This is a statement in a readme file in the [`r7expander`] repository, which is
 one of the macro expander for R7RS Scheme.
 
 The R7RS standard is the report and practically the specification of the Scheme
-programming language. In addition to its higienic macro system inherited from
+programming language. In addition to its hygienic macro system inherited from
 R5RS, it also provides a new syntax called `define-record-type` that allows
 programs to define custom product types.
 
