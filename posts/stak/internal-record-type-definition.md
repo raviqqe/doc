@@ -138,7 +138,7 @@ definitions without introducing any ad-hoc compiler logic.
 
 I believe [Stak Scheme][stak]'s implementation is so called the generative one,
 which [SRFI-9][srfi-9] describes. The type's identity changes every time the
-internal definitions are evaluated while the non-generative version foo.
+internal definitions are evaluated, while in the nongenerative version, the type's identity remains the same across multiple evaluations of the definition.
 
 The [SRFI-9][srfi-9] document says:
 
