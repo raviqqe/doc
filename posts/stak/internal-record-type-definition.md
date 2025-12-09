@@ -36,6 +36,7 @@ so obvious how to interpret them as internal definitions that appear within the
 
 ```scheme
 (lambda ()
+  ; ...
   (define-record-type foo
     (make-foo bar baz)
     foo?
