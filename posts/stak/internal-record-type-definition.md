@@ -26,7 +26,7 @@ getters of `foo-bar` and `foo-baz` and a setter of `foo-set-baz!` are defined.
 
 I believe [Stak Scheme][stak]'s implementation is so called the generative one,
 which [SRFI-9][srfi-9] describes. The type's identity changes every time the
-internal definitions are evaluated while the nongenerative version foo.
+internal definitions are evaluated while the non-generative version foo.
 
 The [SRFI-9][srfi-9] document says:
 
