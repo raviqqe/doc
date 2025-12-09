@@ -149,6 +149,8 @@ validation for procedures and syntaxes.
 ```
 
 The record type primitives are marked with `##` prefixes to the symbols.
+In some Scheme implementations including [Stak Scheme][stak], these primitives
+can be implemented by even lower primitives.
 
 There are several techniques here:
 
@@ -165,6 +167,8 @@ There are several techniques here:
 The `let-record-type` defines an internal record type definition.
 It can be used in a typical expansion of `lambda` bodies with internal
 definitions like other `let-*` variants.
+Note that this expansion prevents mutual references between definitions before
+and after the internal record type definition.
 
 ```scheme
 (define-syntax lambda
