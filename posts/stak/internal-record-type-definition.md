@@ -30,8 +30,8 @@ custom data type named `foo`,
 where the `make-foo` is the constructor, `foo?` is the predicate, and then
 getters of `foo-bar` and `foo-baz` and a setter of `foo-set-baz!` follow.
 
-Although it is obvious how to expand it into global definitions, it is not so
-obvious how to interpret them as internal definitions that appear within the
+Although it is relatively easy to expand it into global definitions, it is not
+so obvious how to interpret them as internal definitions that appear within the
 `lambda` bodies.
 
 ```scheme
