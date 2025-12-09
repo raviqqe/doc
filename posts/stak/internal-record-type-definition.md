@@ -38,6 +38,11 @@ obvious how to interpret them as internal definitions that appear within the
   ; ...
 ```
 
+While I was working on [my own Scheme implementation in Rust][stak], where all
+the syntaxes in R7RS are implemented in Scheme itself, I also had some
+difficulty to figure out the cleanest way to implement such internal record type
+definitions without introducing any ad-hoc compiler logic.
+
 I believe [Stak Scheme][stak]'s implementation is so called the generative one,
 which [SRFI-9][srfi-9] describes. The type's identity changes every time the
 internal definitions are evaluated while the non-generative version foo.
