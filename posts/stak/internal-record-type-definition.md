@@ -30,12 +30,13 @@ custom data type named `foo`,
 where the `make-foo` is the constructor, `foo?` is the predicate, and then
 getters of `foo-bar` and `foo-baz` and a setter of `foo-set-baz!` follow.
 
-Although it is obvious how to expand it into global definitions, it is not so
-obvious how to interpret them as internal definitions that appear within the
+Although it is relatively easy to expand it into global definitions, it is not
+so obvious how to interpret them as internal definitions that appear within the
 `lambda` bodies.
 
 ```scheme
 (lambda ()
+  ; ...
   (define-record-type foo
     (make-foo bar baz)
     foo?
@@ -44,7 +45,8 @@ obvious how to interpret them as internal definitions that appear within the
   ; ...
 ```
 
-While I was working on [my own Scheme implementation in Rust][stak], where all
+While I was working on
+[my own Scheme implementation in Rust called Stak Scheme][stak], where all
 the syntaxes in R7RS are implemented in Scheme itself via the macro system,
 I also had some difficulty to figure out the cleanest way to implement
 such internal record type definitions without introducing any ad-hoc compiler
@@ -53,11 +55,13 @@ logic or new primitives.
 ## Implementation
 
 The following is the sample implementation of global and internal
-`define-record-type` with pure `define-syntax` and `syntax-rules` in Scheme.
-This is pretty much the same
-as the implementation in [Stak Scheme][stak] although it uses lists for the
-internal representation of record fields. Also, it skips most of input
-validation for procedures and syntaxes.
+`define-record-type` syntaxes with pure `define-syntax` and `syntax-rules` in
+Scheme.
+This is pretty much the same as
+[the implementation in Stak Scheme](https://github.com/raviqqe/stak/blob/e625716070b9120e6ec08684c36bb2c339159b1b/prelude.scm#L1419)
+although it uses lists for the internal representation of record fields.
+Also, it skips most input validation for the generated procedures and
+syntaxes.
 
 ```scheme
 (define-syntax define-record-type
@@ -164,22 +168,21 @@ There are several techniques here:
   definition is evaluated.
 
 The `let-record-type` defines an internal record type definition.
-It can be used in a typical expansion of `lambda` bodies with internal
-definitions like other `let-*` variants.
-Note that this expansion prevents mutual references between definitions before
+It can be used inside a typical expansion of `lambda` bodies with internal
+definitions like other `let` variants.
+Note that this expansion limits mutual references between definitions before
 and after the internal record type definition.
 
 ```scheme
 (define-syntax lambda
   (syntax-rules (define define-syntax define-record-type define-values)
     ; ...
-
     ((_ arguments (define-record-type item ...) body1 body2 ...)
       (lambda arguments (let-record-type (item ...) body1 body2 ...)))
 ```
 
-I believe this implementation in [Stak Scheme][stak] is so called the generative
-one that [SRFI-9][srfi-9] describes.
+I believe this implementation in [Stak Scheme][stak] is the so-called
+_generative_ one that [SRFI-9][srfi-9] describes.
 The type's identity changes every time the
 internal definitions are evaluated, while in the nongenerative version,
 the type's identity remains the same across multiple evaluations of the
@@ -189,7 +192,14 @@ The [SRFI-9][srfi-9] document says:
 
 > Record-type definitions may only occur at top-level (there are two possible semantics for 'internal' record-type definitions, generative and nongenerative, and no consensus as to which is better).
 
-I hope this note saves some time for some Scheme implementors.
+I hope this post saves some time for some Scheme implementors.
+
+## References
+
+- [`nyuichi/r7expander`][r7expander]
+- [Stak Scheme][stak]
+- [R7RS](https://r7rs.org/)
+- [SRFI-9][srfi-9]
 
 [r7expander]: https://github.com/nyuichi/r7expander
 [stak]: https://github.com/raviqqe/stak
