@@ -147,7 +147,18 @@ internal representation of record fields.
     (list-set! (cdr record) index value)))
 ```
 
-The foo.
+The `let-record-type` defines an internal record type definition.
+It can be used in a typical expansion of `lambda` bodies with internal
+definitions like other `let-*` variants.
+
+```scheme
+(define-syntax lambda
+  (syntax-rules (define define-syntax define-record-type define-values)
+    ; ...
+
+    ((_ arguments (define-record-type item ...) body1 body2 ...)
+      (lambda arguments (let-record-type (item ...) body1 body2 ...)))
+```
 
 I believe this implementation in [Stak Scheme][stak] is so called the generative
 one that [SRFI-9][srfi-9] describes.
