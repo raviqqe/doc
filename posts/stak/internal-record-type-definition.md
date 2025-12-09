@@ -60,7 +60,7 @@ Scheme.
 This is pretty much the same as
 [the implementation in Stak Scheme](https://github.com/raviqqe/stak/blob/e625716070b9120e6ec08684c36bb2c339159b1b/prelude.scm#L1419)
 although it uses lists for the internal representation of record fields.
-Also, it skips most of input validation for the generated procedures and
+Also, it skips most input validation for the generated procedures and
 syntaxes.
 
 ```scheme
