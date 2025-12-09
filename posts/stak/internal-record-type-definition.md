@@ -24,7 +24,7 @@ type named `foo`,
 where the `make-foo` is the constructor, `foo?` is the predicate, and then
 getters of `foo-bar` and `foo-baz` and a setter of `foo-set-baz!` are defined.
 
-Stak Scheme's implementation is generative.
+[Stak Scheme][stak]'s implementation is generative.
 
 [r7expander]: https://github.com/nyuichi/r7expander
 [stak]: https://github.com/raviqqe/stak
