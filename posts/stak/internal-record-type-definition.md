@@ -128,8 +128,6 @@ validation for procedures and syntaxes.
         body
         ...))))
 
-(define record? (instance? record-type))
-
 (define (record-constructor id)
   (lambda fields
     (##make-record id fields)))
