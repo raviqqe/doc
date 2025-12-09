@@ -1,7 +1,7 @@
 # Internal `define-record-type` in Scheme
 
-This is the article for December 8th in the Qiita Advent Calendar 2025 about
-language implementation.
+This is the article for December 8th in [the Qiita Advent Calendar 2025 about
+language implementation](https://qiita.com/advent-calendar/2025/lang_dev).
 
 ## Nontrivial expansion
 
