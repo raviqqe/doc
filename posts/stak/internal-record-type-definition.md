@@ -21,7 +21,8 @@ type named `foo`,
   (baz foo-baz foo-set-baz!))
 ```
 
-where the `make-foo` is the constructor, `foo?` is the predicate, and then getters of `foo-bar` and `foo-baz` and a setter of `foo-set-baz!` are defined.
+where the `make-foo` is the constructor, `foo?` is the predicate, and then
+getters of `foo-bar` and `foo-baz` and a setter of `foo-set-baz!` are defined.
 
 Stak Scheme's implementation is generative.
 
