@@ -192,7 +192,7 @@ The [SRFI-9][srfi-9] document says:
 
 > Record-type definitions may only occur at top-level (there are two possible semantics for 'internal' record-type definitions, generative and nongenerative, and no consensus as to which is better).
 
-I hope this note saves some time for some Scheme implementors.
+I hope this post saves some time for some Scheme implementors.
 
 ## References
 
