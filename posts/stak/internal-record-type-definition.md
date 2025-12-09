@@ -131,21 +131,21 @@ validation for procedures and syntaxes.
 
 (define (record-constructor id)
   (lambda xs
-    (make-record id xs)))
+    (##make-record id xs)))
 
 (define (record-predicate id)
   (lambda (x)
     (and
-      (record? x)
-      (eq? (record-id x) id))))
+      (##record? x)
+      (eq? (##record-id x) id))))
 
 (define (record-getter index)
   (lambda (record)
-    (vector-ref (cdr record) index)))
+    (vector-ref (##record-fields x) index)))
 
 (define (record-setter index)
   (lambda (record value)
-    (vector-set! (cdr record) index value)))
+    (vector-set! (##record-fields x) index value)))
 ```
 
 There are several techniques here:
