@@ -43,6 +43,94 @@ the syntaxes in R7RS are implemented in Scheme itself, I also had some
 difficulty to figure out the cleanest way to implement such internal record type
 definitions without introducing any ad-hoc compiler logic.
 
+```scheme
+(define-syntax define-record-type
+  (syntax-rules ()
+    ((_ "initial"
+        id
+        constructor
+        predicate
+        accessors
+        body
+        ...)
+      (define-record-type
+        "field"
+        (body ...)
+        accessors
+        0
+        (define id (cons 0 0))
+        (define constructor (record-constructor id))
+        (define predicate (record-predicate id))))
+
+    ((_ "field" bodies ((get set ...) accessor ...) index statement ...)
+      (define-record-type
+        "field"
+        bodies
+        (accessor ...)
+        (+ index 1)
+        statement
+        ...
+        (define get (record-getter index))
+        (define set (record-setter index))
+        ...))
+
+    ((_ "field" () () _ statement ...)
+      (begin statement ...))
+
+    ((_ "field" (body ...) () _ statement ...)
+      (let () statement ... body ...))
+
+    ((_ id
+        (constructor _ ...)
+        predicate
+        (_ accessor ...)
+        ...)
+      (define-record-type
+        "initial"
+        id
+        constructor
+        predicate
+        ((accessor ...) ...)))))
+
+(define-syntax let-record-type
+  (syntax-rules ()
+    ((_ (id
+          (constructor _ ...)
+          predicate
+          (_ accessor ...)
+          ...)
+        body
+        ...)
+      (define-record-type
+        "initial"
+        id
+        constructor
+        predicate
+        ((accessor ...) ...)
+        body
+        ...))))
+
+(define record? (instance? record-type))
+
+(define (record-constructor id)
+  (lambda xs
+    (data-rib record-type id xs)))
+
+(define (record-predicate id)
+  (lambda (x)
+    (and
+      (record? x)
+      (eq? (car x) id))))
+
+(define (record-getter index)
+  (lambda (record)
+    (list-ref (cdr record) index)))
+
+(define (record-setter index)
+  (lambda (record value)
+    (list-set! (cdr record) index value)))
+```
+
 I believe [Stak Scheme][stak]'s implementation is so called the generative one,
 which [SRFI-9][srfi-9] describes. The type's identity changes every time the
 internal definitions are evaluated while the non-generative version foo.
