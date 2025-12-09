@@ -169,7 +169,7 @@ There are several techniques here:
 
 The `let-record-type` defines an internal record type definition.
 It can be used inside a typical expansion of `lambda` bodies with internal
-definitions like other `let-*` variants.
+definitions like other `let` variants.
 Note that this expansion prevents mutual references between definitions before
 and after the internal record type definition.
 
