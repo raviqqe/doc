@@ -195,6 +195,13 @@ The [SRFI-9][srfi-9] document says:
 
 I hope this note saves some time for some Scheme implementors.
 
+## References
+
+- [`nyuichi/r7expander`][r7expander]
+- [Stak Scheme][stak]
+- [R7RS](https://r7rs.org/)
+- [SRFI-9][srfi-9]
+
 [r7expander]: https://github.com/nyuichi/r7expander
 [stak]: https://github.com/raviqqe/stak
 [srfi-9]: https://srfi.schemers.org/srfi-9/srfi-9.html
