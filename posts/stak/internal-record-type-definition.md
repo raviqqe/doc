@@ -24,6 +24,18 @@ custom data type named `foo`,
 where the `make-foo` is the constructor, `foo?` is the predicate, and then
 getters of `foo-bar` and `foo-baz` and a setter of `foo-set-baz!` are defined.
 
+Although it is obvious how to expand it into global definitions, it is not clear how to interpret them as internal definitions that appear within the `lambda` bodies.
+
+```scheme
+(lambda ()
+  (define-record-type foo
+    (make-foo bar baz)
+    foo?
+    (bar foo-bar)
+    (baz foo-baz foo-set-baz!))
+  ; ...
+```
+
 I believe [Stak Scheme][stak]'s implementation is so called the generative one,
 which [SRFI-9][srfi-9] describes. The type's identity changes every time the
 internal definitions are evaluated while the non-generative version foo.
