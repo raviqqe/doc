@@ -10,7 +10,7 @@ language implementation](https://qiita.com/advent-calendar/2025/lang_dev).
 > internal (ordinary) definitions.
 
 This is a note in readme of the [`r7expander`][r7expander]
-repository, which is one of the macro expanders for R7RS Scheme.
+project, which is one of the macro expanders for R7RS Scheme.
 
 The R7RS standard is the report and practically the specification of the Scheme
 programming language. In addition to its hygienic macro system inherited from
