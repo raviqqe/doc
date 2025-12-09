@@ -85,6 +85,7 @@ internal representation of record fields.
         statement
         ...
         (define get (record-getter index))
+        ; Zero or more is equivalent ot zero or one if there is only up to one...
         (define set (record-setter index))
         ...))
 
