@@ -94,6 +94,17 @@ const { frontmatter } = Astro.props;
   code {
     font-size: 0.9em;
   }
+
+  blockquote {
+    --color: color(from var(--text-color) srgb r g b / 0.85);
+
+    color: var(--color);
+
+    > p {
+      border-left: 0.2rem solid var(--color);
+      padding-left: 1.5rem;
+    }
+  }
 </style>
 <style>
   header {
