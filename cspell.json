@@ -110,6 +110,7 @@
     "musttail",
     "neumann",
     "noalias",
+    "nongenerative",
     "noto",
     "nounwind",
     "numpy",

@@ -24,7 +24,15 @@ type named `foo`,
 where the `make-foo` is the constructor, `foo?` is the predicate, and then
 getters of `foo-bar` and `foo-baz` and a setter of `foo-set-baz!` are defined.
 
-I believe [Stak Scheme][stak]'s implementation is so called the generative one, which is mentioned in [SRFI-9][srfi-9].
+I believe [Stak Scheme][stak]'s implementation is so called the generative one,
+which [SRFI-9][srfi-9] describes. The type's identity changes every time the
+internal definitions are evaluated while the nongenerative version foo.
+
+The [SRFI-9][srfi-9] document says:
+
+> Record-type definitions may only occur at top-level (there are two possible semantics for 'internal' record-type definitions, generative and nongenerative, and no consensus as to which is better).
+
+I hope this note saves some time from some Scheme implementors.
 
 [r7expander]: https://github.com/nyuichi/r7expander
 [stak]: https://github.com/raviqqe/stak
