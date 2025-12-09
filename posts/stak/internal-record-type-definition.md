@@ -130,8 +130,8 @@ validation for procedures and syntaxes.
 (define record? (instance? record-type))
 
 (define (record-constructor id)
-  (lambda xs
-    (##make-record id xs)))
+  (lambda fields
+    (##make-record id fields)))
 
 (define (record-predicate id)
   (lambda (x)
@@ -141,11 +141,11 @@ validation for procedures and syntaxes.
 
 (define (record-getter index)
   (lambda (record)
-    (vector-ref (##record-fields x) index)))
+    (vector-ref (##record-fields record) index)))
 
 (define (record-setter index)
   (lambda (record value)
-    (vector-set! (##record-fields x) index value)))
+    (vector-set! (##record-fields record) index value)))
 ```
 
 The record type primitives are marked with `##` prefixes to the symbols.
