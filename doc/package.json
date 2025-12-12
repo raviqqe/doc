@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.0.1",
-    "es-toolkit": "^1.42.0",
+    "es-toolkit": "^1.43.0",
     "playwright": "^1.57.0",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
