@@ -48,14 +48,6 @@ December 14, 2025
 - Stak Scheme now implements the same.
 - Bytecode compression is based on the LZSS algorithm.
 
-### Bytecode sizes (bytes)
-
-| Source file   | Before (v0.11.9) | After (v0.11.11) | Saving rate |
-| ------------- | ---------------: | ---------------: | ----------: |
-| `run.scm`     |            53883 |            41092 |       0.237 |
-| `repl.scm`    |            53506 |            40740 |       0.239 |
-| `compile.scm` |            70501 |            53402 |       0.243 |
-
 ---
 
 ## LZSS algorithm
@@ -86,6 +78,18 @@ Compressed data:
 - For general byte sequences, we need to distinguish between
   - Literal bytes
   - Offset and length pairs
+- Tight coupling with the code format of underlying byte sequences
+  - This is what Ribbit and Stak Scheme uses.
+
+---
+
+### Bytecode sizes (bytes)
+
+| Source file   | Before (v0.11.9) | After (v0.11.11) | Saving rate |
+| ------------- | ---------------: | ---------------: | ----------: |
+| `run.scm`     |            53883 |            41092 |       0.237 |
+| `repl.scm`    |            53506 |            40740 |       0.239 |
+| `compile.scm` |            70501 |            53402 |       0.243 |
 
 ---
 
