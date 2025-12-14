@@ -67,7 +67,11 @@ December 14, 2025
    current
       |
       v
-|a|b|c|a|b|c|...
+|a|b|c|a|b|c|a|b|c|a|b|d|e|f|...
+```
+
+```text
+abc(3,8)
 ```
 
 ---
