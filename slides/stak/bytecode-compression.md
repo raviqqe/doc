@@ -63,15 +63,20 @@ December 14, 2025
 - LZSS is a _superior_ run-length encoding (RLE).
 - It can encode repetitions of multiple bytes.
 
+Uncompressed data:
+
 ```text
          current
-            |
+            | Look back by 3 bytes.
+            | Repeat 8 bytes.
             v
 |0|1|2|a|b|c|a|b|c|a|b|c|a|b|d|e|f|...
 ```
 
+Compressed data:
+
 ```text
-abc(3,8)
+012abc(3,8)def
 ```
 
 ---
