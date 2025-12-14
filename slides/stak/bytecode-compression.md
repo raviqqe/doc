@@ -81,6 +81,14 @@ Compressed data:
 
 ---
 
+## Encoding format
+
+- For general byte sequences, we need to distinguish between
+  - Literal bytes
+  - Offset and length pairs
+
+---
+
 ## Future work
 
 - Tree-based vector
