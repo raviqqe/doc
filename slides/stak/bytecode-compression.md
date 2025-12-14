@@ -60,4 +60,5 @@ December 14, 2025
 
 ## Future work
 
-- foo
+- Tree-based vector
+- Soft float
