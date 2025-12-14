@@ -44,7 +44,7 @@ December 14, 2025
 ## Bytecode compression
 
 - Ribbit Scheme compresses its bytecode using LZSS.
-  - Only in the binary bytecode mode
+  - Only in the binary (256-bit base) bytecode mode
 - Stak Scheme now implements the same.
 
 ---
