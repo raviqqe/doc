@@ -48,6 +48,50 @@ December 14, 2025
 - Stak Scheme now implements the same.
 - Bytecode compression is based on the LZSS algorithm.
 
+---
+
+## LZSS algorithm
+
+- [LZSS](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Storer%E2%80%93Szymanski) is a dictionary-based compression algorithm with a sliding window.
+- It also encodes repetitions of multiple bytes.
+  - The algorithm is partly a generalization of [run-length encoding (RLE)](https://en.wikipedia.org/wiki/Run-length_encoding).
+
+Uncompressed data:
+
+```text
+         current
+            | Look back by 3 bytes.
+            | Repeat 8 bytes.
+            v
+|x|y|z|a|b|c|a|b|c|a|b|c|a|b|d|e|f|...
+```
+
+Compressed data:
+
+```text
+|x|y|z|a|b|c|3,8|d|e|f|...
+```
+
+---
+
+## Encoding format
+
+- For general byte sequences, we need to distinguish:
+  - Literal bytes
+  - Offset and length pairs
+
+### Options
+
+- Header bytes
+  - Adds a header of packed bit flags for every 8 bytes
+- Tight coupling with the code format of underlying byte sequences
+  - This is what Ribbit and Stak Scheme use.
+  - Stak Scheme borrows one bit from every byte.
+
+---
+
+## Results
+
 ### Bytecode sizes (bytes)
 
 | Source file   | Before (v0.11.9) | After (v0.11.11) | Saving rate |
@@ -55,12 +99,6 @@ December 14, 2025
 | `run.scm`     |            53883 |            41092 |       0.237 |
 | `repl.scm`    |            53506 |            40740 |       0.239 |
 | `compile.scm` |            70501 |            53402 |       0.243 |
-
----
-
-## LZSS algorithm
-
-> TBD
 
 ---
 
