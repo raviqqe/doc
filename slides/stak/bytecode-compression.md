@@ -58,6 +58,12 @@ December 14, 2025
 
 ---
 
+## LZSS algorithm
+
+> TBD
+
+---
+
 ## Future work
 
 - Tree-based vector
