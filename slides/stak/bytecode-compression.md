@@ -75,11 +75,14 @@ Compressed data:
 
 ## Encoding format
 
-- For general byte sequences, we need to distinguish between
+- For general byte sequences, we need to distinguish:
   - Literal bytes
   - Offset and length pairs
-- Tight coupling with the code format of underlying byte sequences
-  - This is what Ribbit and Stak Scheme uses.
+- Two options:
+  - Header bytes
+    - Adds a header of packed bit flags for every 8 bytes
+  - Tight coupling with the code format of underlying byte sequences
+    - This is what Ribbit and Stak Scheme uses.
 
 ---
 
