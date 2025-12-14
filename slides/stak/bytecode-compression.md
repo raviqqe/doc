@@ -70,13 +70,13 @@ Uncompressed data:
             | Look back by 3 bytes.
             | Repeat 8 bytes.
             v
-|0|1|2|a|b|c|a|b|c|a|b|c|a|b|d|e|f|...
+|x|y|z|a|b|c|a|b|c|a|b|c|a|b|d|e|f|...
 ```
 
 Compressed data:
 
 ```text
-012abc(3,8)def
+|x|y|z|a|b|c|3,8|d|e|f|...
 ```
 
 ---
