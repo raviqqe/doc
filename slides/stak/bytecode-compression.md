@@ -60,7 +60,7 @@ December 14, 2025
 
 ## LZSS algorithm
 
-> TBD
+- LZSS is a _superior_ run-length encoding (RLE).
 
 ---
 
