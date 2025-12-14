@@ -54,7 +54,7 @@ December 14, 2025
 
 - [LZSS](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Storer%E2%80%93Szymanski) is a dictionary-based compression algorithm with a sliding window.
 - It also encodes repetitions of multiple bytes.
-  - The algorithm is a generalization of [run-length encoding (RLE)](https://en.wikipedia.org/wiki/Run-length_encoding).
+  - The algorithm is partly a generalization of [run-length encoding (RLE)](https://en.wikipedia.org/wiki/Run-length_encoding).
 
 Uncompressed data:
 
