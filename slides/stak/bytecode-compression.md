@@ -48,17 +48,13 @@ December 14, 2025
 - Stak Scheme now implements the same.
 - Bytecode compression is based on the LZSS algorithm.
 
-### Artifact sizes (bytes)
+### Bytecode sizes (bytes)
 
-| Version  | Before (v0.11.9) | After (v0.11.11) |
-| -------- | ---------------: | -------------: |
-| `run.scm` |                - |              - |
-| `repl.scm` |                - |              - |
-| `compile.scm`  |                - |              - |
-
-70501
-53883
-53506
+| Version       | Before (v0.11.9) | After (v0.11.11) |
+| ------------- | ---------------: | ---------------: |
+| `run.scm`     |            53883 |            41092 |
+| `repl.scm`    |            53506 |            40740 |
+| `compile.scm` |            70501 |            53402 |
 
 ---
 
