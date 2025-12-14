@@ -52,7 +52,7 @@ December 14, 2025
 
 ## LZSS algorithm
 
-- LZSS is a _superior_ run-length encoding (RLE).
+- [LZSS](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Storer%E2%80%93Szymanski) is a _superior_ [run-length encoding (RLE)](https://en.wikipedia.org/wiki/Run-length_encoding).
 - It can encode repetitions of multiple bytes.
 
 Uncompressed data:
