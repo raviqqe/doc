@@ -85,7 +85,7 @@ Compressed data:
 - Header bytes
   - Adds a header of packed bit flags for every 8 bytes
 - Tight coupling with the code format of underlying byte sequences
-  - This is what Ribbit and Stak Scheme uses.
+  - This is what Ribbit and Stak Scheme use.
   - Stak Scheme borrows one bit from every byte.
 
 ---
