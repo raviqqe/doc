@@ -23,7 +23,7 @@ env:
     --exclude www.gnu.org/software/.*
     --header accept:text/html,*/*
     --header user-agent:muffet
-    --max-retries 5
+    --max-retries 10
 jobs:
   release_build:
     runs-on: ubuntu-latest
