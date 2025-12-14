@@ -89,6 +89,8 @@ Compressed data:
 
 ---
 
+## Results
+
 ### Bytecode sizes (bytes)
 
 | Source file   | Before (v0.11.9) | After (v0.11.11) | Saving rate |
