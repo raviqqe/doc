@@ -50,7 +50,7 @@ December 14, 2025
 
 ### Bytecode sizes (bytes)
 
-| Version       | Before (v0.11.9) | After (v0.11.11) | Saving rate |
+| Source file   | Before (v0.11.9) | After (v0.11.11) | Saving rate |
 | ------------- | ---------------: | ---------------: | ----------: |
 | `run.scm`     |            53883 |            41092 |       0.237 |
 | `repl.scm`    |            53506 |            40740 |       0.239 |
