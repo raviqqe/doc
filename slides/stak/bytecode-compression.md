@@ -64,7 +64,10 @@ December 14, 2025
 - It can encode repetitions of multiple bytes.
 
 ```text
-
+   current
+      |
+      v
+|a|b|c|a|b|c|
 ```
 
 ---
