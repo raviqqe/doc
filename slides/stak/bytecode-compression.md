@@ -58,4 +58,7 @@ December 14, 2025
 
 ---
 
-## Foo
+## Future work
+
+- foo
+- foo
