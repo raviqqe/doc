@@ -47,7 +47,7 @@ February 7, 2026
 
 # Vectors in R7RS
 
-- Two vector types are defined in R7RS; `vector` and `byte-vector`
+- Two vector types are defined in R7RS; `vector` and `byte-vector`.
 - Their operations seem to expect the _raw_ vectors.
   - `vector-set!`: destructive update of a vector element.
   - `vector-copy!`: destructive copy of elements from another vector.
