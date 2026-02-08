@@ -9,8 +9,10 @@ February 7, 2026
 # Contents
 
 - Stak Scheme
-- `eval` in R7RS
-- Implementation in Stak Scheme
+- Vectors in R7RS
+- Stak Scheme
+  - Design options
+  - Implementation
 - Future work
 
 ---
