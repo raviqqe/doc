@@ -67,6 +67,7 @@ Stak Scheme took the radix tree of option 2.
 
 - Baseline: `list`
   - `list-ref` and `list-set!`
+- Branching factor: 64
 - Relative speed-up
 
 | Elements | vector |
