@@ -43,11 +43,23 @@ February 7, 2026
 
 # Options in Stak Scheme
 
-1. Implementing raw vectors
+1. Raw vectors
    - We implement the raw vectors as real contiguous vectors in heap.
    - This is a bit difficult due to the current design of the VM focused in simplicity.
-2. Implementing radix vectors
-3. Implementing vectors
+2. Radix vector
+   - A vector based on the radix tree.
+   - Each node can be a raw vector.
+3. RRB vector
+   - The state of the art data structure of persistent vectors
+   - Every operation is `O(log(n))`.
+     - Including concatenation, splits, and slicing.
+   - Relaxed nodes require index arrays.
+
+---
+
+# Options in Stak Scheme
+
+Stak Scheme took the radix tree of option 2.
 
 ---
 
