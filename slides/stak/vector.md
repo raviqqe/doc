@@ -63,6 +63,23 @@ Stak Scheme took the radix tree of option 2.
 
 ---
 
+# Is it actually fast???
+
+- Baseline: `list`
+  - `list-ref` and `list-set!`
+- Relative speed-up
+
+| Elements | vector |
+| -------: | -----: |
+|       10 |   0.99 |
+|      100 |   1.00 |
+|     1000 |   0.96 |
+|     2000 |   0.98 |
+|     5000 |   1.52 |
+|    10000 |   3.50 |
+
+---
+
 # Future work
 
 - Soft float
