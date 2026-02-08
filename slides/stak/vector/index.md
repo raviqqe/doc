@@ -80,7 +80,7 @@ Stak Scheme implements the radix tree.
 
 ## Why?
 
-- RRB vectors' optimality is very attractive.
+- RRB vector's optimality is very attractive.
 - But with the costs of the algorithm and data structure complexity.
   - Especially, the additional index arrays do not seem to fit in the design of the VM.
   - In the worst case, it doubles the memory usage of vectors.
