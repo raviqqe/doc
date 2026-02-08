@@ -89,9 +89,7 @@ Stak Scheme implements the radix tree.
 
 # Radix tree
 
-```mermaid
-
-```
+![Radix tree](radix-tree.svg)
 
 ---
 
