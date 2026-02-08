@@ -61,6 +61,13 @@ February 7, 2026
 
 Stak Scheme took the radix tree of option 2.
 
+## Why?
+
+- RRB vectors' optimality is very attractive.
+- But with the costs of the algorithm and data structure complexity.
+  - Especially, the additional index arrays do not seem to fit in the design of the VM.
+  - In the worst case, it doubles the memory usage of vectors.
+
 ---
 
 # Is it actually fast???
