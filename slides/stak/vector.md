@@ -15,7 +15,7 @@ February 7, 2026
 
 - Stak Scheme
 - Vectors in R7RS
-- Stak Scheme
+- In Stak Scheme
   - Design options
   - Implementation
 - Future work
