@@ -43,6 +43,8 @@ February 7, 2026
 - Element access is `O(n)`.
 - 😃
 
+---
+
 # Vectors in R7RS
 
 - Two vector types are defined in R7RS; `vector` and `byte-vector`
