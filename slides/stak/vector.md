@@ -79,7 +79,7 @@ Stak Scheme took the radix tree of option 2.
 - A slightly high branching factor of 64.
   - 32 is a popular choice for the cache line size?
   - But anyway, nodes are lists in Stak Scheme...
-- Practically, the complexity of element access is `O(1)`.
+- The complexity of element access is `O(1)` practically.
 
 ---
 
