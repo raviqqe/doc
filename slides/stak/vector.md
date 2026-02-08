@@ -37,6 +37,7 @@ February 7, 2026
   - `vector-set!`: destructive update of a vector element.
   - `vector-copy!`: destructive copy of elements from another vector.
   - `vector-append`: persistent appending of elements in multiple vectors.
+    - Allocates a **new** vector!
 
 ---
 
