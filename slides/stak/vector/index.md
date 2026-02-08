@@ -1,3 +1,8 @@
+<!--
+theme: default
+class: invert
+-->
+
 # Vectors in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
@@ -10,8 +15,8 @@ February 7, 2026
 
 - Stak Scheme
 - Vectors in R7RS
-- Stak Scheme
-  - Design options
+- In Stak Scheme
+  - Design choices
   - Implementation
 - Future work
 
@@ -22,7 +27,7 @@ February 7, 2026
 - A bytecode compiler and virtual machine (VM) for Scheme
   - The compiler is written in Scheme.
   - The VM is written in Rust.
-- It aims to support R7RS-small.
+- It supports the R7RS-small standard.
 
 ---
 
@@ -36,22 +41,24 @@ February 7, 2026
 
 - The previous implementation of vectors in Stak Scheme was based on lists.
 - Element access is `O(n)`.
-- 😃
+  - 😃
+
+---
 
 # Vectors in R7RS
 
-- Two vector types are defined in R7RS; `vector` and `byte-vector`
+- Two vector types are defined in R7RS; `vector` and `byte-vector`.
 - Their operations seem to expect the _raw_ vectors.
   - `vector-set!`: destructive update of a vector element.
   - `vector-copy!`: destructive copy of elements from another vector.
   - `vector-append`: persistent appending of elements in multiple vectors.
     - Allocates a **new** vector!
 - The situation is similar for `byte-vector`.
-- The philosophy appears to be providing very basic data structures but not high level abstractions.
+- The philosophy appears to be providing very basic data structures but not high level abstractions. 🤔
 
 ---
 
-# Options in Stak Scheme
+# Choices in Stak Scheme
 
 1. Raw vectors
    - We implement the raw vectors as real contiguous vectors in heap.
@@ -67,16 +74,22 @@ February 7, 2026
 
 ---
 
-# Options in Stak Scheme
+# Choices in Stak Scheme
 
-Stak Scheme took the radix tree of option 2.
+Stak Scheme implements the radix tree.
 
 ## Why?
 
-- RRB vectors' optimality is very attractive.
+- RRB vector's optimality is very attractive.
 - But with the costs of the algorithm and data structure complexity.
   - Especially, the additional index arrays do not seem to fit in the design of the VM.
   - In the worst case, it doubles the memory usage of vectors.
+
+---
+
+# Radix tree
+
+![Radix tree](radix-tree.svg)
 
 ---
 
@@ -91,20 +104,19 @@ Stak Scheme took the radix tree of option 2.
 
 ---
 
-# Is it actually fast???
+# Performance
 
 - Baseline: `list`
   - `make-list`, `list-ref`, and `list-set!`
 - Relative speed-up
 
-| Elements | vector |
-| -------: | -----: |
-|       10 |   0.99 |
-|      100 |   1.00 |
-|     1000 |   0.96 |
-|     2000 |   0.98 |
-|     5000 |   1.52 |
-|    10000 |   3.50 |
+| Elements | `vector` |
+| -------: | -------: |
+|       10 |     0.99 |
+|      100 |     1.00 |
+|     1000 |     0.96 |
+|     5000 |     1.52 |
+|    10000 |     3.50 |
 
 ---
 
@@ -117,4 +129,4 @@ Stak Scheme took the radix tree of option 2.
 
 # Summary
 
-- Building `eval` is fun!
+- Implementing `vector` is fun!
