@@ -66,7 +66,7 @@ Stak Scheme took the radix tree of option 2.
 # Is it actually fast???
 
 - Baseline: `list`
-  - `list-ref` and `list-set!`
+  - `make-list`, `list-ref`, and `list-set!`
 - Branching factor: 64
 - Relative speed-up
 
