@@ -32,6 +32,12 @@ February 7, 2026
 
 ---
 
+# Background
+
+- The previous implementation of vectors in Stak Scheme was based on lists.
+- Element access is `O(n)`.
+- 😃
+
 # Vectors in R7RS
 
 - Two vector types are defined in R7RS; `vector` and `byte-vector`
