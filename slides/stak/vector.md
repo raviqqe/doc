@@ -41,7 +41,7 @@ February 7, 2026
 
 - The previous implementation of vectors in Stak Scheme was based on lists.
 - Element access is `O(n)`.
-- 😃
+  - 😃
 
 ---
 
