@@ -131,4 +131,4 @@ Stak Scheme implements the radix tree.
 
 # Summary
 
-- Building `eval` is fun!
+- Implementing `vector` is fun!
