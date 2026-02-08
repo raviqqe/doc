@@ -1,8 +1,8 @@
-# `eval` in Stak Scheme
+# Vectors in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
 
-May 12, 2024
+February 7, 2026
 
 ---
 
@@ -26,56 +26,28 @@ May 12, 2024
 
 # Progress
 
-- **The `eval` procedure**
-  - Only procedures available
-  - No macro support yet
-- The `stak-profile` command
-  - Traces and profiles Stak Scheme codes.
+- `O(log(n))` vectors
 
 ---
 
-# `eval` in R7RS
+# Vectors in R7RS
 
-- The `eval` procedure evaluates an S-expression.
-- Only global bindings in a given environment are accessible.
+- Two vector types are defined in R7RS; `vector` and `byte-vector`
+- Their operations seem to expect the _raw_ vectors.
 
 ```scheme
 (eval <expr-or-def> <environment>)
 ```
 
-## Example
-
-```scheme
-(import (scheme base) (scheme eval))
-
-(eval
-  '(display "Hello, world!")
-  (environment '(scheme write)))
-```
-
 ---
 
-# Environments in R7RS
+# Options in Stak Scheme
 
-- `(environment <specifier> ...)`
-  - Imports immutable environments of specifiers.
-  - Normal libraries (e.g. `(scheme base)` and `(scheme write)`) can be used for the specifiers.
-- `(interactive-environment)`
-  - A mutable environment for REPL
-
----
-
-# Implementation in Stak Scheme
-
-- The compiler injects library and macro information built in a compiler into target codes.
-  - `($$libraries)` and `($$macros)` primitives
-- Keeps portability of the compiler.
-  - The other Scheme implementation can be used to run the compiler.
-- Duplicates codes related to compilation and macro expansion in a `(scheme eval)` library.
-
----
-
-# Demo
+1. Implementing raw vectors
+   - We implement the raw vectors as real contiguous vectors in heap.
+   - This is a bit difficult due to the current design of the VM focused in simplicity.
+2. Implementing radix vectors
+3. Implementing vectors
 
 ---
 
