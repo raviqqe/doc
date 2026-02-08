@@ -106,19 +106,19 @@ Stak Scheme implements the radix tree.
 
 ---
 
-# Is it actually fast???
+# Performance
 
 - Baseline: `list`
   - `make-list`, `list-ref`, and `list-set!`
 - Relative speed-up
 
-| Elements | vector |
-| -------: | -----: |
-|       10 |   0.99 |
-|      100 |   1.00 |
-|     1000 |   0.96 |
-|     5000 |   1.52 |
-|    10000 |   3.50 |
+| Elements | `vector` |
+| -------: | -------: |
+|       10 |     0.99 |
+|      100 |     1.00 |
+|     1000 |     0.96 |
+|     5000 |     1.52 |
+|    10000 |     3.50 |
 
 ---
 
