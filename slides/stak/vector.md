@@ -1,3 +1,8 @@
+<!--
+theme: default
+class: invert
+-->
+
 # Vectors in Stak Scheme
 
 [@raviqqe](https://github.com/raviqqe)
