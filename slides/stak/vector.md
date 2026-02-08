@@ -16,7 +16,7 @@ February 7, 2026
 - Stak Scheme
 - Vectors in R7RS
 - In Stak Scheme
-  - Design options
+  - Design choices
   - Implementation
 - Future work
 
@@ -58,7 +58,7 @@ February 7, 2026
 
 ---
 
-# Options in Stak Scheme
+# Choices in Stak Scheme
 
 1. Raw vectors
    - We implement the raw vectors as real contiguous vectors in heap.
@@ -74,9 +74,9 @@ February 7, 2026
 
 ---
 
-# Options in Stak Scheme
+# Choices in Stak Scheme
 
-Stak Scheme implements the radix tree (option 2).
+Stak Scheme implements the radix tree.
 
 ## Why?
 
