@@ -72,11 +72,19 @@ Stak Scheme took the radix tree of option 2.
 
 ---
 
+# Implementation
+
+- Each node is a list of elements.
+  - The VM of Stak Scheme does not have any contiguous memory block but only cons cells.
+- A slightly high branching factor of 64.
+  - 32 is a popular choice for the cache line size?
+
+---
+
 # Is it actually fast???
 
 - Baseline: `list`
   - `make-list`, `list-ref`, and `list-set!`
-- Branching factor: 64
 - Relative speed-up
 
 | Elements | vector |
