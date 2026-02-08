@@ -87,6 +87,14 @@ Stak Scheme implements the radix tree.
 
 ---
 
+# Radix tree
+
+```mermaid
+
+```
+
+---
+
 # Implementation
 
 - Each node is a list of elements.
