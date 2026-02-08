@@ -39,6 +39,7 @@ February 7, 2026
   - `vector-append`: persistent appending of elements in multiple vectors.
     - Allocates a **new** vector!
 - The situation is similar for `byte-vector`.
+- The philosophy appears to be providing very basic data structures but not high level abstractions.
 
 ---
 
