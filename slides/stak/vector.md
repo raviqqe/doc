@@ -38,6 +38,7 @@ February 7, 2026
   - `vector-copy!`: destructive copy of elements from another vector.
   - `vector-append`: persistent appending of elements in multiple vectors.
     - Allocates a **new** vector!
+- The situation is similar for `byte-vector`.
 
 ---
 
