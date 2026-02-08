@@ -76,7 +76,7 @@ February 7, 2026
 
 # Options in Stak Scheme
 
-Stak Scheme took the radix tree of option 2.
+Stak Scheme implements the radix tree (option 2).
 
 ## Why?
 
