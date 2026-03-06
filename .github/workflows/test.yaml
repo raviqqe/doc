@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - run: npx prettier --check '**/*.md'
+      - run: pnpx prettier --check '**/*.md'
   tex_format:
     runs-on: ubuntu-latest
     steps:
