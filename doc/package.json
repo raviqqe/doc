@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/node": "^25.0.6",
     "es-toolkit": "^1.43.0",
-    "playwright": "^1.57.0",
+    "playwright": "^1.58.2",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "rehype-autolink-headings": "^7.1.0",
