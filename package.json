@@ -10,7 +10,7 @@
     "build:slides:pdf": "node --run marp -- --pdf && tools/move_index_pdf.sh",
     "build:tex": "tools/build_tex.sh",
     "lint": "biome ci",
-    "marp": "docker run --rm -v $PWD:/home/marp/app/ marpteam/marp-cli --allow-local-files --input-dir slides --parallel",
+    "marp": "docker run --rm -v $PWD:/home/marp/app/ -e MARP_USER=$(id -u):$(id -g) marpteam/marp-cli --allow-local-files --input-dir slides --parallel",
     "marp:serve": "node --run marp -- --server"
   },
   "devDependencies": {
