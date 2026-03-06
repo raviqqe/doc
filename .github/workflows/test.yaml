@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - run: pnpx oxfmt --check '**/*.md'
+      - run: npx oxfmt --check '**/*.md'
   tex_format:
     runs-on: ubuntu-latest
     steps:
