@@ -12,8 +12,8 @@ importers:
         specifier: ^2.4.6
         version: 2.4.6
       '@marp-team/marp-cli':
-        specifier: ^4.2.3
-        version: 4.2.3(typescript@5.9.3)
+        specifier: ^4.3.0
+        version: 4.3.0(typescript@5.9.3)
       '@mermaid-js/mermaid-cli':
         specifier: ^11.12.0
         version: 11.12.0(puppeteer@24.39.1(typescript@5.9.3))(yaml@2.8.1)
@@ -637,8 +637,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@marp-team/marp-cli@4.2.3':
-    resolution: {integrity: sha512-yfEIkF7mlumg8CVV5m/UkLEDkW/ayM/SD6Bo8fbAvdscBQ/l9D44/aNFJsiqgNtjfktzpvRqjcBXNhWD0YTq5Q==}
+  '@marp-team/marp-cli@4.3.0':
+    resolution: {integrity: sha512-Ywqjk9eIV2pubzua7946JrvL8zk7G/74PvbsT/hxDjWJ7ox5gXL4PqLyF4KcvxQgtYT/WbkwDnNge4h+uNNy0g==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2095,12 +2095,12 @@ packages:
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
 
-  katex@0.16.22:
-    resolution: {integrity: sha512-XCHRdUw4lf3SKBaJe4EvgqIuWwkPSo9XoeO8GjQW94Bp7TWv9hNhzZjZ+OH9yf1UmLygb7DIT5GSFQiyt16zYg==}
-    hasBin: true
-
   katex@0.16.35:
     resolution: {integrity: sha512-S0+riEvy1CK4VKse1ivMff8gmabe/prY7sKB3njjhyoLLsNFDQYtKNgXrbWUggGDCJBz7Fctl5i8fLCESHXzSg==}
+    hasBin: true
+
+  katex@0.16.38:
+    resolution: {integrity: sha512-cjHooZUmIAUmDsHBN+1n8LaZdpmbj03LtYeYPyuYB7OuloiaeaV6N4LcfjcnHVzGWjVQmKrxxTrpDcmSzEZQwQ==}
     hasBin: true
 
   khroma@2.1.0:
@@ -2693,10 +2693,6 @@ packages:
   punycode.js@2.3.1:
     resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
     engines: {node: '>=6'}
-
-  puppeteer-core@24.38.0:
-    resolution: {integrity: sha512-zB3S/tksIhgi2gZRndUe07AudBz5SXOB7hqG0kEa9/YXWrGwlVlYm3tZtwKgfRftBzbmLQl5iwHkQQl04n/mWw==}
-    engines: {node: '>=18'}
 
   puppeteer-core@24.39.1:
     resolution: {integrity: sha512-AMqQIKoEhPS6CilDzw0Gd1brLri3emkC+1N2J6ZCCuY1Cglo56M63S0jOeBZDQlemOiRd686MYVMl9ELJBzN3A==}
@@ -3874,13 +3870,13 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@marp-team/marp-cli@4.2.3(typescript@5.9.3)':
+  '@marp-team/marp-cli@4.3.0(typescript@5.9.3)':
     dependencies:
       '@marp-team/marp-core': 4.3.0
       '@marp-team/marpit': 3.2.1
       chokidar: 4.0.3
       cosmiconfig: 9.0.1(typescript@5.9.3)
-      puppeteer-core: 24.38.0
+      puppeteer-core: 24.39.1
       serve-index: 1.9.2
       tmp: 0.2.5
       ws: 8.19.0
@@ -3899,7 +3895,7 @@ snapshots:
       '@marp-team/marpit': 3.2.1
       '@marp-team/marpit-svg-polyfill': 2.1.0(@marp-team/marpit@3.2.1)
       highlight.js: 11.11.1
-      katex: 0.16.35
+      katex: 0.16.38
       mathjax-full: 3.2.2
       postcss-selector-parser: 7.1.1
       xss: 1.0.15
@@ -5555,11 +5551,11 @@ snapshots:
 
   json-parse-even-better-errors@2.3.1: {}
 
-  katex@0.16.22:
+  katex@0.16.35:
     dependencies:
       commander: 8.3.0
 
-  katex@0.16.35:
+  katex@0.16.38:
     dependencies:
       commander: 8.3.0
 
@@ -5863,7 +5859,7 @@ snapshots:
       dagre-d3-es: 7.0.11
       dayjs: 1.11.18
       dompurify: 3.2.7
-      katex: 0.16.22
+      katex: 0.16.38
       khroma: 2.1.0
       lodash-es: 4.17.21
       marked: 15.0.12
@@ -6474,23 +6470,6 @@ snapshots:
       once: 1.4.0
 
   punycode.js@2.3.1: {}
-
-  puppeteer-core@24.38.0:
-    dependencies:
-      '@puppeteer/browsers': 2.13.0
-      chromium-bidi: 14.0.0(devtools-protocol@0.0.1581282)
-      debug: 4.4.3
-      devtools-protocol: 0.0.1581282
-      typed-query-selector: 2.12.1
-      webdriver-bidi-protocol: 0.4.1
-      ws: 8.19.0
-    transitivePeerDependencies:
-      - bare-abort-controller
-      - bare-buffer
-      - bufferutil
-      - react-native-b4a
-      - supports-color
-      - utf-8-validate
 
   puppeteer-core@24.39.1:
     dependencies:
