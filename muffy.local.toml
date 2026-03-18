@@ -1,5 +1,5 @@
 extend = "muffy.toml"
 
 [sites.main]
-roots = ["http://localhost:4321/muffy"]
+roots = ["http://localhost:4321/doc"]
 schemes = ["http"]
