@@ -33,7 +33,7 @@ jobs:
           lfs: true
       - uses: ./.github/actions/setup
       - run: node --run build:image
-      - uses: raviqqe/markdown-link-check@f0dffa8d9e25af28aef34fa60088907525c96597 # v1.0.3
+      - uses: raviqqe/markdown-link-check@7887babb24c34c0832a82f919da10792c2bed096 # v1.0.4
   spell_check:
     runs-on: ubuntu-latest
     steps:
