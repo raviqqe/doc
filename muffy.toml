@@ -36,6 +36,7 @@ ignored_elements = [
   "circle",
   "foreignObject",
   "path",
+  "picture",
   "svg",
 ]
 
