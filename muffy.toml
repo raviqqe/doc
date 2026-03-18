@@ -25,7 +25,7 @@ svg = {}
 css = true
 
 [sites.default.validation.html]
-ignored_attributes = ["align", "data-.*"]
+ignored_attributes = ["data-.*"]
 ignored_elements = [
   "astro-island",
   "site-search",
