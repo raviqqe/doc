@@ -14,6 +14,9 @@ jobs:
       - uses: ./.github/actions/setup
       - run: node --run build
       - run: node --run lint
+      - uses: raviqqe/muffy@696f329a15a0e86795cdcdb8aff79fa82cd05271 # v0.3.10
+        with:
+          config: muffy.local.toml
   markdown_format:
     runs-on: ubuntu-latest
     steps:
