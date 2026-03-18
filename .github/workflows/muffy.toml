@@ -1,0 +1,97 @@
+[cache]
+persistent = true
+
+[sites.default]
+roots = []
+max_redirects = 8
+schemes = ["https"]
+statuses = [200]
+timeout = "30s"
+
+[sites.default.cache]
+max_age = "5m"
+
+[sites.default.retry]
+count = 3
+factor = 2
+interval = { initial = "500ms", cap = "10s" }
+statuses = [408, 502, 503, 504]
+
+[sites.default.headers]
+user-agent = "Muffy/0.2.0"
+
+[sites.default.validation]
+svg = {}
+css = true
+
+[sites.default.validation.html]
+ignored_attributes = ["align", "data-.*", "sl-.*"]
+ignored_elements = [
+  "astro-island",
+  "mobile-starlight-.*",
+  "site-search",
+  "sl-.*",
+  "starlight-.*",
+  # TODO Fix HTML elements not well-formed.
+  "div",
+  "style",
+  # TODO Allow inlined SVG elements.
+  "circle",
+  "path",
+  "svg",
+]
+
+[sites.external]
+extend = "default"
+
+[sites.external.cache]
+max_age = "1h"
+
+[sites.main]
+extend = "default"
+roots = [
+  "https://raviqqe.com/",
+  "https://raviqqe.com/muffet",
+  "https://raviqqe.com/muffy",
+  "https://raviqqe.com/stak",
+]
+recurse = true
+
+[sites.crates_io]
+extend = "external"
+roots = ["https://crates.io/"]
+statuses = [200, 403, 404]
+
+[sites.github]
+extend = "external"
+roots = ["https://github.com/"]
+concurrency = 64
+
+[sites.github.rate_limit]
+supply = 10
+window = "1s"
+
+[sites.flaky]
+extend = "external"
+roots = ["https://gitlab.haskell.org/", "https://zsh.sourceforge.io/"]
+
+[sites.flaky.retry]
+count = 5
+
+[sites.forbidden]
+extend = "external"
+roots = [
+  "https://armoredcore.fandom.com/",
+  "https://dragonquest.fandom.com/",
+  "https://en.wikipedia.org/wiki/",
+]
+statuses = [200, 403]
+
+[sites.ignored]
+roots = [
+  "https://aclanthology.org/",
+  "https://goreportcard.com/",
+  "https://r7rs.org/",
+  "https://www.gnu.org/software/guile/",
+]
+ignore = true
