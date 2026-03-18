@@ -11,19 +11,6 @@ permissions:
 concurrency:
   group: release-${{ github.ref }}
   cancel-in-progress: true
-env:
-  MUFFET_OPTIONS: >
-    --accepted-status-codes 200,202,403,429
-    --buffer-size 65536
-    --exclude github.com/raviqqe/stak/blob
-    --exclude raviqqe.com/stak
-    --exclude singapore-2025.pdf
-    --exclude tab=readme-ov-file
-    --exclude twitter.com
-    --exclude www.gnu.org/software/.*
-    --header accept:text/html,*/*
-    --header user-agent:muffet
-    --max-retries 10
 jobs:
   release_build:
     runs-on: ubuntu-latest
