@@ -84,5 +84,10 @@ roots = ["https://en.wikipedia.org/wiki/"]
 statuses = [200, 403]
 
 [sites.ignored]
-roots = ["https://aclanthology.org/", "https://r7rs.org/", "http://users.cecs.anu.edu.au/"]
+roots = [
+  "https://aclanthology.org/",
+  "http://jcsites.juniata.ed",
+  "https://r7rs.org/",
+  "http://users.cecs.anu.edu.au/",
+]
 ignore = true
