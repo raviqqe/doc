@@ -29,9 +29,6 @@ ignored_attributes = ["data-.*"]
 ignored_elements = [
   "astro-island",
   "site-search",
-  # TODO Fix HTML elements not well-formed.
-  "div",
-  "style",
   # TODO Allow inlined SVG elements.
   "circle",
   "foreignObject",
