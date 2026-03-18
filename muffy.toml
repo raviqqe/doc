@@ -72,18 +72,9 @@ count = 5
 
 [sites.forbidden]
 extend = "external"
-roots = [
-  "https://armoredcore.fandom.com/",
-  "https://dragonquest.fandom.com/",
-  "https://en.wikipedia.org/wiki/",
-]
+roots = ["https://en.wikipedia.org/wiki/"]
 statuses = [200, 403]
 
 [sites.ignored]
-roots = [
-  "https://aclanthology.org/",
-  "https://goreportcard.com/",
-  "https://r7rs.org/",
-  "https://www.gnu.org/software/guile/",
-]
+roots = ["https://aclanthology.org/", "https://r7rs.org/"]
 ignore = true
