@@ -91,7 +91,7 @@ statuses = [200, 403]
 [sites.ignored]
 roots = [
   "https://aclanthology.org/",
-  "http://jcsites.juniata.ed",
+  "http://jcsites.juniata.edu/",
   "https://r7rs.org/",
   "http://users.cecs.anu.edu.au/",
 ]
