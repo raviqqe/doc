@@ -71,6 +71,11 @@ extend = "external"
 roots = ["https://algo-logic.info/"]
 fragments_ignored = true
 
+[sites.semantic_scholar]
+extend = "external"
+roots = ["https://www.semanticscholar.org"]
+statuses = [200, 202]
+
 [sites.flaky]
 extend = "external"
 roots = ["https://gitlab.haskell.org/"]
