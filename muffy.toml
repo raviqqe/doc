@@ -34,6 +34,7 @@ ignored_elements = [
   "style",
   # TODO Allow inlined SVG elements.
   "circle",
+  "foreignObject",
   "path",
   "svg",
 ]
@@ -58,10 +59,16 @@ statuses = [200, 403, 404]
 extend = "external"
 roots = ["https://github.com/"]
 concurrency = 64
+fragments_ignored = true
 
 [sites.github.rate_limit]
 supply = 10
 window = "1s"
+
+[sites.algo_logic]
+extend = "external"
+roots = ["https://algo-logic.info/"]
+fragments_ignored = true
 
 [sites.flaky]
 extend = "external"
