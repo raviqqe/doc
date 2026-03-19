@@ -1,0 +1,96 @@
+[cache]
+persistent = true
+
+[sites.default]
+roots = []
+max_redirects = 8
+schemes = ["https"]
+statuses = [200]
+timeout = "30s"
+
+[sites.default.cache]
+max_age = "5m"
+
+[sites.default.retry]
+count = 3
+factor = 2
+interval = { initial = "500ms", cap = "10s" }
+statuses = [408, 500, 502, 503, 504]
+
+[sites.default.headers]
+user-agent = "Muffy/0.3.0"
+
+[sites.default.validation]
+svg = {}
+css = true
+
+[sites.default.validation.html]
+ignored_attributes = ["data-.*"]
+ignored_elements = [
+  "astro-island",
+  "site-search",
+  # TODO Allow inlined SVG elements.
+  "circle",
+  "foreignObject",
+  "path",
+  "picture",
+  "svg",
+]
+
+[sites.external]
+extend = "default"
+
+[sites.external.cache]
+max_age = "1h"
+
+[sites.main]
+extend = "default"
+roots = ["https://raviqqe.com/doc"]
+recurse = true
+
+[sites.crates_io]
+extend = "external"
+roots = ["https://crates.io/"]
+statuses = [200, 403, 404]
+
+[sites.github]
+extend = "external"
+roots = ["https://github.com/"]
+concurrency = 64
+fragments_ignored = true
+
+[sites.github.rate_limit]
+supply = 10
+window = "1s"
+
+[sites.algo_logic]
+extend = "external"
+roots = ["https://algo-logic.info/"]
+fragments_ignored = true
+
+[sites.semantic_scholar]
+extend = "external"
+roots = ["https://www.semanticscholar.org"]
+statuses = [200, 202]
+
+[sites.flaky]
+extend = "external"
+roots = ["https://gitlab.haskell.org/"]
+
+[sites.flaky.retry]
+count = 5
+
+[sites.forbidden]
+extend = "external"
+roots = [
+  "https://en.wikipedia.org/wiki/",
+  "https://dl.acm.org/",
+  "https://jcsites.juniata.edu/",
+  "https://www.npmjs.com/",
+  "https://www.researchgate.net/",
+]
+statuses = [200, 403]
+
+[sites.ignored]
+roots = ["https://aclanthology.org/", "https://r7rs.org/"]
+ignore = true
