@@ -18,7 +18,7 @@ const writeToc = async (directory: string, component: string) =>
                 .values()
                 .filter((path) => !excludedPattern.test(path))
                 .map(async (path) => {
-                  const basePath = relative("..", path);
+                  const basePath = join("/doc", relative("..", path));
                   const htmlPath =
                     basename(basePath) === "index.md"
                       ? dirname(basePath)
