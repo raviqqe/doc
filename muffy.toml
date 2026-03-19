@@ -82,7 +82,12 @@ count = 5
 
 [sites.forbidden]
 extend = "external"
-roots = ["https://en.wikipedia.org/wiki/", "https://dl.acm.org/", "https://jcsites.juniata.edu/"]
+roots = [
+  "https://en.wikipedia.org/wiki/",
+  "https://dl.acm.org/",
+  "https://jcsites.juniata.edu/",
+  "https://www.researchgate.net/",
+]
 statuses = [200, 403]
 
 [sites.ignored]
