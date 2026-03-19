@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "astro dev",
-    "build": "node --run build:notes && node --run build:posts && node --run build:toc && playwright install && astro build ${LOCALHOST:+--site http://localhost:4321/doc}",
+    "build": "node --run build:notes && node --run build:posts && node --run build:toc && playwright install && astro build",
     "build:notes": "node src/scripts/build-directory.ts notes",
     "build:posts": "node src/scripts/build-directory.ts posts",
     "build:toc": "node src/scripts/build-table-of-contents.ts",
