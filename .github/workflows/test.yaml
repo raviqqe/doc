@@ -12,7 +12,7 @@ jobs:
         with:
           lfs: true
       - uses: ./.github/actions/setup
-      - run: node --run build --site http://localhost:4321/doc
+      - run: node --run build -- --site http://localhost:4321/doc
       - run: node --run lint
       - run: node --run preview &
         working-directory: doc
