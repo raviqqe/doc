@@ -86,6 +86,7 @@ roots = [
   "https://en.wikipedia.org/wiki/",
   "https://dl.acm.org/",
   "https://jcsites.juniata.edu/",
+  "https://www.npmjs.com/",
   "https://www.researchgate.net/",
 ]
 statuses = [200, 403]
