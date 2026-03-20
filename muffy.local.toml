@@ -4,6 +4,10 @@ extend = "muffy.toml"
 roots = ["http://localhost:4321/doc"]
 schemes = ["http"]
 
+[sites.slides]
+roots = ["http://localhost:4321/doc/slides/"]
+ignore = true
+
 [sites.icon]
-roots = ["http://localhost:4321/icon.svg", "http://localhost:4321/doc/slides/"]
+roots = ["http://localhost:4321/icon.svg"]
 statuses = [404]
