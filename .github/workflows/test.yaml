@@ -12,14 +12,13 @@ jobs:
         with:
           lfs: true
       - uses: ./.github/actions/setup
-      - run: node --run build
+      - run: node --run build -- --site http://localhost:4321/doc
       - run: node --run lint
-      # TODO Test the website locally.
-      # - run: node --run preview &
-      #   working-directory: doc
-      # - uses: raviqqe/muffy@fa911c6da37ae078d436c255fa229cea107bbf89 # v0.3.11
-      #   with:
-      #     config: muffy.local.toml
+      - run: node --run preview &
+        working-directory: doc
+      - uses: raviqqe/muffy@fa911c6da37ae078d436c255fa229cea107bbf89 # v0.3.11
+        with:
+          config: muffy.local.toml
   markdown_format:
     runs-on: ubuntu-latest
     steps:
