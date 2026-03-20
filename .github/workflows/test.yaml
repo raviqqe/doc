@@ -14,9 +14,6 @@ jobs:
       - uses: ./.github/actions/setup
       - run: node --run build -- --site http://localhost:4321/doc
       - run: node --run lint
-      - run: |
-          rm doc/public/*
-          cp -r papers slides doc/public
       - run: node --run preview &
         working-directory: doc
       - uses: raviqqe/muffy@fa911c6da37ae078d436c255fa229cea107bbf89 # v0.3.11
