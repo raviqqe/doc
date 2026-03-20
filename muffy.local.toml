@@ -5,5 +5,5 @@ roots = ["http://localhost:4321/doc"]
 schemes = ["http"]
 
 [sites.icon]
-roots = ["http://localhost:4321/icon.svg"]
+roots = ["http://localhost:4321/icon.svg", "http://localhost:4321/doc/slides/"]
 statuses = [404]
