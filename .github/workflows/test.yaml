@@ -15,7 +15,7 @@ jobs:
       - run: node --run build -- --site http://localhost:4321/doc
       - run: node --run lint
       - run: |
-          rm public/*
+          rm doc/public/*
           cp -r papers slides doc/public
       - run: node --run preview &
         working-directory: doc
