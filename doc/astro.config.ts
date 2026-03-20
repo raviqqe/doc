@@ -34,4 +34,5 @@ export default defineConfig({
   },
   prefetch: true,
   site: "https://raviqqe.github.io/doc",
+  trailingSlash: "always",
 });
