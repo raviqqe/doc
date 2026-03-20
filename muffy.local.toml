@@ -3,3 +3,7 @@ extend = "muffy.toml"
 [sites.main]
 roots = ["http://localhost:4321/doc"]
 schemes = ["http"]
+
+[sites.icon]
+roots = ["http://localhost:4321/doc/icon.svg"]
+ignore = true
