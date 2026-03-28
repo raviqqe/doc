@@ -1,6 +1,6 @@
 # Implementing the Perceus reference counting GC
 
-![](https://raviqqe.s3.amazonaws.com/doc/pen/perceus/arceus.jpg)
+![Arceus](arceus.jpeg)
 
 Reference counting (RC) has rather been a minor party to the other garbage collection (GC) algorithms in functional programming in the last decades as, for example, [OCaml][ocaml] and [Haskell][haskell] use non-RC GC. However, several recent papers, such as [Counting Immutable Beans: Reference Counting Optimized for Purely Functional Programming][immutable beans] and [Perceus: Garbage Free Reference Counting with Reuse][perceus], showed the efficiency of highly optimized RC GC in functional languages with sacrifice or restriction of some language features like circular references. The latter paper introduced an efficient RC GC algorithm called Perceus which is basically _all-in-one_ RC.
 
