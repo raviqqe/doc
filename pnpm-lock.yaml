@@ -13,16 +13,16 @@ importers:
         version: 2.4.12
       '@marp-team/marp-cli':
         specifier: ^4.3.1
-        version: 4.3.1(typescript@6.0.2)
+        version: 4.3.1(typescript@6.0.3)
       '@mermaid-js/mermaid-cli':
         specifier: ^11.12.0
-        version: 11.12.0(puppeteer@24.41.0(typescript@6.0.2))(yaml@2.8.1)
+        version: 11.12.0(puppeteer@24.41.0(typescript@6.0.3))(yaml@2.8.1)
       '@raviqqe/biome-config':
         specifier: ^2.0.26
         version: 2.0.26(@biomejs/biome@2.4.12)
       puppeteer:
         specifier: ^24.41.0
-        version: 24.41.0(typescript@6.0.2)
+        version: 24.41.0(typescript@6.0.3)
       svgo:
         specifier: ^4.0.1
         version: 4.0.1
@@ -31,7 +31,7 @@ importers:
     dependencies:
       '@astrojs/mdx':
         specifier: ^5.0.3
-        version: 5.0.3(astro@6.1.7(@types/node@25.6.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@6.0.2)(yaml@2.8.1))
+        version: 5.0.3(astro@6.1.7(@types/node@25.6.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@6.0.3)(yaml@2.8.1))
       '@astrojs/sitemap':
         specifier: ^3.7.2
         version: 3.7.2
@@ -43,7 +43,7 @@ importers:
         version: 5.2.8
       astro:
         specifier: ^6.1.7
-        version: 6.1.7(@types/node@25.6.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@6.0.2)(yaml@2.8.1)
+        version: 6.1.7(@types/node@25.6.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@6.0.3)(yaml@2.8.1)
       rehype-mermaid:
         specifier: ^3.0.0
         version: 3.0.0(playwright@1.59.1)
@@ -70,8 +70,8 @@ importers:
         specifier: ^0.34.5
         version: 0.34.5
       typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
+        specifier: ^6.0.3
+        version: 6.0.3
 
 packages:
 
@@ -3130,8 +3130,8 @@ packages:
   typed-query-selector@2.12.1:
     resolution: {integrity: sha512-uzR+FzI8qrUEIu96oaeBJmd9E7CFEiQ3goA5qCVgc4s5llSubcfGHq9yUstZx/k4s9dXHVKsE35YWoFyvEqEHA==}
 
-  typescript@6.0.2:
-    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3484,12 +3484,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@5.0.3(astro@6.1.7(@types/node@25.6.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@6.0.2)(yaml@2.8.1))':
+  '@astrojs/mdx@5.0.3(astro@6.1.7(@types/node@25.6.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@6.0.3)(yaml@2.8.1))':
     dependencies:
       '@astrojs/markdown-remark': 7.1.0
       '@mdx-js/mdx': 3.1.1
       acorn: 8.16.0
-      astro: 6.1.7(@types/node@25.6.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@6.0.2)(yaml@2.8.1)
+      astro: 6.1.7(@types/node@25.6.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@6.0.3)(yaml@2.8.1)
       es-module-lexer: 2.0.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -3914,12 +3914,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@marp-team/marp-cli@4.3.1(typescript@6.0.2)':
+  '@marp-team/marp-cli@4.3.1(typescript@6.0.3)':
     dependencies:
       '@marp-team/marp-core': 4.3.0
       '@marp-team/marpit': 3.2.1
       chokidar: 4.0.3
-      cosmiconfig: 9.0.1(typescript@6.0.2)
+      cosmiconfig: 9.0.1(typescript@6.0.3)
       puppeteer-core: 24.39.1
       serve-index: 1.9.2
       tmp: 0.2.5
@@ -3989,14 +3989,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mermaid-js/mermaid-cli@11.12.0(puppeteer@24.41.0(typescript@6.0.2))(yaml@2.8.1)':
+  '@mermaid-js/mermaid-cli@11.12.0(puppeteer@24.41.0(typescript@6.0.3))(yaml@2.8.1)':
     dependencies:
       '@mermaid-js/mermaid-zenuml': 0.2.2(mermaid@11.12.3)(yaml@2.8.1)
       chalk: 5.6.2
       commander: 14.0.3
       import-meta-resolve: 4.2.0
       mermaid: 11.12.3
-      puppeteer: 24.41.0(typescript@6.0.2)
+      puppeteer: 24.41.0(typescript@6.0.3)
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/template'
@@ -4494,7 +4494,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro@6.1.7(@types/node@25.6.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@6.0.2)(yaml@2.8.1):
+  astro@6.1.7(@types/node@25.6.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@6.0.3)(yaml@2.8.1):
     dependencies:
       '@astrojs/compiler': 3.0.1
       '@astrojs/internal-helpers': 0.8.0
@@ -4539,7 +4539,7 @@ snapshots:
       tinyclip: 0.1.12
       tinyexec: 1.1.1
       tinyglobby: 0.2.16
-      tsconfck: 3.1.6(typescript@6.0.2)
+      tsconfck: 3.1.6(typescript@6.0.3)
       ultrahtml: 1.6.0
       unifont: 0.7.4
       unist-util-visit: 5.1.0
@@ -4786,14 +4786,14 @@ snapshots:
     dependencies:
       layout-base: 2.0.1
 
-  cosmiconfig@9.0.1(typescript@6.0.2):
+  cosmiconfig@9.0.1(typescript@6.0.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.1.1
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 6.0.2
+      typescript: 6.0.3
 
   crossws@0.3.5:
     dependencies:
@@ -6571,11 +6571,11 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer@24.41.0(typescript@6.0.2):
+  puppeteer@24.41.0(typescript@6.0.3):
     dependencies:
       '@puppeteer/browsers': 2.13.0
       chromium-bidi: 14.0.0(devtools-protocol@0.0.1595872)
-      cosmiconfig: 9.0.1(typescript@6.0.2)
+      cosmiconfig: 9.0.1(typescript@6.0.3)
       devtools-protocol: 0.0.1595872
       puppeteer-core: 24.41.0
       typed-query-selector: 2.12.1
@@ -7160,15 +7160,15 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsconfck@3.1.6(typescript@6.0.2):
+  tsconfck@3.1.6(typescript@6.0.3):
     optionalDependencies:
-      typescript: 6.0.2
+      typescript: 6.0.3
 
   tslib@2.8.1: {}
 
   typed-query-selector@2.12.1: {}
 
-  typescript@6.0.2: {}
+  typescript@6.0.3: {}
 
   uc.micro@2.1.0: {}
 
