@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
-    "es-toolkit": "^1.46.0",
+    "es-toolkit": "^1.46.1",
     "playwright": "^1.59.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
