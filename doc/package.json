@@ -15,7 +15,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@fontsource-variable/noto-sans": "^5.2.9",
     "@fontsource/ubuntu": "^5.2.7",
-    "astro": "^6.1.10",
+    "astro": "^6.2.0",
     "rehype-mermaid": "^3.0.0",
     "remark-toc": "^9.0.0"
   },
