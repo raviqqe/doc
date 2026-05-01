@@ -70,7 +70,7 @@ fragments_ignored = true
 
 [sites.semantic_scholar]
 extend = "external"
-roots = ["https://www.semanticscholar.org"]
+roots = ["https://infoscience.epfl.ch/", "https://www.semanticscholar.org/"]
 statuses = [200, 202]
 
 [sites.flaky]
