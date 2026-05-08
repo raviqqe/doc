@@ -45,7 +45,7 @@
 - [CPython](https://github.com/python/cpython)
 - [PyPy](https://www.pypy.org/)
 - [Cinder](https://github.com/facebookincubator/cinder)
-- [Mojo](https://www.modular.com/mojo)
+- [Mojo](https://mojolang.org/)
 
 ### Scheme
 
