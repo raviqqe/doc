@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: github-actions
     directories:
       - /
-      - /.github/actiokns/*
+      - /.github/actions/*
     schedule:
       interval: daily
   - package-ecosystem: gomod
