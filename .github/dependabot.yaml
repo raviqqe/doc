@@ -1,7 +1,9 @@
 version: 2
 updates:
   - package-ecosystem: github-actions
-    directory: /
+    directories:
+      - /
+      - /.github/actiokns/*
     schedule:
       interval: daily
   - package-ecosystem: gomod
