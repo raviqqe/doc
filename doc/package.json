@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.6",
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource-variable/noto-sans": "^5.2.9",
     "@fontsource/ubuntu": "^5.2.7",
-    "astro": "^6.3.7",
+    "astro": "^6.3.8",
     "rehype-mermaid": "^3.0.0",
     "remark-toc": "^9.0.0"
   },
