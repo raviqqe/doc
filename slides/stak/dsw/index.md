@@ -41,6 +41,7 @@ May 31, 2026
   - Scheme?
 - Spiritual successor of [Ribbit VM](https://github.com/udem-dlteam/ribbit)
   - More portable than the VM of Stak Scheme
+- DSW garbage collection
 
 ---
 
