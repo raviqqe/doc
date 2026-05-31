@@ -1,4 +1,4 @@
-# DSW mark-and-sweep GC
+# DSW algorithm
 
 [@raviqqe](https://github.com/raviqqe)
 
