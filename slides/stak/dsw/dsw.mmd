@@ -1,21 +1,29 @@
 flowchart TD
-  s0([mark]) --> i0["previous ← null<br/>current ← root"]
-  i0 --> r0["value ← get current"]
+  rt([root]) -.-> a
+  cur([current]):::red -.-> a
+  prev([previous]):::blue -.-> n0((nil))
 
-  r0 --> q0{value marked?}
+  subgraph a["cons A"]
+    direction LR
+    a0[car]
+    a1[cdr]
+  end
 
-  q0 -->|no| q1{value is pointer?}
-  q1 -->|yes| m0["descend:<br/>set current ← previous, marked<br/>previous ← current<br/>current ← value"]:::red
-  q1 -->|no| m1["mark leaf:<br/>set current ← value, marked"]
+  subgraph b["cons B"]
+    direction LR
+    b0[car]
+    b1[cdr]
+  end
 
-  q0 -->|yes| q2{current index even?}
-  q2 -->|yes| m2["car done:<br/>current ← cdr slot"]
-  q2 -->|no| q3{previous is pointer?}
+  subgraph c["cons C"]
+    direction LR
+    c0[car]
+    c1[cdr]
+  end
 
-  q3 -->|no| e0([done])
-  q3 -->|yes| m3["ascend:<br/>previous ← get previous<br/>set previous ← current - 1, marked<br/>current ← previous"]:::red
-
-  m0 --> r0
-  m1 --> r0
-  m2 --> r0
-  m3 --> r0
+  a0 --> b
+  a1 --> c
+  b0 --> d1(d1)
+  b1 --> d2(d2)
+  c0 --> d3(d3)
+  c1 --> n1((nil))

@@ -127,8 +127,6 @@ fn sweep(&mut self) -> Result<(), Error> {
 
 ---
 
-# Mark
-
 ![](dsw.svg)
 
 ---
