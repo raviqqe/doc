@@ -96,6 +96,7 @@ fn sweep(&mut self) -> Result<(), Error> {
 - The new VM project
   - JavaScript?
   - Lua?
+  - https://github.com/raviqqe/moco
 
 ---
 
