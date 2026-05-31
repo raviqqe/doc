@@ -50,6 +50,10 @@ May 31, 2026
 
 ---
 
+# Implementation
+
+---
+
 ## Mark
 
 ```rust
@@ -116,6 +120,12 @@ fn sweep(&mut self) -> Result<(), Error> {
     Ok(())
 }
 ```
+
+---
+
+# Mark
+
+![](dsw.svg)
 
 ---
 
