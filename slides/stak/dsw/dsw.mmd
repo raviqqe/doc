@@ -1,29 +1,27 @@
-flowchart TD
-  rt([root]) -.-> a
-  cur([current]):::red -.-> a
-  prev([previous]):::blue -.-> n0((nil))
+flowchart TB
+  current([current]) -.-> a
+  previous([previous]) -.-> n0((nil))
 
   subgraph a[" "]
     direction LR
-    a0[car]
-    a1[cdr]
+    a0[car]:::red
+    a1[cdr]:::blue
   end
 
   subgraph b[" "]
     direction LR
-    b0[car]
-    b1[cdr]
+    b0[car]:::red
+    b1[cdr]:::blue
   end
 
   subgraph c[" "]
     direction LR
-    c0[car]
-    c1[cdr]
+    c0[car]:::red
+    c1[cdr]:::blue
   end
 
   a0 --> b
   a1 --> c
-  b0 --> d1(d1)
-  b1 --> d2(d2)
-  c0 --> d3(d3)
-  c1 --> n1((nil))
+  b0 --> d1(cons)
+  b1 --> d2(cons)
+  c0 --> d3(cons)
