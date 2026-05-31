@@ -14,6 +14,25 @@ May 31, 2026
 
 ---
 
+# Moco VM
+
+- The new project I'm working on these days.
+- These days:
+
+  ```
+  Author: Yota Toyama <raviqqe@gmail.com>
+  Date:   Thu May 14 20:46:46 2026 -0700
+
+      Rename `vm` `machine` (#55)
+  ```
+
+- VM for multiple languages.
+- Spiritual successor of RVM
+  - More portable than the Stak Scheme VM.
+  - A wide range of host languages
+
+---
+
 # DSW algorithm
 
 - Deutsch-Schorr-Waite algorithm
