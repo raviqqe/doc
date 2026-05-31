@@ -1,0 +1,28 @@
+flowchart TB
+
+  subgraph a[" "]
+    direction LR
+    a0[car]:::red
+    a1[cdr]:::blue
+  end
+
+  subgraph b[" "]
+    direction LR
+    b0[car]:::red
+    b1[cdr]:::blue
+  end
+
+  previous([previous]) -.-> a1
+  current([current]) -.-> b1
+
+  subgraph c[" "]
+    direction LR
+    c0[car]:::red
+    c1[cdr]:::blue
+  end
+
+  a0 --> b
+  a1 --> c
+  b0 --> d1(cons)
+  b1 --> d2(cons)
+  c0 --> d3(cons)
