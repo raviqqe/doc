@@ -46,6 +46,7 @@ May 31, 2026
   - When I search "DSW garbage collection" in Google, I get local schedules of garbage collection...
 - It seems to be very minor.
 - The thread in Zulip: https://prog-lang-sys-ja.zulipchat.com/#narrow/channel/343500/topic/DSW.20algorithm
+- The subject of program verification (correctness, termination)
 
 ---
 
