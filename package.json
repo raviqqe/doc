@@ -18,7 +18,7 @@
     "@marp-team/marp-cli": "^4.4.0",
     "@mermaid-js/mermaid-cli": "^11.15.0",
     "@raviqqe/biome-config": "^2.0.26",
-    "puppeteer": "^25.0.4",
+    "puppeteer": "^25.1.0",
     "svgo": "^4.0.1"
   },
   "engines": {
