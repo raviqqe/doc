@@ -30,4 +30,4 @@ May 31, 2026
 
 # Summary
 
-- Building VM is fun!
+- Building GC is fun!
