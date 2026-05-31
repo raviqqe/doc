@@ -34,7 +34,7 @@ May 31, 2026
 
 - Host: Rust, Go, Assembly, etc.
 - Target: JavaScript, Lua, etc.
-  - Scheme???
+  - Scheme?
 - Spiritual successor of RVM
   - More portable than the Stak Scheme VM
 
