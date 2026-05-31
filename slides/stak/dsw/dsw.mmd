@@ -1,0 +1,21 @@
+flowchart TD
+  s0([mark]) --> i0["previous ← null<br/>current ← root"]
+  i0 --> r0["value ← get current"]
+
+  r0 --> q0{value marked?}
+
+  q0 -->|no| q1{value is pointer?}
+  q1 -->|yes| m0["descend:<br/>set current ← previous, marked<br/>previous ← current<br/>current ← value"]:::red
+  q1 -->|no| m1["mark leaf:<br/>set current ← value, marked"]
+
+  q0 -->|yes| q2{current index even?}
+  q2 -->|yes| m2["car done:<br/>current ← cdr slot"]
+  q2 -->|no| q3{previous is pointer?}
+
+  q3 -->|no| e0([done])
+  q3 -->|yes| m3["ascend:<br/>previous ← get previous<br/>set previous ← current - 1, marked<br/>current ← previous"]:::red
+
+  m0 --> r0
+  m1 --> r0
+  m2 --> r0
+  m3 --> r0
