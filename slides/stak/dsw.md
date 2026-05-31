@@ -35,7 +35,7 @@ May 31, 2026
 - Host: Rust, Go, Assembly, etc.
 - Target: JavaScript, Lua, etc.
   - Scheme?
-- Spiritual successor of RVM
+- Spiritual successor of [Ribbit VM](https://github.com/udem-dlteam/ribbit)
   - More portable than the Stak Scheme VM
 
 ---
