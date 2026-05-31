@@ -52,6 +52,7 @@ May 31, 2026
 - It seems to be very minor for the GC use.
   - The thread in Zulip: https://prog-lang-sys-ja.zulipchat.com/#narrow/channel/343500/topic/DSW.20algorithm
 - The subject of program verification (correctness, termination)
+- The algorithm keeps flipping pointer directions among objects back and forth.
 
 ---
 
