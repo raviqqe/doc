@@ -8,7 +8,7 @@ May 31, 2026
 
 # Contents
 
-- What I'm doing right now
+- What I'm doing these days
 - DSW algorithm
 - Future work
 
