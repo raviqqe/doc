@@ -36,7 +36,7 @@ May 31, 2026
 - Target: JavaScript, Lua, etc.
   - Scheme?
 - Spiritual successor of [Ribbit VM](https://github.com/udem-dlteam/ribbit)
-  - More portable than the Stak Scheme VM
+  - More portable than the VM of Stak Scheme
 
 ---
 
