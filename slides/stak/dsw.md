@@ -26,10 +26,11 @@ May 31, 2026
         Rename `vm` `machine` (#55)
     ```
 
-- VM for multiple languages.
+- VM for multiple host/target languages.
+  - Host: JavaScript, Lua, etc.
+  - Host: Rust, Go, Assembly, etc.
 - Spiritual successor of RVM
   - More portable than the Stak Scheme VM.
-  - A wide range of host languages
 
 ---
 
