@@ -44,8 +44,8 @@ May 31, 2026
 
 - Deutsch-Schorr-Waite algorithm
   - When I search "DSW garbage collection" in Google, I get local schedules of garbage collection...
-- It seems to be very minor.
-- The thread in Zulip: https://prog-lang-sys-ja.zulipchat.com/#narrow/channel/343500/topic/DSW.20algorithm
+- It seems to be very minor for the GC use.
+  - The thread in Zulip: https://prog-lang-sys-ja.zulipchat.com/#narrow/channel/343500/topic/DSW.20algorithm
 - The subject of program verification (correctness, termination)
 
 ---
