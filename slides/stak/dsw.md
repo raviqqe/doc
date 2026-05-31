@@ -30,4 +30,4 @@ May 31, 2026
 
 # Summary
 
-- Building `eval` is fun!
+- Building VM is fun!
