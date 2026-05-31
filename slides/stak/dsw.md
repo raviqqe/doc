@@ -43,7 +43,9 @@ May 31, 2026
 # DSW algorithm
 
 - Deutsch-Schorr-Waite algorithm
-- When I search "DSW garbage collection" in Google, I get local schedules of garbage collection...
+  - When I search "DSW garbage collection" in Google, I get local schedules of garbage collection...
+- It seems to be very minor.
+- Thread in Zulip: https://prog-lang-sys-ja.zulipchat.com/#narrow/channel/343500/topic/DSW.20algorithm
 
 ---
 
