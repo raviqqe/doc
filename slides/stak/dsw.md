@@ -23,6 +23,8 @@ May 31, 2026
 
 - Big integer in Stak Scheme?
 - The new VM project
+  - JavaScript?
+  - Lua?
 
 ---
 
