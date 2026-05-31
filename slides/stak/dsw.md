@@ -22,6 +22,7 @@ May 31, 2026
 # Future work
 
 - Big integer in Stak Scheme?
+- The new VM project
 
 ---
 
