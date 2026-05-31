@@ -17,7 +17,7 @@ May 31, 2026
 # Moco VM
 
 - The new project I'm working on these days.
-  - These daysと言い張る勇気．
+  - These daysと言い張る勇気
 
     ```
     Author: Yota Toyama <raviqqe@gmail.com>
@@ -30,7 +30,7 @@ May 31, 2026
   - Host: JavaScript, Lua, etc.
   - Host: Rust, Go, Assembly, etc.
 - Spiritual successor of RVM
-  - More portable than the Stak Scheme VM.
+  - More portable than the Stak Scheme VM
 
 ---
 
