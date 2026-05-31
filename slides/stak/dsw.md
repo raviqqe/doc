@@ -17,6 +17,8 @@ May 31, 2026
 
 # DSW algorithm
 
+- Deutsch-Schorr-Waite algorithm
+
 ---
 
 ## Mark
