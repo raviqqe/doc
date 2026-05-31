@@ -73,6 +73,11 @@ extend = "external"
 roots = ["https://infoscience.epfl.ch/", "https://www.semanticscholar.org/"]
 statuses = [200, 202]
 
+[sites.zulip]
+extend = "external"
+roots = ["https://prog-lang-sys-ja.zulipchat.com/"]
+fragments_ignored = true
+
 [sites.flaky]
 extend = "external"
 roots = ["https://gitlab.haskell.org/"]
