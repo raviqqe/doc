@@ -82,10 +82,6 @@ fn sweep(&mut self) -> Result<(), Error> {
         }
     }
 
-    for index in 0..self.heap().len() {
-        debug_assert!(!self.get(index)?.is_marked());
-    }
-
     Ok(())
 }
 ```
