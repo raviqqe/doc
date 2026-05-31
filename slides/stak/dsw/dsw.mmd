@@ -1,6 +1,4 @@
 flowchart TB
-  current([current]) -.-> a
-  previous([previous]) -.-> n0((nil))
 
   subgraph a[" "]
     direction LR
@@ -8,11 +6,15 @@ flowchart TB
     a1[cdr]:::blue
   end
 
+  previous([previous]) -.-> a1
+
   subgraph b[" "]
     direction LR
     b0[car]:::red
     b1[cdr]:::blue
   end
+
+  current([current]) -.-> b1
 
   subgraph c[" "]
     direction LR
