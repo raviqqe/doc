@@ -23,10 +23,6 @@ May 31, 2026
 
 ```rust
 fn mark(&mut self) -> Result<(), Error> {
-    if !self.root.is_pointer() {
-        return Ok(());
-    }
-
     let mut previous = V::default();
     let mut current = self.root;
 
