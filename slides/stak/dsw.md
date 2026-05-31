@@ -17,7 +17,7 @@ May 31, 2026
 # Moco VM
 
 - The new project I'm working on these days.
-  - These days:
+  - These daysと言い張る勇気．
 
     ```
     Author: Yota Toyama <raviqqe@gmail.com>
