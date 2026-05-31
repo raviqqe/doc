@@ -27,8 +27,14 @@ May 31, 2026
     ```
 
 - VM for multiple host/target languages.
-  - Host: Rust, Go, Assembly, etc.
-  - Target: JavaScript, Lua, etc.
+
+---
+
+# Moco VM
+
+- Host: Rust, Go, Assembly, etc.
+- Target: JavaScript, Lua, etc.
+  - Scheme???
 - Spiritual successor of RVM
   - More portable than the Stak Scheme VM
 
