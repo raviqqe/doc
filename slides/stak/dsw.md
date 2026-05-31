@@ -31,8 +31,6 @@ fn mark(&mut self) -> Result<(), Error> {
     let mut current = self.root;
 
     loop {
-        debug_assert!(current.is_pointer());
-
         let cons = Cons::from(current);
         let value = self.get(cons.index())?;
 
