@@ -9,8 +9,7 @@ May 31, 2026
 # Contents
 
 - What I'm doing right now
-- `eval` in R7RS
-- Implementation in Stak Scheme
+- DSW algorithm
 - Future work
 
 ---
@@ -18,6 +17,7 @@ May 31, 2026
 # DSW algorithm
 
 - Deutsch-Schorr-Waite algorithm
+- When I search "DSW garbage collection" in Google, I get local schedules of garbage collection...
 
 ---
 
