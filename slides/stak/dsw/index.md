@@ -128,7 +128,7 @@ fn sweep(&mut self) -> Result<(), Error> {
 
 ---
 
-![](dsw.svg)
+![h:600](dsw.svg)
 
 ---
 
