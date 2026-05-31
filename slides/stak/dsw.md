@@ -17,6 +17,10 @@ May 31, 2026
 
 # DSW algorithm
 
+---
+
+## Mark
+
 ```rust
 fn mark(&mut self) -> Result<(), Error> {
     if !self.root.is_pointer() {
@@ -61,6 +65,10 @@ fn mark(&mut self) -> Result<(), Error> {
     Ok(())
 }
 ```
+
+---
+
+## Sweep
 
 ```rust
 fn sweep(&mut self) -> Result<(), Error> {
