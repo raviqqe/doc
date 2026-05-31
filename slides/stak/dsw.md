@@ -95,7 +95,7 @@ fn sweep(&mut self) -> Result<(), Error> {
 - Big integer in Stak Scheme?
   - The numeric tower is the final boss
   - Some SRFIs too?
-- The new VM project
+- The Moco VM project
   - JavaScript?
   - Lua?
   - https://github.com/raviqqe/moco
