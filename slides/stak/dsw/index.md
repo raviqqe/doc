@@ -1,3 +1,7 @@
+<!--
+class: invert
+-->
+
 # DSW algorithm
 
 [@raviqqe](https://github.com/raviqqe)
