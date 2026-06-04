@@ -88,9 +88,12 @@ count = 5
 [sites.forbidden]
 extend = "external"
 roots = [
-  "https://en.wikipedia.org/wiki/",
   "https://dl.acm.org/",
+  "https://en.wikipedia.org/wiki/",
   "https://jcsites.juniata.edu/",
+  "https://lisp.conpass.com/",
+  "https://mojolang.org/",
+  "https://qiita.com/",
   "https://www.npmjs.com/",
   "https://www.researchgate.net/",
 ]
