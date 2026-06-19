@@ -109,7 +109,7 @@
 
 #### Immix GC
 
-- [`mu/immix-rust`](https://gitlab.anu.edu.au/mu/immix-rust)
+- [`jatcwang/immix-rust`](https://github.com/jatcwang/immix-rust)
 - [Immix: A Mark-Region Garbage Collector with Space Efficiency, Fast Collection, and Mutator Performance](https://dblp.org/rec/conf/pldi/BlackburnM08.html)
 - [Taking Off the Gloves with Reference Counting Immix](https://www.steveblackburn.org/pubs/papers/rcix-oopsla-2013.pdf)
 - [Rust as a Language for High Performance GC Implementation](https://www.steveblackburn.org/pubs/papers/rust-ismm-2016.pdf)
