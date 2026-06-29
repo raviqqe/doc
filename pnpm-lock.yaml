@@ -18,8 +18,8 @@ importers:
         specifier: ^11.15.0
         version: 11.15.0(playwright-core@1.61.0)(puppeteer@25.1.0)
       '@raviqqe/biome-config':
-        specifier: ^2.0.26
-        version: 2.0.26(@biomejs/biome@2.4.16)
+        specifier: ^2.0.27
+        version: 2.0.27(@biomejs/biome@2.4.16)
       puppeteer:
         specifier: ^25.1.0
         version: 25.1.0
@@ -940,8 +940,8 @@ packages:
       proxy-agent:
         optional: true
 
-  '@raviqqe/biome-config@2.0.26':
-    resolution: {integrity: sha512-ADO26BEwO/r0Ht5Qg6k2Co1SRMWn3xGmm2u5hX6FJhl1sEs2InTBCKSFzdofy1wiYluUgi9fkF7xuaC2+0hDGQ==}
+  '@raviqqe/biome-config@2.0.27':
+    resolution: {integrity: sha512-UZWiCOgQDkUZb9qkJ9Y5rvlqjWMK/EIquQw31gs6RZbi1NiD0aWNCIJXAZiClfpl1faIy0Y6Bp7trlJx/SxYAA==}
     engines: {node: '>=25.2.1'}
     peerDependencies:
       '@biomejs/biome': ^2.1.4
@@ -4357,7 +4357,7 @@ snapshots:
       modern-tar: 0.7.6
       yargs: 17.7.2
 
-  '@raviqqe/biome-config@2.0.26(@biomejs/biome@2.4.16)':
+  '@raviqqe/biome-config@2.0.27(@biomejs/biome@2.4.16)':
     dependencies:
       '@biomejs/biome': 2.4.16
 
