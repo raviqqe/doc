@@ -16,7 +16,7 @@ importers:
         version: 4.4.0(typescript@6.0.3)
       '@mermaid-js/mermaid-cli':
         specifier: ^11.15.0
-        version: 11.15.0(playwright-core@1.61.0)(puppeteer@25.1.0)
+        version: 11.15.0(playwright-core@1.61.1)(puppeteer@25.1.0)
       '@raviqqe/biome-config':
         specifier: ^2.0.26
         version: 2.0.26(@biomejs/biome@2.4.16)
@@ -46,7 +46,7 @@ importers:
         version: 6.4.7(@types/node@26.0.0)(jiti@1.21.7)(rollup@4.62.0)
       rehype-mermaid:
         specifier: ^3.0.0
-        version: 3.0.0(playwright@1.61.0)
+        version: 3.0.0(playwright@1.61.1)
       remark-toc:
         specifier: ^9.0.0
         version: 9.0.0
@@ -58,8 +58,8 @@ importers:
         specifier: ^1.48.1
         version: 1.48.1
       playwright:
-        specifier: ^1.61.0
-        version: 1.61.0
+        specifier: ^1.61.1
+        version: 1.61.1
       rehype-autolink-headings:
         specifier: ^7.1.0
         version: 7.1.0
@@ -2793,13 +2793,13 @@ packages:
     resolution: {integrity: sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==}
     engines: {node: '>= 6'}
 
-  playwright-core@1.61.0:
-    resolution: {integrity: sha512-caX7TrY3Ml6egyDX0WUcTHDxodl/b51y5wJOdCEA36QviK/s2g081hvmGs8eaE3DWb6NYZQ6BjO/QkNRPenoPA==}
+  playwright-core@1.61.1:
+    resolution: {integrity: sha512-h7Qlt6m4REp25qvIdvbDtVmD4LqVXfpRxhORv9L0jzETM05p4fuPJ3dKyuSXQxDSbXnmS79HAgi9589lGSpLkg==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.61.0:
-    resolution: {integrity: sha512-Z+7BeeqQPRRzklHsVFP4KTGIyMxKUmfeRA4WisM6G3/XW6nwGeX6fX9qYaDa+CiUqpOkb2f6X3nar05R3kSuJQ==}
+  playwright@1.61.1:
+    resolution: {integrity: sha512-DWnY5o3YbLWK4GovuAVwpqL+1VwGNdUGrRr++8j8PtQQzvAVZUIMjKQ90fY689sEJZJBbZVw1rXaOKSTitkzPQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -4237,11 +4237,11 @@ snapshots:
       mermaid: 11.15.0
     optional: true
 
-  '@mermaid-js/mermaid-cli@11.15.0(playwright-core@1.61.0)(puppeteer@25.1.0)':
+  '@mermaid-js/mermaid-cli@11.15.0(playwright-core@1.61.1)(puppeteer@25.1.0)':
     dependencies:
       '@fortawesome/fontawesome-free': 7.2.0
       '@mermaid-js/layout-elk': 0.2.1(mermaid@11.15.0)
-      '@mermaid-js/mermaid-zenuml': 0.2.3(mermaid@11.15.0)(playwright-core@1.61.0)
+      '@mermaid-js/mermaid-zenuml': 0.2.3(mermaid@11.15.0)(playwright-core@1.61.1)
       chalk: 5.6.2
       commander: 13.1.0
       import-meta-resolve: 4.2.0
@@ -4259,9 +4259,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@mermaid-js/mermaid-zenuml@0.2.3(mermaid@11.15.0)(playwright-core@1.61.0)':
+  '@mermaid-js/mermaid-zenuml@0.2.3(mermaid@11.15.0)(playwright-core@1.61.1)':
     dependencies:
-      '@zenuml/core': 3.48.3(playwright-core@1.61.0)
+      '@zenuml/core': 3.48.3(playwright-core@1.61.1)
       mermaid: 11.15.0
     transitivePeerDependencies:
       - '@babel/core'
@@ -4699,7 +4699,7 @@ snapshots:
 
   '@xmldom/xmldom@0.9.10': {}
 
-  '@zenuml/core@3.48.3(playwright-core@1.61.0)':
+  '@zenuml/core@3.48.3(playwright-core@1.61.1)':
     dependencies:
       '@floating-ui/react': 0.27.19(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@headlessui/react': 2.2.10(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -4723,7 +4723,7 @@ snapshots:
       tailwindcss: 3.4.19
     optionalDependencies:
       '@napi-rs/canvas': 0.1.100
-      playwright-core: 1.61.0
+      playwright-core: 1.61.1
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/template'
@@ -6116,12 +6116,12 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  mermaid-isomorphic@3.0.4(playwright@1.61.0):
+  mermaid-isomorphic@3.0.4(playwright@1.61.1):
     dependencies:
       '@fortawesome/fontawesome-free': 6.7.2
       mermaid: 11.15.0
     optionalDependencies:
-      playwright: 1.61.0
+      playwright: 1.61.1
 
   mermaid@11.15.0:
     dependencies:
@@ -6606,11 +6606,11 @@ snapshots:
 
   pirates@4.0.7: {}
 
-  playwright-core@1.61.0: {}
+  playwright-core@1.61.1: {}
 
-  playwright@1.61.0:
+  playwright@1.61.1:
     dependencies:
-      playwright-core: 1.61.0
+      playwright-core: 1.61.1
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -6858,19 +6858,19 @@ snapshots:
       unified: 11.0.5
       unist-util-visit: 5.0.0
 
-  rehype-mermaid@3.0.0(playwright@1.61.0):
+  rehype-mermaid@3.0.0(playwright@1.61.1):
     dependencies:
       '@types/hast': 3.0.4
       hast-util-from-html-isomorphic: 2.0.0
       hast-util-to-text: 4.0.2
-      mermaid-isomorphic: 3.0.4(playwright@1.61.0)
+      mermaid-isomorphic: 3.0.4(playwright@1.61.1)
       mini-svg-data-uri: 1.4.4
       space-separated-tokens: 2.0.2
       unified: 11.0.5
       unist-util-visit-parents: 6.0.1
       vfile: 6.0.3
     optionalDependencies:
-      playwright: 1.61.0
+      playwright: 1.61.1
 
   rehype-parse@9.0.1:
     dependencies:
