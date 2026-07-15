@@ -95,9 +95,15 @@ roots = [
   "https://mojolang.org/",
   "https://qiita.com/",
   "https://www.npmjs.com/",
+  "https://www.oreilly.com/",
   "https://www.researchgate.net/",
 ]
 statuses = [200, 403]
+
+[sites.rate_limited]
+extend = "external"
+roots = ["https://www.lambdanote.com/"]
+statuses = [200, 429]
 
 [sites.ignored]
 roots = ["https://aclanthology.org/", "https://r7rs.org/"]
