@@ -27,9 +27,7 @@ const writeToc = async (directory: string, component: string) =>
 
                   return {
                     htmlPath,
-                    pdfPath: (await stat(join("public", pdfPath)).catch(
-                      () => null,
-                    ))
+                    pdfPath: (await stat(join("public", pdfPath)).catch(() => null))
                       ? pdfPath
                       : null,
                     time: (
