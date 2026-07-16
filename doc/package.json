@@ -20,7 +20,7 @@
     "remark-toc": "^9.0.0"
   },
   "devDependencies": {
-    "@types/node": "^26.0.1",
+    "@types/node": "^26.1.1",
     "es-toolkit": "^1.49.0",
     "playwright": "^1.61.1",
     "rehype-autolink-headings": "^7.1.0",
