@@ -125,7 +125,7 @@ Example: Upper to lower case mapping
 
 # Asymmetric mapping
 
-- [UnicodeData file format]()
+- [UnicodeData file format](https://www.unicode.org/L2/L1999/UnicodeData.html)
   > Uppercase mapping
   > These mappings are always one-to-one, not one-to-many or many-to-one.
 - [ß - Wikipedia](https://en.wikipedia.org/wiki/%C3%9F#Development_of_a_capital_form)
