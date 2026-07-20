@@ -39,8 +39,8 @@ importers:
         specifier: ^3.7.3
         version: 3.7.3
       '@fontsource-variable/noto-sans':
-        specifier: ^5.2.9
-        version: 5.2.10
+        specifier: ^5.3.0
+        version: 5.3.0
       '@fontsource/ubuntu':
         specifier: ^5.2.7
         version: 5.2.8
@@ -538,8 +538,8 @@ packages:
   '@floating-ui/utils@0.2.12':
     resolution: {integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==}
 
-  '@fontsource-variable/noto-sans@5.2.10':
-    resolution: {integrity: sha512-wyFgKkFu7jki5kEL8qv7avjQ8rxHX0J/nhLWvbR9T0hOH1HRKZEvb9EW9lMjZfWHHfEzKkYf5J+NadwgCS7TXA==}
+  '@fontsource-variable/noto-sans@5.3.0':
+    resolution: {integrity: sha512-e3ZuxzY9AL2psXPZlhwhnYrHUHv6PMoyK9MQ7croF0CUgURLqu9EMjW7q2FgVLwij1tjLsIHQrnwQ8aUcg4BiA==}
 
   '@fontsource/ubuntu@5.2.8':
     resolution: {integrity: sha512-esSJCpgigwWOm4Ug9f7AMozUyBq5Iobea5C9QYsl2OlCb62wZABBUbXahHLdFv5Ru4lJCD9tUX6xEAeLwUTNBg==}
@@ -4353,7 +4353,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.12': {}
 
-  '@fontsource-variable/noto-sans@5.2.10': {}
+  '@fontsource-variable/noto-sans@5.3.0': {}
 
   '@fontsource/ubuntu@5.2.8': {}
 
