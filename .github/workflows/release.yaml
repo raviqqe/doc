@@ -36,7 +36,7 @@ jobs:
         with:
           lfs: true
       - uses: ./.github/actions/setup
-      - uses: raviqqe/muffy@74d15a2643350fa5ba6b8e1dc6b77529c6b8d238 # v0.3.14
+      - uses: raviqqe/muffy@1deed2f7557d0c59fa391cd98e63c6de2240fd8c # v0.3.16
   release:
     needs:
       - release_build
