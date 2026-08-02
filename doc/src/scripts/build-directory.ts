@@ -1,6 +1,7 @@
 import { copyFile, glob, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
 import { argv } from "node:process";
+import { parse, stringify } from "yaml";
 
 const [, , directory] = argv;
 
@@ -18,9 +19,11 @@ await Promise.all([
         path,
         [
           "---",
-          `layout: ${relative(dirname(path), "src/layouts/Default.astro")}`,
-          `title: ${JSON.stringify(body.split("\n")[0].replace("# ", ""))}`,
-          ...(frontmatter ? [frontmatter] : []),
+          stringify({
+            layout: relative(dirname(path), "src/layouts/Default.astro"),
+            title: body.split("\n")[0].replace("# ", ""),
+            ...(frontmatter ? parse(frontmatter) : {}),
+          }).trimEnd(),
           "---",
           "",
           body,
