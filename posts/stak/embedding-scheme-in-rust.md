@@ -1,3 +1,7 @@
+---
+description: How to embed Stak Scheme, a small Scheme interpreter, in Rust programs to change their behavior dynamically without stopping processes.
+---
+
 # Embedding Scheme in Rust
 
 Rust, as a compiled language, makes it challenging to modify the behavior of programs dynamically. In this article, we embed a small Scheme interpreter called [Stak Scheme][stak] in Rust to dynamically change the behavior of a program without stopping the process.

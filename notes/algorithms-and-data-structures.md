@@ -1,3 +1,7 @@
+---
+description: A collection of links about algorithms and data structures, such as dynamic programming and the vehicle routing problem.
+---
+
 # Algorithms and data structures
 
 #### Table of Contents

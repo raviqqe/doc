@@ -1,3 +1,7 @@
+---
+description: My experience and caveats about implementing the Perceus reference counting GC in the Pen programming language.
+---
+
 # Implementing the Perceus reference counting GC
 
 ![Arceus](arceus.jpeg)

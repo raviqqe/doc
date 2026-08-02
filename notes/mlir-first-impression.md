@@ -1,3 +1,7 @@
+---
+description: Notes on first impressions of MLIR, a compiler framework of multi-level intermediate representation, and its core concepts like operations, regions, and dialects.
+---
+
 # MLIR first impression
 
 ## Overview

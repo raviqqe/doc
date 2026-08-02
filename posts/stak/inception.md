@@ -1,3 +1,7 @@
+---
+description: How the bytecode compiler of Stak Scheme embeds itself into the eval procedure in its target codes to remove code duplication.
+---
+
 # Inception: The self-embedding compiler in Stak Scheme
 
 ![A spinning top](spinning-top.jpeg)
