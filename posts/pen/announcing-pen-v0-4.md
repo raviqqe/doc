@@ -1,3 +1,7 @@
+---
+description: Announcing v0.4 of Pen, a parallel, concurrent, statically typed, functional programming language, with new syntax constructs, standard packages, and Rust FFI.
+---
+
 # Announcing the Pen programming language v0.4
 
 [The Pen programming language][pen] is a new parallel, concurrent, statically typed, functional programming language. I'm excited to announce [its v0.4 release](https://github.com/pen-lang/pen/releases/tag/v0.4.0) here!

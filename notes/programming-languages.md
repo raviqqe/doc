@@ -1,3 +1,7 @@
+---
+description: A collection of links about programming languages and their technologies and concepts, such as language design, type systems, and garbage collection.
+---
+
 # Programming languages
 
 ## Languages

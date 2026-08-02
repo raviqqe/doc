@@ -1,3 +1,7 @@
+---
+description: How macro expanders of R7RS Scheme can expand record type definitions in internal definitions.
+---
+
 # Internal `define-record-type` in Scheme
 
 This is the article on December 8th for [the Qiita Advent Calendar 2025 of

@@ -8,6 +8,9 @@ await Promise.all([
   ...(await Array.fromAsync(glob(join("..", directory, "**/*.md")))).map(
     async (path) => {
       const content = await readFile(path, "utf-8");
+      const [, frontmatter, body] = content.match(
+        /^---\n(.*?)\n---\n+(.*)$/s,
+      ) ?? ["", "", content];
       path = join("src/pages", relative("..", path));
 
       await mkdir(dirname(path), { recursive: true });
@@ -16,10 +19,11 @@ await Promise.all([
         [
           "---",
           `layout: ${relative(dirname(path), "src/layouts/Default.astro")}`,
-          `title: ${JSON.stringify(content.split("\n")[0].replace("# ", ""))}`,
+          `title: ${JSON.stringify(body.split("\n")[0].replace("# ", ""))}`,
+          ...(frontmatter ? [frontmatter] : []),
           "---",
           "",
-          content,
+          body,
         ].join("\n"),
       );
     },
