@@ -103,7 +103,7 @@ statuses = [200, 403]
 
 [sites.rate_limited]
 extend = "external"
-roots = ["https://www.lambdanote.com/"]
+roots = ["https://www.lambdanote.com/", "https://www.youtube.com/"]
 statuses = [200, 429]
 
 [sites.ignored]
