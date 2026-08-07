@@ -19,7 +19,7 @@ interval = { initial = "500ms", cap = "10s" }
 statuses = [408, 500, 502, 503, 504]
 
 [sites.default.headers]
-user-agent = "Muffy/0.3.0"
+user-agent = "Muffy/0.4.0"
 
 [sites.default.validation]
 svg = {}
