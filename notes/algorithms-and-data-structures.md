@@ -8,7 +8,7 @@ description: A collection of links about algorithms and data structures, such as
 
 ## Algorithms
 
-- [ビットDP(bit DP)の考え方 - 集合に対する動的計画法](https://algo-logic.info/bit-dp/#)
+- [Bitmask DP](https://usaco.guide/gold/dp-bitmasks)
 - [Pike VMとEarley法の関係についてRubyで実装して考えてみる](https://makenowjust-labs.github.io/blog/post/2023-08-06-pike-earley)
 
 ### Vehicle routing problem
