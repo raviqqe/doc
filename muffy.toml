@@ -18,9 +18,6 @@ factor = 2
 interval = { initial = "500ms", cap = "10s" }
 statuses = [408, 500, 502, 503, 504]
 
-[sites.default.headers]
-user-agent = "Muffy/0.4.0"
-
 [sites.main]
 extend = "default"
 roots = ["https://raviqqe.com/doc"]
