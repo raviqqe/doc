@@ -21,10 +21,6 @@ statuses = [408, 500, 502, 503, 504]
 [sites.default.headers]
 user-agent = "Muffy/0.4.0"
 
-[sites.default.validation]
-svg = {}
-css = true
-
 [sites.main]
 extend = "default"
 roots = ["https://raviqqe.com/doc"]
