@@ -63,11 +63,6 @@ fragments_ignored = true
 supply = 10
 window = "1s"
 
-[sites.algo_logic]
-extend = "default"
-roots = ["https://algo-logic.info/"]
-fragments_ignored = true
-
 [sites.semantic_scholar]
 extend = "default"
 roots = ["https://infoscience.epfl.ch/", "https://www.semanticscholar.org/"]
