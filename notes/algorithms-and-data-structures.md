@@ -22,7 +22,3 @@ description: A collection of links about algorithms and data structures, such as
 - [Held–Karp algorithm](https://en.wikipedia.org/wiki/Held%E2%80%93Karp_algorithm)
 - [`graphhopper/jsprit`](https://github.com/graphhopper/jsprit)
 - [`reinterpretcat/vrp`](https://github.com/reinterpretcat/vrp)
-
-## References
-
-- [アルゴリズムロジック](https://algo-logic.info/)
