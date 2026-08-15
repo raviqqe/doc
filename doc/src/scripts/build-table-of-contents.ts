@@ -1,4 +1,4 @@
-import { exec } from "node:child_process";
+import { execFile } from "node:child_process";
 import { glob, readFile, stat, writeFile } from "node:fs/promises";
 import { basename, dirname, join, relative } from "node:path";
 import { promisify } from "node:util";
@@ -30,9 +30,14 @@ const writeToc = async (directory: string, component: string) =>
                       ? join("/doc", pdfPath)
                       : null,
                     time: (
-                      await promisify(exec)(
-                        `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
-                      )
+                      await promisify(execFile)("git", [
+                        "log",
+                        "--format=format:%ci",
+                        "--follow",
+                        "--name-only",
+                        "--diff-filter=A",
+                        path,
+                      ])
                     ).stdout
                       .split(" ")[0]
                       .replaceAll("-", "/"),
