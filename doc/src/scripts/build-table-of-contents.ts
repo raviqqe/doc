@@ -4,8 +4,6 @@ import { basename, dirname, join, relative } from "node:path";
 import { promisify } from "node:util";
 import { groupBy, sortBy } from "es-toolkit";
 
-const excludedPattern = /slides\/papers/;
-
 const writeToc = async (directory: string, component: string) =>
   writeFile(
     `src/components/${component}.md`,
@@ -16,7 +14,6 @@ const writeToc = async (directory: string, component: string) =>
             await Promise.all(
               (await Array.fromAsync(glob(join("..", directory, "**/*.md"))))
                 .values()
-                .filter((path) => !excludedPattern.test(path))
                 .map(async (path) => {
                   const basePath = relative("..", path);
                   const htmlPath =
