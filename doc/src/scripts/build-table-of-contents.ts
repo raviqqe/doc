@@ -1,10 +1,8 @@
-import { exec } from "node:child_process";
+import { execFile } from "node:child_process";
 import { glob, readFile, stat, writeFile } from "node:fs/promises";
 import { basename, dirname, join, relative } from "node:path";
 import { promisify } from "node:util";
 import { groupBy, sortBy } from "es-toolkit";
-
-const excludedPattern = /slides\/papers/;
 
 const writeToc = async (directory: string, component: string) =>
   writeFile(
@@ -16,9 +14,8 @@ const writeToc = async (directory: string, component: string) =>
             await Promise.all(
               (await Array.fromAsync(glob(join("..", directory, "**/*.md"))))
                 .values()
-                .filter((path) => !excludedPattern.test(path))
                 .map(async (path) => {
-                  const basePath = join("/doc", relative("..", path));
+                  const basePath = relative("..", path);
                   const htmlPath =
                     basename(basePath) === "index.md"
                       ? dirname(basePath)
@@ -26,16 +23,21 @@ const writeToc = async (directory: string, component: string) =>
                   const pdfPath = `${htmlPath}.pdf`;
 
                   return {
-                    htmlPath,
+                    htmlPath: join("/doc", htmlPath),
                     pdfPath: (await stat(join("public", pdfPath)).catch(
                       () => null,
                     ))
-                      ? pdfPath
+                      ? join("/doc", pdfPath)
                       : null,
                     time: (
-                      await promisify(exec)(
-                        `git log --format=format:%ci --follow --name-only --diff-filter=A ${path}`,
-                      )
+                      await promisify(execFile)("git", [
+                        "log",
+                        "--format=format:%ci",
+                        "--follow",
+                        "--name-only",
+                        "--diff-filter=A",
+                        path,
+                      ])
                     ).stdout
                       .split(" ")[0]
                       .replaceAll("-", "/"),
