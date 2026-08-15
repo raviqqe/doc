@@ -75,11 +75,8 @@ fragments_ignored = true
 
 [sites.flaky]
 extend = "default"
-roots = ["https://gitlab.haskell.org/"]
+roots = ["https://ghc.gitlab.haskell.org/"]
 statuses = [200, 502]
-
-[sites.flaky.retry]
-count = 5
 
 [sites.forbidden]
 extend = "default"
