@@ -16,7 +16,7 @@ importers:
         version: 4.5.0(supports-color@7.2.0)(typescript@7.0.2)
       '@mermaid-js/mermaid-cli':
         specifier: ^11.16.0
-        version: 11.16.0(puppeteer@25.8.0(yauzl@2.10.0))(tailwindcss@3.4.19)
+        version: 11.16.0(puppeteer@25.9.0(yauzl@2.10.0))(tailwindcss@3.4.19)
       '@raviqqe/biome-config':
         specifier: ^2.0.27
         version: 2.0.27(@biomejs/biome@2.5.10)
@@ -24,8 +24,8 @@ importers:
         specifier: ^0.64.0
         version: 0.64.0
       puppeteer:
-        specifier: ^25.8.0
-        version: 25.8.0(yauzl@2.10.0)
+        specifier: ^25.9.0
+        version: 25.9.0(yauzl@2.10.0)
       svgo:
         specifier: ^4.1.0
         version: 4.1.0
@@ -3167,12 +3167,12 @@ packages:
     resolution: {integrity: sha512-T5ScUMAsmhdNbgDR41AGESYeS6V9MSgetkSnVhhW+gXvzC42VesKCn5ld87gAZDJ6vLHL9GkRvY9WtQWSnwFbw==}
     engines: {node: '>=18'}
 
-  puppeteer-core@25.8.0:
-    resolution: {integrity: sha512-LDOrawV8vfCVk+yLj2ozvajNP4Sv3OV9y3Tpiyy2g2Z+aQlbcozP6KJfI4iSBq7YQER+86ihEtPa5ioiZyWxMQ==}
+  puppeteer-core@25.9.0:
+    resolution: {integrity: sha512-U61rCwSMha62CA/Opy6tCx2Fx+ck7ouiKnbpEApzSoLYMoEu9F71nuFpHL55vmIt33/GYm6eKZVhH2ev0nAIeg==}
     engines: {node: '>=22.12.0'}
 
-  puppeteer@25.8.0:
-    resolution: {integrity: sha512-3gcUJ+Jfodb5zNa/lWLZukBUwYiRIwAc8WRICoqfi+ZYmNWqpsPFyanTU3Gw/lhgII9aotVbAmhT6/NKHWgyUA==}
+  puppeteer@25.9.0:
+    resolution: {integrity: sha512-2JqQszD2pyDTpIvBH1ZCXdrHgENVNdJIeOM6asbwHRgWknFiaLd1gNB91w/B/0hQHNpafkpxa90lPpBaJM87Hw==}
     engines: {node: '>=22.12.0'}
     hasBin: true
 
@@ -4502,7 +4502,7 @@ snapshots:
       mermaid: 11.16.0
     optional: true
 
-  '@mermaid-js/mermaid-cli@11.16.0(puppeteer@25.8.0(yauzl@2.10.0))(tailwindcss@3.4.19)':
+  '@mermaid-js/mermaid-cli@11.16.0(puppeteer@25.9.0(yauzl@2.10.0))(tailwindcss@3.4.19)':
     dependencies:
       '@fortawesome/fontawesome-free': 7.3.0
       '@mermaid-js/layout-elk': 0.2.2(mermaid@11.16.0)
@@ -4513,7 +4513,7 @@ snapshots:
       katex: 0.16.47
       mermaid: 11.16.0
       p-limit: 6.2.0
-      puppeteer: 25.8.0(yauzl@2.10.0)
+      puppeteer: 25.9.0(yauzl@2.10.0)
     optionalDependencies:
       '@mermaid-js/layout-tidy-tree': 0.2.2(mermaid@11.16.0)
     transitivePeerDependencies:
@@ -7152,7 +7152,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer-core@25.8.0(yauzl@2.10.0):
+  puppeteer-core@25.9.0(yauzl@2.10.0):
     dependencies:
       '@puppeteer/browsers': 3.2.1(yauzl@2.10.0)
       chromium-bidi: 17.0.2(devtools-protocol@0.0.1666840)
@@ -7166,13 +7166,13 @@ snapshots:
       - utf-8-validate
       - yauzl
 
-  puppeteer@25.8.0(yauzl@2.10.0):
+  puppeteer@25.9.0(yauzl@2.10.0):
     dependencies:
       '@puppeteer/browsers': 3.2.1(yauzl@2.10.0)
       chromium-bidi: 17.0.2(devtools-protocol@0.0.1666840)
       devtools-protocol: 0.0.1666840
       lilconfig: 3.1.3
-      puppeteer-core: 25.8.0(yauzl@2.10.0)
+      puppeteer-core: 25.9.0(yauzl@2.10.0)
       typed-query-selector: 2.12.2
     transitivePeerDependencies:
       - bufferutil
