@@ -114,7 +114,7 @@ description: A collection of links about programming languages and their technol
 #### Immix GC
 
 - [`jatcwang/immix-rust`](https://github.com/jatcwang/immix-rust)
-- [Immix: A Mark-Region Garbage Collector with Space Efficiency, Fast Collection, and Mutator Performance](https://dblp.org/rec/conf/pldi/BlackburnM08.html)
+- [Immix: A Mark-Region Garbage Collector with Space Efficiency, Fast Collection, and Mutator Performance](https://www.cs.cornell.edu/courses/cs6120/2019fa/blog/immix/)
 - [Taking Off the Gloves with Reference Counting Immix](https://www.steveblackburn.org/pubs/papers/rcix-oopsla-2013.pdf)
 - [Rust as a Language for High Performance GC Implementation](https://www.steveblackburn.org/pubs/papers/rust-ismm-2016.pdf)
 
