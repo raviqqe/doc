@@ -25,7 +25,7 @@ jobs:
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: doc/dist
-      - uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+      - uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
         if: github.ref == 'refs/heads/main'
   release_test:
     needs:
@@ -36,7 +36,7 @@ jobs:
         with:
           lfs: true
       - uses: ./.github/actions/setup
-      - uses: raviqqe/muffy@12ba31ed9a356f92996579ada56643ce9bc36ad7 # v0.5.4
+      - uses: raviqqe/muffy@b8de4108072f91b2af6fe447bcaed71fb05243a3 # v0.5.5
   release:
     needs:
       - release_build
