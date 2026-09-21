@@ -14,7 +14,7 @@
     "marp:serve": "node --run marp -- --server"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.13",
+    "@biomejs/biome": "^2.5.14",
     "@marp-team/marp-cli": "^4.5.1",
     "@mermaid-js/mermaid-cli": "^11.17.0",
     "@raviqqe/biome-config": "^2.0.27",
