@@ -29,7 +29,7 @@ Generic `+` and `*` are `fold`s over the primitives (`arithmetic-operator`, prel
 
 `exact` is `round`, `inexact` is the identity, `exact?` is `integer?` (`(and (number? x) (zero? (remainder x 1)))`, whose guard is what keeps a rib away from the `remainder` primitive), and `exact-integer?` is `(and (exact? x) (integer? x))` (prelude.scm ~853-903). No build has an exactness bit visible to Scheme: `Value::eq` compares numbers numerically, so even float62's internal int/float distinction is invisible (`(eq? 1.0 1)` is true there).
 
-### 2.3 Observed overflow behaviour
+### 2.3 Observed overflow behavior
 
 Float build (`target/release/stak`, eval path):
 
@@ -73,7 +73,7 @@ The `release_test` profile enables `overflow-checks`, so `*` and `expt` on the i
 
 ### 2.5 Literal pipeline
 
-The reader (`(scheme read)`, prelude.scm ~6205) does `(or (string->number x) (string->symbol x))`; `string->number` (`(stak string)` ~1896) accumulates digits with `+` and `*` in the host representation; the compiler's `encode-number` (compile.scm ~1965) writes integers as little-endian varints of arbitrary length, and `Vm::decode_number` (vm/src/vm.rs ~523) folds the `u128` into `Number::from_i64` or `from_f64`. `marshal-rib` (compile.scm ~1683) accepts only the known constant types and raises "invalid type" for other ribs, while `encode-rib` serialises any rib generically with its car, cdr and tag. A bignum constant therefore needs one new case in `marshal-rib` and nothing in the VM: it decodes as a data rib whose digits are small fixnums.
+The reader (`(scheme read)`, prelude.scm ~6205) does `(or (string->number x) (string->symbol x))`; `string->number` (`(stak string)` ~1896) accumulates digits with `+` and `*` in the host representation; the compiler's `encode-number` (compile.scm ~1965) writes integers as little-endian varints of arbitrary length, and `Vm::decode_number` (vm/src/vm.rs ~523) folds the `u128` into `Number::from_i64` or `from_f64`. `marshal-rib` (compile.scm ~1683) accepts only the known constant types and raises "invalid type" for other ribs, while `encode-rib` serializes any rib generically with its car, cdr and tag. A bignum constant therefore needs one new case in `marshal-rib` and nothing in the VM: it decodes as a data rib whose digits are small fixnums.
 
 ### 2.6 Cost model
 
@@ -83,7 +83,7 @@ Tree shaking (`shake-tree`, compile.scm ~1430) is a static closure over top-leve
 
 ## 3. Prior art: bignums implemented in Scheme
 
-Sources were fetched and read by a research agent; Gambit, Owl, Larceny and Loko were read from the raw files, the rest through a summarising fetcher. Two common beliefs turned out to be wrong: Gambit does not use Burnikel-Ziegler division, and Scheme 48's bignums are C, not PreScheme.
+Sources were fetched and read by a research agent; Gambit, Owl, Larceny and Loko were read from the raw files, the rest through a summarizing fetcher. Two common beliefs turned out to be wrong: Gambit does not use Burnikel-Ziegler division, and Scheme 48's bignums are C, not PreScheme.
 
 ### 3.1 Comparison
 
@@ -92,7 +92,7 @@ Sources were fetched and read by a research agent; Gambit, Owl, Larceny and Loko
 | Gambit (LGPL 2.1 / Apache 2.0)    | `lib/_num.scm`, `_num#.scm`, `_univlib.scm`                      | 64/32-bit "adigits" and 32/16-bit "mdigits" on C; 14-bit adigit/mdigit and 7-bit fdigit under 30-bit fixnums on the universal (JS/Python) backend | vector, little-endian, two's complement with the top bit of the last adigit as sign             | schoolbook below 1400 bits, Karatsuba, complex-double FFT from 20000 bits (disabled on JS for code size) | Knuth D (`naive-div`) plus a Newton reciprocal for very large divisors; single-mdigit fast path                                     | divide and conquer over squared powers of the radix                   | ~4,400 of 13,567 lines (FFT ~2,900) |
 | Owl Lisp (MIT)                    | `owl/math.scm`, VM `c/ovm.c`                                     | full 24-bit fixnum; VM opcodes give the 48-bit product halves and a two-digit-by-one-digit divide                                                 | chain of typed pairs (`ncons`), least significant first, sign in the head's type tag            | schoolbook + Karatsuba (split >= 30 digits)                                                              | big / digit via `fxqr`; big / big by shift-and-subtract (author: "ugly and slow")                                                   | repeated `truncate/`                                                  | ~1,600 lines                        |
 | Larceny (permissive, attribution) | `src/Lib/Common/bignums.sch`, `bignums-el.sch`, `bignums-be.sch` | 16-bit half-bigits under 30-bit fixnums (storage is 32-bit)                                                                                       | bytevector-like, sign byte + 24-bit length, little-endian; zero has length 0                    | schoolbook + Karatsuba (> 10 bigits)                                                                     | Knuth D (`slow-divide`, `d = floor(b / (v1 + 1))`, add-back "called only with very low probability") and single-bigit `fast-divide` | one division per output digit                                         | 1,431 + 921 + 881 lines             |
-| Loko (EUPL 1.2)                   | `runtime/arithmetic.sls`                                         | 30 bits under 61-bit fixnums (`2w + 1` must fit a fixnum)                                                                                         | boxed {used, sign, vector}, little-endian, sign-magnitude, `clamp!` and `bnsimplify!` normalise | O(n^2) only                                                                                              | schoolbook (HAC 14.20 / LibTomMath style) with power-of-two normalisation                                                           | divide and conquer with squared powers; bit fields for bases 2, 8, 16 | ~1,240 of 4,017 lines               |
+| Loko (EUPL 1.2)                   | `runtime/arithmetic.sls`                                         | 30 bits under 61-bit fixnums (`2w + 1` must fit a fixnum)                                                                                         | boxed {used, sign, vector}, little-endian, sign-magnitude, `clamp!` and `bnsimplify!` normalize | O(n^2) only                                                                                              | schoolbook (HAC 14.20 / LibTomMath style) with power-of-two normalization                                                           | divide and conquer with squared powers; bit fields for bases 2, 8, 16 | ~1,240 of 4,017 lines               |
 | Oaklisp (GPL 2)                   | `src/world/bignum.oak`                                           | base 10^4 (32-bit) or 10^9 (64-bit): the largest power of ten such that `(B-1)^2 + 2(B-1)` is a fixnum                                            | list, little-endian, sign-magnitude                                                             | schoolbook below 16 digits, divide and conquer above                                                     | long division with a leading-digit estimate                                                                                         | trivial chunking                                                      | ~650 lines                          |
 | zenlisp (Holm; do what you want)  | `nmath.l`, `imath.l`                                             | base 10, one symbol per digit                                                                                                                     | list of digit symbols                                                                           | repeated addition                                                                                        | repeated subtraction                                                                                                                | trivial                                                               | ~550 lines                          |
 
@@ -101,7 +101,7 @@ Not Scheme-level: Ribbit (no bignums at all), Ikarus/Vicare (C, GMP `mpn`), Sche
 ### 3.2 Details worth copying
 
 - Gambit's fixnum dispatch is `(or (##fx+? x y) (##bignum.+ ...))` where the backend primitive returns `#f` on overflow; on JS it re-narrows with shifts and compares. `##bignum->fixnum?` folds digits from the top with overflow-checking `##fx*?`/`##fx+?` to decide whether a result fits. `##exact-int.sqrt` follows Zimmermann's "Karatsuba square root"; `expt` is square-and-multiply; gcd switches to a recursive half-gcd above 1400 bits.
-- Owl's chain of typed pairs with the sign in the head's tag is the closest existing analogue to a rib-only heap. Its weak spot is big-by-big division.
+- Owl's chain of typed pairs with the sign in the head's tag is the closest existing analog to a rib-only heap. Its weak spot is big-by-big division.
 - Larceny's `big2*+` (`t = a[i] * b[j] + c[i+j] + carry` split into halves) is the schoolbook inner step for half-width digits, and its `slow-divide` is the most compact Knuth D in the survey.
 - Loko's `display-int` (divide and conquer with a table of squared powers) and `string->number` (Horner) are clean references for conversion.
 - Every implementation except Gambit uses sign-magnitude. R7RS-small has no bitwise operations, so two's complement buys nothing in Stak.
@@ -109,7 +109,7 @@ Not Scheme-level: Ribbit (no bignums at all), Ikarus/Vicare (C, GMP `mpn`), Sche
 ### 3.3 Algorithmic references
 
 - Digit width (Knuth TAOCP vol. 2 §4.3.1; Brent and Zimmermann, Modern Computer Arithmetic, ch. 1): the schoolbook step is bounded by `(β-1)^2 + 2(β-1) = β^2 - 1`, and Knuth D needs `(u_j β + u_{j+1}) < β^2`. With 53 exact bits, `w = 26` (products below 2^52 leave room for carries); with 62 bits, `w = 31` (Loko uses 30 under 61-bit fixnums). Decimal alternatives: 10^7 on a double host, 10^9 needs 60 bits.
-- Knuth D normalisation: scale so that the divisor's top digit is at least `β/2` (`d = floor(β / (v_{n-1} + 1))` or a left shift by the leading zero count); the estimate `q̂ = min(β-1, floor((u_{j+n} β + u_{j+n-1}) / v_{n-1}))` is never too small and at most two too large; the extra test against `v_{n-2}` makes it at most one too large; add back once if the multiply-subtract goes negative.
+- Knuth D normalization: scale so that the divisor's top digit is at least `β/2` (`d = floor(β / (v_{n-1} + 1))` or a left shift by the leading zero count); the estimate `q̂ = min(β-1, floor((u_{j+n} β + u_{j+n-1}) / v_{n-1}))` is never too small and at most two too large; the extra test against `v_{n-2}` makes it at most one too large; add back once if the multiply-subtract goes negative.
 - Fixnum overflow without hardware flags (CERT INT32-C): addition overflows iff `(b > 0 and a > MAX - b) or (b < 0 and a < MIN - b)`; multiplication by sign cases with truncating division, e.g. `a > 0, b > 0: a > MAX / b`. On a double host, `+`/`-` results of operands within 2^53 are ordered correctly after rounding, so a range check on the result is sound; products are not, so use the division precheck or the 26-bit magnitude bound.
 
 ## 4. Design space for Stak
@@ -117,7 +117,7 @@ Not Scheme-level: Ribbit (no bignums at all), Ikarus/Vicare (C, GMP `mpn`), Sche
 - Fixnum bound: `limit = 2^53`, the same constant on every build, because one bytecode runs on all VMs and the float build cannot represent integers above 2^53 exactly. Sums of two fixnums stay below 2^54, which every build holds.
 - Digits: 26-bit binary (`β = 2^26`), least significant first, or decimal 10^7 if trivial radix-10 conversion matters more than binary shifts. `quotient` and `remainder` are exact on all builds for integers below 2^53, so digit splitting needs no bit operations.
 - Storage: `(rib sign digits bignum-type)` with `bignum-type = 10`; sign as a boolean or +-1 in the car, digits as a list in the cdr. Lists suit add/sub/mul directly; Knuth D can work on list windows or on the `(stak vector)` radix tree if indexed access proves necessary.
-- Canonical form: no leading zero digits and magnitude above the fixnum bound, so that `equal?` is structural equality and every result normalises back to a fixnum when it fits.
+- Canonical form: no leading zero digits and magnitude above the fixnum bound, so that `equal?` is structural equality and every result normalizes back to a fixnum when it fits.
 - Algorithms for a first version: schoolbook add/sub/mul, Knuth D division, Euclid gcd via `quotient`, Newton `exact-integer-sqrt`, square-and-multiply `expt`, chunked radix conversion (divide by 10^7 or multiply-add by 10^7). Karatsuba is optional later (thresholds in the survey: 10-30 digits).
 - Mixed arithmetic: bignum with float converts the bignum by Horner over its digits; `sqrt` of a bignum goes through the float conversion, and `exact-integer-sqrt` stays exact.
 - Where the code lives: transparent variants must sit inside `(stak base)` because `+` is defined there and libraries must precede their importers; conversions belong in `(stak string)`; an opt-in library can live anywhere after `(stak base)`.
@@ -134,7 +134,7 @@ A library defining bignums as ribs with a fresh tag (or a record type) and expor
 
 ### Candidate 2: transparent promotion, overflow detected in Scheme
 
-Redefine `+ - * quotient remainder expt` and their optimizer templates as a fixnum fast path with inlined range checks that fall back to the library from candidate 1; results normalise back to fixnums. `number?` becomes `(or (not (rib? x)) (bignum? x))`; `=` and `<` dispatch; `write`, the reader, `string->number` and `marshal-rib` learn the new type.
+Redefine `+ - * quotient remainder expt` and their optimizer templates as a fixnum fast path with inlined range checks that fall back to the library from candidate 1; results normalize back to fixnums. `number?` becomes `(or (not (rib? x)) (bignum? x))`; `=` and `<` dispatch; `write`, the reader, `string->number` and `marshal-rib` learn the new type.
 
 - Cost: 1.6-2.5x on arithmetic micro-benchmarks (section 6), ~10 KB of bytecode in every program (estimate from section 2.6), and the whole bignum core joins `(stak base)`.
 
@@ -147,7 +147,7 @@ Redefine `+ - * quotient remainder expt` and their optimizer templates as a fixn
 
 ### Candidate 4: overflow error by default, promotion when imported
 
-The fast path of candidate 2 or 3, but the slow path is a mutable hook that `(stak base)` initialises to `(error "integer overflow")` and `(stak bignum)` replaces on import. Programs that do not import it pay only the check, not the bignum code, and overflow becomes a loud error instead of a silent wrong answer. Combined with alternative X this is the cheapest fully transparent design.
+The fast path of candidate 2 or 3, but the slow path is a mutable hook that `(stak base)` initializes to `(error "integer overflow")` and `(stak bignum)` replaces on import. Programs that do not import it pay only the check, not the bignum code, and overflow becomes a loud error instead of a silent wrong answer. Combined with alternative X this is the cheapest fully transparent design.
 
 ## 6. Fast-path overhead measurements
 
