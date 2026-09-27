@@ -1,5 +1,7 @@
 # Big integers in Stak Scheme without Rust arithmetic
 
+<!-- cspell: ignore adigit adigits bigit bigits bignum bignums bnsimplify burnikel expt fdigit fixnum fixnums ikarus immediates karatsuba loko mdigit mdigits nmath nonbox oaklisp octocov picobit precheck sbcl taocp univlib varints vicare zenlisp zimmermann -->
+
 Research report, 2026-09-22. Code base: `raviqqe/stak`, `main` @ `f4e83a5c2`. All facts marked "verified" were checked against the source or observed by running the prebuilt binaries in `target/release`, `target/release_test` and `cmd/minimal/target/release`; nothing in the repository was modified.
 
 ## 1. Summary
