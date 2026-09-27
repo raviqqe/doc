@@ -251,5 +251,3 @@ cmd/minimal/target/release/mstak-interpret prog.bc    # 63-bit integer
 target/release/stak-decode < prog.bc                  # disassemble
 hyperfine -N --warmup 3 --runs 30 'target/release/stak-interpret prog.bc'
 ```
-
-Benchmark sources, bytecode and hyperfine JSON from this study are under `/private/tmp/claude-501/-Users-raviqqe-src-github-com-raviqqe-stak/17145f7a-2dcf-410d-bef3-4729f999450c/scratchpad/` (`overflow-shapes/`, `cand3-bench/`, `fastpath/`, `xy-assess/`).
