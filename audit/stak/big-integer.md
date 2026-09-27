@@ -13,11 +13,11 @@ Research report, 2026-09-22. Code base: `raviqqe/stak`, `main` @ `f4e83a5c2`. Al
 
 ### 2.1 Representations
 
-| build | crate feature | number payload | exact integer range | source |
-|---|---|---|---|---|
-| integer (default of `stak-vm`, `mstak`) | none | `i64` boxed as `(n << 1) \| 1` | 63 bits, wraps silently | `vm/src/value_inner/integer63.rs` |
-| float (the `stak` binary) | `float` | `f64` | integers exact to 2^53, rounds beyond | `vm/src/value_inner/float64.rs` |
-| float62 | `float62` | `nonbox::Float62`, 63-bit integers or floats | 63 bits; `+ - *` wrap (nonbox `wrapping_*`), `expt` falls back to a float on overflow | `vm/src/value_inner/float62.rs` |
+| build                                   | crate feature | number payload                               | exact integer range                                                                   | source                            |
+| --------------------------------------- | ------------- | -------------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------- |
+| integer (default of `stak-vm`, `mstak`) | none          | `i64` boxed as `(n << 1) \| 1`               | 63 bits, wraps silently                                                               | `vm/src/value_inner/integer63.rs` |
+| float (the `stak` binary)               | `float`       | `f64`                                        | integers exact to 2^53, rounds beyond                                                 | `vm/src/value_inner/float64.rs`   |
+| float62                                 | `float62`     | `nonbox::Float62`, 63-bit integers or floats | 63 bits; `+ - *` wrap (nonbox `wrapping_*`), `expt` falls back to a float on overflow | `vm/src/value_inner/float62.rs`   |
 
 Numbers are unboxed immediates and every other value is a rib (cons) whose cdr carries a 16-bit tag (`vm/src/cons.rs`, `Tag = u16`). `number?` in `(stak base)` is `(not (rib? x))`. Tags in use: 0 pair, 1 null, 2 boolean, 3 procedure, 4 symbol, 5 string, 6 character, 7 vector, 8 bytevector, 9 record, `u16::MAX` foreign (`vm/src/type.rs`). Rust code only inspects pair, null, boolean, symbol, string, character, procedure and foreign.
 
@@ -33,41 +33,41 @@ Generic `+` and `*` are `fold`s over the primitives (`arithmetic-operator`, prel
 
 Float build (`target/release/stak`, eval path):
 
-| expression | result | comment |
-|---|---|---|
-| `(* 4611686018427387903 2)` | `9223372036854776028` | rounded; the true value is ...5806 |
-| `(expt 2 64)` | `18446744073709552046` | rounded |
-| `(+ 9007199254740992 1)` | `9007199254740992` | 2^53 + 1 is not representable |
-| `(exact-integer? 9007199254740993)` | `#t` | any integral float passes |
-| `123456789012345678901234567890` | `123456789012345648200086220240` | literal parsed by f64 accumulation |
-| `(string->number "123456789012345678901")` | `123456789012345706468` | |
-| `(number->string 9223372036854775808)` | `"9223372036854778606"` | the integer-digit loop drifts above 2^54 |
-| `(exact (expt 2 70))` | `1180591620717411468064` | `exact` is `round` |
+| expression                                 | result                           | comment                                  |
+| ------------------------------------------ | -------------------------------- | ---------------------------------------- |
+| `(* 4611686018427387903 2)`                | `9223372036854776028`            | rounded; the true value is ...5806       |
+| `(expt 2 64)`                              | `18446744073709552046`           | rounded                                  |
+| `(+ 9007199254740992 1)`                   | `9007199254740992`               | 2^53 + 1 is not representable            |
+| `(exact-integer? 9007199254740993)`        | `#t`                             | any integral float passes                |
+| `123456789012345678901234567890`           | `123456789012345648200086220240` | literal parsed by f64 accumulation       |
+| `(string->number "123456789012345678901")` | `123456789012345706468`          |                                          |
+| `(number->string 9223372036854775808)`     | `"9223372036854778606"`          | the integer-digit loop drifts above 2^54 |
+| `(exact (expt 2 70))`                      | `1180591620717411468064`         | `exact` is `round`                       |
 
 Integer build (bytecode from `stak-compile`, run with `mstak-interpret`; the compiler is a float build, so large literals are already inexact and big values must be built arithmetically):
 
-| expression | result |
-|---|---|
+| expression                                         | result                                                                               |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | `(+ m 1)` with `m = 2^62 - 1` built arithmetically | `-4611686018427387904` (wraps to the minimum, which `number->string` prints as `-,`) |
-| `(+ m 2)` | `-4611686018427387903` |
-| `(* m 2)` | `-2` |
-| `(* 3037000500 3037000500)` | `145474192` |
-| `(expt 2 63)` | `0` |
-| `(string->number "12345678901234567890")` | `3122306864379792082` |
+| `(+ m 2)`                                          | `-4611686018427387903`                                                               |
+| `(* m 2)`                                          | `-2`                                                                                 |
+| `(* 3037000500 3037000500)`                        | `145474192`                                                                          |
+| `(expt 2 63)`                                      | `0`                                                                                  |
+| `(string->number "12345678901234567890")`          | `3122306864379792082`                                                                |
 
 The `release_test` profile enables `overflow-checks`, so `*` and `expt` on the integer build presumably panic there instead of wrapping (not verified).
 
 ### 2.4 How an unknown tag behaves (verified with `(rib 1 '(2 3) 10)`)
 
-| operation | result |
-|---|---|
-| `(rib-tag x)` | `10` |
-| `(car x)`, `(cdr x)` | `1`, `(2 3)` |
-| `(number? x)`, `(record? x)`, `(pair? x)` | `#f` |
-| `(eqv? x y)` for a structurally equal `y` | `#f` (the primitive only special-cases characters) |
-| `(equal? x y)` | `#t`; `#f` when the digits differ |
-| survives a 20,000-cell allocation burst (GC) | yes |
-| `(write x)` | error "unknown type to write" |
+| operation                                    | result                                             |
+| -------------------------------------------- | -------------------------------------------------- |
+| `(rib-tag x)`                                | `10`                                               |
+| `(car x)`, `(cdr x)`                         | `1`, `(2 3)`                                       |
+| `(number? x)`, `(record? x)`, `(pair? x)`    | `#f`                                               |
+| `(eqv? x y)` for a structurally equal `y`    | `#f` (the primitive only special-cases characters) |
+| `(equal? x y)`                               | `#t`; `#f` when the digits differ                  |
+| survives a 20,000-cell allocation burst (GC) | yes                                                |
+| `(write x)`                                  | error "unknown type to write"                      |
 
 `(stak base)` exports `rib`, `rib?`, `rib-tag`, `data-rib`, `instance?` and `primitive`, so a new type is `(define bignum-type 10)` next to `(define record-type 9)`.
 
@@ -87,14 +87,14 @@ Sources were fetched and read by a research agent; Gambit, Owl, Larceny and Loko
 
 ### 3.1 Comparison
 
-| system (license) | file | digit | storage, order, sign | multiplication | division | radix conversion | size |
-|---|---|---|---|---|---|---|---|
-| Gambit (LGPL 2.1 / Apache 2.0) | `lib/_num.scm`, `_num#.scm`, `_univlib.scm` | 64/32-bit "adigits" and 32/16-bit "mdigits" on C; 14-bit adigit/mdigit and 7-bit fdigit under 30-bit fixnums on the universal (JS/Python) backend | vector, little-endian, two's complement with the top bit of the last adigit as sign | schoolbook below 1400 bits, Karatsuba, complex-double FFT from 20000 bits (disabled on JS for code size) | Knuth D (`naive-div`) plus a Newton reciprocal for very large divisors; single-mdigit fast path | divide and conquer over squared powers of the radix | ~4,400 of 13,567 lines (FFT ~2,900) |
-| Owl Lisp (MIT) | `owl/math.scm`, VM `c/ovm.c` | full 24-bit fixnum; VM opcodes give the 48-bit product halves and a two-digit-by-one-digit divide | chain of typed pairs (`ncons`), least significant first, sign in the head's type tag | schoolbook + Karatsuba (split >= 30 digits) | big / digit via `fxqr`; big / big by shift-and-subtract (author: "ugly and slow") | repeated `truncate/` | ~1,600 lines |
-| Larceny (permissive, attribution) | `src/Lib/Common/bignums.sch`, `bignums-el.sch`, `bignums-be.sch` | 16-bit half-bigits under 30-bit fixnums (storage is 32-bit) | bytevector-like, sign byte + 24-bit length, little-endian; zero has length 0 | schoolbook + Karatsuba (> 10 bigits) | Knuth D (`slow-divide`, `d = floor(b / (v1 + 1))`, add-back "called only with very low probability") and single-bigit `fast-divide` | one division per output digit | 1,431 + 921 + 881 lines |
-| Loko (EUPL 1.2) | `runtime/arithmetic.sls` | 30 bits under 61-bit fixnums (`2w + 1` must fit a fixnum) | boxed {used, sign, vector}, little-endian, sign-magnitude, `clamp!` and `bnsimplify!` normalise | O(n^2) only | schoolbook (HAC 14.20 / LibTomMath style) with power-of-two normalisation | divide and conquer with squared powers; bit fields for bases 2, 8, 16 | ~1,240 of 4,017 lines |
-| Oaklisp (GPL 2) | `src/world/bignum.oak` | base 10^4 (32-bit) or 10^9 (64-bit): the largest power of ten such that `(B-1)^2 + 2(B-1)` is a fixnum | list, little-endian, sign-magnitude | schoolbook below 16 digits, divide and conquer above | long division with a leading-digit estimate | trivial chunking | ~650 lines |
-| zenlisp (Holm; do what you want) | `nmath.l`, `imath.l` | base 10, one symbol per digit | list of digit symbols | repeated addition | repeated subtraction | trivial | ~550 lines |
+| system (license)                  | file                                                             | digit                                                                                                                                             | storage, order, sign                                                                            | multiplication                                                                                           | division                                                                                                                            | radix conversion                                                      | size                                |
+| --------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ----------------------------------- |
+| Gambit (LGPL 2.1 / Apache 2.0)    | `lib/_num.scm`, `_num#.scm`, `_univlib.scm`                      | 64/32-bit "adigits" and 32/16-bit "mdigits" on C; 14-bit adigit/mdigit and 7-bit fdigit under 30-bit fixnums on the universal (JS/Python) backend | vector, little-endian, two's complement with the top bit of the last adigit as sign             | schoolbook below 1400 bits, Karatsuba, complex-double FFT from 20000 bits (disabled on JS for code size) | Knuth D (`naive-div`) plus a Newton reciprocal for very large divisors; single-mdigit fast path                                     | divide and conquer over squared powers of the radix                   | ~4,400 of 13,567 lines (FFT ~2,900) |
+| Owl Lisp (MIT)                    | `owl/math.scm`, VM `c/ovm.c`                                     | full 24-bit fixnum; VM opcodes give the 48-bit product halves and a two-digit-by-one-digit divide                                                 | chain of typed pairs (`ncons`), least significant first, sign in the head's type tag            | schoolbook + Karatsuba (split >= 30 digits)                                                              | big / digit via `fxqr`; big / big by shift-and-subtract (author: "ugly and slow")                                                   | repeated `truncate/`                                                  | ~1,600 lines                        |
+| Larceny (permissive, attribution) | `src/Lib/Common/bignums.sch`, `bignums-el.sch`, `bignums-be.sch` | 16-bit half-bigits under 30-bit fixnums (storage is 32-bit)                                                                                       | bytevector-like, sign byte + 24-bit length, little-endian; zero has length 0                    | schoolbook + Karatsuba (> 10 bigits)                                                                     | Knuth D (`slow-divide`, `d = floor(b / (v1 + 1))`, add-back "called only with very low probability") and single-bigit `fast-divide` | one division per output digit                                         | 1,431 + 921 + 881 lines             |
+| Loko (EUPL 1.2)                   | `runtime/arithmetic.sls`                                         | 30 bits under 61-bit fixnums (`2w + 1` must fit a fixnum)                                                                                         | boxed {used, sign, vector}, little-endian, sign-magnitude, `clamp!` and `bnsimplify!` normalise | O(n^2) only                                                                                              | schoolbook (HAC 14.20 / LibTomMath style) with power-of-two normalisation                                                           | divide and conquer with squared powers; bit fields for bases 2, 8, 16 | ~1,240 of 4,017 lines               |
+| Oaklisp (GPL 2)                   | `src/world/bignum.oak`                                           | base 10^4 (32-bit) or 10^9 (64-bit): the largest power of ten such that `(B-1)^2 + 2(B-1)` is a fixnum                                            | list, little-endian, sign-magnitude                                                             | schoolbook below 16 digits, divide and conquer above                                                     | long division with a leading-digit estimate                                                                                         | trivial chunking                                                      | ~650 lines                          |
+| zenlisp (Holm; do what you want)  | `nmath.l`, `imath.l`                                             | base 10, one symbol per digit                                                                                                                     | list of digit symbols                                                                           | repeated addition                                                                                        | repeated subtraction                                                                                                                | trivial                                                               | ~550 lines                          |
 
 Not Scheme-level: Ribbit (no bignums at all), Ikarus/Vicare (C, GMP `mpn`), Scheme 48 (`c/bignum.c`), PICOBIT (C), Guile Hoot (host `BigInt` / mini-gmp). SBCL's `src/code/bignum.lisp` (public domain, word-size two's-complement digits, Knuth division, binary gcd) is the best-documented Lisp-level reference.
 
@@ -162,24 +162,24 @@ Question: does `(or ($+ x y) (slow+ x y))` cost anything on the Scheme side when
 
 The VM has five instructions: constant, get, set, if, call (`vm/src/instruction.rs`). `get` and `constant` each allocate one stack cell (`push` is a cons); `if` allocates nothing (it reuses the popped test cell as the jump cell, vm.rs ~218); a primitive call allocates one cell for its result; `$$unbind` is an ordinary primitive call (primitive 2, r7rs/src/small.rs ~128) dispatched through a global symbol and elided only in tail position (`compile-unbind`, compile.scm ~1091).
 
-| shape, non-tail position | instructions | primitive dispatches | cells allocated | delta vs A |
-|---|---|---|---|---|
-| A `(+ x y)` | get, get, call $+ | 1 | 3 | - |
-| B let-only | get, get, call $+, get, call $$unbind | 2 | 5 | +2 instr, +1 dispatch, +2 cells |
-| C candidate 3 | get, get, call $+, get, if, get, call $$unbind | 2 | 6 | +4 instr, +1 dispatch, +3 cells |
-| reference `(if (+ x y) 1 2)` (branch without rebinding) | get, get, call $+, if, constant | 1 | 4 | +2 instr, +1 cell |
+| shape, non-tail position                                | instructions                                   | primitive dispatches | cells allocated | delta vs A                      |
+| ------------------------------------------------------- | ---------------------------------------------- | -------------------- | --------------- | ------------------------------- |
+| A `(+ x y)`                                             | get, get, call $+                              | 1                    | 3               | -                               |
+| B let-only                                              | get, get, call $+, get, call $$unbind          | 2                    | 5               | +2 instr, +1 dispatch, +2 cells |
+| C candidate 3                                           | get, get, call $+, get, if, get, call $$unbind | 2                    | 6               | +4 instr, +1 dispatch, +3 cells |
+| reference `(if (+ x y) 1 2)` (branch without rebinding) | get, get, call $+, if, constant                | 1                    | 4               | +2 instr, +1 cell               |
 
 In tail position `$$unbind` disappears: C is +3 instructions and +2 cells. Candidate 2's shape D adds two global reads, two `$<` dispatches and a nested `if` on top of C.
 
 ### 6.2 Timings (`hyperfine -N`, min ms; ratios are min/min within the same run)
 
-| benchmark | build | A | B let-only | C candidate 3 | D candidate 2 |
-|---|---|---|---|---|---|
-| fib 27 | float | 38.2 | 47.5 (1.24x) | 55.2 (1.44x) | 78.6 (2.06x) |
-| fib 27 | integer | 33.8 | 39.9 (1.18x) | 46.4 (1.37x) | 74.1 (2.19x) |
-| tak 16 8 0 | float | 151.1 | 178.7 (1.18x) | 191.6 (1.27x) | 254.9 (1.68x) |
-| tak 16 8 0 | integer | 148.7 | 171.6 (1.15x) | 185.1 (1.24x) | 239.2 (1.61x) |
-| sum 3,000,000 | float | 167.4 | 221.2 (1.32x) | 255.4 (1.53x) | 429.5 (2.49x) |
+| benchmark     | build   | A     | B let-only    | C candidate 3 | D candidate 2 |
+| ------------- | ------- | ----- | ------------- | ------------- | ------------- |
+| fib 27        | float   | 38.2  | 47.5 (1.24x)  | 55.2 (1.44x)  | 78.6 (2.06x)  |
+| fib 27        | integer | 33.8  | 39.9 (1.18x)  | 46.4 (1.37x)  | 74.1 (2.19x)  |
+| tak 16 8 0    | float   | 151.1 | 178.7 (1.18x) | 191.6 (1.27x) | 254.9 (1.68x) |
+| tak 16 8 0    | integer | 148.7 | 171.6 (1.15x) | 185.1 (1.24x) | 239.2 (1.61x) |
+| sum 3,000,000 | float   | 167.4 | 221.2 (1.32x) | 255.4 (1.53x) | 429.5 (2.49x) |
 | sum 3,000,000 | integer | 157.2 | 210.2 (1.34x) | 238.3 (1.52x) | 386.7 (2.46x) |
 
 Provenance: the float rows' A-C cells, the float fib D cell and the integer fib A-C cells are the adversarial reproduction (3 warm-ups, 20-40 runs on a quiet machine); the integer tak and sum rows and the remaining D cells are the original measurement passes (30 runs on the float build, 15 + 40 runs on the integer build), with their ratios computed against the A of their own pass (float tak 152.0 ms, float sum 172.6 ms). The original passes and the reproduction agree within 9 %, most cells within 2 %; the largest deviation, float sum B at 241 versus 221 ms, coincided with machine load. Every shape prints the same result. Bytecode sizes for fib: A 3,990, B 4,002, C 4,047, D 4,084 bytes (tak and sum grow by similar amounts); the growth in C and D is the "overflow" string literal (`error` is already in A's bytecode).
@@ -204,12 +204,12 @@ Both keep every digit of bignum arithmetic in Scheme and leave the compiled fast
 
 How the primitive finds the hook:
 
-| option | mechanism | Rust touched | fast-path cost |
-|---|---|---|---|
-| a. extra argument `($+ x y $slow+)` | optimizer emits a 3-argument call | `small.rs` only | +1 `get`, +1 cell per site |
-| b. singleton slot `(set-car! #t hook)` | `(car #t)` and `(car '())` are unused; precedent: the error handler in `(cdr '())` | `small.rs` only | zero |
-| c. registration primitive + GC root | new `hook` field in `Memory`, copied in `collect_garbages`, a `Primitive::SetSlowAdd` | ~18 lines | zero |
-| d. symbol table at decode time | symbols' names are stripped after compilation | - | infeasible |
+| option                                 | mechanism                                                                             | Rust touched    | fast-path cost             |
+| -------------------------------------- | ------------------------------------------------------------------------------------- | --------------- | -------------------------- |
+| a. extra argument `($+ x y $slow+)`    | optimizer emits a 3-argument call                                                     | `small.rs` only | +1 `get`, +1 cell per site |
+| b. singleton slot `(set-car! #t hook)` | `(car #t)` and `(car '())` are unused; precedent: the error handler in `(cdr '())`    | `small.rs` only | zero                       |
+| c. registration primitive + GC root    | new `hook` field in `Memory`, copied in `collect_garbages`, a `Primitive::SetSlowAdd` | ~18 lines       | zero                       |
+| d. symbol table at decode time         | symbols' names are stripped after compilation                                         | -               | infeasible                 |
 
 Estimate for `+` alone: 20-30 lines of checked arithmetic across `number.rs` and the three `value_inner` files, ~20 lines for the splice helper (or one `pub use` of `Instruction` plus ~15 lines in `small.rs`), 10-15 lines in the `ADD` arm: about 50-70 lines of Rust, roughly doubled to cover `-` and `*` as well (`expt` was not estimated). Hazards: an uninstalled hook halts with "procedure expected"; a nested overflow inside the hook recurses, so the bignum code must be fixnum-safe; `quotient` and `$<` on bignum ribs remain Scheme-side dispatch.
 
