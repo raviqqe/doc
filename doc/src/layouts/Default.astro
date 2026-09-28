@@ -105,6 +105,18 @@ const { frontmatter } = Astro.props;
       padding-left: 1.5rem;
     }
   }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 0.05rem solid color(from var(--text-color) srgb r g b / 0.3);
+    padding: 0.25rem 0.5rem;
+  }
 </style>
 <style>
   header {
