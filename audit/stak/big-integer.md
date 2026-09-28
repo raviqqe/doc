@@ -1,3 +1,7 @@
+---
+description: An AI audit of how to implement arbitrary-precision integers in Stak Scheme without arithmetic in Rust, covering prior art, candidate designs, and their overhead on fixnum arithmetic.
+---
+
 # Big integers in Stak Scheme without Rust arithmetic
 
 <!-- cspell: ignore adigit adigits bigit bigits bignum bignums bnsimplify burnikel expt fdigit fixnum fixnums ikarus immediates karatsuba loko mdigit mdigits nmath nonbox oaklisp octocov picobit precheck sbcl taocp univlib varints vicare zenlisp zimmermann -->
