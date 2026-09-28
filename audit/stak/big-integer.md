@@ -3,6 +3,7 @@
 <!-- cspell: ignore adigit adigits bigit bigits bignum bignums bnsimplify burnikel expt fdigit fixnum fixnums ikarus immediates karatsuba loko mdigit mdigits nmath nonbox oaklisp octocov picobit precheck sbcl taocp univlib varints vicare zenlisp zimmermann -->
 
 - Date: 2026-09-22
+- Model: Claude Fable 5.1
 - Repository: [`raviqqe/stak`](https://github.com/raviqqe/stak)
 - Version: `main` at `f4e83a5c2`
 
