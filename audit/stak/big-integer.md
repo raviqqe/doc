@@ -11,7 +11,7 @@
 - Arbitrary-precision integers can be represented as ordinary data ribs with an unused type tag and implemented entirely in the prelude. The VM already treats such ribs as inert: the garbage collector copies them, `equal?` compares them structurally, and nothing in Rust inspects the tag.
 - The one prelude and one bytecode format serve three number representations (63-bit integer, `f64`, and the `float62` NaN-box), so the fixnum bound must be the weakest build's exact range, plus or minus 2^53, and digits must be at most 26 bits wide (or a decimal base of 10^7) so that a digit product plus two carries stays exact everywhere.
 - Four designs are viable. An opt-in `(stak bignum)` library costs nothing to programs that do not import it. Transparent promotion (fixnums overflow into bignums automatically) costs 25-55 % on arithmetic-bound benchmarks if the overflow test is expressed as `(or ($+ x y) (slow+ x y))` in Scheme, and 1.6-2.5x if expressed as explicit range checks, because the VM allocates a heap cell per stack push and closes `let` bindings with a primitive call. A ~60-line VM change in which the primitive itself transfers control to a Scheme procedure on overflow makes transparent promotion free on the fast path while keeping all bignum arithmetic in Scheme.
-- Two side findings: the batch compiler mis-encodes negative integer literals beyond 2^51, and `let` bindings are closed with a `$$unbind` primitive call where a zero-allocation `set 1` instruction already exists in the compiler.
+- Two side findings: the batch path corrupts integer literals, negative ones of magnitude 2^51 or more and positive ones of 2^63 or more, and `let` bindings are closed with a `$$unbind` primitive call where a zero-allocation `set 1` instruction already exists in the compiler.
 
 ## The numeric core today (verified)
 
@@ -153,6 +153,9 @@ Redefine `+ - * quotient remainder expt` and their optimizer templates as a fixn
 
 The fast path of candidate 2 or 3, but the slow path is a mutable hook that `(stak base)` initializes to `(error "integer overflow")` and `(stak bignum)` replaces on import. Programs that do not import it pay only the check, not the bignum code, and overflow becomes a loud error instead of a silent wrong answer. Combined with alternative X this is the cheapest fully transparent design.
 
+- Hazard: the check fires on every result of magnitude 2^53 or more, not only on integer overflow. The float builds have no exactness bit and every `f64` of that magnitude is integral, so ordinary float results reach the hook: `(* 10000000000.0 10000000000.0)` is 10^20 today, infinities qualify too, and NaN fails any range comparison. On the integer build, results between 2^53 and 2^62 are exact today and reach the hook as well. With the erroring default, programs that are correct today and never import `(stak bignum)` would fail.
+- A compatible default returns what the primitive returns today, which needs the unchecked primitives to stay available, and leaves the error as an opt-in. Either way, float workloads of large magnitude take the slow path on every operation, and the measurements in [Fast-path overhead measurements](#fast-path-overhead-measurements) cover fixnum workloads only.
+
 ## Fast-path overhead measurements
 
 Question: does `(or ($+ x y) (slow+ x y))` cost anything on the Scheme side when the VM never returns `#f`? Method: four shapes of each benchmark, compiled with `stak-compile` and run under `hyperfine` on both release interpreters. The VM primitive cannot return `#f` today, so shape C uses `(if z z (error ...))` with the branch always taken the same way. `stak-decode` confirms that `(or ($+ x y) (slow+ x y))` and `(let ((z ($+ x y))) (if z z (slow+ x y)))` compile byte-identically, and that shape C has the same fast-path instructions as the literal `or` version (only the else branch differs); the two also time identically.
@@ -224,6 +227,7 @@ Primitive errors are non-continuable by prelude convention (prelude.scm ~2571: t
 ## Decisions only the maintainer can make
 
 - Exactness on the float builds. Transparent promotion has to define "exact integer" as "integral immediate within plus or minus 2^53, or a bignum", so `(* 1e10 1e10)` would yield an exact bignum. This is no worse than today's `exact? = integer?` fiction, but it would be codified. The integer build has no such ambiguity. Any immediate outside the fixnum range is then, by definition, inexact.
+- The default overflow hook of candidate 4. Raising an error breaks float programs whose results reach 2^53 and integer-build programs that use magnitudes between 2^53 and 2^62; returning today's result keeps them working but leaves overflow on the integer build silent.
 - `eqv?`. R7RS wants `(eqv? big1 big2)` to be numeric equality; the primitive only special-cases characters. Either wrap `eqv?` in Scheme (taxing `memv`, `assv` and `case` everywhere) or document identity semantics for bignums.
 - Digit base: binary 2^26 versus decimal 10^7.
 - compile.scm's float encoder evaluates `(expt 2 y)` for `y` up to 1023; under transparent promotion those become bignums and `(/ x (expt 2 y))` becomes float divided by bignum. It works given bignum-to-float conversion, but it is a deliberate test case.
@@ -232,13 +236,14 @@ Primitive errors are non-continuable by prelude convention (prelude.scm ~2571: t
 ## Recommendation
 
 1. Build candidate 1 as `(stak bignum)`: 26-bit sign-magnitude digits in a least-significant-first list under tag 10, schoolbook add/sub/mul, Knuth D, Euclid gcd, Newton isqrt, chunked radix conversion. It ships without touching the size or timing metrics, it is what every other candidate needs anyway, and it can be validated with Gherkin scenarios run differentially against Gauche, Chibi and Guile through `tools/integration_test.sh`.
-2. Fix the negative-literal encoding bug ([Side findings](#side-findings)) first; it sits on the same path bignum literals would use.
-3. If transparent promotion is wanted, prefer alternative X with hook option b or c, combined with candidate 4's "error unless imported" default. Avoid candidate 2 unless the Rust line is absolute, and avoid Y.
+2. Fix the two literal bugs ([Side findings](#side-findings)) first; they sit on the same path bignum literals would use.
+3. If transparent promotion is wanted, prefer alternative X with hook option b or c, combined with candidate 4's replaceable hook. Default the hook to today's results and keep "error unless imported" as an opt-in, because the error also fires on float results that reach 2^53. Avoid candidate 2 unless the Rust line is absolute, and avoid Y.
 4. Consider the `set 1` unbind change separately; it is a free 10-12 % on let-heavy code.
 
 ## Side findings
 
-- Negative literal encoding bug (verified through `stak-compile` + `stak-interpret`): `encode-number` computes `4|x| + 1` for negative integers, which is not representable in f64 once |x| > 2^51. `-2251799813685249` prints as `4503599627370498` and `-9007199254740992` as `18014398509481984`; `-2251799813685247` (the largest magnitude used by `number.feature`) and positive literals (encoded as `2x`) are fine up to 2^53. The eval path keeps literals as live values and is unaffected.
+- Negative literal encoding bug (verified through `stak-compile` + `stak-interpret`): `encode-number` computes `4|x| + 1` for negative integers, which is not representable in f64 once |x| reaches 2^51. `-2251799813685248` prints as `4503599627370496`, `-2251799813685249` as `4503599627370498` and `-9007199254740992` as `18014398509481984`; `-2251799813685247` (the largest magnitude used by `number.feature`) is fine. The eval path keeps literals as live values and is unaffected.
+- Positive literal decoding bug (verified the same way on the float build): positive literals are encoded as `2x`, which is exact, but `Vm::decode_number` casts the halved `u128` to `i64` (vm/src/vm.rs ~527), so literals of 2^63 or more wrap around. `9223372036854775808` prints as `-9223372036854774460` and `18446744073709551616` as `0`, while `9223372036854774784` and smaller literals print the same as on the eval path, which keeps all of them as floats.
 - `(stak base)` does not export `$+`, `$-` and the other primitive names; user code naming them compiles to an unbound global and fails with "procedure expected". Benchmarks and prototypes must go through `+` and the optimizer.
 - `stak-profile run` hung in the sandbox used for this study (killed after 300 s); instruction counts were taken from `stak-decode` output instead.
 - `mstak` takes no script path; integer-build experiments go through `stak-compile` and `mstak-interpret`.
