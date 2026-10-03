@@ -44,6 +44,10 @@ const { frontmatter } = Astro.props;
     --text-color: light-dark(var(--black-color), var(--white-color));
     --link-color: light-dark(var(--red-color), var(--light-red-color));
 
+    /* Colors of the GitHub Dark theme that highlights code blocks */
+    --code-background-color: #24292e;
+    --code-text-color: #e1e4e8;
+
     --monospace-font-family: monospace;
 
     color-scheme: light dark;
@@ -93,6 +97,16 @@ const { frontmatter } = Astro.props;
 
   code {
     font-size: 0.9em;
+  }
+
+  :not(pre) > code {
+    padding: 0.1rem 0.3rem;
+    background-color: var(--code-background-color);
+    color: var(--code-text-color);
+  }
+
+  a > code {
+    color: var(--light-red-color);
   }
 
   blockquote {
