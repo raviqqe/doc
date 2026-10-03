@@ -33,10 +33,9 @@ const { frontmatter } = Astro.props;
 <style is:global>
 :root {
   --dark-black-color: black;
-  --black-color: #333;
+  --black-color: #222;
   --red-color: #d00;
   --light-red-color: #f66;
-  --lighter-red-color: #f77;
   --white-color: #fdfdfd;
 
   --background-color: light-dark(var(--white-color), var(--dark-black-color));
@@ -45,7 +44,7 @@ const { frontmatter } = Astro.props;
 
   --code-background-color: var(--black-color);
   --code-text-color: var(--white-color);
-  --code-link-color: var(--lighter-red-color);
+  --code-link-color: var(--light-red-color);
 
   --monospace-font-family: monospace;
 
@@ -99,7 +98,7 @@ code {
 }
 
 :not(pre) > code {
-  padding: 0.1rem 0.3rem;
+  padding: 0.15rem 0.3rem;
   background-color: var(--code-background-color);
   color: var(--code-text-color);
 }
