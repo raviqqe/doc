@@ -9,21 +9,19 @@ const { frontmatter } = Astro.props;
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={frontmatter.description} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-    <link
-      rel="sitemap"
-      href={`${import.meta.env.BASE_URL}/sitemap-index.xml`}
-    />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="UTF-8">
+    <meta content={frontmatter.description} name="description">
+    <meta content="width=device-width" name="viewport">
+    <link href="/icon.svg" rel="icon" type="image/svg+xml">
+    <link href={`${import.meta.env.BASE_URL}/sitemap-index.xml`} rel="sitemap">
+    <meta content={Astro.generator} name="generator">
     <title>{frontmatter.title}</title>
     <script
-      defer
       data-domain="raviqqe.com"
+      defer
+      src="https://plausible.io/js/plausible.js"
       is:inline
-      src="https://plausible.io/js/plausible.js"></script>
+    ></script>
   </head>
   <body>
     <Header />
@@ -33,126 +31,126 @@ const { frontmatter } = Astro.props;
   </body>
 </html>
 <style is:global>
-  :root {
-    --dark-black-color: black;
-    --black-color: #333;
-    --red-color: #d00;
-    --light-red-color: #f66;
-    --white-color: #fdfdfd;
+:root {
+  --dark-black-color: black;
+  --black-color: #333;
+  --red-color: #d00;
+  --light-red-color: #f66;
+  --white-color: #fdfdfd;
 
-    --background-color: light-dark(var(--white-color), var(--dark-black-color));
-    --text-color: light-dark(var(--black-color), var(--white-color));
-    --link-color: light-dark(var(--red-color), var(--light-red-color));
+  --background-color: light-dark(var(--white-color), var(--dark-black-color));
+  --text-color: light-dark(var(--black-color), var(--white-color));
+  --link-color: light-dark(var(--red-color), var(--light-red-color));
 
-    /* Colors of the GitHub Dark theme that highlights code blocks */
-    --code-background-color: #24292e;
-    --code-text-color: #e1e4e8;
+  /* Colors of the GitHub Dark theme that highlights code blocks */
+  --code-background-color: #24292e;
+  --code-text-color: #e1e4e8;
 
-    --monospace-font-family: monospace;
+  --monospace-font-family: monospace;
 
-    color-scheme: light dark;
-    font:
-      16px "Noto Sans Variable",
-      sans-serif;
+  color-scheme: light dark;
+  font:
+    16px "Noto Sans Variable",
+    sans-serif;
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+a,
+a:visited {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-thickness: 0.05rem;
+  text-underline-offset: 0.12rem;
+}
+
+a:hover {
+  text-decoration-thickness: 0.1rem;
+}
+
+code,
+pre {
+  font-family: var(--monospace-font-family);
+  border-radius: 0.3rem;
+}
+
+pre {
+  padding: 1rem;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+:not(pre) > code {
+  padding: 0.1rem 0.3rem;
+  background-color: var(--code-background-color);
+  color: var(--code-text-color);
+}
+
+a > code {
+  color: var(--light-red-color);
+}
+
+blockquote {
+  --color: color(from var(--text-color) srgb r g b / 0.85);
+
+  color: var(--color);
+
+  > p {
+    border-left: 0.2rem solid var(--color);
+    padding-left: 1.5rem;
   }
+}
 
-  html {
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
+table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
 
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  a,
-  a:visited {
-    color: var(--link-color);
-    text-decoration: underline;
-    text-decoration-thickness: 0.05rem;
-    text-underline-offset: 0.12rem;
-  }
-
-  a:hover {
-    text-decoration-thickness: 0.1rem;
-  }
-
-  code,
-  pre {
-    font-family: var(--monospace-font-family);
-    border-radius: 0.3rem;
-  }
-
-  pre {
-    padding: 1rem;
-  }
-
-  code {
-    font-size: 0.9em;
-  }
-
-  :not(pre) > code {
-    padding: 0.1rem 0.3rem;
-    background-color: var(--code-background-color);
-    color: var(--code-text-color);
-  }
-
-  a > code {
-    color: var(--light-red-color);
-  }
-
-  blockquote {
-    --color: color(from var(--text-color) srgb r g b / 0.85);
-
-    color: var(--color);
-
-    > p {
-      border-left: 0.2rem solid var(--color);
-      padding-left: 1.5rem;
-    }
-  }
-
-  table {
-    display: block;
-    overflow-x: auto;
-    border-collapse: collapse;
-  }
-
-  th,
-  td {
-    border: 0.05rem solid color(from var(--text-color) srgb r g b / 0.3);
-    padding: 0.5rem 1rem;
-  }
+th,
+td {
+  border: 0.05rem solid color(from var(--text-color) srgb r g b / 0.3);
+  padding: 0.5rem 1rem;
+}
 </style>
 <style>
-  header {
-    display: flex;
-    justify-content: flex-start;
-    align-self: stretch;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-self: stretch;
+  padding: 1rem;
+  box-sizing: border-box;
+}
 
-  a {
-    font-family: "Ubuntu", sans-serif;
-    font-size: 1.25rem;
-    font-weight: bold;
+a {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  &:visited {
     color: var(--text-color);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-
-    &:visited {
-      color: var(--text-color);
-    }
   }
+}
 </style>
