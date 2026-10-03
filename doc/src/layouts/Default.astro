@@ -36,15 +36,16 @@ const { frontmatter } = Astro.props;
   --black-color: #333;
   --red-color: #d00;
   --light-red-color: #f66;
+  --lighter-red-color: #f77;
   --white-color: #fdfdfd;
 
   --background-color: light-dark(var(--white-color), var(--dark-black-color));
   --text-color: light-dark(var(--black-color), var(--white-color));
   --link-color: light-dark(var(--red-color), var(--light-red-color));
 
-  /* Colors of the GitHub Dark theme that highlights code blocks */
-  --code-background-color: #24292e;
-  --code-text-color: #e1e4e8;
+  --code-background-color: var(--black-color);
+  --code-text-color: var(--white-color);
+  --code-link-color: var(--lighter-red-color);
 
   --monospace-font-family: monospace;
 
@@ -104,7 +105,7 @@ code {
 }
 
 a > code {
-  color: var(--light-red-color);
+  color: var(--code-link-color);
 }
 
 blockquote {
