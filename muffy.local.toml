@@ -11,3 +11,7 @@ ignore = true
 [sites.icon]
 roots = ["http://localhost:4321/icon.svg"]
 statuses = [404]
+
+[sites.manifest]
+roots = ["http://localhost:4321/manifest.json"]
+statuses = [404]
