@@ -7,7 +7,7 @@ description: An AI survey of default library directories across Scheme implement
 <!-- cspell: ignore akku impls loko meevax sitelib sitelibdir tklos userlib ypsilon -->
 
 - Date: 2026-10-01
-- Updated: 2026-10-08
+- Updated: 2026-10-11
 - Model: Claude Opus 5.5
 - Repository: [`raviqqe/stak`](https://github.com/raviqqe/stak)
 - Version: `main` at `32410b5a4`
@@ -16,16 +16,18 @@ description: An AI survey of default library directories across Scheme implement
 ## Summary
 
 - The issue asks Stak to search a default library directory and to report it, so that snow-chibi can install packages from snow-fort for Stak with `snow-chibi install --impls=stak "(srfi 180)"`.
-- Stak already has the SRFI 138 `-I` and `-A` flags and ignores directories that do not exist, so the only missing piece for the issue itself is a default directory list and a way to print it.
+- Stak already has the SRFI 138 `-I` and `-A` flags and ignores directories that do not exist, so the only missing piece for what the issue asks is a default directory list and a way to print it.
 - Meevax went through the same request from the same requester in 2025 and 2026. It added `meevax --library-directories`, which prints one directory per line, with `$XDG_DATA_HOME/meevax` first and `$PREFIX/share/meevax` second. snow-chibi reads the first line.
 - Three other gaps affected snow-chibi at that version: `(exit 0)` exits with status 1, `cond-expand` checks `(library ...)` against a fixed list of six libraries, and `include-library-declarations` is unsupported. All three have been fixed on `main` since, but the `cond-expand` fix makes snow-chibi take the partial built-in `(srfi 1)` for a complete one.
+- Two gaps still stop the issue's example package on `main` at `2b50ce988`: the reader does not support number prefixes such as `#x`, which `(srfi 180)` uses, and `cond-expand` declarations inside `define-library` are ignored, which breaks `(srfi 64)`, a test dependency of `(srfi 180)`.
 
 ## What snow-chibi needs from an implementation
 
 These facts come from the upstream source in `lib/chibi/snow/`.
 
 - `known-implementations` in `utils.scm` lists each implementation's binary name, version command, and a command that prints its feature list. Most of these commands evaluate an expression with a flag such as `-e`, while the ones for Loko and Mosh write a temporary program file.
-- `get-install-dirs` in `commands.scm` returns the implementation's library directories, and snow-chibi installs packages into the first one. It accepts an unknown implementation after a confirmation prompt and falls back to `/usr/local/share/snow/<name>`, or `<prefix>/share/snow/<name>` with `--install-prefix`.
+- `get-install-dirs` in `commands.scm` returns the implementation's library directories, and snow-chibi installs packages for a supported implementation into the first one.
+- snow-chibi accepts an unknown implementation after a confirmation prompt and installs its libraries into `/usr/local/share/snow` by default, the same directory it installs Chibi packages into, or into `<prefix>/share/snow/<name>` with `--install-prefix`. The `/usr/local/share/snow/<name>` fallback of `get-install-dirs` is only searched for packages already installed.
 - `scheme-program-command` runs probes and package tests as `<impl> -A <install-dir> [-A <package-dir>] file.scm`. For an unknown implementation, it returns no command, so tests are skipped.
 - The install directory may not exist yet when snow-chibi runs its first probe, so `-A` with a missing directory must not fail. This is what [meevax#505](https://github.com/yamacir-kit/meevax/issues/505) fixed.
 - The native SRFI probe is a generated program with `(cond-expand ((or (library (srfi N)) srfi-N) N) (else #f))` for every N below 500, ending with `(exit 0)`. snow-chibi reads its output and ignores its exit status.
@@ -111,24 +113,27 @@ SRFI 176 is the standardized alternative to a custom flag, but it would replace 
 ## Decisions only the maintainer can make
 
 - The names of the environment variable and the flag. The code already says "library paths", so `STAK_LIBRARY_PATH` and `--library-paths` would be consistent.
-- The system directory: a fixed `/usr/local/share/stak`, one that packagers set at build time, or snow-chibi's fallback `/usr/local/share/snow/stak`. The fallback lets `snow-chibi install --impls=stak` work before snow-chibi supports Stak, after a confirmation prompt and without package tests, but installs there usually need root.
+- The system directory: a fixed `/usr/local/share/stak`, one that packagers set at build time, or snow-chibi's `/usr/local/share/snow`. The latter lets `snow-chibi install --impls=stak` work before snow-chibi supports Stak, after a confirmation prompt and without package tests, but installs there usually need root, and Stak would also see the packages snow-chibi installs there for Chibi.
 - Whether `STAK_LIBRARY_PATH` should redirect snow-chibi installs. If the flag prints the search order, the variable's first directory becomes the install directory, as `CYCLONE_LIBRARY_PATH` does for Cyclone. Gauche instead reports its install directory separately with `gauche-config --sitelibdir`.
 - Whether `stak-compile` should also search the default directories.
 - Whether to append the shared `R7RS_PATH` variable that Akku uses.
 
 ## Side findings
 
-These are separate from the issue but affected snow-chibi integration at `32410b5a4`. All three have been fixed on `main` since.
+These are separate from what the issue asks but affect snow-chibi integration. The first three were found at `32410b5a4` and have been fixed on `main` since. The last two remain on `main` at `2b50ce988` and stop snow-fort's `(srfi 180)`, the issue's example package, from loading, while Chibi 0.12.0 loads the same files.
 
 1. `exit` treats only `#t` or no argument as success. `(exit 0)` and `(exit 3)` both print `Error: halt` and exit with status 1. snow-chibi's test runner fails any package test that exits with an integer, though tests ending with `(test-exit)` from `(chibi test)` pass because it exits with a boolean. The SRFI probe also ends with `(exit 0)`, but snow-chibi ignores the probe's exit status. Chibi and Gauche pass integer arguments through as exit codes, and R7RS asks implementations to translate the argument into an appropriate exit value. [#4143](https://github.com/raviqqe/stak/pull/4143) fixed it.
 2. `cond-expand` checks `(library ...)` requirements against a list fixed by `define-features` around line 334 of `prelude.scm`: `(scheme base)`, `(scheme read)`, `(scheme write)`, `(stak base)`, `(stak continue)`, and `(stak exception)`. `(srfi 1)`, `(scheme char)`, and every library on the load path test false, and `(features)` has no `srfi-N` entries. snow-chibi would conclude that Stak has no built-in SRFIs and install snow-fort's `(srfi 1)`, which Stak's built-in library would then shadow because built-in libraries resolve before the load path. [#4141](https://github.com/raviqqe/stak/pull/4141) fixed it by checking built-in libraries and `.sld` files on the load path instead. snow-chibi's probe now finds SRFI 1 and skips installing it as a natively implemented library, but the built-in `(srfi 1)` is partial and lacks procedures such as `filter-map`, `take`, and `partition`.
 3. `include-library-declarations` inside `define-library` fails with `procedure expected`. [#4144](https://github.com/raviqqe/stak/pull/4144) added it.
+4. The reader does not support the number prefixes `#x`, `#b`, `#o`, `#d`, `#e`, and `#i`, so `#xd800` fails with `invalid expression`. `(srfi 180)` uses such literals, while its dependencies `(srfi 60)` and `(srfi 145)` load fine.
+5. `cond-expand` declarations inside `define-library` are ignored because `register-library!` in `compile.scm` collects only `import`, `export`, and `begin` declarations. snow-fort's `(srfi 64)`, which the `(srfi 180)` package needs for its test, selects its imports with `cond-expand`, so it loses them and fails with `procedure expected`.
 
 ## Sources
 
 - [stak#4100](https://github.com/raviqqe/stak/issues/4100)
 - [stak#4141](https://github.com/raviqqe/stak/pull/4141), [stak#4143](https://github.com/raviqqe/stak/pull/4143), and [stak#4144](https://github.com/raviqqe/stak/pull/4144)
 - [snow-chibi source](https://github.com/ashinn/chibi-scheme/tree/master/lib/chibi/snow), including the commit adding Meevax support ([`d44eb977a`](https://github.com/ashinn/chibi-scheme/commit/d44eb977a))
+- [snow-fort](https://snow-fort.org/) packages `(srfi 180)` 0.1.1 and `(srfi 64)` 0.1.7
 - [meevax#494](https://github.com/yamacir-kit/meevax/issues/494), [meevax#501](https://github.com/yamacir-kit/meevax/issues/501), and [meevax#505](https://github.com/yamacir-kit/meevax/issues/505)
 - [SRFI 138](https://srfi.schemers.org/srfi-138/srfi-138.html) and [SRFI 176](https://srfi.schemers.org/srfi-176/srfi-176.html)
 - [Akku's `install.scm`](https://gitlab.com/akkuscm/akku/-/blob/master/lib/install.scm)
