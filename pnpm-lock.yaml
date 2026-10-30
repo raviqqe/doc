@@ -176,8 +176,8 @@ importers:
         specifier: ^12.0.0
         version: 12.0.0(puppeteer@25.16.0(yauzl@2.10.0))(tailwindcss@3.4.19(yaml@2.9.1))
       '@raviqqe/biome-config':
-        specifier: ^2.0.27
-        version: 2.0.27(@biomejs/biome@2.5.15)
+        specifier: ^2.0.28
+        version: 2.0.28(@biomejs/biome@2.5.15)
       oxfmt:
         specifier: ^0.75.0
         version: 0.75.0(@astrojs/compiler-rs@0.5.1)
@@ -1244,8 +1244,8 @@ packages:
       yauzl:
         optional: true
 
-  '@raviqqe/biome-config@2.0.27':
-    resolution: {integrity: sha512-UZWiCOgQDkUZb9qkJ9Y5rvlqjWMK/EIquQw31gs6RZbi1NiD0aWNCIJXAZiClfpl1faIy0Y6Bp7trlJx/SxYAA==}
+  '@raviqqe/biome-config@2.0.28':
+    resolution: {integrity: sha512-qs3eWBQx5TH07YuRN42uZSCtML5k9fUXsmTs5Tpu2oCNI+6TMhDop3PWiTfE5PD3WNpT/rHJMGEQ0ST2DXaxKQ==}
     engines: {node: '>=25.2.1'}
     peerDependencies:
       '@biomejs/biome': ^2.1.4
@@ -4940,7 +4940,7 @@ snapshots:
     optionalDependencies:
       yauzl: 2.10.0
 
-  '@raviqqe/biome-config@2.0.27(@biomejs/biome@2.5.15)':
+  '@raviqqe/biome-config@2.0.28(@biomejs/biome@2.5.15)':
     dependencies:
       '@biomejs/biome': 2.5.15
 
