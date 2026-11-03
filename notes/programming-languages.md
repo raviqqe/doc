@@ -126,7 +126,7 @@ description: A collection of links about programming languages and their technol
 
 #### RRB tree
 
-- [RRB-Trees: Efficient Immutable Vectors](https://infoscience.epfl.ch/record/169879/files/RMTrees.pdf)
+- [RRB-Trees: Efficient Immutable Vectors](https://github.com/TiarkRompf/rrbtrees)
   - [elm-array](https://github.com/exists-forall/elm-array)
 - [Improving RRB-Tree Performance through Transience](https://hypirion.com/thesis.pdf)
   - [c-rrb](https://github.com/hypirion/c-rrb)
