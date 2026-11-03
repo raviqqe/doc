@@ -219,8 +219,8 @@ importers:
         specifier: ^26.6.6
         version: 26.6.6
       es-toolkit:
-        specifier: ^1.53.0
-        version: 1.53.0
+        specifier: ^1.53.1
+        version: 1.53.1
       playwright:
         specifier: ^1.64.1
         version: 1.64.1
@@ -2335,8 +2335,8 @@ packages:
   es-module-lexer@3.0.3:
     resolution: {integrity: sha512-yWGe1O/j+almnV4hOYrmZo8u58JdnmXEMneRQAYkWtqSiT86yoMIEKF4rpqEDj52tbYl3xceBD3DQIBwcsC9Pw==}
 
-  es-toolkit@1.53.0:
-    resolution: {integrity: sha512-3+AYXp9fmJ/UhHBMYj2/U+RaUouMD90SzoItyDOB2Za7W6dB7fQApFGnZPl2MF6K8/Tv1koh1JyirSx/kju6Pw==}
+  es-toolkit@1.53.1:
+    resolution: {integrity: sha512-VhMc6IXmexu8iYFfL2aaAww6IvJTdHlqBLruLoEUs33YD4IcP5DdZcLOybMsMmmLsiy1c8PsiLsrM0DdIuuRUA==}
 
   esast-util-from-estree@2.0.0:
     resolution: {integrity: sha512-4CyanoAudUSBAn5K13H4JhsMH6L9ZP7XbLVe/dKybkxMO7eDyLsT8UHl9TRNrU2Gr9nz+FovfSIjuXWJ81uVwQ==}
@@ -6001,7 +6001,7 @@ snapshots:
 
   es-module-lexer@3.0.3: {}
 
-  es-toolkit@1.53.0: {}
+  es-toolkit@1.53.1: {}
 
   esast-util-from-estree@2.0.0:
     dependencies:
@@ -6813,7 +6813,7 @@ snapshots:
       dagre-d3-es: 7.0.14
       dayjs: 1.11.21
       dompurify: 3.4.12
-      es-toolkit: 1.53.0
+      es-toolkit: 1.53.1
       katex: 0.16.47
       khroma: 2.1.0
       marked: 16.4.2
@@ -6839,7 +6839,7 @@ snapshots:
       dayjs: 1.11.23
       dompurify: 3.4.16
       elkjs: 0.9.3
-      es-toolkit: 1.53.0
+      es-toolkit: 1.53.1
       katex: 0.16.47
       khroma: 2.1.0
       marked: 16.4.2
