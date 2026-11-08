@@ -4,6 +4,8 @@ description: An AI audit of what remains before the ODS-generated dialects of Me
 
 # Making the ODS-generated dialects the default in Melior
 
+<!-- cspell: ignore addi alloca cmpf cmpi discardable fastmath getelementptr indirectbr melior memref tblgen trunc -->
+
 - Date: 2026-11-08
 - Model: Claude Opus 5.5
 - Repository: [`mlir-rs/melior`](https://github.com/mlir-rs/melior)
@@ -40,13 +42,13 @@ description: An AI audit of what remains before the ODS-generated dialects of Me
 - 607 of 1,218 attribute parameters fall through the storage type mapping in `build_storage_type` (lines 68 to 82 of `macro/src/dialect/operation/attribute.rs`) and become an untyped `Attribute`. The largest groups are below, and dialect enum attributes make up much of the rest.
 
   | Storage type                       | Parameters |
-  | ---------------------------------- | ---------: |
-  | `::mlir::UnitAttr`                 |        149 |
-  | `::mlir::DenseIntElementsAttr`     |         97 |
-  | `::mlir::arith::FastMathFlagsAttr` |         84 |
-  | `::mlir::LLVM::FastmathFlagsAttr`  |         55 |
-  | `::mlir::AffineMapAttr`            |         21 |
-  | `::mlir::SymbolRefAttr`            |          8 |
+  | ---------------------------------- | ---------- |
+  | `::mlir::UnitAttr`                 | 149        |
+  | `::mlir::DenseIntElementsAttr`     | 97         |
+  | `::mlir::arith::FastMathFlagsAttr` | 84         |
+  | `::mlir::LLVM::FastmathFlagsAttr`  | 55         |
+  | `::mlir::AffineMapAttr`            | 21         |
+  | `::mlir::SymbolRefAttr`            | 8          |
 
 - Parity is lost here: the hand-written modules provide `arith::CmpiPredicate`, `arith::CmpfPredicate`, and `llvm::attributes::Linkage`, while the generated `arith::cmpi(..., predicate: Attribute, ...)` and `index::cmp(..., pred: Attribute, ...)` give callers no safe way to build those attributes.
 - Melior has no wrappers for unit, integer-element, affine-map, or symbol-reference attributes, or for any dialect enum attribute.
@@ -115,9 +117,9 @@ All of these were checked against the code at the version above.
 - C-1. Build time is not a blocker. The builders are generic, so code is generated only for those a crate uses.
 
   | Command                 | Without `ods-dialects` | With `ods-dialects` |
-  | ----------------------- | ---------------------: | ------------------: |
-  | `cargo check -p melior` |                    1 s |                 8 s |
-  | `cargo build -p melior` |                  0-1 s |                11 s |
+  | ----------------------- | ---------------------- | ------------------- |
+  | `cargo check -p melior` | 1 s                    | 8 s                 |
+  | `cargo build -p melior` | 0-1 s                  | 11 s                |
 
   The `cargo build` numbers are the same for the dev and release profiles. Per-dialect features would be an optimization, not a requirement.
 
