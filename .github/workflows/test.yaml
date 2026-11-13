@@ -16,7 +16,7 @@ jobs:
       - run: node --run lint
       - run: node --run preview &
         working-directory: doc
-      - uses: raviqqe/muffy@v0.5.8
+      - uses: raviqqe/muffy@v0.5.9
         with:
           config: muffy.local.toml
   markdown_format:
