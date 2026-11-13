@@ -11,16 +11,16 @@ workflows:
         - 'actions/setup-node@v7.1.0'
         - 'actions/upload-pages-artifact@v5.0.0'
         - 'pnpm/action-setup@v6.1.1'
-        - 'raviqqe/muffy@v0.5.8'
+        - 'raviqqe/muffy@v0.5.9'
     '.github/workflows/test.yaml':
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-node@v7.1.0'
         - 'lycheeverse/lychee-action@v2.9.0'
         - 'pnpm/action-setup@v6.1.1'
-        - 'raviqqe/muffy@v0.5.8'
+        - 'raviqqe/muffy@v0.5.9'
         - 'streetsidesoftware/cspell-action@v9.2.0'
 dependencies:
-    'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9':
+    'actions/cache@v6.1.0':
         ref: 'v6.1.0'
         commit: 'sha1-55cc8345863c7cc4c66a329aec7e433d2d1c52a9'
         owner_id: 44036562
@@ -67,13 +67,13 @@ dependencies:
         commit: 'sha1-73e46992e05b19abd31f2f3c20e0e7370d762115'
         owner_id: 21320719
         repo_id: 262289747
-    'raviqqe/muffy@v0.5.8':
-        ref: 'v0.5.8'
-        commit: 'sha1-75137197b0bc03a227e8638e30bd170607cd3bc5'
+    'raviqqe/muffy@v0.5.9':
+        ref: 'v0.5.9'
+        commit: 'sha1-de958736cb9a72a6274a6e9e269f2536b2a7611d'
         owner_id: 9584358
         repo_id: 972941557
         uses:
-            - 'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9'
+            - 'actions/cache@v6.1.0'
     'streetsidesoftware/cspell-action@v9.2.0':
         ref: 'v9.2.0'
         commit: 'sha1-ce1816e4ce36532956ac6e983737392774b6e169'
