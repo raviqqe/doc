@@ -35,7 +35,6 @@ const { frontmatter } = Astro.props;
 :root {
   --dark-black-color: black;
   --black-color: #222;
-  --dark-red-color: #a00;
   --red-color: #d00;
   --light-red-color: #f66;
   --light-gray-color: #f0f0f0;
@@ -50,7 +49,7 @@ const { frontmatter } = Astro.props;
     var(--black-color)
   );
   --code-text-color: light-dark(var(--black-color), var(--white-color));
-  --code-link-color: light-dark(var(--dark-red-color), var(--light-red-color));
+  --code-link-color: var(--link-color);
 
   --monospace-font-family: monospace;
 
