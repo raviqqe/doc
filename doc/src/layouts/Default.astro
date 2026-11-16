@@ -37,15 +37,19 @@ const { frontmatter } = Astro.props;
   --black-color: #222;
   --red-color: #d00;
   --light-red-color: #f66;
+  --light-gray-color: #f0f0f0;
   --white-color: #fdfdfd;
 
   --background-color: light-dark(var(--white-color), var(--dark-black-color));
   --text-color: light-dark(var(--black-color), var(--white-color));
   --link-color: light-dark(var(--red-color), var(--light-red-color));
 
-  --code-background-color: var(--black-color);
-  --code-text-color: var(--white-color);
-  --code-link-color: var(--light-red-color);
+  --code-background-color: light-dark(
+    var(--light-gray-color),
+    var(--black-color)
+  );
+  --code-text-color: light-dark(var(--black-color), var(--white-color));
+  --code-link-color: var(--link-color);
 
   --monospace-font-family: monospace;
 
