@@ -12,12 +12,12 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.3.8",
-    "@astrojs/mdx": "^8.1.5",
-    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/markdown-remark": "^7.3.9",
+    "@astrojs/mdx": "^8.1.6",
+    "@astrojs/sitemap": "^3.7.5",
     "@fontsource-variable/noto-sans": "^5.3.0",
     "@fontsource/ubuntu": "^5.3.0",
-    "astro": "^7.4.11",
+    "astro": "^7.4.12",
     "rehype-mermaid": "^3.0.0",
     "remark-toc": "^9.0.0"
   },
