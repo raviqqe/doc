@@ -87,16 +87,19 @@ Oh, no! 42 [error foo eval #f]
 Example: Upper to lower case mapping
 
 1. Parse a table.
+
    ```scheme
    ; A -> a, B -> b, C -> c, ... Z -> z
    ((65 97) (66 98) (67 99) #| ... |# (90 122))
    ```
 1. Calculate differences between rows.
    - Small integers are encoded into small bytes in bytecode encoding.
+
    ```scheme
    ((65 97) (1 1) (1 1) #| ... |# (1 1))
    ```
 1. Apply [run-length encoding](https://en.wikipedia.org/wiki/Run-length_encoding).
+
    ```scheme
    ((65 97) (24 . 1))
    ```

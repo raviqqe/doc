@@ -8,10 +8,5 @@
     "formatter": {
       "enabled": true
     }
-  },
-  "markdown": {
-    "formatter": {
-      "enabled": false
-    }
   }
 }
