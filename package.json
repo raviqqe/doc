@@ -19,7 +19,7 @@
     "@mermaid-js/mermaid-cli": "^12.2.0",
     "@raviqqe/biome-config": "^2.0.29",
     "oxfmt": "^0.79.0",
-    "puppeteer": "^25.17.0",
+    "puppeteer": "^25.18.1",
     "svgo": "^4.1.0"
   },
   "engines": {
